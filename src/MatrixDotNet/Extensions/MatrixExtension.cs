@@ -5,7 +5,8 @@ namespace MatrixDotNet.Extensions
 {
     public static class MatrixExtension
     {
-        public static T[] GetRow<T>(this Matrix<T> matrix,uint index) 
+        
+        public static T[] GetRow<T>(this Matrix<T> matrix,int index) 
             where T : unmanaged
         {
             if(matrix is null)
@@ -16,7 +17,7 @@ namespace MatrixDotNet.Extensions
             
             T[] array = new T[matrix._Matrix.GetLength(1)];
 
-            for (uint j = 0; j < matrix._Matrix.GetLength(1); j++)
+            for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
             {
                 array[j] = matrix[index,j];
             }
@@ -24,7 +25,7 @@ namespace MatrixDotNet.Extensions
             return array;
         }
         
-        public static T[] GetColumn<T>(this Matrix<T> matrix, uint index)
+        public static T[] GetColumn<T>(this Matrix<T> matrix, int index)
             where T : unmanaged
         {
             if(matrix is null)
@@ -35,7 +36,7 @@ namespace MatrixDotNet.Extensions
             if (index > matrix._Matrix.GetLength(0))
                 throw new IndexOutOfRangeException();
 
-            for (uint j = 0; j < matrix._Matrix.GetLength(0); j++)
+            for (int j = 0; j < matrix._Matrix.GetLength(0); j++)
             {
                 array[j] = matrix[j,index];
             }
@@ -47,9 +48,9 @@ namespace MatrixDotNet.Extensions
             where T : unmanaged
         {
             Matrix<T> transport = new Matrix<T>(matrix.Columns,matrix.Rows);
-            for (uint i = 0; i < transport.Rows; i++)
+            for (int i = 0; i < transport.Rows; i++)
             {
-                for (uint j = 0; j < transport.Columns; j++)
+                for (int j = 0; j < transport.Columns; j++)
                 {
                     transport[i, j] = matrix[j, i];
                 }
@@ -64,9 +65,9 @@ namespace MatrixDotNet.Extensions
         {
             T[,] matrix1 = new T[matrix.Rows,matrix.Columns];
             
-            for (uint i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (uint j = 0; j < matrix.Columns; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
                     matrix1[i, j] = matrix[i, j];
                 }
@@ -79,9 +80,9 @@ namespace MatrixDotNet.Extensions
         {
             Matrix<T> matrix1 = new Matrix<T>(matrix.GetLength(0),matrix.GetLength(1));
             
-            for (uint i = 0; i < matrix1.Rows; i++)
+            for (int i = 0; i < matrix1.Rows; i++)
             {
-                for (uint j = 0; j < matrix1.Columns; j++)
+                for (int j = 0; j < matrix1.Columns; j++)
                 {
                     matrix1[i, j] = matrix[i, j];
                 }
@@ -94,9 +95,9 @@ namespace MatrixDotNet.Extensions
         {
             T[,] result = new T[matrix.Rows - 1, matrix.Rows - 1];
 
-            for (uint i = 1; i < matrix.Rows; i++)
+            for (int i = 1; i < matrix.Rows; i++)
             {
-                for (uint j = 0, col = 0; j < matrix.Columns; j++)
+                for (int j = 0, col = 0; j < matrix.Columns; j++)
                 {
                     if (j == n)
                         continue;
@@ -145,16 +146,66 @@ namespace MatrixDotNet.Extensions
             Matrix<T> temp;
             double[] result = new double[matrix.Columns];
             
-            for (uint i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Columns; i++)
             {
                 temp = matrix.Clone() as Matrix<T>;
-                for (uint j = 0; j < matrix.Rows; j++)
+                for (int j = 0; j < matrix.Rows; j++)
                 {
                     temp[j, i] = arr[j];
                 }
                 result[i] = temp.GetDeterminate() / det;
             }
             return result;
+        }
+        
+        public static double[] Gause(this Matrix<double> A1, double[] b1) {
+
+            /* Ввод данных */
+
+            Matrix<double> A = A1.Clone() as Matrix<double>;
+            double[] b = new double[b1.Length];
+            
+            Array.Copy(b1, 0, b, 0, b.Length);
+
+
+            /* Метод Гаусса */
+
+            int N  = A.Rows;
+            for (int p = 0; p < N; p++) {
+
+                int max = p;
+                for (int i = p + 1; i < N; i++) {
+                    if (Math.Abs(A[i,p]) > Math.Abs(A[max,p])) {
+                        max = i;
+                    }
+                }
+                double[] temp = A[p]; A[p] = A[max]; A[max] = temp;
+                double   t    = b[p]; b[p] = b[max]; b[max] = t;
+
+                if (Math.Abs(A[p][p]) <= 1e-10) {
+                    return null;
+                }
+
+                for (int i = p + 1; i < N; i++) {
+                    double alpha = A[i,p] / A[p,p];
+                    b[i] -= alpha * b[p];
+                    for (int j = p; j < N; j++) {
+                        A[i,j] -= alpha * A[p,j];
+                    }
+                }
+            }
+
+            // Обратный проход
+
+            double[] x = new double[N];
+            for (int i = (int)N - 1;i >= 0 ; i--) {
+                double sum = 0;
+                for (int j = i + 1; j < N; j++) {
+                    sum += A[i,j] * x[j];
+                }
+                x[i] = (b[i] - sum) / A[i,i];
+            }
+            return x;
         }
     }
 }

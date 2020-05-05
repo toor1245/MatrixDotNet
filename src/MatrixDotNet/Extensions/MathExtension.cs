@@ -119,9 +119,9 @@ namespace MatrixDotNet.Extensions
             where T: unmanaged
         {
             T sum = default;
-            for (uint i = 0; i < matrix._Matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix._Matrix.GetLength(0); i++)
             {
-                for (uint j = 0; j < matrix._Matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
                 {
                     sum = Add<T>(sum,matrix[i,j]);
                 }
@@ -129,12 +129,12 @@ namespace MatrixDotNet.Extensions
             return sum;
         }
 
-        public static T Sum<T>(this Matrix<T> matrix, uint row)
+        public static T Sum<T>(this Matrix<T> matrix, int row)
             where T: unmanaged
         {
             T sum = default;
             
-            for (uint i = 0; i < matrix._Matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix._Matrix.GetLength(1); i++)
             {
                 sum = Add(sum,matrix[row,i]);
             }
@@ -147,11 +147,11 @@ namespace MatrixDotNet.Extensions
         {
             var array = new T[matrix._Matrix.GetLength(0)];
             
-            for (uint i = 0; i < matrix._Matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix._Matrix.GetLength(0); i++)
             {
                 T sum = default;
                 
-                for (uint j = 0; j < matrix._Matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
                 {
                     sum = Add(sum, matrix[i, j]); // sum = sum + matrix[i,j];
                 }
@@ -167,11 +167,11 @@ namespace MatrixDotNet.Extensions
         {
             var array = new T[matrix._Matrix.GetLength(1)];
             
-            for (uint i = 0; i < matrix._Matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix._Matrix.GetLength(1); i++)
             {
                 T sum = default;
                 
-                for (uint j = 0; j < matrix._Matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix._Matrix.GetLength(0); j++)
                 {
                     sum = Add(sum, matrix[j, i]);
                 }
@@ -192,9 +192,9 @@ namespace MatrixDotNet.Extensions
             T num = default;
             var max = new T[matrix._Matrix.GetLength(0)];
 
-            for (uint i = 0; i < matrix._Matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix._Matrix.GetLength(0); i++)
             {
-                for (uint j = 0; j < matrix._Matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
                 {
                     if (GreaterThan(matrix[i, j],num))
                     {
@@ -215,9 +215,9 @@ namespace MatrixDotNet.Extensions
             T num = default;
             var max = new T[matrix._Matrix.GetLength(1)];
 
-            for (uint i = 0; i < matrix._Matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix._Matrix.GetLength(1); i++)
             {
-                for (uint j = 0; j < matrix._Matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix._Matrix.GetLength(0); j++)
                 {
                     if (GreaterThan(matrix[j, i],num))
                     {
@@ -237,9 +237,9 @@ namespace MatrixDotNet.Extensions
             T num = default;
             var min = new T[matrix._Matrix.GetLength(0)];
 
-            for (uint i = 0; i < matrix._Matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix._Matrix.GetLength(0); i++)
             {
-                for (uint j = 0; j < matrix._Matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
                 {
                     if (!GreaterThan(matrix[i, j],num))
                     {
@@ -260,9 +260,9 @@ namespace MatrixDotNet.Extensions
             T num = default;
             var min = new T[matrix._Matrix.GetLength(1)];
 
-            for (uint i = 0; i < matrix._Matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix._Matrix.GetLength(1); i++)
             {
-                for (uint j = 0; j < matrix._Matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix._Matrix.GetLength(0); j++)
                 {
                     if (!GreaterThan(matrix[j, i],num))
                     {

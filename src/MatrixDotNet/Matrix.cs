@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
@@ -13,17 +12,20 @@ namespace MatrixDotNet
 
         internal T[,] _Matrix { get; private set; }
 
-        public long Length => _Matrix.Length;
-
+        public long LongLength => _Matrix.LongLength;
+        public int Length => _Matrix.Length;
+        
         public int Rows => _Matrix.GetLength(0);
 
         public int Columns => _Matrix.GetLength(1);
 
+        public double Rank => GetRank();
+        
         #endregion
 
         #region Indexators
-
-        public T this[uint i, uint j]
+        
+        public T this[int i, int j]
         {
             get
             {
@@ -41,7 +43,7 @@ namespace MatrixDotNet
             }
         }
         
-        public T[] this[uint i]
+        public T[] this[int i]
         {
             get => this.GetRow(i);
             set
@@ -49,12 +51,13 @@ namespace MatrixDotNet
                 if (!IsRange(i))
                     throw new IndexOutOfRangeException();
                 
-                for (uint j = 0; j < Columns; j++)
+                for (int j = 0; j < Columns; j++)
                 {
                     this[i, j] = value[j];
                 }
             }
         }
+        
         
         #endregion
         
@@ -92,9 +95,9 @@ namespace MatrixDotNet
                 
             Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
 
-            for (uint i = 0; i < left.Rows; i++)
+            for (int i = 0; i < left.Rows; i++)
             {
-                for (uint j = 0; j < left.Columns; j++)
+                for (int j = 0; j < left.Columns; j++)
                 {
                     matrix[i, j] = MathExtension.Add(left[i,j],right[i,j]);
                 }
@@ -113,9 +116,9 @@ namespace MatrixDotNet
 
             Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
 
-            for (uint i = 0; i < left.Rows; i++)
+            for (int i = 0; i < left.Rows; i++)
             {
-                for (uint j = 0; j < left.Columns; j++)
+                for (int j = 0; j < left.Columns; j++)
                 {
                     matrix[i, j] = MathExtension.Sub(left[i,j],right[i,j]);
                 }
@@ -134,11 +137,11 @@ namespace MatrixDotNet
 
             Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
 
-            for (uint i = 0; i < left.Rows; i++)
+            for (int i = 0; i < left.Rows; i++)
             {
-                for (uint j = 0; j < right.Columns; j++)
+                for (int j = 0; j < right.Columns; j++)
                 {
-                    for (uint k = 0; k < left.Columns; k++)
+                    for (int k = 0; k < left.Columns; k++)
                     {
                         // matrix[i,j] += left[i,k] * right[k,j]; 
                         matrix[i, j] = MathExtension
@@ -153,9 +156,9 @@ namespace MatrixDotNet
         public static Matrix<T> operator *(Matrix<T> matrix, T digit)
         {
             
-            for (uint i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (uint j = 0; j < matrix.Columns; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
                     // matrix1[i,j] = matrix[i,j] * matrix
                     matrix[i, j] = MathExtension.Multiply(matrix[i,j],digit);
@@ -164,12 +167,12 @@ namespace MatrixDotNet
             
             return matrix;
         }
-        
+       
         public static Matrix<T> operator *(T digit, Matrix<T> matrix)
         {
-            for (uint i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (uint j = 0; j < matrix.Columns; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
                     // matrix1[i,j] = matrix[i,j] * matrix
                     matrix[i, j] = MathExtension.Multiply(matrix[i,j],digit);
@@ -181,9 +184,9 @@ namespace MatrixDotNet
         
         public static Matrix<T> operator /(Matrix<T> matrix, T digit)
         {
-            for (uint i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (uint j = 0; j < matrix.Columns; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
                     // matrix1[i,j] = matrix[i,j] * matrix
                     matrix[i, j] = MathExtension.Divide(matrix[i,j],digit);
@@ -195,9 +198,9 @@ namespace MatrixDotNet
         
         public static Matrix<T> operator /(T digit,Matrix<T> matrix)
         {
-            for (uint i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (uint j = 0; j < matrix.Columns; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
                     // matrix1[i,j] = matrix[i,j] * matrix
                     matrix[i, j] = MathExtension.Divide(matrix[i,j],digit);
@@ -208,17 +211,17 @@ namespace MatrixDotNet
         
         #endregion
         
-        private bool IsRange(uint i,uint j)
+        private bool IsRange(int i,int j)
         {
-            if (i > _Matrix.GetLength(0) && j > _Matrix.GetLength(1))
+            if (i >= _Matrix.GetLength(0) && j >= _Matrix.GetLength(1))
                 return false;
             
             return true;
         }
 
-        private bool IsRange(uint i)
+        private bool IsRange(int i)
         {
-            if (i > _Matrix.GetLength(0))
+            if (i >= _Matrix.GetLength(0))
                 return false;
 
             return true;
@@ -228,9 +231,9 @@ namespace MatrixDotNet
         {
             StringBuilder builder = new StringBuilder();
             
-            for (uint i = 0; i < Rows; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (uint j = 0; j < Columns; j++)
+                for (int j = 0; j < Columns; j++)
                 {
                     builder.Append(this[i,j] + " ");
                 }
@@ -244,9 +247,9 @@ namespace MatrixDotNet
         public object Clone()
         {
             Matrix<T> matrix = new Matrix<T>(Rows,Columns);
-            for (uint i = 0; i < Rows; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (uint j = 0; j < Columns; j++)
+                for (int j = 0; j < Columns; j++)
                 {
                     matrix[i, j] = this[i, j];
                 }
@@ -263,9 +266,9 @@ namespace MatrixDotNet
             var t = (Matrix<T>) obj;
             var count = 0;
             
-            for (uint i = 0; i < t.Rows; i++)
+            for (int i = 0; i < t.Rows; i++)
             {
-                for (uint j = 0; j < t.Columns; j++)
+                for (int j = 0; j < t.Columns; j++)
                 {
                     if (this[i, j].Equals(t[i, j])) count++;
                 }
@@ -282,6 +285,23 @@ namespace MatrixDotNet
         public bool IsSquare()
         {
             return Rows == Columns;
+        }
+        
+        private double GetRank()
+        {
+            var matrix = (Matrix<T>)Clone();
+            if (matrix is null)
+                throw new MatrixDotNetException("matrix is null", nameof(_Matrix));
+            
+            for (int i = 0; i < Columns; i++)
+            {
+                for (int j = i + 1; j < Rows; j++)
+                { 
+                    matrix[j, i] = default;
+                }
+            }
+            
+            return this.GetDeterminate();
         }
     }
 }

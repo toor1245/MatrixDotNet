@@ -1,0 +1,8 @@
+C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\bin\Release\netstandard2.1\MatrixDotNet.deps.json
+C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\bin\Release\netstandard2.1\MatrixDotNet.dll
+C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\bin\Release\netstandard2.1\MatrixDotNet.pdb
+C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Release\netstandard2.1\MatrixDotNet.csprojAssemblyReference.cache
+C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Release\netstandard2.1\MatrixDotNet.AssemblyInfoInputs.cache
+C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Release\netstandard2.1\MatrixDotNet.AssemblyInfo.cs
+C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Release\netstandard2.1\MatrixDotNet.dll
+C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Release\netstandard2.1\MatrixDotNet.pdb
