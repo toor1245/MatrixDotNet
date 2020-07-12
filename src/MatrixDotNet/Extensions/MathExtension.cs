@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 
 namespace MatrixDotNet.Extensions
 {
-    public static class MathExtension
+    internal static class MathExtension
     {
         private static readonly Dictionary<(Type type,string op),Delegate> Cache =
             new Dictionary<(Type type, string op), Delegate>();

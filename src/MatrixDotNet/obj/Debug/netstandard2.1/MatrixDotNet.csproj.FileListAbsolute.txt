@@ -6,3 +6,12 @@ C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Debug\netstandard2.
 C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.AssemblyInfo.cs
 C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.dll
 C:\Users\Nikolay\RiderProjects\MatrixDotNet\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.pdb
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\bin\Debug\netstandard2.1\MatrixDotNet.deps.json
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\bin\Debug\netstandard2.1\MatrixDotNet.dll
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\bin\Debug\netstandard2.1\MatrixDotNet.pdb
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.csprojAssemblyReference.cache
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.csproj.CoreCompileInputs.cache
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.AssemblyInfoInputs.cache
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.AssemblyInfo.cs
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.dll
+D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Debug\netstandard2.1\MatrixDotNet.pdb

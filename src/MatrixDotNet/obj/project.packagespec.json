@@ -1,21 +1,19 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Nikolay\\RiderProjects\\MatrixDotNet\\MatrixDotNet\\MatrixDotNet.csproj",
+    "projectUniqueName": "D:\\RiderProjects\\MatrixDotNet\\src\\MatrixDotNet\\MatrixDotNet.csproj",
     "projectName": "MatrixDotNet",
-    "projectPath": "C:\\Users\\Nikolay\\RiderProjects\\MatrixDotNet\\MatrixDotNet\\MatrixDotNet.csproj",
-    "outputPath": "C:\\Users\\Nikolay\\RiderProjects\\MatrixDotNet\\MatrixDotNet\\obj\\",
+    "projectPath": "D:\\RiderProjects\\MatrixDotNet\\src\\MatrixDotNet\\MatrixDotNet.csproj",
+    "outputPath": "D:\\RiderProjects\\MatrixDotNet\\src\\MatrixDotNet\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
-      "C:\\Microsoft\\Xamarin\\NuGet",
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      "C:\\Microsoft\\Xamarin\\NuGet"
     ],
     "originalTargetFrameworks": [
       "netstandard2.1"
     ],
     "sources": {
       "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-      "C:\\Windows\\feed": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
@@ -46,7 +44,7 @@
           "privateAssets": "all"
         }
       },
-      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.102\\RuntimeIdentifierGraph.json"
+      "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
     }
   }
 }

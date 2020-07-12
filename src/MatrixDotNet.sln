@@ -2,9 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixDotNet", "MatrixDotNet\MatrixDotNet.csproj", "{A0400D7B-D215-4E35-913C-4D6A4CCA3BAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixDotNetTest", "MatrixDotNetTest\MatrixDotNetTest.csproj", "{5A51BA7B-2A7F-4142-81AA-CF3337872CBB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemonstrateMatrixDotNet", "DemonstrateMatrixDotNet\DemonstrateMatrixDotNet.csproj", "{B1517946-789C-4AAE-9463-D2B21B52526D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixDemonstrate", "MatrixDemonstrate\MatrixDemonstrate.csproj", "{B8774658-2644-42BB-8E7F-BE827855A41E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,13 +14,9 @@ Global
 		{A0400D7B-D215-4E35-913C-4D6A4CCA3BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0400D7B-D215-4E35-913C-4D6A4CCA3BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0400D7B-D215-4E35-913C-4D6A4CCA3BAC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A51BA7B-2A7F-4142-81AA-CF3337872CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A51BA7B-2A7F-4142-81AA-CF3337872CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A51BA7B-2A7F-4142-81AA-CF3337872CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A51BA7B-2A7F-4142-81AA-CF3337872CBB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B1517946-789C-4AAE-9463-D2B21B52526D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1517946-789C-4AAE-9463-D2B21B52526D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1517946-789C-4AAE-9463-D2B21B52526D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1517946-789C-4AAE-9463-D2B21B52526D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8774658-2644-42BB-8E7F-BE827855A41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8774658-2644-42BB-8E7F-BE827855A41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8774658-2644-42BB-8E7F-BE827855A41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8774658-2644-42BB-8E7F-BE827855A41E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

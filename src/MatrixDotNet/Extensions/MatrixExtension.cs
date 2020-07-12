@@ -3,9 +3,20 @@ using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions
 {
+    /// <summary>
+    /// Represents Matrix extension.
+    /// </summary>
     public static class MatrixExtension
     {
-        
+        /// <summary>
+        /// Gets row array of matrix by row index.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <param name="index"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        /// <exception cref="IndexOutOfRangeException"></exception>
         public static T[] GetRow<T>(this Matrix<T> matrix,int index) 
             where T : unmanaged
         {
@@ -25,6 +36,15 @@ namespace MatrixDotNet.Extensions
             return array;
         }
         
+        /// <summary>
+        /// Gets column array of matrix by columns index.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <param name="index">index.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="IndexOutOfRangeException"></exception>
         public static T[] GetColumn<T>(this Matrix<T> matrix, int index)
             where T : unmanaged
         {
@@ -44,6 +64,12 @@ namespace MatrixDotNet.Extensions
             return array;
         }
 
+        /// <summary>
+        /// Gets transport matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
         public static Matrix<T> Transport<T>(this Matrix<T> matrix) 
             where T : unmanaged
         {
@@ -60,6 +86,12 @@ namespace MatrixDotNet.Extensions
 
         }
 
+        /// <summary>
+        /// Convert matrix to primitive matrix.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
         public static T[,] ToPrimitive<T>(this Matrix<T> matrix) 
             where T : unmanaged
         {
@@ -75,6 +107,12 @@ namespace MatrixDotNet.Extensions
             return matrix1;
         }
         
+        /// <summary>
+        /// Convert primitive matrix to <see cref="Matrix{T}"/>.
+        /// </summary>
+        /// <param name="matrix">primitive matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns></returns>
         public static Matrix<T> ToMatrixDotNet<T>(this T[,] matrix) 
             where T : unmanaged
         {
@@ -90,6 +128,13 @@ namespace MatrixDotNet.Extensions
             return matrix1;
         }
         
+        /// <summary>
+        /// Gets minor pf matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        /// <param name="n">n</param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns><see cref="Matrix{T}"/></returns>
         private static Matrix<T> GetMinor<T>( this Matrix<T> matrix,int n)
             where T : unmanaged
         {
@@ -108,10 +153,17 @@ namespace MatrixDotNet.Extensions
             return result.ToMatrixDotNet();
         }
 
+        /// <summary>
+        /// Gets determinant of matrix.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>double.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static double GetDeterminate<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (!matrix.IsSquare())
+            if (!matrix.IsSquare)
             {
                 throw new MatrixDotNetException("the matrix is not square",nameof(matrix));
             }
@@ -135,6 +187,14 @@ namespace MatrixDotNet.Extensions
             return result;
         }
 
+        /// <summary>
+        /// Gets determinant matrix by Kramer algorithm.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <param name="arr">array.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static double[] KramerSolve<T>(this Matrix<T> matrix,T[] arr)
             where T: unmanaged
         {
@@ -158,18 +218,22 @@ namespace MatrixDotNet.Extensions
             return result;
         }
         
+        /// <summary>
+        /// Gets determinant matrix by Gause algorithm.
+        /// </summary>
+        /// <param name="A1"></param>
+        /// <param name="b1"></param>
+        /// <returns></returns>
         public static double[] Gause(this Matrix<double> A1, double[] b1) {
 
-            /* Ввод данных */
-
+            // Input data
             Matrix<double> A = A1.Clone() as Matrix<double>;
             double[] b = new double[b1.Length];
             
             Array.Copy(b1, 0, b, 0, b.Length);
 
 
-            /* Метод Гаусса */
-
+            // method of Gausse 
             int N  = A.Rows;
             for (int p = 0; p < N; p++) {
 
@@ -194,9 +258,9 @@ namespace MatrixDotNet.Extensions
                     }
                 }
             }
+            
 
-            // Обратный проход
-
+            // Result
             double[] x = new double[N];
             for (int i = (int)N - 1;i >= 0 ; i--) {
                 double sum = 0;
