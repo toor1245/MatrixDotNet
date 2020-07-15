@@ -1,0 +1,3937 @@
+id: MatrixDotNet
+language: CSharp
+name:
+  Default: MatrixDotNet
+qualifiedName:
+  Default: MatrixDotNet
+type: Assembly
+modifiers: {}
+items:
+- id: MatrixDotNet
+  commentId: N:MatrixDotNet
+  language: CSharp
+  name:
+    CSharp: MatrixDotNet
+    VB: MatrixDotNet
+  nameWithType:
+    CSharp: MatrixDotNet
+    VB: MatrixDotNet
+  qualifiedName:
+    CSharp: MatrixDotNet
+    VB: MatrixDotNet
+  type: Namespace
+  assemblies:
+  - MatrixDotNet
+  modifiers: {}
+  items:
+  - id: MatrixDotNet.Matrix`1
+    commentId: T:MatrixDotNet.Matrix`1
+    language: CSharp
+    name:
+      CSharp: Matrix<T>
+      VB: Matrix(Of T)
+    nameWithType:
+      CSharp: Matrix<T>
+      VB: Matrix(Of T)
+    qualifiedName:
+      CSharp: MatrixDotNet.Matrix<T>
+      VB: MatrixDotNet.Matrix(Of T)
+    type: Class
+    assemblies:
+    - MatrixDotNet
+    namespace: MatrixDotNet
+    source:
+      id: Matrix
+      path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+      startLine: 12
+    summary: "\nRepresents math matrix.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class Matrix<T> : ICloneable where T : struct'
+        VB: >-
+          Public Class Matrix(Of T As Structure)
+
+              Implements ICloneable
+      typeParameters:
+      - id: T
+        description: integral type.
+    inheritance:
+    - System.Object
+    implements:
+    - System.ICloneable
+    inheritedMembers:
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    extensionMethods:
+    - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetRow``1(System.Int32)
+    - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(System.Int32)
+    - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.Transport``1
+    - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1
+    - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1
+    - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1({T}[])
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: MatrixDotNet.Matrix`1.Length
+      commentId: P:MatrixDotNet.Matrix`1.Length
+      language: CSharp
+      name:
+        CSharp: Length
+        VB: Length
+      nameWithType:
+        CSharp: Matrix<T>.Length
+        VB: Matrix(Of T).Length
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Length
+        VB: MatrixDotNet.Matrix(Of T).Length
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: Length
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 26
+      summary: "\nGets length matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public int Length { get; }
+          VB: Public ReadOnly Property Length As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: MatrixDotNet.Matrix`1.Length*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: MatrixDotNet.Matrix`1.Rows
+      commentId: P:MatrixDotNet.Matrix`1.Rows
+      language: CSharp
+      name:
+        CSharp: Rows
+        VB: Rows
+      nameWithType:
+        CSharp: Matrix<T>.Rows
+        VB: Matrix(Of T).Rows
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Rows
+        VB: MatrixDotNet.Matrix(Of T).Rows
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: Rows
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 31
+      summary: "\nGets length row of matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public int Rows { get; }
+          VB: Public ReadOnly Property Rows As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: MatrixDotNet.Matrix`1.Rows*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: MatrixDotNet.Matrix`1.Columns
+      commentId: P:MatrixDotNet.Matrix`1.Columns
+      language: CSharp
+      name:
+        CSharp: Columns
+        VB: Columns
+      nameWithType:
+        CSharp: Matrix<T>.Columns
+        VB: Matrix(Of T).Columns
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Columns
+        VB: MatrixDotNet.Matrix(Of T).Columns
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: Columns
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 36
+      summary: "\nGets length columns of matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public int Columns { get; }
+          VB: Public ReadOnly Property Columns As Integer
+        parameters: []
+        return:
+          type: System.Int32
+      overload: MatrixDotNet.Matrix`1.Columns*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: MatrixDotNet.Matrix`1.Rank
+      commentId: P:MatrixDotNet.Matrix`1.Rank
+      language: CSharp
+      name:
+        CSharp: Rank
+        VB: Rank
+      nameWithType:
+        CSharp: Matrix<T>.Rank
+        VB: Matrix(Of T).Rank
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Rank
+        VB: MatrixDotNet.Matrix(Of T).Rank
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: Rank
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 41
+      summary: "\nGets rank of matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public double Rank { get; }
+          VB: Public ReadOnly Property Rank As Double
+        parameters: []
+        return:
+          type: System.Double
+      overload: MatrixDotNet.Matrix`1.Rank*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: MatrixDotNet.Matrix`1.IsSquare
+      commentId: P:MatrixDotNet.Matrix`1.IsSquare
+      language: CSharp
+      name:
+        CSharp: IsSquare
+        VB: IsSquare
+      nameWithType:
+        CSharp: Matrix<T>.IsSquare
+        VB: Matrix(Of T).IsSquare
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.IsSquare
+        VB: MatrixDotNet.Matrix(Of T).IsSquare
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: IsSquare
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 46
+      summary: "\nChecks square matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public bool IsSquare { get; }
+          VB: Public ReadOnly Property IsSquare As Boolean
+        parameters: []
+        return:
+          type: System.Boolean
+      overload: MatrixDotNet.Matrix`1.IsSquare*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: MatrixDotNet.Matrix`1.Item(System.Int32,System.Int32)
+      commentId: P:MatrixDotNet.Matrix`1.Item(System.Int32,System.Int32)
+      language: CSharp
+      name:
+        CSharp: Item[Int32, Int32]
+        VB: Item(Int32, Int32)
+      nameWithType:
+        CSharp: Matrix<T>.Item[Int32, Int32]
+        VB: Matrix(Of T).Item(Int32, Int32)
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Item[System.Int32, System.Int32]
+        VB: MatrixDotNet.Matrix(Of T).Item(System.Int32, System.Int32)
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: this[]
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 60
+      summary: "\nGets element matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public T this[int i, int j] { get; set; }
+          VB: Public Property Item(i As Integer, j As Integer) As T
+        parameters:
+        - id: i
+          type: System.Int32
+          description: the index by rows.
+        - id: j
+          type: System.Int32
+          description: the index by columns.
+        return:
+          type: '{T}'
+      overload: MatrixDotNet.Matrix`1.Item*
+      exceptions:
+      - type: System.IndexOutOfRangeException
+        commentId: T:System.IndexOutOfRangeException
+        description: "\nThrows if index out of range\n"
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+      references:
+        System.IndexOutOfRangeException: 
+    - id: MatrixDotNet.Matrix`1.Item(System.Int32)
+      commentId: P:MatrixDotNet.Matrix`1.Item(System.Int32)
+      language: CSharp
+      name:
+        CSharp: Item[Int32]
+        VB: Item(Int32)
+      nameWithType:
+        CSharp: Matrix<T>.Item[Int32]
+        VB: Matrix(Of T).Item(Int32)
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Item[System.Int32]
+        VB: MatrixDotNet.Matrix(Of T).Item(System.Int32)
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: this[]
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 83
+      summary: "\nGets or sets array by row.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public T[] this[int i] { get; set; }
+          VB: Public Property Item(i As Integer) As T()
+        parameters:
+        - id: i
+          type: System.Int32
+          description: the row
+        return:
+          type: '{T}[]'
+      overload: MatrixDotNet.Matrix`1.Item*
+      exceptions:
+      - type: System.IndexOutOfRangeException
+        commentId: T:System.IndexOutOfRangeException
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+      references:
+        System.IndexOutOfRangeException: 
+    - id: MatrixDotNet.Matrix`1.Item(System.Int32,MatrixDotNet.State)
+      commentId: P:MatrixDotNet.Matrix`1.Item(System.Int32,MatrixDotNet.State)
+      language: CSharp
+      name:
+        CSharp: Item[Int32, State]
+        VB: Item(Int32, State)
+      nameWithType:
+        CSharp: Matrix<T>.Item[Int32, State]
+        VB: Matrix(Of T).Item(Int32, State)
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Item[System.Int32, MatrixDotNet.State]
+        VB: MatrixDotNet.Matrix(Of T).Item(System.Int32, MatrixDotNet.State)
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: this[]
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 104
+      summary: "\nGets or sets array by rows or columns.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public T[] this[int i, State dimension] { get; set; }
+          VB: Public Property Item(i As Integer, dimension As State) As T()
+        parameters:
+        - id: i
+          type: System.Int32
+          description: ''
+        - id: dimension
+          type: MatrixDotNet.State
+          description: ''
+        return:
+          type: '{T}[]'
+      overload: MatrixDotNet.Matrix`1.Item*
+      exceptions:
+      - type: System.IndexOutOfRangeException
+        commentId: T:System.IndexOutOfRangeException
+      modifiers:
+        CSharp:
+        - public
+        - get
+        - set
+        VB:
+        - Public
+      references:
+        System.IndexOutOfRangeException: 
+    - id: MatrixDotNet.Matrix`1.#ctor(`0[0:,0:])
+      commentId: M:MatrixDotNet.Matrix`1.#ctor(`0[0:,0:])
+      language: CSharp
+      name:
+        CSharp: Matrix(T[,])
+        VB: Matrix(T(,))
+      nameWithType:
+        CSharp: Matrix<T>.Matrix(T[,])
+        VB: Matrix(Of T).Matrix(T(,))
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Matrix(T[,])
+        VB: MatrixDotNet.Matrix(Of T).Matrix(T(,))
+      type: Constructor
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: .ctor
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 148
+      summary: "\nInitialize matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public Matrix(T[, ] matrix)
+          VB: Public Sub New(matrix As T(,))
+        parameters:
+        - id: matrix
+          type: '{T}[,]'
+          description: the matrix.
+      overload: MatrixDotNet.Matrix`1.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: MatrixDotNet.Matrix`1.#ctor(System.Int32,System.Int32)
+      commentId: M:MatrixDotNet.Matrix`1.#ctor(System.Int32,System.Int32)
+      language: CSharp
+      name:
+        CSharp: Matrix(Int32, Int32)
+        VB: Matrix(Int32, Int32)
+      nameWithType:
+        CSharp: Matrix<T>.Matrix(Int32, Int32)
+        VB: Matrix(Of T).Matrix(Int32, Int32)
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Matrix(System.Int32, System.Int32)
+        VB: MatrixDotNet.Matrix(Of T).Matrix(System.Int32, System.Int32)
+      type: Constructor
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: .ctor
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 166
+      summary: "\nCreates matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public Matrix(int row, int col)
+          VB: Public Sub New(row As Integer, col As Integer)
+        parameters:
+        - id: row
+          type: System.Int32
+          description: row
+        - id: col
+          type: System.Int32
+          description: col
+      overload: MatrixDotNet.Matrix`1.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: MatrixDotNet.Matrix`1.op_Addition(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+      commentId: M:MatrixDotNet.Matrix`1.op_Addition(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+      language: CSharp
+      name:
+        CSharp: Addition(Matrix<T>, Matrix<T>)
+        VB: Addition(Matrix(Of T), Matrix(Of T))
+      nameWithType:
+        CSharp: Matrix<T>.Addition(Matrix<T>, Matrix<T>)
+        VB: Matrix(Of T).Addition(Matrix(Of T), Matrix(Of T))
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Addition(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
+        VB: MatrixDotNet.Matrix(Of T).Addition(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
+      type: Operator
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: op_Addition
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 184
+      summary: "\nAdd operation of two matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static Matrix<T> operator +(Matrix<T> left, Matrix<T> right)
+          VB: Public Shared Operator +(left As Matrix(Of T), right As Matrix(Of T)) As Matrix(Of T)
+        parameters:
+        - id: left
+          type: MatrixDotNet.Matrix`1
+          description: left matrix.
+        - id: right
+          type: MatrixDotNet.Matrix`1
+          description: right matrix.
+        return:
+          type: MatrixDotNet.Matrix`1
+          description: <xref href="MatrixDotNet.Matrix%601" data-throw-if-not-resolved="false"></xref>
+      overload: MatrixDotNet.Matrix`1.op_Addition*
+      exceptions:
+      - type: MatrixDotNet.Exceptions.MatrixDotNetException
+        commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+        description: "\nLength of two matrix not equal.\n"
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        MatrixDotNet.Matrix`1: 
+        MatrixDotNet.Exceptions.MatrixDotNetException: 
+    - id: MatrixDotNet.Matrix`1.op_Subtraction(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+      commentId: M:MatrixDotNet.Matrix`1.op_Subtraction(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+      language: CSharp
+      name:
+        CSharp: Subtraction(Matrix<T>, Matrix<T>)
+        VB: Subtraction(Matrix(Of T), Matrix(Of T))
+      nameWithType:
+        CSharp: Matrix<T>.Subtraction(Matrix<T>, Matrix<T>)
+        VB: Matrix(Of T).Subtraction(Matrix(Of T), Matrix(Of T))
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Subtraction(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
+        VB: MatrixDotNet.Matrix(Of T).Subtraction(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
+      type: Operator
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: op_Subtraction
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 214
+      summary: "\nSubtract operation of two matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static Matrix<T> operator -(Matrix<T> left, Matrix<T> right)
+          VB: Public Shared Operator -(left As Matrix(Of T), right As Matrix(Of T)) As Matrix(Of T)
+        parameters:
+        - id: left
+          type: MatrixDotNet.Matrix`1
+          description: left matrix.
+        - id: right
+          type: MatrixDotNet.Matrix`1
+          description: right matrix.
+        return:
+          type: MatrixDotNet.Matrix`1
+          description: <xref href="MatrixDotNet.Matrix%601" data-throw-if-not-resolved="false"></xref>.
+      overload: MatrixDotNet.Matrix`1.op_Subtraction*
+      exceptions:
+      - type: MatrixDotNet.Exceptions.MatrixDotNetException
+        commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+        description: "\nLength of two matrix not equal.\n"
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        MatrixDotNet.Matrix`1: 
+        MatrixDotNet.Exceptions.MatrixDotNetException: 
+    - id: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+      commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+      language: CSharp
+      name:
+        CSharp: Multiply(Matrix<T>, Matrix<T>)
+        VB: Multiply(Matrix(Of T), Matrix(Of T))
+      nameWithType:
+        CSharp: Matrix<T>.Multiply(Matrix<T>, Matrix<T>)
+        VB: Matrix(Of T).Multiply(Matrix(Of T), Matrix(Of T))
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
+        VB: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
+      type: Operator
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: op_Multiply
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 242
+      summary: "\nMultiply operation of two matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static Matrix<T> operator *(Matrix<T> left, Matrix<T> right)
+          VB: Public Shared Operator *(left As Matrix(Of T), right As Matrix(Of T)) As Matrix(Of T)
+        parameters:
+        - id: left
+          type: MatrixDotNet.Matrix`1
+          description: ''
+        - id: right
+          type: MatrixDotNet.Matrix`1
+          description: ''
+        return:
+          type: MatrixDotNet.Matrix`1
+          description: ''
+      overload: MatrixDotNet.Matrix`1.op_Multiply*
+      exceptions:
+      - type: MatrixDotNet.Exceptions.MatrixDotNetException
+        commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        MatrixDotNet.Exceptions.MatrixDotNetException: 
+    - id: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0)
+      commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0)
+      language: CSharp
+      name:
+        CSharp: Multiply(Matrix<T>, T)
+        VB: Multiply(Matrix(Of T), T)
+      nameWithType:
+        CSharp: Matrix<T>.Multiply(Matrix<T>, T)
+        VB: Matrix(Of T).Multiply(Matrix(Of T), T)
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, T)
+        VB: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), T)
+      type: Operator
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: op_Multiply
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 274
+      summary: "\nMultiply operation matrix on digit right side.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static Matrix<T> operator *(Matrix<T> matrix, T digit)
+          VB: Public Shared Operator *(matrix As Matrix(Of T), digit As T) As Matrix(Of T)
+        parameters:
+        - id: matrix
+          type: MatrixDotNet.Matrix`1
+          description: matrix.
+        - id: digit
+          type: '{T}'
+          description: digit.
+        return:
+          type: MatrixDotNet.Matrix`1
+          description: <xref href="MatrixDotNet.Matrix%601" data-throw-if-not-resolved="false"></xref>
+      overload: MatrixDotNet.Matrix`1.op_Multiply*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        MatrixDotNet.Matrix`1: 
+    - id: MatrixDotNet.Matrix`1.op_Multiply(`0,MatrixDotNet.Matrix{`0})
+      commentId: M:MatrixDotNet.Matrix`1.op_Multiply(`0,MatrixDotNet.Matrix{`0})
+      language: CSharp
+      name:
+        CSharp: Multiply(T, Matrix<T>)
+        VB: Multiply(T, Matrix(Of T))
+      nameWithType:
+        CSharp: Matrix<T>.Multiply(T, Matrix<T>)
+        VB: Matrix(Of T).Multiply(T, Matrix(Of T))
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Multiply(T, MatrixDotNet.Matrix<T>)
+        VB: MatrixDotNet.Matrix(Of T).Multiply(T, MatrixDotNet.Matrix(Of T))
+      type: Operator
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: op_Multiply
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 294
+      summary: "\nMultiply operation matrix on digit left side.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static Matrix<T> operator *(T digit, Matrix<T> matrix)
+          VB: Public Shared Operator *(digit As T, matrix As Matrix(Of T)) As Matrix(Of T)
+        parameters:
+        - id: digit
+          type: '{T}'
+          description: digit
+        - id: matrix
+          type: MatrixDotNet.Matrix`1
+          description: matrix
+        return:
+          type: MatrixDotNet.Matrix`1
+          description: <xref href="MatrixDotNet.Matrix%601" data-throw-if-not-resolved="false"></xref>
+      overload: MatrixDotNet.Matrix`1.op_Multiply*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        MatrixDotNet.Matrix`1: 
+    - id: MatrixDotNet.Matrix`1.op_Division(MatrixDotNet.Matrix{`0},`0)
+      commentId: M:MatrixDotNet.Matrix`1.op_Division(MatrixDotNet.Matrix{`0},`0)
+      language: CSharp
+      name:
+        CSharp: Division(Matrix<T>, T)
+        VB: Division(Matrix(Of T), T)
+      nameWithType:
+        CSharp: Matrix<T>.Division(Matrix<T>, T)
+        VB: Matrix(Of T).Division(Matrix(Of T), T)
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Division(MatrixDotNet.Matrix<T>, T)
+        VB: MatrixDotNet.Matrix(Of T).Division(MatrixDotNet.Matrix(Of T), T)
+      type: Operator
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: op_Division
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 314
+      summary: "\nDivide operation matrix on digit right side.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static Matrix<T> operator /(Matrix<T> matrix, T digit)
+          VB: Public Shared Operator /(matrix As Matrix(Of T), digit As T) As Matrix(Of T)
+        parameters:
+        - id: matrix
+          type: MatrixDotNet.Matrix`1
+          description: ''
+        - id: digit
+          type: '{T}'
+          description: ''
+        return:
+          type: MatrixDotNet.Matrix`1
+          description: ''
+      overload: MatrixDotNet.Matrix`1.op_Division*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: MatrixDotNet.Matrix`1.op_Division(`0,MatrixDotNet.Matrix{`0})
+      commentId: M:MatrixDotNet.Matrix`1.op_Division(`0,MatrixDotNet.Matrix{`0})
+      language: CSharp
+      name:
+        CSharp: Division(T, Matrix<T>)
+        VB: Division(T, Matrix(Of T))
+      nameWithType:
+        CSharp: Matrix<T>.Division(T, Matrix<T>)
+        VB: Matrix(Of T).Division(T, Matrix(Of T))
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Division(T, MatrixDotNet.Matrix<T>)
+        VB: MatrixDotNet.Matrix(Of T).Division(T, MatrixDotNet.Matrix(Of T))
+      type: Operator
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: op_Division
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 334
+      summary: "\nDivide operation matrix on digit left side.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static Matrix<T> operator /(T digit, Matrix<T> matrix)
+          VB: Public Shared Operator /(digit As T, matrix As Matrix(Of T)) As Matrix(Of T)
+        parameters:
+        - id: digit
+          type: '{T}'
+          description: ''
+        - id: matrix
+          type: MatrixDotNet.Matrix`1
+          description: ''
+        return:
+          type: MatrixDotNet.Matrix`1
+          description: ''
+      overload: MatrixDotNet.Matrix`1.op_Division*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - id: MatrixDotNet.Matrix`1.ToString
+      commentId: M:MatrixDotNet.Matrix`1.ToString
+      language: CSharp
+      name:
+        CSharp: ToString()
+        VB: ToString()
+      nameWithType:
+        CSharp: Matrix<T>.ToString()
+        VB: Matrix(Of T).ToString()
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.ToString()
+        VB: MatrixDotNet.Matrix(Of T).ToString()
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: ToString
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 365
+      summary: "\n<inheritdoc cref=\"M:System.Object.ToString\"></inheritdoc>\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public override string ToString()
+          VB: Public Overrides Function ToString As String
+        return:
+          type: System.String
+          description: <xref href="System.String" data-throw-if-not-resolved="false"></xref>
+      overload: MatrixDotNet.Matrix`1.ToString*
+      overridden: System.Object.ToString
+      modifiers:
+        CSharp:
+        - public
+        - override
+        VB:
+        - Public
+        - Overrides
+      references:
+        System.String: 
+    - id: MatrixDotNet.Matrix`1.Clone
+      commentId: M:MatrixDotNet.Matrix`1.Clone
+      language: CSharp
+      name:
+        CSharp: Clone()
+        VB: Clone()
+      nameWithType:
+        CSharp: Matrix<T>.Clone()
+        VB: Matrix(Of T).Clone()
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Clone()
+        VB: MatrixDotNet.Matrix(Of T).Clone()
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: Clone
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 386
+      summary: "\nClones matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public object Clone()
+          VB: Public Function Clone As Object
+        return:
+          type: System.Object
+          description: object.
+      overload: MatrixDotNet.Matrix`1.Clone*
+      implements:
+      - System.ICloneable.Clone
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: MatrixDotNet.Matrix`1.Equals(System.Object)
+      commentId: M:MatrixDotNet.Matrix`1.Equals(System.Object)
+      language: CSharp
+      name:
+        CSharp: Equals(Object)
+        VB: Equals(Object)
+      nameWithType:
+        CSharp: Matrix<T>.Equals(Object)
+        VB: Matrix(Of T).Equals(Object)
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.Equals(System.Object)
+        VB: MatrixDotNet.Matrix(Of T).Equals(System.Object)
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: Equals
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 406
+      summary: "\nChecks on equals two matrix by rows - i ,columns - j\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public override bool Equals(object obj)
+          VB: Public Overrides Function Equals(obj As Object) As Boolean
+        parameters:
+        - id: obj
+          type: System.Object
+          description: ''
+        return:
+          type: System.Boolean
+          description: ''
+      overload: MatrixDotNet.Matrix`1.Equals*
+      overridden: System.Object.Equals(System.Object)
+      exceptions:
+      - type: System.ArgumentException
+        commentId: T:System.ArgumentException
+      modifiers:
+        CSharp:
+        - public
+        - override
+        VB:
+        - Public
+        - Overrides
+      references:
+        System.ArgumentException: 
+    - id: MatrixDotNet.Matrix`1.GetHashCode
+      commentId: M:MatrixDotNet.Matrix`1.GetHashCode
+      language: CSharp
+      name:
+        CSharp: GetHashCode()
+        VB: GetHashCode()
+      nameWithType:
+        CSharp: Matrix<T>.GetHashCode()
+        VB: Matrix(Of T).GetHashCode()
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.GetHashCode()
+        VB: MatrixDotNet.Matrix(Of T).GetHashCode()
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: GetHashCode
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 429
+      summary: "\nGets hash code.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public override int GetHashCode()
+          VB: Public Overrides Function GetHashCode As Integer
+        return:
+          type: System.Int32
+          description: ''
+      overload: MatrixDotNet.Matrix`1.GetHashCode*
+      overridden: System.Object.GetHashCode
+      modifiers:
+        CSharp:
+        - public
+        - override
+        VB:
+        - Public
+        - Overrides
+    - id: MatrixDotNet.Matrix`1.LNorm
+      commentId: M:MatrixDotNet.Matrix`1.LNorm
+      language: CSharp
+      name:
+        CSharp: LNorm()
+        VB: LNorm()
+      nameWithType:
+        CSharp: Matrix<T>.LNorm()
+        VB: Matrix(Of T).LNorm()
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.LNorm()
+        VB: MatrixDotNet.Matrix(Of T).LNorm()
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: LNorm
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 460
+      summary: "\nGets l-norm of matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public double LNorm()
+          VB: Public Function LNorm As Double
+        return:
+          type: System.Double
+          description: ''
+      overload: MatrixDotNet.Matrix`1.LNorm*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: MatrixDotNet.Matrix`1.MNorm
+      commentId: P:MatrixDotNet.Matrix`1.MNorm
+      language: CSharp
+      name:
+        CSharp: MNorm
+        VB: MNorm
+      nameWithType:
+        CSharp: Matrix<T>.MNorm
+        VB: Matrix(Of T).MNorm
+      qualifiedName:
+        CSharp: MatrixDotNet.Matrix<T>.MNorm
+        VB: MatrixDotNet.Matrix(Of T).MNorm
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: MNorm
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 481
+      summary: "\nGets m-norm of matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public T MNorm { get; }
+          VB: Public ReadOnly Property MNorm As T
+        parameters: []
+        return:
+          type: '{T}'
+      overload: MatrixDotNet.Matrix`1.MNorm*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+  - id: MatrixDotNet.State
+    commentId: T:MatrixDotNet.State
+    language: CSharp
+    name:
+      CSharp: State
+      VB: State
+    nameWithType:
+      CSharp: State
+      VB: State
+    qualifiedName:
+      CSharp: MatrixDotNet.State
+      VB: MatrixDotNet.State
+    type: Enum
+    assemblies:
+    - MatrixDotNet
+    namespace: MatrixDotNet
+    source:
+      id: State
+      path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+      startLine: 487
+    summary: "\nState column or row\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public enum State
+        VB: Public Enum State
+    modifiers:
+      CSharp:
+      - public
+      - enum
+      VB:
+      - Public
+      - Enum
+    items:
+    - id: MatrixDotNet.State.Row
+      commentId: F:MatrixDotNet.State.Row
+      language: CSharp
+      name:
+        CSharp: Row
+        VB: Row
+      nameWithType:
+        CSharp: State.Row
+        VB: State.Row
+      qualifiedName:
+        CSharp: MatrixDotNet.State.Row
+        VB: MatrixDotNet.State.Row
+      type: Field
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: Row
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 489
+      syntax:
+        content:
+          CSharp: Row = 0
+          VB: Row = 0
+        return:
+          type: MatrixDotNet.State
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+    - id: MatrixDotNet.State.Column
+      commentId: F:MatrixDotNet.State.Column
+      language: CSharp
+      name:
+        CSharp: Column
+        VB: Column
+      nameWithType:
+        CSharp: State.Column
+        VB: State.Column
+      qualifiedName:
+        CSharp: MatrixDotNet.State.Column
+        VB: MatrixDotNet.State.Column
+      type: Field
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet
+      source:
+        id: Column
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+        startLine: 490
+      syntax:
+        content:
+          CSharp: Column = 1
+          VB: Column = 1
+        return:
+          type: MatrixDotNet.State
+      modifiers:
+        CSharp:
+        - public
+        - const
+        VB:
+        - Public
+        - Const
+- id: MatrixDotNet.Exceptions
+  commentId: N:MatrixDotNet.Exceptions
+  language: CSharp
+  name:
+    CSharp: MatrixDotNet.Exceptions
+    VB: MatrixDotNet.Exceptions
+  nameWithType:
+    CSharp: MatrixDotNet.Exceptions
+    VB: MatrixDotNet.Exceptions
+  qualifiedName:
+    CSharp: MatrixDotNet.Exceptions
+    VB: MatrixDotNet.Exceptions
+  type: Namespace
+  assemblies:
+  - MatrixDotNet
+  modifiers: {}
+  items:
+  - id: MatrixDotNet.Exceptions.MatrixDotNetException
+    commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+    language: CSharp
+    name:
+      CSharp: MatrixDotNetException
+      VB: MatrixDotNetException
+    nameWithType:
+      CSharp: MatrixDotNetException
+      VB: MatrixDotNetException
+    qualifiedName:
+      CSharp: MatrixDotNet.Exceptions.MatrixDotNetException
+      VB: MatrixDotNet.Exceptions.MatrixDotNetException
+    type: Class
+    assemblies:
+    - MatrixDotNet
+    namespace: MatrixDotNet.Exceptions
+    source:
+      id: MatrixDotNetException
+      path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+      startLine: 7
+    summary: "\nRepresent exception for <xref href=\"MatrixDotNet.Matrix%601\" data-throw-if-not-resolved=\"false\"></xref>\n"
+    example: []
+    syntax:
+      content:
+        CSharp: 'public class MatrixDotNetException : Exception, ISerializable'
+        VB: >-
+          Public Class MatrixDotNetException
+
+              Inherits Exception
+
+              Implements ISerializable
+    inheritance:
+    - System.Object
+    - System.Exception
+    implements:
+    - System.Runtime.Serialization.ISerializable
+    inheritedMembers:
+    - System.Exception.GetBaseException
+    - System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+    - System.Exception.GetType
+    - System.Exception.ToString
+    - System.Exception.Data
+    - System.Exception.HelpLink
+    - System.Exception.HResult
+    - System.Exception.InnerException
+    - System.Exception.Source
+    - System.Exception.StackTrace
+    - System.Exception.TargetSite
+    - System.Exception.SerializeObjectState
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.MemberwiseClone
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    modifiers:
+      CSharp:
+      - public
+      - class
+      VB:
+      - Public
+      - Class
+    items:
+    - id: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String)
+      commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String)
+      language: CSharp
+      name:
+        CSharp: MatrixDotNetException(String, String)
+        VB: MatrixDotNetException(String, String)
+      nameWithType:
+        CSharp: MatrixDotNetException.MatrixDotNetException(String, String)
+        VB: MatrixDotNetException.MatrixDotNetException(String, String)
+      qualifiedName:
+        CSharp: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String)
+        VB: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String)
+      type: Constructor
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Exceptions
+      source:
+        id: .ctor
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+        startLine: 14
+      summary: "\nException.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public MatrixDotNetException(string message, string argument)
+          VB: Public Sub New(message As String, argument As String)
+        parameters:
+        - id: message
+          type: System.String
+          description: ''
+        - id: argument
+          type: System.String
+          description: ''
+      overload: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String)
+      commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String)
+      language: CSharp
+      name:
+        CSharp: MatrixDotNetException(String)
+        VB: MatrixDotNetException(String)
+      nameWithType:
+        CSharp: MatrixDotNetException.MatrixDotNetException(String)
+        VB: MatrixDotNetException.MatrixDotNetException(String)
+      qualifiedName:
+        CSharp: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String)
+        VB: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String)
+      type: Constructor
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Exceptions
+      source:
+        id: .ctor
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+        startLine: 24
+      summary: "\nException.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public MatrixDotNetException(string message)
+          VB: Public Sub New(message As String)
+        parameters:
+        - id: message
+          type: System.String
+          description: ''
+      overload: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String,System.String)
+      commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String,System.String)
+      language: CSharp
+      name:
+        CSharp: MatrixDotNetException(String, String, String)
+        VB: MatrixDotNetException(String, String, String)
+      nameWithType:
+        CSharp: MatrixDotNetException.MatrixDotNetException(String, String, String)
+        VB: MatrixDotNetException.MatrixDotNetException(String, String, String)
+      qualifiedName:
+        CSharp: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String, System.String)
+        VB: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String, System.String)
+      type: Constructor
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Exceptions
+      source:
+        id: .ctor
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+        startLine: 35
+      summary: "\nException.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public MatrixDotNetException(string message, string argument1, string argument2)
+          VB: Public Sub New(message As String, argument1 As String, argument2 As String)
+        parameters:
+        - id: message
+          type: System.String
+          description: ''
+        - id: argument1
+          type: System.String
+          description: ''
+        - id: argument2
+          type: System.String
+          description: ''
+      overload: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor*
+      modifiers:
+        CSharp:
+        - public
+        VB:
+        - Public
+    - id: MatrixDotNet.Exceptions.MatrixDotNetException.Message
+      commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Message
+      language: CSharp
+      name:
+        CSharp: Message
+        VB: Message
+      nameWithType:
+        CSharp: MatrixDotNetException.Message
+        VB: MatrixDotNetException.Message
+      qualifiedName:
+        CSharp: MatrixDotNet.Exceptions.MatrixDotNetException.Message
+        VB: MatrixDotNet.Exceptions.MatrixDotNetException.Message
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Exceptions
+      source:
+        id: Message
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+        startLine: 45
+      summary: "\nGets message.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string Message { get; }
+          VB: Public ReadOnly Property Message As String
+        parameters: []
+        return:
+          type: System.String
+      overload: MatrixDotNet.Exceptions.MatrixDotNetException.Message*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+      commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+      language: CSharp
+      name:
+        CSharp: Argument1
+        VB: Argument1
+      nameWithType:
+        CSharp: MatrixDotNetException.Argument1
+        VB: MatrixDotNetException.Argument1
+      qualifiedName:
+        CSharp: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+        VB: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Exceptions
+      source:
+        id: Argument1
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+        startLine: 50
+      summary: "\nGets argument.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string Argument1 { get; }
+          VB: Public ReadOnly Property Argument1 As String
+        parameters: []
+        return:
+          type: System.String
+      overload: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    - id: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+      commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+      language: CSharp
+      name:
+        CSharp: Argument2
+        VB: Argument2
+      nameWithType:
+        CSharp: MatrixDotNetException.Argument2
+        VB: MatrixDotNetException.Argument2
+      qualifiedName:
+        CSharp: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+        VB: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+      type: Property
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Exceptions
+      source:
+        id: Argument2
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+        startLine: 55
+      summary: "\nGets argument.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public string Argument2 { get; }
+          VB: Public ReadOnly Property Argument2 As String
+        parameters: []
+        return:
+          type: System.String
+      overload: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2*
+      modifiers:
+        CSharp:
+        - public
+        - get
+        VB:
+        - Public
+        - ReadOnly
+    references:
+      MatrixDotNet.Matrix`1: 
+- id: MatrixDotNet.Extensions
+  commentId: N:MatrixDotNet.Extensions
+  language: CSharp
+  name:
+    CSharp: MatrixDotNet.Extensions
+    VB: MatrixDotNet.Extensions
+  nameWithType:
+    CSharp: MatrixDotNet.Extensions
+    VB: MatrixDotNet.Extensions
+  qualifiedName:
+    CSharp: MatrixDotNet.Extensions
+    VB: MatrixDotNet.Extensions
+  type: Namespace
+  assemblies:
+  - MatrixDotNet
+  modifiers: {}
+  items:
+  - id: MatrixDotNet.Extensions.MatrixExtension
+    commentId: T:MatrixDotNet.Extensions.MatrixExtension
+    language: CSharp
+    name:
+      CSharp: MatrixExtension
+      VB: MatrixExtension
+    nameWithType:
+      CSharp: MatrixExtension
+      VB: MatrixExtension
+    qualifiedName:
+      CSharp: MatrixDotNet.Extensions.MatrixExtension
+      VB: MatrixDotNet.Extensions.MatrixExtension
+    type: Class
+    assemblies:
+    - MatrixDotNet
+    namespace: MatrixDotNet.Extensions
+    source:
+      id: MatrixExtension
+      path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+      startLine: 8
+    summary: "\nRepresents Matrix extension.\n"
+    example: []
+    syntax:
+      content:
+        CSharp: public static class MatrixExtension
+        VB: Public Module MatrixExtension
+    inheritance:
+    - System.Object
+    inheritedMembers:
+    - System.Object.Equals(System.Object)
+    - System.Object.Equals(System.Object,System.Object)
+    - System.Object.GetHashCode
+    - System.Object.GetType
+    - System.Object.MemberwiseClone
+    - System.Object.ReferenceEquals(System.Object,System.Object)
+    - System.Object.ToString
+    modifiers:
+      CSharp:
+      - public
+      - static
+      - class
+      VB:
+      - Public
+      - Module
+    items:
+    - isExtensionMethod: true
+      id: MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+      commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+      language: CSharp
+      name:
+        CSharp: GetRow<T>(Matrix<T>, Int32)
+        VB: GetRow(Of T)(Matrix(Of T), Int32)
+      nameWithType:
+        CSharp: MatrixExtension.GetRow<T>(Matrix<T>, Int32)
+        VB: MatrixExtension.GetRow(Of T)(Matrix(Of T), Int32)
+      qualifiedName:
+        CSharp: MatrixDotNet.Extensions.MatrixExtension.GetRow<T>(MatrixDotNet.Matrix<T>, System.Int32)
+        VB: MatrixDotNet.Extensions.MatrixExtension.GetRow(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Extensions
+      source:
+        id: GetRow
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+        startLine: 19
+      summary: "\nGets row array of matrix by row index.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public static T[] GetRow<T>(this Matrix<T> matrix, int index)
+
+                where T : struct
+          VB: >-
+            <ExtensionAttribute>
+
+            Public Shared Function GetRow(Of T As Structure)(matrix As Matrix(Of T), index As Integer) As T()
+        parameters:
+        - id: matrix
+          type: MatrixDotNet.Matrix{{T}}
+          description: ''
+        - id: index
+          type: System.Int32
+          description: ''
+        typeParameters:
+        - id: T
+          description: ''
+        return:
+          type: '{T}[]'
+          description: ''
+      overload: MatrixDotNet.Extensions.MatrixExtension.GetRow*
+      exceptions:
+      - type: System.NullReferenceException
+        commentId: T:System.NullReferenceException
+      - type: System.IndexOutOfRangeException
+        commentId: T:System.IndexOutOfRangeException
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        System.NullReferenceException: 
+        System.IndexOutOfRangeException: 
+    - isExtensionMethod: true
+      id: MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+      commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+      language: CSharp
+      name:
+        CSharp: GetColumn<T>(Matrix<T>, Int32)
+        VB: GetColumn(Of T)(Matrix(Of T), Int32)
+      nameWithType:
+        CSharp: MatrixExtension.GetColumn<T>(Matrix<T>, Int32)
+        VB: MatrixExtension.GetColumn(Of T)(Matrix(Of T), Int32)
+      qualifiedName:
+        CSharp: MatrixDotNet.Extensions.MatrixExtension.GetColumn<T>(MatrixDotNet.Matrix<T>, System.Int32)
+        VB: MatrixDotNet.Extensions.MatrixExtension.GetColumn(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Extensions
+      source:
+        id: GetColumn
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+        startLine: 47
+      summary: "\nGets column array of matrix by columns index.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public static T[] GetColumn<T>(this Matrix<T> matrix, int index)
+
+                where T : struct
+          VB: >-
+            <ExtensionAttribute>
+
+            Public Shared Function GetColumn(Of T As Structure)(matrix As Matrix(Of T), index As Integer) As T()
+        parameters:
+        - id: matrix
+          type: MatrixDotNet.Matrix{{T}}
+          description: matrix.
+        - id: index
+          type: System.Int32
+          description: index.
+        typeParameters:
+        - id: T
+          description: unmanaged type.
+        return:
+          type: '{T}[]'
+          description: ''
+      overload: MatrixDotNet.Extensions.MatrixExtension.GetColumn*
+      exceptions:
+      - type: System.ArgumentNullException
+        commentId: T:System.ArgumentNullException
+      - type: System.IndexOutOfRangeException
+        commentId: T:System.IndexOutOfRangeException
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        System.ArgumentNullException: 
+        System.IndexOutOfRangeException: 
+    - isExtensionMethod: true
+      id: MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+      commentId: M:MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+      language: CSharp
+      name:
+        CSharp: Transport<T>(Matrix<T>)
+        VB: Transport(Of T)(Matrix(Of T))
+      nameWithType:
+        CSharp: MatrixExtension.Transport<T>(Matrix<T>)
+        VB: MatrixExtension.Transport(Of T)(Matrix(Of T))
+      qualifiedName:
+        CSharp: MatrixDotNet.Extensions.MatrixExtension.Transport<T>(MatrixDotNet.Matrix<T>)
+        VB: MatrixDotNet.Extensions.MatrixExtension.Transport(Of T)(MatrixDotNet.Matrix(Of T))
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Extensions
+      source:
+        id: Transport
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+        startLine: 72
+      summary: "\nGets transport matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public static Matrix<T> Transport<T>(this Matrix<T> matrix)
+
+                where T : struct
+          VB: >-
+            <ExtensionAttribute>
+
+            Public Shared Function Transport(Of T As Structure)(matrix As Matrix(Of T)) As Matrix(Of T)
+        parameters:
+        - id: matrix
+          type: MatrixDotNet.Matrix{{T}}
+          description: the matrix.
+        typeParameters:
+        - id: T
+          description: unmanaged type.
+        return:
+          type: MatrixDotNet.Matrix{{T}}
+          description: ''
+      overload: MatrixDotNet.Extensions.MatrixExtension.Transport*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - isExtensionMethod: true
+      id: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+      commentId: M:MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+      language: CSharp
+      name:
+        CSharp: ToPrimitive<T>(Matrix<T>)
+        VB: ToPrimitive(Of T)(Matrix(Of T))
+      nameWithType:
+        CSharp: MatrixExtension.ToPrimitive<T>(Matrix<T>)
+        VB: MatrixExtension.ToPrimitive(Of T)(Matrix(Of T))
+      qualifiedName:
+        CSharp: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive<T>(MatrixDotNet.Matrix<T>)
+        VB: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive(Of T)(MatrixDotNet.Matrix(Of T))
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Extensions
+      source:
+        id: ToPrimitive
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+        startLine: 94
+      summary: "\nConvert matrix to primitive matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public static T[, ] ToPrimitive<T>(this Matrix<T> matrix)
+
+                where T : struct
+          VB: >-
+            <ExtensionAttribute>
+
+            Public Shared Function ToPrimitive(Of T As Structure)(matrix As Matrix(Of T)) As T(,)
+        parameters:
+        - id: matrix
+          type: MatrixDotNet.Matrix{{T}}
+          description: ''
+        typeParameters:
+        - id: T
+          description: ''
+        return:
+          type: '{T}[,]'
+          description: ''
+      overload: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+    - isExtensionMethod: true
+      id: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet``1(``0[0:,0:])
+      commentId: M:MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet``1(``0[0:,0:])
+      language: CSharp
+      name:
+        CSharp: ToMatrixDotNet<T>(T[,])
+        VB: ToMatrixDotNet(Of T)(T(,))
+      nameWithType:
+        CSharp: MatrixExtension.ToMatrixDotNet<T>(T[,])
+        VB: MatrixExtension.ToMatrixDotNet(Of T)(T(,))
+      qualifiedName:
+        CSharp: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet<T>(T[,])
+        VB: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet(Of T)(T(,))
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Extensions
+      source:
+        id: ToMatrixDotNet
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+        startLine: 115
+      summary: "\nConvert primitive matrix to <xref href=\"MatrixDotNet.Matrix%601\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public static Matrix<T> ToMatrixDotNet<T>(this T[, ] matrix)
+
+                where T : struct
+          VB: >-
+            <ExtensionAttribute>
+
+            Public Shared Function ToMatrixDotNet(Of T As Structure)(matrix As T(,)) As Matrix(Of T)
+        parameters:
+        - id: matrix
+          type: '{T}[,]'
+          description: primitive matrix.
+        typeParameters:
+        - id: T
+          description: unmanaged type
+        return:
+          type: MatrixDotNet.Matrix{{T}}
+          description: ''
+      overload: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        MatrixDotNet.Matrix`1: 
+    - isExtensionMethod: true
+      id: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+      commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+      language: CSharp
+      name:
+        CSharp: GetDeterminate<T>(Matrix<T>)
+        VB: GetDeterminate(Of T)(Matrix(Of T))
+      nameWithType:
+        CSharp: MatrixExtension.GetDeterminate<T>(Matrix<T>)
+        VB: MatrixExtension.GetDeterminate(Of T)(Matrix(Of T))
+      qualifiedName:
+        CSharp: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate<T>(MatrixDotNet.Matrix<T>)
+        VB: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate(Of T)(MatrixDotNet.Matrix(Of T))
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Extensions
+      source:
+        id: GetDeterminate
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+        startLine: 162
+      summary: "\nGets determinant of matrix.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public static double GetDeterminate<T>(this Matrix<T> matrix)
+
+                where T : struct
+          VB: >-
+            <ExtensionAttribute>
+
+            Public Shared Function GetDeterminate(Of T As Structure)(matrix As Matrix(Of T)) As Double
+        parameters:
+        - id: matrix
+          type: MatrixDotNet.Matrix{{T}}
+          description: matrix.
+        typeParameters:
+        - id: T
+          description: unmanaged type
+        return:
+          type: System.Double
+          description: double.
+      overload: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate*
+      exceptions:
+      - type: MatrixDotNet.Exceptions.MatrixDotNetException
+        commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        MatrixDotNet.Exceptions.MatrixDotNetException: 
+    - isExtensionMethod: true
+      id: MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+      commentId: M:MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+      language: CSharp
+      name:
+        CSharp: KramerSolve<T>(Matrix<T>, T[])
+        VB: KramerSolve(Of T)(Matrix(Of T), T())
+      nameWithType:
+        CSharp: MatrixExtension.KramerSolve<T>(Matrix<T>, T[])
+        VB: MatrixExtension.KramerSolve(Of T)(Matrix(Of T), T())
+      qualifiedName:
+        CSharp: MatrixDotNet.Extensions.MatrixExtension.KramerSolve<T>(MatrixDotNet.Matrix<T>, T[])
+        VB: MatrixDotNet.Extensions.MatrixExtension.KramerSolve(Of T)(MatrixDotNet.Matrix(Of T), T())
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Extensions
+      source:
+        id: KramerSolve
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+        startLine: 197
+      summary: "\nGets determinant matrix by Kramer algorithm.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: >-
+            public static double[] KramerSolve<T>(this Matrix<T> matrix, T[] arr)
+
+                where T : struct
+          VB: >-
+            <ExtensionAttribute>
+
+            Public Shared Function KramerSolve(Of T As Structure)(matrix As Matrix(Of T), arr As T()) As Double()
+        parameters:
+        - id: matrix
+          type: MatrixDotNet.Matrix{{T}}
+          description: matrix.
+        - id: arr
+          type: '{T}[]'
+          description: array.
+        typeParameters:
+        - id: T
+          description: unmanaged type.
+        return:
+          type: System.Double[]
+          description: ''
+      overload: MatrixDotNet.Extensions.MatrixExtension.KramerSolve*
+      exceptions:
+      - type: MatrixDotNet.Exceptions.MatrixDotNetException
+        commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+      references:
+        MatrixDotNet.Exceptions.MatrixDotNetException: 
+    - isExtensionMethod: true
+      id: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix{System.Double},System.Double[])
+      commentId: M:MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix{System.Double},System.Double[])
+      language: CSharp
+      name:
+        CSharp: Gause(Matrix<Double>, Double[])
+        VB: Gause(Matrix(Of Double), Double())
+      nameWithType:
+        CSharp: MatrixExtension.Gause(Matrix<Double>, Double[])
+        VB: MatrixExtension.Gause(Matrix(Of Double), Double())
+      qualifiedName:
+        CSharp: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix<System.Double>, System.Double[])
+        VB: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix(Of System.Double), System.Double())
+      type: Method
+      assemblies:
+      - MatrixDotNet
+      namespace: MatrixDotNet.Extensions
+      source:
+        id: Gause
+        path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+        startLine: 226
+      summary: "\nGets determinant matrix by Gause algorithm.\n"
+      example: []
+      syntax:
+        content:
+          CSharp: public static double[] Gause(this Matrix<double> A1, double[] b1)
+          VB: >-
+            <ExtensionAttribute>
+
+            Public Shared Function Gause(A1 As Matrix(Of Double), b1 As Double()) As Double()
+        parameters:
+        - id: A1
+          type: MatrixDotNet.Matrix{System.Double}
+          description: ''
+        - id: b1
+          type: System.Double[]
+          description: ''
+        return:
+          type: System.Double[]
+          description: ''
+      overload: MatrixDotNet.Extensions.MatrixExtension.Gause*
+      modifiers:
+        CSharp:
+        - public
+        - static
+        VB:
+        - Public
+        - Shared
+references:
+  System:
+    name:
+      CSharp:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+        isExternal: true
+      VB:
+      - name: System
+        nameWithType: System
+        qualifiedName: System
+    isDefinition: true
+    commentId: N:System
+  System.Object:
+    name:
+      CSharp:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      VB:
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Object
+  System.Object.Equals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object,System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object,System.Object)
+  System.Object.GetType:
+    name:
+      CSharp:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetType
+        name: GetType
+        nameWithType: Object.GetType
+        qualifiedName: System.Object.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetType
+  System.Object.MemberwiseClone:
+    name:
+      CSharp:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.MemberwiseClone
+        name: MemberwiseClone
+        nameWithType: Object.MemberwiseClone
+        qualifiedName: System.Object.MemberwiseClone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.MemberwiseClone
+  System.Object.ReferenceEquals(System.Object,System.Object):
+    name:
+      CSharp:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ReferenceEquals(System.Object,System.Object)
+        name: ReferenceEquals
+        nameWithType: Object.ReferenceEquals
+        qualifiedName: System.Object.ReferenceEquals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  System.ICloneable:
+    name:
+      CSharp:
+      - id: System.ICloneable
+        name: ICloneable
+        nameWithType: ICloneable
+        qualifiedName: System.ICloneable
+        isExternal: true
+      VB:
+      - id: System.ICloneable
+        name: ICloneable
+        nameWithType: ICloneable
+        qualifiedName: System.ICloneable
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.ICloneable
+  MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+        name: GetRow<T>
+        nameWithType: MatrixExtension.GetRow<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetRow<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+        name: GetRow(Of T)
+        nameWithType: MatrixExtension.GetRow(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetRow(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  MatrixDotNet.Extensions:
+    name:
+      CSharp:
+      - name: MatrixDotNet.Extensions
+        nameWithType: MatrixDotNet.Extensions
+        qualifiedName: MatrixDotNet.Extensions
+      VB:
+      - name: MatrixDotNet.Extensions
+        nameWithType: MatrixDotNet.Extensions
+        qualifiedName: MatrixDotNet.Extensions
+    isDefinition: true
+    commentId: N:MatrixDotNet.Extensions
+  MatrixDotNet.Extensions.MatrixExtension:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension
+        name: MatrixExtension
+        nameWithType: MatrixExtension
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension
+        name: MatrixExtension
+        nameWithType: MatrixExtension
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension
+    isDefinition: true
+    parent: MatrixDotNet.Extensions
+    commentId: T:MatrixDotNet.Extensions.MatrixExtension
+  MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetRow``1(System.Int32):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetRow``1(System.Int32)
+        name: GetRow<T>
+        nameWithType: MatrixExtension.GetRow<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetRow<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetRow``1(System.Int32)
+        name: GetRow(Of T)
+        nameWithType: MatrixExtension.GetRow(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetRow(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+    parent: MatrixDotNet.Extensions.MatrixExtension
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+        name: GetColumn<T>
+        nameWithType: MatrixExtension.GetColumn<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetColumn<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+        name: GetColumn(Of T)
+        nameWithType: MatrixExtension.GetColumn(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetColumn(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(System.Int32):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(System.Int32)
+        name: GetColumn<T>
+        nameWithType: MatrixExtension.GetColumn<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetColumn<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(System.Int32)
+        name: GetColumn(Of T)
+        nameWithType: MatrixExtension.GetColumn(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetColumn(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+    parent: MatrixDotNet.Extensions.MatrixExtension
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0}):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+        name: Transport<T>
+        nameWithType: MatrixExtension.Transport<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.Transport<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+        name: Transport(Of T)
+        nameWithType: MatrixExtension.Transport(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.Transport(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+  MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.Transport``1:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.Transport``1
+        name: Transport<T>
+        nameWithType: MatrixExtension.Transport<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.Transport<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.Transport``1
+        name: Transport(Of T)
+        nameWithType: MatrixExtension.Transport(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.Transport(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+    parent: MatrixDotNet.Extensions.MatrixExtension
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+  MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0}):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+        name: ToPrimitive<T>
+        nameWithType: MatrixExtension.ToPrimitive<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+        name: ToPrimitive(Of T)
+        nameWithType: MatrixExtension.ToPrimitive(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+  MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1
+        name: ToPrimitive<T>
+        nameWithType: MatrixExtension.ToPrimitive<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1
+        name: ToPrimitive(Of T)
+        nameWithType: MatrixExtension.ToPrimitive(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+    parent: MatrixDotNet.Extensions.MatrixExtension
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+  MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0}):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+        name: GetDeterminate<T>
+        nameWithType: MatrixExtension.GetDeterminate<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+        name: GetDeterminate(Of T)
+        nameWithType: MatrixExtension.GetDeterminate(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+  MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1
+        name: GetDeterminate<T>
+        nameWithType: MatrixExtension.GetDeterminate<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1
+        name: GetDeterminate(Of T)
+        nameWithType: MatrixExtension.GetDeterminate(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+    parent: MatrixDotNet.Extensions.MatrixExtension
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+  MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[]):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+        name: KramerSolve<T>
+        nameWithType: MatrixExtension.KramerSolve<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '[]'
+        nameWithType: '[]'
+        qualifiedName: '[]'
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+        name: KramerSolve(Of T)
+        nameWithType: MatrixExtension.KramerSolve(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ()
+        nameWithType: ()
+        qualifiedName: ()
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+  MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1({T}[]):
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(``0[])
+        name: KramerSolve<T>
+        nameWithType: MatrixExtension.KramerSolve<T>
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve<T>
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '[]'
+        nameWithType: '[]'
+        qualifiedName: '[]'
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(``0[])
+        name: KramerSolve(Of T)
+        nameWithType: MatrixExtension.KramerSolve(Of T)
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve(Of T)
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ()
+        nameWithType: ()
+        qualifiedName: ()
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+    parent: MatrixDotNet.Extensions.MatrixExtension
+    commentId: M:MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+  System.Int32:
+    name:
+      CSharp:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+      VB:
+      - id: System.Int32
+        name: Int32
+        nameWithType: Int32
+        qualifiedName: System.Int32
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Int32
+  MatrixDotNet.Matrix`1.Length*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.Length*
+        name: Length
+        nameWithType: Matrix<T>.Length
+        qualifiedName: MatrixDotNet.Matrix<T>.Length
+      VB:
+      - id: MatrixDotNet.Matrix`1.Length*
+        name: Length
+        nameWithType: Matrix(Of T).Length
+        qualifiedName: MatrixDotNet.Matrix(Of T).Length
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.Length
+  MatrixDotNet.Matrix`1.Rows*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.Rows*
+        name: Rows
+        nameWithType: Matrix<T>.Rows
+        qualifiedName: MatrixDotNet.Matrix<T>.Rows
+      VB:
+      - id: MatrixDotNet.Matrix`1.Rows*
+        name: Rows
+        nameWithType: Matrix(Of T).Rows
+        qualifiedName: MatrixDotNet.Matrix(Of T).Rows
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.Rows
+  MatrixDotNet.Matrix`1.Columns*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.Columns*
+        name: Columns
+        nameWithType: Matrix<T>.Columns
+        qualifiedName: MatrixDotNet.Matrix<T>.Columns
+      VB:
+      - id: MatrixDotNet.Matrix`1.Columns*
+        name: Columns
+        nameWithType: Matrix(Of T).Columns
+        qualifiedName: MatrixDotNet.Matrix(Of T).Columns
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.Columns
+  System.Double:
+    name:
+      CSharp:
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+      VB:
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Double
+  MatrixDotNet.Matrix`1.Rank*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.Rank*
+        name: Rank
+        nameWithType: Matrix<T>.Rank
+        qualifiedName: MatrixDotNet.Matrix<T>.Rank
+      VB:
+      - id: MatrixDotNet.Matrix`1.Rank*
+        name: Rank
+        nameWithType: Matrix(Of T).Rank
+        qualifiedName: MatrixDotNet.Matrix(Of T).Rank
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.Rank
+  System.Boolean:
+    name:
+      CSharp:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+      VB:
+      - id: System.Boolean
+        name: Boolean
+        nameWithType: Boolean
+        qualifiedName: System.Boolean
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Boolean
+  MatrixDotNet.Matrix`1.IsSquare*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.IsSquare*
+        name: IsSquare
+        nameWithType: Matrix<T>.IsSquare
+        qualifiedName: MatrixDotNet.Matrix<T>.IsSquare
+      VB:
+      - id: MatrixDotNet.Matrix`1.IsSquare*
+        name: IsSquare
+        nameWithType: Matrix(Of T).IsSquare
+        qualifiedName: MatrixDotNet.Matrix(Of T).IsSquare
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.IsSquare
+  System.IndexOutOfRangeException:
+    commentId: T:System.IndexOutOfRangeException
+  T:
+    name:
+      CSharp:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      VB:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+    isDefinition: true
+  '{T}':
+    name:
+      CSharp:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      VB:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+    isDefinition: false
+    definition: T
+    commentId: '!:T'
+  MatrixDotNet.Matrix`1.Item*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.Item*
+        name: Item
+        nameWithType: Matrix<T>.Item
+        qualifiedName: MatrixDotNet.Matrix<T>.Item
+      VB:
+      - id: MatrixDotNet.Matrix`1.Item*
+        name: Item
+        nameWithType: Matrix(Of T).Item
+        qualifiedName: MatrixDotNet.Matrix(Of T).Item
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.Item
+  '{T}[]':
+    name:
+      CSharp:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '[]'
+        nameWithType: '[]'
+        qualifiedName: '[]'
+      VB:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: ()
+        nameWithType: ()
+        qualifiedName: ()
+    isDefinition: false
+  MatrixDotNet:
+    name:
+      CSharp:
+      - name: MatrixDotNet
+        nameWithType: MatrixDotNet
+        qualifiedName: MatrixDotNet
+      VB:
+      - name: MatrixDotNet
+        nameWithType: MatrixDotNet
+        qualifiedName: MatrixDotNet
+    isDefinition: true
+    commentId: N:MatrixDotNet
+  MatrixDotNet.State:
+    name:
+      CSharp:
+      - id: MatrixDotNet.State
+        name: State
+        nameWithType: State
+        qualifiedName: MatrixDotNet.State
+      VB:
+      - id: MatrixDotNet.State
+        name: State
+        nameWithType: State
+        qualifiedName: MatrixDotNet.State
+    isDefinition: true
+    parent: MatrixDotNet
+    commentId: T:MatrixDotNet.State
+  '{T}[,]':
+    name:
+      CSharp:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '[,]'
+        nameWithType: '[,]'
+        qualifiedName: '[,]'
+      VB:
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: (,)
+        nameWithType: (,)
+        qualifiedName: (,)
+    isDefinition: false
+  MatrixDotNet.Matrix`1.#ctor*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.#ctor*
+        name: Matrix
+        nameWithType: Matrix<T>.Matrix
+        qualifiedName: MatrixDotNet.Matrix<T>.Matrix
+      VB:
+      - id: MatrixDotNet.Matrix`1.#ctor*
+        name: Matrix
+        nameWithType: Matrix(Of T).Matrix
+        qualifiedName: MatrixDotNet.Matrix(Of T).Matrix
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.#ctor
+  MatrixDotNet.Matrix`1:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: MatrixDotNet
+    commentId: T:MatrixDotNet.Matrix`1
+  MatrixDotNet.Exceptions.MatrixDotNetException:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException
+        name: MatrixDotNetException
+        nameWithType: MatrixDotNetException
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException
+      VB:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException
+        name: MatrixDotNetException
+        nameWithType: MatrixDotNetException
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException
+    isDefinition: true
+    commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+  MatrixDotNet.Matrix`1.op_Addition*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.op_Addition*
+        name: Addition
+        nameWithType: Matrix<T>.Addition
+        qualifiedName: MatrixDotNet.Matrix<T>.Addition
+      VB:
+      - id: MatrixDotNet.Matrix`1.op_Addition*
+        name: Addition
+        nameWithType: Matrix(Of T).Addition
+        qualifiedName: MatrixDotNet.Matrix(Of T).Addition
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.op_Addition
+  MatrixDotNet.Matrix`1.op_Subtraction*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.op_Subtraction*
+        name: Subtraction
+        nameWithType: Matrix<T>.Subtraction
+        qualifiedName: MatrixDotNet.Matrix<T>.Subtraction
+      VB:
+      - id: MatrixDotNet.Matrix`1.op_Subtraction*
+        name: Subtraction
+        nameWithType: Matrix(Of T).Subtraction
+        qualifiedName: MatrixDotNet.Matrix(Of T).Subtraction
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.op_Subtraction
+  MatrixDotNet.Matrix`1.op_Multiply*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.op_Multiply*
+        name: Multiply
+        nameWithType: Matrix<T>.Multiply
+        qualifiedName: MatrixDotNet.Matrix<T>.Multiply
+      VB:
+      - id: MatrixDotNet.Matrix`1.op_Multiply*
+        name: Multiply
+        nameWithType: Matrix(Of T).Multiply
+        qualifiedName: MatrixDotNet.Matrix(Of T).Multiply
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.op_Multiply
+  MatrixDotNet.Matrix`1.op_Division*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.op_Division*
+        name: Division
+        nameWithType: Matrix<T>.Division
+        qualifiedName: MatrixDotNet.Matrix<T>.Division
+      VB:
+      - id: MatrixDotNet.Matrix`1.op_Division*
+        name: Division
+        nameWithType: Matrix(Of T).Division
+        qualifiedName: MatrixDotNet.Matrix(Of T).Division
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.op_Division
+  System.String:
+    name:
+      CSharp:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+      VB:
+      - id: System.String
+        name: String
+        nameWithType: String
+        qualifiedName: System.String
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.String
+  System.Object.ToString:
+    name:
+      CSharp:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.ToString
+        name: ToString
+        nameWithType: Object.ToString
+        qualifiedName: System.Object.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.ToString
+  MatrixDotNet.Matrix`1.ToString*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.ToString*
+        name: ToString
+        nameWithType: Matrix<T>.ToString
+        qualifiedName: MatrixDotNet.Matrix<T>.ToString
+      VB:
+      - id: MatrixDotNet.Matrix`1.ToString*
+        name: ToString
+        nameWithType: Matrix(Of T).ToString
+        qualifiedName: MatrixDotNet.Matrix(Of T).ToString
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.ToString
+  MatrixDotNet.Matrix`1.Clone*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.Clone*
+        name: Clone
+        nameWithType: Matrix<T>.Clone
+        qualifiedName: MatrixDotNet.Matrix<T>.Clone
+      VB:
+      - id: MatrixDotNet.Matrix`1.Clone*
+        name: Clone
+        nameWithType: Matrix(Of T).Clone
+        qualifiedName: MatrixDotNet.Matrix(Of T).Clone
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.Clone
+  System.ICloneable.Clone:
+    name:
+      CSharp:
+      - id: System.ICloneable.Clone
+        name: Clone
+        nameWithType: ICloneable.Clone
+        qualifiedName: System.ICloneable.Clone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.ICloneable.Clone
+        name: Clone
+        nameWithType: ICloneable.Clone
+        qualifiedName: System.ICloneable.Clone
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.ICloneable
+    commentId: M:System.ICloneable.Clone
+  System.ArgumentException:
+    commentId: T:System.ArgumentException
+  System.Object.Equals(System.Object):
+    name:
+      CSharp:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.Equals(System.Object)
+        name: Equals
+        nameWithType: Object.Equals
+        qualifiedName: System.Object.Equals
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Object
+        name: Object
+        nameWithType: Object
+        qualifiedName: System.Object
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.Equals(System.Object)
+  MatrixDotNet.Matrix`1.Equals*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.Equals*
+        name: Equals
+        nameWithType: Matrix<T>.Equals
+        qualifiedName: MatrixDotNet.Matrix<T>.Equals
+      VB:
+      - id: MatrixDotNet.Matrix`1.Equals*
+        name: Equals
+        nameWithType: Matrix(Of T).Equals
+        qualifiedName: MatrixDotNet.Matrix(Of T).Equals
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.Equals
+  System.Object.GetHashCode:
+    name:
+      CSharp:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Object.GetHashCode
+        name: GetHashCode
+        nameWithType: Object.GetHashCode
+        qualifiedName: System.Object.GetHashCode
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Object
+    commentId: M:System.Object.GetHashCode
+  MatrixDotNet.Matrix`1.GetHashCode*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.GetHashCode*
+        name: GetHashCode
+        nameWithType: Matrix<T>.GetHashCode
+        qualifiedName: MatrixDotNet.Matrix<T>.GetHashCode
+      VB:
+      - id: MatrixDotNet.Matrix`1.GetHashCode*
+        name: GetHashCode
+        nameWithType: Matrix(Of T).GetHashCode
+        qualifiedName: MatrixDotNet.Matrix(Of T).GetHashCode
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.GetHashCode
+  MatrixDotNet.Matrix`1.LNorm*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.LNorm*
+        name: LNorm
+        nameWithType: Matrix<T>.LNorm
+        qualifiedName: MatrixDotNet.Matrix<T>.LNorm
+      VB:
+      - id: MatrixDotNet.Matrix`1.LNorm*
+        name: LNorm
+        nameWithType: Matrix(Of T).LNorm
+        qualifiedName: MatrixDotNet.Matrix(Of T).LNorm
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.LNorm
+  MatrixDotNet.Matrix`1.MNorm*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1.MNorm*
+        name: MNorm
+        nameWithType: Matrix<T>.MNorm
+        qualifiedName: MatrixDotNet.Matrix<T>.MNorm
+      VB:
+      - id: MatrixDotNet.Matrix`1.MNorm*
+        name: MNorm
+        nameWithType: Matrix(Of T).MNorm
+        qualifiedName: MatrixDotNet.Matrix(Of T).MNorm
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Matrix`1.MNorm
+  System.Exception:
+    name:
+      CSharp:
+      - id: System.Exception
+        name: Exception
+        nameWithType: Exception
+        qualifiedName: System.Exception
+        isExternal: true
+      VB:
+      - id: System.Exception
+        name: Exception
+        nameWithType: Exception
+        qualifiedName: System.Exception
+        isExternal: true
+    isDefinition: true
+    parent: System
+    commentId: T:System.Exception
+  System.Exception.GetBaseException:
+    name:
+      CSharp:
+      - id: System.Exception.GetBaseException
+        name: GetBaseException
+        nameWithType: Exception.GetBaseException
+        qualifiedName: System.Exception.GetBaseException
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Exception.GetBaseException
+        name: GetBaseException
+        nameWithType: Exception.GetBaseException
+        qualifiedName: System.Exception.GetBaseException
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Exception
+    commentId: M:System.Exception.GetBaseException
+  System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext):
+    name:
+      CSharp:
+      - id: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+        name: GetObjectData
+        nameWithType: Exception.GetObjectData
+        qualifiedName: System.Exception.GetObjectData
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Runtime.Serialization.SerializationInfo
+        name: SerializationInfo
+        nameWithType: SerializationInfo
+        qualifiedName: System.Runtime.Serialization.SerializationInfo
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Runtime.Serialization.StreamingContext
+        name: StreamingContext
+        nameWithType: StreamingContext
+        qualifiedName: System.Runtime.Serialization.StreamingContext
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+        name: GetObjectData
+        nameWithType: Exception.GetObjectData
+        qualifiedName: System.Exception.GetObjectData
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - id: System.Runtime.Serialization.SerializationInfo
+        name: SerializationInfo
+        nameWithType: SerializationInfo
+        qualifiedName: System.Runtime.Serialization.SerializationInfo
+        isExternal: true
+      - name: ', '
+        nameWithType: ', '
+        qualifiedName: ', '
+      - id: System.Runtime.Serialization.StreamingContext
+        name: StreamingContext
+        nameWithType: StreamingContext
+        qualifiedName: System.Runtime.Serialization.StreamingContext
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Exception
+    commentId: M:System.Exception.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  System.Exception.GetType:
+    name:
+      CSharp:
+      - id: System.Exception.GetType
+        name: GetType
+        nameWithType: Exception.GetType
+        qualifiedName: System.Exception.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Exception.GetType
+        name: GetType
+        nameWithType: Exception.GetType
+        qualifiedName: System.Exception.GetType
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Exception
+    commentId: M:System.Exception.GetType
+  System.Exception.ToString:
+    name:
+      CSharp:
+      - id: System.Exception.ToString
+        name: ToString
+        nameWithType: Exception.ToString
+        qualifiedName: System.Exception.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+      VB:
+      - id: System.Exception.ToString
+        name: ToString
+        nameWithType: Exception.ToString
+        qualifiedName: System.Exception.ToString
+        isExternal: true
+      - name: (
+        nameWithType: (
+        qualifiedName: (
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: true
+    parent: System.Exception
+    commentId: M:System.Exception.ToString
+  System.Exception.Data:
+    name:
+      CSharp:
+      - id: System.Exception.Data
+        name: Data
+        nameWithType: Exception.Data
+        qualifiedName: System.Exception.Data
+        isExternal: true
+      VB:
+      - id: System.Exception.Data
+        name: Data
+        nameWithType: Exception.Data
+        qualifiedName: System.Exception.Data
+        isExternal: true
+    isDefinition: true
+    parent: System.Exception
+    commentId: P:System.Exception.Data
+  System.Exception.HelpLink:
+    name:
+      CSharp:
+      - id: System.Exception.HelpLink
+        name: HelpLink
+        nameWithType: Exception.HelpLink
+        qualifiedName: System.Exception.HelpLink
+        isExternal: true
+      VB:
+      - id: System.Exception.HelpLink
+        name: HelpLink
+        nameWithType: Exception.HelpLink
+        qualifiedName: System.Exception.HelpLink
+        isExternal: true
+    isDefinition: true
+    parent: System.Exception
+    commentId: P:System.Exception.HelpLink
+  System.Exception.HResult:
+    name:
+      CSharp:
+      - id: System.Exception.HResult
+        name: HResult
+        nameWithType: Exception.HResult
+        qualifiedName: System.Exception.HResult
+        isExternal: true
+      VB:
+      - id: System.Exception.HResult
+        name: HResult
+        nameWithType: Exception.HResult
+        qualifiedName: System.Exception.HResult
+        isExternal: true
+    isDefinition: true
+    parent: System.Exception
+    commentId: P:System.Exception.HResult
+  System.Exception.InnerException:
+    name:
+      CSharp:
+      - id: System.Exception.InnerException
+        name: InnerException
+        nameWithType: Exception.InnerException
+        qualifiedName: System.Exception.InnerException
+        isExternal: true
+      VB:
+      - id: System.Exception.InnerException
+        name: InnerException
+        nameWithType: Exception.InnerException
+        qualifiedName: System.Exception.InnerException
+        isExternal: true
+    isDefinition: true
+    parent: System.Exception
+    commentId: P:System.Exception.InnerException
+  System.Exception.Source:
+    name:
+      CSharp:
+      - id: System.Exception.Source
+        name: Source
+        nameWithType: Exception.Source
+        qualifiedName: System.Exception.Source
+        isExternal: true
+      VB:
+      - id: System.Exception.Source
+        name: Source
+        nameWithType: Exception.Source
+        qualifiedName: System.Exception.Source
+        isExternal: true
+    isDefinition: true
+    parent: System.Exception
+    commentId: P:System.Exception.Source
+  System.Exception.StackTrace:
+    name:
+      CSharp:
+      - id: System.Exception.StackTrace
+        name: StackTrace
+        nameWithType: Exception.StackTrace
+        qualifiedName: System.Exception.StackTrace
+        isExternal: true
+      VB:
+      - id: System.Exception.StackTrace
+        name: StackTrace
+        nameWithType: Exception.StackTrace
+        qualifiedName: System.Exception.StackTrace
+        isExternal: true
+    isDefinition: true
+    parent: System.Exception
+    commentId: P:System.Exception.StackTrace
+  System.Exception.TargetSite:
+    name:
+      CSharp:
+      - id: System.Exception.TargetSite
+        name: TargetSite
+        nameWithType: Exception.TargetSite
+        qualifiedName: System.Exception.TargetSite
+        isExternal: true
+      VB:
+      - id: System.Exception.TargetSite
+        name: TargetSite
+        nameWithType: Exception.TargetSite
+        qualifiedName: System.Exception.TargetSite
+        isExternal: true
+    isDefinition: true
+    parent: System.Exception
+    commentId: P:System.Exception.TargetSite
+  System.Exception.SerializeObjectState:
+    name:
+      CSharp:
+      - id: System.Exception.SerializeObjectState
+        name: SerializeObjectState
+        nameWithType: Exception.SerializeObjectState
+        qualifiedName: System.Exception.SerializeObjectState
+        isExternal: true
+      VB:
+      - id: System.Exception.SerializeObjectState
+        name: SerializeObjectState
+        nameWithType: Exception.SerializeObjectState
+        qualifiedName: System.Exception.SerializeObjectState
+        isExternal: true
+    isDefinition: true
+    parent: System.Exception
+    commentId: E:System.Exception.SerializeObjectState
+  System.Runtime.Serialization:
+    name:
+      CSharp:
+      - name: System.Runtime.Serialization
+        nameWithType: System.Runtime.Serialization
+        qualifiedName: System.Runtime.Serialization
+        isExternal: true
+      VB:
+      - name: System.Runtime.Serialization
+        nameWithType: System.Runtime.Serialization
+        qualifiedName: System.Runtime.Serialization
+    isDefinition: true
+    commentId: N:System.Runtime.Serialization
+  System.Runtime.Serialization.ISerializable:
+    name:
+      CSharp:
+      - id: System.Runtime.Serialization.ISerializable
+        name: ISerializable
+        nameWithType: ISerializable
+        qualifiedName: System.Runtime.Serialization.ISerializable
+        isExternal: true
+      VB:
+      - id: System.Runtime.Serialization.ISerializable
+        name: ISerializable
+        nameWithType: ISerializable
+        qualifiedName: System.Runtime.Serialization.ISerializable
+        isExternal: true
+    isDefinition: true
+    parent: System.Runtime.Serialization
+    commentId: T:System.Runtime.Serialization.ISerializable
+  MatrixDotNet.Exceptions.MatrixDotNetException.#ctor*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor*
+        name: MatrixDotNetException
+        nameWithType: MatrixDotNetException.MatrixDotNetException
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException
+      VB:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor*
+        name: MatrixDotNetException
+        nameWithType: MatrixDotNetException.MatrixDotNetException
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor
+  MatrixDotNet.Exceptions.MatrixDotNetException.Message*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException.Message*
+        name: Message
+        nameWithType: MatrixDotNetException.Message
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException.Message
+      VB:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException.Message*
+        name: Message
+        nameWithType: MatrixDotNetException.Message
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException.Message
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Message
+  MatrixDotNet.Exceptions.MatrixDotNetException.Argument1*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1*
+        name: Argument1
+        nameWithType: MatrixDotNetException.Argument1
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+      VB:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1*
+        name: Argument1
+        nameWithType: MatrixDotNetException.Argument1
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+  MatrixDotNet.Exceptions.MatrixDotNetException.Argument2*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2*
+        name: Argument2
+        nameWithType: MatrixDotNetException.Argument2
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+      VB:
+      - id: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2*
+        name: Argument2
+        nameWithType: MatrixDotNetException.Argument2
+        qualifiedName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+  MatrixDotNet.Exceptions:
+    name:
+      CSharp:
+      - name: MatrixDotNet.Exceptions
+        nameWithType: MatrixDotNet.Exceptions
+        qualifiedName: MatrixDotNet.Exceptions
+      VB:
+      - name: MatrixDotNet.Exceptions
+        nameWithType: MatrixDotNet.Exceptions
+        qualifiedName: MatrixDotNet.Exceptions
+    isDefinition: true
+    commentId: N:MatrixDotNet.Exceptions
+  System.NullReferenceException:
+    commentId: T:System.NullReferenceException
+  MatrixDotNet.Matrix{{T}}:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - name: T
+        nameWithType: T
+        qualifiedName: T
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: MatrixDotNet.Matrix`1
+    parent: MatrixDotNet
+    commentId: T:MatrixDotNet.Matrix{``0}
+  MatrixDotNet.Extensions.MatrixExtension.GetRow*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetRow*
+        name: GetRow
+        nameWithType: MatrixExtension.GetRow
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetRow
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetRow*
+        name: GetRow
+        nameWithType: MatrixExtension.GetRow
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetRow
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.GetRow
+  System.ArgumentNullException:
+    commentId: T:System.ArgumentNullException
+  MatrixDotNet.Extensions.MatrixExtension.GetColumn*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetColumn*
+        name: GetColumn
+        nameWithType: MatrixExtension.GetColumn
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetColumn
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetColumn*
+        name: GetColumn
+        nameWithType: MatrixExtension.GetColumn
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetColumn
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.GetColumn
+  MatrixDotNet.Extensions.MatrixExtension.Transport*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.Transport*
+        name: Transport
+        nameWithType: MatrixExtension.Transport
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.Transport
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.Transport*
+        name: Transport
+        nameWithType: MatrixExtension.Transport
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.Transport
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.Transport
+  MatrixDotNet.Extensions.MatrixExtension.ToPrimitive*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive*
+        name: ToPrimitive
+        nameWithType: MatrixExtension.ToPrimitive
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive*
+        name: ToPrimitive
+        nameWithType: MatrixExtension.ToPrimitive
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.ToPrimitive
+  MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet*
+        name: ToMatrixDotNet
+        nameWithType: MatrixExtension.ToMatrixDotNet
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet*
+        name: ToMatrixDotNet
+        nameWithType: MatrixExtension.ToMatrixDotNet
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet
+  MatrixDotNet.Extensions.MatrixExtension.GetDeterminate*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate*
+        name: GetDeterminate
+        nameWithType: MatrixExtension.GetDeterminate
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate*
+        name: GetDeterminate
+        nameWithType: MatrixExtension.GetDeterminate
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.GetDeterminate
+  System.Double[]:
+    name:
+      CSharp:
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+      - name: '[]'
+        nameWithType: '[]'
+        qualifiedName: '[]'
+      VB:
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+      - name: ()
+        nameWithType: ()
+        qualifiedName: ()
+    isDefinition: false
+  MatrixDotNet.Extensions.MatrixExtension.KramerSolve*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.KramerSolve*
+        name: KramerSolve
+        nameWithType: MatrixExtension.KramerSolve
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.KramerSolve*
+        name: KramerSolve
+        nameWithType: MatrixExtension.KramerSolve
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.KramerSolve
+  MatrixDotNet.Matrix{System.Double}:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: <
+        nameWithType: <
+        qualifiedName: <
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+      - name: '>'
+        nameWithType: '>'
+        qualifiedName: '>'
+      VB:
+      - id: MatrixDotNet.Matrix`1
+        name: Matrix
+        nameWithType: Matrix
+        qualifiedName: MatrixDotNet.Matrix
+      - name: '(Of '
+        nameWithType: '(Of '
+        qualifiedName: '(Of '
+      - id: System.Double
+        name: Double
+        nameWithType: Double
+        qualifiedName: System.Double
+        isExternal: true
+      - name: )
+        nameWithType: )
+        qualifiedName: )
+    isDefinition: false
+    definition: MatrixDotNet.Matrix`1
+    parent: MatrixDotNet
+    commentId: T:MatrixDotNet.Matrix{System.Double}
+  MatrixDotNet.Extensions.MatrixExtension.Gause*:
+    name:
+      CSharp:
+      - id: MatrixDotNet.Extensions.MatrixExtension.Gause*
+        name: Gause
+        nameWithType: MatrixExtension.Gause
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.Gause
+      VB:
+      - id: MatrixDotNet.Extensions.MatrixExtension.Gause*
+        name: Gause
+        nameWithType: MatrixExtension.Gause
+        qualifiedName: MatrixDotNet.Extensions.MatrixExtension.Gause
+    isDefinition: true
+    commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.Gause

@@ -1,5 +1,6 @@
 ﻿using System;
 using MatrixDotNet;
+using MatrixDotNet.Extensions;
 
 namespace MatrixDemonstrate
 {
@@ -7,27 +8,26 @@ namespace MatrixDemonstrate
     {
         static void Main(string[] args)
         {
-            /*int[] arr =  {1,2,53,657};
-            
-            for (int i = 1; i < arr.Length; i++)
-            {
-                Swap(ref arr[i - 1], ref arr[i]);
-            }
-
-            foreach (var i in arr )
-            {
-                Console.WriteLine(i);
-            }
-            
-            
-            int[,] arrx =
+            // initialize matrix.
+            double[,] arr =
             {
                 {5,56,7},
-                {3,6,3}
+                {3,6,3},
+                {5,9,15}
             };
-            Matrix<int> matrix = new Matrix<int>(arrx);
-            */
             
+            
+            Matrix<double> matrix = new Matrix<double>(arr);
+
+            double[] right = { 1,23,5};
+            
+            // KramerSolve works only with floating type.
+            double[] res = matrix.KramerSolve(right);
+            for(var i = 0; i < res.Length; i++)
+            {
+                Console.Write($"x{i}: {res[i]}\n");
+            }
+
         }
 
         private static void Test()

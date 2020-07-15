@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Matrix&lt;T&gt;
+   | MatrixDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Matrix&lt;T&gt;
+   | MatrixDotNet ">
+    <meta name="generator" content="docfx 2.54.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MatrixDotNet.Matrix`1">
+  
+  
+  <h1 id="MatrixDotNet_Matrix_1" data-uid="MatrixDotNet.Matrix`1" class="text-break">Class Matrix&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Represents math matrix.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Matrix&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.ICloneable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MatrixDotNet.html">MatrixDotNet</a></h6>
+  <h6><strong>Assembly</strong>: MatrixDotNet.dll</h6>
+  <h5 id="MatrixDotNet_Matrix_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Matrix&lt;T&gt; : ICloneable where T : struct</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">integral type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="MatrixDotNet_Matrix_1__ctor_" data-uid="MatrixDotNet.Matrix`1.#ctor*"></a>
+  <h4 id="MatrixDotNet_Matrix_1__ctor__0_0__0___" data-uid="MatrixDotNet.Matrix`1.#ctor(`0[0:,0:])">Matrix(T[,])</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Initialize matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix(T[, ] matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[,]</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1__ctor_" data-uid="MatrixDotNet.Matrix`1.#ctor*"></a>
+  <h4 id="MatrixDotNet_Matrix_1__ctor_System_Int32_System_Int32_" data-uid="MatrixDotNet.Matrix`1.#ctor(System.Int32,System.Int32)">Matrix(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Creates matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix(int row, int col)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">row</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">col</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">col</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Columns_" data-uid="MatrixDotNet.Matrix`1.Columns*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Columns" data-uid="MatrixDotNet.Matrix`1.Columns">Columns</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets length columns of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Columns { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_IsSquare_" data-uid="MatrixDotNet.Matrix`1.IsSquare*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_IsSquare" data-uid="MatrixDotNet.Matrix`1.IsSquare">IsSquare</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Checks square matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSquare { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Item_" data-uid="MatrixDotNet.Matrix`1.Item*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Item_System_Int32_" data-uid="MatrixDotNet.Matrix`1.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets or sets array by row.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] this[int i] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">i</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">the row</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IndexOutOfRangeException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Item_" data-uid="MatrixDotNet.Matrix`1.Item*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Item_System_Int32_MatrixDotNet_State_" data-uid="MatrixDotNet.Matrix`1.Item(System.Int32,MatrixDotNet.State)">Item[Int32, State]</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets or sets array by rows or columns.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] this[int i, State dimension] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">i</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.State.html">State</a></td>
+        <td><span class="parametername">dimension</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IndexOutOfRangeException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Item_" data-uid="MatrixDotNet.Matrix`1.Item*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Item_System_Int32_System_Int32_" data-uid="MatrixDotNet.Matrix`1.Item(System.Int32,System.Int32)">Item[Int32, Int32]</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets element matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T this[int i, int j] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">i</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">the index by rows.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">j</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">the index by columns.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IndexOutOfRangeException</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Throws if index out of range</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Length_" data-uid="MatrixDotNet.Matrix`1.Length*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Length" data-uid="MatrixDotNet.Matrix`1.Length">Length</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets length matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_MNorm_" data-uid="MatrixDotNet.Matrix`1.MNorm*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_MNorm" data-uid="MatrixDotNet.Matrix`1.MNorm">MNorm</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets m-norm of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T MNorm { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Rank_" data-uid="MatrixDotNet.Matrix`1.Rank*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Rank" data-uid="MatrixDotNet.Matrix`1.Rank">Rank</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets rank of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Rank { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Rows_" data-uid="MatrixDotNet.Matrix`1.Rows*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Rows" data-uid="MatrixDotNet.Matrix`1.Rows">Rows</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets length row of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Rows { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Clone_" data-uid="MatrixDotNet.Matrix`1.Clone*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Clone" data-uid="MatrixDotNet.Matrix`1.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Clones matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_Equals_" data-uid="MatrixDotNet.Matrix`1.Equals*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Equals_System_Object_" data-uid="MatrixDotNet.Matrix`1.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Checks on equals two matrix by rows - i ,columns - j</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.Equals(System.Object)</span></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.ArgumentException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_GetHashCode_" data-uid="MatrixDotNet.Matrix`1.GetHashCode*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_GetHashCode" data-uid="MatrixDotNet.Matrix`1.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets hash code.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.GetHashCode()</span></div>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_LNorm_" data-uid="MatrixDotNet.Matrix`1.LNorm*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_LNorm" data-uid="MatrixDotNet.Matrix`1.LNorm">LNorm()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Gets l-norm of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double LNorm()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_ToString_" data-uid="MatrixDotNet.Matrix`1.ToString*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_ToString" data-uid="MatrixDotNet.Matrix`1.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2"><inheritdoc cref="M:System.Object.ToString"></inheritdoc></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1"><span class="xref">System.String</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
+  <h3 id="operators">Operators
+  </h3>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_op_Addition_" data-uid="MatrixDotNet.Matrix`1.op_Addition*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Addition_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Addition(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Addition(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Add operation of two matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator +(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">left matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">right matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1"><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Length of two matrix not equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_op_Division_" data-uid="MatrixDotNet.Matrix`1.op_Division*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Division__0_MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Division(`0,MatrixDotNet.Matrix{`0})">Division(T, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Divide operation matrix on digit left side.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator /(T digit, Matrix&lt;T&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">digit</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_op_Division_" data-uid="MatrixDotNet.Matrix`1.op_Division*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Division_MatrixDotNet_Matrix__0___0_" data-uid="MatrixDotNet.Matrix`1.op_Division(MatrixDotNet.Matrix{`0},`0)">Division(Matrix&lt;T&gt;, T)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Divide operation matrix on digit right side.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator /(Matrix&lt;T&gt; matrix, T digit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">digit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply__0_MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Multiply(`0,MatrixDotNet.Matrix{`0})">Multiply(T, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Multiply operation matrix on digit left side.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator *(T digit, Matrix&lt;T&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">digit</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">digit</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1"><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0___0_" data-uid="MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0)">Multiply(Matrix&lt;T&gt;, T)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Multiply operation matrix on digit right side.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator *(Matrix&lt;T&gt; matrix, T digit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">digit</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">digit.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1"><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Multiply(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Multiply operation of two matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator *(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MatrixDotNet_Matrix_1_op_Subtraction_" data-uid="MatrixDotNet.Matrix`1.op_Subtraction*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Subtraction_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Subtraction(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Subtraction(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Subtract operation of two matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator -(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">left matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1">right matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="1"><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p sourcefile="api/MatrixDotNet.Matrix-1.yml" sourcestartlinenumber="2">Length of two matrix not equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.ICloneable</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetRow__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.GetRow&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetColumn__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.GetColumn&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Transport__1_MatrixDotNet_Matrix___0__">MatrixExtension.Transport&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_ToPrimitive__1_MatrixDotNet_Matrix___0__">MatrixExtension.ToPrimitive&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetDeterminate__1_MatrixDotNet_Matrix___0__">MatrixExtension.GetDeterminate&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_KramerSolve__1_MatrixDotNet_Matrix___0____0___">MatrixExtension.KramerSolve&lt;T&gt;(Matrix&lt;T&gt;, T[])</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2020�2020 KPI Foundation and contributors
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: MatrixDotNet.Exceptions
+  commentId: N:MatrixDotNet.Exceptions
+  id: MatrixDotNet.Exceptions
+  children:
+  - MatrixDotNet.Exceptions.MatrixDotNetException
+  langs:
+  - csharp
+  - vb
+  name: MatrixDotNet.Exceptions
+  nameWithType: MatrixDotNet.Exceptions
+  fullName: MatrixDotNet.Exceptions
+  type: Namespace
+  assemblies:
+  - MatrixDotNet
+references:
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException
+  commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+  name: MatrixDotNetException
+  nameWithType: MatrixDotNetException
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException

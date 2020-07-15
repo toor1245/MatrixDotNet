@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: MatrixDemonstrate
+  commentId: N:MatrixDemonstrate
+  id: MatrixDemonstrate
+  children:
+  - MatrixDemonstrate.Program
+  langs:
+  - csharp
+  - vb
+  name: MatrixDemonstrate
+  nameWithType: MatrixDemonstrate
+  fullName: MatrixDemonstrate
+  type: Namespace
+  assemblies:
+  - MatrixDemonstrate
+references:
+- uid: MatrixDemonstrate.Program
+  commentId: T:MatrixDemonstrate.Program
+  name: Program
+  nameWithType: Program
+  fullName: MatrixDemonstrate.Program

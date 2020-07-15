@@ -1,0 +1,612 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: MatrixDemonstrate
+  name: MatrixDemonstrate
+  href: api/MatrixDemonstrate.html
+  commentId: N:MatrixDemonstrate
+  fullName: MatrixDemonstrate
+  nameWithType: MatrixDemonstrate
+- uid: MatrixDemonstrate.Program
+  name: Program
+  href: api/MatrixDemonstrate.Program.html
+  commentId: T:MatrixDemonstrate.Program
+  fullName: MatrixDemonstrate.Program
+  nameWithType: Program
+- uid: MatrixDotNet
+  name: MatrixDotNet
+  href: api/MatrixDotNet.html
+  commentId: N:MatrixDotNet
+  fullName: MatrixDotNet
+  nameWithType: MatrixDotNet
+- uid: MatrixDotNet.Exceptions
+  name: MatrixDotNet.Exceptions
+  href: api/MatrixDotNet.Exceptions.html
+  commentId: N:MatrixDotNet.Exceptions
+  fullName: MatrixDotNet.Exceptions
+  nameWithType: MatrixDotNet.Exceptions
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException
+  name: MatrixDotNetException
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html
+  commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException
+  nameWithType: MatrixDotNetException
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String)
+  name: MatrixDotNetException(String)
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException__ctor_System_String_
+  commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String)
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String)
+  nameWithType: MatrixDotNetException.MatrixDotNetException(String)
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String)
+  name: MatrixDotNetException(String, String)
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException__ctor_System_String_System_String_
+  commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String)
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String)
+  nameWithType: MatrixDotNetException.MatrixDotNetException(String, String)
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String,System.String)
+  name: MatrixDotNetException(String, String, String)
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException__ctor_System_String_System_String_System_String_
+  commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String,System.String)
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String, System.String)
+  nameWithType: MatrixDotNetException.MatrixDotNetException(String, String, String)
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor*
+  name: MatrixDotNetException
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException__ctor_
+  commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor
+  isSpec: "True"
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException
+  nameWithType: MatrixDotNetException.MatrixDotNetException
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+  name: Argument1
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Argument1
+  commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+  nameWithType: MatrixDotNetException.Argument1
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1*
+  name: Argument1
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Argument1_
+  commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+  isSpec: "True"
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+  nameWithType: MatrixDotNetException.Argument1
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+  name: Argument2
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Argument2
+  commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+  nameWithType: MatrixDotNetException.Argument2
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2*
+  name: Argument2
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Argument2_
+  commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+  isSpec: "True"
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+  nameWithType: MatrixDotNetException.Argument2
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Message
+  name: Message
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Message
+  commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Message
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Message
+  nameWithType: MatrixDotNetException.Message
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Message*
+  name: Message
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Message_
+  commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Message
+  isSpec: "True"
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Message
+  nameWithType: MatrixDotNetException.Message
+- uid: MatrixDotNet.Extensions
+  name: MatrixDotNet.Extensions
+  href: api/MatrixDotNet.Extensions.html
+  commentId: N:MatrixDotNet.Extensions
+  fullName: MatrixDotNet.Extensions
+  nameWithType: MatrixDotNet.Extensions
+- uid: MatrixDotNet.Extensions.MatrixExtension
+  name: MatrixExtension
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html
+  commentId: T:MatrixDotNet.Extensions.MatrixExtension
+  fullName: MatrixDotNet.Extensions.MatrixExtension
+  nameWithType: MatrixExtension
+- uid: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix{System.Double},System.Double[])
+  name: Gause(Matrix<Double>, Double[])
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Gause_MatrixDotNet_Matrix_System_Double__System_Double___
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix{System.Double},System.Double[])
+  name.vb: Gause(Matrix(Of Double), Double())
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix<System.Double>, System.Double[])
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix(Of System.Double), System.Double())
+  nameWithType: MatrixExtension.Gause(Matrix<Double>, Double[])
+  nameWithType.vb: MatrixExtension.Gause(Matrix(Of Double), Double())
+- uid: MatrixDotNet.Extensions.MatrixExtension.Gause*
+  name: Gause
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Gause_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.Gause
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Gause
+  nameWithType: MatrixExtension.Gause
+- uid: MatrixDotNet.Extensions.MatrixExtension.GetColumn*
+  name: GetColumn
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetColumn_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.GetColumn
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.GetColumn
+  nameWithType: MatrixExtension.GetColumn
+- uid: MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: GetColumn<T>(Matrix<T>, Int32)
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetColumn__1_MatrixDotNet_Matrix___0__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name.vb: GetColumn(Of T)(Matrix(Of T), Int32)
+  fullName: MatrixDotNet.Extensions.MatrixExtension.GetColumn<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.GetColumn(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  nameWithType: MatrixExtension.GetColumn<T>(Matrix<T>, Int32)
+  nameWithType.vb: MatrixExtension.GetColumn(Of T)(Matrix(Of T), Int32)
+- uid: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate*
+  name: GetDeterminate
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetDeterminate_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.GetDeterminate
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate
+  nameWithType: MatrixExtension.GetDeterminate
+- uid: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+  name: GetDeterminate<T>(Matrix<T>)
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetDeterminate__1_MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
+  name.vb: GetDeterminate(Of T)(Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate<T>(MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate(Of T)(MatrixDotNet.Matrix(Of T))
+  nameWithType: MatrixExtension.GetDeterminate<T>(Matrix<T>)
+  nameWithType.vb: MatrixExtension.GetDeterminate(Of T)(Matrix(Of T))
+- uid: MatrixDotNet.Extensions.MatrixExtension.GetRow*
+  name: GetRow
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetRow_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.GetRow
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.GetRow
+  nameWithType: MatrixExtension.GetRow
+- uid: MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: GetRow<T>(Matrix<T>, Int32)
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetRow__1_MatrixDotNet_Matrix___0__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name.vb: GetRow(Of T)(Matrix(Of T), Int32)
+  fullName: MatrixDotNet.Extensions.MatrixExtension.GetRow<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.GetRow(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  nameWithType: MatrixExtension.GetRow<T>(Matrix<T>, Int32)
+  nameWithType.vb: MatrixExtension.GetRow(Of T)(Matrix(Of T), Int32)
+- uid: MatrixDotNet.Extensions.MatrixExtension.KramerSolve*
+  name: KramerSolve
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_KramerSolve_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.KramerSolve
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve
+  nameWithType: MatrixExtension.KramerSolve
+- uid: MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+  name: KramerSolve<T>(Matrix<T>, T[])
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_KramerSolve__1_MatrixDotNet_Matrix___0____0___
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+  name.vb: KramerSolve(Of T)(Matrix(Of T), T())
+  fullName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve<T>(MatrixDotNet.Matrix<T>, T[])
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.KramerSolve(Of T)(MatrixDotNet.Matrix(Of T), T())
+  nameWithType: MatrixExtension.KramerSolve<T>(Matrix<T>, T[])
+  nameWithType.vb: MatrixExtension.KramerSolve(Of T)(Matrix(Of T), T())
+- uid: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet*
+  name: ToMatrixDotNet
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_ToMatrixDotNet_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet
+  nameWithType: MatrixExtension.ToMatrixDotNet
+- uid: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet``1(``0[0:,0:])
+  name: ToMatrixDotNet<T>(T[,])
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_ToMatrixDotNet__1___0_0__0___
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet``1(``0[0:,0:])
+  name.vb: ToMatrixDotNet(Of T)(T(,))
+  fullName: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet<T>(T[,])
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet(Of T)(T(,))
+  nameWithType: MatrixExtension.ToMatrixDotNet<T>(T[,])
+  nameWithType.vb: MatrixExtension.ToMatrixDotNet(Of T)(T(,))
+- uid: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive*
+  name: ToPrimitive
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_ToPrimitive_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.ToPrimitive
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive
+  nameWithType: MatrixExtension.ToPrimitive
+- uid: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+  name: ToPrimitive<T>(Matrix<T>)
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_ToPrimitive__1_MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
+  name.vb: ToPrimitive(Of T)(Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive<T>(MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive(Of T)(MatrixDotNet.Matrix(Of T))
+  nameWithType: MatrixExtension.ToPrimitive<T>(Matrix<T>)
+  nameWithType.vb: MatrixExtension.ToPrimitive(Of T)(Matrix(Of T))
+- uid: MatrixDotNet.Extensions.MatrixExtension.Transport*
+  name: Transport
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Transport_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.Transport
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Transport
+  nameWithType: MatrixExtension.Transport
+- uid: MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+  name: Transport<T>(Matrix<T>)
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Transport__1_MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
+  name.vb: Transport(Of T)(Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Transport<T>(MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.Transport(Of T)(MatrixDotNet.Matrix(Of T))
+  nameWithType: MatrixExtension.Transport<T>(Matrix<T>)
+  nameWithType.vb: MatrixExtension.Transport(Of T)(Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1
+  name: Matrix<T>
+  href: api/MatrixDotNet.Matrix-1.html
+  commentId: T:MatrixDotNet.Matrix`1
+  name.vb: Matrix(Of T)
+  fullName: MatrixDotNet.Matrix<T>
+  fullName.vb: MatrixDotNet.Matrix(Of T)
+  nameWithType: Matrix<T>
+  nameWithType.vb: Matrix(Of T)
+- uid: MatrixDotNet.Matrix`1.#ctor(`0[0:,0:])
+  name: Matrix(T[,])
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1__ctor__0_0__0___
+  commentId: M:MatrixDotNet.Matrix`1.#ctor(`0[0:,0:])
+  name.vb: Matrix(T(,))
+  fullName: MatrixDotNet.Matrix<T>.Matrix(T[,])
+  fullName.vb: MatrixDotNet.Matrix(Of T).Matrix(T(,))
+  nameWithType: Matrix<T>.Matrix(T[,])
+  nameWithType.vb: Matrix(Of T).Matrix(T(,))
+- uid: MatrixDotNet.Matrix`1.#ctor(System.Int32,System.Int32)
+  name: Matrix(Int32, Int32)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1__ctor_System_Int32_System_Int32_
+  commentId: M:MatrixDotNet.Matrix`1.#ctor(System.Int32,System.Int32)
+  fullName: MatrixDotNet.Matrix<T>.Matrix(System.Int32, System.Int32)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Matrix(System.Int32, System.Int32)
+  nameWithType: Matrix<T>.Matrix(Int32, Int32)
+  nameWithType.vb: Matrix(Of T).Matrix(Int32, Int32)
+- uid: MatrixDotNet.Matrix`1.#ctor*
+  name: Matrix
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1__ctor_
+  commentId: Overload:MatrixDotNet.Matrix`1.#ctor
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Matrix
+  fullName.vb: MatrixDotNet.Matrix(Of T).Matrix
+  nameWithType: Matrix<T>.Matrix
+  nameWithType.vb: Matrix(Of T).Matrix
+- uid: MatrixDotNet.Matrix`1.Clone
+  name: Clone()
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Clone
+  commentId: M:MatrixDotNet.Matrix`1.Clone
+  fullName: MatrixDotNet.Matrix<T>.Clone()
+  fullName.vb: MatrixDotNet.Matrix(Of T).Clone()
+  nameWithType: Matrix<T>.Clone()
+  nameWithType.vb: Matrix(Of T).Clone()
+- uid: MatrixDotNet.Matrix`1.Clone*
+  name: Clone
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Clone_
+  commentId: Overload:MatrixDotNet.Matrix`1.Clone
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Clone
+  fullName.vb: MatrixDotNet.Matrix(Of T).Clone
+  nameWithType: Matrix<T>.Clone
+  nameWithType.vb: Matrix(Of T).Clone
+- uid: MatrixDotNet.Matrix`1.Columns
+  name: Columns
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Columns
+  commentId: P:MatrixDotNet.Matrix`1.Columns
+  fullName: MatrixDotNet.Matrix<T>.Columns
+  fullName.vb: MatrixDotNet.Matrix(Of T).Columns
+  nameWithType: Matrix<T>.Columns
+  nameWithType.vb: Matrix(Of T).Columns
+- uid: MatrixDotNet.Matrix`1.Columns*
+  name: Columns
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Columns_
+  commentId: Overload:MatrixDotNet.Matrix`1.Columns
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Columns
+  fullName.vb: MatrixDotNet.Matrix(Of T).Columns
+  nameWithType: Matrix<T>.Columns
+  nameWithType.vb: Matrix(Of T).Columns
+- uid: MatrixDotNet.Matrix`1.Equals(System.Object)
+  name: Equals(Object)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Equals_System_Object_
+  commentId: M:MatrixDotNet.Matrix`1.Equals(System.Object)
+  fullName: MatrixDotNet.Matrix<T>.Equals(System.Object)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Equals(System.Object)
+  nameWithType: Matrix<T>.Equals(Object)
+  nameWithType.vb: Matrix(Of T).Equals(Object)
+- uid: MatrixDotNet.Matrix`1.Equals*
+  name: Equals
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Equals_
+  commentId: Overload:MatrixDotNet.Matrix`1.Equals
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Equals
+  fullName.vb: MatrixDotNet.Matrix(Of T).Equals
+  nameWithType: Matrix<T>.Equals
+  nameWithType.vb: Matrix(Of T).Equals
+- uid: MatrixDotNet.Matrix`1.GetHashCode
+  name: GetHashCode()
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_GetHashCode
+  commentId: M:MatrixDotNet.Matrix`1.GetHashCode
+  fullName: MatrixDotNet.Matrix<T>.GetHashCode()
+  fullName.vb: MatrixDotNet.Matrix(Of T).GetHashCode()
+  nameWithType: Matrix<T>.GetHashCode()
+  nameWithType.vb: Matrix(Of T).GetHashCode()
+- uid: MatrixDotNet.Matrix`1.GetHashCode*
+  name: GetHashCode
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_GetHashCode_
+  commentId: Overload:MatrixDotNet.Matrix`1.GetHashCode
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.GetHashCode
+  fullName.vb: MatrixDotNet.Matrix(Of T).GetHashCode
+  nameWithType: Matrix<T>.GetHashCode
+  nameWithType.vb: Matrix(Of T).GetHashCode
+- uid: MatrixDotNet.Matrix`1.IsSquare
+  name: IsSquare
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_IsSquare
+  commentId: P:MatrixDotNet.Matrix`1.IsSquare
+  fullName: MatrixDotNet.Matrix<T>.IsSquare
+  fullName.vb: MatrixDotNet.Matrix(Of T).IsSquare
+  nameWithType: Matrix<T>.IsSquare
+  nameWithType.vb: Matrix(Of T).IsSquare
+- uid: MatrixDotNet.Matrix`1.IsSquare*
+  name: IsSquare
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_IsSquare_
+  commentId: Overload:MatrixDotNet.Matrix`1.IsSquare
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.IsSquare
+  fullName.vb: MatrixDotNet.Matrix(Of T).IsSquare
+  nameWithType: Matrix<T>.IsSquare
+  nameWithType.vb: Matrix(Of T).IsSquare
+- uid: MatrixDotNet.Matrix`1.Item(System.Int32)
+  name: Item[Int32]
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Item_System_Int32_
+  commentId: P:MatrixDotNet.Matrix`1.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: MatrixDotNet.Matrix<T>.Item[System.Int32]
+  fullName.vb: MatrixDotNet.Matrix(Of T).Item(System.Int32)
+  nameWithType: Matrix<T>.Item[Int32]
+  nameWithType.vb: Matrix(Of T).Item(Int32)
+- uid: MatrixDotNet.Matrix`1.Item(System.Int32,MatrixDotNet.State)
+  name: Item[Int32, State]
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Item_System_Int32_MatrixDotNet_State_
+  commentId: P:MatrixDotNet.Matrix`1.Item(System.Int32,MatrixDotNet.State)
+  name.vb: Item(Int32, State)
+  fullName: MatrixDotNet.Matrix<T>.Item[System.Int32, MatrixDotNet.State]
+  fullName.vb: MatrixDotNet.Matrix(Of T).Item(System.Int32, MatrixDotNet.State)
+  nameWithType: Matrix<T>.Item[Int32, State]
+  nameWithType.vb: Matrix(Of T).Item(Int32, State)
+- uid: MatrixDotNet.Matrix`1.Item(System.Int32,System.Int32)
+  name: Item[Int32, Int32]
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Item_System_Int32_System_Int32_
+  commentId: P:MatrixDotNet.Matrix`1.Item(System.Int32,System.Int32)
+  name.vb: Item(Int32, Int32)
+  fullName: MatrixDotNet.Matrix<T>.Item[System.Int32, System.Int32]
+  fullName.vb: MatrixDotNet.Matrix(Of T).Item(System.Int32, System.Int32)
+  nameWithType: Matrix<T>.Item[Int32, Int32]
+  nameWithType.vb: Matrix(Of T).Item(Int32, Int32)
+- uid: MatrixDotNet.Matrix`1.Item*
+  name: Item
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Item_
+  commentId: Overload:MatrixDotNet.Matrix`1.Item
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Item
+  fullName.vb: MatrixDotNet.Matrix(Of T).Item
+  nameWithType: Matrix<T>.Item
+  nameWithType.vb: Matrix(Of T).Item
+- uid: MatrixDotNet.Matrix`1.Length
+  name: Length
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Length
+  commentId: P:MatrixDotNet.Matrix`1.Length
+  fullName: MatrixDotNet.Matrix<T>.Length
+  fullName.vb: MatrixDotNet.Matrix(Of T).Length
+  nameWithType: Matrix<T>.Length
+  nameWithType.vb: Matrix(Of T).Length
+- uid: MatrixDotNet.Matrix`1.Length*
+  name: Length
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Length_
+  commentId: Overload:MatrixDotNet.Matrix`1.Length
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Length
+  fullName.vb: MatrixDotNet.Matrix(Of T).Length
+  nameWithType: Matrix<T>.Length
+  nameWithType.vb: Matrix(Of T).Length
+- uid: MatrixDotNet.Matrix`1.LNorm
+  name: LNorm()
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_LNorm
+  commentId: M:MatrixDotNet.Matrix`1.LNorm
+  fullName: MatrixDotNet.Matrix<T>.LNorm()
+  fullName.vb: MatrixDotNet.Matrix(Of T).LNorm()
+  nameWithType: Matrix<T>.LNorm()
+  nameWithType.vb: Matrix(Of T).LNorm()
+- uid: MatrixDotNet.Matrix`1.LNorm*
+  name: LNorm
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_LNorm_
+  commentId: Overload:MatrixDotNet.Matrix`1.LNorm
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.LNorm
+  fullName.vb: MatrixDotNet.Matrix(Of T).LNorm
+  nameWithType: Matrix<T>.LNorm
+  nameWithType.vb: Matrix(Of T).LNorm
+- uid: MatrixDotNet.Matrix`1.MNorm
+  name: MNorm
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_MNorm
+  commentId: P:MatrixDotNet.Matrix`1.MNorm
+  fullName: MatrixDotNet.Matrix<T>.MNorm
+  fullName.vb: MatrixDotNet.Matrix(Of T).MNorm
+  nameWithType: Matrix<T>.MNorm
+  nameWithType.vb: Matrix(Of T).MNorm
+- uid: MatrixDotNet.Matrix`1.MNorm*
+  name: MNorm
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_MNorm_
+  commentId: Overload:MatrixDotNet.Matrix`1.MNorm
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.MNorm
+  fullName.vb: MatrixDotNet.Matrix(Of T).MNorm
+  nameWithType: Matrix<T>.MNorm
+  nameWithType.vb: Matrix(Of T).MNorm
+- uid: MatrixDotNet.Matrix`1.op_Addition(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+  name: Addition(Matrix<T>, Matrix<T>)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Addition_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__
+  commentId: M:MatrixDotNet.Matrix`1.op_Addition(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+  name.vb: Addition(Matrix(Of T), Matrix(Of T))
+  fullName: MatrixDotNet.Matrix<T>.Addition(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Addition(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
+  nameWithType: Matrix<T>.Addition(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Addition(Matrix(Of T), Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1.op_Addition*
+  name: Addition
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Addition_
+  commentId: Overload:MatrixDotNet.Matrix`1.op_Addition
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Addition
+  fullName.vb: MatrixDotNet.Matrix(Of T).Addition
+  nameWithType: Matrix<T>.Addition
+  nameWithType.vb: Matrix(Of T).Addition
+- uid: MatrixDotNet.Matrix`1.op_Division(`0,MatrixDotNet.Matrix{`0})
+  name: Division(T, Matrix<T>)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Division__0_MatrixDotNet_Matrix__0__
+  commentId: M:MatrixDotNet.Matrix`1.op_Division(`0,MatrixDotNet.Matrix{`0})
+  name.vb: Division(T, Matrix(Of T))
+  fullName: MatrixDotNet.Matrix<T>.Division(T, MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Division(T, MatrixDotNet.Matrix(Of T))
+  nameWithType: Matrix<T>.Division(T, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Division(T, Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1.op_Division(MatrixDotNet.Matrix{`0},`0)
+  name: Division(Matrix<T>, T)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Division_MatrixDotNet_Matrix__0___0_
+  commentId: M:MatrixDotNet.Matrix`1.op_Division(MatrixDotNet.Matrix{`0},`0)
+  name.vb: Division(Matrix(Of T), T)
+  fullName: MatrixDotNet.Matrix<T>.Division(MatrixDotNet.Matrix<T>, T)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Division(MatrixDotNet.Matrix(Of T), T)
+  nameWithType: Matrix<T>.Division(Matrix<T>, T)
+  nameWithType.vb: Matrix(Of T).Division(Matrix(Of T), T)
+- uid: MatrixDotNet.Matrix`1.op_Division*
+  name: Division
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Division_
+  commentId: Overload:MatrixDotNet.Matrix`1.op_Division
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Division
+  fullName.vb: MatrixDotNet.Matrix(Of T).Division
+  nameWithType: Matrix<T>.Division
+  nameWithType.vb: Matrix(Of T).Division
+- uid: MatrixDotNet.Matrix`1.op_Multiply(`0,MatrixDotNet.Matrix{`0})
+  name: Multiply(T, Matrix<T>)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply__0_MatrixDotNet_Matrix__0__
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(`0,MatrixDotNet.Matrix{`0})
+  name.vb: Multiply(T, Matrix(Of T))
+  fullName: MatrixDotNet.Matrix<T>.Multiply(T, MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(T, MatrixDotNet.Matrix(Of T))
+  nameWithType: Matrix<T>.Multiply(T, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Multiply(T, Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0)
+  name: Multiply(Matrix<T>, T)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0___0_
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0)
+  name.vb: Multiply(Matrix(Of T), T)
+  fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, T)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), T)
+  nameWithType: Matrix<T>.Multiply(Matrix<T>, T)
+  nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), T)
+- uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+  name: Multiply(Matrix<T>, Matrix<T>)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+  name.vb: Multiply(Matrix(Of T), Matrix(Of T))
+  fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
+  nameWithType: Matrix<T>.Multiply(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1.op_Multiply*
+  name: Multiply
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_
+  commentId: Overload:MatrixDotNet.Matrix`1.op_Multiply
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Multiply
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply
+  nameWithType: Matrix<T>.Multiply
+  nameWithType.vb: Matrix(Of T).Multiply
+- uid: MatrixDotNet.Matrix`1.op_Subtraction(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+  name: Subtraction(Matrix<T>, Matrix<T>)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Subtraction_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__
+  commentId: M:MatrixDotNet.Matrix`1.op_Subtraction(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
+  name.vb: Subtraction(Matrix(Of T), Matrix(Of T))
+  fullName: MatrixDotNet.Matrix<T>.Subtraction(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Subtraction(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
+  nameWithType: Matrix<T>.Subtraction(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Subtraction(Matrix(Of T), Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1.op_Subtraction*
+  name: Subtraction
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Subtraction_
+  commentId: Overload:MatrixDotNet.Matrix`1.op_Subtraction
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Subtraction
+  fullName.vb: MatrixDotNet.Matrix(Of T).Subtraction
+  nameWithType: Matrix<T>.Subtraction
+  nameWithType.vb: Matrix(Of T).Subtraction
+- uid: MatrixDotNet.Matrix`1.Rank
+  name: Rank
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Rank
+  commentId: P:MatrixDotNet.Matrix`1.Rank
+  fullName: MatrixDotNet.Matrix<T>.Rank
+  fullName.vb: MatrixDotNet.Matrix(Of T).Rank
+  nameWithType: Matrix<T>.Rank
+  nameWithType.vb: Matrix(Of T).Rank
+- uid: MatrixDotNet.Matrix`1.Rank*
+  name: Rank
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Rank_
+  commentId: Overload:MatrixDotNet.Matrix`1.Rank
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Rank
+  fullName.vb: MatrixDotNet.Matrix(Of T).Rank
+  nameWithType: Matrix<T>.Rank
+  nameWithType.vb: Matrix(Of T).Rank
+- uid: MatrixDotNet.Matrix`1.Rows
+  name: Rows
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Rows
+  commentId: P:MatrixDotNet.Matrix`1.Rows
+  fullName: MatrixDotNet.Matrix<T>.Rows
+  fullName.vb: MatrixDotNet.Matrix(Of T).Rows
+  nameWithType: Matrix<T>.Rows
+  nameWithType.vb: Matrix(Of T).Rows
+- uid: MatrixDotNet.Matrix`1.Rows*
+  name: Rows
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Rows_
+  commentId: Overload:MatrixDotNet.Matrix`1.Rows
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.Rows
+  fullName.vb: MatrixDotNet.Matrix(Of T).Rows
+  nameWithType: Matrix<T>.Rows
+  nameWithType.vb: Matrix(Of T).Rows
+- uid: MatrixDotNet.Matrix`1.ToString
+  name: ToString()
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_ToString
+  commentId: M:MatrixDotNet.Matrix`1.ToString
+  fullName: MatrixDotNet.Matrix<T>.ToString()
+  fullName.vb: MatrixDotNet.Matrix(Of T).ToString()
+  nameWithType: Matrix<T>.ToString()
+  nameWithType.vb: Matrix(Of T).ToString()
+- uid: MatrixDotNet.Matrix`1.ToString*
+  name: ToString
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_ToString_
+  commentId: Overload:MatrixDotNet.Matrix`1.ToString
+  isSpec: "True"
+  fullName: MatrixDotNet.Matrix<T>.ToString
+  fullName.vb: MatrixDotNet.Matrix(Of T).ToString
+  nameWithType: Matrix<T>.ToString
+  nameWithType.vb: Matrix(Of T).ToString
+- uid: MatrixDotNet.State
+  name: State
+  href: api/MatrixDotNet.State.html
+  commentId: T:MatrixDotNet.State
+  fullName: MatrixDotNet.State
+  nameWithType: State
+- uid: MatrixDotNet.State.Column
+  name: Column
+  href: api/MatrixDotNet.State.html#MatrixDotNet_State_Column
+  commentId: F:MatrixDotNet.State.Column
+  fullName: MatrixDotNet.State.Column
+  nameWithType: State.Column
+- uid: MatrixDotNet.State.Row
+  name: Row
+  href: api/MatrixDotNet.State.html#MatrixDotNet_State_Row
+  commentId: F:MatrixDotNet.State.Row
+  fullName: MatrixDotNet.State.Row
+  nameWithType: State.Row

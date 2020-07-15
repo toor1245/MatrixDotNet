@@ -211,7 +211,7 @@ namespace MatrixDotNet.Extensions
                 temp = matrix.Clone() as Matrix<T>;
                 for (int j = 0; j < matrix.Rows; j++)
                 {
-                    temp[j, i] = arr[j];
+                    if (temp != null) temp[j, i] = arr[j];
                 }
                 result[i] = temp.GetDeterminate() / det;
             }
