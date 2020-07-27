@@ -6,7 +6,7 @@ namespace MatrixDotNet.Extensions
     /// <summary>
     /// Represents Matrix extension.
     /// </summary>
-    public static class MatrixExtension
+    public static partial class MatrixExtension
     {
         /// <summary>
         /// Gets row array of matrix by row index.
@@ -17,8 +17,7 @@ namespace MatrixDotNet.Extensions
         /// <returns></returns>
         /// <exception cref="NullReferenceException"></exception>
         /// <exception cref="IndexOutOfRangeException"></exception>
-        public static T[] GetRow<T>(this Matrix<T> matrix,int index) 
-            where T : unmanaged
+        public static T[] GetRow<T>(this Matrix<T> matrix,int index) where T : unmanaged
         {
             if(matrix is null)
                 throw new NullReferenceException();
@@ -160,8 +159,7 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>double.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static double GetDeterminate<T>(this Matrix<T> matrix)
-            where T : unmanaged
+        public static double GetDeterminate<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
             {
@@ -195,8 +193,7 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns></returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static double[] KramerSolve<T>(this Matrix<T> matrix,T[] arr)
-            where T: unmanaged
+        public static double[] KramerSolve<T>(this Matrix<T> matrix,T[] arr) where T: unmanaged
         {
             if (matrix.Rows != arr.Length)
                  throw new MatrixDotNetException(

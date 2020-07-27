@@ -10,7 +10,7 @@ namespace MatrixDotNet
     /// Represents math matrix.
     /// </summary>
     /// <typeparam name="T">integral type.</typeparam>
-    public class Matrix<T> : ICloneable
+    public sealed class Matrix<T> : ICloneable
         where T : unmanaged
     {
         #region Properties
@@ -343,6 +343,67 @@ namespace MatrixDotNet
                 }
             }
             return matrix;
+        }
+
+        
+        /// <summary>
+        /// Returns vector sum of each multiply element of row.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <param name="array">array.</param>
+        /// <returns>sum of each multiply element of row.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static T[] operator *(T[] array, Matrix<T> matrix)
+        {
+            if (array.Length != matrix.Columns)
+            {
+                throw new MatrixDotNetException("not equals");
+            }
+            T[] res= new T[array.Length];
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                T sum = default;
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    sum = MathExtension.Add(sum, MathExtension.Multiply(matrix[i, j], array[j]));
+                }
+                
+                if(i == array.Length)
+                    break;
+
+                res[i] = sum;
+            }
+            return res;
+        }
+        
+        /// <summary>
+        /// Returns vector sum of each multiply element of row.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <param name="array">array.</param>
+        /// <returns>sum of each multiply element of row.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static T[] operator *(Matrix<T> matrix,T[] array)
+        {
+            if (array.Length != matrix.Columns)
+            {
+                throw new MatrixDotNetException("not equals");
+            }
+            T[] res= new T[array.Length];
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                T sum = default;
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    sum = MathExtension.Add(sum, MathExtension.Multiply(matrix[i, j], array[j]));
+                }
+                
+                if(i == array.Length)
+                    break;
+
+                res[i] = sum;
+            }
+            return res;
         }
         
         #endregion

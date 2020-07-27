@@ -9,40 +9,18 @@ namespace MatrixDemonstrate
         static void Main(string[] args)
         {
             // initialize matrix.
-            double[,] arr =
+            int[,] arr =
             {
-                {5,56,7},
-                {3,6,3},
-                {5,9,15}
+                {5,8,-4},
+                {6,9,-5},
+                {4,7,-3}
             };
             
             
-            Matrix<double> matrix = new Matrix<double>(arr);
-
-            double[] right = { 1,23,5};
-            
-            // KramerSolve works only with floating type.
-            double[] res = matrix.KramerSolve(right);
-            for(var i = 0; i < res.Length; i++)
-            {
-                Console.Write($"x{i}: {res[i]}\n");
-            }
-
-        }
-
-        private static void Test()
-        {
-            long c = 0x80000000;
-            long n = 10;
-            bool test = Convert.ToBoolean(n >> 31);
-            Console.WriteLine(test);
-            n = c - n;
-            Console.WriteLine(n);
+            Matrix<int> matrix = new Matrix<int>(arr);
+            Console.WriteLine(matrix.Pretty());
+            Console.WriteLine("Text");
         }
         
-        private static void Swap(ref int x,ref int y)
-        {
-
-        }
     }
 }

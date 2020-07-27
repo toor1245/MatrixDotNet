@@ -11,8 +11,7 @@ namespace MatrixDotNet.Extensions
 
         #region Arithmetic and Logic Op
         
-        internal static T Add<T>(T left, T right)
-            where T: unmanaged
+        internal static T Add<T>(T left, T right) where T: unmanaged
         {
             // From Jhon Skeet article
             var t = typeof(T);
@@ -32,8 +31,7 @@ namespace MatrixDotNet.Extensions
             return func(left, right);
         }
         
-        internal static T Sub<T>(T left, T right)
-            where T: unmanaged
+        internal static T Sub<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Sub)),out var del))
@@ -52,8 +50,7 @@ namespace MatrixDotNet.Extensions
             return func(left, right);
         }
         
-        internal static T Multiply<T>(T left, T right) 
-            where T: unmanaged
+        internal static T Multiply<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Multiply)),out var del))
@@ -71,8 +68,8 @@ namespace MatrixDotNet.Extensions
 
             return func(left, right);
         }
-        internal static T Divide<T>(T left, T right)
-            where T: unmanaged
+        
+        internal static T Divide<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Divide)),out var del))
@@ -91,8 +88,7 @@ namespace MatrixDotNet.Extensions
             return func(left, right);
         }
         
-        internal static bool GreaterThan<T>(T left, T right)
-            where T: unmanaged
+        internal static bool GreaterThan<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(GreaterThan)),out var del))
@@ -115,8 +111,7 @@ namespace MatrixDotNet.Extensions
 
         #region Sum Op with Matrix
         
-        public static T Sum<T>(this Matrix<T> matrix) 
-            where T: unmanaged
+        public static T Sum<T>(this Matrix<T> matrix) where T: unmanaged
         {
             T sum = default;
             for (int i = 0; i < matrix._Matrix.GetLength(0); i++)
@@ -129,8 +124,7 @@ namespace MatrixDotNet.Extensions
             return sum;
         }
 
-        public static T Sum<T>(this Matrix<T> matrix, int row)
-            where T: unmanaged
+        public static T Sum<T>(this Matrix<T> matrix, int row) where T: unmanaged
         {
             T sum = default;
             
@@ -142,8 +136,7 @@ namespace MatrixDotNet.Extensions
             return sum;
         }
 
-        public static T[] SumRows<T>(this Matrix<T> matrix)
-            where T : unmanaged
+        public static T[] SumRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
             var array = new T[matrix._Matrix.GetLength(0)];
             
@@ -162,8 +155,7 @@ namespace MatrixDotNet.Extensions
             return array;
         }
         
-        public static T[] SumColumns<T>(this Matrix<T> matrix)
-            where T : unmanaged
+        public static T[] SumColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
             var array = new T[matrix._Matrix.GetLength(1)];
             
@@ -186,8 +178,7 @@ namespace MatrixDotNet.Extensions
 
         #region Max_Min Matrix
 
-        public static T[] MaxRows<T>(this Matrix<T> matrix) 
-            where T : unmanaged
+        public static T[] MaxRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
             T num = default;
             var max = new T[matrix._Matrix.GetLength(0)];
@@ -209,8 +200,7 @@ namespace MatrixDotNet.Extensions
             return max;
         }
         
-        public static T[] MaxColumns<T>(this Matrix<T> matrix) 
-            where T : unmanaged
+        public static T[] MaxColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
             T num = default;
             var max = new T[matrix._Matrix.GetLength(1)];
@@ -231,8 +221,7 @@ namespace MatrixDotNet.Extensions
             return max;
         }
         
-        public static T[] MinRows<T>(this Matrix<T> matrix) 
-            where T : unmanaged
+        public static T[] MinRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
             T num = default;
             var min = new T[matrix._Matrix.GetLength(0)];
@@ -254,29 +243,6 @@ namespace MatrixDotNet.Extensions
             return min;
         }
         
-        public static T[] MinColumns<T>(this Matrix<T> matrix) 
-            where T : unmanaged
-        {
-            T num = default;
-            var min = new T[matrix._Matrix.GetLength(1)];
-
-            for (int i = 0; i < matrix._Matrix.GetLength(1); i++)
-            {
-                for (int j = 0; j < matrix._Matrix.GetLength(0); j++)
-                {
-                    if (!GreaterThan(matrix[j, i],num))
-                    {
-                        num = matrix[j,i];
-                    }
-                }
-                
-                min[i] = num;
-                num = default;
-            }
-            
-            return min;
-        }
-
         #endregion
     }
     
