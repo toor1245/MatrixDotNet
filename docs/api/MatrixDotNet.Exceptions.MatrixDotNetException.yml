@@ -19,8 +19,12 @@ items:
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException
   type: Class
   source:
+    remote:
+      path: src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: MatrixDotNetException
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+    path: ../src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
     startLine: 7
   assemblies:
   - MatrixDotNet
@@ -76,8 +80,12 @@ items:
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String)
   type: Constructor
   source:
+    remote:
+      path: src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: .ctor
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+    path: ../src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
     startLine: 14
   assemblies:
   - MatrixDotNet
@@ -111,8 +119,12 @@ items:
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String)
   type: Constructor
   source:
+    remote:
+      path: src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: .ctor
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+    path: ../src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
     startLine: 24
   assemblies:
   - MatrixDotNet
@@ -143,8 +155,12 @@ items:
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String, System.String)
   type: Constructor
   source:
+    remote:
+      path: src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: .ctor
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+    path: ../src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
     startLine: 35
   assemblies:
   - MatrixDotNet
@@ -181,8 +197,12 @@ items:
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Message
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Message
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+    path: ../src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
     startLine: 45
   assemblies:
   - MatrixDotNet
@@ -214,8 +234,12 @@ items:
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Argument1
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+    path: ../src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
     startLine: 50
   assemblies:
   - MatrixDotNet
@@ -247,8 +271,12 @@ items:
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Argument2
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Exceptions\MatrixDotNetException.cs
+    path: ../src/MatrixDotNet/Exceptions/MatrixDotNetException.cs
     startLine: 55
   assemblies:
   - MatrixDotNet

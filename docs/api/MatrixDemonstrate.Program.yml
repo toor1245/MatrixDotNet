@@ -13,8 +13,12 @@ items:
   fullName: MatrixDemonstrate.Program
   type: Class
   source:
+    remote:
+      path: src/MatrixDemonstrate/Program.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Program
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDemonstrate\Program.cs
+    path: ../src/MatrixDemonstrate/Program.cs
     startLine: 6
   assemblies:
   - MatrixDemonstrate

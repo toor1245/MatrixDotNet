@@ -20,5 +20,7 @@
 - uid: MatrixDotNet.Extensions
   name: MatrixDotNet.Extensions
   items:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension
+    name: BitMatrixExtension
   - uid: MatrixDotNet.Extensions.MatrixExtension
     name: MatrixExtension

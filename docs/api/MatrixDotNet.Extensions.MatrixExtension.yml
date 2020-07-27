@@ -5,11 +5,13 @@ items:
   id: MatrixExtension
   parent: MatrixDotNet.Extensions
   children:
+  - MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
   - MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix{System.Double},System.Double[])
   - MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
   - MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1(MatrixDotNet.Matrix{``0})
   - MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
   - MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1(MatrixDotNet.Matrix{``0},``0[])
+  - MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
   - MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet``1(``0[0:,0:])
   - MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1(MatrixDotNet.Matrix{``0})
   - MatrixDotNet.Extensions.MatrixExtension.Transport``1(MatrixDotNet.Matrix{``0})
@@ -21,9 +23,13 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension
   type: Class
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixSortExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: MatrixExtension
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
-    startLine: 8
+    path: ../src/MatrixDotNet/Extensions/MatrixSortExtension.cs
+    startLine: 2
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet.Extensions
@@ -62,8 +68,12 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension.GetRow<T>(MatrixDotNet.Matrix<T>, System.Int32)
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: GetRow
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
+    path: ../src/MatrixDotNet/Extensions/MatrixExtension.cs
     startLine: 19
   assemblies:
   - MatrixDotNet
@@ -120,9 +130,13 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension.GetColumn<T>(MatrixDotNet.Matrix<T>, System.Int32)
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: GetColumn
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
-    startLine: 47
+    path: ../src/MatrixDotNet/Extensions/MatrixExtension.cs
+    startLine: 46
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet.Extensions
@@ -178,9 +192,13 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension.Transport<T>(MatrixDotNet.Matrix<T>)
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Transport
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
-    startLine: 72
+    path: ../src/MatrixDotNet/Extensions/MatrixExtension.cs
+    startLine: 71
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet.Extensions
@@ -228,9 +246,13 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension.ToPrimitive<T>(MatrixDotNet.Matrix<T>)
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: ToPrimitive
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
-    startLine: 94
+    path: ../src/MatrixDotNet/Extensions/MatrixExtension.cs
+    startLine: 93
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet.Extensions
@@ -278,9 +300,13 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet<T>(T[,])
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: ToMatrixDotNet
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
-    startLine: 115
+    path: ../src/MatrixDotNet/Extensions/MatrixExtension.cs
+    startLine: 114
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet.Extensions
@@ -328,9 +354,13 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension.GetDeterminate<T>(MatrixDotNet.Matrix<T>)
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: GetDeterminate
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
-    startLine: 162
+    path: ../src/MatrixDotNet/Extensions/MatrixExtension.cs
+    startLine: 161
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet.Extensions
@@ -381,9 +411,13 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension.KramerSolve<T>(MatrixDotNet.Matrix<T>, T[])
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: KramerSolve
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
-    startLine: 197
+    path: ../src/MatrixDotNet/Extensions/MatrixExtension.cs
+    startLine: 195
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet.Extensions
@@ -437,9 +471,13 @@ items:
   fullName: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix<System.Double>, System.Double[])
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Gause
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Extensions\MatrixExtension.cs
-    startLine: 226
+    path: ../src/MatrixDotNet/Extensions/MatrixExtension.cs
+    startLine: 223
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet.Extensions
@@ -471,6 +509,102 @@ items:
   - Shared
   fullName.vb: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix(Of System.Double), System.Double())
   name.vb: Gause(Matrix(Of Double), Double())
+- uid: MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+  id: Pretty``1(MatrixDotNet.Matrix{``0})
+  isExtensionMethod: true
+  parent: MatrixDotNet.Extensions.MatrixExtension
+  langs:
+  - csharp
+  - vb
+  name: Pretty<T>(Matrix<T>)
+  nameWithType: MatrixExtension.Pretty<T>(Matrix<T>)
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty<T>(MatrixDotNet.Matrix<T>)
+  type: Method
+  source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixOutputExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
+    id: Pretty
+    path: ../src/MatrixDotNet/Extensions/MatrixOutputExtension.cs
+    startLine: 7
+  assemblies:
+  - MatrixDotNet
+  namespace: MatrixDotNet.Extensions
+  syntax:
+    content: >-
+      public static string Pretty<T>(this Matrix<T> matrix)
+
+          where T : struct
+    parameters:
+    - id: matrix
+      type: MatrixDotNet.Matrix{{T}}
+    typeParameters:
+    - id: T
+    return:
+      type: System.String
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function Pretty(Of T As Structure)(matrix As Matrix(Of T)) As String
+  overload: MatrixDotNet.Extensions.MatrixExtension.Pretty*
+  nameWithType.vb: MatrixExtension.Pretty(Of T)(Matrix(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.Pretty(Of T)(MatrixDotNet.Matrix(Of T))
+  name.vb: Pretty(Of T)(Matrix(Of T))
+- uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+  id: BubbleSort``1(MatrixDotNet.Matrix{``0})
+  isExtensionMethod: true
+  parent: MatrixDotNet.Extensions.MatrixExtension
+  langs:
+  - csharp
+  - vb
+  name: BubbleSort<T>(Matrix<T>)
+  nameWithType: MatrixExtension.BubbleSort<T>(Matrix<T>)
+  fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort<T>(MatrixDotNet.Matrix<T>)
+  type: Method
+  source:
+    remote:
+      path: src/MatrixDotNet/Extensions/MatrixSortExtension.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
+    id: BubbleSort
+    path: ../src/MatrixDotNet/Extensions/MatrixSortExtension.cs
+    startLine: 4
+  assemblies:
+  - MatrixDotNet
+  namespace: MatrixDotNet.Extensions
+  syntax:
+    content: >-
+      public static void BubbleSort<T>(this Matrix<T> matrix)
+
+          where T : struct
+    parameters:
+    - id: matrix
+      type: MatrixDotNet.Matrix{{T}}
+    typeParameters:
+    - id: T
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub BubbleSort(Of T As Structure)(matrix As Matrix(Of T))
+  overload: MatrixDotNet.Extensions.MatrixExtension.BubbleSort*
+  nameWithType.vb: MatrixExtension.BubbleSort(Of T)(Matrix(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.BubbleSort(Of T)(MatrixDotNet.Matrix(Of T))
+  name.vb: BubbleSort(Of T)(Matrix(Of T))
 references:
 - uid: MatrixDotNet.Extensions
   commentId: N:MatrixDotNet.Extensions
@@ -1029,3 +1163,20 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: MatrixDotNet.Extensions.MatrixExtension.Pretty*
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.Pretty
+  name: Pretty
+  nameWithType: MatrixExtension.Pretty
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort*
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.BubbleSort
+  name: BubbleSort
+  nameWithType: MatrixExtension.BubbleSort
+  fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort

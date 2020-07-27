@@ -22,7 +22,9 @@ items:
   - MatrixDotNet.Matrix`1.op_Division(`0,MatrixDotNet.Matrix{`0})
   - MatrixDotNet.Matrix`1.op_Division(MatrixDotNet.Matrix{`0},`0)
   - MatrixDotNet.Matrix`1.op_Multiply(`0,MatrixDotNet.Matrix{`0})
+  - MatrixDotNet.Matrix`1.op_Multiply(`0[],MatrixDotNet.Matrix{`0})
   - MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0)
+  - MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0[])
   - MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
   - MatrixDotNet.Matrix`1.op_Subtraction(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
   - MatrixDotNet.Matrix`1.Rank
@@ -36,8 +38,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>
   type: Class
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Matrix
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 12
   assemblies:
   - MatrixDotNet
@@ -45,12 +51,12 @@ items:
   summary: "\nRepresents math matrix.\n"
   example: []
   syntax:
-    content: 'public class Matrix<T> : ICloneable where T : struct'
+    content: 'public sealed class Matrix<T> : ICloneable where T : struct'
     typeParameters:
     - id: T
       description: integral type.
     content.vb: >-
-      Public Class Matrix(Of T As Structure)
+      Public NotInheritable Class Matrix(Of T As Structure)
 
           Implements ICloneable
   inheritance:
@@ -63,18 +69,28 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   extensionMethods:
+  - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.Max``1
+  - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(System.Int32)
+  - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(System.Int32)
+  - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.Min``1
+  - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(System.Int32)
+  - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(System.Int32)
   - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetRow``1(System.Int32)
   - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetColumn``1(System.Int32)
   - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.Transport``1
   - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.ToPrimitive``1
   - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.GetDeterminate``1
   - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.KramerSolve``1({T}[])
+  - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.Pretty``1
+  - MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1
   nameWithType.vb: Matrix(Of T)
   modifiers.csharp:
   - public
+  - sealed
   - class
   modifiers.vb:
   - Public
+  - NotInheritable
   - Class
   fullName.vb: MatrixDotNet.Matrix(Of T)
   name.vb: Matrix(Of T)
@@ -90,8 +106,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Length
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Length
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 26
   assemblies:
   - MatrixDotNet
@@ -125,8 +145,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Rows
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Rows
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 31
   assemblies:
   - MatrixDotNet
@@ -160,8 +184,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Columns
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Columns
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 36
   assemblies:
   - MatrixDotNet
@@ -195,8 +223,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Rank
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Rank
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 41
   assemblies:
   - MatrixDotNet
@@ -230,8 +262,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.IsSquare
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: IsSquare
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 46
   assemblies:
   - MatrixDotNet
@@ -265,8 +301,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Item[System.Int32, System.Int32]
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: this[]
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 60
   assemblies:
   - MatrixDotNet
@@ -311,8 +351,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Item[System.Int32]
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: this[]
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 83
   assemblies:
   - MatrixDotNet
@@ -353,8 +397,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Item[System.Int32, MatrixDotNet.State]
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: this[]
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 104
   assemblies:
   - MatrixDotNet
@@ -398,8 +446,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Matrix(T[,])
   type: Constructor
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: .ctor
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 148
   assemblies:
   - MatrixDotNet
@@ -433,8 +485,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Matrix(System.Int32, System.Int32)
   type: Constructor
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: .ctor
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 166
   assemblies:
   - MatrixDotNet
@@ -470,8 +526,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Addition(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
   type: Operator
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: op_Addition
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 184
   assemblies:
   - MatrixDotNet
@@ -517,8 +577,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Subtraction(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
   type: Operator
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: op_Subtraction
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 214
   assemblies:
   - MatrixDotNet
@@ -564,8 +628,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
   type: Operator
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: op_Multiply
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 242
   assemblies:
   - MatrixDotNet
@@ -610,8 +678,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, T)
   type: Operator
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: op_Multiply
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 274
   assemblies:
   - MatrixDotNet
@@ -653,8 +725,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Multiply(T, MatrixDotNet.Matrix<T>)
   type: Operator
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: op_Multiply
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 294
   assemblies:
   - MatrixDotNet
@@ -696,8 +772,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Division(MatrixDotNet.Matrix<T>, T)
   type: Operator
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: op_Division
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 314
   assemblies:
   - MatrixDotNet
@@ -739,8 +819,12 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Division(T, MatrixDotNet.Matrix<T>)
   type: Operator
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: op_Division
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
+    path: ../src/MatrixDotNet/Matrix.cs
     startLine: 334
   assemblies:
   - MatrixDotNet
@@ -770,6 +854,106 @@ items:
   - Shared
   fullName.vb: MatrixDotNet.Matrix(Of T).Division(T, MatrixDotNet.Matrix(Of T))
   name.vb: Division(T, Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1.op_Multiply(`0[],MatrixDotNet.Matrix{`0})
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(`0[],MatrixDotNet.Matrix{`0})
+  id: op_Multiply(`0[],MatrixDotNet.Matrix{`0})
+  parent: MatrixDotNet.Matrix`1
+  langs:
+  - csharp
+  - vb
+  name: Multiply(T[], Matrix<T>)
+  nameWithType: Matrix<T>.Multiply(T[], Matrix<T>)
+  fullName: MatrixDotNet.Matrix<T>.Multiply(T[], MatrixDotNet.Matrix<T>)
+  type: Operator
+  source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
+    id: op_Multiply
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 355
+  assemblies:
+  - MatrixDotNet
+  namespace: MatrixDotNet
+  summary: "\nReturns vector sum of each multiply element of row.\n"
+  example: []
+  syntax:
+    content: public static T[] operator *(T[] array, Matrix<T> matrix)
+    parameters:
+    - id: array
+      type: '{T}[]'
+      description: array.
+    - id: matrix
+      type: MatrixDotNet.Matrix`1
+      description: matrix.
+    return:
+      type: '{T}[]'
+      description: sum of each multiply element of row.
+    content.vb: Public Shared Operator *(array As T(), matrix As Matrix(Of T)) As T()
+  overload: MatrixDotNet.Matrix`1.op_Multiply*
+  exceptions:
+  - type: MatrixDotNet.Exceptions.MatrixDotNetException
+    commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+  nameWithType.vb: Matrix(Of T).Multiply(T(), Matrix(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(T(), MatrixDotNet.Matrix(Of T))
+  name.vb: Multiply(T(), Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0[])
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0[])
+  id: op_Multiply(MatrixDotNet.Matrix{`0},`0[])
+  parent: MatrixDotNet.Matrix`1
+  langs:
+  - csharp
+  - vb
+  name: Multiply(Matrix<T>, T[])
+  nameWithType: Matrix<T>.Multiply(Matrix<T>, T[])
+  fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, T[])
+  type: Operator
+  source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
+    id: op_Multiply
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 385
+  assemblies:
+  - MatrixDotNet
+  namespace: MatrixDotNet
+  summary: "\nReturns vector sum of each multiply element of row.\n"
+  example: []
+  syntax:
+    content: public static T[] operator *(Matrix<T> matrix, T[] array)
+    parameters:
+    - id: matrix
+      type: MatrixDotNet.Matrix`1
+      description: matrix.
+    - id: array
+      type: '{T}[]'
+      description: array.
+    return:
+      type: '{T}[]'
+      description: sum of each multiply element of row.
+    content.vb: Public Shared Operator *(matrix As Matrix(Of T), array As T()) As T()
+  overload: MatrixDotNet.Matrix`1.op_Multiply*
+  exceptions:
+  - type: MatrixDotNet.Exceptions.MatrixDotNetException
+    commentId: T:MatrixDotNet.Exceptions.MatrixDotNetException
+  nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), T())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), T())
+  name.vb: Multiply(Matrix(Of T), T())
 - uid: MatrixDotNet.Matrix`1.ToString
   commentId: M:MatrixDotNet.Matrix`1.ToString
   id: ToString
@@ -782,9 +966,13 @@ items:
   fullName: MatrixDotNet.Matrix<T>.ToString()
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: ToString
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 365
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 426
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet
@@ -818,9 +1006,13 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Clone()
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Clone
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 386
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 447
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet
@@ -853,9 +1045,13 @@ items:
   fullName: MatrixDotNet.Matrix<T>.Equals(System.Object)
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Equals
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 406
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 467
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet
@@ -896,9 +1092,13 @@ items:
   fullName: MatrixDotNet.Matrix<T>.GetHashCode()
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: GetHashCode
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 429
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 490
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet
@@ -932,9 +1132,13 @@ items:
   fullName: MatrixDotNet.Matrix<T>.LNorm()
   type: Method
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: LNorm
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 460
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 521
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet
@@ -965,9 +1169,13 @@ items:
   fullName: MatrixDotNet.Matrix<T>.MNorm
   type: Property
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: MNorm
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 481
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 542
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet
@@ -1180,6 +1388,238 @@ references:
     name: Object
     nameWithType: Object
     fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.Max``1
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Max``1(MatrixDotNet.Matrix{``0})
+  parent: MatrixDotNet.Extensions.BitMatrixExtension
+  definition: MatrixDotNet.Extensions.BitMatrixExtension.Max``1(MatrixDotNet.Matrix{``0})
+  name: Max<T>()
+  nameWithType: BitMatrixExtension.Max<T>()
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max<T>()
+  nameWithType.vb: BitMatrixExtension.Max(Of T)()
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Max(Of T)()
+  name.vb: Max(Of T)()
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.Max``1
+    name: Max<T>
+    nameWithType: BitMatrixExtension.Max<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.Max``1
+    name: Max(Of T)
+    nameWithType: BitMatrixExtension.Max(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(System.Int32)
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  parent: MatrixDotNet.Extensions.BitMatrixExtension
+  definition: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: MaxByRow<T>(Int32)
+  nameWithType: BitMatrixExtension.MaxByRow<T>(Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow<T>(System.Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByRow(Of T)(Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(Of T)(System.Int32)
+  name.vb: MaxByRow(Of T)(Int32)
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(System.Int32)
+    name: MaxByRow<T>
+    nameWithType: BitMatrixExtension.MaxByRow<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(System.Int32)
+    name: MaxByRow(Of T)
+    nameWithType: BitMatrixExtension.MaxByRow(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(System.Int32)
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  parent: MatrixDotNet.Extensions.BitMatrixExtension
+  definition: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: MaxByColumn<T>(Int32)
+  nameWithType: BitMatrixExtension.MaxByColumn<T>(Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn<T>(System.Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByColumn(Of T)(Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(Of T)(System.Int32)
+  name.vb: MaxByColumn(Of T)(Int32)
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(System.Int32)
+    name: MaxByColumn<T>
+    nameWithType: BitMatrixExtension.MaxByColumn<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(System.Int32)
+    name: MaxByColumn(Of T)
+    nameWithType: BitMatrixExtension.MaxByColumn(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.Min``1
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Min``1(MatrixDotNet.Matrix{``0})
+  parent: MatrixDotNet.Extensions.BitMatrixExtension
+  definition: MatrixDotNet.Extensions.BitMatrixExtension.Min``1(MatrixDotNet.Matrix{``0})
+  name: Min<T>()
+  nameWithType: BitMatrixExtension.Min<T>()
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Min<T>()
+  nameWithType.vb: BitMatrixExtension.Min(Of T)()
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Min(Of T)()
+  name.vb: Min(Of T)()
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.Min``1
+    name: Min<T>
+    nameWithType: BitMatrixExtension.Min<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.Min<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.Min``1
+    name: Min(Of T)
+    nameWithType: BitMatrixExtension.Min(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.Min(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(System.Int32)
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  parent: MatrixDotNet.Extensions.BitMatrixExtension
+  definition: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: MinByRow<T>(Int32)
+  nameWithType: BitMatrixExtension.MinByRow<T>(Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow<T>(System.Int32)
+  nameWithType.vb: BitMatrixExtension.MinByRow(Of T)(Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow(Of T)(System.Int32)
+  name.vb: MinByRow(Of T)(Int32)
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(System.Int32)
+    name: MinByRow<T>
+    nameWithType: BitMatrixExtension.MinByRow<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(System.Int32)
+    name: MinByRow(Of T)
+    nameWithType: BitMatrixExtension.MinByRow(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(System.Int32)
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  parent: MatrixDotNet.Extensions.BitMatrixExtension
+  definition: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: MinByColumn<T>(Int32)
+  nameWithType: BitMatrixExtension.MinByColumn<T>(Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn<T>(System.Int32)
+  nameWithType.vb: BitMatrixExtension.MinByColumn(Of T)(Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn(Of T)(System.Int32)
+  name.vb: MinByColumn(Of T)(Int32)
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(System.Int32)
+    name: MinByColumn<T>
+    nameWithType: BitMatrixExtension.MinByColumn<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(System.Int32)
+    name: MinByColumn(Of T)
+    nameWithType: BitMatrixExtension.MinByColumn(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
     isExternal: true
   - name: )
     nameWithType: )
@@ -1408,12 +1848,486 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.Pretty``1
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+  parent: MatrixDotNet.Extensions.MatrixExtension
+  definition: MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+  name: Pretty<T>()
+  nameWithType: MatrixExtension.Pretty<T>()
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty<T>()
+  nameWithType.vb: MatrixExtension.Pretty(Of T)()
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.Pretty(Of T)()
+  name.vb: Pretty(Of T)()
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.MatrixExtension.Pretty``1
+    name: Pretty<T>
+    nameWithType: MatrixExtension.Pretty<T>
+    fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.MatrixExtension.Pretty``1
+    name: Pretty(Of T)
+    nameWithType: MatrixExtension.Pretty(Of T)
+    fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Matrix`1.MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+  parent: MatrixDotNet.Extensions.MatrixExtension
+  definition: MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+  name: BubbleSort<T>()
+  nameWithType: MatrixExtension.BubbleSort<T>()
+  fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort<T>()
+  nameWithType.vb: MatrixExtension.BubbleSort(Of T)()
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.BubbleSort(Of T)()
+  name.vb: BubbleSort(Of T)()
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1
+    name: BubbleSort<T>
+    nameWithType: MatrixExtension.BubbleSort<T>
+    fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1
+    name: BubbleSort(Of T)
+    nameWithType: MatrixExtension.BubbleSort(Of T)
+    fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
   name: System
   nameWithType: System
   fullName: System
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Max``1(MatrixDotNet.Matrix{``0})
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Max``1(MatrixDotNet.Matrix{``0})
+  name: Max<T>(Matrix<T>)
+  nameWithType: BitMatrixExtension.Max<T>(Matrix<T>)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max<T>(MatrixDotNet.Matrix<T>)
+  nameWithType.vb: BitMatrixExtension.Max(Of T)(Matrix(Of T))
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Max(Of T)(MatrixDotNet.Matrix(Of T))
+  name.vb: Max(Of T)(Matrix(Of T))
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.Max``1(MatrixDotNet.Matrix{``0})
+    name: Max<T>
+    nameWithType: BitMatrixExtension.Max<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.Max``1(MatrixDotNet.Matrix{``0})
+    name: Max(Of T)
+    nameWithType: BitMatrixExtension.Max(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Extensions.BitMatrixExtension
+  commentId: T:MatrixDotNet.Extensions.BitMatrixExtension
+  parent: MatrixDotNet.Extensions
+  name: BitMatrixExtension
+  nameWithType: BitMatrixExtension
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  isExternal: true
+  name: MaxByRow<T>(Matrix<T>, Int32)
+  nameWithType: BitMatrixExtension.MaxByRow<T>(Matrix<T>, Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByRow(Of T)(Matrix(Of T), Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  name.vb: MaxByRow(Of T)(Matrix(Of T), Int32)
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+    name: MaxByRow<T>
+    nameWithType: BitMatrixExtension.MaxByRow<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+    name: MaxByRow(Of T)
+    nameWithType: BitMatrixExtension.MaxByRow(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  isExternal: true
+  name: MaxByColumn<T>(Matrix<T>, Int32)
+  nameWithType: BitMatrixExtension.MaxByColumn<T>(Matrix<T>, Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByColumn(Of T)(Matrix(Of T), Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  name.vb: MaxByColumn(Of T)(Matrix(Of T), Int32)
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+    name: MaxByColumn<T>
+    nameWithType: BitMatrixExtension.MaxByColumn<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+    name: MaxByColumn(Of T)
+    nameWithType: BitMatrixExtension.MaxByColumn(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Min``1(MatrixDotNet.Matrix{``0})
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Min``1(MatrixDotNet.Matrix{``0})
+  name: Min<T>(Matrix<T>)
+  nameWithType: BitMatrixExtension.Min<T>(Matrix<T>)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Min<T>(MatrixDotNet.Matrix<T>)
+  nameWithType.vb: BitMatrixExtension.Min(Of T)(Matrix(Of T))
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Min(Of T)(MatrixDotNet.Matrix(Of T))
+  name.vb: Min(Of T)(Matrix(Of T))
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.Min``1(MatrixDotNet.Matrix{``0})
+    name: Min<T>
+    nameWithType: BitMatrixExtension.Min<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.Min<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.Min``1(MatrixDotNet.Matrix{``0})
+    name: Min(Of T)
+    nameWithType: BitMatrixExtension.Min(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.Min(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  isExternal: true
+  name: MinByRow<T>(Matrix<T>, Int32)
+  nameWithType: BitMatrixExtension.MinByRow<T>(Matrix<T>, Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  nameWithType.vb: BitMatrixExtension.MinByRow(Of T)(Matrix(Of T), Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  name.vb: MinByRow(Of T)(Matrix(Of T), Int32)
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+    name: MinByRow<T>
+    nameWithType: BitMatrixExtension.MinByRow<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+    name: MinByRow(Of T)
+    nameWithType: BitMatrixExtension.MinByRow(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  isExternal: true
+  name: MinByColumn<T>(Matrix<T>, Int32)
+  nameWithType: BitMatrixExtension.MinByColumn<T>(Matrix<T>, Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  nameWithType.vb: BitMatrixExtension.MinByColumn(Of T)(Matrix(Of T), Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  name.vb: MinByColumn(Of T)(Matrix(Of T), Int32)
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+    name: MinByColumn<T>
+    nameWithType: BitMatrixExtension.MinByColumn<T>
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+    name: MinByColumn(Of T)
+    nameWithType: BitMatrixExtension.MinByColumn(Of T)
+    fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
   commentId: M:MatrixDotNet.Extensions.MatrixExtension.GetRow``1(MatrixDotNet.Matrix{``0},System.Int32)
   isExternal: true
@@ -1805,6 +2719,118 @@ references:
   - name: ()
     nameWithType: ()
     fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+  name: Pretty<T>(Matrix<T>)
+  nameWithType: MatrixExtension.Pretty<T>(Matrix<T>)
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty<T>(MatrixDotNet.Matrix<T>)
+  nameWithType.vb: MatrixExtension.Pretty(Of T)(Matrix(Of T))
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.Pretty(Of T)(MatrixDotNet.Matrix(Of T))
+  name.vb: Pretty(Of T)(Matrix(Of T))
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+    name: Pretty<T>
+    nameWithType: MatrixExtension.Pretty<T>
+    fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+    name: Pretty(Of T)
+    nameWithType: MatrixExtension.Pretty(Of T)
+    fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+  name: BubbleSort<T>(Matrix<T>)
+  nameWithType: MatrixExtension.BubbleSort<T>(Matrix<T>)
+  fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort<T>(MatrixDotNet.Matrix<T>)
+  nameWithType.vb: MatrixExtension.BubbleSort(Of T)(Matrix(Of T))
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.BubbleSort(Of T)(MatrixDotNet.Matrix(Of T))
+  name.vb: BubbleSort(Of T)(Matrix(Of T))
+  spec.csharp:
+  - uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+    name: BubbleSort<T>
+    nameWithType: MatrixExtension.BubbleSort<T>
+    fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+    name: BubbleSort(Of T)
+    nameWithType: MatrixExtension.BubbleSort(Of T)
+    fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: MatrixDotNet.Matrix`1
+    name: Matrix
+    nameWithType: Matrix
+    fullName: MatrixDotNet.Matrix
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
   - name: )
     nameWithType: )
     fullName: )

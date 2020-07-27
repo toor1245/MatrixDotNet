@@ -101,12 +101,367 @@ references:
   commentId: N:MatrixDotNet.Extensions
   fullName: MatrixDotNet.Extensions
   nameWithType: MatrixDotNet.Extensions
+- uid: MatrixDotNet.Extensions.BitMatrixExtension
+  name: BitMatrixExtension
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html
+  commentId: T:MatrixDotNet.Extensions.BitMatrixExtension
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension
+  nameWithType: BitMatrixExtension
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix{System.Byte})
+  name: BitMin(Matrix<Byte>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMin_MatrixDotNet_Matrix_System_Byte__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix{System.Byte})
+  name.vb: BitMin(Matrix(Of Byte))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix<System.Byte>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix(Of System.Byte))
+  nameWithType: BitMatrixExtension.BitMin(Matrix<Byte>)
+  nameWithType.vb: BitMatrixExtension.BitMin(Matrix(Of Byte))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix{System.Int16})
+  name: BitMin(Matrix<Int16>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMin_MatrixDotNet_Matrix_System_Int16__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix{System.Int16})
+  name.vb: BitMin(Matrix(Of Int16))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix<System.Int16>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix(Of System.Int16))
+  nameWithType: BitMatrixExtension.BitMin(Matrix<Int16>)
+  nameWithType.vb: BitMatrixExtension.BitMin(Matrix(Of Int16))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix{System.Int32})
+  name: BitMin(Matrix<Int32>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMin_MatrixDotNet_Matrix_System_Int32__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix{System.Int32})
+  name.vb: BitMin(Matrix(Of Int32))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix<System.Int32>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix(Of System.Int32))
+  nameWithType: BitMatrixExtension.BitMin(Matrix<Int32>)
+  nameWithType.vb: BitMatrixExtension.BitMin(Matrix(Of Int32))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix{System.Int64})
+  name: BitMin(Matrix<Int64>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMin_MatrixDotNet_Matrix_System_Int64__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix{System.Int64})
+  name.vb: BitMin(Matrix(Of Int64))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix<System.Int64>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMin(MatrixDotNet.Matrix(Of System.Int64))
+  nameWithType: BitMatrixExtension.BitMin(Matrix<Int64>)
+  nameWithType.vb: BitMatrixExtension.BitMin(Matrix(Of Int64))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMin*
+  name: BitMin
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMin_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.BitMin
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMin
+  nameWithType: BitMatrixExtension.BitMin
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix{System.Byte},System.Int32)
+  name: BitMinByColumn(Matrix<Byte>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByColumn_MatrixDotNet_Matrix_System_Byte__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix{System.Byte},System.Int32)
+  name.vb: BitMinByColumn(Matrix(Of Byte), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix<System.Byte>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix(Of System.Byte), System.Int32)
+  nameWithType: BitMatrixExtension.BitMinByColumn(Matrix<Byte>, Int32)
+  nameWithType.vb: BitMatrixExtension.BitMinByColumn(Matrix(Of Byte), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix{System.Int16},System.Int32)
+  name: BitMinByColumn(Matrix<Int16>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByColumn_MatrixDotNet_Matrix_System_Int16__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix{System.Int16},System.Int32)
+  name.vb: BitMinByColumn(Matrix(Of Int16), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix<System.Int16>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix(Of System.Int16), System.Int32)
+  nameWithType: BitMatrixExtension.BitMinByColumn(Matrix<Int16>, Int32)
+  nameWithType.vb: BitMatrixExtension.BitMinByColumn(Matrix(Of Int16), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix{System.Int32},System.Int32)
+  name: BitMinByColumn(Matrix<Int32>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByColumn_MatrixDotNet_Matrix_System_Int32__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix{System.Int32},System.Int32)
+  name.vb: BitMinByColumn(Matrix(Of Int32), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix<System.Int32>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix(Of System.Int32), System.Int32)
+  nameWithType: BitMatrixExtension.BitMinByColumn(Matrix<Int32>, Int32)
+  nameWithType.vb: BitMatrixExtension.BitMinByColumn(Matrix(Of Int32), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix{System.Int64},System.Int32)
+  name: BitMinByColumn(Matrix<Int64>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByColumn_MatrixDotNet_Matrix_System_Int64__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix{System.Int64},System.Int32)
+  name.vb: BitMinByColumn(Matrix(Of Int64), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix<System.Int64>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn(MatrixDotNet.Matrix(Of System.Int64), System.Int32)
+  nameWithType: BitMatrixExtension.BitMinByColumn(Matrix<Int64>, Int32)
+  nameWithType.vb: BitMatrixExtension.BitMinByColumn(Matrix(Of Int64), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn*
+  name: BitMinByColumn
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByColumn_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByColumn
+  nameWithType: BitMatrixExtension.BitMinByColumn
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix{System.Byte},System.Int32)
+  name: BitMinByRow(Matrix<Byte>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByRow_MatrixDotNet_Matrix_System_Byte__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix{System.Byte},System.Int32)
+  name.vb: BitMinByRow(Matrix(Of Byte), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix<System.Byte>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix(Of System.Byte), System.Int32)
+  nameWithType: BitMatrixExtension.BitMinByRow(Matrix<Byte>, Int32)
+  nameWithType.vb: BitMatrixExtension.BitMinByRow(Matrix(Of Byte), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix{System.Int16},System.Int32)
+  name: BitMinByRow(Matrix<Int16>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByRow_MatrixDotNet_Matrix_System_Int16__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix{System.Int16},System.Int32)
+  name.vb: BitMinByRow(Matrix(Of Int16), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix<System.Int16>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix(Of System.Int16), System.Int32)
+  nameWithType: BitMatrixExtension.BitMinByRow(Matrix<Int16>, Int32)
+  nameWithType.vb: BitMatrixExtension.BitMinByRow(Matrix(Of Int16), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix{System.Int32},System.Int32)
+  name: BitMinByRow(Matrix<Int32>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByRow_MatrixDotNet_Matrix_System_Int32__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix{System.Int32},System.Int32)
+  name.vb: BitMinByRow(Matrix(Of Int32), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix<System.Int32>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix(Of System.Int32), System.Int32)
+  nameWithType: BitMatrixExtension.BitMinByRow(Matrix<Int32>, Int32)
+  nameWithType.vb: BitMatrixExtension.BitMinByRow(Matrix(Of Int32), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix{System.Int64},System.Int32)
+  name: BitMinByRow(Matrix<Int64>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByRow_MatrixDotNet_Matrix_System_Int64__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix{System.Int64},System.Int32)
+  name.vb: BitMinByRow(Matrix(Of Int64), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix<System.Int64>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow(MatrixDotNet.Matrix(Of System.Int64), System.Int32)
+  nameWithType: BitMatrixExtension.BitMinByRow(Matrix<Int64>, Int32)
+  nameWithType.vb: BitMatrixExtension.BitMinByRow(Matrix(Of Int64), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow*
+  name: BitMinByRow
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_BitMinByRow_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.BitMinByRow
+  nameWithType: BitMatrixExtension.BitMinByRow
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix{System.Byte})
+  name: Max(Matrix<Byte>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_Max_MatrixDotNet_Matrix_System_Byte__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix{System.Byte})
+  name.vb: Max(Matrix(Of Byte))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix<System.Byte>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix(Of System.Byte))
+  nameWithType: BitMatrixExtension.Max(Matrix<Byte>)
+  nameWithType.vb: BitMatrixExtension.Max(Matrix(Of Byte))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix{System.Int16})
+  name: Max(Matrix<Int16>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_Max_MatrixDotNet_Matrix_System_Int16__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix{System.Int16})
+  name.vb: Max(Matrix(Of Int16))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix<System.Int16>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix(Of System.Int16))
+  nameWithType: BitMatrixExtension.Max(Matrix<Int16>)
+  nameWithType.vb: BitMatrixExtension.Max(Matrix(Of Int16))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix{System.Int32})
+  name: Max(Matrix<Int32>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_Max_MatrixDotNet_Matrix_System_Int32__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix{System.Int32})
+  name.vb: Max(Matrix(Of Int32))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix<System.Int32>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix(Of System.Int32))
+  nameWithType: BitMatrixExtension.Max(Matrix<Int32>)
+  nameWithType.vb: BitMatrixExtension.Max(Matrix(Of Int32))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix{System.Int64})
+  name: Max(Matrix<Int64>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_Max_MatrixDotNet_Matrix_System_Int64__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix{System.Int64})
+  name.vb: Max(Matrix(Of Int64))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix<System.Int64>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Max(MatrixDotNet.Matrix(Of System.Int64))
+  nameWithType: BitMatrixExtension.Max(Matrix<Int64>)
+  nameWithType.vb: BitMatrixExtension.Max(Matrix(Of Int64))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Max*
+  name: Max
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_Max_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.Max
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max
+  nameWithType: BitMatrixExtension.Max
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Max``1(MatrixDotNet.Matrix{``0})
+  name: Max<T>(Matrix<T>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_Max__1_MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Max``1(MatrixDotNet.Matrix{``0})
+  name.vb: Max(Of T)(Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Max<T>(MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Max(Of T)(MatrixDotNet.Matrix(Of T))
+  nameWithType: BitMatrixExtension.Max<T>(Matrix<T>)
+  nameWithType.vb: BitMatrixExtension.Max(Of T)(Matrix(Of T))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix{System.Byte},System.Int32)
+  name: MaxByColumn(Matrix<Byte>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByColumn_MatrixDotNet_Matrix_System_Byte__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix{System.Byte},System.Int32)
+  name.vb: MaxByColumn(Matrix(Of Byte), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix<System.Byte>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix(Of System.Byte), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByColumn(Matrix<Byte>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByColumn(Matrix(Of Byte), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix{System.Int16},System.Int32)
+  name: MaxByColumn(Matrix<Int16>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByColumn_MatrixDotNet_Matrix_System_Int16__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix{System.Int16},System.Int32)
+  name.vb: MaxByColumn(Matrix(Of Int16), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix<System.Int16>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix(Of System.Int16), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByColumn(Matrix<Int16>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByColumn(Matrix(Of Int16), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix{System.Int32},System.Int32)
+  name: MaxByColumn(Matrix<Int32>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByColumn_MatrixDotNet_Matrix_System_Int32__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix{System.Int32},System.Int32)
+  name.vb: MaxByColumn(Matrix(Of Int32), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix<System.Int32>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix(Of System.Int32), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByColumn(Matrix<Int32>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByColumn(Matrix(Of Int32), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix{System.Int64},System.Int32)
+  name: MaxByColumn(Matrix<Int64>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByColumn_MatrixDotNet_Matrix_System_Int64__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix{System.Int64},System.Int32)
+  name.vb: MaxByColumn(Matrix(Of Int64), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix<System.Int64>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(MatrixDotNet.Matrix(Of System.Int64), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByColumn(Matrix<Int64>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByColumn(Matrix(Of Int64), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn*
+  name: MaxByColumn
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByColumn_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn
+  nameWithType: BitMatrixExtension.MaxByColumn
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: MaxByColumn<T>(Matrix<T>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByColumn__1_MatrixDotNet_Matrix___0__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name.vb: MaxByColumn(Of T)(Matrix(Of T), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByColumn(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByColumn<T>(Matrix<T>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByColumn(Of T)(Matrix(Of T), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix{System.Byte},System.Int32)
+  name: MaxByRow(Matrix<Byte>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByRow_MatrixDotNet_Matrix_System_Byte__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix{System.Byte},System.Int32)
+  name.vb: MaxByRow(Matrix(Of Byte), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix<System.Byte>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix(Of System.Byte), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByRow(Matrix<Byte>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByRow(Matrix(Of Byte), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix{System.Int16},System.Int32)
+  name: MaxByRow(Matrix<Int16>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByRow_MatrixDotNet_Matrix_System_Int16__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix{System.Int16},System.Int32)
+  name.vb: MaxByRow(Matrix(Of Int16), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix<System.Int16>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix(Of System.Int16), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByRow(Matrix<Int16>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByRow(Matrix(Of Int16), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix{System.Int32},System.Int32)
+  name: MaxByRow(Matrix<Int32>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByRow_MatrixDotNet_Matrix_System_Int32__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix{System.Int32},System.Int32)
+  name.vb: MaxByRow(Matrix(Of Int32), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix<System.Int32>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix(Of System.Int32), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByRow(Matrix<Int32>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByRow(Matrix(Of Int32), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix{System.Int64},System.Int32)
+  name: MaxByRow(Matrix<Int64>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByRow_MatrixDotNet_Matrix_System_Int64__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix{System.Int64},System.Int32)
+  name.vb: MaxByRow(Matrix(Of Int64), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix<System.Int64>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(MatrixDotNet.Matrix(Of System.Int64), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByRow(Matrix<Int64>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByRow(Matrix(Of Int64), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow*
+  name: MaxByRow
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByRow_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow
+  nameWithType: BitMatrixExtension.MaxByRow
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: MaxByRow<T>(Matrix<T>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MaxByRow__1_MatrixDotNet_Matrix___0__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name.vb: MaxByRow(Of T)(Matrix(Of T), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MaxByRow(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  nameWithType: BitMatrixExtension.MaxByRow<T>(Matrix<T>, Int32)
+  nameWithType.vb: BitMatrixExtension.MaxByRow(Of T)(Matrix(Of T), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Min*
+  name: Min
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_Min_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.Min
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Min
+  nameWithType: BitMatrixExtension.Min
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.Min``1(MatrixDotNet.Matrix{``0})
+  name: Min<T>(Matrix<T>)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_Min__1_MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.Min``1(MatrixDotNet.Matrix{``0})
+  name.vb: Min(Of T)(Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.Min<T>(MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.Min(Of T)(MatrixDotNet.Matrix(Of T))
+  nameWithType: BitMatrixExtension.Min<T>(Matrix<T>)
+  nameWithType.vb: BitMatrixExtension.Min(Of T)(Matrix(Of T))
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn*
+  name: MinByColumn
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MinByColumn_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn
+  nameWithType: BitMatrixExtension.MinByColumn
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: MinByColumn<T>(Matrix<T>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MinByColumn__1_MatrixDotNet_Matrix___0__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name.vb: MinByColumn(Of T)(Matrix(Of T), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MinByColumn(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  nameWithType: BitMatrixExtension.MinByColumn<T>(Matrix<T>, Int32)
+  nameWithType.vb: BitMatrixExtension.MinByColumn(Of T)(Matrix(Of T), Int32)
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow*
+  name: MinByRow
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MinByRow_
+  commentId: Overload:MatrixDotNet.Extensions.BitMatrixExtension.MinByRow
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow
+  nameWithType: BitMatrixExtension.MinByRow
+- uid: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name: MinByRow<T>(Matrix<T>, Int32)
+  href: api/MatrixDotNet.Extensions.BitMatrixExtension.html#MatrixDotNet_Extensions_BitMatrixExtension_MinByRow__1_MatrixDotNet_Matrix___0__System_Int32_
+  commentId: M:MatrixDotNet.Extensions.BitMatrixExtension.MinByRow``1(MatrixDotNet.Matrix{``0},System.Int32)
+  name.vb: MinByRow(Of T)(Matrix(Of T), Int32)
+  fullName: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow<T>(MatrixDotNet.Matrix<T>, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.BitMatrixExtension.MinByRow(Of T)(MatrixDotNet.Matrix(Of T), System.Int32)
+  nameWithType: BitMatrixExtension.MinByRow<T>(Matrix<T>, Int32)
+  nameWithType.vb: BitMatrixExtension.MinByRow(Of T)(Matrix(Of T), Int32)
 - uid: MatrixDotNet.Extensions.MatrixExtension
   name: MatrixExtension
   href: api/MatrixDotNet.Extensions.MatrixExtension.html
   commentId: T:MatrixDotNet.Extensions.MatrixExtension
   fullName: MatrixDotNet.Extensions.MatrixExtension
   nameWithType: MatrixExtension
+- uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort*
+  name: BubbleSort
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_BubbleSort_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.BubbleSort
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort
+  nameWithType: MatrixExtension.BubbleSort
+- uid: MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+  name: BubbleSort<T>(Matrix<T>)
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_BubbleSort__1_MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.BubbleSort``1(MatrixDotNet.Matrix{``0})
+  name.vb: BubbleSort(Of T)(Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.MatrixExtension.BubbleSort<T>(MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.BubbleSort(Of T)(MatrixDotNet.Matrix(Of T))
+  nameWithType: MatrixExtension.BubbleSort<T>(Matrix<T>)
+  nameWithType.vb: MatrixExtension.BubbleSort(Of T)(Matrix(Of T))
 - uid: MatrixDotNet.Extensions.MatrixExtension.Gause(MatrixDotNet.Matrix{System.Double},System.Double[])
   name: Gause(Matrix<Double>, Double[])
   href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Gause_MatrixDotNet_Matrix_System_Double__System_Double___
@@ -187,6 +542,22 @@ references:
   fullName.vb: MatrixDotNet.Extensions.MatrixExtension.KramerSolve(Of T)(MatrixDotNet.Matrix(Of T), T())
   nameWithType: MatrixExtension.KramerSolve<T>(Matrix<T>, T[])
   nameWithType.vb: MatrixExtension.KramerSolve(Of T)(Matrix(Of T), T())
+- uid: MatrixDotNet.Extensions.MatrixExtension.Pretty*
+  name: Pretty
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Pretty_
+  commentId: Overload:MatrixDotNet.Extensions.MatrixExtension.Pretty
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty
+  nameWithType: MatrixExtension.Pretty
+- uid: MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+  name: Pretty<T>(Matrix<T>)
+  href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Pretty__1_MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.MatrixExtension.Pretty``1(MatrixDotNet.Matrix{``0})
+  name.vb: Pretty(Of T)(Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.MatrixExtension.Pretty<T>(MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.MatrixExtension.Pretty(Of T)(MatrixDotNet.Matrix(Of T))
+  nameWithType: MatrixExtension.Pretty<T>(Matrix<T>)
+  nameWithType.vb: MatrixExtension.Pretty(Of T)(Matrix(Of T))
 - uid: MatrixDotNet.Extensions.MatrixExtension.ToMatrixDotNet*
   name: ToMatrixDotNet
   href: api/MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_ToMatrixDotNet_
@@ -496,6 +867,15 @@ references:
   fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(T, MatrixDotNet.Matrix(Of T))
   nameWithType: Matrix<T>.Multiply(T, Matrix<T>)
   nameWithType.vb: Matrix(Of T).Multiply(T, Matrix(Of T))
+- uid: MatrixDotNet.Matrix`1.op_Multiply(`0[],MatrixDotNet.Matrix{`0})
+  name: Multiply(T[], Matrix<T>)
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply__0___MatrixDotNet_Matrix__0__
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(`0[],MatrixDotNet.Matrix{`0})
+  name.vb: Multiply(T(), Matrix(Of T))
+  fullName: MatrixDotNet.Matrix<T>.Multiply(T[], MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(T(), MatrixDotNet.Matrix(Of T))
+  nameWithType: Matrix<T>.Multiply(T[], Matrix<T>)
+  nameWithType.vb: Matrix(Of T).Multiply(T(), Matrix(Of T))
 - uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0)
   name: Multiply(Matrix<T>, T)
   href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0___0_
@@ -505,6 +885,15 @@ references:
   fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), T)
   nameWithType: Matrix<T>.Multiply(Matrix<T>, T)
   nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), T)
+- uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0[])
+  name: Multiply(Matrix<T>, T[])
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0___0___
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0[])
+  name.vb: Multiply(Matrix(Of T), T())
+  fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, T[])
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), T())
+  nameWithType: Matrix<T>.Multiply(Matrix<T>, T[])
+  nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), T())
 - uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
   name: Multiply(Matrix<T>, Matrix<T>)
   href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__

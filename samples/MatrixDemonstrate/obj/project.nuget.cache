@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "GWaZMV1nNakIvMYEMH9qZvE745IiFBYfEW/g3EUM0rmlmwVW6QAWcMBfVInlo8XWHon9vqaU/SPXX067ttHfwg==",
+  "success": false,
+  "projectFilePath": "D:\\RiderProjects\\MatrixDotNet\\samples\\MatrixDemonstrate\\MatrixDemonstrate.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'D:\\RiderProjects\\MatrixDotNet\\samples\\MatrixDotNet\\MatrixDotNet.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "D:\\RiderProjects\\MatrixDotNet\\samples\\MatrixDotNet\\MatrixDotNet.csproj",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
+}

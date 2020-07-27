@@ -4,21 +4,18 @@
       "src": [
         {
           "files": [
-            "src/MatrixDotNet/*.csproj",
- 	    "src/MatrixDemonstrate/*.csproj"
+            "src/**.csproj",
           ],
           "exclude": [
             "**/obj/**",
             "**/bin/**"
           ],
-          "src": "../.."
+          "src": ".."
         }
       ],
       "dest": "api",
-      "properties": {
-        "TargetFramework": "netstandard2.1"
-      },
-      "disableGitFeatures": true
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
     }
   ],
   "build": {
@@ -41,8 +38,18 @@
     "resource": [
       {
         "files": [
-          "images/**",
-          "logo/**"
+          "images/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
         ]
       }
     ],
@@ -50,20 +57,13 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default",
-      "template"
+      "default"
     ],
-    "postProcessors": ["ExtractSearchIndex"],
+    "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": false,
-    "disableGitFeatures": false,
-    "globalMetadata" :
-    {
-      "_appTitle" : "MatrixDotNet",
-      "_appFooter" : "Copyright &copy; 2020–2020 KPI Foundation and contributors",
-      "_enableSearch": false
-    },
+    "disableGitFeatures": false
   }
 }

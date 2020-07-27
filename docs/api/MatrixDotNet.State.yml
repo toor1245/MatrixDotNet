@@ -15,9 +15,13 @@ items:
   fullName: MatrixDotNet.State
   type: Enum
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: State
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 487
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 548
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet
@@ -44,9 +48,13 @@ items:
   fullName: MatrixDotNet.State.Row
   type: Field
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Row
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 489
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 550
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet
@@ -72,9 +80,13 @@ items:
   fullName: MatrixDotNet.State.Column
   type: Field
   source:
+    remote:
+      path: src/MatrixDotNet/Matrix.cs
+      branch: master
+      repo: https://github.com/toor1245/MatrixDotNet.git
     id: Column
-    path: D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\Matrix.cs
-    startLine: 490
+    path: ../src/MatrixDotNet/Matrix.cs
+    startLine: 551
   assemblies:
   - MatrixDotNet
   namespace: MatrixDotNet

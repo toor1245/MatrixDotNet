@@ -4,24 +4,15 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
-      "type": "Resource",
-      "output": {
-        "resource": {
-          "relative_path": "index.json"
-        }
-      },
-      "is_incremental": false
-    },
-    {
       "type": "ManagedReference",
       "source_relative_path": "api/MatrixDemonstrate.Program.yml",
       "output": {
         ".html": {
           "relative_path": "api/MatrixDemonstrate.Program.html",
-          "hash": "F//wJB3EC6GB84nTw08Ncg=="
+          "hash": "350OKJT+/7O7h1/QzV+lXA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -30,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDemonstrate.html",
-          "hash": "OqUsjDFTC3sA/BtG7Tgzhg=="
+          "hash": "9kmMRLJDOwSQeMldRkNkew=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -42,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Exceptions.MatrixDotNetException.html",
-          "hash": "wcbCaCFdUqEp5cFFIeRayA=="
+          "hash": "xP/aHYyAzHlTvLPWhkUrJw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +45,19 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Exceptions.html",
-          "hash": "iXcT/c3zNF9k78+de7VIyA=="
+          "hash": "tB1FRUNtUqh8hT+S+ytdXg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.BitMatrixExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.BitMatrixExtension.html",
+          "hash": "UF53JXnwo0Q8v5+pc5NAIg=="
         }
       },
       "is_incremental": false,
@@ -66,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.MatrixExtension.html",
-          "hash": "ZGWyN2SVwzFYfcBGCBYjcw=="
+          "hash": "wfugl+U28ul8BEmxekqW0A=="
         }
       },
       "is_incremental": false,
@@ -78,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.html",
-          "hash": "+x8sg1P42ga4EXlBXgZouA=="
+          "hash": "19w2W6o0NSJCSoEs3af2kA=="
         }
       },
       "is_incremental": false,
@@ -90,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.html",
-          "hash": "+cAIH9n32oDfOlKkSSB0Vg=="
+          "hash": "pQrzLeLMPsaqzsm+1as63A=="
         }
       },
       "is_incremental": false,
@@ -102,10 +105,10 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.State.html",
-          "hash": "Iw8lfLctrTjkKjkqsyjmuA=="
+          "hash": "ieMrtmHvC4kLpdTFh9aaQw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -114,10 +117,22 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.html",
-          "hash": "Gct3nBlnKl0sdsn94w5lDg=="
+          "hash": "7XI3SToHJeD1YC/aLGYGuw=="
         }
       },
       "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "1JjZ7no1LvN7yXEsWFUghA=="
+        }
+      },
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -126,7 +141,55 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "O07X4cyBUqX8aPZG9Geu/Q=="
+          "hash": "KhT7pu5CAfw++mekhEhYaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "cKF/ltAB9EFcu11IYspG6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "Wb6c4rmBVt8fyUxomLR+FA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "lohfUVk/4PT+8U/q6LSm+A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
         }
       },
       "is_incremental": false,
@@ -142,11 +205,17 @@
         "skipped_file_count": 0
       },
       "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 3
+        },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 9,
-          "skipped_file_count": 9
+          "total_file_count": 10,
+          "skipped_file_count": 6
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
@@ -159,8 +228,8 @@
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
