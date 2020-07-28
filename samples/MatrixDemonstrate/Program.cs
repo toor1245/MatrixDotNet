@@ -18,8 +18,8 @@ namespace MatrixDemonstrate
             
             
             Matrix<int> matrix = new Matrix<int>(arr);
-            matrix.BubbleSort();
-            Console.WriteLine(matrix.Pretty());
+            
+            Console.WriteLine(matrix.AdditionSquareMatrix().Pretty());
         }
         
     }

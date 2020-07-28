@@ -459,6 +459,7 @@ namespace MatrixDotNet
             return matrix;
         }
         
+        
         /// <summary>
         /// Checks on equals two matrix by rows - i ,columns - j
         /// </summary>
