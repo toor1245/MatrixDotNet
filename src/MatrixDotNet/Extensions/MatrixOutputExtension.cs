@@ -30,24 +30,6 @@ namespace MatrixDotNet.Extensions
                     {
                         builder.Append(" " + matrix[i, j] + "".PadRight(n - length) +   "|");
                     }
-                    
-                    
-                    /*switch (matrix[i,j].ToString().Length)
-                    {
-                        case 1:
-                            builder.Append(" " + matrix[i, j] + "".PadRight(4) +   "|");
-                            break;
-                        case 2:
-                            builder.Append(" " + matrix[i, j] + "".PadRight(3) +   "|");
-                            break;
-                        case 3:
-                            builder.Append(" " + matrix[i, j] + "".PadRight(2) +   "|");
-                            break;
-                        case 4:
-                            builder.Append(" " + matrix[i, j] + "".PadRight(1) +   "|");
-                            break;
-                    }
-                    */
                 }
 
                 builder.AppendLine();

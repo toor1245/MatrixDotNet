@@ -49,19 +49,18 @@ namespace MatrixDotNet.Extensions
 
             return a;
         }
-
+        
+        
         public static Matrix<T> MultiplyStrassen<T>(Matrix<T> a, Matrix<T> b) where T : unmanaged
         {
-            if (a.Rows < 64)
+            if (a.Rows < 32)
             {
                 return a * b;
             }
             
-        
-            
             a.SplitMatrix(out var a11,out var a12,out var a21,out var a22);
             b.SplitMatrix(out var b11,out var b12,out var b21,out var b22);
-
+            
             Matrix<T> p1 = MultiplyStrassen(a11 + a22, b11 + b22);
             Matrix<T> p2 = MultiplyStrassen(a21 + a22, b11);
             Matrix<T> p3 = MultiplyStrassen(a11, b12 - b22);
@@ -77,5 +76,9 @@ namespace MatrixDotNet.Extensions
 
             return CollectMatrix(c11, c12, c21, c22);
         }
+        
+        
+        
+        
     }
 }

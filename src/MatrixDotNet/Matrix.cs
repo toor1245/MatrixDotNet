@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MatrixDotNet.Exceptions;
@@ -10,7 +12,7 @@ namespace MatrixDotNet
     /// Represents math matrix.
     /// </summary>
     /// <typeparam name="T">integral type.</typeparam>
-    public sealed class Matrix<T> : ICloneable
+    public sealed class Matrix<T> : ICloneable, IEnumerable<T>
         where T : unmanaged
     {
         #region Properties
@@ -441,6 +443,11 @@ namespace MatrixDotNet
             return builder.ToString();
         }
 
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
         /// <summary>
         /// Clones matrix.
         /// </summary>
@@ -458,8 +465,11 @@ namespace MatrixDotNet
 
             return matrix;
         }
-        
-        
+
+
+        public IEnumerator<T> GetEnumerator() =>
+            new Matrix<T>.Enumerator(this);
+
         /// <summary>
         /// Checks on equals two matrix by rows - i ,columns - j
         /// </summary>
@@ -542,6 +552,66 @@ namespace MatrixDotNet
         /// Gets m-norm of matrix.
         /// </summary>
         public T MNorm => this.MaxRows().Max();
+
+        public struct Enumerator : IEnumerator<T>
+        {
+            private int _position;
+            private int _dimension;
+            private Matrix<T> _matrix;
+
+            internal Enumerator(Matrix<T> matrix)
+            {
+                _position = -1;
+                _dimension = 0;
+                _matrix = matrix;
+            }
+            
+            public bool MoveNext()
+            {
+                int newPosition = _position + 1;
+                bool cross = false;
+                
+                if (_dimension >= _matrix.Rows) return false;
+                
+                if (newPosition >= _matrix.Columns && _dimension < _matrix.Rows)
+                {
+                    _dimension++;
+                    newPosition = -1;
+                    cross = true;
+                }
+                if (newPosition < -1 || 
+                    newPosition >= _matrix.Columns ||
+                    _dimension >= _matrix.Columns) 
+                    return false;
+
+                if (cross)
+                {
+                    _position = newPosition + 1;
+                }
+                else
+                {
+                    _position = newPosition;    
+                }
+                
+                return true;
+            }
+
+            public void Reset()
+            {
+                _dimension = 0;
+                _position = -1;
+            }
+
+            public T Current => _matrix[_dimension,_position];
+
+            object IEnumerator.Current => Current;
+
+            public void Dispose()
+            {
+                GC.SuppressFinalize(true);
+            }
+        }
+        
     }
 
     /// <summary>

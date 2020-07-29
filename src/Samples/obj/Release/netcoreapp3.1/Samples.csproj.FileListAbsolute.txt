@@ -1,0 +1,16 @@
+D:\RiderProjects\MatrixDotNet\src\Samples\bin\Release\netcoreapp3.1\Samples.exe
+D:\RiderProjects\MatrixDotNet\src\Samples\bin\Release\netcoreapp3.1\Samples.deps.json
+D:\RiderProjects\MatrixDotNet\src\Samples\bin\Release\netcoreapp3.1\Samples.runtimeconfig.json
+D:\RiderProjects\MatrixDotNet\src\Samples\bin\Release\netcoreapp3.1\Samples.runtimeconfig.dev.json
+D:\RiderProjects\MatrixDotNet\src\Samples\bin\Release\netcoreapp3.1\Samples.dll
+D:\RiderProjects\MatrixDotNet\src\Samples\bin\Release\netcoreapp3.1\Samples.pdb
+D:\RiderProjects\MatrixDotNet\src\Samples\bin\Release\netcoreapp3.1\MatrixDotNet.dll
+D:\RiderProjects\MatrixDotNet\src\Samples\bin\Release\netcoreapp3.1\MatrixDotNet.pdb
+D:\RiderProjects\MatrixDotNet\src\Samples\obj\Release\netcoreapp3.1\Samples.csprojAssemblyReference.cache
+D:\RiderProjects\MatrixDotNet\src\Samples\obj\Release\netcoreapp3.1\Samples.csproj.CoreCompileInputs.cache
+D:\RiderProjects\MatrixDotNet\src\Samples\obj\Release\netcoreapp3.1\Samples.AssemblyInfoInputs.cache
+D:\RiderProjects\MatrixDotNet\src\Samples\obj\Release\netcoreapp3.1\Samples.AssemblyInfo.cs
+D:\RiderProjects\MatrixDotNet\src\Samples\obj\Release\netcoreapp3.1\Samples.csproj.CopyComplete
+D:\RiderProjects\MatrixDotNet\src\Samples\obj\Release\netcoreapp3.1\Samples.dll
+D:\RiderProjects\MatrixDotNet\src\Samples\obj\Release\netcoreapp3.1\Samples.pdb
+D:\RiderProjects\MatrixDotNet\src\Samples\obj\Release\netcoreapp3.1\Samples.genruntimeconfig.cache

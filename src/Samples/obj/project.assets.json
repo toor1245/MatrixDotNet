@@ -4,7 +4,7 @@
     ".NETCoreApp,Version=v3.1": {
       "MatrixDotNet/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
+        "framework": ".NETStandard,Version=v2.0",
         "compile": {
           "bin/placeholder/MatrixDotNet.dll": {}
         },
