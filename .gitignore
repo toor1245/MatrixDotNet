@@ -1,11 +1,8 @@
-###############
-#    folder   #
-###############
 syntax: glob
 
-bin/
-obj/
-.vs/
-.idea/
+bin.*
+obj.*
+.vs.*
+.idea.*
 
 
