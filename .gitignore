@@ -2,8 +2,7 @@ syntax: glob
 
 bin.*
 obj.*
-.vs/MatrixDotNet
-**/.idea/*
-.idea/.idea.MatrixDotNet
+.vs/
+.idea/
 
 
