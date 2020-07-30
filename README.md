@@ -99,6 +99,7 @@ public sealed class Program
         {
             Console.Write($"x{i}: {res[i]}\n");
         }
+    }
 }
  
 ```
