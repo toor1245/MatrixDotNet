@@ -4,7 +4,7 @@
 MatrixDotNet is a lightweight .NET library for calculate matrix. You can install MatrixDotNet via [NuGet package](https://www.nuget.org/packages/MatrixDotNet/).
 
 ### Features
-* Matrix DotNet is made in priority on speed and accuracy of calculations
+* MatrixDotNet is made in priority on speed and accuracy of calculations
 
 ##### Example 
 [!code-csharp[StrassenSample.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/StrassenSample.cs)]
