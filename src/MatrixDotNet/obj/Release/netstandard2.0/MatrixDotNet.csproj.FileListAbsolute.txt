@@ -1,9 +1,0 @@
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\bin\Release\netstandard2.0\MatrixDotNet.deps.json
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\bin\Release\netstandard2.0\MatrixDotNet.dll
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\bin\Release\netstandard2.0\MatrixDotNet.pdb
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Release\netstandard2.0\MatrixDotNet.csproj.CoreCompileInputs.cache
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Release\netstandard2.0\MatrixDotNet.AssemblyInfoInputs.cache
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Release\netstandard2.0\MatrixDotNet.AssemblyInfo.cs
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Release\netstandard2.0\MatrixDotNet.dll
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Release\netstandard2.0\MatrixDotNet.pdb
-D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\obj\Release\netstandard2.0\MatrixDotNet.csprojAssemblyReference.cache
