@@ -72,7 +72,10 @@ IterationCount=5  LaunchCount=1  WarmupCount=5
 |  Default | 69.88 s | 1.241 s | 0.322 s |          - |         - |         - |   1.01 MB |
 | Strassen | 43.23 s | 0.991 s | 0.153 s | 30000.0000 | 5000.0000 | 2000.0000 | 174.32 MB |
 
+As you can see algorithm `Strassen` multiply works significant faster(x1.625) than default multiply matrix on big size `MxN`.
+
 ### Sample
+Lets see simple operations MatrixDotNet.
 ```C#
 public sealed class Program
 {
