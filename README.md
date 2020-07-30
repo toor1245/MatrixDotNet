@@ -67,10 +67,13 @@ Frequency=1757816 Hz, Resolution=568.8878 ns, Timer=TSC
 IterationCount=5  LaunchCount=1  WarmupCount=5  
 
 ```
+
+```ini
 |   Method |    Mean |   Error |  StdDev |      Gen 0 |     Gen 1 |     Gen 2 | Allocated |
 |--------- |--------:|--------:|--------:|-----------:|----------:|----------:|----------:|
 |  Default | 69.88 s | 1.241 s | 0.322 s |          - |         - |         - |   1.01 MB |
 | Strassen | 43.23 s | 0.991 s | 0.153 s | 30000.0000 | 5000.0000 | 2000.0000 | 174.32 MB |
+```
 
 As you can see algorithm `Strassen` multiply works significant faster(x1.625) than default multiply matrix on big size `MxN`.
 

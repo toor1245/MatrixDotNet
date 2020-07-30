@@ -73,7 +73,7 @@ namespace MatrixDotNet.Extensions
         
         #endregion
         
-        #region LU
+        #region LUP matrix
         
         
         #endregion
