@@ -1,8 +1,13 @@
 syntax: glob
 
-bin.*
-obj.*
+bin
+obj
 .vs/
-.idea/
+
+# IntellijIdea files
+*.iml
+.idea
+out
+
 
 
