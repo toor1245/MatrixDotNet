@@ -2,7 +2,8 @@ syntax: glob
 
 bin.*
 obj.*
-.vs.*
+.vs
+.idea
 
 # file: ~/.gitignore_global
 .DS_Store
