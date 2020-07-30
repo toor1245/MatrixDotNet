@@ -21,6 +21,10 @@ syntax: glob
 *.lib
 *.sbr
 *.scc
+src/.idea
+src/.vs
+src/obj
+src/Новый текстовый документ.txt
 [Bb]in
 [Dd]ebug*/
 obj/
