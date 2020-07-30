@@ -11,8 +11,8 @@ MatrixDotNet is a lightweight .NET library for calculate matrix. You can install
 ```C#
     public class StrassenSample
     {
-        int[,] matrix = new int[64,64];
-        int[,] matrix2 = new int[64,64];
+        int[,] matrix = new int[512,512];
+        int[,] matrix2 = new int[512,512];
         
         private Matrix<int> matrix3;
         private Matrix<int> matrix4;
