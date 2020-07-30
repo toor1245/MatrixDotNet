@@ -1,7 +1,11 @@
 syntax: glob
 
+*.suo
+*.user
+_ReSharper.*
 bin
 obj
+packages
 .vs/
 
 # IntellijIdea files
