@@ -1,8 +1,29 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>default</LangVersion>
+        <PackageVersion>0.0.2</PackageVersion>
+        <Title>MatrixDotNet</Title>
+        <Authors />
+        <PackageProjectUrl>https://github.com/toor1245/MatrixDotNet</PackageProjectUrl>
+        <PackageIconUrl></PackageIconUrl>
+        <RepositoryUrl>https://github.com/toor1245/MatrixDotNet</RepositoryUrl>
+        <PackageTags>matrix,Matrix,MatrixDotNet</PackageTags>
+        <NeutralLanguage>en</NeutralLanguage>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
+        <Version>0.0.1</Version>
+        <DocumentationMarkdownURL>https://github.com/toor1245/MatrixDotNet/blob/master/README.md</DocumentationMarkdownURL>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <Description>Powerful MatrixDotNet library for matrix calculation</Description>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="images\MatrixDotNet_128x128.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+    </ItemGroup>
 
 </Project>

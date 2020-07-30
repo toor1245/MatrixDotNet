@@ -5,7 +5,7 @@
   },
   "projects": {
     "D:\\RiderProjects\\MatrixDotNet\\src\\MatrixDotNet\\MatrixDotNet.csproj": {
-      "version": "1.0.0",
+      "version": "0.0.2",
       "restore": {
         "projectUniqueName": "D:\\RiderProjects\\MatrixDotNet\\src\\MatrixDotNet\\MatrixDotNet.csproj",
         "projectName": "MatrixDotNet",
@@ -14,7 +14,7 @@
         "outputPath": "D:\\RiderProjects\\MatrixDotNet\\src\\MatrixDotNet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

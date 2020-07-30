@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "MatrixDotNet/1.0.0": {
+      "MatrixDotNet/0.0.1": {
         "dependencies": {
           "NETStandard.Library": "2.0.3"
         },
@@ -24,7 +24,7 @@
     }
   },
   "libraries": {
-    "MatrixDotNet/1.0.0": {
+    "MatrixDotNet/0.0.1": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

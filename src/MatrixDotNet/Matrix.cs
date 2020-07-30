@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
@@ -468,7 +467,7 @@ namespace MatrixDotNet
 
 
         public IEnumerator<T> GetEnumerator() =>
-            new Matrix<T>.Enumerator(this);
+            new Enumerator(this);
 
         /// <summary>
         /// Checks on equals two matrix by rows - i ,columns - j
@@ -525,34 +524,7 @@ namespace MatrixDotNet
             
             return this.GetDeterminate();
         }
-
-        /// <summary>
-        /// Gets l-norm of matrix.
-        /// </summary>
-        /// <returns></returns>
-        public double LNorm()
-        {
-            T max = default;
-            var temp = new T[Rows]; 
-            
-            for (int i = 0; i < Columns; i++)
-            {
-                for (int j = 0; j < Rows; j++)
-                {
-                    max = MathExtension.Add(max,this[j, i]);
-                }
-                temp[i] = max;
-                max = default;
-            }
-
-            return default;
-        }
-
-        /// <summary>
-        /// Gets m-norm of matrix.
-        /// </summary>
-        public T MNorm => this.MaxRows().Max();
-
+        
         public struct Enumerator : IEnumerator<T>
         {
             private int _position;
@@ -610,8 +582,7 @@ namespace MatrixDotNet
             {
                 GC.SuppressFinalize(true);
             }
-        }
-        
+        } 
     }
 
     /// <summary>

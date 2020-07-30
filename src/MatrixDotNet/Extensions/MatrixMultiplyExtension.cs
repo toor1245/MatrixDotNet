@@ -5,13 +5,7 @@ namespace MatrixDotNet.Extensions
     // Multiply Strassen
     public static partial class MatrixExtension
     {
-        public static Matrix<T> AdditionSquareMatrix<T>(this Matrix<T> matrix) where T : unmanaged
-        {
-            if(!matrix.IsSquare) throw new MatrixDotNetException("Matrix is not square");
-
-            Matrix<T> result = matrix.Clone() as Matrix<T>;
-            return result;
-        }
+        #region Strassen
         
         public static void SplitMatrix<T>(this Matrix<T> a, out Matrix<T> a11, out Matrix<T> a12, out Matrix<T> a21, out Matrix<T> a22) 
             where T : unmanaged
@@ -77,8 +71,11 @@ namespace MatrixDotNet.Extensions
             return CollectMatrix(c11, c12, c21, c22);
         }
         
+        #endregion
+        
+        #region LU
         
         
-        
+        #endregion
     }
 }

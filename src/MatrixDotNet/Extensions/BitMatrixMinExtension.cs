@@ -5,7 +5,6 @@ namespace MatrixDotNet.Extensions
 {
     public static partial class BitMatrixExtension
     {
-
         public static T Min<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix == null)

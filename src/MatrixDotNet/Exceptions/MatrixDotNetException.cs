@@ -5,7 +5,7 @@ namespace MatrixDotNet.Exceptions
     /// <summary>
     /// Represent exception for <see cref="Matrix{T}"/>
     /// </summary>
-    public class MatrixDotNetException : Exception
+    public sealed class MatrixDotNetException : Exception
     {
         /// <summary>
         /// Exception.
@@ -43,7 +43,7 @@ namespace MatrixDotNet.Exceptions
         /// <summary>
         /// Gets message.
         /// </summary>
-        public string Message { get; }
+        public override string Message { get; }
         
         /// <summary>
         /// Gets argument.

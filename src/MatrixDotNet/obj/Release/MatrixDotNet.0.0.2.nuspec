@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MatrixDotNet</id>
+    <version>0.0.2</version>
+    <title>MatrixDotNet</title>
+    <authors>MatrixDotNet</authors>
+    <owners>MatrixDotNet</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <icon>MatrixDotNet_128x128.png</icon>
+    <projectUrl>https://github.com/toor1245/MatrixDotNet</projectUrl>
+    <description>Package Description</description>
+    <tags>matrix,Matrix,MatrixDotNet</tags>
+    <repository url="https://github.com/toor1245/MatrixDotNet" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\bin\Release\netstandard2.0\MatrixDotNet.dll" target="lib\netstandard2.0\MatrixDotNet.dll" />
+    <file src="D:\RiderProjects\MatrixDotNet\src\MatrixDotNet\images\MatrixDotNet_128x128.png" target="MatrixDotNet_128x128.png" />
+  </files>
+</package>

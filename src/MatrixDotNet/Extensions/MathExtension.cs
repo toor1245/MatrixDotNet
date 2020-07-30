@@ -13,7 +13,6 @@ namespace MatrixDotNet.Extensions
         
         internal static T Add<T>(T left, T right) where T: unmanaged
         {
-            // From Jhon Skeet article
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Add)),out var del))
                 return del is Func<T,T,T> specificFunc
