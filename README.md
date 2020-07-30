@@ -1,4 +1,7 @@
 # MatrixDotNet
+![MatrixDotNet](https://github.com/toor1245/MatrixDotNet/blob/master/docs/MatrixDotNet.png)
+
+
 
 ### Sample
 ```C#
