@@ -10,5 +10,6 @@
                 matrix2[dimension2,k] = matrix1[dimension1,i];
             }
         }
+        
     }
 }

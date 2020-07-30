@@ -159,7 +159,7 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>double.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static double GetDeterminate<T>(this Matrix<T> matrix) where T : unmanaged
+        public static double GetUnmanagedDeterminate<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
             {
@@ -178,7 +178,7 @@ namespace MatrixDotNet.Extensions
             for (int i = 0; i < temp.GetLength(1); i++)
             {
                 Matrix<T> minr = GetMinor(matrix, i);
-                result += sign * temp[0, i] * GetDeterminate(minr);
+                result += sign * temp[0, i] * GetUnmanagedDeterminate(minr);
                 sign = -sign;
             }
 
@@ -199,7 +199,7 @@ namespace MatrixDotNet.Extensions
                  throw new MatrixDotNetException(
                      "Rows quantity matrix not equal array quantity",nameof(matrix),nameof(arr));
             
-            double det = matrix.GetDeterminate();
+            double det = matrix.GetUnmanagedDeterminate();
             Matrix<T> temp;
             double[] result = new double[matrix.Columns];
             
@@ -210,7 +210,7 @@ namespace MatrixDotNet.Extensions
                 {
                     if (temp != null) temp[j, i] = arr[j];
                 }
-                result[i] = temp.GetDeterminate() / det;
+                result[i] = temp.GetUnmanagedDeterminate() / det;
             }
             return result;
         }

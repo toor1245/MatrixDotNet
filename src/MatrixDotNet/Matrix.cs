@@ -522,7 +522,7 @@ namespace MatrixDotNet
                 }
             }
             
-            return this.GetDeterminate();
+            return this.GetUnmanagedDeterminate();
         }
         
         public struct Enumerator : IEnumerator<T>
