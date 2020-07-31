@@ -20,11 +20,17 @@ namespace Samples
             Matrix<int> matrixB = a;
             
             Matrix<int> matrixC = new int[10, 10];
+
+            Matrix<int> matrixD = new[,]
+            {
+                {1, 2, 3},
+                {2 ,4, 6},
+            };
             
             // Third way initialize all values 0 or constant value.
-            Matrix<int> matrixD = new Matrix<int>(row:5,col:3);
+            Matrix<int> matrixE = new Matrix<int>(row:5,col:3);
             
-            Matrix<int> matrixE = new Matrix<int>(row:3,col:5,value:5);
+            Matrix<int> matrixF = new Matrix<int>(row:3,col:5,value:5);
         }
 
         public static void Test(int[,] matrix)
