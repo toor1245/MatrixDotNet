@@ -1,7 +1,7 @@
 # MatrixDotNet
 ![MatrixDotNet](https://github.com/toor1245/MatrixDotNet/blob/master/docs/MatrixDotNet.png)
 
-<h3>
+<h3 text-align="center">
 
  
  [![NuGet](https://img.shields.io/nuget/v/MatrixDotNet.svg)](https://www.nuget.org/packages/MatrixDotNet/)
