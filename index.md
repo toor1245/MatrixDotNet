@@ -1,5 +1,4 @@
-# MatrixDotNet
-![MatrixDotNet](https://github.com/toor1245/MatrixDotNet/blob/master/docs/MatrixDotNet.png)
+![](images/MatrixDotNet.png)
 
 <h3>
 
@@ -17,7 +16,6 @@ MatrixDotNet is a lightweight .NET library for calculate matrix. You can install
 * MatrixDotNet is made in priority on speed and accuracy of calculations
 
 ##### Example 
-[!code-csharp[StrassenSample.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/StrassenSample.cs)]
 ```C#
     public class StrassenSample
     {
