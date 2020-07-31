@@ -293,16 +293,17 @@ namespace MatrixDotNet
         /// <returns><see cref="Matrix{T}"/></returns>
         public static Matrix<T> operator *(Matrix<T> matrix, T digit)
         {
+            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    // matrix1[i,j] = matrix[i,j] * matrix
-                    matrix[i, j] = MathExtension.Multiply(matrix[i,j],digit);
+                    // result[i,j] = matrix[i,j] * matrix
+                    result[i, j] = MathExtension.Multiply(matrix[i,j],digit);
                 }
             }
             
-            return matrix;
+            return result;
         }
        
         /// <summary>
@@ -313,16 +314,17 @@ namespace MatrixDotNet
         /// <returns><see cref="Matrix{T}"/></returns>
         public static Matrix<T> operator *(T digit, Matrix<T> matrix)
         {
+            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
                     // matrix1[i,j] = matrix[i,j] * matrix
-                    matrix[i, j] = MathExtension.Multiply(matrix[i,j],digit);
+                    result[i, j] = MathExtension.Multiply(matrix[i,j],digit);
                 }
             }
             
-            return matrix;
+            return result;
         }
         
         /// <summary>
@@ -333,16 +335,17 @@ namespace MatrixDotNet
         /// <returns></returns>
         public static Matrix<T> operator /(Matrix<T> matrix, T digit)
         {
+            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    // matrix1[i,j] = matrix[i,j] * matrix
-                    matrix[i, j] = MathExtension.Divide(matrix[i,j],digit);
+                    // result[i,j] = matrix[i,j] * matrix
+                    result[i, j] = MathExtension.Divide(matrix[i,j],digit);
                 }
             }
             
-            return matrix;
+            return result;
         }
         
         /// <summary>
@@ -353,15 +356,16 @@ namespace MatrixDotNet
         /// <returns></returns>
         public static Matrix<T> operator /(T digit,Matrix<T> matrix)
         {
+            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    // matrix1[i,j] = matrix[i,j] * matrix
-                    matrix[i, j] = MathExtension.Divide(matrix[i,j],digit);
+                    // result[i,j] = matrix[i,j] * matrix
+                    result[i, j] = MathExtension.Divide(matrix[i,j],digit);
                 }
             }
-            return matrix;
+            return result;
         }
 
         

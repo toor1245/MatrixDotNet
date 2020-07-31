@@ -15,8 +15,9 @@ namespace MatrixDotNet.Extensions
             StringBuilder builder = new StringBuilder();
             builder.AppendLine();
 
-            int n = 8;
-            
+            int n = 7;
+            builder.AppendLine($"Number of rows: {matrix.Rows}");
+            builder.AppendLine($"Number of columns: {matrix.Columns}\n");
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
@@ -24,11 +25,11 @@ namespace MatrixDotNet.Extensions
                     int length = matrix[i, j].ToString().Length;
                     if (length > n)
                     {
-                        builder.Append(" " + matrix[i, j] + "".PadRight(length - n) +   "|");    
+                        builder.Append(" ".PadLeft(2) + matrix[i, j] + "".PadRight(length - n) +   "|");    
                     }
                     else
                     {
-                        builder.Append(" " + matrix[i, j] + "".PadRight(n - length) +   "|");
+                        builder.Append(" ".PadLeft(2) + matrix[i, j] + "".PadRight(n - length) +   "|");
                     }
                 }
 
