@@ -1,4 +1,4 @@
-![logo](images/MatrixDotNet.png)]
+![logo](https://github.com/toor1245/MatrixDotNet/blob/master/docs/MatrixDotNet.png)]
 
 [![NuGet](https://img.shields.io/nuget/v/MatrixDotNet.svg)](https://www.nuget.org/packages/MatrixDotNet/)
   
