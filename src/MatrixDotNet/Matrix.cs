@@ -141,7 +141,7 @@ namespace MatrixDotNet
 
         #endregion
         
-        #region Ctor
+        #region .ctor
         
         /// <summary>
         /// Initialize matrix.
@@ -168,6 +168,24 @@ namespace MatrixDotNet
         public Matrix(int row,int col)
         {
             _Matrix = new T[row,col];
+        }
+
+        /// <summary>
+        /// Creates matrix with init constant value.
+        /// </summary>
+        /// <param name="row">row</param>
+        /// <param name="col">col</param>
+        /// <param name="value">constant</param>
+        public Matrix(int row,int col,T value)
+        {
+            _Matrix = new T[row,col];
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < col; j++)
+                {
+                    _Matrix[i, j] = value;
+                }
+            }
         }
         
         #endregion
@@ -463,6 +481,16 @@ namespace MatrixDotNet
             }
 
             return matrix;
+        }
+
+        /// <summary>
+        /// Implicit assign matrix.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        public static implicit operator Matrix<T>(T[,] matrix)
+        {
+            return matrix.ToMatrixDotNet();
         }
 
 

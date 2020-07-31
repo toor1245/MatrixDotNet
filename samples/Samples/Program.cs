@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using MatrixDotNet;
-using MatrixDotNet.Extensions;
+﻿using MatrixDotNet;
 
 namespace Samples
 {
@@ -10,20 +6,25 @@ namespace Samples
     {
         static void Main(string[] args)
         {
-            int[,] matrix = new int[3, 3]
+            int[,] a = new int[3, 3]
             {
                 { 10, -7, 0 },
                 { -3, 6,  2 },
                 { 5, -1,  5 }
             };
-            Test2(matrix);
-            Matrix<int> matrix4 = new Matrix<int>(matrix);
-            matrix4.GetLUP_Solve(out var lower,out var upper);
-            Console.WriteLine("Lower matrix:");
-            Console.WriteLine(lower.Pretty());
-            Console.WriteLine("Upper matrix:");
-            Console.WriteLine(upper.Pretty());
-
+            
+            // First way. 
+            Matrix<int> matrixA = new Matrix<int>(a);
+            
+            // Second way: primitive way, assign by deep copy nor by reference!!!
+            Matrix<int> matrixB = a;
+            
+            Matrix<int> matrixC = new int[10, 10];
+            
+            // Third way initialize all values 0 or constant value.
+            Matrix<int> matrixD = new Matrix<int>(row:5,col:3);
+            
+            Matrix<int> matrixE = new Matrix<int>(row:3,col:5,value:5);
         }
 
         public static void Test(int[,] matrix)
