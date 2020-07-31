@@ -1,9 +1,13 @@
-![logo](images/MatrixDotNet.png)
+![logo](images/MatrixDotNet.png)]
+
 [![NuGet](https://img.shields.io/nuget/v/MatrixDotNet.svg)](https://www.nuget.org/packages/MatrixDotNet/)
   
+
 [![Downloads](https://img.shields.io/nuget/dt/benchmarkdotnet.svg)](https://www.nuget.org/packages/MatrixDotNet/)
  
+
 [![Stars](https://img.shields.io/github/stars/toor1245/MatrixDotNet?color=brightgreen)](https://github.com/toor1245/MatrixDotNet/stargazers)
+
 MatrixDotNet is a lightweight .NET library for calculate matrix. You can install MatrixDotNet via [NuGet package](https://www.nuget.org/packages/MatrixDotNet/).
 
 ### Features
