@@ -8,7 +8,7 @@ namespace MatrixDotNet.Extensions
         {
             upper = new Matrix<T>(matrix.Rows,matrix.Columns);
             lower = new Matrix<T>(matrix.Rows,matrix.Columns);
-            
+            return default;
         }
 
         public static Matrix<T> GetLowerDiagonal<T>(this Matrix<T> matrix) where T : unmanaged

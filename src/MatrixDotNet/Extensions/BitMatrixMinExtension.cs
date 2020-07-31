@@ -67,11 +67,11 @@ namespace MatrixDotNet.Extensions
         public static long BitMin(this Matrix<long> matrix)
         {
             long min = matrix[0, 0];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & (min - matrix[j,i] >> 63) | matrix[j,i] & (~(min - matrix[j,i]) >> 63);
+                    min = min & (min - matrix[i,j] >> 63) | matrix[i,j] & (~(min - matrix[i,j]) >> 63);
                 }
             }
             return min;
@@ -80,11 +80,11 @@ namespace MatrixDotNet.Extensions
         public static int BitMin(this Matrix<int> matrix)
         {
             int min = matrix[0, 0];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & (min - matrix[j,i] >> 31) | matrix[j,i] & (~(min - matrix[j,i]) >> 31);
+                    min = min & (min - matrix[i,j] >> 31) | matrix[i,j] & (~(min - matrix[i,j]) >> 31);
                 }
             }
             return min;
@@ -93,11 +93,11 @@ namespace MatrixDotNet.Extensions
         public static int BitMin(this Matrix<short> matrix)
         {
             int min = matrix[0, 0];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & (min - matrix[j, i] >> 15) | matrix[j, i] & (~(min - matrix[j, i]) >> 15);
+                    min = min & (min - matrix[i, j] >> 15) | matrix[i, j] & (~(min - matrix[i, j]) >> 15);
                 }
             }
             return min;
@@ -106,11 +106,11 @@ namespace MatrixDotNet.Extensions
         public static int BitMin(this Matrix<byte> matrix)
         {
             int min = matrix[0, 0];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & (min - matrix[j, i] >> 7) | matrix[j, i] & (~(min - matrix[j, i]) >> 7);
+                    min = min & (min - matrix[i, j] >> 7) | matrix[i, j] & (~(min - matrix[i, j]) >> 7);
                 }
             }
             return min;
@@ -121,10 +121,7 @@ namespace MatrixDotNet.Extensions
             long min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    min = min & (min - matrix[dimension, i] >> 63) | matrix[j, i] & (~(min - matrix[dimension, i]) >> 63);
-                }
+                min = min & (min - matrix[dimension, i] >> 63) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 63);
             }
             return min;
         }
@@ -134,10 +131,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    min = min & (min - matrix[dimension, i] >> 31) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 31);
-                }
+                min = min & (min - matrix[dimension, i] >> 31) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 31);
             }
             return min;
         }
@@ -147,10 +141,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    min = min & (min - matrix[dimension, i] >> 15) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 15);
-                }
+                min = min & (min - matrix[dimension, i] >> 15) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 15);
             }
             return min;
         }
@@ -160,10 +151,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    min = min & (min - matrix[dimension, i] >> 7) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 7);
-                }
+                min = min & (min - matrix[dimension, i] >> 7) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 7);
             }
             return min;
         }
@@ -171,12 +159,9 @@ namespace MatrixDotNet.Extensions
         public static long BitMinByColumn(this Matrix<long> matrix, int dimension)
         {
             long min = matrix[0,dimension];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    min = min & (min - matrix[i,dimension] >> 63) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 63);
-                }
+                min = min & (min - matrix[i,dimension] >> 63) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 63);
             }
             return min;
         }
@@ -184,12 +169,9 @@ namespace MatrixDotNet.Extensions
         public static int BitMinByColumn(this Matrix<int> matrix, int dimension)
         {
             int min = matrix[0,dimension];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    min = min & (min - matrix[i,dimension] >> 31) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 31);
-                }
+                min = min & (min - matrix[i,dimension] >> 31) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 31);
             }
             return min;
         }
@@ -197,12 +179,9 @@ namespace MatrixDotNet.Extensions
         public static int BitMinByColumn(this Matrix<short> matrix, int dimension)
         {
             int min = matrix[0,dimension];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    min = min & (min - matrix[i,dimension] >> 15) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 15);
-                }
+                min = min & (min - matrix[i,dimension] >> 15) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 15);
             }
             return min;
         }
@@ -210,12 +189,9 @@ namespace MatrixDotNet.Extensions
         public static int BitMinByColumn(this Matrix<byte> matrix, int dimension)
         {
             int min = matrix[0,dimension];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    min = min & (min - matrix[i,dimension] >> 7) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 7);
-                }
+                min = min & (min - matrix[i,dimension] >> 7) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 7);
             }
             return min;
         }

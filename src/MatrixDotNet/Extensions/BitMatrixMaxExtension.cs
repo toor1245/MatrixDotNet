@@ -130,7 +130,7 @@ namespace MatrixDotNet.Extensions
                 throw new NullReferenceException();
 
             int max = matrix[dimension, 0];
-            for (int i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.Columns; i++)
             {
                 max = matrix[dimension,i] & ((max - matrix[dimension,i]) >> 31) | max & (~(max - matrix[dimension,i]) >> 31);
             }
@@ -143,7 +143,7 @@ namespace MatrixDotNet.Extensions
                 throw new NullReferenceException();
 
             int max = matrix[dimension, 0];
-            for (int i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.Columns; i++)
             {
                 max = matrix[dimension,i] & ((max - matrix[dimension,i]) >> 7) | max & (~(max - matrix[dimension,i]) >> 7);
             }
@@ -156,7 +156,7 @@ namespace MatrixDotNet.Extensions
                 throw new NullReferenceException();
 
             int max = matrix[dimension, 0];
-            for (int i = 0; i < matrix.Rows; i++)
+            for (int i = 0; i < matrix.Columns; i++)
             {
                 max = matrix[dimension,i] & ((max - matrix[dimension,i]) >> 15) | max & (~(max - matrix[dimension,i]) >> 15);
             }
