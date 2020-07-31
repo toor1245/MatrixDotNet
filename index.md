@@ -1,6 +1,7 @@
 <h3 align="center">
-    ![](images/MatrixDotNet.png)
+![](images/MatrixDotNet.png)
 </h3>
+
 <h3 align="center">
 [![NuGet](https://img.shields.io/nuget/v/MatrixDotNet.svg)](https://www.nuget.org/packages/MatrixDotNet/)
   
