@@ -1,7 +1,5 @@
 # MatrixDotNet
 
-
-
 ![](https://github.com/toor1245/MatrixDotNet/blob/master/docs/MatrixDotNet.png)
 
 <h3 align="center">
@@ -88,8 +86,77 @@ IterationCount=5  LaunchCount=1  WarmupCount=5
 
 As you can see algorithm `Strassen` multiply works significant faster(x1.625) than default multiply matrix on big size `MxN`.
 
+* ##### MatrixDotNet bit hacks are present to improve performance
+
+##### Example
+
+```c#
+
+public class MatrixBitMinVsDefaultMin
+{
+    private int N = 256;
+    private int[,] matrix;
+    private Matrix<int> matrix3;
+    private Random random = new Random();
+    private int[] arr;
+
+    [GlobalSetup]
+    public void Setup()
+    {
+        matrix = new int[N,N];
+        arr = new int[N];
+        // init matrix random data
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j < N; j++)
+            {
+                matrix[i, j] = random.Next(-255, 255);
+            }
+        }
+        matrix3 = new Matrix<int>(matrix);
+
+
+    }
+
+    [Benchmark]
+    public void DefaultMin()
+    { 
+        for (int i = 0; i < N; i++)
+        {
+            arr[i] = matrix3.Min();   
+        }
+    }
+    
+    [Benchmark]
+    public void BitMin()
+    {
+        for (int i = 0; i < N; i++)
+        {
+            arr[i] = matrix3.BitMin();   
+        }
+    }
+}
+
+```
+
+``` ini
+BenchmarkDotNet=v0.12.1, OS=Windows 10.0.14393.3808 (1607/AnniversaryUpdate/Redstone1)
+Intel Core i5-8250U CPU 1.60GHz (Kaby Lake R), 1 CPU, 8 logical and 4 physical cores
+Frequency=1757816 Hz, Resolution=568.8878 ns, Timer=TSC
+  [Host]     : .NET Framework 4.8 (4.8.4180.0), X86 LegacyJIT
+  DefaultJob : .NET Framework 4.8 (4.8.4180.0), X86 LegacyJIT
+```
+|     Method |       Mean |    Error |   StdDev | Code Size |
+|----------- |-----------:|---------:|---------:|----------:|
+| DefaultMin | 1,117.2 ms | 12.93 ms | 11.46 ms |     292 B |
+|     BitMin |   646.5 ms |  4.16 ms |  3.25 ms |     165 B |
+
+As you can see BitMin() method works faster(x1.725) than DefaultBin(). Because we eliminate branch prediction.
+See more information about Bitwise operations in [article](articles/guides/BitMatrix/minimum_maximum.md).
+
 ### Sample
 Lets see simple operations MatrixDotNet.
+
 ```C#
 public sealed class Program
 {
