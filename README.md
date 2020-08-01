@@ -7,6 +7,7 @@
 [![NuGet](https://img.shields.io/nuget/v/MatrixDotNet.svg)](https://www.nuget.org/packages/MatrixDotNet/) 
 [![Downloads](https://img.shields.io/nuget/dt/matrixdotnet.svg)](https://www.nuget.org/packages/MatrixDotNet/)
 [![Stars](https://img.shields.io/github/stars/toor1245/MatrixDotNet?color=brightgreen)](https://github.com/toor1245/MatrixDotNet/stargazers)
+[![Gitter](https://badges.gitter.im/MatrixDotNet/community.svg)](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 </h3>
 
