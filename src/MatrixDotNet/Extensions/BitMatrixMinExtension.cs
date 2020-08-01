@@ -71,7 +71,7 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & (min - matrix[i,j] >> 63) | matrix[i,j] & (~(min - matrix[i,j]) >> 63);
+                    min = min & ((min - matrix[i,j]) >> 63) | matrix[i,j] & (~(min - matrix[i,j]) >> 63);
                 }
             }
             return min;
@@ -84,7 +84,7 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & (min - matrix[i,j] >> 31) | matrix[i,j] & (~(min - matrix[i,j]) >> 31);
+                    min = min & ((min - matrix[i,j]) >> 31) | matrix[i,j] & (~(min - matrix[i,j]) >> 31);
                 }
             }
             return min;
@@ -97,7 +97,7 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & (min - matrix[i, j] >> 15) | matrix[i, j] & (~(min - matrix[i, j]) >> 15);
+                    min = min & ((min - matrix[i, j]) >> 15) | matrix[i, j] & (~(min - matrix[i, j]) >> 15);
                 }
             }
             return min;
@@ -110,7 +110,7 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & (min - matrix[i, j] >> 7) | matrix[i, j] & (~(min - matrix[i, j]) >> 7);
+                    min = min & ((min - matrix[i, j]) >> 7) | matrix[i, j] & (~(min - matrix[i, j]) >> 7);
                 }
             }
             return min;
@@ -121,7 +121,7 @@ namespace MatrixDotNet.Extensions
             long min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                min = min & (min - matrix[dimension, i] >> 63) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 63);
+                min = min & ((min - matrix[dimension, i]) >> 63) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 63);
             }
             return min;
         }
@@ -131,7 +131,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                min = min & (min - matrix[dimension, i] >> 31) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 31);
+                min = min & ((min - matrix[dimension, i]) >> 31) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 31);
             }
             return min;
         }
@@ -141,7 +141,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                min = min & (min - matrix[dimension, i] >> 15) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 15);
+                min = min & ((min - matrix[dimension, i]) >> 15) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 15);
             }
             return min;
         }
@@ -151,7 +151,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                min = min & (min - matrix[dimension, i] >> 7) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 7);
+                min = min & ((min - matrix[dimension, i]) >> 7) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 7);
             }
             return min;
         }
@@ -161,7 +161,7 @@ namespace MatrixDotNet.Extensions
             long min = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                min = min & (min - matrix[i,dimension] >> 63) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 63);
+                min = min & ((min - matrix[i,dimension]) >> 63) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 63);
             }
             return min;
         }
@@ -171,7 +171,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                min = min & (min - matrix[i,dimension] >> 31) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 31);
+                min = min & ((min - matrix[i,dimension]) >> 31) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 31);
             }
             return min;
         }
@@ -181,7 +181,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                min = min & (min - matrix[i,dimension] >> 15) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 15);
+                min = min & ((min - matrix[i,dimension]) >> 15) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 15);
             }
             return min;
         }
@@ -191,7 +191,7 @@ namespace MatrixDotNet.Extensions
             int min = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                min = min & (min - matrix[i,dimension] >> 7) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 7);
+                min = min & ((min - matrix[i,dimension]) >> 7) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 7);
             }
             return min;
         }

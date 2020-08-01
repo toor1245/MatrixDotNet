@@ -4,7 +4,7 @@ namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-        public static T GetLUP_Solve<T>(this Matrix<T> matrix,out Matrix<T> lower,out Matrix<T> upper) where T : unmanaged
+        internal static T GetLUP_Solve<T>(this Matrix<T> matrix,out Matrix<T> lower,out Matrix<T> upper) where T : unmanaged
         {
             upper = new Matrix<T>(matrix.Rows,matrix.Columns);
             lower = new Matrix<T>(matrix.Rows,matrix.Columns);

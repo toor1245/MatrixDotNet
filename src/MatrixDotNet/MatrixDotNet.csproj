@@ -5,11 +5,11 @@
         <LangVersion>default</LangVersion>
         <PackageVersion>0.0.2</PackageVersion>
         <Title>MatrixDotNet</Title>
-        <Authors />
+        <Authors>Nikolay Hohsadze</Authors>
         <PackageProjectUrl>https://github.com/toor1245/MatrixDotNet</PackageProjectUrl>
         <PackageIconUrl></PackageIconUrl>
         <RepositoryUrl>https://github.com/toor1245/MatrixDotNet</RepositoryUrl>
-        <PackageTags>matrix,Matrix,MatrixDotNet</PackageTags>
+        <PackageTags>matrix,Matrix,MatrixDotNet,Math,linear algebra</PackageTags>
         <NeutralLanguage>en</NeutralLanguage>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
