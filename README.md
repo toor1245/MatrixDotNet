@@ -191,4 +191,4 @@ x1: -0,6637806637806638
 x2: -3,3997113997114
 ```
 
-#### See more information [docs](https://github.com/toor1245/MatrixDotNet/tree/master/docs/articles) 
+#### See more information [docs](https://toor1245.github.io/MatrixDotNet/) 
