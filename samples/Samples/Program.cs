@@ -9,19 +9,19 @@ namespace Samples
         static void Main(string[] args)
         {
             // init matrix
-            int[,] a = new int[3, 3]
-            {
+            int[,] a = {
                 { 10, -7, 0 },
                 { -3, 6,  2 },
                 { 5, -1,  5 }
             };
 
-            int[,] b = new int[3, 4]
-            {
+            int[,] b = {
                 { 11, -2, 1, 6 },
                 { -8, 4,  2, 3 },
                 { 4, -4,  5, 8 },
             };
+
+            int[] vector = {2, 7, 5, 4};
 
             int k = 3;
             
@@ -41,6 +41,10 @@ namespace Samples
             
             // Divide.
             Matrix<int> matrixG = matrixA / 2;
+            
+            // Multiply to vector
+            int[] vectorA = matrixB * vector;
+            
 
             // Pretty output.
             Console.WriteLine(matrixA.Pretty());
@@ -50,6 +54,19 @@ namespace Samples
             Console.WriteLine(matrixE.Pretty());
             Console.WriteLine(matrixF.Pretty());
             Console.WriteLine(matrixG.Pretty());
+            
+            Console.Write("VectorA result:");
+            Console.WriteLine();
+            foreach (var i in vectorA)
+            {
+                Console.Write(i + " ");
+            }
+
+            Console.WriteLine();
+            foreach (var i in matrixA)
+            {
+                Console.WriteLine(i + " ");
+            }
 
         }
 

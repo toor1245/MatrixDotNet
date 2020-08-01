@@ -22,6 +22,8 @@ namespace Samples.Samples
                 { -8, 4,  2, 3 },
                 { 4, -4,  5, 8 },
             };
+            
+            int[] vector = {2, 7, 5, 4};
 
             int k = 3;
             
@@ -41,6 +43,9 @@ namespace Samples.Samples
             
             // Divide.
             Matrix<int> matrixG = matrixA / 2;
+            
+            // Multiply to vector
+            int[] vectorA = matrixB * vector;
 
             // Pretty output.
             Console.WriteLine(matrixA.Pretty());
@@ -50,6 +55,12 @@ namespace Samples.Samples
             Console.WriteLine(matrixE.Pretty());
             Console.WriteLine(matrixF.Pretty());
             Console.WriteLine(matrixG.Pretty());
+            
+            Console.Write("VectorA result:");
+            foreach (var i in vectorA)
+            {
+                Console.Write(i + " ");
+            }
         }
     }
 }

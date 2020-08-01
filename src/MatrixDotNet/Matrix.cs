@@ -362,7 +362,7 @@ namespace MatrixDotNet
                 for (int j = 0; j < matrix.Columns; j++)
                 {
                     // result[i,j] = matrix[i,j] * matrix
-                    result[i, j] = MathExtension.Divide(matrix[i,j],digit);
+                    result[i, j] = MathExtension.Divide(digit,matrix[i,j]);
                 }
             }
             return result;
@@ -434,7 +434,7 @@ namespace MatrixDotNet
         // Checks matrix on range by rows - i, columns - j.
         private bool IsRange(int i,int j)
         {
-            return i < _Matrix.GetLength(0) || j < _Matrix.GetLength(1);
+            return i < _Matrix.GetLength(0) && j < _Matrix.GetLength(1);
         }
 
         // Checks matrix on range by rows.
@@ -509,8 +509,8 @@ namespace MatrixDotNet
         /// <exception cref="ArgumentException"></exception>
         public override bool Equals(object obj)
         {
-            if(!(obj is Matrix<T>))
-                throw new ArgumentException();
+            if (!(obj is Matrix<T>))
+                throw new ArgumentNullException();
             
             var t = (Matrix<T>) obj;
             var count = 0;
@@ -557,6 +557,9 @@ namespace MatrixDotNet
             return this.GetUnmanagedDeterminate();
         }
         
+        /// <summary>
+        /// Represents implementations IEnumerator.
+        /// </summary>
         public struct Enumerator : IEnumerator<T>
         {
             private int _position;
@@ -575,7 +578,6 @@ namespace MatrixDotNet
                 int newPosition = _position + 1;
                 bool cross = false;
                 
-                if (_dimension >= _matrix.Rows) return false;
                 
                 if (newPosition >= _matrix.Columns && _dimension < _matrix.Rows)
                 {
@@ -585,7 +587,7 @@ namespace MatrixDotNet
                 }
                 if (newPosition < -1 || 
                     newPosition >= _matrix.Columns ||
-                    _dimension >= _matrix.Columns) 
+                    _dimension >= _matrix.Rows) 
                     return false;
 
                 if (cross)
@@ -606,7 +608,7 @@ namespace MatrixDotNet
                 _position = -1;
             }
 
-            public T Current => _matrix[_dimension,_position];
+            public T Current => _matrix[_dimension, _position];
 
             object IEnumerator.Current => Current;
 
