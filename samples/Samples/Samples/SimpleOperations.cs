@@ -56,7 +56,7 @@ namespace Samples.Samples
             matrixF.Pretty();
             matrixG.Pretty();
             
-            Console.Write("VectorA result:");
+            Console.Write("VectorA result: ");
             foreach (var i in vectorA)
             {
                 Console.Write(i + " ");

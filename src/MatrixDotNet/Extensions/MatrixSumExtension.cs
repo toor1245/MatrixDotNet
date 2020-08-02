@@ -175,6 +175,156 @@ namespace MatrixDotNet.Extensions
             return sum + cs + ccs;
         }
         
+        public static double KleinSum(this Matrix<double> matrix)
+        {
+            double sum = 0;
+            double cs = 0;
+            double ccs = 0;
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    var t = sum + matrix[i,j];
+                    double error;
+                    if (Math.Abs(sum) >= matrix[i,j])
+                    {
+                        error = (sum - t) + matrix[i,j];
+                    }
+                    else
+                    {
+                        error = (matrix[i,j] - t) + sum;
+                    }
+
+                    sum = t;
+                    t = cs + cs;
+                    double error2;
+                    if (Math.Abs(cs) >= Math.Abs(error))
+                    {
+                        error2 = (error - t) + cs;
+                    }
+                    else
+                    {
+                        error2 = (cs - t) + error;
+                    }
+
+                    cs = t;
+                    ccs += error2;
+                }
+            }
+            return sum + cs + ccs;
+        }
+        
+        public static double KleinSum(this Matrix<double> matrix, int dimension)
+        {
+            double sum = 0;
+            double cs = 0;
+            double ccs = 0;
+            for (int j = 0; j < matrix.Columns; j++)
+            {
+                var t = sum + matrix[dimension,j];
+                double error;
+                if (Math.Abs(sum) >= matrix[dimension,j])
+                {
+                    error = (sum - t) + matrix[dimension,j];
+                }
+                else
+                {
+                    error = (matrix[dimension,j] - t) + sum;
+                }
+
+                sum = t;
+                t = cs + cs;
+                double error2;
+                if (Math.Abs(cs) >= Math.Abs(error))
+                {
+                    error2 = (error - t) + cs;
+                }
+                else
+                {
+                    error2 = (cs - t) + error;
+                }
+
+                cs = t;
+                ccs += error2;
+            }
+            return sum + cs + ccs;
+        }
+        
+        public static float KleinSum(this Matrix<float> matrix)
+        {
+            float sum = 0;
+            float cs = 0;
+            float ccs = 0;
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    float t = sum + matrix[i,j];
+                    float error;
+                    if (Math.Abs(sum) >= matrix[i,j])
+                    {
+                        error = (sum - t) + matrix[i,j];
+                    }
+                    else
+                    {
+                        error = (matrix[i,j] - t) + sum;
+                    }
+
+                    sum = t;
+                    t = cs + cs;
+                    float error2;
+                    if (Math.Abs(cs) >= Math.Abs(error))
+                    {
+                        error2 = (error - t) + cs;
+                    }
+                    else
+                    {
+                        error2 = (cs - t) + error;
+                    }
+
+                    cs = t;
+                    ccs += error2;
+                }
+            }
+            return sum + cs + ccs;
+        }
+        
+        public static float KleinSum(this Matrix<float> matrix, int dimension)
+        {
+            float sum = 0;
+            float cs = 0;
+            float ccs = 0;
+            for (int j = 0; j < matrix.Columns; j++)
+            {
+                var t = sum + matrix[dimension,j];
+                float error;
+                if (Math.Abs(sum) >= matrix[dimension,j])
+                {
+                    error = (sum - t) + matrix[dimension,j];
+                }
+                else
+                {
+                    error = (matrix[dimension,j] - t) + sum;
+                }
+
+                sum = t;
+                t = cs + cs;
+                float error2;
+                if (Math.Abs(cs) >= Math.Abs(error))
+                {
+                    error2 = (error - t) + cs;
+                }
+                else
+                {
+                    error2 = (cs - t) + error;
+                }
+
+                cs = t;
+                ccs += error2;
+            }
+            return sum + cs + ccs;
+        }
+        
         #endregion
 
         #region Kahan
@@ -212,8 +362,8 @@ namespace MatrixDotNet.Extensions
         
         public static float KahanSum(this Matrix<float> matrix)
         {
-            float sum = 0;
-            float error = 0;
+            float sum = 0f;
+            float error = 0f;
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
