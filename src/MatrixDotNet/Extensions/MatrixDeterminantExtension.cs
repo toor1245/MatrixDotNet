@@ -12,7 +12,8 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException("the matrix is not square",nameof(matrix));
             }
             
-            var temp = matrix.Clone() as int[,];
+            
+            var temp = matrix.ToPrimitive();
             
             if(temp == null)
                 throw new NullReferenceException();
@@ -41,7 +42,7 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException("the matrix is not square",nameof(matrix));
             }
             
-            var temp = matrix.Clone() as long[,];
+            var temp = matrix.ToPrimitive();
             
             if(temp == null)
                 throw new NullReferenceException();
@@ -70,7 +71,7 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException("the matrix is not square",nameof(matrix));
             }
             
-            var temp = matrix.Clone() as float[,];
+            var temp = matrix.ToPrimitive();
             
             if(temp == null)
                 throw new NullReferenceException();
@@ -99,7 +100,7 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException("the matrix is not square",nameof(matrix));
             }
             
-            var temp = matrix.Clone() as double[,];
+            var temp = matrix.ToPrimitive();
             
             if(temp == null)
                 throw new NullReferenceException();

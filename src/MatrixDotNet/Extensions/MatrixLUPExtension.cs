@@ -1,15 +1,15 @@
 ﻿using System;
+using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-        internal static T GetLUP_Solve<T>(this Matrix<T> matrix,out Matrix<T> lower,out Matrix<T> upper) where T : unmanaged
+        /*public static T GetLU<T>(this Matrix<T> matrix,out Matrix<T> lower,out Matrix<T> upper) where T : unmanaged
         {
-            upper = new Matrix<T>(matrix.Rows,matrix.Columns);
-            lower = new Matrix<T>(matrix.Rows,matrix.Columns);
-            return default;
+            
         }
+        */
 
         public static Matrix<T> GetLowerDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
         {
@@ -48,6 +48,6 @@ namespace MatrixDotNet.Extensions
                 }
             }
             return upper;
-        } 
+        }
     }
 }

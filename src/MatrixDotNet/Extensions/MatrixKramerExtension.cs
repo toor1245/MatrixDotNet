@@ -89,6 +89,7 @@ namespace MatrixDotNet.Extensions
                 {
                     if (temp != null) temp[j, i] = arr[j];
                 }
+                
                 result[i] = temp.GetDeterminate() / det;
             }
             return result;
