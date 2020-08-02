@@ -48,13 +48,13 @@ namespace Samples.Samples
             int[] vectorA = matrixB * vector;
 
             // Pretty output.
-            Console.WriteLine(matrixA.Pretty());
-            Console.WriteLine(matrixB.Pretty());
-            Console.WriteLine(matrixC.Pretty());
-            Console.WriteLine(matrixD.Pretty());
-            Console.WriteLine(matrixE.Pretty());
-            Console.WriteLine(matrixF.Pretty());
-            Console.WriteLine(matrixG.Pretty());
+            matrixA.Pretty();
+            matrixB.Pretty();
+            matrixC.Pretty();
+            matrixD.Pretty();
+            matrixE.Pretty();
+            matrixF.Pretty();
+            matrixG.Pretty();
             
             Console.Write("VectorA result:");
             foreach (var i in vectorA)

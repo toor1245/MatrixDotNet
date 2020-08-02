@@ -5,38 +5,47 @@ namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-        public static string Pretty<T>(this Matrix<T> matrix) where T : unmanaged
+        public static void Pretty<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            SetColorMessage(matrix);
+            Console.ResetColor();
+        }
+
+        private static void SetColorMessage<T>(Matrix<T> matrix) where  T : unmanaged
         {
             if (matrix == null)
-            {
                 throw new NullReferenceException();
-            }
-            
+
             StringBuilder builder = new StringBuilder();
             builder.AppendLine();
 
-            int n = 7;
+            int n = 12;
+            
             builder.AppendLine($"Number of rows: {matrix.Rows}");
             builder.AppendLine($"Number of columns: {matrix.Columns}\n");
+            
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    int length = matrix[i, j].ToString().Length;
+                    int length = string.Format("{0:f2}",matrix[i, j]).Length;
+                    string format = string.Format("{0:f2}",matrix[i, j]);
+                    
                     if (length > n)
                     {
-                        builder.Append(" ".PadLeft(2) + matrix[i, j] + "".PadRight(length - n) +   "|");    
+                        builder.Append(" ".PadLeft(2) + format + "".PadRight(length - n) +   "|");    
                     }
                     else
                     {
-                        builder.Append(" ".PadLeft(2) + matrix[i, j] + "".PadRight(n - length) +   "|");
+                        builder.Append(" ".PadLeft(2) + format + "".PadRight(n - length) +   "|");
                     }
                 }
 
                 builder.AppendLine();
             }
-            Console.ForegroundColor = ConsoleColor.White;
-            return builder.ToString();
+
+            Console.WriteLine(builder.ToString());
         }
     }
 }

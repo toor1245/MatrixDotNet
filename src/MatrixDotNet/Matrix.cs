@@ -137,6 +137,36 @@ namespace MatrixDotNet
                 }
             }
         }
+        
+        
+        public T this[int m, int n,State dimension]
+        {
+            get
+            {
+                return dimension switch
+                {
+                    State.Row => _Matrix[m,n],
+                    State.Column => _Matrix[n,m],
+                    _ => throw new ArgumentException("state error")
+                };
+            }
+
+            set
+            {
+                if (!IsRange(m,n))
+                    throw new IndexOutOfRangeException();
+                
+                if (dimension == State.Row)
+                {
+                    this[m, n] = value;
+                }
+
+                if (dimension == State.Column)
+                {
+                    this[n, m] = value;
+                }
+            }
+        }
 
 
         #endregion
