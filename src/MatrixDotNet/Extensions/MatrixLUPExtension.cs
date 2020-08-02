@@ -44,7 +44,8 @@ namespace MatrixDotNet.Extensions
         public static Matrix<T> GetLowerMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("matrix is not square");
+                throw new MatrixDotNetException(
+                    $"matrix is not square\n Rows: {matrix.Rows}\n Columns: {matrix.Columns}");
             
             Matrix<T> lower = new Matrix<T>(matrix.Rows,matrix.Columns);
             
@@ -62,7 +63,9 @@ namespace MatrixDotNet.Extensions
         public static Matrix<T> GetUpperMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("matrix is not square");
+                throw new MatrixDotNetException(
+                    $"matrix is not square\n Rows: {matrix.Rows}\n Columns: {matrix.Columns}");
+            
             Matrix<T> upper = new Matrix<T>(matrix.Rows,matrix.Columns);
             
             for (int i = 0; i < matrix.Columns; i++)

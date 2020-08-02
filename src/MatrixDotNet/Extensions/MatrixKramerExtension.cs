@@ -10,7 +10,7 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException(
                     "Rows quantity matrix not equal array quantity",nameof(matrix),nameof(arr));
             
-            long det = matrix.GetDeterminate();
+            long det = matrix.GetDeterminant();
             
             Matrix<long> temp = matrix.Clone() as Matrix<long>;
             
@@ -22,7 +22,7 @@ namespace MatrixDotNet.Extensions
                 {
                     if (temp != null) temp[j, i] = arr[j];
                 }
-                result[i] = temp.GetDeterminate() / det;
+                result[i] = temp.GetDeterminant() / det;
             }
             return result;
         }
@@ -33,7 +33,7 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException(
                     "Rows quantity matrix not equal array quantity",nameof(matrix),nameof(arr));
             
-            int det = matrix.GetDeterminate();
+            int det = matrix.GetDeterminant();
             
             Matrix<int> temp = matrix.Clone() as Matrix<int>;
             
@@ -45,7 +45,7 @@ namespace MatrixDotNet.Extensions
                 {
                     if (temp != null) temp[j, i] = arr[j];
                 }
-                result[i] = temp.GetDeterminate() / det;
+                result[i] = temp.GetDeterminant() / det;
             }
             return result;
         }
@@ -56,7 +56,7 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException(
                     "Rows quantity matrix not equal array quantity",nameof(matrix),nameof(arr));
             
-            double det = matrix.GetDeterminate();
+            double det = matrix.GetDeterminant();
             Matrix<double> temp = matrix.Clone() as Matrix<double>;
             double[] result = new double[matrix.Columns];
             
@@ -66,7 +66,7 @@ namespace MatrixDotNet.Extensions
                 {
                     if (temp != null) temp[j, i] = arr[j];
                 }
-                result[i] = temp.GetDeterminate() / det;
+                result[i] = temp.GetDeterminant() / det;
             }
             return result;
         }
@@ -77,7 +77,7 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException(
                     "Rows quantity matrix not equal array quantity",nameof(matrix),nameof(arr));
             
-            float det = matrix.GetDeterminate();
+            float det = matrix.GetDeterminant();
             
             Matrix<float> temp = matrix.Clone() as Matrix<float>;
             
@@ -90,7 +90,7 @@ namespace MatrixDotNet.Extensions
                     if (temp != null) temp[j, i] = arr[j];
                 }
                 
-                result[i] = temp.GetDeterminate() / det;
+                result[i] = temp.GetDeterminant() / det;
             }
             return result;
         }

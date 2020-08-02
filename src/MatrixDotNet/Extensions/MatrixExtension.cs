@@ -85,47 +85,6 @@ namespace MatrixDotNet.Extensions
 
         }
 
-        /// <summary>
-        /// Convert matrix to primitive matrix.
-        /// </summary>
-        /// <param name="matrix"></param>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public static T[,] ToPrimitive<T>(this Matrix<T> matrix) 
-            where T : unmanaged
-        {
-            T[,] matrix1 = new T[matrix.Rows,matrix.Columns];
-            
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    matrix1[i, j] = matrix[i, j];
-                }
-            }
-            return matrix1;
-        }
-        
-        /// <summary>
-        /// Convert primitive matrix to <see cref="Matrix{T}"/>.
-        /// </summary>
-        /// <param name="matrix">primitive matrix.</param>
-        /// <typeparam name="T">unmanaged type</typeparam>
-        /// <returns></returns>
-        public static Matrix<T> ToMatrixDotNet<T>(this T[,] matrix) 
-            where T : unmanaged
-        {
-            Matrix<T> matrix1 = new Matrix<T>(matrix.GetLength(0),matrix.GetLength(1));
-            
-            for (int i = 0; i < matrix1.Rows; i++)
-            {
-                for (int j = 0; j < matrix1.Columns; j++)
-                {
-                    matrix1[i, j] = matrix[i, j];
-                }
-            }
-            return matrix1;
-        }
         
         /// <summary>
         /// Gets minor pf matrix.
@@ -149,7 +108,7 @@ namespace MatrixDotNet.Extensions
                     col++;
                 }
             }
-            return result.ToMatrixDotNet();
+            return result.ToMatrix();
         }
 
         /// <summary>

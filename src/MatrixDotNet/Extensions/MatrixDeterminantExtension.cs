@@ -5,7 +5,7 @@ namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-        public static int GetDeterminate(this Matrix<int> matrix)
+        public static int GetDeterminant(this Matrix<int> matrix)
         {
             if (!matrix.IsSquare)
             {
@@ -28,14 +28,14 @@ namespace MatrixDotNet.Extensions
             for (int i = 0; i < temp.GetLength(1); i++)
             {
                 Matrix<int> minor = GetMinor(matrix, i);
-                result += sign * temp[0, i] * minor.GetDeterminate();
+                result += sign * temp[0, i] * minor.GetDeterminant();
                 sign = -sign;
             }
 
             return result;
         }
         
-        public static long GetDeterminate(this Matrix<long> matrix)
+        public static long GetDeterminant(this Matrix<long> matrix)
         {
             if (!matrix.IsSquare)
             {
@@ -57,14 +57,14 @@ namespace MatrixDotNet.Extensions
             for (int i = 0; i < temp.GetLength(1); i++)
             {
                 Matrix<long> minor = GetMinor(matrix, i);
-                result += sign * temp[0, i] * minor.GetDeterminate();
+                result += sign * temp[0, i] * minor.GetDeterminant();
                 sign = -sign;
             }
 
             return result;
         }
         
-        public static float GetDeterminate(this Matrix<float> matrix)
+        public static float GetDeterminant(this Matrix<float> matrix)
         {
             if (!matrix.IsSquare)
             {
@@ -86,14 +86,14 @@ namespace MatrixDotNet.Extensions
             for (int i = 0; i < temp.GetLength(1); i++)
             {
                 Matrix<float> minor = GetMinor(matrix, i);
-                result += sign * temp[0, i] * minor.GetDeterminate();
+                result += sign * temp[0, i] * minor.GetDeterminant();
                 sign = -sign;
             }
 
             return result;
         }
         
-        public static double GetDeterminate(this Matrix<double> matrix)
+        public static double GetDeterminant(this Matrix<double> matrix)
         {
             if (!matrix.IsSquare)
             {
@@ -115,7 +115,7 @@ namespace MatrixDotNet.Extensions
             for (int i = 0; i < temp.GetLength(1); i++)
             {
                 Matrix<double> minor = GetMinor(matrix, i);
-                result += sign * temp[0, i] * minor.GetDeterminate();
+                result += sign * temp[0, i] * minor.GetDeterminant();
                 sign = -sign;
             }
             return result;

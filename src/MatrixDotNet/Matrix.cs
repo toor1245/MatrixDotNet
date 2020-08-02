@@ -36,11 +36,6 @@ namespace MatrixDotNet
         /// Gets length columns of matrix.
         /// </summary>
         public int Columns => _Matrix.GetLength(1);
-
-        /// <summary>
-        /// Gets rank of matrix.
-        /// </summary>
-        public double Rank => GetRank();
         
         /// <summary>
         /// Checks square matrix.
@@ -524,7 +519,7 @@ namespace MatrixDotNet
         /// <returns></returns>
         public static implicit operator Matrix<T>(T[,] matrix)
         {
-            return matrix.ToMatrixDotNet();
+            return matrix.ToMatrix();
         }
 
 
@@ -565,27 +560,6 @@ namespace MatrixDotNet
             return base.GetHashCode();
         }
         
-        /// <summary>
-        /// Gets rank matrix.
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="MatrixDotNetException"></exception>
-        private double GetRank()
-        {
-            var matrix = (Matrix<T>)Clone();
-            if (matrix is null)
-                throw new MatrixDotNetException("matrix is null", nameof(_Matrix));
-            
-            for (int i = 0; i < Columns; i++)
-            {
-                for (int j = i + 1; j < Rows; j++)
-                { 
-                    matrix[j, i] = default;
-                }
-            }
-            
-            return this.GetUnmanagedDeterminate();
-        }
         
         /// <summary>
         /// Represents implementations IEnumerator.
