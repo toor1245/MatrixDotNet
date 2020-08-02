@@ -3,20 +3,22 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>default</LangVersion>
-        <PackageVersion>0.0.2</PackageVersion>
+        <PackageVersion>0.0.2.1</PackageVersion>
         <Title>MatrixDotNet</Title>
         <Authors>Nikolay Hohsadze</Authors>
-        <PackageProjectUrl>https://github.com/toor1245/MatrixDotNet</PackageProjectUrl>
+        <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
         <PackageIconUrl></PackageIconUrl>
         <RepositoryUrl>https://github.com/toor1245/MatrixDotNet</RepositoryUrl>
         <PackageTags>matrix,Matrix,MatrixDotNet,Math,linear algebra</PackageTags>
         <NeutralLanguage>en</NeutralLanguage>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
-        <Version>0.0.1</Version>
+        <Version>0.0.2.1</Version>
         <DocumentationMarkdownURL>https://github.com/toor1245/MatrixDotNet/blob/master/README.md</DocumentationMarkdownURL>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Description>Powerful MatrixDotNet library for matrix calculation</Description>
+        <RepositoryType>Library</RepositoryType>
+        <PackageReleaseNotes>Tests covered 62%, add Klein and Kahan sum. Update pretty output(correct works with floating type). Add LUP extensions. Fixed bug with bitwise minimum and bitwise maximum which worked slower than default sum and fixed multiply matrix to constant. If yo have any questions you can ask it on gitter MatrixDotNet</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
