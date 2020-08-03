@@ -39,5 +39,27 @@
                 }
             }
         }
+
+        public static void BubbleSort<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    for (int k = i + 1; k < matrix.Rows; k++)
+                    {
+                        for (int l = j + 1; l < matrix.Columns; l++)
+                        {
+                            if (MathExtension.GreaterThan(matrix[i, j], matrix[k, l]))
+                            {
+                                T temp = matrix[i,j];
+                                matrix[i,j] = matrix[k,l];
+                                matrix[k,l] = temp;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -180,7 +180,7 @@ namespace MatrixDotNet.Extensions
         /// <param name="A1"></param>
         /// <param name="b1"></param>
         /// <returns></returns>
-        public static double[] Gause(this Matrix<double> A1, double[] b1) {
+        public static double[] Gauss(this Matrix<double> A1, double[] b1) {
 
             // Input data
             Matrix<double> A = A1.Clone() as Matrix<double>;

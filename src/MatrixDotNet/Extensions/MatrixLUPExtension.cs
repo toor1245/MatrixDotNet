@@ -4,7 +4,7 @@ namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-        public static void GetLowerUpperPermutation<T>(this Matrix<T> matrix,out Matrix<T> lower,out Matrix<T> upper) where T : unmanaged
+        public static void GetLowerUpper<T>(this Matrix<T> matrix,out Matrix<T> lower,out Matrix<T> upper) where T : unmanaged
         {
             if (!matrix.IsSquare)
                 throw new MatrixDotNetException(
@@ -40,6 +40,20 @@ namespace MatrixDotNet.Extensions
                 }
             }
         }
+
+       /* public static void GetLowerUpperPermutation<T>(this Matrix<T> matrix, out Matrix<T> lower, out Matrix<T> upper,
+            Matrix<T> perm)
+            where T : unmanaged
+        {
+            for (int i = 0; i < UPPER; i++)
+            {
+                for (int j = 0; j < UPPER; j++)
+                {
+                    
+                }
+            }
+        }
+        */
         
         public static Matrix<T> GetLowerMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
@@ -78,5 +92,17 @@ namespace MatrixDotNet.Extensions
             
             return upper;
         }
+
+        /*public static double GetLowerUpperPermSolve<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            matrix.GetLowerUpper(out var lower,out var upper);
+            int n = lower.Rows;
+            T[] x = new T[n];
+            T[] y = new T[n];
+            for (int i = 1; i < n; i++)
+            {
+                y[i] = 
+            }
+        }*/
     }
 }

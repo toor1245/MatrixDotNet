@@ -453,7 +453,35 @@ namespace MatrixDotNet
             }
             return res;
         }
-        
+
+        /// <summary>
+        /// Compares all values left matrix with right matrix.
+        /// Returns true if left matrix full equals right matrix.
+        /// </summary>
+        /// <param name="left">matrix A</param>
+        /// <param name="right">matrix B</param>
+        /// <returns><see cref="Boolean"/></returns>
+        /// <exception cref="NullReferenceException">Throws if left or right matrix are null.</exception>
+        public static bool operator ==(Matrix<T> left, Matrix<T> right)
+        {
+            if(left is null || right is null)
+                throw new NullReferenceException();
+            
+            return left.Equals(right);
+        }
+
+        /// <summary>
+        /// Compares all values left matrix with right matrix.
+        /// Returns true if minimum one element of left matrix not equals right matrix.
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
+        public static bool operator !=(Matrix<T> left, Matrix<T> right)
+        {
+            return !(left == right);
+        }
+
         #endregion
         
         // Checks matrix on range by rows - i, columns - j.

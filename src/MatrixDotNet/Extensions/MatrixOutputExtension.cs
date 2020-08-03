@@ -14,7 +14,7 @@ namespace MatrixDotNet.Extensions
 
         private static void SetColorMessage<T>(Matrix<T> matrix) where  T : unmanaged
         {
-            if (matrix == null)
+            if (matrix is null)
                 throw new NullReferenceException();
 
             StringBuilder builder = new StringBuilder();
