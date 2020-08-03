@@ -7,7 +7,7 @@ namespace MatrixDotNet.Extensions
     {
         public static T Max<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             T max = matrix[0,0];
@@ -27,7 +27,7 @@ namespace MatrixDotNet.Extensions
         
         public static T MaxByRow<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             T max = matrix[dimension,0];
@@ -44,7 +44,7 @@ namespace MatrixDotNet.Extensions
         
         public static T MaxByColumn<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             T max = matrix[0,dimension];
@@ -62,7 +62,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMax(this Matrix<int> matrix)
         {
-            if (matrix == null)
+            if (matrix is null)
                 throw new NullReferenceException();
             
             int max = matrix[0, 0];
@@ -78,7 +78,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMax(this Matrix<byte> matrix)
         {
-            if (matrix == null)
+            if (matrix is null)
                 throw new NullReferenceException();
             
             int max = matrix[0, 0];
@@ -94,7 +94,7 @@ namespace MatrixDotNet.Extensions
         
         public static long BitMax(this Matrix<long> matrix)
         {
-            if (matrix == null)
+            if (matrix is null)
                 throw new NullReferenceException();
             
             long max = matrix[0, 0];
@@ -110,7 +110,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMax(this Matrix<short> matrix)
         {
-            if (matrix == null)
+            if (matrix is null)
                 throw new NullReferenceException();
             
             int max = matrix[0, 0];
@@ -126,7 +126,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMaxByRow(this Matrix<int> matrix,int dimension)
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             int max = matrix[dimension, 0];
@@ -139,7 +139,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMaxByRow(this Matrix<byte> matrix,int dimension)
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             int max = matrix[dimension, 0];
@@ -152,7 +152,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMaxByRow(this Matrix<short> matrix,int dimension)
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             int max = matrix[dimension, 0];
@@ -165,7 +165,7 @@ namespace MatrixDotNet.Extensions
         
         public static long BitMaxByRow(this Matrix<long> matrix,int dimension)
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             long max = matrix[dimension, 0];
@@ -178,7 +178,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMaxByColumn(this Matrix<byte> matrix,int dimension)
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             int max = matrix[0,dimension];
@@ -191,7 +191,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMaxByColumn(this Matrix<short> matrix,int dimension)
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             int max = matrix[0,dimension];
@@ -204,7 +204,7 @@ namespace MatrixDotNet.Extensions
         
         public static int BitMaxByColumn(this Matrix<int> matrix,int dimension)
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             int max = matrix[0,dimension];
@@ -217,7 +217,7 @@ namespace MatrixDotNet.Extensions
         
         public static long BitMaxByColumn(this Matrix<long> matrix,int dimension)
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             long max = matrix[0,dimension];

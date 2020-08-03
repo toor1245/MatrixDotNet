@@ -12,7 +12,6 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException("the matrix is not square",nameof(matrix));
             }
             
-            
             var temp = matrix.ToPrimitive();
             
             if(temp == null)

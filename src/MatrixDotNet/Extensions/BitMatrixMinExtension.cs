@@ -7,7 +7,7 @@ namespace MatrixDotNet.Extensions
     {
         public static T Min<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             T min = matrix[0,0];
@@ -28,7 +28,7 @@ namespace MatrixDotNet.Extensions
 
         public static T MinByRow<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             T min = matrix[dimension,0];
@@ -47,7 +47,7 @@ namespace MatrixDotNet.Extensions
         
         public static T MinByColumn<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
         {
-            if(matrix == null)
+            if(matrix is null)
                 throw new NullReferenceException();
 
             T min = matrix[0,dimension];
