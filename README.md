@@ -153,7 +153,7 @@ Frequency=1757816 Hz, Resolution=568.8878 ns, Timer=TSC
 |     BitMin |   646.5 ms |  4.16 ms |  3.25 ms |     165 B |
 
 As you can see BitMin() method works faster(x1.725) than DefaultBin(). Because we eliminate branch prediction.
-See more information about Bitwise operations in [article](articles/guides/BitMatrix/minimum_maximum.md).
+See more information about Bitwise operations in [article](https://toor1245.github.io/MatrixDotNet/articles/intro.html).
 
 ### Sample
 Lets see simple operations MatrixDotNet.
