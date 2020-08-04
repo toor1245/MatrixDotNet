@@ -1,6 +1,4 @@
-﻿using MatrixDotNet.Exceptions;
-
-namespace MatrixDotNet.Extensions
+﻿namespace MatrixDotNet.Extensions
 {
     // Multiply Strassen
     public static partial class MatrixExtension
@@ -21,10 +19,10 @@ namespace MatrixDotNet.Extensions
             
             for (int i = 0; i < n; i++)
             {
-                Clone(a,i, 0, a11,i,0,n);
-                Clone(a,i, n, a12,i,0,n);
-                Clone(a,i + n, 0, a21,i,0,n);
-                Clone(a,i + n, n, a22,i,0,n);
+                CopyTo(a,i, 0, a11,i,0,n);
+                CopyTo(a,i, n, a12,i,0,n);
+                CopyTo(a,i + n, 0, a21,i,0,n);
+                CopyTo(a,i + n, n, a22,i,0,n);
             }
         }
 
@@ -35,10 +33,10 @@ namespace MatrixDotNet.Extensions
             Matrix<T> a = new Matrix<T>(n << 1,n << 1);
             for (int i = 0; i < n; i++)
             {
-                Clone(a11,i, 0, a,i,0,n);
-                Clone(a12,i, 0, a,i,n,n << 1);
-                Clone(a21,i, 0, a,i + n,0,n);
-                Clone(a22,i, 0, a,i + n,n,n << 1);
+                CopyTo(a11,i, 0, a,i,0,n);
+                CopyTo(a12,i, 0, a,i,n,n << 1);
+                CopyTo(a21,i, 0, a,i + n,0,n);
+                CopyTo(a22,i, 0, a,i + n,n,n << 1);
             }
 
             return a;

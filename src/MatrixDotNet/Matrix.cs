@@ -82,7 +82,7 @@ namespace MatrixDotNet
             get => this.GetRow(i);
             set
             {
-                if (!IsRange(i))
+                if (!IsRangeRow(i))
                     throw new IndexOutOfRangeException();
                 
                 for (int j = 0; j < Columns; j++)
@@ -112,11 +112,11 @@ namespace MatrixDotNet
 
             set
             {
-                if (!IsRange(i))
-                    throw new IndexOutOfRangeException();
-                
                 if (dimension == State.Row)
                 {
+                    if (!IsRangeRow(i))
+                        throw new IndexOutOfRangeException();
+                    
                     for (int j = 0; j < Columns; j++)
                     {
                         this[i, j] = value[j];
@@ -125,6 +125,9 @@ namespace MatrixDotNet
 
                 if (dimension == State.Column)
                 {
+                    if (!IsRangeColumn(i))
+                        throw new IndexOutOfRangeException();
+                    
                     for (int j = 0; j < Rows; j++)
                     {
                         this[j, i] = value[j];
@@ -491,10 +494,17 @@ namespace MatrixDotNet
         }
 
         // Checks matrix on range by rows.
-        private bool IsRange(int i)
+        private bool IsRangeRow(int i)
         {
             return i < _Matrix.GetLength(0);
         }
+
+        // Checks matrix on range by columns.
+        private bool IsRangeColumn(int j)
+        {
+            return j < _Matrix.GetLength(1);
+        }
+        
 
         /// <summary>
         /// <inheritdoc cref="object.ToString"/>

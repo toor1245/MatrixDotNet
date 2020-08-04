@@ -1,4 +1,3 @@
-using System;
 using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions
