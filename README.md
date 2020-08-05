@@ -79,7 +79,7 @@ IterationCount=5  LaunchCount=1  WarmupCount=5
 
 ```
 
-```ini
+```
 |   Method |    Mean |   Error |  StdDev |      Gen 0 |     Gen 1 |     Gen 2 | Allocated |
 |--------- |--------:|--------:|--------:|-----------:|----------:|----------:|----------:|
 |  Default | 69.88 s | 1.241 s | 0.322 s |          - |         - |         - |   1.01 MB |
