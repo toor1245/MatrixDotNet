@@ -1,4 +1,6 @@
-﻿using MatrixDotNet;
+﻿using System;
+using MatrixDotNet;
+using MatrixDotNet.Extensions;
 
 namespace Samples
 {
@@ -6,15 +8,22 @@ namespace Samples
     {
         static void Main(string[] args)
         {
-            int[,] a = new int[4, 6]
+            long[,] a = new long[4,4];
+            a[0, 0] = 100000;
+            Random random = new Random();
+            for (int i = 0; i < a.GetLength(0); i++)
             {
-                { 8, 7, 0,6,7,8},
-                { 3, 6, 2,7,6,4 },
-                { 5, 1, 5,3,4,5 },
-                { 2, 6, 5,5,6,7 },
-            };
+                for (int j = 0; j < a.GetLength(1); j++)
+                {
+                    a[i, j] = random.Next(1, 1034534544);
+                }
+            }
             
-            Matrix<int> matrix = a;
+
+
+
+            Matrix<long> matrix = a;
+            matrix.Pretty();
         }
     }
 }

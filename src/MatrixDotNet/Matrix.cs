@@ -508,26 +508,13 @@ namespace MatrixDotNet
             return j < _Matrix.GetLength(1);
         }
         
-
         /// <summary>
         /// <inheritdoc cref="object.ToString"/>
         /// </summary>
         /// <returns><see cref="string"/></returns>
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
-            
-            for (int i = 0; i < Rows; i++)
-            {
-                for (int j = 0; j < Columns; j++)
-                {
-                    builder.Append(this[i,j] + " ");
-                }
-
-                builder.Append("\n");
-            }
-            
-            return builder.ToString();
+            return MatrixExtension.OutputPretty(this);
         }
 
         IEnumerator IEnumerable.GetEnumerator()

@@ -9,25 +9,35 @@ namespace MatrixDotNet.Extensions
         /// </summary>
         /// <returns></returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        private static double GetRank<T>(this Matrix<T> matrix) where T : unmanaged
+        private static int GetRank<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (matrix is null)
                 throw new MatrixDotNetException("matrix is null");
-            
-            var res = matrix.Clone() as Matrix<T>;
-            
-            if (res is null)
-                throw new MatrixDotNetException("matrix is null");
-            
-            for (int i = 0; i < res.Rows; i++)
+
+            Matrix<T> temp = matrix.Clone() as Matrix<T>;
+
+            int rank = 0;
+            for (int i = 0, k = 0; i < matrix.Rows; i++)
             {
-                for (int j = i + 1; j < res.Columns; j++)
-                { 
-                    matrix[j, i] = default;
+                for (int j = i + 1; j < matrix.Columns; j++)
+                {
+                    var element = matrix[i, 0];
+                    T[] arr = matrix[k].Mul(element);
                 }
             }
+
+            return 0;
+        }
+
+        private static T[] Mul<T>(this T[] arr,T num) where  T : unmanaged
+        {
+            T[] result = new T[arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                result[i] = MathExtension.Multiply(arr[i], num);
+            }
             
-            return res.GetUnmanagedDeterminate();
+            return result;
         }
     }
 }

@@ -59,6 +59,54 @@ namespace MatrixDotNet.Extensions
             
             return max;
         }
+
+        public static T[] MaxRows<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+
+            T[] result = new T[matrix.Rows];
+            Comparer comparer = Comparer.Default;
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                T max = matrix[i,0];
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    if(comparer.Compare(matrix[i,j],max) > 0)
+                    {
+                        max = matrix[i, j];
+                    }
+                }
+
+                result[i] = max;
+
+            }
+            return result;
+        }
+        
+        public static T[] MaxColumns<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+
+            T[] result = new T[matrix.Columns];
+            Comparer comparer = Comparer.Default;
+            for (int i = 0; i < matrix.Columns; i++)
+            {
+                T max = matrix[0,i];
+                for (int j = 0; j < matrix.Rows; j++)
+                {
+                    if(comparer.Compare(matrix[j,i],max) > 0)
+                    {
+                        max = matrix[j,i];
+                    }
+                }
+
+                result[i] = max;
+
+            }
+            return result;
+        }
         
         public static int BitMax(this Matrix<int> matrix)
         {
