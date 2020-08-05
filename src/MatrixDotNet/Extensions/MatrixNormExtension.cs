@@ -6,7 +6,6 @@ namespace MatrixDotNet.Extensions
     public static partial class MatrixExtension
     {
         #region LNorm
-        
         public static double LNorm(this Matrix<double> matrix)
         {
             double[] max = new double[matrix.Rows];

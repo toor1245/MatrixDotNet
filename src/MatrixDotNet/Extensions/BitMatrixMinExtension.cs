@@ -67,11 +67,13 @@ namespace MatrixDotNet.Extensions
         public static long BitMin(this Matrix<long> matrix)
         {
             long min = matrix[0, 0];
+            
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & ((min - matrix[i,j]) >> 63) | matrix[i,j] & (~(min - matrix[i,j]) >> 63);
+                    var prefetch = matrix[i, j];
+                    min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
                 }
             }
             return min;
@@ -84,7 +86,8 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & ((min - matrix[i,j]) >> 31) | matrix[i,j] & (~(min - matrix[i,j]) >> 31);
+                    var prefetch = matrix[i, j];
+                    min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
                 }
             }
             return min;
@@ -97,7 +100,8 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & ((min - matrix[i, j]) >> 15) | matrix[i, j] & (~(min - matrix[i, j]) >> 15);
+                    var prefetch = matrix[i, j];
+                    min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
                 }
             }
             return min;
@@ -110,7 +114,8 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    min = min & ((min - matrix[i, j]) >> 7) | matrix[i, j] & (~(min - matrix[i, j]) >> 7);
+                    var prefetch = matrix[i, j];
+                    min = min & ((min - prefetch) >> 7) | prefetch & (~(min - prefetch) >> 7);
                 }
             }
             return min;
@@ -121,7 +126,8 @@ namespace MatrixDotNet.Extensions
             long min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                min = min & ((min - matrix[dimension, i]) >> 63) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 63);
+                var prefetch = matrix[dimension, i];
+                min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
             }
             return min;
         }
@@ -131,7 +137,8 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                min = min & ((min - matrix[dimension, i]) >> 31) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 31);
+                var prefetch = matrix[dimension, i];
+                min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
             }
             return min;
         }
@@ -141,7 +148,8 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                min = min & ((min - matrix[dimension, i]) >> 15) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 15);
+                var prefetch = matrix[dimension, i];
+                min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
             }
             return min;
         }
@@ -151,7 +159,8 @@ namespace MatrixDotNet.Extensions
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                min = min & ((min - matrix[dimension, i]) >> 7) | matrix[dimension, i] & (~(min - matrix[dimension, i]) >> 7);
+                var prefetch = matrix[dimension, i];
+                min = min & ((min - prefetch) >> 7) | prefetch & (~(min - prefetch) >> 7);
             }
             return min;
         }
@@ -161,7 +170,8 @@ namespace MatrixDotNet.Extensions
             long min = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                min = min & ((min - matrix[i,dimension]) >> 63) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 63);
+                var prefetch = matrix[i, dimension];
+                min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
             }
             return min;
         }
@@ -171,7 +181,8 @@ namespace MatrixDotNet.Extensions
             int min = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                min = min & ((min - matrix[i,dimension]) >> 31) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 31);
+                var prefetch = matrix[i, dimension];
+                min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
             }
             return min;
         }
@@ -181,7 +192,8 @@ namespace MatrixDotNet.Extensions
             int min = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                min = min & ((min - matrix[i,dimension]) >> 15) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 15);
+                var prefetch = matrix[i, dimension];
+                min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
             }
             return min;
         }
@@ -191,7 +203,8 @@ namespace MatrixDotNet.Extensions
             int min = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                min = min & ((min - matrix[i,dimension]) >> 7) | matrix[i,dimension] & (~(min - matrix[i,dimension]) >> 7);
+                var prefetch = matrix[i, dimension];
+                min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
             }
             return min;
         }

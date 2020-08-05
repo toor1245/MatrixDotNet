@@ -1,5 +1,6 @@
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
+using MatrixDotNet.Extensions.Sorting;
 using Xunit;
 
 namespace MatrixDotNetTests

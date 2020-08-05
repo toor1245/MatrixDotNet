@@ -1,4 +1,6 @@
-﻿namespace MatrixDotNet.Extensions
+﻿using MatrixDotNet.Exceptions;
+
+namespace MatrixDotNet.Extensions
 {
     // Multiply Strassen
     public static partial class MatrixExtension
@@ -67,6 +69,59 @@
             Matrix<T> c22 = p1 - p2 + (p3 - p6);
 
             return CollectMatrix(c11, c12, c21, c22);
+        }
+        
+        #endregion
+        
+        #region Degree
+
+        
+        /// <summary>
+        /// Raises a matrix to a power.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <param name="degree">the degree</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>Pow</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static Matrix<T> Pow<T>(this Matrix<T> matrix,int degree) where T : unmanaged
+        {
+            if(!matrix.IsSquare)
+                throw new MatrixDotNetException("matrix is not square or not prime");
+            
+            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
+            
+            for (int i = 0; i < degree; i++)
+            {
+                if (i == 0) result = matrix * matrix;
+                result *= matrix;
+            }
+
+            return result;
+        }
+        
+        /// <summary>
+        /// Raises a matrix to a power.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <param name="degree">the degree</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>Pow</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static Matrix<T> PowStrassen<T>(this Matrix<T> matrix,int degree) where T : unmanaged
+        {
+            if(!matrix.IsSquare || !matrix.IsPrime)
+                throw new MatrixDotNetException("matrix is not square or not prime");
+            
+            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
+            
+            for (int i = 0; i < degree; i++)
+            {
+                if (i == 0) result = MultiplyStrassen(matrix,matrix);
+                result = MultiplyStrassen(result,matrix);
+            }
+
+            return result;
         }
         
         #endregion

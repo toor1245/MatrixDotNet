@@ -41,6 +41,11 @@ namespace MatrixDotNet
         /// Checks square matrix.
         /// </summary>
         public bool IsSquare => Rows == Columns;
+
+        /// <summary>
+        /// Checks for pairing of matrix.
+        /// </summary>
+        public bool IsPrime => (Rows & 0b01) == 0 && (Columns & 0b01) == 0;
         
         #endregion
 
@@ -136,7 +141,6 @@ namespace MatrixDotNet
             }
         }
         
-        
         public T this[int m, int n,State dimension]
         {
             get
@@ -165,8 +169,7 @@ namespace MatrixDotNet
                 }
             }
         }
-
-
+        
         #endregion
         
         #region .ctor

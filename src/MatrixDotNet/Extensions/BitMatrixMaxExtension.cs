@@ -70,7 +70,8 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    max = matrix[i, j] & ((max - matrix[i, j]) >> 31) | max & (~(max - matrix[i, j]) >> 31);
+                    var prefetch = matrix[i, j];
+                    max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
                 }
             }
             return max;
@@ -86,7 +87,8 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    max = matrix[i, j] & ((max - matrix[i, j]) >> 31) | max & (~(max - matrix[i, j]) >> 31);
+                    var prefetch = matrix[i, j];
+                    max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
                 }
             }
             return max;
@@ -102,7 +104,8 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    max = matrix[i, j] & ((max - matrix[i, j]) >> 63) | max & (~(max - matrix[i, j]) >> 63);
+                    var prefetch = matrix[i, j];
+                    max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
                 }
             }
             return max;
@@ -118,7 +121,8 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    max = matrix[i, j] & ((max - matrix[i, j]) >> 15) | max & (~(max - matrix[i, j]) >> 15);
+                    var prefetch = matrix[i, j];
+                    max = prefetch & ((max - prefetch) >> 15) | max & (~(max - prefetch) >> 15);
                 }
             }
             return max;
@@ -132,7 +136,8 @@ namespace MatrixDotNet.Extensions
             int max = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                max = matrix[dimension,i] & ((max - matrix[dimension,i]) >> 31) | max & (~(max - matrix[dimension,i]) >> 31);
+                var prefetch = matrix[dimension,i];
+                max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
             return max;
         }
@@ -145,7 +150,8 @@ namespace MatrixDotNet.Extensions
             int max = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                max = matrix[dimension,i] & ((max - matrix[dimension,i]) >> 7) | max & (~(max - matrix[dimension,i]) >> 7);
+                var prefetch = matrix[dimension,i];
+                max = prefetch & ((max - prefetch) >> 7) | max & (~(max - prefetch) >> 7);
             }
             return max;
         }
@@ -158,7 +164,8 @@ namespace MatrixDotNet.Extensions
             int max = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
-                max = matrix[dimension,i] & ((max - matrix[dimension,i]) >> 15) | max & (~(max - matrix[dimension,i]) >> 15);
+                var prefetch = matrix[dimension,i];
+                max = prefetch & ((max - prefetch) >> 15) | max & (~(max - prefetch) >> 15);
             }
             return max;
         }
@@ -171,7 +178,8 @@ namespace MatrixDotNet.Extensions
             long max = matrix[dimension, 0];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                max = matrix[dimension,i] & ((max - matrix[dimension,i]) >> 63) | max & (~(max - matrix[dimension,i]) >> 63);
+                var prefetch = matrix[dimension,i];
+                max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
             }
             return max;
         }
@@ -184,7 +192,8 @@ namespace MatrixDotNet.Extensions
             int max = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                max = matrix[i,dimension] & ((max - matrix[i,dimension]) >> 31) | max & (~(max - matrix[i,dimension]) >> 31);
+                var prefetch = matrix[i, dimension];
+                max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
             return max;
         }
@@ -197,7 +206,8 @@ namespace MatrixDotNet.Extensions
             int max = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                max = matrix[i,dimension] & ((max - matrix[i,dimension]) >> 15) | max & (~(max - matrix[i,dimension]) >> 15);
+                var prefetch = matrix[i, dimension];
+                max = prefetch & ((max - prefetch) >> 15) | max & (~(max - prefetch) >> 15);
             }
             return max;
         }
@@ -210,7 +220,8 @@ namespace MatrixDotNet.Extensions
             int max = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                max = matrix[i,dimension] & ((max - matrix[i,dimension]) >> 31) | max & (~(max - matrix[i,dimension]) >> 31);
+                var prefetch = matrix[i, dimension];
+                max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
             return max;
         }
@@ -223,7 +234,8 @@ namespace MatrixDotNet.Extensions
             long max = matrix[0,dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
-                max = matrix[i,dimension] & ((max - matrix[i,dimension]) >> 63) | max & (~(max - matrix[i,dimension]) >> 63);
+                var prefetch = matrix[i, dimension];
+                max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
             }
             return max;
         }

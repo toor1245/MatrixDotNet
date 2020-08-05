@@ -2,7 +2,7 @@
 
 namespace MatrixDotNet.Extensions
 {
-    public static partial class MatrixExtension  
+    public static partial class MatrixExtension
     {
         public static long[] KramerSolve(this Matrix<long> matrix,long[] arr)
         {
