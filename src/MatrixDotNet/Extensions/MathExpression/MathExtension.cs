@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using System.Reflection;
 
-namespace MatrixDotNet.Extensions
+namespace MatrixDotNet.Extensions.MathExpression
 {
     internal static class MathExtension
     {
@@ -104,6 +105,46 @@ namespace MatrixDotNet.Extensions
             Cache[(t, nameof(GreaterThan))] = func;
 
             return func(left, right);
+        }
+        
+        internal static T Increment<T>(T left) where T: unmanaged
+        {
+            var t = typeof(T);
+            if (Cache.TryGetValue((t, nameof(Increment)),out var del))
+                return del is Func<T,T> specificFunc
+                    ? specificFunc(left)
+                    : throw new InvalidOperationException(nameof(Increment));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var body = Expression.Increment(leftPar);
+            
+            var func = Expression.Lambda<Func<T,T>>(body, leftPar).Compile();
+
+            Cache[(t, nameof(Increment))] = func;
+
+            return func(left);
+        }
+        
+        internal static T Abs<T>(T left) where T: unmanaged
+        {
+            var t = typeof(T);
+            if (Cache.TryGetValue((t, nameof(Abs)),out var del))
+                return del is Func<T,T> specificFunc
+                    ? specificFunc(left)
+                    : throw new InvalidOperationException(nameof(Abs));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            MethodInfo info = typeof(Math).GetMethod("Abs", new[] {leftPar.Type});
+            if (info == null)
+                throw new InvalidOperationException(nameof(Abs));
+
+            var call = Expression.Call(null, info, leftPar);
+
+            var func = Expression.Lambda<Func<T,T>>(call, leftPar).Compile();
+
+            Cache[(t, nameof(Abs))] = func;
+
+            return func(left);
         }
         
         #endregion

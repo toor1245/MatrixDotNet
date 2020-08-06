@@ -1,4 +1,4 @@
-namespace MatrixDotNet.Extensions
+namespace MatrixDotNet.Extensions.BitMatrix
 {
     public static partial class BitMatrixExtension
     {

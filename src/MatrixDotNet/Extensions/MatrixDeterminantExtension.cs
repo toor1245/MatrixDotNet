@@ -1,5 +1,6 @@
 ﻿using System;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Conversion;
 
 namespace MatrixDotNet.Extensions
 {

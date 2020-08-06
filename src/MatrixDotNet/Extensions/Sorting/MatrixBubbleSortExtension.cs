@@ -1,4 +1,6 @@
-﻿namespace MatrixDotNet.Extensions.Sorting
+﻿using MatrixDotNet.Extensions.MathExpression;
+
+namespace MatrixDotNet.Extensions.Sorting
 {
     public static partial class MatrixSort
     {

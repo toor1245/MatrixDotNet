@@ -8,22 +8,21 @@ namespace Samples
     {
         static void Main(string[] args)
         {
-            long[,] a = new long[4,4];
-            a[0, 0] = 100000;
-            Random random = new Random();
-            for (int i = 0; i < a.GetLength(0); i++)
+            int[,] a = new int[6, 6]
             {
-                for (int j = 0; j < a.GetLength(1); j++)
-                {
-                    a[i, j] = random.Next(1, 1034534544);
-                }
-            }
-            
+                { -5,-1,-5,-7,-8,4},
+                { -1,-7,-4,-6,-2,3},
+                { -3,-2,1,-2,-1,1},
+                { -4,-1,3,-3,-5,4},
+                { -7,-8,4,-5,-7,6},
+                { -8,-1,3,-6,-9,7},
+            };
 
-
-
-            Matrix<long> matrix = a;
-            matrix.Pretty();
+            Matrix<int> matrix = a;
+            matrix.GetLUP(out var matrixC,out var matrixP);
+            Console.WriteLine(matrixC);
+            Console.WriteLine();
+            Console.WriteLine(matrixP);
         }
     }
 }

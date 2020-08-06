@@ -1,5 +1,6 @@
 ﻿using System;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Conversion;
 
 namespace MatrixDotNet.Extensions
 {
@@ -189,7 +190,7 @@ namespace MatrixDotNet.Extensions
             Array.Copy(b1, 0, b, 0, b.Length);
 
 
-            // method of Gausse 
+            // method of Gauss 
             int N  = A.Rows;
             for (int p = 0; p < N; p++) {
 

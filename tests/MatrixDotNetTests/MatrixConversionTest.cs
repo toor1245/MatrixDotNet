@@ -1,6 +1,7 @@
 using System;
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
+using MatrixDotNet.Extensions.Conversion;
 using Xunit;
 
 namespace MatrixDotNetTests

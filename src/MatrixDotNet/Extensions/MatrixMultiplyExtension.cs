@@ -74,7 +74,6 @@ namespace MatrixDotNet.Extensions
         #endregion
         
         #region Degree
-
         
         /// <summary>
         /// Raises a matrix to a power.

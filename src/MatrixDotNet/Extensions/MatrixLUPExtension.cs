@@ -1,9 +1,21 @@
-﻿using MatrixDotNet.Exceptions;
+﻿using System;
+using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Conversion;
+using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
+        /// <summary>
+        /// Gets LU decomposition of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="lower">the lower triangle matrix.</param>
+        /// <param name="upper">the upper triangle matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <exception cref="MatrixDotNetException">throws exception if matrix is not square</exception>
         public static void GetLowerUpper<T>(this Matrix<T> matrix,out Matrix<T> lower,out Matrix<T> upper) where T : unmanaged
         {
             if (!matrix.IsSquare)
@@ -40,21 +52,14 @@ namespace MatrixDotNet.Extensions
                 }
             }
         }
-
-       /* public static void GetLowerUpperPermutation<T>(this Matrix<T> matrix, out Matrix<T> lower, out Matrix<T> upper,
-            Matrix<T> perm)
-            where T : unmanaged
-        {
-            for (int i = 0; i < UPPER; i++)
-            {
-                for (int j = 0; j < UPPER; j++)
-                {
-                    
-                }
-            }
-        }
-        */
         
+        /// <summary>
+        /// Gets lower matrix, upper init zero values.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>The lower matrix.</returns>
+        /// <exception cref="MatrixDotNetException">throws exception if matrix is not square.</exception>
         public static Matrix<T> GetLowerMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
@@ -74,6 +79,13 @@ namespace MatrixDotNet.Extensions
             return lower;
         }
         
+        /// <summary>
+        /// Gets upper matrix, lower init zero values.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns></returns>
+        /// <exception cref="MatrixDotNetException">throws exception if matrix is not square.</exception>
         public static Matrix<T> GetUpperMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
@@ -93,16 +105,51 @@ namespace MatrixDotNet.Extensions
             return upper;
         }
 
-        /*public static double GetLowerUpperPermSolve<T>(this Matrix<T> matrix) where T : unmanaged
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public static void GetLUP<T>(this Matrix<T> matrix,out Matrix<T> matrixC,out Matrix<T> matrixP)  where T : unmanaged
         {
-            matrix.GetLowerUpper(out var lower,out var upper);
-            int n = lower.Rows;
-            T[] x = new T[n];
-            T[] y = new T[n];
-            for (int i = 1; i < n; i++)
+            int n = matrix.Rows;
+
+            matrixC = matrix.Clone() as Matrix<T>;
+            
+            if(matrixC is null)
+                throw new NullReferenceException();
+
+            // load to P identity matrix.
+            matrixP = matrix.CreateIdentityMatrix();
+
+            for (int i = 0; i < n; i++)
             {
-                y[i] = 
+                T pivotValue = default;
+                int pivot = -1;
+                for (int j = i; j < n; j++)
+                {
+                    if(MathExtension.GreaterThan(MathExtension.Abs(matrixC[j,i]),pivotValue))
+                    {
+                        pivotValue = MathExtension.Abs(matrixC[j, i]);
+                        pivot = j;
+                    }
+                }
+
+                if (pivot != 0)
+                {
+                    matrixP.SwapRows(pivot,i);
+                    matrixC.SwapRows(pivot,i);
+                    for (int j = i + 1; j < n; j++)
+                    {
+                        matrixC[j, i] = MathExtension.Divide(matrixC[j, i],matrixC[i, i]);
+                        for (int k = i + 1; k < n; k++)
+                        {
+                            matrixC[j, k] = MathExtension.Sub(matrixC[j, k],
+                                MathExtension.Multiply(matrixC[j, i], matrix[i, k]));
+                        }
+                    }
+                }
             }
-        }*/
+        }
     }
 }

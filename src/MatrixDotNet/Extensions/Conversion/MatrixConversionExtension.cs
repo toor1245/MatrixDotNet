@@ -1,9 +1,10 @@
 ﻿using System;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.MathExpression;
 
-namespace MatrixDotNet.Extensions
+namespace MatrixDotNet.Extensions.Conversion
 {
-    public static partial class MatrixExtension
+    public static partial class MatrixConverter
     {
         /// <summary>
         /// Joins two matrix, matrix A rows must be equals matrix B rows.
@@ -18,6 +19,9 @@ namespace MatrixDotNet.Extensions
         public static Matrix<T> Concat<T>(this Matrix<T> matrix1,Matrix<T> matrix2) 
             where T : unmanaged
         {
+            if(matrix1 is null || matrix2 is null)
+                throw new NullReferenceException();
+            
             if (matrix1.Rows != matrix2.Rows)
                 throw new MatrixDotNetException("Rows must be equals");
             
@@ -49,6 +53,9 @@ namespace MatrixDotNet.Extensions
         public static T[,] ToPrimitive<T>(this Matrix<T> matrix) 
             where T : unmanaged
         {
+            if(matrix is null)
+                throw new NullReferenceException();
+            
             T[,] matrix1 = new T[matrix.Rows,matrix.Columns];
             
             for (int i = 0; i < matrix.Rows; i++)
@@ -70,6 +77,9 @@ namespace MatrixDotNet.Extensions
         public static Matrix<T> ToMatrix<T>(this T[,] matrix) 
             where T : unmanaged
         {
+            if(matrix is null)
+                throw new NullReferenceException();
+            
             Matrix<T> matrix1 = new Matrix<T>(matrix.GetLength(0),matrix.GetLength(1));
             
             for (int i = 0; i < matrix1.Rows; i++)
@@ -101,14 +111,14 @@ namespace MatrixDotNet.Extensions
             {
                 for (int i = 1, k = 0; k < newColumn; i++,k++)
                 {
-                    CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
+                    Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
                 }
             }
             else if (column == matrix.Columns - 1)
             {
                 for (int i = 0; i < newColumn; i++)
                 {
-                    CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
+                    Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
                 }
             }
             else
@@ -117,11 +127,11 @@ namespace MatrixDotNet.Extensions
                 {
                     if (i < column)
                     {
-                        CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
+                        Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
                     }
                     else if (i >= column)
                     {
-                        CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
+                        Extensions.MatrixExtension.CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
                     }
 
                 }
@@ -149,14 +159,14 @@ namespace MatrixDotNet.Extensions
             {
                 for (int i = 1, k = 0; k < newRow; i++,k++)
                 {
-                    CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
+                    Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
                 }
             }
             else if (row == matrix.Rows - 1)
             {
                 for (int i = 0; i < newRow; i++)
                 {
-                    CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
+                    Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
                 }
             }
             else
@@ -165,11 +175,11 @@ namespace MatrixDotNet.Extensions
                 {
                     if (i < row)
                     {
-                        CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
+                        Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
                     }
                     else if (i >= row)
                     {
-                        CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
+                        Extensions.MatrixExtension.CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
                     }
                 }
             }
@@ -200,7 +210,7 @@ namespace MatrixDotNet.Extensions
                 temp[0, State.Column] = arr;
                 for (int i = 1; i < newColumn; i++)
                 {
-                    CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
+                    Extensions.MatrixExtension.CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
                 }
             }
             else if (temp.Columns - 1 == columnIndex )
@@ -208,7 +218,7 @@ namespace MatrixDotNet.Extensions
                 temp[columnIndex, State.Column] = arr;
                 for (int i = 0; i < matrix.Columns; i++)
                 {
-                    CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
+                    Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
                 }
             }
             else
@@ -218,7 +228,7 @@ namespace MatrixDotNet.Extensions
                 {
                     if (i < columnIndex)
                     {
-                        CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
+                        Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
                     }
                     else if (i == columnIndex)
                     {
@@ -227,7 +237,7 @@ namespace MatrixDotNet.Extensions
                     else
                     {
                         k = i - 1;
-                        CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
+                        Extensions.MatrixExtension.CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
                     }
                 }
             }
@@ -257,7 +267,7 @@ namespace MatrixDotNet.Extensions
                 temp[0, State.Row] = arr;
                 for (int i = 1; i < newRows; i++)
                 {
-                    CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
+                    Extensions.MatrixExtension.CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
                 }
             }
             else if (temp.Columns - 1 == rowIndex )
@@ -265,7 +275,7 @@ namespace MatrixDotNet.Extensions
                 temp[rowIndex, State.Row] = arr;
                 for (int i = 0; i < matrix.Rows; i++)
                 {
-                    CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
+                    Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
                 }
             }
             else
@@ -275,7 +285,7 @@ namespace MatrixDotNet.Extensions
                 {
                     if (i < rowIndex)
                     {
-                        CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
+                        Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
                     }
                     else if (i == rowIndex)
                     {
@@ -284,11 +294,75 @@ namespace MatrixDotNet.Extensions
                     else
                     {
                         k = i - 1;
-                        CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
+                        Extensions.MatrixExtension.CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
                     }
                 }
             }
             return temp;
+        }
+
+        /// <summary>
+        /// Changes this matrix to identity matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Identity matrix.</returns>
+        /// <exception cref="MatrixDotNetException">throws exception if matrix is not square</exception>
+        public static void ToIdentityMatrix<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+            
+            if(!matrix.IsSquare)
+                throw new MatrixDotNetException($"matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
+            
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    if (i == j)
+                        matrix[i, j] = MathExtension.Increment<T>(default);
+                    else
+                        matrix[i, j] = default;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Swap rows of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="indexDimension1">the dimension 1</param>
+        /// <param name="indexDimension2">the dimension 2</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <exception cref="MatrixDotNetException">throws exception if indexDimension1 equals indexDimension2 or matrix is null</exception>
+        public static void SwapRows<T>(this Matrix<T> matrix,int indexDimension1, int indexDimension2) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+            
+            var temp = matrix[indexDimension1, State.Row];
+            matrix[indexDimension1, State.Row] = matrix[indexDimension2, State.Row];
+            matrix[indexDimension2, State.Row] = temp;
+        }
+        
+        /// <summary>
+        /// Swap rows of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="indexDimension1">the dimension 1</param>
+        /// <param name="indexDimension2">the dimension 2</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <exception cref="MatrixDotNetException">throws exception if indexDimension1 equals indexDimension2 or matrix is null</exception>
+        public static void SwapColumns<T>(this Matrix<T> matrix,int indexDimension1, int indexDimension2) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+            
+
+            var temp = matrix[indexDimension1, State.Column];
+            matrix[indexDimension1, State.Column] = matrix[indexDimension2, State.Column];
+            matrix[indexDimension2, State.Column] = temp;
         }
     }
 }

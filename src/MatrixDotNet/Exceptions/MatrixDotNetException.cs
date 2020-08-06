@@ -14,7 +14,7 @@ namespace MatrixDotNet.Exceptions
         /// <param name="argument"></param>
         public MatrixDotNetException(string message, string argument) : base(message)
         {
-            Message = message;
+            _message = message;
             Argument1 = argument;
         }
     
@@ -24,9 +24,11 @@ namespace MatrixDotNet.Exceptions
         /// <param name="message"></param>
         public MatrixDotNetException(string message) : base(message)
         {
-            Message = message;
+            Console.ForegroundColor= ConsoleColor.Red;
+            _message = message;
         }
-    
+
+        private string _message;
         /// <summary>
         /// Exception.
         /// </summary>
@@ -35,16 +37,23 @@ namespace MatrixDotNet.Exceptions
         /// <param name="argument2"></param>
         public MatrixDotNetException(string message, string argument1,string argument2) : base(message)
         {
-            Message = message;
+            _message = message;
             Argument1 = argument1;
             Argument2 = argument2;
         }
-        
+
         /// <summary>
         /// Gets message.
         /// </summary>
-        public override string Message { get; }
-        
+        public override string Message
+        {
+            get 
+            { 
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                return _message;
+            }
+        }
+
         /// <summary>
         /// Gets argument.
         /// </summary>

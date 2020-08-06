@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
+using MatrixDotNet.Extensions.Conversion;
+using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet
 {
@@ -14,7 +15,7 @@ namespace MatrixDotNet
     public sealed class Matrix<T> : ICloneable, IEnumerable<T>
         where T : unmanaged
     {
-        #region Properties
+        #region properties
 
         /// <summary>
         /// Gets matrix.
@@ -49,7 +50,7 @@ namespace MatrixDotNet
         
         #endregion
 
-        #region Indexators
+        #region indexators
         
         /// <summary>
         /// Gets element matrix.
@@ -221,7 +222,7 @@ namespace MatrixDotNet
         
         #endregion
 
-        #region OverLoad operator
+        #region operators
 
         /// <summary>
         /// Add operation of two matrix.
@@ -460,6 +461,7 @@ namespace MatrixDotNet
             return res;
         }
 
+
         /// <summary>
         /// Compares all values left matrix with right matrix.
         /// Returns true if left matrix full equals right matrix.
@@ -489,6 +491,8 @@ namespace MatrixDotNet
         }
 
         #endregion
+        
+        #region methods
         
         // Checks matrix on range by rows - i, columns - j.
         private bool IsRange(int i,int j)
@@ -588,6 +592,9 @@ namespace MatrixDotNet
             return base.GetHashCode();
         }
         
+        #endregion
+
+        #region enumerator
         
         /// <summary>
         /// Represents implementations IEnumerator.
@@ -649,6 +656,8 @@ namespace MatrixDotNet
                 GC.SuppressFinalize(true);
             }
         } 
+        
+        #endregion
     }
 
     /// <summary>

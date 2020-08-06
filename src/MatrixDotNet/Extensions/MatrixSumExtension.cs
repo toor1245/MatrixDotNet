@@ -1,4 +1,5 @@
 using System;
+using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions
 {
