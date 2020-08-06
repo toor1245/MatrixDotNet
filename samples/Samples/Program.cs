@@ -1,6 +1,10 @@
 ﻿using System;
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Decomposition;
+using MatrixDotNet.Extensions.Determinant;
+using MatrixDotNet.Extensions.MathExpression;
 
 namespace Samples
 {
@@ -8,21 +12,15 @@ namespace Samples
     {
         static void Main(string[] args)
         {
-            int[,] a = new int[6, 6]
+            double[,] a = new Double[3,3]
             {
-                { -5,-1,-5,-7,-8,4},
-                { -1,-7,-4,-6,-2,3},
-                { -3,-2,1,-2,-1,1},
-                { -4,-1,3,-3,-5,4},
-                { -7,-8,4,-5,-7,6},
-                { -8,-1,3,-6,-9,7},
+                {1,2,3},
+                {4,5,6},
+                {7,8,12}
             };
-
-            Matrix<int> matrix = a;
-            matrix.GetLUP(out var matrixC,out var matrixP);
-            Console.WriteLine(matrixC);
-            Console.WriteLine();
-            Console.WriteLine(matrixP);
+            
+            Matrix<double> matrix = a;
+            Console.WriteLine(matrix.GetLowerUpperDeterminant());
         }
     }
 }

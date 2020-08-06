@@ -1,4 +1,5 @@
 ﻿using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Conversion;
 
 namespace MatrixDotNet.Extensions
 {
@@ -6,44 +7,6 @@ namespace MatrixDotNet.Extensions
     public static partial class MatrixExtension
     {
         #region Strassen
-        
-        public static void SplitMatrix<T>(this Matrix<T> a, out Matrix<T> a11, out Matrix<T> a12, out Matrix<T> a21, out Matrix<T> a22) 
-            where T : unmanaged
-        {
-            int n = a.Rows >> 1;
-            
-            
-            a11 = new Matrix<T>(n,n);
-            a12 = new Matrix<T>(n,n);
-            a21 = new Matrix<T>(n,n);
-            a22 = new Matrix<T>(n,n);
-
-            
-            for (int i = 0; i < n; i++)
-            {
-                CopyTo(a,i, 0, a11,i,0,n);
-                CopyTo(a,i, n, a12,i,0,n);
-                CopyTo(a,i + n, 0, a21,i,0,n);
-                CopyTo(a,i + n, n, a22,i,0,n);
-            }
-        }
-
-        public static Matrix<T> CollectMatrix<T>(Matrix<T> a11, Matrix<T> a12, Matrix<T> a21, Matrix<T> a22)
-            where T : unmanaged
-        {
-            int n = a11.Rows;
-            Matrix<T> a = new Matrix<T>(n << 1,n << 1);
-            for (int i = 0; i < n; i++)
-            {
-                CopyTo(a11,i, 0, a,i,0,n);
-                CopyTo(a12,i, 0, a,i,n,n << 1);
-                CopyTo(a21,i, 0, a,i + n,0,n);
-                CopyTo(a22,i, 0, a,i + n,n,n << 1);
-            }
-
-            return a;
-        }
-        
         
         public static Matrix<T> MultiplyStrassen<T>(Matrix<T> a, Matrix<T> b) where T : unmanaged
         {
@@ -68,7 +31,7 @@ namespace MatrixDotNet.Extensions
             Matrix<T> c21 = p2 + p4;
             Matrix<T> c22 = p1 - p2 + (p3 - p6);
 
-            return CollectMatrix(c11, c12, c21, c22);
+            return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
         }
         
         #endregion
@@ -122,7 +85,6 @@ namespace MatrixDotNet.Extensions
 
             return result;
         }
-        
         #endregion
     }
 }

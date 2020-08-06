@@ -70,8 +70,8 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    int length = string.Format("{0:f2}",matrix[i, j]).Length;
-                    string format = string.Format("{0:f2}",matrix[i, j]);
+                    int length = $"{matrix[i, j]:f2}".Length;
+                    string format = $"{matrix[i, j]:f2}";
                     
                     if (length > n)
                     {

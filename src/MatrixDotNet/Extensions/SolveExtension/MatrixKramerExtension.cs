@@ -1,9 +1,40 @@
 ﻿using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Determinant;
 
-namespace MatrixDotNet.Extensions
+namespace MatrixDotNet.Extensions.SolveExtension
 {
-    public static partial class MatrixExtension
+    public static partial class Solve
     {
+        /// <summary>
+        /// Gets determinant matrix by Kramer algorithm.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <param name="arr">array.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static double[] KramerSolve<T>(this Matrix<T> matrix,T[] arr) where T: unmanaged
+        {
+            if (matrix.Rows != arr.Length)
+                throw new MatrixDotNetException(
+                    "Rows quantity matrix not equal array quantity",nameof(matrix),nameof(arr));
+            
+            double det = matrix.GetDoubleDeterminant();
+            Matrix<T> temp;
+            double[] result = new double[matrix.Columns];
+            
+            for (int i = 0; i < matrix.Columns; i++)
+            {
+                temp = matrix.Clone() as Matrix<T>;
+                for (int j = 0; j < matrix.Rows; j++)
+                {
+                    if (temp != null) temp[j, i] = arr[j];
+                }
+                result[i] = temp.GetDoubleDeterminant() / det;
+            }
+            return result;
+        }
+        
         public static long[] KramerSolve(this Matrix<long> matrix,long[] arr)
         {
             if (matrix.Rows != arr.Length)

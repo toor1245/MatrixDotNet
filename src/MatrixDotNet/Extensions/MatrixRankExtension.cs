@@ -21,7 +21,6 @@ namespace MatrixDotNet.Extensions
             if(temp is null)
                 throw new NullReferenceException("matrix is null");
 
-            int rank = 0;
             temp[0] = matrix[0];
 
             for (int i = 0; i < matrix.Rows; i++)

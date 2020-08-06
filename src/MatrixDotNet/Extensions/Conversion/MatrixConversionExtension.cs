@@ -1,5 +1,6 @@
 ﻿using System;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Determinant;
 using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions.Conversion
@@ -111,14 +112,14 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 for (int i = 1, k = 0; k < newColumn; i++,k++)
                 {
-                    Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
+                    MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
                 }
             }
             else if (column == matrix.Columns - 1)
             {
                 for (int i = 0; i < newColumn; i++)
                 {
-                    Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
+                    MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
                 }
             }
             else
@@ -127,11 +128,11 @@ namespace MatrixDotNet.Extensions.Conversion
                 {
                     if (i < column)
                     {
-                        Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
+                        MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
                     }
                     else if (i >= column)
                     {
-                        Extensions.MatrixExtension.CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
+                        MatrixExtension.CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
                     }
 
                 }
@@ -159,14 +160,14 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 for (int i = 1, k = 0; k < newRow; i++,k++)
                 {
-                    Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
+                    MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
                 }
             }
             else if (row == matrix.Rows - 1)
             {
                 for (int i = 0; i < newRow; i++)
                 {
-                    Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
+                    MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
                 }
             }
             else
@@ -175,11 +176,11 @@ namespace MatrixDotNet.Extensions.Conversion
                 {
                     if (i < row)
                     {
-                        Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
+                        MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
                     }
                     else if (i >= row)
                     {
-                        Extensions.MatrixExtension.CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
+                        MatrixExtension.CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
                     }
                 }
             }
@@ -210,7 +211,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 temp[0, State.Column] = arr;
                 for (int i = 1; i < newColumn; i++)
                 {
-                    Extensions.MatrixExtension.CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
+                    MatrixExtension.CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
                 }
             }
             else if (temp.Columns - 1 == columnIndex )
@@ -218,7 +219,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 temp[columnIndex, State.Column] = arr;
                 for (int i = 0; i < matrix.Columns; i++)
                 {
-                    Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
+                    MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
                 }
             }
             else
@@ -228,7 +229,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 {
                     if (i < columnIndex)
                     {
-                        Extensions.MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
+                        MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
                     }
                     else if (i == columnIndex)
                     {
@@ -237,7 +238,7 @@ namespace MatrixDotNet.Extensions.Conversion
                     else
                     {
                         k = i - 1;
-                        Extensions.MatrixExtension.CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
+                        MatrixExtension.CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
                     }
                 }
             }
@@ -267,7 +268,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 temp[0, State.Row] = arr;
                 for (int i = 1; i < newRows; i++)
                 {
-                    Extensions.MatrixExtension.CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
+                    MatrixExtension.CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
                 }
             }
             else if (temp.Columns - 1 == rowIndex )
@@ -275,7 +276,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 temp[rowIndex, State.Row] = arr;
                 for (int i = 0; i < matrix.Rows; i++)
                 {
-                    Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
+                    MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
                 }
             }
             else
@@ -285,7 +286,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 {
                     if (i < rowIndex)
                     {
-                        Extensions.MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
+                        MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
                     }
                     else if (i == rowIndex)
                     {
@@ -294,7 +295,7 @@ namespace MatrixDotNet.Extensions.Conversion
                     else
                     {
                         k = i - 1;
-                        Extensions.MatrixExtension.CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
+                        MatrixExtension.CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
                     }
                 }
             }
@@ -363,6 +364,107 @@ namespace MatrixDotNet.Extensions.Conversion
             var temp = matrix[indexDimension1, State.Column];
             matrix[indexDimension1, State.Column] = matrix[indexDimension2, State.Column];
             matrix[indexDimension2, State.Column] = temp;
+        }
+
+        
+        /// <summary>
+        /// Gets inverse matrix.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static Matrix<double> Inverse(this Matrix<double> matrix)
+        {
+            if(!matrix.IsSquare)
+                throw new MatrixDotNetException("matrix is not square");
+            
+            return 1 / matrix.GetDeterminant() * matrix.Transport();
+        }
+        
+        /// <summary>
+        /// Gets inverse matrix.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static Matrix<float> Inverse(this Matrix<float> matrix)
+        {
+            if(!matrix.IsSquare)
+                throw new MatrixDotNetException("matrix is not square");
+            
+            return 1 / matrix.GetDeterminant() * matrix.Transport();
+        }
+        
+        /// <summary>
+        /// Gets inverse matrix.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static Matrix<decimal> Inverse(this Matrix<decimal> matrix)
+        {
+            if(!matrix.IsSquare)
+                throw new MatrixDotNetException("matrix is not square");
+            
+            return 1 / matrix.GetDeterminant() * matrix.Transport();
+        }
+        
+        /// <summary>
+        /// Gets transport matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        public static Matrix<T> Transport<T>(this Matrix<T> matrix) 
+            where T : unmanaged
+        {
+            Matrix<T> transport = new Matrix<T>(matrix.Columns,matrix.Rows);
+            for (int i = 0; i < transport.Rows; i++)
+            {
+                for (int j = 0; j < transport.Columns; j++)
+                {
+                    transport[i, j] = matrix[j, i];
+                }
+            }
+
+            return transport;
+        }
+        
+        public static void SplitMatrix<T>(this Matrix<T> a, out Matrix<T> a11, out Matrix<T> a12, out Matrix<T> a21, out Matrix<T> a22) 
+            where T : unmanaged
+        {
+            int n = a.Rows >> 1;
+            
+            
+            a11 = new Matrix<T>(n,n);
+            a12 = new Matrix<T>(n,n);
+            a21 = new Matrix<T>(n,n);
+            a22 = new Matrix<T>(n,n);
+
+            
+            for (int i = 0; i < n; i++)
+            {
+                MatrixExtension.CopyTo(a,i, 0, a11,i,0,n);
+                MatrixExtension.CopyTo(a,i, n, a12,i,0,n);
+                MatrixExtension.CopyTo(a,i + n, 0, a21,i,0,n);
+                MatrixExtension.CopyTo(a,i + n, n, a22,i,0,n);
+            }
+        }
+
+        public static Matrix<T> CollectMatrix<T>(Matrix<T> a11, Matrix<T> a12, Matrix<T> a21, Matrix<T> a22)
+            where T : unmanaged
+        {
+            int n = a11.Rows;
+            Matrix<T> a = new Matrix<T>(n << 1,n << 1);
+            for (int i = 0; i < n; i++)
+            {
+                MatrixExtension.CopyTo(a11,i, 0, a,i,0,n);
+                MatrixExtension.CopyTo(a12,i, 0, a,i,n,n << 1);
+                MatrixExtension.CopyTo(a21,i, 0, a,i + n,0,n);
+                MatrixExtension.CopyTo(a22,i, 0, a,i + n,n,n << 1);
+            }
+
+            return a;
         }
     }
 }

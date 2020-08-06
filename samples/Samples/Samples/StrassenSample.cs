@@ -2,8 +2,6 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
-using MatrixDotNet.Extensions.Conversion;
-using MatrixDotNet.Extensions.Sorting;
 
 namespace Samples.Samples
 {

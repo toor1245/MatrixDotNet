@@ -2,7 +2,7 @@
 
 namespace MatrixDotNet.Extensions.Sorting
 {
-    public static partial class MatrixSort
+    public static partial class Sort
     {
         /// <summary>
         /// Sorts matrix by rows.

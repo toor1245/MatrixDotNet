@@ -97,7 +97,15 @@ namespace MatrixDotNet.Extensions
 
             return array;
         }
-        
+
+        public static T SumByDiagonal<T>(this Matrix<T> matrix) where T : unmanaged 
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+
+            return default;
+        }
+
         #endregion
         
         #region Klein

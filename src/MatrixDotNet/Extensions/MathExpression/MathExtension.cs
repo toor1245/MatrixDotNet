@@ -147,6 +147,25 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left);
         }
         
+        internal static T Negate<T>(T left) where T: unmanaged
+        {
+            var t = typeof(T);
+            if (Cache.TryGetValue((t, nameof(Negate)),out var del))
+                return del is Func<T,T> specificFunc
+                    ? specificFunc(left)
+                    : throw new InvalidOperationException(nameof(Negate));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+
+            var negate = Expression.Negate(leftPar);
+
+            var func = Expression.Lambda<Func<T,T>>(negate, leftPar).Compile();
+
+            Cache[(t, nameof(Abs))] = func;
+
+            return func(left);
+        }
+        
         #endregion
     }
 }
