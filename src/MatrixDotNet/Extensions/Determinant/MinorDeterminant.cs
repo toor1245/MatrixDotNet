@@ -174,6 +174,7 @@ namespace MatrixDotNet.Extensions.Determinant
             if(temp == null)
                 throw new NullReferenceException();
             
+            
             if(temp.Length == 4)
             {
                 return temp[0, 0] * temp[1, 1] - temp[0, 1] * temp[1, 0];

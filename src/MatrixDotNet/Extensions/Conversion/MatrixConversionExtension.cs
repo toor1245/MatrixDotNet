@@ -1,5 +1,6 @@
 ﻿using System;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Determinant;
 using MatrixDotNet.Extensions.MathExpression;
 
@@ -368,54 +369,12 @@ namespace MatrixDotNet.Extensions.Conversion
 
         
         /// <summary>
-        /// Gets inverse matrix.
-        /// </summary>
-        /// <param name="matrix"></param>
-        /// <returns></returns>
-        /// <exception cref="MatrixDotNetException"></exception>
-        public static Matrix<double> Inverse(this Matrix<double> matrix)
-        {
-            if(!matrix.IsSquare)
-                throw new MatrixDotNetException("matrix is not square");
-            
-            return 1 / matrix.GetDeterminant() * matrix.Transport();
-        }
-        
-        /// <summary>
-        /// Gets inverse matrix.
-        /// </summary>
-        /// <param name="matrix"></param>
-        /// <returns></returns>
-        /// <exception cref="MatrixDotNetException"></exception>
-        public static Matrix<float> Inverse(this Matrix<float> matrix)
-        {
-            if(!matrix.IsSquare)
-                throw new MatrixDotNetException("matrix is not square");
-            
-            return 1 / matrix.GetDeterminant() * matrix.Transport();
-        }
-        
-        /// <summary>
-        /// Gets inverse matrix.
-        /// </summary>
-        /// <param name="matrix"></param>
-        /// <returns></returns>
-        /// <exception cref="MatrixDotNetException"></exception>
-        public static Matrix<decimal> Inverse(this Matrix<decimal> matrix)
-        {
-            if(!matrix.IsSquare)
-                throw new MatrixDotNetException("matrix is not square");
-            
-            return 1 / matrix.GetDeterminant() * matrix.Transport();
-        }
-        
-        /// <summary>
         /// Gets transport matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns></returns>
-        public static Matrix<T> Transport<T>(this Matrix<T> matrix) 
+        public static Matrix<T> Transpose<T>(this Matrix<T> matrix) 
             where T : unmanaged
         {
             Matrix<T> transport = new Matrix<T>(matrix.Columns,matrix.Rows);
@@ -433,8 +392,10 @@ namespace MatrixDotNet.Extensions.Conversion
         public static void SplitMatrix<T>(this Matrix<T> a, out Matrix<T> a11, out Matrix<T> a12, out Matrix<T> a21, out Matrix<T> a22) 
             where T : unmanaged
         {
-            int n = a.Rows >> 1;
+            if (!a.IsSquare)
+                throw new MatrixDotNetException("Matrix is not square");
             
+            int n = a.Rows >> 1;
             
             a11 = new Matrix<T>(n,n);
             a12 = new Matrix<T>(n,n);
@@ -465,6 +426,43 @@ namespace MatrixDotNet.Extensions.Conversion
             }
 
             return a;
+        }
+        
+        
+        /// <summary>
+        /// Gets inverse matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Inverse matrix.</returns>
+        public static Matrix<double> Inverse(this Matrix<double> matrix)
+        {
+            var alg = matrix.AlgebraicComplement().Transpose();
+
+            return (1 / matrix.GetLowerUpperDeterminant()) * alg;
+        }
+        
+        /// <summary>
+        /// Gets inverse matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Inverse matrix.</returns>
+        public static Matrix<float> Inverse(this Matrix<float> matrix)
+        {
+            var alg = matrix.AlgebraicComplement().Transpose();
+
+            return (1 / matrix.GetLowerUpperDeterminant()) * alg;
+        }
+        
+        /// <summary>
+        /// Gets inverse matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Inverse matrix.</returns>
+        public static Matrix<decimal> Inverse(this Matrix<decimal> matrix)
+        {
+            var alg = matrix.AlgebraicComplement().Transpose();
+
+            return (1 / matrix.GetLowerUpperDeterminant()) * alg;
         }
     }
 }
