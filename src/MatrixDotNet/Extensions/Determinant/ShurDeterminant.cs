@@ -10,28 +10,46 @@ namespace MatrixDotNet.Extensions.Determinant
         {
             if(!matrix.IsPrime)
                 throw new MatrixDotNetException("matrix is not prime");
+            
             var res = matrix.SchurComplement(out var a11);
 
-            return a11.GetLowerUpperDeterminant() * res.GetLowerUpperDeterminant();
+            var res1 = a11.GetLowerUpperDeterminant();
+            
+            if(Math.Abs(res1) < 0.00001)
+                throw new MatrixDotNetException("a11 matrix determinant = 0");
+
+            return res1 * res.GetLowerUpperDeterminant();
         }
         
         
         public static float GetShurDeterminant(this Matrix<float> matrix)
         {
+            if(!matrix.IsPrime)
+                throw new MatrixDotNetException("matrix is not prime");
+            
             var res = matrix.SchurComplement(out var a11);
-            if (Math.Abs(a11.GetDeterminant()) < 0.00001)
-                throw new MatrixDotNetException("matrix determinant = 0");
 
-            return a11.GetDeterminant() * res.GetDeterminant();
+            var res1 = a11.GetLowerUpperDeterminant();
+            
+            if(Math.Abs(res1) < 0.00001)
+                throw new MatrixDotNetException("a11 matrix determinant = 0");
+
+            return res1 * res.GetDeterminant();
         }
         
         public static decimal GetShurDeterminant(this Matrix<decimal> matrix)
         {
+            if(!matrix.IsPrime)
+                throw new MatrixDotNetException("matrix is not prime");
+            
             var res = matrix.SchurComplement(out var a11);
-            if (Math.Abs(a11.GetDeterminant()) < 0.00001m)
-                throw new MatrixDotNetException("matrix determinant = 0");
 
-            return a11.GetDeterminant() * res.GetDeterminant();
+            var res1 = a11.GetLowerUpperDeterminant();
+            
+            if(Math.Abs(res1) < 0.00001m)
+                throw new MatrixDotNetException("a11 matrix determinant = 0");
+
+            return res1 * res.GetDeterminant();
         }
     }
 }
