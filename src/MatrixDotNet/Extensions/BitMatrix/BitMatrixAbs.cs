@@ -1,6 +1,9 @@
 namespace MatrixDotNet.Extensions.BitMatrix
 {
-    public static partial class BitMatrixExtension
+    /// <summary>
+    /// Represents the functional of bit operations with a matrix
+    /// </summary>
+    public static partial class BitMatrix
     {
         // public static void 
     }

@@ -6,6 +6,9 @@ using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions.Conversion
 {
+    /// <summary>
+    /// Represents converter which can change matrix.
+    /// </summary>
     public static partial class MatrixConverter
     {
         /// <summary>
@@ -113,14 +116,14 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 for (int i = 1, k = 0; k < newColumn; i++,k++)
                 {
-                    MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
+                    MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
                 }
             }
             else if (column == matrix.Columns - 1)
             {
                 for (int i = 0; i < newColumn; i++)
                 {
-                    MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
+                    MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
                 }
             }
             else
@@ -129,11 +132,11 @@ namespace MatrixDotNet.Extensions.Conversion
                 {
                     if (i < column)
                     {
-                        MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
+                        MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
                     }
                     else if (i >= column)
                     {
-                        MatrixExtension.CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
+                        MatrixConverter.CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
                     }
 
                 }
@@ -161,14 +164,14 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 for (int i = 1, k = 0; k < newRow; i++,k++)
                 {
-                    MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
+                    MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
                 }
             }
             else if (row == matrix.Rows - 1)
             {
                 for (int i = 0; i < newRow; i++)
                 {
-                    MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
+                    MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
                 }
             }
             else
@@ -177,11 +180,11 @@ namespace MatrixDotNet.Extensions.Conversion
                 {
                     if (i < row)
                     {
-                        MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
+                        MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
                     }
                     else if (i >= row)
                     {
-                        MatrixExtension.CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
+                        MatrixConverter.CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
                     }
                 }
             }
@@ -212,7 +215,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 temp[0, State.Column] = arr;
                 for (int i = 1; i < newColumn; i++)
                 {
-                    MatrixExtension.CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
+                    MatrixConverter.CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
                 }
             }
             else if (temp.Columns - 1 == columnIndex )
@@ -220,7 +223,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 temp[columnIndex, State.Column] = arr;
                 for (int i = 0; i < matrix.Columns; i++)
                 {
-                    MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
+                    MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
                 }
             }
             else
@@ -230,7 +233,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 {
                     if (i < columnIndex)
                     {
-                        MatrixExtension.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
+                        MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
                     }
                     else if (i == columnIndex)
                     {
@@ -239,7 +242,7 @@ namespace MatrixDotNet.Extensions.Conversion
                     else
                     {
                         k = i - 1;
-                        MatrixExtension.CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
+                        MatrixConverter.CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
                     }
                 }
             }
@@ -269,7 +272,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 temp[0, State.Row] = arr;
                 for (int i = 1; i < newRows; i++)
                 {
-                    MatrixExtension.CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
+                    MatrixConverter.CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
                 }
             }
             else if (temp.Columns - 1 == rowIndex )
@@ -277,7 +280,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 temp[rowIndex, State.Row] = arr;
                 for (int i = 0; i < matrix.Rows; i++)
                 {
-                    MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
+                    MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
                 }
             }
             else
@@ -287,7 +290,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 {
                     if (i < rowIndex)
                     {
-                        MatrixExtension.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
+                        MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
                     }
                     else if (i == rowIndex)
                     {
@@ -296,7 +299,7 @@ namespace MatrixDotNet.Extensions.Conversion
                     else
                     {
                         k = i - 1;
-                        MatrixExtension.CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
+                        MatrixConverter.CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
                     }
                 }
             }
@@ -405,10 +408,10 @@ namespace MatrixDotNet.Extensions.Conversion
             
             for (int i = 0; i < n; i++)
             {
-                MatrixExtension.CopyTo(a,i, 0, a11,i,0,n);
-                MatrixExtension.CopyTo(a,i, n, a12,i,0,n);
-                MatrixExtension.CopyTo(a,i + n, 0, a21,i,0,n);
-                MatrixExtension.CopyTo(a,i + n, n, a22,i,0,n);
+                MatrixConverter.CopyTo(a,i, 0, a11,i,0,n);
+                MatrixConverter.CopyTo(a,i, n, a12,i,0,n);
+                MatrixConverter.CopyTo(a,i + n, 0, a21,i,0,n);
+                MatrixConverter.CopyTo(a,i + n, n, a22,i,0,n);
             }
         }
 
@@ -419,15 +422,14 @@ namespace MatrixDotNet.Extensions.Conversion
             Matrix<T> a = new Matrix<T>(n << 1,n << 1);
             for (int i = 0; i < n; i++)
             {
-                MatrixExtension.CopyTo(a11,i, 0, a,i,0,n);
-                MatrixExtension.CopyTo(a12,i, 0, a,i,n,n << 1);
-                MatrixExtension.CopyTo(a21,i, 0, a,i + n,0,n);
-                MatrixExtension.CopyTo(a22,i, 0, a,i + n,n,n << 1);
+                MatrixConverter.CopyTo(a11,i, 0, a,i,0,n);
+                MatrixConverter.CopyTo(a12,i, 0, a,i,n,n << 1);
+                MatrixConverter.CopyTo(a21,i, 0, a,i + n,0,n);
+                MatrixConverter.CopyTo(a22,i, 0, a,i + n,n,n << 1);
             }
 
             return a;
         }
-        
         
         /// <summary>
         /// Gets inverse matrix.

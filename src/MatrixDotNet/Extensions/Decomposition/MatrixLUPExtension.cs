@@ -7,6 +7,9 @@ using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions.Decomposition
 {
+    /// <summary>
+    /// Represents any algorithm`s for decomposition of matrix.
+    /// </summary>
     public static partial class Decomposition
     {
         /// <summary>

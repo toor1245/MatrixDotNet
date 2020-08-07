@@ -3,8 +3,18 @@ using System.Collections;
 
 namespace MatrixDotNet.Extensions.BitMatrix
 {
-    public static partial class BitMatrixExtension
+    /// <summary>
+    /// Represents the functional of bit operations with a matrix
+    /// </summary>
+    public static partial class BitMatrix
     {
+        /// <summary>
+        /// Gets maximum value of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>maximum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T Max<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
@@ -25,6 +35,14 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum value of matrix by row index.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">the index row.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Maximum element by index row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T MaxByRow<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
         {
             if(matrix is null)
@@ -42,6 +60,15 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        
+        /// <summary>
+        /// Gets maximum value of matrix by column index.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <param name="dimension">the index column.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T MaxByColumn<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
         {
             if(matrix is null)
@@ -60,6 +87,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
 
+        /// <summary>
+        /// Gets maximum value by each row.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T[] MaxRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
@@ -84,6 +118,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return result;
         }
         
+        /// <summary>
+        /// Gets maximum value by each column.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>Array which contains maximum values of each column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T[] MaxColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
@@ -108,6 +149,12 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return result;
         }
         
+        /// <summary>
+        /// Gets maximum of matrix with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>maximum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMax(this Matrix<int> matrix)
         {
             if (matrix is null)
@@ -125,6 +172,12 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum of matrix with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>maximum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMax(this Matrix<byte> matrix)
         {
             if (matrix is null)
@@ -142,6 +195,12 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum of matrix with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>maximum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static long BitMax(this Matrix<long> matrix)
         {
             if (matrix is null)
@@ -159,6 +218,12 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum of matrix with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>maximum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMax(this Matrix<short> matrix)
         {
             if (matrix is null)
@@ -176,6 +241,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum value by row index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <returns>maximum value by row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByRow(this Matrix<int> matrix,int dimension)
         {
             if(matrix is null)
@@ -190,6 +262,14 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        
+        /// <summary>
+        /// Gets maximum value by row index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <returns>maximum value by row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByRow(this Matrix<byte> matrix,int dimension)
         {
             if(matrix is null)
@@ -204,6 +284,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum value by row index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <returns>maximum value by row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByRow(this Matrix<short> matrix,int dimension)
         {
             if(matrix is null)
@@ -218,6 +305,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum value by row index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <returns>maximum value by row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static long BitMaxByRow(this Matrix<long> matrix,int dimension)
         {
             if(matrix is null)
@@ -232,6 +326,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum value by column index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <returns>maximum value by column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByColumn(this Matrix<byte> matrix,int dimension)
         {
             if(matrix is null)
@@ -246,6 +347,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum value by column index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <returns>maximum value by column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByColumn(this Matrix<short> matrix,int dimension)
         {
             if(matrix is null)
@@ -260,6 +368,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum value by column index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <returns>maximum value by column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByColumn(this Matrix<int> matrix,int dimension)
         {
             if(matrix is null)
@@ -274,6 +389,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return max;
         }
         
+        /// <summary>
+        /// Gets maximum value by column index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <returns>maximum value by column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static long BitMaxByColumn(this Matrix<long> matrix,int dimension)
         {
             if(matrix is null)

@@ -31,7 +31,7 @@ namespace MatrixDotNet.Extensions
             Matrix<T> c21 = p2 + p4;
             Matrix<T> c22 = p1 - p2 + (p3 - p6);
 
-            return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
+            return Conversion.MatrixConverter.CollectMatrix(c11, c12, c21, c22);
         }
         
         #endregion

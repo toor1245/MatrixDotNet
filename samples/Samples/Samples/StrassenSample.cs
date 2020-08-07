@@ -7,11 +7,11 @@ namespace Samples.Samples
 {
     public class StrassenSample
     {
-        int[,] matrix = new int[512,512];
-        int[,] matrix2 = new int[512,512];
+        private int[,] matrix = new int[512,512];
+        private int[,] matrix2 = new int[512,512];
         
-        private Matrix<int> matrix3;
-        private Matrix<int> matrix4;
+        private Matrix<int> _matrix3;
+        private Matrix<int> _matrix4;
 
         [GlobalSetup]
         public void Setup()
@@ -25,7 +25,7 @@ namespace Samples.Samples
                     matrix[i, j] = random.Next(1, 10);
                 }
             }
-            matrix3 = new Matrix<int>(matrix);
+            _matrix3 = new Matrix<int>(matrix);
             
             for (int i = 0; i < matrix2.GetLength(0); i++)
             {
@@ -35,19 +35,19 @@ namespace Samples.Samples
                 }
             }
             
-            matrix4 = new Matrix<int>(matrix2);
+            _matrix4 = new Matrix<int>(matrix2);
         }
 
         [Benchmark]
         public Matrix<int> Default()
         {
-            return matrix3 * matrix4;
+            return _matrix3 * _matrix4;
         }
         
         [Benchmark]
         public Matrix<int> Strassen()
         {
-            return MatrixExtension.MultiplyStrassen(matrix3, matrix4);
+            return MatrixExtension.MultiplyStrassen(_matrix3, _matrix4);
         }
     }
 }

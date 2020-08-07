@@ -1,5 +1,8 @@
 namespace MatrixDotNet.Extensions.Conversion
 {
+    /// <summary>
+    /// Represents converter which can change matrix.
+    /// </summary>
     public static partial class MatrixConverter
     {
         /// <summary>
@@ -7,9 +10,6 @@ namespace MatrixDotNet.Extensions.Conversion
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="a11">first part of matrix</param>
-        /// <param name="a12">second part of matrix.</param>
-        /// <param name="a21">third part of matrix.</param>
-        /// <param name="a22">fourth part of matrix.</param>
         /// <returns></returns>
         public static Matrix<double> SchurComplement(this Matrix<double> matrix,out Matrix<double> a11)
         {

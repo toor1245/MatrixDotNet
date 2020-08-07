@@ -1,4 +1,3 @@
-using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Determinant;
@@ -6,6 +5,9 @@ using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions.Builder
 {
+    /// <summary>
+    /// Represents the functional of bit operations with a matrix
+    /// </summary>
     public static partial class BuildMatrix
     {
         /// <summary>
@@ -114,7 +116,6 @@ namespace MatrixDotNet.Extensions.Builder
             }
 
             return res;
-
         }
     }
 }

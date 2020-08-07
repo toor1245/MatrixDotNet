@@ -3,8 +3,18 @@ using System.Collections;
 
 namespace MatrixDotNet.Extensions.BitMatrix
 {
-    public static partial class BitMatrixExtension
+    /// <summary>
+    /// Represents the functional of bit operations with a matrix
+    /// </summary>
+    public static partial class BitMatrix
     {
+        /// <summary>
+        /// Gets minimum value of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>minimum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T Min<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
@@ -26,6 +36,14 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
 
+        /// <summary>
+        /// Gets minimum value of matrix by row index.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">the index row.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Minimum element by index row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T MinByRow<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
         {
             if(matrix is null)
@@ -45,6 +63,14 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets minimum value of matrix by column index.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <param name="dimension">the index column.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Minimum value by column index.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T MinByColumn<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
         {
             if(matrix is null)
@@ -64,6 +90,12 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets minimum of matrix with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Minimum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static long BitMin(this Matrix<long> matrix)
         {
             long min = matrix[0, 0];
@@ -79,6 +111,12 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets minimum of matrix with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Minimum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMin(this Matrix<int> matrix)
         {
             int min = matrix[0, 0];
@@ -93,6 +131,12 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets minimum of matrix with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Minimum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMin(this Matrix<short> matrix)
         {
             int min = matrix[0, 0];
@@ -107,6 +151,12 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets minimum of matrix with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Minimum of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMin(this Matrix<byte> matrix)
         {
             int min = matrix[0, 0];
@@ -121,6 +171,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
 
+        /// <summary>
+        /// Gets minimum value by row index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <returns>minimum value by row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static long BitMinByRow(this Matrix<long> matrix,int dimension)
         {
             long min = matrix[dimension, 0];
@@ -132,6 +189,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets maximum value by row index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <returns>maximum value by row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByRow(this Matrix<int> matrix,int dimension)
         {
             int min = matrix[dimension, 0];
@@ -143,6 +207,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets maximum value by row index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <returns>maximum value by row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByRow(this Matrix<short> matrix,int dimension)
         {
             int min = matrix[dimension, 0];
@@ -154,6 +225,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets maximum value by row index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <returns>maximum value by row.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByRow(this Matrix<byte> matrix,int dimension)
         {
             int min = matrix[dimension, 0];
@@ -165,6 +243,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
 
+        /// <summary>
+        /// Gets minimum value by column index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <returns>minimum value by column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static long BitMinByColumn(this Matrix<long> matrix, int dimension)
         {
             long min = matrix[0,dimension];
@@ -176,6 +261,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets minimum value by column index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <returns>minimum value by column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByColumn(this Matrix<int> matrix, int dimension)
         {
             int min = matrix[0,dimension];
@@ -187,6 +279,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets minimum value by column index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <returns>minimum value by column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByColumn(this Matrix<short> matrix, int dimension)
         {
             int min = matrix[0,dimension];
@@ -198,6 +297,13 @@ namespace MatrixDotNet.Extensions.BitMatrix
             return min;
         }
         
+        /// <summary>
+        /// Gets minimum value by column index with happen bitwise operations.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <returns>minimum value by column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByColumn(this Matrix<byte> matrix, int dimension)
         {
             int min = matrix[0,dimension];

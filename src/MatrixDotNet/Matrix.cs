@@ -7,6 +7,7 @@ using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.MathExpression;
 
+
 namespace MatrixDotNet
 {
     /// <summary>

@@ -3,6 +3,9 @@ using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions.Builder
 {
+    /// <summary>
+    /// Represents the functional of build matrix.
+    /// </summary>
     public static partial class BuildMatrix
     {
         /// <summary>
@@ -27,7 +30,6 @@ namespace MatrixDotNet.Extensions.Builder
 
             return matrix;
         }
-        
         
         /// <summary>
         /// Creates identity matrix by this size of matrix.
