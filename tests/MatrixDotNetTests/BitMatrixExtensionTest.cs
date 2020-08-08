@@ -73,6 +73,47 @@ namespace MatrixDotNetTests
             Assert.Equal(expected,actual);
         }
         
+        [Fact]
+        public void MaxColumnsTest_FindMaximumValueInEachRow_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<int> matrixA = new int[,]
+            {
+                {1, 2,  3},
+                {5, -6, 7},
+                {-3, 4, 6},
+                {1, 2,  3},
+            };
+
+            int[] expected = {5, 4, 7};
+
+            // Act
+            int[] actual = matrixA.MaxColumns();
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void MaxRowsTest_FindMaximumValueInEachRow_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<int> matrixA = new int[,]
+            {
+                {1, 2, 3},
+                {5, -6, 7},
+                {-3, 4, 6}
+            };
+
+            int[] expected = {3, 7, 6};
+
+            // Act
+            int[] actual = matrixA.MaxRows();
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
         #endregion
         
         #region bit maximum
@@ -162,6 +203,26 @@ namespace MatrixDotNetTests
         #region bit maximum by row
         
         [Fact]
+        public void BitMaxByRowLongTest_FindMaximumValueInDimensionZero_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<long> matrixA = new long[,]
+            {
+                { 1,  2,  3 },
+                { 5, -6, 7 },
+                { -3, 4, 6 }
+            };
+            
+            int expected = 3;
+
+            // Act
+            long actual = matrixA.BitMaxByRow(0);
+
+            // Assert
+            Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
         public void BitMaxByRowTest_FindMaximumValueInDimensionZero_AssertMustBeEqual()
         {
             // Arrange
@@ -170,6 +231,46 @@ namespace MatrixDotNetTests
                 { 1,  2,  3 },
                 { 5, -6, 7 },
                 { -3, 4, 6 }
+            };
+            
+            int expected = 3;
+
+            // Act
+            int actual = matrixA.BitMaxByRow(0);
+
+            // Assert
+            Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void BitMaxByRowInt16Test_FindMaximumValueInDimensionZero_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<short> matrixA = new short[,]
+            {
+                { 1,  2,  3 },
+                { 5, -6, 7 },
+                { -3, 4, 6 }
+            };
+            
+            int expected = 3;
+
+            // Act
+            int actual = matrixA.BitMaxByRow(0);
+
+            // Assert
+            Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void BitMaxByRowInt8Test_FindMaximumValueInDimensionZero_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<byte> matrixA = new byte[,]
+            {
+                { 1, 2, 3 },
+                { 5, 6, 7 },
+                { 3, 4, 6 }
             };
             
             int expected = 3;
@@ -194,6 +295,66 @@ namespace MatrixDotNetTests
                 { 1,  2, 3 },
                 { 5, -6, 7 },
                 { -3, 4, 6 }
+            };
+            
+            int expected = 7;
+
+            // Act
+            int actual = matrixA.BitMaxByColumn(2);
+
+            // Assert
+            Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void BitMaxByColumnTest2_FindMaximumValueInDimensionTwo_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<long> matrixA = new long[,]
+            {
+                { 1,  2, 3 },
+                { 5, -6, 7 },
+                { -3, 4, 6 }
+            };
+            
+            long expected = 7;
+
+            // Act
+            long actual = matrixA.BitMaxByColumn(2);
+
+            // Assert
+            Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void BitMaxByColumnInt16Test_FindMaximumValueInDimensionTwo_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<short> matrixA = new short[,]
+            {
+                { 1,  2, 3 },
+                { 5, -6, 7 },
+                { -3, 4, 6 }
+            };
+            
+            int expected = 7;
+
+            // Act
+            int actual = matrixA.BitMaxByColumn(2);
+
+            // Assert
+            Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void BitMaxByColumnInt8Test_FindMaximumValueInDimensionTwo_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<byte> matrixA = new byte[,]
+            {
+                { 1,  2, 3 },
+                { 5, 1, 7 },
+                { 3, 4, 6 }
             };
             
             int expected = 7;

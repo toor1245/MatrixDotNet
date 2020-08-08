@@ -410,24 +410,7 @@ namespace MatrixDotNetTests
             // Assert
             Assert.Equal(expected,actual);
         }
-
-        [Fact]
-        public void ToStringTest_ChecksLengthString_AssertMustBeEqual()
-        {
-            // Arrange
-            Matrix<int> matrix = new[,]
-            {
-                {1, 5, 8},
-                {3, 5, 6},
-            };
-            int expected = 14;
-            
-            // Act
-            var actual = matrix.ToString().Length;
-
-            // Assert
-            Assert.Equal(expected,actual);
-        }
+        
 
         [Fact]
         public void MatrixMultiplyTest_MultiplyTwoMatrix_AssertMustBeEqual()

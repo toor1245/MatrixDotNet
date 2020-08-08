@@ -279,7 +279,7 @@ namespace MatrixDotNet.Extensions.BitMatrix
             for (int i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension,i];
-                max = prefetch & ((max - prefetch) >> 7) | max & (~(max - prefetch) >> 7);
+                max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
             return max;
         }
@@ -300,7 +300,7 @@ namespace MatrixDotNet.Extensions.BitMatrix
             for (int i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension,i];
-                max = prefetch & ((max - prefetch) >> 15) | max & (~(max - prefetch) >> 15);
+                max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
             return max;
         }
@@ -363,7 +363,7 @@ namespace MatrixDotNet.Extensions.BitMatrix
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
-                max = prefetch & ((max - prefetch) >> 15) | max & (~(max - prefetch) >> 15);
+                max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
             return max;
         }

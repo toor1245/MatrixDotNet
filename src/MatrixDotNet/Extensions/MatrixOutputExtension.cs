@@ -46,7 +46,15 @@ namespace MatrixDotNet.Extensions
                     var n = output[j];
                     int length = $"{matrix[i, j].ToString():f2}".Length;
                     string format = $"{matrix[i, j].ToString():f2}";
-                    builder.Append(" ".PadLeft(2) + format + "".PadRight(length - n + 1) + "  |");
+                    if (length >= n)
+                    {
+                        builder.Append(" ".PadLeft(2) + format + "".PadRight(length - n) + "  |");    
+                    }
+                    else
+                    {
+                        builder.Append(" ".PadLeft(2) + format + "".PadRight(n - length) + "  |");
+                    }
+                    
                     
                 }
 

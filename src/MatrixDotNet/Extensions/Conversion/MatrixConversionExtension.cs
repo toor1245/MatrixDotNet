@@ -17,7 +17,7 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="matrix1">The matrix A.</param>
         /// <param name="matrix2">The matrix B.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <returns>Join of wto matrix</returns>
+        /// <returns>Joins two matrix</returns>
         /// <exception cref="MatrixDotNetException">
         /// Throws if matrix1.Rows != matrix2.Rows.
         /// </exception>
