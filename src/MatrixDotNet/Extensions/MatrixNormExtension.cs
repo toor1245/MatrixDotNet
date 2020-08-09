@@ -1,103 +1,106 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
+using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-        #region LNorm
-        public static double LNorm(this Matrix<double> matrix)
+        public static T LNorm<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            double[] max = new double[matrix.Rows];
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                max[i] = Math.Abs(matrix[i].Sum());
-            }
+            if(matrix is null)
+                throw new NullReferenceException();
 
-            return max.Max();
-        }
-        
-        public static float LNorm(this Matrix<float> matrix)
-        {
-            float[] max = new float[matrix.Rows];
-            for (int i = 0; i < matrix.Rows; i++)
+            int rows = matrix.Rows;
+            int columns = matrix.Columns;
+            
+            var array = new T[columns];
+            
+            for (int i = 0; i < columns; i++)
             {
-                max[i] = Math.Abs(matrix[i].Sum());
-            }
+                T sum = default;
 
-            return max.Max();
-        }
-
-        public static long LNorm(this Matrix<long> matrix)
-        {
-            long[] max = new long[matrix.Rows];
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                max[i] = Math.Abs(matrix[i].Sum());
+                for (int j = 0; j < rows; j++)
+                {
+                    sum = MathExtension.Add(sum,MathExtension.Abs(matrix[j, i]));
+                }
+                array[i] = sum;
             }
             
-            return max.Max();
-        }
-        
-        public static int LNorm(this Matrix<int> matrix)
-        {
-            int[] max = new int[matrix.Rows];
-            for (int i = 0; i < matrix.Rows; i++)
+            Comparer<T> comparer = Comparer<T>.Default;
+            T max = array[0];
+            for (int i = 0; i < columns; i++)
             {
-                max[i] = Math.Abs(matrix[i].Sum());
+                T reg = array[i];
+                if (comparer.Compare(max, array[i]) < 0)
+                {
+                    max = reg;
+                }
+            }
+
+            return max;
+        }
+        public static T MNorm<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+
+            int rows = matrix.Rows;
+            int columns = matrix.Columns;
+            
+            var array = new T[rows];
+            
+            for (int i = 0; i < rows; i++)
+            {
+                T sum = default;
+
+                for (int j = 0; j < columns; j++)
+                {
+                    sum = MathExtension.Add(sum,MathExtension.Abs(matrix[i,j]));
+                }
+                array[i] = sum;
             }
             
-            return max.Max();
-        }
-        
-        #endregion
-
-        #region MNorm
-        
-        public static double MNorm(this Matrix<double> matrix)
-        {
-            double[] max = new double[matrix.Columns];
-            for (int i = 0; i < matrix.Columns; i++)
+            Comparer<T> comparer = Comparer<T>.Default;
+            T max = array[0];
+            for (int i = 0; i < rows; i++)
             {
-                max[i] = Math.Abs(matrix[i,State.Column].Sum());
+                T reg = array[i];
+                if (comparer.Compare(max, array[i]) < 0)
+                {
+                    max = reg;
+                }
             }
 
-            return max.Max();
+            return max;
         }
-        
-        public static float MNorm(this Matrix<float> matrix)
+
+        /// <summary>
+        /// The trace <c>Tr</c> of a square matrix A is defined to be the sum of elements on the main diagonal.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Traceless of matrix.</returns>
+        public static T Traceless<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            float[] max = new float[matrix.Columns];
-            for (int i = 0; i < matrix.Columns; i++)
+            if (matrix is null)
+                throw new NullReferenceException();
+
+            if (!matrix.IsSquare)
+                throw new MatrixDotNetException("Matrix is not square");
+
+            T sum = default;
+            
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                max[i] = Math.Abs(matrix[i,State.Column].Sum());
+                sum = MathExtension.Add(sum,matrix[i,i]);
             }
 
-            return max.Max();
+            return sum;
         }
         
-        public static long MNorm(this Matrix<long> matrix)
-        {
-            long[] max = new long[matrix.Columns];
-            for (int i = 0; i < matrix.Columns; i++)
-            {
-                max[i] = Math.Abs(matrix[i,State.Column].Sum());
-            }
-
-            return max.Max();
-        }
         
-        public static int MNorm(this Matrix<int> matrix)
-        {
-            int[] max = new int[matrix.Columns];
-            for (int i = 0; i < matrix.Columns; i++)
-            {
-                max[i] = Math.Abs(matrix[i,State.Column].Sum());
-            }
-
-            return max.Max();
-        }
-
-        #endregion
+        
     }
 }

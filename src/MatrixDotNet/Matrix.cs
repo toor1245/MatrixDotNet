@@ -568,10 +568,7 @@ namespace MatrixDotNet
         /// <exception cref="ArgumentException"></exception>
         public override bool Equals(object obj)
         {
-            if (!(obj is Matrix<T>))
-                throw new ArgumentNullException();
-            
-            var t = (Matrix<T>) obj;
+            Matrix<T> t = (Matrix<T>) obj;
             var count = 0;
             
             for (int i = 0; i < t.Rows; i++)
