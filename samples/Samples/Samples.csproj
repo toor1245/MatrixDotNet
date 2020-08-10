@@ -6,6 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\MatrixDotNet.Core.Benchmarks\MatrixDotNet.Core.Benchmarks.csproj" />
+      <ProjectReference Include="..\..\src\MatrixDotNet.Extensions.Core\MatrixDotNet.Extensions.Core.csproj" />
       <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
     </ItemGroup>
 

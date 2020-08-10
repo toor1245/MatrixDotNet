@@ -19,6 +19,7 @@
         <Description>Powerful MatrixDotNet library for matrix calculation</Description>
         <RepositoryType>Library</RepositoryType>
         <PackageReleaseNotes>Tests covered 62%, add Klein and Kahan sum. Update pretty output(correct works with floating type). Add LUP extensions. Fixed bug with bitwise minimum and bitwise maximum which worked slower than default sum and fixed multiply matrix to constant. If yo have any questions you can ask it on gitter MatrixDotNet</PackageReleaseNotes>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>

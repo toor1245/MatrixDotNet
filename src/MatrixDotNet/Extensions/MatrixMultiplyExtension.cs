@@ -31,7 +31,7 @@ namespace MatrixDotNet.Extensions
             Matrix<T> c21 = p2 + p4;
             Matrix<T> c22 = p1 - p2 + (p3 - p6);
 
-            return Conversion.MatrixConverter.CollectMatrix(c11, c12, c21, c22);
+            return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
         }
         
         #endregion
@@ -52,10 +52,17 @@ namespace MatrixDotNet.Extensions
                 throw new MatrixDotNetException("matrix is not square or not prime");
             
             Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
+
+            if (degree == 1)
+                return matrix;
             
-            for (int i = 0; i < degree; i++)
+            if (degree == 2)
+                return matrix * matrix;
+            
+            result = matrix * matrix;
+            
+            for (int i = 1; i < degree; i++)
             {
-                if (i == 0) result = matrix * matrix;
                 result *= matrix;
             }
 
@@ -77,9 +84,16 @@ namespace MatrixDotNet.Extensions
             
             Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             
+            if (degree == 1)
+                return matrix;
+            
+            if (degree == 2)
+                return matrix * matrix;
+            
+            MultiplyStrassen(matrix,matrix);
+            
             for (int i = 0; i < degree; i++)
             {
-                if (i == 0) result = MultiplyStrassen(matrix,matrix);
                 result = MultiplyStrassen(result,matrix);
             }
 

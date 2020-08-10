@@ -408,13 +408,13 @@ namespace MatrixDotNet.Extensions.Conversion
             
             for (int i = 0; i < n; i++)
             {
-                MatrixConverter.CopyTo(a,i, 0, a11,i,0,n);
-                MatrixConverter.CopyTo(a,i, n, a12,i,0,n);
-                MatrixConverter.CopyTo(a,i + n, 0, a21,i,0,n);
-                MatrixConverter.CopyTo(a,i + n, n, a22,i,0,n);
+                CopyTo(a,i, 0, a11,i,0,n);
+                CopyTo(a,i, n, a12,i,0,n);
+                CopyTo(a,i + n, 0, a21,i,0,n);
+                CopyTo(a,i + n, n, a22,i,0,n);
             }
         }
-
+        
         public static Matrix<T> CollectMatrix<T>(Matrix<T> a11, Matrix<T> a12, Matrix<T> a21, Matrix<T> a22)
             where T : unmanaged
         {

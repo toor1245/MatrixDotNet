@@ -23,7 +23,11 @@ namespace MatrixDotNet
         /// Gets matrix.
         /// </summary>
         internal T[,] _Matrix { get; private set; }
-        
+
+        public T[,] GetMatrix()
+        {
+            return _Matrix;
+        }
         
         /// <summary>
         /// Gets length matrix.
@@ -79,7 +83,7 @@ namespace MatrixDotNet
                 _Matrix[i, j] = value;
             }
         }
-        
+
         /// <summary>
         /// Gets or sets array by row.
         /// </summary>
@@ -433,6 +437,7 @@ namespace MatrixDotNet
             return res;
         }
         
+        
         /// <summary>
         /// Returns vector sum of each multiply element of row.
         /// </summary>
@@ -657,6 +662,7 @@ namespace MatrixDotNet
         } 
         
         #endregion
+        
     }
 
     /// <summary>

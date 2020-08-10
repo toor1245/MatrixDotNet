@@ -99,8 +99,5 @@ namespace MatrixDotNet.Extensions
 
             return sum;
         }
-        
-        
-        
     }
 }
