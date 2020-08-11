@@ -5,8 +5,34 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <PlatformTarget>x64</PlatformTarget>
+    </PropertyGroup>
+
     <ItemGroup>
       <ProjectReference Include="..\MatrixDotNet\MatrixDotNet.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="ImportDLL\MatrixDotNet_Core_Intrinsics.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="DllImport\MatrixDotNet_Core_Intrinsics.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="DllImports\MatrixDotNet_Core_Intrinsics.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="MatrixDotNet_Core_Intrinsics.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Imports\MatrixDotNet_Core_Intrinsics.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </EmbeddedResource>
     </ItemGroup>
 
 </Project>

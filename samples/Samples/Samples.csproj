@@ -3,16 +3,24 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <PlatformTarget>x64</PlatformTarget>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\MatrixDotNet.Core.Benchmarks\MatrixDotNet.Core.Benchmarks.csproj" />
+      <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\..\src\MatrixDotNet.Extensions.Core\MatrixDotNet.Extensions.Core.csproj" />
       <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+      <None Remove="MatrixDotNet_Core_Intrinsics.dll" />
     </ItemGroup>
 
 </Project>

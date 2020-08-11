@@ -422,10 +422,10 @@ namespace MatrixDotNet.Extensions.Conversion
             Matrix<T> a = new Matrix<T>(n << 1,n << 1);
             for (int i = 0; i < n; i++)
             {
-                MatrixConverter.CopyTo(a11,i, 0, a,i,0,n);
-                MatrixConverter.CopyTo(a12,i, 0, a,i,n,n << 1);
-                MatrixConverter.CopyTo(a21,i, 0, a,i + n,0,n);
-                MatrixConverter.CopyTo(a22,i, 0, a,i + n,n,n << 1);
+                CopyTo(a11,i, 0, a,i,0,n);
+                CopyTo(a12,i, 0, a,i,n,n << 1);
+                CopyTo(a21,i, 0, a,i + n,0,n);
+                CopyTo(a22,i, 0, a,i + n,n,n << 1);
             }
 
             return a;

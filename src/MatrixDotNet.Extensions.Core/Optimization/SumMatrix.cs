@@ -78,5 +78,40 @@ namespace MatrixDotNet.Extensions.Core.Optimization
 
             return result;
         }
+        
+        public static unsafe int SumAllFma(this Matrix<int> matrix)
+        {
+            int result;
+
+            fixed (int* pSource = matrix.GetMatrix())
+            {
+                Span<int> source = new Span<int>(pSource,matrix.Length);
+                Vector256<int> vresult = Vector256<int>.Zero;
+                int i = 0;
+                // var lastBlockIndex = source.Length - (source.Length % 8);
+                int size = source.Length - (256 / 8 / 4);
+
+                while (i < source.Length - size)
+                {
+                    vresult = Avx2.Add(vresult, Avx.LoadVector256(pSource + i));
+                    i += size;
+                }
+                
+                vresult = Avx2.HorizontalAdd(vresult, vresult);
+                vresult = Avx2.HorizontalAdd(vresult, vresult);
+                
+                result = vresult.ToScalar();
+                
+                while (i < source.Length)
+                {
+                    result += pSource[i];
+                    i += 1;
+                }
+            }
+
+            return result;
+        }
+        
+        
     }
 }

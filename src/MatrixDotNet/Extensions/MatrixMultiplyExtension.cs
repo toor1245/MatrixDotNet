@@ -10,7 +10,7 @@ namespace MatrixDotNet.Extensions
         
         public static Matrix<T> MultiplyStrassen<T>(Matrix<T> a, Matrix<T> b) where T : unmanaged
         {
-            if (a.Rows < 32)
+            if (a.Rows < 32) 
             {
                 return a * b;
             }
@@ -23,13 +23,13 @@ namespace MatrixDotNet.Extensions
             Matrix<T> p3 = MultiplyStrassen(a11, b12 - b22);
             Matrix<T> p4 = MultiplyStrassen(a22, b21 - b11);
             Matrix<T> p5 = MultiplyStrassen(a11 + a12, b22);
-            Matrix<T> p6 = MultiplyStrassen(a21 - a11, b11 + b22);
+            Matrix<T> p6 = MultiplyStrassen(a21 - a22, b11 + b12);
             Matrix<T> p7 = MultiplyStrassen(a12 - a22, b21 + b22);
 
-            Matrix<T> c11 = p1 + p4 + (p7 - p5);
+            Matrix<T> c11 = p1 + p4 - p5 + p7;
             Matrix<T> c12 = p3 + p5;
             Matrix<T> c21 = p2 + p4;
-            Matrix<T> c22 = p1 - p2 + (p3 - p6);
+            Matrix<T> c22 = p1 + p3 - p2 + p6;
 
             return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
         }
