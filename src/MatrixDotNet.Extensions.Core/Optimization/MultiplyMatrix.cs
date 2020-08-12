@@ -1,30 +1,38 @@
 using System;
-using System.Numerics;
-using System.Runtime.InteropServices;
 
 namespace MatrixDotNet.Extensions.Core.Optimization
 {
     public static partial class Optimization
     {
-        public static unsafe MatrixAvx MultiplyAvx(Matrix<int> matrixA, int value)
+        
+        public static unsafe Matrix<int> Multiply(Matrix<int> matrixA, Matrix<int> matrixB)
         {
-            int length = matrixA.Length;
+            int m = matrixA.Rows;
+            int n = matrixB.Columns;
+            int K = matrixA.Columns;
+            int len1 = matrixA.Length;
 
-            MatrixAvx matrix = new MatrixAvx(6);
-            
-            int size = 8;
+            Matrix<int> matrix = new Matrix<int>(m,n);
+
             fixed(int* pointer1 = matrixA.GetMatrix())
+            fixed(int* pointer2 = matrixB.GetMatrix())
+            fixed(int* pointer3 = matrix.GetMatrix())
             {
-                Span<int> span = new Span<int>(pointer1,length);
-                Vector<int> mul = new Vector<int>(value);
-                int i = 0;
+                Span<int> span1 = new Span<int>(pointer1,len1);
                 
-                while (i < length - size)
+                for (int i = 0; i < m; i++)
                 {
-                    Vector<int> vector = new Vector<int>(span.Slice(i,8));
-                    vector = Vector.Multiply(vector, mul);
-                    matrix.Add(vector);
-                    i += 4;
+                    int* c = pointer3 + i * n;
+
+                    for (int k = 0; k < K; k++)
+                    {
+                        int* b = pointer2 + k * n;
+                        int a = span1[i * K + k];
+                        for (int j = 0; j < n; j++)
+                        {
+                            c[j] += a * b[j];
+                        }
+                    }
                 }
             }
 

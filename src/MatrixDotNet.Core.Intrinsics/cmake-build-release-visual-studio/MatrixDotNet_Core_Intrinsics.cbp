@@ -84,7 +84,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/headers/StringBuilder.cpp">
+			<Option target="MatrixDotNet_Core_Intrinsics"/>
+		</Unit>
 		<Unit filename="D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/headers/library.h">
+			<Option target="MatrixDotNet_Core_Intrinsics"/>
+		</Unit>
+		<Unit filename="D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/src/StringBuilder.h">
 			<Option target="MatrixDotNet_Core_Intrinsics"/>
 		</Unit>
 		<Unit filename="D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/src/library.cpp">

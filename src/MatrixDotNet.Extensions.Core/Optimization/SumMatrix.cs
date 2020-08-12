@@ -55,8 +55,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization
                 Span<int> source = new Span<int>(pSource,matrix.Length);
                 Vector256<int> vresult = Vector256<int>.Zero;
                 int i = 0;
-                // var lastBlockIndex = source.Length - (source.Length % 8);
-                int size = source.Length - (256 / 8 / 4);
+                int size = source.Length - 8;
 
                 while (i < source.Length - size)
                 {
@@ -89,7 +88,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization
                 Vector256<int> vresult = Vector256<int>.Zero;
                 int i = 0;
                 // var lastBlockIndex = source.Length - (source.Length % 8);
-                int size = source.Length - (256 / 8 / 4);
+                int size = source.Length - 8;
 
                 while (i < source.Length - size)
                 {

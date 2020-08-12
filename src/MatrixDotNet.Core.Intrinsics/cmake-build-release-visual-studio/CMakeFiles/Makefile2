@@ -75,12 +75,12 @@ clean: CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\clean
 CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\all:
 	$(MAKE) -f CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\depend
 	$(MAKE) -f CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\RiderProjects\MatrixDotNet\src\MatrixDotNet.Core.Intrinsics\cmake-build-release-visual-studio\CMakeFiles --progress-num=1,2 "Built target MatrixDotNet_Core_Intrinsics"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\RiderProjects\MatrixDotNet\src\MatrixDotNet.Core.Intrinsics\cmake-build-release-visual-studio\CMakeFiles --progress-num=1,2,3 "Built target MatrixDotNet_Core_Intrinsics"
 .PHONY : CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\all
 
 # Build rule for subdir invocation for target.
 CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\RiderProjects\MatrixDotNet\src\MatrixDotNet.Core.Intrinsics\cmake-build-release-visual-studio\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\RiderProjects\MatrixDotNet\src\MatrixDotNet.Core.Intrinsics\cmake-build-release-visual-studio\CMakeFiles 3
 	$(MAKE) -f CMakeFiles\Makefile2 /nologo -$(MAKEFLAGS) CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\RiderProjects\MatrixDotNet\src\MatrixDotNet.Core.Intrinsics\cmake-build-release-visual-studio\CMakeFiles 0
 .PHONY : CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\rule

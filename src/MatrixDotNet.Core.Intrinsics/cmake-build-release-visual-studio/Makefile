@@ -124,6 +124,33 @@ MatrixDotNet_Core_Intrinsics\fast:
 	$(MAKE) -f CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\build
 .PHONY : MatrixDotNet_Core_Intrinsics\fast
 
+headers\StringBuilder.obj: headers\StringBuilder.cpp.obj
+
+.PHONY : headers\StringBuilder.obj
+
+# target to build an object file
+headers\StringBuilder.cpp.obj:
+	$(MAKE) -f CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\headers\StringBuilder.cpp.obj
+.PHONY : headers\StringBuilder.cpp.obj
+
+headers\StringBuilder.i: headers\StringBuilder.cpp.i
+
+.PHONY : headers\StringBuilder.i
+
+# target to preprocess a source file
+headers\StringBuilder.cpp.i:
+	$(MAKE) -f CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\headers\StringBuilder.cpp.i
+.PHONY : headers\StringBuilder.cpp.i
+
+headers\StringBuilder.s: headers\StringBuilder.cpp.s
+
+.PHONY : headers\StringBuilder.s
+
+# target to generate assembly for a file
+headers\StringBuilder.cpp.s:
+	$(MAKE) -f CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\MatrixDotNet_Core_Intrinsics.dir\headers\StringBuilder.cpp.s
+.PHONY : headers\StringBuilder.cpp.s
+
 src\library.obj: src\library.cpp.obj
 
 .PHONY : src\library.obj
@@ -160,6 +187,9 @@ help:
 	@echo ... MatrixDotNet_Core_Intrinsics
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... headers/StringBuilder.obj
+	@echo ... headers/StringBuilder.i
+	@echo ... headers/StringBuilder.s
 	@echo ... src/library.obj
 	@echo ... src/library.i
 	@echo ... src/library.s

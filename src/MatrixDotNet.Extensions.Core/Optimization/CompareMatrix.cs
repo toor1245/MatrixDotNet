@@ -17,7 +17,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization
             if(lengthA != lengthB)
                 throw new MatrixDotNetException("matrix A length not equal matrix B");
             
-            int size = 256 / 8 / 4;
+            int size = 8;
             
             fixed (int* pointer1 = a.GetMatrix())
             fixed (int* pointer2 = b.GetMatrix())

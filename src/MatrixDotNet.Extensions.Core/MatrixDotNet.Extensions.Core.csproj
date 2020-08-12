@@ -30,6 +30,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Remove="Imports\MatrixDotNet_Core_Intrinsics.dll" />
       <EmbeddedResource Include="Imports\MatrixDotNet_Core_Intrinsics.dll">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </EmbeddedResource>

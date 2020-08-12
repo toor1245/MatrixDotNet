@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/headers/StringBuilder.cpp" "D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-release-visual-studio/CMakeFiles/MatrixDotNet_Core_Intrinsics.dir/headers/StringBuilder.cpp.obj"
   "D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/src/library.cpp" "D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-release-visual-studio/CMakeFiles/MatrixDotNet_Core_Intrinsics.dir/src/library.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
