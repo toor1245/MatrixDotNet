@@ -15,6 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\Benchmarking\Benchmarking.csproj" />
       <ProjectReference Include="..\..\src\MatrixDotNet.Extensions.Core\MatrixDotNet.Extensions.Core.csproj" />
       <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
     </ItemGroup>

@@ -1,5 +1,6 @@
 using System;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions.Builder
 {
@@ -94,6 +95,21 @@ namespace MatrixDotNet.Extensions.Builder
                 }
             }
             
+            return matrix;
+        }
+
+        public static Matrix<T> Random<T>(int row,int column,int startRandom,int endRandom) where T : unmanaged
+        {
+            Matrix<T> matrix = new Matrix<T>(row,column);
+            
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    matrix[i, j] = MathExtension.Random<T>(startRandom, endRandom);
+                }
+            }
+
             return matrix;
         }
     }
