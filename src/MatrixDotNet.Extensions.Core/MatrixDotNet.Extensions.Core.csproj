@@ -3,6 +3,27 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ApplicationIcon>MatrixDotNet.ico</ApplicationIcon>
+        <Version>0.0.1</Version>
+        <Authors>Nikolay Hohsadze</Authors>
+        <Company>MatrixDotNet</Company>
+        <Product>MatrixDotNet</Product>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/toor1245/MatrixDotNet/tree/master</RepositoryUrl>
+        <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
+        <RepositoryType>Library</RepositoryType>
+        <PackageTags>matrix,MatrixDotNet,optimization,sse,avx,math,linear algebra,dotnet,solver,decomposition,factorization,</PackageTags>
+        <Description>MatrixDotNet.Extensions.Core is a extension for MatrixDotNet .NET Core 3.1 which increase perfomance with happen unsafe programming and SIMD.</Description>
+        <Copyright>MatrixDotNet</Copyright>
+        <NeutralLanguage> Английский</NeutralLanguage>
+        <PackageReleaseNotes>Add new two namespaces Simd and Unsafe.
+Add all simple operations such as: add, subtract,multiply matrices; compare two matrices, summation all matrices, sorting matrix, LU decomposition and determinant.
+MatrixDotNet.Extensions works stable works with MatrixDotNet version 0.0.3.1
+If you didn't find answer for your question on this page, ask it on gitter .
+It whole works significantly faster than MatrixDotNet library due to unsafe programming and SIMD and reduce operations.
+</PackageReleaseNotes>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -15,6 +36,18 @@
 
     <ItemGroup>
       <None Remove="ImportDLL\MatrixDotNet_Core_Intrinsics.dll" />
+      <None Update="images\MatrixDotNet_128x128.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+      <None Include="..\..\LICENSE">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
+      <None Include="..\MatrixDotNet\images\MatrixDotNet_128x128.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 
     <ItemGroup>

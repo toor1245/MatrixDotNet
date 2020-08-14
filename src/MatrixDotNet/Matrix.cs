@@ -22,7 +22,7 @@ namespace MatrixDotNet
         /// <summary>
         /// Gets matrix.
         /// </summary>
-        internal T[,] _Matrix { get; private set; }
+        public T[,] _Matrix { get; private set; }
 
         public T[,] GetMatrix()
         {
@@ -214,7 +214,7 @@ namespace MatrixDotNet
         /// <param name="row">row</param>
         /// <param name="col">col</param>
         /// <param name="value">constant</param>
-        public Matrix(int row,int col,T value)
+        public unsafe Matrix(int row,int col,T value)
         {
             _Matrix = new T[row,col];
             for (int i = 0; i < row; i++)

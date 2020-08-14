@@ -8,14 +8,18 @@ namespace Samples
         
         static void Main(string[] args)
         {
-            /*Matrix<int> matrix1 = BuildMatrix.Random<int>(5, 5, 1, 10);
-            Matrix<int> matrix2 = BuildMatrix.Random<int>(5, 5, 1, 10);
-            var res = Optimization.AddAvx(matrix1, matrix2);
-            matrix1.Pretty();
-            matrix2.Pretty();
-            res.Pretty();
+            /*Matrix<double> matrix1 = new double[,]
+            {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+            };
+            
+            Console.WriteLine(matrix1.GetLUPDeterminant());
+            Console.WriteLine(UnsafeDeterminant.GetLUPDeterminant(matrix1));
             */
-            BenchmarkRunner.Run<EqualsCompare>();
+
+            BenchmarkRunner.Run<LupDecompositonBenchmark>();
         }
 
     }

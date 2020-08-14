@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace MatrixDotNet.Extensions.Core.Optimization
 {
-    public class Matrix
+    internal class Matrix
     {
         [DllImport(Data.Path,CallingConvention = CallingConvention.Cdecl)]
         static extern IntPtr matrix_ctor(int row,int column);

@@ -1,6 +1,7 @@
 ﻿using System;
-
+using System.Runtime.InteropServices;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.BitMatrix;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.MathExpression;
@@ -107,6 +108,59 @@ namespace MatrixDotNet.Extensions.Decomposition
                             matrixC[j, k] = MathExtension.Sub(matrixC[j, k],
                                 MathExtension.Multiply(matrixC[j, i], matrix[i, k]));
                         }
+                    }
+                }
+            }
+        }
+        
+
+        public static void GetLUP(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> upper,out Matrix<double> matrixP)
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+            
+            int n = matrix.Rows;
+
+            lower = matrix.CreateIdentityMatrix();
+            upper = matrix.Clone() as Matrix<double>;
+            
+            if(upper is null)
+                throw new NullReferenceException();
+            
+            
+            // load to P identity matrix.
+            matrixP = lower.Clone() as Matrix<double>;
+            
+            for (int i = 0; i < n - 1; i++)
+            {
+                int index = i;
+                double max = upper[index, index];
+                for (int j = i + 1; j < n; j++)
+                {
+                    double current = upper[i, j];
+                    if (Math.Abs(current) > Math.Abs(max))
+                    {
+                        max = current;
+                        index = j;
+                    }
+                }
+
+                if (index != i)
+                {
+                    upper.SwapRows(i,index);
+                    matrixP.SwapRows(i,index);
+                }
+
+                for (int j = i + 1; j < n; j++)
+                {
+                    double ji = upper[j, i];
+                    double ii = upper[i, i];
+                    double div = ji / ii;
+                    lower[j, i] = div;
+                    
+                    for (int k = i; k < n; k++)
+                    {
+                        upper[j, k] = upper[j, k] - upper[i,k] * div;
                     }
                 }
             }

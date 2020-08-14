@@ -19,11 +19,6 @@ namespace Samples.Samples
             _matrix2 = _matrix1.Clone() as Matrix<int>;
         }
         
-        [Benchmark]
-        public bool Equals()
-        {
-            return UnsafeMatrix.Equals2(_matrix1,_matrix2);
-        }
 
         [Benchmark]
         public bool EqualsUnsafe()
