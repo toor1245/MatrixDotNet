@@ -10,11 +10,11 @@ namespace Samples.Samples
     public class LupDecompositonBenchmark
     {
         private Matrix<double> _matrix1;
-        private Random _random = new Random();
 
         [GlobalSetup]
         public void Setup()
         {
+            Random _random = new Random();
             _matrix1 = new Matrix<double>(1024,1024);
             for (int i = 0; i < _matrix1.Rows; i++)
             {

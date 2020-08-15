@@ -1,5 +1,7 @@
 using System;
+using System.Threading.Tasks;
 using MatrixDotNet.Extensions.Conversion;
+using MatrixDotNet.Extensions.Core.Optimization.Unsafe.Conversion;
 
 namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
 {
@@ -73,7 +75,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
             return matrix;
         }
         
-        public static Matrix<int> MultiplyStrassen(Matrix<int> a, Matrix<int> b)
+        public static async Task<Matrix<int>> MultiplyStrassen(Matrix<int> a, Matrix<int> b)
         {
             if (a.Rows <= 1024) 
             {
@@ -82,21 +84,30 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
             
             a.SplitMatrix(out var a11,out var a12,out var a21,out var a22);
             b.SplitMatrix(out var b11,out var b12,out var b21,out var b22);
+
+            Task<Matrix<int>> t1 = Task.Run(() => MultiplyStrassen(Add(a11, a22), Add(b11, b22)));
+            Task<Matrix<int>> t2 = Task.Run(() => MultiplyStrassen(Add(a21, a22), b11)); 
+            Task<Matrix<int>> t3 = Task.Run(() => MultiplyStrassen(a11,Sub(b12,b22))); 
+            Task<Matrix<int>> t4 = Task.Run(() => MultiplyStrassen(a22,Sub(b21,b11))); 
+            Task<Matrix<int>> t5 = Task.Run(() => MultiplyStrassen(Add(a11,a12), b22)); 
+            Task<Matrix<int>> t6 = Task.Run(() => MultiplyStrassen(Sub(a21,a11), Add(b11,b12)));
+            Task<Matrix<int>> t7 = Task.Run(() => MultiplyStrassen(Sub(a12,a22), Add(b21,b22))); 
             
-            Matrix<int> p1 = MultiplyStrassen(a11 + a22, b11 + b22);
-            Matrix<int> p2 = MultiplyStrassen(a21 + a22, b11);
-            Matrix<int> p3 = MultiplyStrassen(a11, b12 - b22);
-            Matrix<int> p4 = MultiplyStrassen(a22, b21 - b11);
-            Matrix<int> p5 = MultiplyStrassen(a11 + a12, b22);
-            Matrix<int> p6 = MultiplyStrassen(a21 - a22, b11 + b12);
-            Matrix<int> p7 = MultiplyStrassen(a12 - a22, b21 + b22);
+            Matrix<int> p1 = await t1;
+            Matrix<int> p2 = await t2;
+            Matrix<int> p3 = await t3;
+            Matrix<int> p4 = await t4;
+            Matrix<int> p5 = await t5;
+            Matrix<int> p6 = await t6;
+            Matrix<int> p7 = await t7;
+            
+            
+            var c11 = p1 + p4 - p5 + p7;
+            var c12 = Add(p3, p5);
+            var c21 = Add(p2, p4);
+            var c22 = p1 + p3 - p2 + p6;
 
-            Matrix<int> c11 = p1 + p4 - p5 + p7;
-            Matrix<int> c12 = p3 + p5;
-            Matrix<int> c21 = p2 + p4;
-            Matrix<int> c22 = p1 + p3 - p2 + p6;
-
-            return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
+            return UnsafeConverter.CollectMatrix(c11, c12, c21, c22);
         }
         
         
@@ -123,7 +134,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
             var c21 = p2 + p4;
             var c22 = p1 + p3 - p2 + p6;
 
-            return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
+            return UnsafeConverter.CollectMatrix(c11, c12, c21, c22);
         }
     }
 }
