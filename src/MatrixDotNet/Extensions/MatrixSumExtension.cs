@@ -7,6 +7,13 @@ namespace MatrixDotNet.Extensions
     {
         #region Sum T
         
+        /// <summary>
+        /// Summation matrix. 
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Sum whole of matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T Sum<T>(this Matrix<T> matrix) where T: unmanaged
         {
             if(matrix is null)
@@ -23,7 +30,15 @@ namespace MatrixDotNet.Extensions
             
             return sum;
         }
-
+        
+        /// <summary>
+        /// Gets sum by row of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">row index.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Sum row by index</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T SumByRow<T>(this Matrix<T> matrix, int dimension) where T: unmanaged
         {
             if(matrix is null)
@@ -39,6 +54,14 @@ namespace MatrixDotNet.Extensions
             return sum;
         }
         
+        /// <summary>
+        /// Gets sum by column of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="dimension">column index.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Sum column by index</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T SumByColumn<T>(this Matrix<T> matrix, int dimension) where T: unmanaged
         {
             if(matrix is null)
@@ -54,6 +77,13 @@ namespace MatrixDotNet.Extensions
             return sum;
         }
 
+        /// <summary>
+        /// Gets array of sum rows.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T[] SumByRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
@@ -76,6 +106,13 @@ namespace MatrixDotNet.Extensions
             return array;
         }
         
+        /// <summary>
+        /// Gets array of sum columns.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T[] SumByColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
@@ -98,12 +135,27 @@ namespace MatrixDotNet.Extensions
             return array;
         }
 
-        public static T SumByDiagonal<T>(this Matrix<T> matrix) where T : unmanaged 
+        
+        /// <summary>
+        /// Gets sum by diagonal.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public static T SumByDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix is null)
+            if (matrix is null)
                 throw new NullReferenceException();
+            
+            T sum = default;
 
-            return default;
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                sum = MathExtension.Add(sum, matrix[i, i]);
+            }
+
+            return sum;
         }
 
         #endregion

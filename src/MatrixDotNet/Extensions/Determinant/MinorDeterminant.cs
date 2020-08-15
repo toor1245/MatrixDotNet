@@ -45,6 +45,13 @@ namespace MatrixDotNet.Extensions.Determinant
             return result;
         }
         
+        /// <summary>
+        /// Gets determinant of matrix.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>double.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static T GetDeterminant<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
@@ -75,6 +82,14 @@ namespace MatrixDotNet.Extensions.Determinant
             return result;
         }
         
+        
+        /// <summary>
+        /// Gets determinant of matrix.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>double.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static int GetDeterminant(this Matrix<int> matrix)
         {
             if (!matrix.IsSquare)
@@ -104,6 +119,13 @@ namespace MatrixDotNet.Extensions.Determinant
             return result;
         }
         
+        /// <summary>
+        /// Gets determinant of matrix.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>double.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static long GetDeterminant(this Matrix<long> matrix)
         {
             if (!matrix.IsSquare)
@@ -133,6 +155,13 @@ namespace MatrixDotNet.Extensions.Determinant
             return result;
         }
         
+        /// <summary>
+        /// Gets determinant of matrix.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>double.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static float GetDeterminant(this Matrix<float> matrix)
         {
             if (!matrix.IsSquare)
@@ -162,6 +191,13 @@ namespace MatrixDotNet.Extensions.Determinant
             return result;
         }
         
+        /// <summary>
+        /// Gets determinant of matrix.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>double.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static double GetDeterminant(this Matrix<double> matrix)
         {
             if (!matrix.IsSquare)
@@ -191,6 +227,13 @@ namespace MatrixDotNet.Extensions.Determinant
             return result;
         }
         
+        /// <summary>
+        /// Gets determinant of matrix.
+        /// </summary>
+        /// <param name="matrix">matrix.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>double.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static decimal GetDeterminant(this Matrix<decimal> matrix)
         {
             if (!matrix.IsSquare)

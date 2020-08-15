@@ -8,6 +8,13 @@ namespace MatrixDotNet.Extensions
     {
         #region Strassen
         
+        /// <summary>
+        /// Strassen`s multiply, use when matrix rows > 32.
+        /// </summary>
+        /// <param name="a">the matrix a.</param>
+        /// <param name="b">the matrix b.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>the new matrix from multiply of two matrices.</returns>
         public static Matrix<T> MultiplyStrassen<T>(Matrix<T> a, Matrix<T> b) where T : unmanaged
         {
             if (a.Rows < 32) 

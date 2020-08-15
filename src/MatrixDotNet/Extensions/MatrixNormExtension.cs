@@ -7,6 +7,13 @@ namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
+        /// <summary>
+        /// Gets l-norm.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>l-norm.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T LNorm<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
@@ -41,6 +48,14 @@ namespace MatrixDotNet.Extensions
 
             return max;
         }
+        
+        /// <summary>
+        /// Gets m-norm.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>m-norm.</returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T MNorm<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)

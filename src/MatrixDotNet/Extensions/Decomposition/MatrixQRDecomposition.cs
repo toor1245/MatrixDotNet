@@ -5,7 +5,7 @@ namespace MatrixDotNet.Extensions.Decomposition
 {
     public static partial class Decomposition  
     {
-        public static void QRDecomposition<T>(this Matrix<T> matrix) where T : unmanaged
+        private static void QRDecomposition<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
                 throw new NullReferenceException();
@@ -16,7 +16,7 @@ namespace MatrixDotNet.Extensions.Decomposition
             
         }
 
-        public static void GramShmidtProcess()
+        private static void GramShmidtProcess()
         {
             
         }

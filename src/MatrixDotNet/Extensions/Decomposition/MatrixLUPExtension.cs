@@ -114,6 +114,10 @@ namespace MatrixDotNet.Extensions.Decomposition
         }
         
 
+        /// <summary>
+        /// Gets lower upper permutation;
+        /// </summary>
+        /// <returns></returns>
         public static void GetLUP(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> upper,out Matrix<double> matrixP)
         {
             if(matrix is null)

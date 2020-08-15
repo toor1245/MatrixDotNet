@@ -6,6 +6,11 @@ namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
+        /// <summary>
+        /// Pretty output.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <typeparam name="T"></typeparam>
         public static void Pretty<T>(this Matrix<T> matrix) where T : unmanaged
         {
             Console.ForegroundColor = ConsoleColor.Cyan;

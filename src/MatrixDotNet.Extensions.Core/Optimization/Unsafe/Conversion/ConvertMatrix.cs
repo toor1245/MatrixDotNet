@@ -1,5 +1,4 @@
 using System;
-using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Conversion
 {

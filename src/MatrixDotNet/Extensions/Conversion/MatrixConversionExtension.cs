@@ -376,7 +376,7 @@ namespace MatrixDotNet.Extensions.Conversion
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <returns></returns>
+        /// <returns>Transpose matrix</returns>
         public static Matrix<T> Transpose<T>(this Matrix<T> matrix) 
             where T : unmanaged
         {
@@ -392,6 +392,18 @@ namespace MatrixDotNet.Extensions.Conversion
             return transport;
         }
         
+        /// <summary>
+        /// Splits matrix by 4 parts.
+        /// </summary>
+        /// <param name="a">the matrix which want splits.</param>
+        /// <param name="a11">the matrix a11.</param>
+        /// <param name="a12">the matrix a12.</param>
+        /// <param name="a21">the matrix a21.</param>
+        /// <param name="a22">the matrix a22.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <exception cref="MatrixDotNetException">
+        ///  The matrix is not square.
+        /// </exception>
         public static void SplitMatrix<T>(this Matrix<T> a, out Matrix<T> a11, out Matrix<T> a12, out Matrix<T> a21, out Matrix<T> a22) 
             where T : unmanaged
         {
@@ -415,6 +427,15 @@ namespace MatrixDotNet.Extensions.Conversion
             }
         }
         
+        /// <summary>
+        /// Collects square matrix.
+        /// </summary>
+        /// <param name="a11">the matrix a11</param>
+        /// <param name="a12">the matrix a12</param>
+        /// <param name="a21">the matrix a21</param>
+        /// <param name="a22">the matrix a22</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>Collect matrix.</returns>
         public static Matrix<T> CollectMatrix<T>(Matrix<T> a11, Matrix<T> a12, Matrix<T> a21, Matrix<T> a22)
             where T : unmanaged
         {

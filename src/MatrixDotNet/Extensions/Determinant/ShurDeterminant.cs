@@ -6,6 +6,14 @@ namespace MatrixDotNet.Extensions.Determinant
 {
     public static partial class Determinant
     {
+        /// <summary>
+        /// Gets determinant by Shur`s complement. 
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Determinant</returns>
+        /// <exception cref="MatrixDotNetException">
+        /// The matrix is not prime.
+        /// </exception>
         public static double GetShurDeterminant(this Matrix<double> matrix)
         {
             if(!matrix.IsPrime)
@@ -21,7 +29,14 @@ namespace MatrixDotNet.Extensions.Determinant
             return res1 * res.GetLowerUpperDeterminant();
         }
         
-        
+        /// <summary>
+        /// Gets determinant by Shur`s complement. 
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Determinant</returns>
+        /// <exception cref="MatrixDotNetException">
+        /// The matrix is not prime.
+        /// </exception>
         public static float GetShurDeterminant(this Matrix<float> matrix)
         {
             if(!matrix.IsPrime)
@@ -37,6 +52,14 @@ namespace MatrixDotNet.Extensions.Determinant
             return res1 * res.GetDeterminant();
         }
         
+        /// <summary>
+        /// Gets determinant by Shur`s complement. 
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Determinant</returns>
+        /// <exception cref="MatrixDotNetException">
+        /// The matrix is not prime.
+        /// </exception>
         public static decimal GetShurDeterminant(this Matrix<decimal> matrix)
         {
             if(!matrix.IsPrime)
