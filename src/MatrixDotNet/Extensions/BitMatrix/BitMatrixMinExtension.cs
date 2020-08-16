@@ -6,7 +6,7 @@ namespace MatrixDotNet.Extensions.BitMatrix
     /// <summary>
     /// Represents the functional of bit operations with a matrix
     /// </summary>
-    public static partial class BitMatrix
+    public static partial class MatrixExtension
     {
         /// <summary>
         /// Gets minimum value of matrix.
@@ -88,6 +88,37 @@ namespace MatrixDotNet.Extensions.BitMatrix
             }
 
             return min;
+        }
+        
+        /// <summary>
+        /// Gets maximum value by each column.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>Array which contains maximum values of each column.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public static T[] MinColumns<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+
+            T[] result = new T[matrix.Columns];
+            Comparer comparer = Comparer.Default;
+            for (int i = 0; i < matrix.Columns; i++)
+            {
+                T max = matrix[0,i];
+                for (int j = 0; j < matrix.Rows; j++)
+                {
+                    if(comparer.Compare(matrix[j,i],max) < 0)
+                    {
+                        max = matrix[j,i];
+                    }
+                }
+
+                result[i] = max;
+
+            }
+            return result;
         }
         
         /// <summary>

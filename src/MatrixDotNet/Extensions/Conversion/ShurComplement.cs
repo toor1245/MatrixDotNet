@@ -1,3 +1,5 @@
+using MatrixDotNet.Extensions.Inverse;
+
 namespace MatrixDotNet.Extensions.Conversion
 {
     /// <summary>

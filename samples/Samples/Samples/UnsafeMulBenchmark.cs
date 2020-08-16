@@ -42,7 +42,7 @@ namespace Samples.Samples
         [Benchmark]
         public async Task<Matrix<int>> Strassen()
         {
-            return await UnsafeMatrix.MultiplyStrassen(_matrix3, _matrix4);
+            return await UnsafeMatrix.MultiplyStrassenAsync(_matrix3, _matrix4);
         }
         
         [Benchmark]
@@ -50,6 +50,5 @@ namespace Samples.Samples
         {
             return UnsafeMatrix.Multiply(_matrix3, _matrix4);
         }
-        
     }
 }

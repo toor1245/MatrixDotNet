@@ -156,7 +156,6 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
                         i += 4;
                     }
                 }
-                    
                 
                 while (i < length)
                 {
@@ -217,7 +216,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
                     i++;
                 }
             }
-            
+
             return matrix;
         }
     }

@@ -1,5 +1,5 @@
-﻿using BenchmarkDotNet.Running;
-using Samples.Samples;
+﻿using MatrixDotNet;
+using MatrixDotNet.Extensions.Decomposition;
 
 namespace Samples
 {
@@ -8,8 +8,15 @@ namespace Samples
         
         static void Main(string[] args)
         {
-            BenchmarkRunner.Run<UnsafeMulBenchmark>();
+            Matrix<double> matrix = new double[3, 3]
+            {
+                {  4,   12,   -16 },
+                {  12,  37,  -43  },
+                { -16, -43,   98  }
+            };
+            
+              matrix.GetCholeskyDecomposition(out var lower);
+            //  lower.Pretty();
         }
-
     }
 }

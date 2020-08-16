@@ -6,10 +6,14 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
 {
     public static partial class UnsafeDecomposition
     {
+        internal static int _exchanges;
+            
         public static unsafe void GetLUP(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> upper,out Matrix<double> matrixP)
         {
             if (matrix is null)
                 throw new NullReferenceException();
+
+            _exchanges = 0;
             
             int n = matrix.Rows;
             int m = matrix.Columns;
@@ -35,10 +39,15 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
                             index = j;
                         }
                     }
+                    
+                    if(Math.Abs(max) < 0.0001) continue;
+                    
                     if (index != i)
                     {
                         upper.SwapRows(i, index);
                         matrixP.SwapRows(i, index);
+                        _exchanges++;
+
                     }
                     
                     for (int j = i + 1; j < n; j++)
@@ -66,6 +75,9 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
             int m = matrix.Columns;
             lower = matrix.CreateIdentityMatrix();
             upper = matrix.CloneObject();
+
+            _exchanges = 0;
+            
             // load to P identity matrix.
             matrixP = lower.CloneObject();
             fixed(float* ptrU = upper.GetMatrix())
@@ -86,10 +98,14 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
                             index = j;
                         }
                     }
+                    
+                    if(Math.Abs(max) < 0.0001) continue;
+                        
                     if (index != i)
                     {
                         upper.SwapRows(i, index);
                         matrixP.SwapRows(i, index);
+                        _exchanges++;
                     }
                     
                     for (int j = i + 1; j < n; j++)

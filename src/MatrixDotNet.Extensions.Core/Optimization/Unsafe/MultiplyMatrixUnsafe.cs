@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Core.Optimization.Unsafe.Conversion;
 
@@ -74,8 +75,16 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
             
             return matrix;
         }
+
+        public static async Task<Matrix<int>> MultiplyStrassenAsync(Matrix<int> a,Matrix<int> b)
+        {
+            if(a.Rows > 5000)
+                throw new MatrixDotNetException("Matrix is much big size your CPU will be on 100%");
+            
+            return await MultiplyStrassen(a, b);
+        }
         
-        public static async Task<Matrix<int>> MultiplyStrassen(Matrix<int> a, Matrix<int> b)
+        private static async Task<Matrix<int>> MultiplyStrassen(Matrix<int> a, Matrix<int> b)
         {
             if (a.Rows <= 1024) 
             {

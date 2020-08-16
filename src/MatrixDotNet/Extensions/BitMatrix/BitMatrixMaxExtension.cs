@@ -6,7 +6,7 @@ namespace MatrixDotNet.Extensions.BitMatrix
     /// <summary>
     /// Represents the functional of bit operations with a matrix
     /// </summary>
-    public static partial class BitMatrix
+    public static partial class MatrixExtension
     {
         /// <summary>
         /// Gets maximum value of matrix.
@@ -144,9 +144,31 @@ namespace MatrixDotNet.Extensions.BitMatrix
                 }
 
                 result[i] = max;
-
             }
             return result;
+        }
+
+        public static T MaxByMainDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+            
+            Comparer comparer = Comparer.Default;
+            T max = matrix[0,0];
+
+            int x = matrix.Columns;
+            int y = matrix.Rows;
+            int min = x & ((x - y) >> 31) | y & (~(x - y) >> 31);
+
+            for (int i = 0; i < min; i++)
+            {
+                if(comparer.Compare(matrix[i,i],max) > 0)
+                {
+                    max = matrix[i,i];
+                }
+            }
+            
+            return max;
         }
         
         /// <summary>

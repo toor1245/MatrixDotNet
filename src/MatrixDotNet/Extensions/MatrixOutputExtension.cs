@@ -24,16 +24,27 @@ namespace MatrixDotNet.Extensions
                 throw new NullReferenceException();
             
             T[] arr = matrix.MaxColumns();
+            T[] arr2 = matrix.MinColumns();
             int[] output = new int[arr.Length];
             
-            for (int i = 0; i < arr.Length; i++)
+            for (int i = 0; i < output.Length; i++)
             {
-                output[i] = string.Format($"{arr[i].ToString():2f}").Length;
+                var x = string.Format($"{arr[i].ToString():f2}").Length;
+                var y = string.Format($"{arr2[i].ToString():f2}").Length;
+
+                if (x > y)
+                {
+                    output[i] = string.Format($"{arr[i].ToString():f2}").Length;
+                }
+                else
+                {
+                    output[i] = string.Format($"{arr2[i].ToString():f2}").Length;
+                }
             }
             SetColorMessageSmallSize(matrix, output);
 
         }
-
+        
         
         private static void SetColorMessageSmallSize<T>(Matrix<T> matrix,int[] output) where T : unmanaged 
         {
@@ -59,8 +70,6 @@ namespace MatrixDotNet.Extensions
                     {
                         builder.Append(" ".PadLeft(2) + format + "".PadRight(n - length) + "  |");
                     }
-                    
-                    
                 }
 
                 builder.AppendLine();

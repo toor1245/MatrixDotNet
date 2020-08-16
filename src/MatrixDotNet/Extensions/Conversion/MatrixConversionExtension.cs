@@ -1,7 +1,5 @@
 ﻿using System;
 using MatrixDotNet.Exceptions;
-using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Determinant;
 using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions.Conversion
@@ -30,22 +28,19 @@ namespace MatrixDotNet.Extensions.Conversion
             if (matrix1.Rows != matrix2.Rows)
                 throw new MatrixDotNetException("Rows must be equals");
             
-            Matrix<T> res = new Matrix<T>(matrix1.Rows,matrix1.Columns + matrix2.Columns);
-            for (int i = 0; i < matrix1.Rows; i++)
-            {
-                for (int j = 0, k = 0; j < matrix1.Columns + matrix2.Columns; j++)
+            var res = new Matrix<T>(matrix1.Rows,matrix1.Columns + matrix2.Columns);
+            for (var i = 0; i < matrix1.Rows; i++)
+            for (int j = 0, k = 0; j < matrix1.Columns + matrix2.Columns; j++)
+                if (j < matrix1.Columns)
                 {
-                    if (j < matrix1.Columns)
-                    {
-                        res[i, j] = matrix1[i, j];
-                    }
-                    else
-                    {
-                        res[i, k + matrix1.Columns ] = matrix2[i, k];
-                        k++;
-                    }
+                    res[i, j] = matrix1[i, j];
                 }
-            }
+                else
+                {
+                    res[i, k + matrix1.Columns ] = matrix2[i, k];
+                    k++;
+                }
+
             return res;
         }
         
@@ -61,15 +56,10 @@ namespace MatrixDotNet.Extensions.Conversion
             if(matrix is null)
                 throw new NullReferenceException();
             
-            T[,] matrix1 = new T[matrix.Rows,matrix.Columns];
+            var matrix1 = new T[matrix.Rows,matrix.Columns];
             
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    matrix1[i, j] = matrix[i, j];
-                }
-            }
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++) matrix1[i, j] = matrix[i, j];
             return matrix1;
         }
         
@@ -85,15 +75,10 @@ namespace MatrixDotNet.Extensions.Conversion
             if(matrix is null)
                 throw new NullReferenceException();
             
-            Matrix<T> matrix1 = new Matrix<T>(matrix.GetLength(0),matrix.GetLength(1));
+            var matrix1 = new Matrix<T>(matrix.GetLength(0),matrix.GetLength(1));
             
-            for (int i = 0; i < matrix1.Rows; i++)
-            {
-                for (int j = 0; j < matrix1.Columns; j++)
-                {
-                    matrix1[i, j] = matrix[i, j];
-                }
-            }
+            for (var i = 0; i < matrix1.Rows; i++)
+            for (var j = 0; j < matrix1.Columns; j++) matrix1[i, j] = matrix[i, j];
             return matrix1;
         }
 
@@ -109,38 +94,18 @@ namespace MatrixDotNet.Extensions.Conversion
             if (matrix is null)
                 throw new NullReferenceException();
             
-            int newColumn = matrix.Columns - 1; 
-            Matrix<T> temp = new Matrix<T>(matrix.Rows,newColumn);
+            var newColumn = matrix.Columns - 1; 
+            var temp = new Matrix<T>(matrix.Rows,newColumn);
             
             if (column == 0)
-            {
-                for (int i = 1, k = 0; k < newColumn; i++,k++)
-                {
-                    MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
-                }
-            }
+                for (int i = 1, k = 0; k < newColumn; i++,k++) CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
             else if (column == matrix.Columns - 1)
-            {
-                for (int i = 0; i < newColumn; i++)
-                {
-                    MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
-                }
-            }
+                for (var i = 0; i < newColumn; i++) CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
             else
-            {
-                for (int i = 0; i < newColumn; i++)
-                {
+                for (var i = 0; i < newColumn; i++)
                     if (i < column)
-                    {
-                        MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
-                    }
-                    else if (i >= column)
-                    {
-                        MatrixConverter.CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
-                    }
-
-                }
-            }
+                        CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
+                    else if (i >= column) CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
             return temp;
         }
 
@@ -157,38 +122,19 @@ namespace MatrixDotNet.Extensions.Conversion
             if (matrix is null)
                 throw new NullReferenceException();
             
-            int newRow = matrix.Rows - 1;
-            Matrix<T> temp = new Matrix<T>(newRow,matrix.Columns);
+            var newRow = matrix.Rows - 1;
+            var temp = new Matrix<T>(newRow,matrix.Columns);
             
             if (row == 0)
-            {
-                for (int i = 1, k = 0; k < newRow; i++,k++)
-                {
-                    MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
-                }
-            }
+                for (int i = 1, k = 0; k < newRow; i++,k++) CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
             else if (row == matrix.Rows - 1)
-            {
-                for (int i = 0; i < newRow; i++)
-                {
-                    MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
-                }
-            }
+                for (var i = 0; i < newRow; i++) CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
             else
-            {
-                for (int i = 0; i < newRow; i++)
-                {
+                for (var i = 0; i < newRow; i++)
                     if (i < row)
-                    {
-                        MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
-                    }
-                    else if (i >= row)
-                    {
-                        MatrixConverter.CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
-                    }
-                }
-            }
-            
+                        CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
+                    else if (i >= row) CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
+
             return temp;
         }
 
@@ -207,33 +153,26 @@ namespace MatrixDotNet.Extensions.Conversion
             if (matrix is null)
                 throw new NullReferenceException();
             
-            int newColumn = matrix.Columns + 1; 
-            Matrix<T> temp = new Matrix<T>(matrix.Rows,newColumn);
+            var newColumn = matrix.Columns + 1; 
+            var temp = new Matrix<T>(matrix.Rows,newColumn);
             
             if (columnIndex == 0)
             {
                 temp[0, State.Column] = arr;
-                for (int i = 1; i < newColumn; i++)
-                {
-                    MatrixConverter.CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
-                }
+                for (var i = 1; i < newColumn; i++) CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
             }
             else if (temp.Columns - 1 == columnIndex )
             {
                 temp[columnIndex, State.Column] = arr;
-                for (int i = 0; i < matrix.Columns; i++)
-                {
-                    MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
-                }
+                for (var i = 0; i < matrix.Columns; i++) CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
             }
             else
             {
                 temp[columnIndex, State.Column] = arr;
                 for (int i = 0, k = 0; i < temp.Columns; i++)
-                {
                     if (i < columnIndex)
                     {
-                        MatrixConverter.CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
+                        CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
                     }
                     else if (i == columnIndex)
                     {
@@ -242,9 +181,8 @@ namespace MatrixDotNet.Extensions.Conversion
                     else
                     {
                         k = i - 1;
-                        MatrixConverter.CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
+                        CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
                     }
-                }
             }
             return temp;
         }
@@ -264,33 +202,26 @@ namespace MatrixDotNet.Extensions.Conversion
             if (matrix is null)
                 throw new NullReferenceException();
             
-            int newRows = matrix.Rows + 1; 
-            Matrix<T> temp = new Matrix<T>(newRows,matrix.Columns);
+            var newRows = matrix.Rows + 1; 
+            var temp = new Matrix<T>(newRows,matrix.Columns);
             
             if (rowIndex == 0)
             {
                 temp[0, State.Row] = arr;
-                for (int i = 1; i < newRows; i++)
-                {
-                    MatrixConverter.CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
-                }
+                for (var i = 1; i < newRows; i++) CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
             }
             else if (temp.Columns - 1 == rowIndex )
             {
                 temp[rowIndex, State.Row] = arr;
-                for (int i = 0; i < matrix.Rows; i++)
-                {
-                    MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
-                }
+                for (var i = 0; i < matrix.Rows; i++) CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
             }
             else
             {
                 temp[rowIndex, State.Row] = arr;
                 for (int i = 0, k; i < newRows; i++)
-                {
                     if (i < rowIndex)
                     {
-                        MatrixConverter.CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
+                        CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
                     }
                     else if (i == rowIndex)
                     {
@@ -299,9 +230,8 @@ namespace MatrixDotNet.Extensions.Conversion
                     else
                     {
                         k = i - 1;
-                        MatrixConverter.CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
+                        CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
                     }
-                }
             }
             return temp;
         }
@@ -321,16 +251,12 @@ namespace MatrixDotNet.Extensions.Conversion
             if(!matrix.IsSquare)
                 throw new MatrixDotNetException($"matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
             
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    if (i == j)
-                        matrix[i, j] = MathExtension.Increment<T>(default);
-                    else
-                        matrix[i, j] = default;
-                }
-            }
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
+                if (i == j)
+                    matrix[i, j] = MathExtension.Increment<T>(default);
+                else
+                    matrix[i, j] = default;
         }
 
         /// <summary>
@@ -380,14 +306,9 @@ namespace MatrixDotNet.Extensions.Conversion
         public static Matrix<T> Transpose<T>(this Matrix<T> matrix) 
             where T : unmanaged
         {
-            Matrix<T> transport = new Matrix<T>(matrix.Columns,matrix.Rows);
-            for (int i = 0; i < transport.Rows; i++)
-            {
-                for (int j = 0; j < transport.Columns; j++)
-                {
-                    transport[i, j] = matrix[j, i];
-                }
-            }
+            var transport = new Matrix<T>(matrix.Columns,matrix.Rows);
+            for (var i = 0; i < transport.Rows; i++)
+            for (var j = 0; j < transport.Columns; j++) transport[i, j] = matrix[j, i];
 
             return transport;
         }
@@ -410,7 +331,7 @@ namespace MatrixDotNet.Extensions.Conversion
             if (!a.IsSquare)
                 throw new MatrixDotNetException("Matrix is not square");
             
-            int n = a.Rows >> 1;
+            var n = a.Rows >> 1;
             
             a11 = new Matrix<T>(n,n);
             a12 = new Matrix<T>(n,n);
@@ -418,7 +339,7 @@ namespace MatrixDotNet.Extensions.Conversion
             a22 = new Matrix<T>(n,n);
 
             
-            for (int i = 0; i < n; i++)
+            for (var i = 0; i < n; i++)
             {
                 CopyTo(a,i, 0, a11,i,0,n);
                 CopyTo(a,i, n, a12,i,0,n);
@@ -439,9 +360,9 @@ namespace MatrixDotNet.Extensions.Conversion
         public static Matrix<T> CollectMatrix<T>(Matrix<T> a11, Matrix<T> a12, Matrix<T> a21, Matrix<T> a22)
             where T : unmanaged
         {
-            int n = a11.Rows;
-            Matrix<T> a = new Matrix<T>(n << 1,n << 1);
-            for (int i = 0; i < n; i++)
+            var n = a11.Rows;
+            var a = new Matrix<T>(n << 1,n << 1);
+            for (var i = 0; i < n; i++)
             {
                 CopyTo(a11,i, 0, a,i,0,n);
                 CopyTo(a12,i, 0, a,i,n,n << 1);
@@ -450,42 +371,6 @@ namespace MatrixDotNet.Extensions.Conversion
             }
 
             return a;
-        }
-        
-        /// <summary>
-        /// Gets inverse matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <returns>Inverse matrix.</returns>
-        public static Matrix<double> Inverse(this Matrix<double> matrix)
-        {
-            var alg = matrix.AlgebraicComplement().Transpose();
-
-            return (1 / matrix.GetLowerUpperDeterminant()) * alg;
-        }
-        
-        /// <summary>
-        /// Gets inverse matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <returns>Inverse matrix.</returns>
-        public static Matrix<float> Inverse(this Matrix<float> matrix)
-        {
-            var alg = matrix.AlgebraicComplement().Transpose();
-
-            return (1 / matrix.GetLowerUpperDeterminant()) * alg;
-        }
-        
-        /// <summary>
-        /// Gets inverse matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <returns>Inverse matrix.</returns>
-        public static Matrix<decimal> Inverse(this Matrix<decimal> matrix)
-        {
-            var alg = matrix.AlgebraicComplement().Transpose();
-
-            return (1 / matrix.GetLowerUpperDeterminant()) * alg;
         }
     }
 }

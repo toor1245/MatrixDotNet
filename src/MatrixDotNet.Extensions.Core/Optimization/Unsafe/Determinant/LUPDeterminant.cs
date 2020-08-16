@@ -23,7 +23,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Determinant
                 }
             }
 
-            return det;
+            return (UnsafeDecomposition._exchanges & 0b1) == 0 ?  det : -det;
         }
         
         /// <summary>

@@ -114,7 +114,7 @@ namespace MatrixDotNet.Extensions.Builder
                     }
                 }
             }
-
+            
             return res;
         }
     }
