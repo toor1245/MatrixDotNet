@@ -30,7 +30,7 @@ namespace MatrixDotNet.Extensions
         /// <returns>Save matrix to markdown.</returns>
         public static async Task SaveAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
         {
-            string logs = ".\\MatrixLogs";
+            string logs = ".\\MatrixLogs2";
             DirectoryInfo directoryInfo = new DirectoryInfo(logs);
             var assembly = System.Reflection.Assembly.GetExecutingAssembly();
             
@@ -38,7 +38,7 @@ namespace MatrixDotNet.Extensions
             {
                 string path = Directory.GetParent(assembly.Location).FullName;
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\\\\*** MatrixLogs directory created at: {path}\\ \n");
+                Console.WriteLine($"\\\\*** MatrixLogs2 directory created at: {path}\\ \n");
                 directoryInfo.Create();
                 Console.ResetColor();
             }
@@ -125,6 +125,11 @@ namespace MatrixDotNet.Extensions
             Console.ResetColor();
             
             #elif OS_LINUX
+            await matrix.SaveAsync(title);
+            Process.Start("explorer.exe",$".\\MatrixLogs\\{title}.md");
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine($"\\\\*** File {title}.md opened");
+            Console.ResetColor();
             
             #elif OS_MAC
 
