@@ -11,7 +11,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Determinant
         /// <returns>the determinant of matrix.</returns>
         public static unsafe double GetLUPDeterminant(this Matrix<double> matrix)
         {
-            matrix.GetLUP(out _,out var upper,out _);
+            matrix.GetLowerUpperPermutation(out _,out var upper,out _);
             double det = 1;
             int m = matrix.Rows;
             fixed (double* ptr = upper.GetMatrix())
@@ -33,7 +33,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Determinant
         /// <returns>the determinant of matrix.</returns>
         public static unsafe float GetLUPDeterminant(this Matrix<float> matrix)
         {
-            matrix.GetLUP(out _,out var upper,out _);
+            matrix.GetLowerUpperPermutation(out _,out var upper,out _);
             float det = 1;
             int m = matrix.Rows;
             fixed (float* ptr = upper.GetMatrix())

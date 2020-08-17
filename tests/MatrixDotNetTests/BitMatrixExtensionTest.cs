@@ -1,7 +1,6 @@
 using System;
 using MatrixDotNet;
-using MatrixDotNet.Extensions;
-using MatrixDotNet.Extensions.BitMatrix;
+using MatrixDotNet.Extensions.Statistics;
 using Xunit;
 
 namespace MatrixDotNetTests

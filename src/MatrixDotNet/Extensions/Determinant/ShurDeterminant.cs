@@ -1,6 +1,6 @@
 using System;
 using MatrixDotNet.Exceptions;
-using MatrixDotNet.Extensions.Conversion;
+using MatrixDotNet.Extensions.Complement;
 
 namespace MatrixDotNet.Extensions.Determinant
 {

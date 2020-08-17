@@ -8,7 +8,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
     {
         internal static int _exchanges;
             
-        public static unsafe void GetLUP(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> upper,out Matrix<double> matrixP)
+        public static unsafe void GetLowerUpperPermutation(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> upper,out Matrix<double> matrixP)
         {
             if (matrix is null)
                 throw new NullReferenceException();
@@ -66,7 +66,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
             }
         }
         
-        public static unsafe void GetLUP(this Matrix<float> matrix,out Matrix<float> lower,out Matrix<float> upper,out Matrix<float> matrixP)
+        public static unsafe void GetLowerUpperPermutation(this Matrix<float> matrix,out Matrix<float> lower,out Matrix<float> upper,out Matrix<float> matrixP)
         {
             if (matrix is null)
                 throw new NullReferenceException();

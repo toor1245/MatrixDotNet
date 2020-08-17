@@ -2,6 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+	<OS_WINDOWS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</OS_WINDOWS>
+        <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</OS_MAC>
+        <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
         <LangVersion>default</LangVersion>
         <PackageVersion>0.0.3.1</PackageVersion>
         <Title>MatrixDotNet</Title>
@@ -27,6 +30,16 @@ Stable works with MatrixDotNet.Extensions.Core.</PackageReleaseNotes>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <ApplicationIcon>MatrixDotNet.ico</ApplicationIcon>
     </PropertyGroup>
+
+<PropertyGroup Condition="'$(OS_WINDOWS)'=='true'">
+    <DefineConstants>OS_WINDOWS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS_MAC)'=='true'">
+    <DefineConstants>OS_MAC</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(OS_LINUX)'=='true'">
+    <DefineConstants>OS_LINUX</DefineConstants>
+  </PropertyGroup>
 
     <ItemGroup>
       <None Include="..\..\LICENSE">

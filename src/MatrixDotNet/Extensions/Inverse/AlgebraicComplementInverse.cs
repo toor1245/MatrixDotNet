@@ -1,4 +1,4 @@
-using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Complement;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Determinant;
 
@@ -11,7 +11,7 @@ namespace MatrixDotNet.Extensions.Inverse
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Inverse matrix.</returns>
-        public static Matrix<double> Inverse(this Matrix<double> matrix)
+        public static Matrix<double> InverseAlgebraicComplement(this Matrix<double> matrix)
         {
             var alg = matrix.AlgebraicComplement().Transpose();
 
@@ -23,7 +23,7 @@ namespace MatrixDotNet.Extensions.Inverse
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Inverse matrix.</returns>
-        public static Matrix<float> Inverse(this Matrix<float> matrix)
+        public static Matrix<float> InverseAlgebraicComplement(this Matrix<float> matrix)
         {
             var alg = matrix.AlgebraicComplement().Transpose();
 
@@ -35,7 +35,7 @@ namespace MatrixDotNet.Extensions.Inverse
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Inverse matrix.</returns>
-        public static Matrix<decimal> Inverse(this Matrix<decimal> matrix)
+        public static Matrix<decimal> InverseAlgebraicComplement(this Matrix<decimal> matrix)
         {
             var alg = matrix.AlgebraicComplement().Transpose();
 

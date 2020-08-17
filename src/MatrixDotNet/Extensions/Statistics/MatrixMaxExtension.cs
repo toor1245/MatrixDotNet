@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Collections;
 
-namespace MatrixDotNet.Extensions.BitMatrix
+namespace MatrixDotNet.Extensions.Statistics
 {
     /// <summary>
     /// Represents the functional of bit operations with a matrix

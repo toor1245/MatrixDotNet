@@ -6,7 +6,7 @@ namespace MatrixDotNet.Extensions.Decomposition
 {
     public static partial class Decomposition
     {
-        public static unsafe void GetCholeskyDecomposition(this Matrix<double> matrix,out Matrix<double> lower)
+        public static unsafe void GetCholesky(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> transpose)
         {
             if(!matrix.IsSquare)
                 throw new MatrixDotNetException("Matrix must be square");
@@ -48,12 +48,12 @@ namespace MatrixDotNet.Extensions.Decomposition
                             sum += (lower[i, k] * lower[j, k]);
                         }
 
-                        lower[i, j] = (matrix[i,j] - sum) / 
-                                      lower[j, j]; 
+                        lower[i, j] = (matrix[i,j] - sum) / lower[j, j]; 
                     } 
                 } 
             }
+
+            transpose = lower.Transpose();
         }
-        
     }
 }

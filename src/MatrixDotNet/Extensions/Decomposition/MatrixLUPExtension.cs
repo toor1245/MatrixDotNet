@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using MatrixDotNet.Exceptions;
-using MatrixDotNet.Extensions.BitMatrix;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.MathExpression;
@@ -71,7 +69,7 @@ namespace MatrixDotNet.Extensions.Decomposition
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static void GetLUP<T>(this Matrix<T> matrix,out Matrix<T> matrixC,out Matrix<T> matrixP)  where T : unmanaged
+        public static void GetLowerUpperPermutation<T>(this Matrix<T> matrix,out Matrix<T> matrixC,out Matrix<T> matrixP)  where T : unmanaged
         {
             int n = matrix.Rows;
 
@@ -118,7 +116,7 @@ namespace MatrixDotNet.Extensions.Decomposition
         /// Gets lower upper permutation;
         /// </summary>
         /// <returns></returns>
-        public static void GetLUP(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> upper,out Matrix<double> matrixP)
+        public static void GetLowerUpperPermutation(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> upper,out Matrix<double> matrixP)
         {
             if(matrix is null)
                 throw new NullReferenceException();
