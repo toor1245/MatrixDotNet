@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using MatrixDotNet.Extensions.Statistics;
@@ -9,6 +10,10 @@ namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
+        private static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
+        private static string RootPath { get; } = Directory.GetParent(Assembly.Location).FullName;
+        private static string Folder { get; } = ".\\MatrixLogs";
+
         /// <summary>
         /// Pretty output.
         /// </summary>
@@ -20,7 +25,7 @@ namespace MatrixDotNet.Extensions
             SetColorMessage(matrix);
             Console.ResetColor();
         }
-
+        
         /// <summary>
         /// Save matrix to markdown.
         /// </summary>
@@ -30,82 +35,79 @@ namespace MatrixDotNet.Extensions
         /// <returns>Save matrix to markdown.</returns>
         public static async Task SaveAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
         {
-            string logs = ".\\MatrixLogs2";
-            DirectoryInfo directoryInfo = new DirectoryInfo(logs);
-            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-            
+            DirectoryInfo directoryInfo = new DirectoryInfo(Folder);
+
             if (!directoryInfo.Exists)
             {
-                string path = Directory.GetParent(assembly.Location).FullName;
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\\\\*** MatrixLogs2 directory created at: {path}\\ \n");
+                Console.WriteLine($"\\\\*** MatrixLogs directory created at: {RootPath}\\ \n");
                 directoryInfo.Create();
                 Console.ResetColor();
             }
 
             try
             {
-                using (StreamWriter stream = new StreamWriter(@$"{logs}\{title}.md",false,Encoding.UTF8))
-                {
-                    var output = matrix.InitColumnSize();
+                string path = @$"{Folder}\{title}.md";
+                using StreamWriter stream = new StreamWriter(path,false,Encoding.UTF8);
+                var output = matrix.InitColumnSize();
                     
-                    await stream.WriteLineAsync("```ini" + stream.NewLine + assembly.FullName + stream.NewLine + "```" + stream.NewLine + 
-                                                $"Number of rows: {matrix.Rows}" + stream.NewLine + $"Number of columns: {matrix.Columns}" 
-                                                + stream.NewLine );
+                await stream.WriteLineAsync("```ini" + stream.NewLine + Assembly.FullName + stream.NewLine + stream.NewLine + 
+                                            $"Number of rows: {matrix.Rows}" + stream.NewLine + 
+                                            $"Number of columns: {matrix.Columns}" + stream.NewLine + stream.NewLine + 
+                                            "```" + stream.NewLine);
 
-                    int sum = 0;
-                    int[] slash = new int[matrix.Columns];
-                    for (int i = 0; i < matrix.Columns; i++)
+                int sum = 0;
+                int[] slash = new int[matrix.Columns];
+                for (int i = 0; i < matrix.Columns; i++)
+                {
+                    sum += output[i] + 3;
+                    string format = $"| {i} " + "".PadRight(output[i]);
+                    slash[i] = format.Length;
+                    await stream.WriteAsync(format);
+                }
+                await stream.WriteAsync("|" + stream.NewLine + "|");
+                int value = slash[0];
+
+                for (int i = 1, j = 0; i < matrix.Columns + sum;i++)
+                {
+                    if (i == value)
                     {
-                        sum += output[i] + 3;
-                        string format = $"| {i} " + "".PadRight(output[i]);
-                        slash[i] = format.Length;
-                        await stream.WriteAsync(format);
+                        await stream.WriteAsync("|");
+                        j++;
+                        value += slash[j];
                     }
-                    await stream.WriteAsync("|" + stream.NewLine + "|");
-                    int value = slash[0];
-
-                    for (int i = 1, j = 0; i < matrix.Columns + sum;i++)
+                    else
                     {
-                        if (i == value)
+                        await stream.WriteAsync("-");
+                    }
+                }
+
+                await stream.WriteLineAsync();
+
+                for (int i = 0; i < matrix.Rows; i++)
+                {
+                    await stream.WriteAsync("|");
+                    for (int j = 0; j < matrix.Columns; j++)
+                    {
+                        var n = output[j];
+                        int length = string.Format("{0:f2}",matrix[i, j]).Length;
+                        string format = string.Format("{0:f2}",matrix[i, j]);
+                        if (length >= n)
                         {
-                            await stream.WriteAsync("|");
-                            j++;
-                            value += slash[j];
+                            await stream.WriteAsync(format + "".PadRight((length - n) + 3) + "|");
                         }
                         else
                         {
-                            await stream.WriteAsync("-");
+                            await stream.WriteAsync(format + "".PadRight((n - length) + 3) + "|");
                         }
                     }
 
                     await stream.WriteLineAsync();
-
-                    for (int i = 0; i < matrix.Rows; i++)
-                    {
-                        await stream.WriteAsync("|");
-                        for (int j = 0; j < matrix.Columns; j++)
-                        {
-                            var n = output[j];
-                            int length = $"{matrix[i, j].ToString():f2}".Length;
-                            string format = $"{matrix[i, j].ToString():f2}";
-                            if (length >= n)
-                            {
-                                await stream.WriteAsync(format + "".PadRight((length - n) + 3) + "|");
-                            }
-                            else
-                            {
-                                await stream.WriteAsync(format + "".PadRight((n - length) + 3) + "|");
-                            }
-                        }
-
-                        await stream.WriteLineAsync();
-                    }
-                    
-                    Console.ForegroundColor = ConsoleColor.Cyan;
-                    Console.WriteLine($"\\\\*** Created file {title}.md");
-                    Console.ResetColor();
                 }
+                    
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine($"\\\\*** Created file {title}.md");
+                Console.ResetColor();
             }
             catch (Exception e)
             {
