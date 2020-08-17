@@ -20,7 +20,7 @@ namespace Samples
 
             matrix.Pretty();
             var matrixB = matrix.GaussianEliminationInverse();
-            matrixB.SaveAndOpenAsync("test2");
+            matrixB.SaveAndOpenAsync("test");
             matrixB.Pretty();
         }
     }

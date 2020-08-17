@@ -126,10 +126,20 @@ namespace MatrixDotNet.Extensions
 
                     await stream.WriteLineAsync();
                 }
-                    
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine($"\\\\*** Created file {title}.md");
-                Console.ResetColor();
+                
+                FileInfo fileInfo = new FileInfo(PathMarkdown(title));
+                if (!fileInfo.Exists)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"\\\\*** Created file {title}.md");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine($"\\\\*** Update file {title}.md");
+                    Console.ResetColor();
+                }
             }
             catch (Exception e)
             {
@@ -140,11 +150,10 @@ namespace MatrixDotNet.Extensions
 
         public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
         {
-            
             await matrix.SaveAsync(title);
             OpenFileOs(title);
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine($"\n\\\\*** File {title}.md opened");
+            Console.WriteLine($"\n\\\\*** File {PathMarkdown(title)} opened");
             Console.ResetColor();
         }
 
@@ -252,10 +261,10 @@ namespace MatrixDotNet.Extensions
             #if OS_WINDOWS
             Process.Start("explorer.exe",PathMarkdown(title));
             #elif OS_LINUX
-
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Process.Start("cat",$"{PathMarkdown(title)}");
+            Console.ResetColor();
             #endif
-
         }
     }
 }
