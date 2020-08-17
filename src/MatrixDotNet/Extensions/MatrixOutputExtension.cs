@@ -11,14 +11,39 @@ namespace MatrixDotNet.Extensions
     public static partial class MatrixExtension
     {
         private static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
-        private static string RootPath { get; } = Directory.GetParent(Assembly.Location).FullName;
-        private static string Folder { get; } = ".\\MatrixLogs";
+        private static string RootPath { get; } = Directory.FullName;
+
+        private static string Folder
+        {
+            get
+            {
+                #if OS_WINDOWS
+                return ".\\MatrixLogs";
+                
+                #elif OS_LINUX
+                
+                return "MatrixLogs";
+                
+                #endif
+            }
+        }
+
+        private static DirectoryInfo Directory => new DirectoryInfo(Folder);
+
+        private static string PathMarkdown(string title)
+        {
+            #if OS_WINDOWS
+            return @$"{Folder}\{title}.md";
+            #elif OS_LINUX
+            return @$"{Folder}/{title}.md";
+            #endif
+        }
 
         /// <summary>
         /// Pretty output.
         /// </summary>
-        /// <param name="matrix"></param>
-        /// <typeparam name="T"></typeparam>
+        /// <param name="matrix">the matrix which to display.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
         public static void Pretty<T>(this Matrix<T> matrix) where T : unmanaged
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
@@ -27,27 +52,24 @@ namespace MatrixDotNet.Extensions
         }
         
         /// <summary>
-        /// Save matrix to markdown.
+        /// Saves matrix to markdown.
         /// </summary>
         /// <param name="matrix">matrix which save to file.</param>
         /// <param name="title">title markdown.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <returns>Save matrix to markdown.</returns>
+        /// <returns>Saves matrix to markdown.</returns>
         public static async Task SaveAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
         {
-            DirectoryInfo directoryInfo = new DirectoryInfo(Folder);
-
-            if (!directoryInfo.Exists)
+            if (!Directory.Exists)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"\\\\*** MatrixLogs directory created at: {RootPath}\\ \n");
-                directoryInfo.Create();
+                Directory.Create();
                 Console.ResetColor();
             }
-
             try
             {
-                string path = @$"{Folder}\{title}.md";
+                string path = PathMarkdown(title);
                 using StreamWriter stream = new StreamWriter(path,false,Encoding.UTF8);
                 var output = matrix.InitColumnSize();
                     
@@ -118,24 +140,12 @@ namespace MatrixDotNet.Extensions
 
         public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
         {
-            #if OS_WINDOWS
             
             await matrix.SaveAsync(title);
-            Process.Start("explorer.exe",$".\\MatrixLogs\\{title}.md");
+            OpenFileOs(title);
             Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine($"\\\\*** File {title}.md opened");
+            Console.WriteLine($"\n\\\\*** File {title}.md opened");
             Console.ResetColor();
-            
-            #elif OS_LINUX
-            await matrix.SaveAsync(title);
-            Process.Start("explorer.exe",$".\\MatrixLogs\\{title}.md");
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            Console.WriteLine($"\\\\*** File {title}.md opened");
-            Console.ResetColor();
-            
-            #elif OS_MAC
-
-            #endif
         }
 
         private static void SetColorMessage<T>(Matrix<T> matrix) where  T : unmanaged
@@ -147,6 +157,7 @@ namespace MatrixDotNet.Extensions
             SetColorMessageSmallSize(matrix, output);
 
         }
+        
         private static void SetColorMessageSmallSize<T>(Matrix<T> matrix,int[] output) where T : unmanaged 
         {
             StringBuilder builder = new StringBuilder();
@@ -234,6 +245,17 @@ namespace MatrixDotNet.Extensions
             }
 
             return output;
+        }
+
+        private static void OpenFileOs(string title)
+        {
+            #if OS_WINDOWS
+            Process.Start("explorer.exe",PathMarkdown(title));
+            #elif OS_LINUX
+
+            Process.Start("cat",$"{PathMarkdown(title)}");
+            #endif
+
         }
     }
 }
