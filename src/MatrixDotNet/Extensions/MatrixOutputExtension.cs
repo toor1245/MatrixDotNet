@@ -255,7 +255,8 @@ namespace MatrixDotNet.Extensions
 
             return output;
         }
-
+        
+        // opens file by Os
         private static void OpenFileOs(string title)
         {
             #if OS_WINDOWS
