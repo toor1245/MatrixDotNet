@@ -11,17 +11,8 @@ namespace Samples
         
         static void Main(string[] args)
         {
-            Matrix<double> matrix = new double[3,3]
-            {
-                { 1,   5,   2 },
-                { 31,   2341,   3 },
-                { 2,   4234,   8324 },
-            };
-
-            matrix.Pretty();
-            var matrixB = matrix.GaussianEliminationInverse();
-            matrixB.SaveAndOpenAsync("test");
-            matrixB.Pretty();
+            Matrix<int> matrix = new Matrix<int>(20,20,5);
+            matrix.SaveToHtmlAsync("test3");
         }
     }
 }

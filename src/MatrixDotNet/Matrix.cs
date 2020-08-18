@@ -70,16 +70,10 @@ namespace MatrixDotNet
         {
             get
             {
-                if (!IsRange(i, j))
-                    throw new IndexOutOfRangeException();
-
                 return _Matrix[i, j];
             }
             set
             {
-                if (!IsRange(i, j))
-                    throw new IndexOutOfRangeException();
-
                 _Matrix[i, j] = value;
             }
         }
@@ -94,9 +88,6 @@ namespace MatrixDotNet
             get => this.GetRow(i);
             set
             {
-                if (!IsRangeRow(i))
-                    throw new IndexOutOfRangeException();
-                
                 for (int j = 0; j < Columns; j++)
                 {
                     this[i, j] = value[j];
@@ -126,9 +117,6 @@ namespace MatrixDotNet
             {
                 if (dimension == State.Row)
                 {
-                    if (!IsRangeRow(i))
-                        throw new IndexOutOfRangeException();
-                    
                     for (int j = 0; j < Columns; j++)
                     {
                         this[i, j] = value[j];
@@ -162,9 +150,6 @@ namespace MatrixDotNet
 
             set
             {
-                if (!IsRange(m,n))
-                    throw new IndexOutOfRangeException();
-                
                 if (dimension == State.Row)
                 {
                     this[m, n] = value;

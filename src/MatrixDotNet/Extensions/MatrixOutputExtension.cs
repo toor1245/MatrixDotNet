@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using MatrixDotNet.Extensions.Options;
 using MatrixDotNet.Extensions.Statistics;
 
 namespace MatrixDotNet.Extensions
@@ -28,6 +29,34 @@ namespace MatrixDotNet.Extensions
             }
         }
 
+        private static string TemplateFolderPath
+        {
+            get
+            {
+                #if OS_WINDOWS
+                return ".\\templates";
+                #elif OS_LINUX
+                
+                return "../../../MatrixDotNet/templates";
+                
+                #endif
+            }
+        }
+        
+        private static string DoctypeTemplatePath
+        {
+            get
+            {
+                #if OS_WINDOWS
+                return ".\\templates";
+                #elif OS_LINUX
+                return @"\templates\doctype.txt";
+                #endif
+            }
+        }
+
+        private static string HtmlTemplate => File.ReadAllText(DoctypeTemplatePath);
+
         private static DirectoryInfo Directory => new DirectoryInfo(Folder);
 
         private static string PathMarkdown(string title)
@@ -36,6 +65,15 @@ namespace MatrixDotNet.Extensions
             return @$"{Folder}\{title}.md";
             #elif OS_LINUX
             return @$"{Folder}/{title}.md";
+            #endif
+        }
+        
+        private static string PathHtml(string title)
+        {
+            #if OS_WINDOWS
+            return @$"{Folder}\{title}.html";
+            #elif OS_LINUX
+            return @$"{Folder}/{title}.html";
             #endif
         }
 
@@ -58,7 +96,7 @@ namespace MatrixDotNet.Extensions
         /// <param name="title">title markdown.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>Saves matrix to markdown.</returns>
-        public static async Task SaveAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
+        public static async Task SaveToMarkdownAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
         {
             if (!Directory.Exists)
             {
@@ -148,9 +186,45 @@ namespace MatrixDotNet.Extensions
             }
         }
 
+        
+        /// <summary>
+        /// Saves matrix to html.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="title">the title of file *.html.</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>Saves Matrix to Html.</returns>
+        public static async Task SaveToHtmlAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
+        {
+            if (!Directory.Exists)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\\\\*** MatrixLogs directory created at: {RootPath}\\ \n");
+                Directory.Create();
+                Console.ResetColor();
+            }
+            
+            try
+            {
+                string path = PathHtml(title);
+                
+                using StreamWriter stream = new StreamWriter(path,false,Encoding.UTF8);
+                var output = matrix.InitColumnSize();
+
+                await stream.WriteLineAsync(Template.Text);
+                await stream.WriteLineAsync(Template.SetMatrixToHtml(matrix));
+                await stream.WriteLineAsync("</table>" + stream.NewLine + "</body>");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix,string title) where T : unmanaged
         {
-            await matrix.SaveAsync(title);
+            await matrix.SaveToMarkdownAsync(title);
             OpenFileOs(title);
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"\n\\\\*** File {PathMarkdown(title)} opened");
@@ -266,6 +340,10 @@ namespace MatrixDotNet.Extensions
             Process.Start("cat",$"{PathMarkdown(title)}");
             Console.ResetColor();
             #endif
+        }
+        
+        private static string GetAssemblyDirectory(System.Reflection.Assembly assembly) {
+            return System.IO.Path.GetDirectoryName(assembly.Location);
         }
     }
 }
