@@ -1,50 +1,119 @@
-using System.Text;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using MatrixDotNet.Extensions.Statistics;
 
 namespace MatrixDotNet.Extensions.Options
 {
-    internal struct Template
+    public abstract class Template
     {
-        public static string Text
+        #region .properties
+        
+        protected abstract string Text { get; }
+
+        public string Title { get;}
+
+        protected static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
+        
+        protected static DirectoryInfo Directory => new DirectoryInfo(Folder);
+
+        protected static string RootPath { get; } = Directory.FullName;
+
+        protected static string Folder
         {
             get
             {
-                return @"<!DOCTYPE html>
-<html>
-<head>
-<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
-</head>
-<body>
-<table class='table'>";
+                
+#if OS_WINDOWS
+                return ".\\MatrixLogs";
+#elif OS_LINUX
+                return "MatrixLogs";
+#endif
             }
         }
 
-        public static string SetMatrixToHtml<T>(Matrix<T> matrix) where T : unmanaged
+        #endregion
+
+        #region .ctor
+
+        protected Template(string title)
         {
-            StringBuilder builder = new StringBuilder();
-            builder.AppendLine("\t<thead class='thead-dark'>");
-            builder.AppendLine("\t\t<tr>");
-            builder.AppendLine($"\t\t<th scope='col'>#</th>");
-            for (int i = 0; i < matrix.Columns; i++)
-            {
-                builder.AppendLine($"\t\t<th scope='col'>{i}</th>");
-            }
-            builder.AppendLine("\t\t<tr>");
-            builder.AppendLine("\t</thead>");
-            builder.AppendLine("\t<tbody>");
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                builder.AppendLine("\t\t<tr>");
-                builder.AppendLine($"\t\t\t<th scope='row'>{i}</th>");
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    builder.AppendLine($"\t\t\t<td>{matrix[i,j]}</td>");
-                }
-
-                builder.AppendLine("\t\t</tr>");
-            }
-            builder.AppendLine("\t</tbody>");
-
-            return builder.ToString();
+            Title = title;
+            IsExists();
         }
+        
+        #endregion
+
+        #region .methods
+
+        internal abstract string Path { get; }
+
+        private static void IsExists()
+        {
+            if (!Directory.Exists)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\\\\*** MatrixLogs directory created at: {RootPath}\n");
+                Directory.Create();
+                Console.ResetColor();
+            }
+        }
+
+        protected void IsFileExists(string title)
+        {
+            FileInfo fileInfo = new FileInfo(Path);
+            if (!fileInfo.Exists)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"\\\\*** Created file at: {title}");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine($"\\\\*** Update file at: {title}");
+                Console.ResetColor();
+            }
+        }
+
+        public abstract string Save<T>(Matrix<T> matrix) where T : unmanaged;
+
+        protected void Open()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+#if OS_WINDOWS
+            Process.Start("explorer.exe",Title);
+#elif OS_LINUX
+            Process.Start("cat",$"{Path}");
+#endif
+            Console.ResetColor();
+        }
+        
+        internal static int[] InitColumnSize<T>(Matrix<T> matrix) where T : unmanaged
+        {
+            var arr = matrix.MaxColumns();
+            var arr2 = matrix.MinColumns();
+            int[] output = new int[arr.Length];
+            
+            for (int i = 0; i < output.Length; i++)
+            {
+                var x = string.Format("{0:f2}",arr[i]).Length;
+                var y = string.Format("{0:f2}", arr2[i]).Length;
+
+                if (x > y)
+                {
+                    output[i] = x;
+                }
+                else
+                {
+                    output[i] = y;
+                }
+            }
+
+            return output;
+        }
+
+        #endregion
     }
 }

@@ -6,6 +6,7 @@ using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.MathExpression;
+using MatrixDotNet.Extensions.Options;
 
 
 namespace MatrixDotNet
@@ -510,7 +511,7 @@ namespace MatrixDotNet
         /// <returns><see cref="string"/></returns>
         public override string ToString()
         {
-            return MatrixExtension.OutputPretty(this);
+            return MatrixExtension.Output(this);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
