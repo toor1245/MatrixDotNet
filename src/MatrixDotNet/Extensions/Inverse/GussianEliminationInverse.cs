@@ -45,7 +45,6 @@ namespace MatrixDotNet.Extensions.Inverse
 
                 for (int k = i + 1; k < size; k++)
                 {
-                    if(Math.Abs(a[k,i]) < 0.00001) continue;
                     double div = a[k,i] / a[i, i];
                     for (int j = 0; j < size; j++)
                     {
@@ -80,7 +79,6 @@ namespace MatrixDotNet.Extensions.Inverse
 
                 for (int k = i - 1; k >= 0; k--) 
                 {
-                    if(Math.Abs(a[k,i]) < 0.00001) continue;
                     double div = a[k,i] / a[i, i];
                     
                     for (int j = size - 1; j >= 0; j--) 
@@ -95,19 +93,15 @@ namespace MatrixDotNet.Extensions.Inverse
             for (int i = 0; i < size; i++) 
             {
                 double d = a[i, i];
-                if (Math.Abs(d - 1) < 0.00001) continue;
+                if (Math.Abs(d) < 0.00001) 
+                    throw new MatrixDotNetException("Matrix is singular");
                 
                 for (int j = 0; j < size; j++) 
                 {
                     b[i, j] =  b[i, j] / d;
                 }
             }
-
-            for (int i = size - 2; i >= 0; i--)
-            {
-                b.SwapColumns(size - 1,i);
-            }
-
+            
             return b;
         }
     }

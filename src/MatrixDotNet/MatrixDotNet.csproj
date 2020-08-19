@@ -52,4 +52,8 @@ Stable works with MatrixDotNet.Extensions.Core.</PackageReleaseNotes>
       </None>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="templates\doctype.txt" />
+    </ItemGroup>
+
 </Project>
