@@ -7,7 +7,8 @@ namespace MatrixDotNet.Extensions.Options
 {
     public sealed class TemplateMarkdown : Template
     {
-        protected override string Text => $"```ini\n{Assembly.FullName}\n";
+        protected override string Text => @$"```ini 
+{Assembly.FullName}";
 
         internal override string Path
         {
@@ -51,10 +52,12 @@ namespace MatrixDotNet.Extensions.Options
             
             if (HasSize)
             {
-                builder.AppendLine($"Number of rows: {Rows}\nNumber of columns: {Columns}\n");
+                builder.AppendLine($"Number of rows: {Rows};");
+                builder.AppendLine($"Number of columns: {Columns};");
             }
 
             builder.AppendLine("```");
+            builder.AppendLine();
             
             var output = InitColumnSize(matrix);
             int sum = 0;
@@ -62,11 +65,14 @@ namespace MatrixDotNet.Extensions.Options
             for (int i = 0; i < matrix.Columns; i++)
             {
                 sum += output[i] + 3;
-                string format = $"|   " + "".PadRight(output[i]);
+                string format = $"| {i} " + "".PadRight(output[i]);
                 slash[i] = format.Length;
                 builder.Append(format);
             }
-            builder.Append("|\n|");
+
+            builder.Append("|");
+            builder.AppendLine();
+            builder.Append("\n|");
             int value = slash[0];
 
             for (int i = 1, j = 0; i < matrix.Columns + sum;i++)
@@ -83,6 +89,7 @@ namespace MatrixDotNet.Extensions.Options
                 }
             }
 
+            builder.Append("|");
             builder.AppendLine();
             
             for (int i = 0; i < matrix.Rows; i++)

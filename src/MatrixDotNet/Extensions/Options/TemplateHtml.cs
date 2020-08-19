@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -94,10 +95,9 @@ namespace MatrixDotNet.Extensions.Options
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
 #if OS_WINDOWS
-            Process.Start(Path);
+            Process.Start("explorer.exe",Path);
 #elif OS_LINUX
             await ShellHelper.Bash($"firefox {Path}");
-
 #endif
             Console.ResetColor();
         }

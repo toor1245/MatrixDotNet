@@ -14,7 +14,7 @@ namespace Samples
         {
 
             Matrix<int> matrix = BuildMatrix.Random<int>(3, 3,-1000,1000);
-            Template template = new TemplateMarkdown("title6");
+            Template template = new TemplateMarkdown("title6",true);
             await matrix.SaveAndOpenAsync(template);
 
             var matrix2 = matrix * matrix;
