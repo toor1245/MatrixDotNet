@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
+using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.MathExpression;
-using MatrixDotNet.Extensions.Options;
 
 
 namespace MatrixDotNet
@@ -511,7 +510,8 @@ namespace MatrixDotNet
         /// <returns><see cref="string"/></returns>
         public override string ToString()
         {
-            return MatrixExtension.Output(this);
+            StringBuilder builder = new StringBuilder();
+            return MatrixExtension.Output(this,builder);
         }
 
         IEnumerator IEnumerable.GetEnumerator()

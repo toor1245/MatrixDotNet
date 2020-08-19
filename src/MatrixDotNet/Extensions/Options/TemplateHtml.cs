@@ -1,4 +1,8 @@
+using System;
+using System.Diagnostics;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MatrixDotNet.Extensions.Options
 {
@@ -29,7 +33,20 @@ namespace MatrixDotNet.Extensions.Options
 #endif
             }
         }
-        
+
+        internal override string FullPath
+        {
+            get
+            {
+#if OS_WINDOWS
+                return @$"{RootPath}\{Title}.html";
+#elif OS_LINUX
+                return @$"{RootPath}/{Title}.html";
+#endif
+            }
+        }
+
+
         public TemplateHtml(string title) : base(title)
         {
             
@@ -38,6 +55,8 @@ namespace MatrixDotNet.Extensions.Options
         public override string Save<T>(Matrix<T> matrix)
         {
             StringBuilder builder = new StringBuilder();
+            Rows = matrix.Rows;
+            Columns = matrix.Columns;
             builder.AppendLine(Text);
             builder.AppendLine("\t<thead class='thead-dark'>");
             builder.AppendLine("\t\t<tr>");
@@ -71,6 +90,18 @@ namespace MatrixDotNet.Extensions.Options
             IsFileExists(Title);
 
             return builder.ToString();
+        }
+
+        public override async Task Open()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+#if OS_WINDOWS
+            Process.Start(Path);
+#elif OS_LINUX
+            await ShellHelper.Bash($"firefox {Path}");
+
+#endif
+            Console.ResetColor();
         }
     }
 }

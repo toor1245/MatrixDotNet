@@ -1,4 +1,7 @@
+using System;
+using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MatrixDotNet.Extensions.Options
 {
@@ -19,6 +22,19 @@ namespace MatrixDotNet.Extensions.Options
             }
         }
 
+        internal override string FullPath
+        {
+            get
+            {
+#if OS_WINDOWS
+                return @$"{RootPath}\{Title}.md";
+#elif OS_LINUX
+                
+                return @$"{RootPath}/{Title}.md";
+#endif
+            }
+        }
+
         public bool HasSize { get; }
 
         public TemplateMarkdown(string title,bool hasSize = false) : base(title)
@@ -29,12 +45,16 @@ namespace MatrixDotNet.Extensions.Options
         public override string Save<T>(Matrix<T> matrix)
         {
             StringBuilder builder = new StringBuilder();
+            Rows = matrix.Rows;
+            Columns = matrix.Columns;
             builder.AppendLine(Text);
             
             if (HasSize)
             {
-                builder.AppendLine($"Number of rows: {matrix.Rows}\nNumber of columns: {matrix.Columns}\n");
+                builder.AppendLine($"Number of rows: {Rows}\nNumber of columns: {Columns}\n");
             }
+
+            builder.AppendLine("```");
             
             var output = InitColumnSize(matrix);
             int sum = 0;
@@ -88,6 +108,17 @@ namespace MatrixDotNet.Extensions.Options
 
             return builder.ToString();
         }
-        
+
+        public override Task Open()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+#if OS_WINDOWS
+            Process.Start("explorer.exe",Path);
+#elif OS_LINUX
+            Process.Start("cat", Path);
+#endif
+            return Task.CompletedTask;
+            Console.ResetColor();
+        }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Threading.Tasks;
 using MatrixDotNet.Extensions.Statistics;
 
 namespace MatrixDotNet.Extensions.Options
@@ -20,6 +21,9 @@ namespace MatrixDotNet.Extensions.Options
 
         protected static string RootPath { get; } = Directory.FullName;
 
+        protected int Rows { get; set; }
+        protected int Columns { get; set; }
+
         protected static string Folder
         {
             get
@@ -32,6 +36,10 @@ namespace MatrixDotNet.Extensions.Options
 #endif
             }
         }
+        
+        internal abstract string Path { get; }
+        
+        internal abstract string FullPath { get; }
 
         #endregion
 
@@ -46,8 +54,7 @@ namespace MatrixDotNet.Extensions.Options
         #endregion
 
         #region .methods
-
-        internal abstract string Path { get; }
+        
 
         private static void IsExists()
         {
@@ -79,17 +86,8 @@ namespace MatrixDotNet.Extensions.Options
 
         public abstract string Save<T>(Matrix<T> matrix) where T : unmanaged;
 
-        protected void Open()
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-#if OS_WINDOWS
-            Process.Start("explorer.exe",Title);
-#elif OS_LINUX
-            Process.Start("cat",$"{Path}");
-#endif
-            Console.ResetColor();
-        }
-        
+        public abstract Task Open();
+
         internal static int[] InitColumnSize<T>(Matrix<T> matrix) where T : unmanaged
         {
             var arr = matrix.MaxColumns();

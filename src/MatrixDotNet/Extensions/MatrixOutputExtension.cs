@@ -19,15 +19,18 @@ namespace MatrixDotNet.Extensions
             if (matrix is null)
                 throw new NullReferenceException();
             {
+                StringBuilder builder = new StringBuilder();
+                builder.AppendLine($"Number of rows: {matrix.Rows}");
+                builder.AppendLine($"Number of columns: {matrix.Columns}\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine(Output(matrix));
+                Console.WriteLine(Output(matrix,builder));
                 Console.ResetColor();
             }
         }
         
         
         /// <summary>
-        /// Saves matrix to html.
+        /// Saves matrix to html or markdown.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="template">config for creates html or markdown.</param>
@@ -53,20 +56,18 @@ namespace MatrixDotNet.Extensions
         public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix,Template template) where T : unmanaged
         {
             await SaveAsync(matrix, template);
-            using var stream = new StreamWriter(template.Path,false,Encoding.UTF8);
+            using var stream = new StreamReader(template.Path,Encoding.UTF8);
+            await template.Open();
+            stream.Close();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"\n\\\\*** File {template.Title} opened");
             Console.ResetColor();
         }
         
-        internal static string Output<T>(Matrix<T> matrix) where T : unmanaged
+        internal static string Output<T>(Matrix<T> matrix,StringBuilder builder) where T : unmanaged
         {
             int[] output = Template.InitColumnSize(matrix);
-            StringBuilder builder = new StringBuilder();
             builder.AppendLine();
-            
-            builder.AppendLine($"Number of rows: {matrix.Rows}");
-            builder.AppendLine($"Number of columns: {matrix.Columns}\n");
             
             for (int i = 0; i < matrix.Rows; i++)
             {
