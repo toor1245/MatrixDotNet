@@ -1,7 +1,5 @@
-﻿
-using MatrixDotNet;
+﻿using MatrixDotNet;
 using MatrixDotNet.Extensions;
-using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Inverse;
 
 namespace Samples
@@ -14,13 +12,13 @@ namespace Samples
             Matrix<double> matrix = new double[3,3]
             {
                 { 1,   5,   2 },
-                { 31,   2341,   3 },
-                { 2,   4234,   8324 },
+                { 0,   0,   3 },
+                { 2,   0,   8 },
             };
 
             matrix.Pretty();
             var matrixB = matrix.GaussianEliminationInverse();
-            matrixB.SaveAndOpenAsync("test");
+            matrixB.SaveAndOpenAsync("test2");
             matrixB.Pretty();
         }
     }
