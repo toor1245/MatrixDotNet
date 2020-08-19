@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Options;
+
 namespace Samples
 {
     class Program
