@@ -1,7 +1,7 @@
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using MatrixDotNet.Extensions.Statistics;
 
@@ -40,7 +40,19 @@ namespace MatrixDotNet.Extensions.Options
         internal abstract string Path { get; }
         
         internal abstract string FullPath { get; }
-
+        
+        protected string PathBin
+        {
+            get
+            {
+#if OS_WINDOWS
+                return @$"{Folder}\{Title}.dat";
+#elif OS_LINUX
+                return @$"{Folder}/{Title}.dat";
+#endif
+            }
+        }
+        
         #endregion
 
         #region .ctor
@@ -111,7 +123,23 @@ namespace MatrixDotNet.Extensions.Options
 
             return output;
         }
+        
+        public Task BinarySaveAsync<T>(Matrix<T> matrix) where T : unmanaged
+        {
+            var binaryFormatter = new BinaryFormatter();
+            using var stream = new FileStream(PathBin,FileMode.OpenOrCreate);
+            binaryFormatter.Serialize(stream,matrix);
+            return Task.CompletedTask;
+        }
 
+        public Task<Matrix<T>> BinaryOpenAsync<T>() where T : unmanaged
+        {
+            var binaryFormatter = new BinaryFormatter();
+            using var stream = new FileStream(PathBin,FileMode.OpenOrCreate);
+            var des = (Matrix<T>)binaryFormatter.Deserialize(stream);
+            return Task.FromResult(des);
+        }
+        
         #endregion
     }
 }

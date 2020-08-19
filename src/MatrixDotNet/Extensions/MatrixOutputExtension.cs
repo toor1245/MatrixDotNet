@@ -42,7 +42,7 @@ namespace MatrixDotNet.Extensions
             {
                 using var stream = new StreamWriter(template.Path,false,Encoding.UTF8);
                 await stream.WriteLineAsync(template.Save(matrix));
-                stream.Close();
+                await template.BinarySaveAsync(matrix);
             }
             catch (Exception e)
             {
@@ -57,16 +57,25 @@ namespace MatrixDotNet.Extensions
         {
             await SaveAsync(matrix, template);
             using var stream = new StreamReader(template.Path,Encoding.UTF8);
+            await template.BinarySaveAsync(matrix);
             await template.Open();
-            stream.Close();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"\n\\\\*** File {template.Title} opened");
             Console.ResetColor();
         }
+
+        public static async Task<Matrix<T>> OpenBinaryAsync<T>(Template template) where T : unmanaged
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine("Open File");
+            Console.ResetColor();
+            return await template.BinaryOpenAsync<T>();
+        }
+        
         
         internal static string Output<T>(Matrix<T> matrix,StringBuilder builder) where T : unmanaged
         {
-            int[] output = Template.InitColumnSize(matrix);
+            var output = Template.InitColumnSize(matrix);
             builder.AppendLine();
             
             for (int i = 0; i < matrix.Rows; i++)

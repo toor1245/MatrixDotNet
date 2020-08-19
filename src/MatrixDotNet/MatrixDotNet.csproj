@@ -33,7 +33,7 @@ Stable works with MatrixDotNet.Extensions.Core.</PackageReleaseNotes>
 
 <PropertyGroup Condition="'$(OS_WINDOWS)'=='true'">
     <DefineConstants>OS_WINDOWS</DefineConstants>
-  </PropertyGroup>
+  </PropertyGroup> 
   <PropertyGroup Condition="'$(OS_MAC)'=='true'">
     <DefineConstants>OS_MAC</DefineConstants>
   </PropertyGroup>

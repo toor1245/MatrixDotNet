@@ -14,6 +14,7 @@ namespace MatrixDotNet
     /// Represents math matrix.
     /// </summary>
     /// <typeparam name="T">integral type.</typeparam>
+    [Serializable]
     public sealed class Matrix<T> : ICloneable, IEnumerable<T>
         where T : unmanaged
     {
@@ -636,7 +637,7 @@ namespace MatrixDotNet
                 _dimension = 0;
                 _position = -1;
             }
-
+            
             public T Current => _matrix[_dimension, _position];
 
             object IEnumerator.Current => Current;

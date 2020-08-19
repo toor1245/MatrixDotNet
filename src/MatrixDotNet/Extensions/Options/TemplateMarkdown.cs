@@ -117,8 +117,8 @@ namespace MatrixDotNet.Extensions.Options
 #elif OS_LINUX
             Process.Start("cat", Path);
 #endif
-            return Task.CompletedTask;
             Console.ResetColor();
+            return Task.CompletedTask;
         }
     }
 }
