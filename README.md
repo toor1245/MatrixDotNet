@@ -53,9 +53,11 @@ So lets consider decompositions which supported by MatrixDotNet.
 ##### LUP decomposition
 
 The LU decomposition finds a representation for the square matrix A as:
+
 <h5> A = LU</h5>
-* where L is lower-triangular matrix `n x n` 
-* where U is upper-triangular matrix `n x n`
+
+ *  where L is lower-triangular matrix `n x n` 
+ *  where U is upper-triangular matrix `n x n`
 
 for example lets take matrix size `3 x 3` 
 
