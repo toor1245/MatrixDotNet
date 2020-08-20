@@ -91,7 +91,7 @@ namespace MatrixDotNet.Extensions.Statistics
         }
         
         /// <summary>
-        /// Gets maximum value by each column.
+        /// Gets minimum value by each column.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <typeparam name="T">unmanaged type</typeparam>
@@ -112,6 +112,38 @@ namespace MatrixDotNet.Extensions.Statistics
                     if(comparer.Compare(matrix[j,i],max) < 0)
                     {
                         max = matrix[j,i];
+                    }
+                }
+
+                result[i] = max;
+
+            }
+            return result;
+        }
+        
+        
+        /// <summary>
+        /// Gets minimum value by each row.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>The matrix.</returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public static T[] MinRows<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+
+            T[] result = new T[matrix.Rows];
+            Comparer comparer = Comparer.Default;
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                T max = matrix[i,0];
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    if(comparer.Compare(matrix[i,j],max) < 0)
+                    {
+                        max = matrix[i,j];
                     }
                 }
 
