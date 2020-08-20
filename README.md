@@ -12,8 +12,6 @@
 
 </h3>
 
-MatrixDotNet is a powerful .NET library for calculate matrix. You can install MatrixDotNet via [NuGet package](https://www.nuget.org/packages/MatrixDotNet/).
-
 <h3 align="center">
   <a href="#Features">Features</a>
   <span> · </span>
@@ -25,6 +23,9 @@ MatrixDotNet is a powerful .NET library for calculate matrix. You can install Ma
   <span> · </span>
   <a href="https://toor1245.github.io/MatrixDotNet/api/index.html">API Reference</a>
 </h3> 
+
+MatrixDotNet is a powerful .NET library for calculate matrix. You can install MatrixDotNet via [NuGet package](https://www.nuget.org/packages/MatrixDotNet/).
+
 
 
 ## Features
