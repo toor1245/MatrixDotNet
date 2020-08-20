@@ -112,5 +112,21 @@ namespace MatrixDotNet.Extensions.Builder
 
             return matrix;
         }
+        
+        
+        public static Matrix<double> Random(int row,int column,int startRandom,int endRandom)
+        {
+            Matrix<double> matrix = new Matrix<double>(row,column);
+            Random random = new Random();
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    matrix[i, j] = random.Next(startRandom,endRandom);
+                }
+            }
+
+            return matrix;
+        }
     }
 }

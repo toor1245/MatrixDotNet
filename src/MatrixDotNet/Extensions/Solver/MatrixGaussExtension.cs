@@ -1,6 +1,6 @@
 using System;
 
-namespace MatrixDotNet.Extensions.SolveExtension
+namespace MatrixDotNet.Extensions.Solver
 {
     public static partial class Solve 
     {
@@ -10,7 +10,7 @@ namespace MatrixDotNet.Extensions.SolveExtension
         /// <param name="A1">the matrix A.</param>
         /// <param name="b1">the matrix B.</param>
         /// <returns></returns>
-        public static double[] Gauss(this Matrix<double> A1, double[] b1) {
+        public static double[] GaussSolve(this Matrix<double> A1, double[] b1) {
 
             // Input data
             Matrix<double> A = A1.Clone() as Matrix<double>;

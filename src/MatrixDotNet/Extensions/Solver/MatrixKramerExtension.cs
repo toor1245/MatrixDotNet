@@ -1,7 +1,7 @@
 ﻿using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Determinant;
 
-namespace MatrixDotNet.Extensions.SolveExtension
+namespace MatrixDotNet.Extensions.Solver
 {
     public static partial class Solve
     {
