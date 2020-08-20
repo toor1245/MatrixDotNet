@@ -38,10 +38,10 @@ MatrixDotNet is a powerful .NET library for calculate matrix. You can install Ma
 ### Have many algorithms such sections as: factorization, solver, conversion matrix, statistics
 Lets consider several algorithms on each section.
 
-* <a href = "####Factorizations">Factorizations</a>
-* <a href = "####Solving a linear system">Solving a linear system</a>
-* <a href = "####Conversion matrix">Conversion matrix</a>
-* <a href = "####Statistics">Statistics</a>
+* <a href = "#Factorizations">Factorizations</a>
+* <a href = "#Solving a linear system">Solving a linear system</a>
+* <a href = "#Conversion matrix">Conversion matrix</a>
+* <a href = "#Statistics">Statistics</a>
 
 #### Factorizations
 
