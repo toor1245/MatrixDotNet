@@ -1,6 +1,6 @@
-using MatrixDotNet.Extensions.Decomposition;
+using MatrixDotNet.Extensions.Decompositions;
 
-namespace MatrixDotNet.Extensions.Determinant
+namespace MatrixDotNet.Extensions.Determinants
 {
     public static partial class Determinant 
     {
@@ -17,8 +17,8 @@ namespace MatrixDotNet.Extensions.Determinant
             {
                 det *= upper[i, i];
             }
-            
-            return det;
+
+            return (Decomposition.Exchanges & 0b1) == 0 ?  det : -det;
         }
     }
 }

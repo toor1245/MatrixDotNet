@@ -2,7 +2,7 @@ using System;
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Decomposition;
+using MatrixDotNet.Extensions.Decompositions;
 
 namespace Samples.Samples
 {

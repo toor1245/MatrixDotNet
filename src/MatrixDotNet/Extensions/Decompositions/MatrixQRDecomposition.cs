@@ -1,7 +1,7 @@
 using System;
 using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.Extensions.Decomposition
+namespace MatrixDotNet.Extensions.Decompositions
 {
     public static partial class Decomposition  
     {

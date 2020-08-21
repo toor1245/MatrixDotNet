@@ -1,7 +1,7 @@
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.MathExpression;
 
-namespace MatrixDotNet.Extensions.Decomposition
+namespace MatrixDotNet.Extensions.Decompositions
 {
     /// <summary>
     /// Represents any algorithm`s for decomposition of matrix.

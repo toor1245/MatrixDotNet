@@ -1,5 +1,5 @@
 ﻿using MatrixDotNet.Exceptions;
-using MatrixDotNet.Extensions.Determinant;
+using MatrixDotNet.Extensions.Determinants;
 
 namespace MatrixDotNet.Extensions.Solver
 {
@@ -53,7 +53,7 @@ namespace MatrixDotNet.Extensions.Solver
                 throw new MatrixDotNetException(
                     "Rows quantity matrix not equal array quantity",nameof(matrix),nameof(arr));
             
-            double det = matrix.GetDeterminant();
+            double det = matrix.GetMinorDeterminant();
             Matrix<double> temp = matrix.Clone() as Matrix<double>;
             double[] result = new double[matrix.Columns];
             
@@ -63,7 +63,7 @@ namespace MatrixDotNet.Extensions.Solver
                 {
                     if (temp != null) temp[j, i] = arr[j];
                 }
-                result[i] = temp.GetDeterminant() / det;
+                result[i] = temp.GetMinorDeterminant() / det;
             }
             return result;
         }

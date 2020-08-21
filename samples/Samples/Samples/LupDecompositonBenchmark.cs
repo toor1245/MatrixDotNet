@@ -2,7 +2,8 @@ using System;
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Core.Optimization.Unsafe.Determinant;
-using MatrixDotNet.Extensions.Determinant;
+using MatrixDotNet.Extensions.Determinants;
+using Determinant = MatrixDotNet.Extensions.Determinants.Determinant;
 
 namespace Samples.Samples
 {
@@ -28,7 +29,7 @@ namespace Samples.Samples
         //[Benchmark]
         public double LUPDecomposition()
         {
-            return Determinant.GetDeterminant(_matrix1);
+            return _matrix1.GetMinorDeterminant();
         }
         
         [Benchmark]

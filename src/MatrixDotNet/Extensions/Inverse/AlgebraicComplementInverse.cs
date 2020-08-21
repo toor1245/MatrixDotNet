@@ -1,6 +1,6 @@
 using MatrixDotNet.Extensions.Complement;
 using MatrixDotNet.Extensions.Conversion;
-using MatrixDotNet.Extensions.Determinant;
+using MatrixDotNet.Extensions.Determinants;
 
 namespace MatrixDotNet.Extensions.Inverse
 {

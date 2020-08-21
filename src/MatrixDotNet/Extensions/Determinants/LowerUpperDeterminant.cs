@@ -1,7 +1,7 @@
-using MatrixDotNet.Extensions.Decomposition;
+using MatrixDotNet.Extensions.Decompositions;
 using MatrixDotNet.Extensions.MathExpression;
 
-namespace MatrixDotNet.Extensions.Determinant
+namespace MatrixDotNet.Extensions.Determinants
 {
     public static partial class Determinant
     {

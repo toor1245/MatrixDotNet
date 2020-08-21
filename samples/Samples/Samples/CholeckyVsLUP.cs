@@ -3,8 +3,6 @@ using BenchmarkDotNet.Attributes;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition;
 using MatrixDotNet.Extensions.Core.Optimization.Unsafe.Determinant;
-using MatrixDotNet.Extensions.Decomposition;
-using MatrixDotNet.Extensions.Determinant;
 
 namespace Samples.Samples
 {

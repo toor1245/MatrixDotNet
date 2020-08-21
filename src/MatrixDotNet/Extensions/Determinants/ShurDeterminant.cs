@@ -2,7 +2,7 @@ using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Complement;
 
-namespace MatrixDotNet.Extensions.Determinant
+namespace MatrixDotNet.Extensions.Determinants
 {
     public static partial class Determinant
     {

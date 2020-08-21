@@ -4,13 +4,14 @@ using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.MathExpression;
 
-namespace MatrixDotNet.Extensions.Decomposition
+namespace MatrixDotNet.Extensions.Decompositions
 {
     /// <summary>
     /// Represents any algorithm`s for decomposition of matrix.
     /// </summary>
     public static partial class Decomposition
     {
+        internal static int Exchanges { get; set; }
         /// <summary>
         /// Gets lower-triangular matrix, upper init zero values.
         /// </summary>
@@ -146,11 +147,15 @@ namespace MatrixDotNet.Extensions.Decomposition
                         index = j;
                     }
                 }
+                
+                if(max == 0)
+                    continue;
 
                 if (index != i)
                 {
                     upper.SwapRows(i,index);
                     matrixP.SwapRows(i,index);
+                    Exchanges++;
                 }
 
                 for (int j = i + 1; j < n; j++)

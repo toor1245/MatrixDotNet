@@ -4,7 +4,7 @@ using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.MathExpression;
 
-namespace MatrixDotNet.Extensions.Determinant
+namespace MatrixDotNet.Extensions.Determinants
 {
     public static partial class Determinant
     {
@@ -90,7 +90,7 @@ namespace MatrixDotNet.Extensions.Determinant
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>double.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static int GetDeterminant(this Matrix<int> matrix)
+        public static int GetMinorDeterminant(this Matrix<int> matrix)
         {
             if (!matrix.IsSquare)
             {
@@ -126,7 +126,7 @@ namespace MatrixDotNet.Extensions.Determinant
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>double.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static long GetDeterminant(this Matrix<long> matrix)
+        public static long GetMinorDeterminant(this Matrix<long> matrix)
         {
             if (!matrix.IsSquare)
             {
@@ -162,7 +162,7 @@ namespace MatrixDotNet.Extensions.Determinant
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>double.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static float GetDeterminant(this Matrix<float> matrix)
+        public static float GetMinorDeterminant(this Matrix<float> matrix)
         {
             if (!matrix.IsSquare)
             {
@@ -198,7 +198,7 @@ namespace MatrixDotNet.Extensions.Determinant
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>double.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static double GetDeterminant(this Matrix<double> matrix)
+        public static double GetMinorDeterminant(this Matrix<double> matrix)
         {
             if (!matrix.IsSquare)
             {
@@ -221,7 +221,7 @@ namespace MatrixDotNet.Extensions.Determinant
             for (int i = 0; i < temp.GetLength(1); i++)
             {
                 Matrix<double> minor =  matrix.GetMinor(i);
-                result += sign * temp[0, i] * minor.GetDeterminant();
+                result += sign * temp[0, i] * minor.GetMinorDeterminant();
                 sign = -sign;
             }
             return result;
@@ -234,7 +234,7 @@ namespace MatrixDotNet.Extensions.Determinant
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>double.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static decimal GetDeterminant(this Matrix<decimal> matrix)
+        public static decimal GetMinorDeterminant(this Matrix<decimal> matrix)
         {
             if (!matrix.IsSquare)
             {

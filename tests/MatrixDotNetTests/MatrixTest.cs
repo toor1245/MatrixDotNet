@@ -252,7 +252,7 @@ namespace MatrixDotNetTests
             };
             
             // Assert Act
-            Assert.Throws<ArgumentNullException>(() => matrixB.Equals(null));
+            Assert.Throws<NullReferenceException>(() => matrixB.Equals(null));
         }
 
         [Fact]

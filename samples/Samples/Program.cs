@@ -3,7 +3,9 @@ using System;
 using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Determinants;
 using MatrixDotNet.Extensions.Options;
+using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP;
 using Samples.Samples;
 
 namespace Samples
@@ -14,7 +16,15 @@ namespace Samples
         static async Task Main(string[] args)
         {
             
-            GaussSolveSample.Run();
+            Matrix<double> matrix = new double[,]
+            {
+                {4, 12, -16,5},
+                {12, 37, -43,6},
+                {-16, -43, 98,10},
+                {3,5,2,1}
+            };
+
+            Console.WriteLine(matrix.GetLowerUpperPermutationDeterminant());
             
             /*
 
