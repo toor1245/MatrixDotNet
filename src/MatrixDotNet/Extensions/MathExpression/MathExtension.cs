@@ -10,6 +10,13 @@ namespace MatrixDotNet.Extensions.MathExpression
         private static readonly Dictionary<(Type type,string op),Delegate> Cache =
             new Dictionary<(Type type, string op), Delegate>();
 
+        internal static bool IsFloatingPoint<T>()
+        {
+            return  typeof(T) == typeof(double) ||
+                    typeof(T) == typeof(float)  ||
+                    typeof(T) == typeof(decimal);
+        } 
+
         #region Arithmetic and Logic Op
         
         internal static T Add<T>(T left, T right) where T: unmanaged
@@ -84,6 +91,28 @@ namespace MatrixDotNet.Extensions.MathExpression
             var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
 
             Cache[(t, nameof(Divide))] = func;
+
+            return func(left, right);
+        }
+        
+        internal static T DivideBy<T,U>(T left, U right) 
+            where T : unmanaged
+            where U : unmanaged
+        {
+            var t = typeof(T);
+            var u = typeof(U);
+            if (Cache.TryGetValue((t, nameof(DivideBy)),out var del))
+                return del is Func<T,U,T> specificFunc
+                    ? specificFunc(left, right)
+                    : throw new InvalidOperationException(nameof(DivideBy));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var rightPar = Expression.Parameter(u,nameof(right));
+            var body = Expression.Divide(leftPar, Expression.Convert(Expression.Constant(right), t));
+            
+            var func = Expression.Lambda<Func<T,U,T>>(body, leftPar, rightPar).Compile();
+
+            Cache[(t, nameof(DivideBy))] = func;
 
             return func(left, right);
         }

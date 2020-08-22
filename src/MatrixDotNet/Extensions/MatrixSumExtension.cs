@@ -20,9 +20,9 @@ namespace MatrixDotNet.Extensions
                 throw new NullReferenceException();
             
             T sum = default;
-            for (int i = 0; i < matrix._Matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
                     sum = MathExtension.Add(sum,matrix[i,j]);
                 }

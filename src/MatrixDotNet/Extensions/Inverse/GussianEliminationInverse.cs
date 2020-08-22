@@ -7,6 +7,13 @@ namespace MatrixDotNet.Extensions.Inverse
 {
     public static partial class MatrixExtension
     {
+        /// <summary>
+        /// Inverse matrix with happen Gaussian elimination.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <returns>Inverse matrix.</returns>
+        /// <exception cref="MatrixDotNetException">matrix is not square.</exception>
+        /// <exception cref="NullReferenceException"></exception>
         public static Matrix<double> GaussianEliminationInverse(this Matrix<double> matrix)
         {
             if (!matrix.IsSquare)
