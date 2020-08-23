@@ -132,12 +132,12 @@ namespace MatrixDotNetTests
             // Arrange
             Matrix<int> matrix = new[,]
             {
-                {2, 3, 4, 5, 6},
-                {2, 9, 2, 8, 1},
-                {3, 4, 7, 3, 1}
+                { 2, 3, 4, 5, 6 },
+                { 2, 9, 2, 8, 1 },
+                { 3, 4, 7, 3, 1 }
             };
             
-            Matrix<int> expected =  new[,]
+            Matrix<int> expected = new[,]
             {
                 {2, 9, 2, 8, 1},
                 {3, 4, 7, 3, 1}
@@ -180,7 +180,7 @@ namespace MatrixDotNetTests
             // Arrange
             Matrix<int> matrix = new[,]
             {
-                { 2, 3, 4 },
+                { 1, 3, 4 },
                 { 2, 9, 2 },
                 { 3, 4, 7 },
                 { 3, 4, 7 }

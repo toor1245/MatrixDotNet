@@ -1,4 +1,5 @@
 using MatrixDotNet;
+using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Determinants;
 using Xunit;
 

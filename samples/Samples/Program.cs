@@ -2,6 +2,7 @@ using MatrixDotNet.Extensions;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using BenchmarkDotNet.Running;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Determinants;
@@ -15,21 +16,14 @@ namespace Samples
     class Program
     {
         
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            
-            Matrix<double> matrix = new double[,]
-            {
-                { 4, 3, -3 },
-                { 2, 4, 4  },
-                {-1, 0, -5 }
-            };
-            
-            // 21 / 6 = 
-
-            Console.WriteLine(matrix.Mean());
-            
-
+            Matrix<int> matrix = new Matrix<int>(4,4,1);
+            Table[] tables = {Table.Xi,Table.Ni,Table.Column,Table.Column};
+            Console.WriteLine((int)tables[0]);
+            ConfigIntervals<int> intervals = new ConfigIntervals<int>(matrix,tables,"Find IRV");
+            matrix.Pretty();
+            intervals.IntervalRowMean();
         }
     }
 }

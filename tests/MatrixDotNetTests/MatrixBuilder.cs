@@ -6,7 +6,8 @@ namespace MatrixDotNetTests
 {
     public class MatrixBuilder
     {
-        [Fact] public void BuildTest_CreateMatrixByExpressionXMulXPlusY_AssertMustBeEqual()
+        [Fact]
+        public void BuildTest_CreateMatrixByExpressionXMulXPlusY_AssertMustBeEqual()
         {
             // Arrange
             int[] arr = {1, 2, 3, 4};

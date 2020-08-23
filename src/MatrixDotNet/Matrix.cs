@@ -6,6 +6,8 @@ using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.MathExpression;
+using MatrixDotNet.Extensions.Statistics;
+using MatrixExtension = MatrixDotNet.Extensions.MatrixExtension;
 
 
 namespace MatrixDotNet
@@ -29,7 +31,7 @@ namespace MatrixDotNet
         {
             return _Matrix;
         }
-        
+
         /// <summary>
         /// Gets length matrix.
         /// </summary>
@@ -44,7 +46,7 @@ namespace MatrixDotNet
         /// Gets length columns of matrix.
         /// </summary>
         public int Columns => _Matrix.GetLength(1);
-        
+
         /// <summary>
         /// Checks square matrix.
         /// </summary>
