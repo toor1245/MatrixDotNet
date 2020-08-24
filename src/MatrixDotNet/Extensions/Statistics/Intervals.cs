@@ -62,7 +62,46 @@ namespace MatrixDotNet.Extensions.Statistics
             }
         }
 
+        /// <summary>
+        /// Gets low bound modal interval.
+        /// </summary>
         public T LowBoundModalInterval => Matrix[_indexFrequency, 0];
+
+        /// <summary>
+        /// Gets previous accumulated frequency
+        /// </summary>
+        public T PreviousAccumulatedFrequency
+        {
+            get
+            {
+                if(_indexFrequency - 1 != -1)
+                    return AccumulatedFrequency[_indexFrequency - 1];
+
+                return default;
+            }
+        }
+        
+        /// <summary>
+        /// Gets accumulated frequency.
+        /// </summary>
+        /// <returns>Accumulated frequency.</returns>
+        public T[] AccumulatedFrequency => GetAccumulatedFrequency();
+
+        /// <summary>
+        /// Gets modal interval.
+        /// </summary>
+        public T ModalInterval { get; }
+
+        /// <summary>
+        /// Gets median interval.
+        /// </summary>
+        public T MedianInterval { get; }
+        
+        /// <summary>
+        /// Gets volume of the statistical population
+        /// </summary>
+        public T VolumeStatisticalPopulation => Matrix.SumByColumn(ColumnIndex);
+        
 
         #endregion
         
@@ -78,14 +117,12 @@ namespace MatrixDotNet.Extensions.Statistics
         /// </exception>
         public Intervals(Matrix<T> matrix,TableIntervals[] columns) : base(matrix,columns,2)
         {
-
             if(matrix.Columns < 3)
                 throw new MatrixDotNetException("Intervals matrix must be more or equal 3");
 
             if (columns.Length > matrix.Columns - 2)
                 throw new MatrixDotNetException("Too much columns for matrix. Note: first two column it is intervals.");
             
-
             ColumnNames[0] = TableIntervals.IntervalFirst.ToString();
             ColumnNames[1] = TableIntervals.IntervalSecond.ToString();
             ColumnNumber[0] = (int)TableIntervals.IntervalFirst;
@@ -96,6 +133,9 @@ namespace MatrixDotNet.Extensions.Statistics
                 throw new MatrixDotNetException("Not correct intervals in second interval contains " +
                                                 "value which less first interval");
             }
+
+            ModalInterval = GetModalInterval();
+            MedianInterval = GetMedianInterval();
         }
         
         #endregion
@@ -111,17 +151,15 @@ namespace MatrixDotNet.Extensions.Statistics
             var xi = FindColumn(TableIntervals.Xi);
             var ni = FindColumn(TableIntervals.Ni);
             T upper = default;
-            T sumNi = default;
             for (var i = 0; i < Matrix.Rows; i++)
             {
-                var temp = Matrix[i,ni];
-                sumNi = MathExtension.Add(sumNi,temp);
-                upper = MathExtension.Add(upper,MathExtension.Multiply(Matrix[i,xi],temp));
+                upper = MathExtension.Add(upper,MathExtension.Multiply(Matrix[i,xi],Matrix[i,ni]));
             }
 
-            return MathExtension.Divide(upper, sumNi);
+            return MathExtension.Divide(upper, VolumeStatisticalPopulation);
         }
 
+        
         /// <summary>
         /// Gets modal interval.
         /// </summary>
@@ -131,15 +169,44 @@ namespace MatrixDotNet.Extensions.Statistics
         ///            (MaxFreq - PrevFreq) + (MaxFreq -  NextFreq)
         /// </example>
         /// <returns>modal interval.</returns>
-        public T GetModalInterval()
+        private T GetModalInterval()
         {
-            T upper = MathExtension.Sub(MaxFrequency, PreviousFrequency);
-            T lower = MathExtension.Add(MathExtension.Sub(MaxFrequency, PreviousFrequency),
+            var upper = MathExtension.Sub(MaxFrequency, PreviousFrequency);
+            var lower = MathExtension.Add(MathExtension.Sub(MaxFrequency, PreviousFrequency),
                 MathExtension.Sub(MaxFrequency,NextFrequency));
             
             
             return MathExtension.Add(LowBoundModalInterval,
                 MathExtension.Multiply(MathExtension.Divide(upper, lower), LengthModalInterval));
+        }
+
+        
+        /// <summary>
+        /// Gets MedianInterval
+        /// </summary>
+        /// <returns>Median interval.</returns>
+        private T GetMedianInterval()
+        {
+            var upper = MathExtension.Sub(MathExtension.MultiplyBy(VolumeStatisticalPopulation, 0.5),
+                PreviousAccumulatedFrequency);
+
+            var lower = MaxFrequency;
+            return MathExtension.Add(LowBoundModalInterval,
+                MathExtension.Multiply(MathExtension.Divide(upper, lower), LengthModalInterval));
+        }
+        
+        
+        // calculate accumulated frequency.
+        private T[] GetAccumulatedFrequency()
+        {
+            var accumulatedFreq = new T[Matrix.Rows];
+            accumulatedFreq[0] = Matrix[0,ColumnIndex];
+            for (int i = 0,k = 1; k < Matrix.Rows; i++,k++)
+            {
+                accumulatedFreq[k] = MathExtension.Add(accumulatedFreq[i],Matrix[k,ColumnIndex]);
+            }
+
+            return accumulatedFreq;
         }
         
         /// <summary>

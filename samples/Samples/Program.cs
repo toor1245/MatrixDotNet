@@ -19,7 +19,7 @@ namespace Samples
             };
             TableIntervals[] tables = {TableIntervals.Xi,TableIntervals.Ni };
             var intervals = new Intervals<double>(matrix,tables);
-            Console.WriteLine(intervals.GetModalInterval());
+            Console.WriteLine(intervals.MedianInterval);
 
         }
     }

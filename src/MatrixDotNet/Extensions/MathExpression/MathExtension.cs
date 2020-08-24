@@ -117,6 +117,28 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left, right);
         }
         
+        internal static T MultiplyBy<T,U>(T left, U right) 
+            where T : unmanaged
+            where U : unmanaged
+        {
+            var t = typeof(T);
+            var u = typeof(U);
+            if (Cache.TryGetValue((t, nameof(MultiplyBy)),out var del))
+                return del is Func<T,U,T> specificFunc
+                    ? specificFunc(left, right)
+                    : throw new InvalidOperationException(nameof(MultiplyBy));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var rightPar = Expression.Parameter(u,nameof(right));
+            var body = Expression.Multiply(leftPar, Expression.Convert(Expression.Constant(right), t));
+            
+            var func = Expression.Lambda<Func<T,U,T>>(body, leftPar, rightPar).Compile();
+
+            Cache[(t, nameof(MultiplyBy))] = func;
+
+            return func(left, right);
+        }
+        
         internal static bool GreaterThan<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
