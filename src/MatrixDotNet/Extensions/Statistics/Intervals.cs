@@ -32,7 +32,11 @@ namespace MatrixDotNet.Extensions.Statistics
             ColumnNumber[1] = (int) TableIntervals.IntervalSecond;
         }
 
-        public T IntervalRowMean()
+        /// <summary>
+        /// Gets interval row mean value.
+        /// </summary>
+        /// <returns>interval row mean value.</returns>
+        public T GetIntervalRowMean()
         {
             var xi = FindColumn(TableIntervals.Xi);
             var ni = FindColumn(TableIntervals.Ni);
@@ -41,8 +45,8 @@ namespace MatrixDotNet.Extensions.Statistics
             for (var i = 0; i < Matrix.Rows; i++)
             {
                 var temp = Matrix[i,ni];
-                sumNi = MathExtension.Add(sumNi, temp);
-                upper = MathExtension.Add(upper, MathExtension.Multiply(Matrix[i,xi],temp));
+                sumNi = MathExtension.Add(sumNi,temp);
+                upper = MathExtension.Add(upper,MathExtension.Multiply(Matrix[i,xi],temp));
             }
 
             return MathExtension.Divide(upper, sumNi);

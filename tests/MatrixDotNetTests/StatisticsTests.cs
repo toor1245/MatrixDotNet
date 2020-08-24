@@ -1,14 +1,16 @@
 using System;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Statistics;
+using Xunit;
 
-namespace Samples
+namespace MatrixDotNetTests
 {
-    class Program
+    public class StatisticsTests
     {
-        
-        static void Main(string[] args)
+        [Fact]
+        public void IntervalRowMeanTest_FindsIntervalRowMeanByMatrix5x4WhichReturns7Dot63_AssertMustBeTrue()
         {
+            // Arrange
             Matrix<double> matrix = new[,]
             {
                 { 5.7, 6.7,  6.2,  7.0  },
@@ -19,8 +21,13 @@ namespace Samples
             };
             TableIntervals[] tables = { TableIntervals.Ni,TableIntervals.Xi };
             var intervals = new Intervals<double>(matrix,tables);
-            Console.WriteLine(intervals.GetIntervalRowMean());
-
+            const double expected = 7.63;
+            
+            // Act
+            double actual = intervals.GetIntervalRowMean();
+            
+            // Assert
+            Assert.True(expected - actual < 0.00001);
         }
     }
 }
