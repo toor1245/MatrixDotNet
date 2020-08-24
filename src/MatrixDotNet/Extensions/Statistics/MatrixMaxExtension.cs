@@ -86,6 +86,35 @@ namespace MatrixDotNet.Extensions.Statistics
             
             return max;
         }
+        
+        /// <summary>
+        /// Gets maximum value of matrix by column index.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <param name="dimension">the index column.</param>
+        /// <param name="index">index row.</param>>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
+        public static T MaxByColumn<T>(this Matrix<T> matrix,int dimension,out int index) where T : unmanaged
+        {
+            if(matrix is null)
+                throw new NullReferenceException();
+
+            T max = matrix[0,dimension];
+            index = 0;
+            Comparer comparer = Comparer.Default;
+            for (int j = 0; j < matrix.Rows; j++)
+            {
+                if(comparer.Compare(matrix[j,dimension],max) > 0)
+                {
+                    max = matrix[j, dimension];
+                    index = j;
+                }
+            }
+            
+            return max;
+        }
 
         /// <summary>
         /// Gets maximum value by each row.

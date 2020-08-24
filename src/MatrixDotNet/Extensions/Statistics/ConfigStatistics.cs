@@ -52,7 +52,7 @@ namespace MatrixDotNet.Extensions.Statistics
             for (int i = 0; i < ColumnNumber.Length; i++)
             {
                 if (find == ColumnNumber[i])
-                    return ColumnNumber[i];
+                    return i;
             }
             
             throw new MatrixDotNetException("Value not found");

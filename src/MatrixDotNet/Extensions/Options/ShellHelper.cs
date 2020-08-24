@@ -27,5 +27,6 @@ namespace MatrixDotNet.Extensions.Options
             return result;
         }
     }
+    
 #endif
 }

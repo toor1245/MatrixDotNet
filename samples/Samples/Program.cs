@@ -17,9 +17,9 @@ namespace Samples
                 { 8.7, 9.7,  9.2,  4.0  },
                 { 9.7, 10.7, 10.2, 2.0  }
             };
-            TableIntervals[] tables = { TableIntervals.Ni,TableIntervals.Xi };
+            TableIntervals[] tables = {TableIntervals.Xi,TableIntervals.Ni };
             var intervals = new Intervals<double>(matrix,tables);
-            Console.WriteLine(intervals.GetIntervalRowMean());
+            Console.WriteLine(intervals.GetModalInterval());
 
         }
     }
