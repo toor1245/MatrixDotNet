@@ -1,7 +1,9 @@
 namespace MatrixDotNet.Extensions.Statistics
 {
-    public enum Table
+    public enum TableIntervals
     {
+        IntervalFirst,
+        IntervalSecond,
         Xi,
         Ni,
         NAccumulated,

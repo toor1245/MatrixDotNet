@@ -4,17 +4,36 @@ namespace MatrixDotNet.Extensions.Statistics
 {
     public abstract class ConfigStatistics<T> where T : unmanaged
     {
-        protected string Description { get;  }
-        protected int Size { get; }
-        protected Matrix<T> _matrix;
-        private Table[] _tables;
+        protected Matrix<T> Matrix { get; }
+        protected string[] ColumnNames { get; }
+        protected int[] ColumnNumber { get; }
+        private TableIntervals[] Tables { get; }
 
-        public ConfigStatistics(Matrix<T> matrix,Table[] tables,string title,int size)
+        protected ConfigStatistics(Matrix<T> matrix,TableIntervals[] tables,int index)
         {
-            Description = title;
-            Size = size;
-            _matrix = matrix;
-            _tables = tables;
+            Matrix = matrix;
+            Tables = tables;
+            ColumnNames = new string[matrix.Columns];
+            ColumnNumber = new int[matrix.Columns];
+            
+            for (int i = 0, k = index; i < Tables.Length; i++,k++)
+            {
+                ColumnNames[k] = Tables[i].ToString();
+                ColumnNumber[k] = (int)Tables[i];
+            }
+        }
+        
+        protected int FindColumn(TableIntervals table)
+        {
+            var find = (int)table;
+            
+            for (int i = 0; i < ColumnNumber.Length; i++)
+            {
+                if (find == ColumnNumber[i])
+                    return ColumnNumber[i];
+            }
+
+            return -1;
         }
         
     }

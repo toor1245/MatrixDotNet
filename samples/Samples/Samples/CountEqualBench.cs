@@ -13,11 +13,20 @@ namespace Samples.Samples
         public void Setup()
         {
             arr = new List<int>();
-            arr2 = new int[1000001];
+            arr2 = new int[15];
+            arr.Add(1024);
+            arr.Add(1024);
             for (int i = 0; i < arr2.Length ; i++)
             {
-                arr.Add(i);
-                arr2[i] = i;
+                if ((i & 0b1) == 0)
+                {
+                    arr.Add(1024);
+                }
+                else
+                {
+                    arr.Add(i);
+                }
+                
             }
         }
 
@@ -35,7 +44,22 @@ namespace Samples.Samples
             int find = 1024;
             for (int i = 0; i < arr.Count; i++)
             {
-                count += (~((arr[i] & find) - find) >> 31) & 1;
+                count = ((((arr[i] & find) - find) >> 31) ^ i) & i;
+            }
+            return count;
+        }
+        
+        [Benchmark]
+        public int CountEqualFor()
+        {
+            int count = 0;
+            int find = 1024;
+            for (int i = 0; i < arr.Count; i++)
+            {
+                if (arr[i] == find)
+                {
+                    count = i;
+                }
             }
             return count;
         }
