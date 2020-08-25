@@ -1,4 +1,3 @@
-using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.MathExpression;
 
@@ -8,13 +7,11 @@ namespace MatrixDotNet.Extensions.Statistics
     /// Represents calculations any statistics operations where first two columns are <see cref="TableIntervals"/>.
     /// </summary>
     /// <typeparam name="T">unmanaged type</typeparam>
-    public sealed class Intervals<T> : ConfigStatistics<T> where T : unmanaged
+    public sealed class Intervals<T> : SetupIntervals<T> where T : unmanaged
     {
         #region .fields
         
-        
         private int _indexFrequency;
-        
         
         #endregion
         
@@ -22,7 +19,7 @@ namespace MatrixDotNet.Extensions.Statistics
         
         private int Index => _indexFrequency;
 
-        private int ColumnIndex => FindColumn(TableIntervals.Ni);
+        private int ColumnIndex => GetIndexColumn(TableIntervals.Ni);
         
         /// <summary>
         /// Gets max frequency.
@@ -102,32 +99,41 @@ namespace MatrixDotNet.Extensions.Statistics
         /// </summary>
         public T VolumeStatisticalPopulation => Matrix.SumByColumn(ColumnIndex);
         
-
         #endregion
         
         #region .ctor
-        
-        /// <summary>Creates intervals matrix.</summary>
-        /// <para>First two columns initialize <see cref="TableIntervals"/>!!!</para>
-        /// <param name="matrix">the matrix.</param>
-        /// <param name="columns">the names of columns which must be less than matrix columns on 2 unit.</param>
+
+        /// <summary>
+        /// Initialize matrix with columns intervals.
+        /// </summary>
+        /// <param name="config">the configuration.</param>
         /// <exception cref="MatrixDotNetException">
-        /// throws exception if matrix columns less than 3 and
-        /// columns of matrix more than columns of table on 2 unit.
+        /// throws exception if columns of matrix less than 3,
+        /// throws exception if length <see cref="ConfigIntervals{T}.Intervals"/> length more than matrix column. 
         /// </exception>
-        public Intervals(Matrix<T> matrix,TableIntervals[] columns) : base(matrix,columns,2)
+        public Intervals(ConfigIntervals<T> config) : base(config)
         {
-            if(matrix.Columns < 3)
+            if (config.Matrix.Columns < 3)
                 throw new MatrixDotNetException("Intervals matrix must be more or equal 3");
 
-            if (columns.Length > matrix.Columns - 2)
-                throw new MatrixDotNetException("Too much columns for matrix. Note: first two column it is intervals.");
-            
+            if (config.Intervals.Length > config.Matrix.Columns - 2)
+                throw new MatrixDotNetException(
+                    "Too much columns for matrix. Note: first two column it is intervals.");
+
             ColumnNames[0] = TableIntervals.IntervalFirst.ToString();
             ColumnNames[1] = TableIntervals.IntervalSecond.ToString();
-            ColumnNumber[0] = (int)TableIntervals.IntervalFirst;
-            ColumnNumber[1] = (int)TableIntervals.IntervalSecond;
+            ColumnNumber[0] = (int) TableIntervals.IntervalFirst;
+            ColumnNumber[1] = (int) TableIntervals.IntervalSecond;
             
+            if (ColumnNames.Length - 2 > Intervals.Length)
+            {
+                for (int i = Intervals.Length - 1; i < ColumnNumber.Length; i++)
+                {
+                    ColumnNames[i] = TableIntervals.Column.ToString();
+                    ColumnNumber[i] = (int)TableIntervals.Column;
+                }
+            }
+
             if (!IsCorrectInterval())
             {
                 throw new MatrixDotNetException("Not correct intervals in second interval contains " +
@@ -148,8 +154,8 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <returns>interval row mean value.</returns>
         public T GetIntervalRowMean()
         {
-            var xi = FindColumn(TableIntervals.Xi);
-            var ni = FindColumn(TableIntervals.Ni);
+            var xi = GetIndexColumn(TableIntervals.Xi);
+            var ni = GetIndexColumn(TableIntervals.Ni);
             T upper = default;
             for (var i = 0; i < Matrix.Rows; i++)
             {
@@ -209,25 +215,8 @@ namespace MatrixDotNet.Extensions.Statistics
             return accumulatedFreq;
         }
         
-        /// <summary>
-        /// Checks matrix on correct intervals. 
-        /// </summary>
-        /// <returns><see cref="Boolean"/></returns>
-        private bool IsCorrectInterval()
-        {
-            var first = FindColumn(TableIntervals.IntervalFirst);
-            var second = FindColumn(TableIntervals.IntervalSecond);
-
-                for (int i = 0; i < Matrix.Rows; i++)
-                {
-                    if (MathExtension.GreaterThan(Matrix[i,first], Matrix[i,second]))
-                        return false;
-
-                }
-                
-            return true;
-        }
         
         #endregion
+        
     }
 }

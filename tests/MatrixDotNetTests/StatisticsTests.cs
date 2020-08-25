@@ -19,15 +19,17 @@ namespace MatrixDotNetTests
                 { 8.7, 9.7,  9.2,  4.0  },
                 { 9.7, 10.7, 10.2, 2.0  }
             };
-            TableIntervals[] tables = { TableIntervals.Ni,TableIntervals.Xi };
-            var intervals = new Intervals<double>(matrix,tables);
+            TableIntervals[] tables = { TableIntervals.Xi,TableIntervals.Ni };
+            
+            ConfigIntervals<double> configIntervals = new ConfigIntervals<double>(matrix,tables);
+            var intervals = new Intervals<double>(configIntervals);
             const double expected = 7.63;
             
             // Act
             double actual = intervals.GetIntervalRowMean();
             
             // Assert
-            Assert.True(expected - actual < 0.00001);
+            Assert.True(expected - actual < 0.0001);
         }
     }
 }

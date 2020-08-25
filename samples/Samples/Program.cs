@@ -18,8 +18,6 @@ namespace Samples
                 { 9.7, 10.7, 10.2, 2.0  }
             };
             TableIntervals[] tables = {TableIntervals.Xi,TableIntervals.Ni };
-            var intervals = new Intervals<double>(matrix,tables);
-            Console.WriteLine(intervals.MedianInterval);
 
         }
     }
