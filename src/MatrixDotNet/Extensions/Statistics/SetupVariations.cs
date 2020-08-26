@@ -19,8 +19,17 @@ namespace MatrixDotNet.Extensions.Statistics
         protected SetupVariations(ConfigVariations<T> variations) : base(variations.Matrix)
         {
             Variations = variations.Variations;
+
+            for (int i = 0; i < variations.Variations.Length; i++)
+            {
+                ColumnNames[i] = Variations[i].ToString();
+                ColumnNumber[i] = (int)Variations[i];
+            }
+
+            // Checks on exists Xi column in matrix.
+            GetIndexColumn(TableVariations.Xi);
         }
-        
+
         /// <summary>
         /// Gets index column in matrix.
         /// </summary>
@@ -30,5 +39,6 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             return FindColumn((int) tableVariations);
         }
+        
     }
 }
