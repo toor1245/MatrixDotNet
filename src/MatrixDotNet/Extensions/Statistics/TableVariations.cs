@@ -8,5 +8,6 @@ namespace MatrixDotNet.Extensions.Statistics
         Xi,
         Fi,
         OmegaI,
+        Column
     }
 }

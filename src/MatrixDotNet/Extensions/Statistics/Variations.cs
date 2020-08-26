@@ -1,3 +1,4 @@
+using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.MathExpression;
 
 namespace MatrixDotNet.Extensions.Statistics
@@ -14,7 +15,20 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <param name="variations">configuration</param>
         public Variations(ConfigVariations<T> variations) : base(variations)
         {
+            var length = variations.Variations.Length;
+            var n = Matrix.Columns;
             
+            if (length > n)
+                throw new MatrixDotNetException("Length variations more than matrix columns.");
+
+            if (length >= n) return;
+            
+            for (int i = length; i < n; i++)
+            {
+                ColumnNames[i] = TableIntervals.Column.ToString();
+                ColumnNumber[i] = (int) TableIntervals.Column;
+            }
+
         }
 
         /// <summary>
@@ -44,6 +58,22 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             
             return arr;
+        }
+
+        /// <summary>
+        /// Gets mean linear deviation.
+        /// </summary>
+        /// <returns>mean linear deviation.</returns>
+        public T GetMeanLinearDeviation()
+        {
+            T sum = default;
+            T[] arr = GetModulesDevMean();
+            for (int i = 0; i < Matrix.Rows; i++)
+            {
+                sum = MathExtension.Add(sum,arr[i]);
+            }
+
+            return MathExtension.DivideBy(sum,Matrix.Rows);
         }
         
     }
