@@ -8,6 +8,9 @@ namespace MatrixDotNet.Extensions.Statistics
     /// </summary>
     public abstract class SetupIntervals<T> : Setup<T>  where T : unmanaged
     {
+        /// <summary>
+        /// Gets table intervals.
+        /// </summary>
         protected TableIntervals[] Intervals { get; }
         
         /// <summary>
