@@ -47,7 +47,8 @@ namespace MatrixDotNet.Extensions.Statistics
                     return i;
             }
             
-            throw new MatrixDotNetException("Value not found");
+            throw new MatrixDotNetException("Not Found value");
         }
+        
     }
 }
