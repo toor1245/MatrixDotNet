@@ -6,6 +6,7 @@ namespace MatrixDotNet.Extensions.Statistics
     public enum TableVariations
     {
         Xi,
+        Ni,
         Fi,
         OmegaI,
         Column
