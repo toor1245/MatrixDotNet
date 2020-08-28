@@ -6,7 +6,7 @@
         <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</OS_MAC>
         <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
         <LangVersion>default</LangVersion>
-        <PackageVersion>0.0.3.2</PackageVersion>
+        <PackageVersion>0.0.4</PackageVersion>
         <Title>MatrixDotNet</Title>
         <Authors>Nikolay Hohsadze</Authors>
         <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
@@ -16,27 +16,13 @@
         <NeutralLanguage>en</NeutralLanguage>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
-        <Version>0.0.3.2</Version>
+        <Version>0.0.4</Version>
         <DocumentationMarkdownURL>https://github.com/toor1245/MatrixDotNet/blob/master/README.md</DocumentationMarkdownURL>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <Description>Powerful MatrixDotNet library for matrix calculation</Description>
         <RepositoryType>Library</RepositoryType>
-        <PackageReleaseNotes>Fixed LUP and LUP determinant.
-Fixed Strassen multiply.
-Add Strassen multiply async (Core).
-Enhance pretty output(correct with negative values which length digits more than max value)
-Cholesky Decomposition.
-Markdown and HTML create for matrix for linux and windows.
-Created Inverse namespace.
-Created namaspace `Statistics` and add minimum and maximum.
-Add min and max value by main diagonal.
-Cholesky determinant.
-Gaussian elimination inverse matrix.
-Open .dat file which assign to your matrix in application (support linux and windows).
-
-
-
-</PackageReleaseNotes>
+        <PackageReleaseNotes>
+        </PackageReleaseNotes>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Copyright>MatrixDotNet</Copyright>
         <Company>MatrixDotNet</Company>
