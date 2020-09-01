@@ -177,6 +177,13 @@ namespace MatrixDotNet.Extensions.Statistics
             return result;
         }
 
+        /// <summary>
+        /// Gets maximum by diagonal.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns></returns>
+        /// <exception cref="NullReferenceException"></exception>
         public static T MaxByMainDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if(matrix is null)
