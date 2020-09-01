@@ -17,6 +17,7 @@ namespace Samples
                 { 8.7, 9.7,  9.2,  4.0  },
                 { 9.7, 10.7, 10.2, 2.0  }
             };
+            
             TableIntervals[] tables = {TableIntervals.Xi,TableIntervals.Ni };
 
         }

@@ -9,6 +9,12 @@ namespace MatrixDotNet.Extensions.Statistics
     /// <typeparam name="T">unmanaged type.</typeparam>
     public sealed class Variations<T> : SetupVariations<T> where T : unmanaged
     {
+        
+        /// <summary>
+        /// Gets standard deviation
+        /// </summary>
+        public T StandardDeviation => MathExtension.Sqrt(GetSampleDispersion());
+        
         /// <summary>
         /// Initialize configuration.
         /// </summary>
@@ -30,6 +36,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
 
         }
+        
 
         /// <summary>
         /// Gets <c>mean</c> value by column table. 
@@ -38,6 +45,9 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <returns>mean value by column table.</returns>
         public T GetSampleMeanByTable(TableVariations table)
         {
+            if (table != TableVariations.Column)
+                throw new MatrixDotNetException("TableVariations.Column not allow");
+            
             return Matrix.MeanByColumn(GetIndexColumn(table));
         }
 
@@ -129,6 +139,29 @@ namespace MatrixDotNet.Extensions.Statistics
             }
 
             return MathExtension.DivideBy(sum,Matrix.Rows);
+        }
+
+        /// <summary>
+        /// Gets corrected dispersion.
+        /// </summary>
+        /// <remarks>
+        /// Finds by formula: s^2 = (n / (n - 1)) * Dispersion(sample) 
+        /// </remarks>
+        public T GetCorrectedDispersion()
+        {
+            var n = Matrix.Rows;
+            return MathExtension.MultiplyBy(GetSampleDispersion(),n - 1 / n);
+        }
+        
+        /// <summary>
+        /// Gets corrected standard deviation.
+        /// </summary>
+        /// <remarks>
+        /// Finds by formula: sqrt(s^2).
+        /// </remarks>
+        public T GetCorrectedStandardDeviation()
+        {
+            return MathExtension.Sqrt(GetCorrectedDispersion());
         }
     }
 }

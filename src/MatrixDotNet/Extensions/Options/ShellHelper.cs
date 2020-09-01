@@ -7,7 +7,7 @@ namespace MatrixDotNet.Extensions.Options
     
     public static class ShellHelper
     {
-        public static async Task<string> Bash(string cmd)
+        public static async Task Bash(string cmd)
         {
             var escapedArgs = cmd.Replace("\"", "\\\"");
             
@@ -23,8 +23,7 @@ namespace MatrixDotNet.Extensions.Options
                 }
             };
             process.Start();
-            var result = await process.StandardOutput.ReadToEndAsync();
-            return result;
+            await process.StandardOutput.ReadToEndAsync();
         }
     }
     

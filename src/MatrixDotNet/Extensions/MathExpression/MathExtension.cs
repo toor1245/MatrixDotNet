@@ -212,7 +212,7 @@ namespace MatrixDotNet.Extensions.MathExpression
 
             var func = Expression.Lambda<Func<T,T>>(negate, leftPar).Compile();
 
-            Cache[(t, nameof(Abs))] = func;
+            Cache[(t, nameof(Negate))] = func;
 
             return func(left);
         }
@@ -243,6 +243,29 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(start,end);
         }
         
+        internal static T Sqrt<T>(T arg) where T: unmanaged
+        {
+            var t = typeof(T);
+            if (Cache.TryGetValue((t, nameof(Sqrt)),out var del))
+                return del is Func<T,T> specificFunc
+                    ? specificFunc(arg)
+                    : throw new InvalidOperationException(nameof(Random));
+            
+            var argPar = Expression.Parameter(t, nameof(arg));
+
+            MethodInfo info = typeof(Math).GetMethod("Sqrt",new[]{argPar.Type});
+            
+            if(info is null)
+                throw new InvalidOperationException(nameof(Sqrt));
+
+            var call = Expression.Call(null, info,argPar);
+
+            var func = Expression.Lambda<Func<T,T>>(call,argPar).Compile();
+
+            Cache[(t, nameof(Random))] = func;
+
+            return func(arg);
+        }
         #endregion
     }
 }
