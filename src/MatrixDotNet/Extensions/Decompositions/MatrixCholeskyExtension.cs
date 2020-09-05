@@ -32,10 +32,10 @@ namespace MatrixDotNet.Extensions.Decompositions
                     {
                         for (int k = 0; k < j; k++)
                         {
-                            sum += (int) Math.Pow(lower[j, k], 2);
+                            sum += (int) System.Math.Pow(lower[j, k], 2);
                         }
 
-                        lower[j, j] = (int)Math.Sqrt(matrix[j, j] - sum); 
+                        lower[j, j] = (int) System.Math.Sqrt(matrix[j, j] - sum); 
                     }  
           
                     else
@@ -82,10 +82,10 @@ namespace MatrixDotNet.Extensions.Decompositions
                     {
                         for (int k = 0; k < j; k++)
                         {
-                            sum += (int) Math.Pow(lower[j, k], 2);
+                            sum += (int) System.Math.Pow(lower[j, k], 2);
                         }
 
-                        lower[j, j] = (int)Math.Sqrt(matrix[j, j] - sum); 
+                        lower[j, j] = (int) System.Math.Sqrt(matrix[j, j] - sum); 
                     }  
           
                     else
@@ -132,10 +132,10 @@ namespace MatrixDotNet.Extensions.Decompositions
                     {
                         for (int k = 0; k < j; k++)
                         {
-                            sum += (int) Math.Pow((double)lower[j, k], 2);
+                            sum += (int) System.Math.Pow((double)lower[j, k], 2);
                         }
 
-                        lower[j, j] = (int)Math.Sqrt((double) (matrix[j, j] - sum)); 
+                        lower[j, j] = (int) System.Math.Sqrt((double) (matrix[j, j] - sum)); 
                     }  
           
                     else

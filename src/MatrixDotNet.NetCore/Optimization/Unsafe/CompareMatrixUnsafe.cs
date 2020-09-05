@@ -38,7 +38,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
                 var span2 = new Span<float>(pointer2,length);
                 for (int i = 0; i < length; i++)
                 {
-                    if (Math.Abs(span1[i] - span2[i]) > 0.0001) return false;
+                    if (System.Math.Abs(span1[i] - span2[i]) > 0.0001) return false;
                 }
             }
 
@@ -78,7 +78,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
                 var span2 = new Span<double>(pointer2,length);
                 for (int i = 0; i < length; i++)
                 {
-                    if (Math.Abs(span1[i] - span2[i]) > 0.0001) return false;
+                    if (System.Math.Abs(span1[i] - span2[i]) > 0.0001) return false;
                 }
             }
 

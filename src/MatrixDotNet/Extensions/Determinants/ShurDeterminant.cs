@@ -23,7 +23,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
             var res1 = a11.GetLowerUpperDeterminant();
             
-            if(Math.Abs(res1) < 0.00001)
+            if(System.Math.Abs(res1) < 0.00001)
                 throw new MatrixDotNetException("a11 matrix determinant = 0");
 
             return res1 * res.GetLowerUpperDeterminant();
@@ -46,7 +46,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
             var res1 = a11.GetLowerUpperDeterminant();
             
-            if(Math.Abs(res1) < 0.00001)
+            if(System.Math.Abs(res1) < 0.00001)
                 throw new MatrixDotNetException("a11 matrix determinant = 0");
 
             return res1 * res.GetDeterminant();
@@ -69,7 +69,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
             var res1 = a11.GetLowerUpperDeterminant();
             
-            if(Math.Abs(res1) < 0.00001m)
+            if(System.Math.Abs(res1) < 0.00001m)
                 throw new MatrixDotNetException("a11 matrix determinant = 0");
 
             return res1 * res.GetDeterminant();

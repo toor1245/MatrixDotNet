@@ -14,14 +14,9 @@ namespace Samples.Samples
         public void Setup()
         {
             _matrix1 = BuildMatrix.Random<int>(64, 64, 1, 123);
+            
         }
 
-        [Benchmark]
-        public void Sort()
-        {
-            _matrix1.BubbleSort();
-        }
-        
         [Benchmark]
         public void SortUnsafe()
         {

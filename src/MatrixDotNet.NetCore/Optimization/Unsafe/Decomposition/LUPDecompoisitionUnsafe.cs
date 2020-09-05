@@ -15,6 +15,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
 
             _exchanges = 0;
             
+            
             int n = matrix.Rows;
             int m = matrix.Columns;
             lower = matrix.CreateIdentityMatrix();
@@ -33,14 +34,14 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
                     for (int j = i + 1; j < n; j++)
                     {
                         double current = test1[j];
-                        if (Math.Abs(current) > Math.Abs(max))
+                        if (System.Math.Abs(current) > System.Math.Abs(max))
                         {
                             max = current;
                             index = j;
                         }
                     }
                     
-                    if(Math.Abs(max) < 0.0001) continue;
+                    if(System.Math.Abs(max) < 0.0001) continue;
                     
                     if (index != i)
                     {
@@ -92,14 +93,14 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe.Decomposition
                     for (int j = i + 1; j < n; j++)
                     {
                         float current = test1[j];
-                        if (Math.Abs(current) > Math.Abs(max))
+                        if (System.Math.Abs(current) > System.Math.Abs(max))
                         {
                             max = current;
                             index = j;
                         }
                     }
                     
-                    if(Math.Abs(max) < 0.0001) continue;
+                    if(System.Math.Abs(max) < 0.0001) continue;
                         
                     if (index != i)
                     {

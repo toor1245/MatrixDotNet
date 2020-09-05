@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
-using MatrixDotNet.Extensions.MathExpression;
+using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet.Extensions
 {
@@ -14,7 +14,7 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>l-norm.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T LNorm<T>(this Matrix<T> matrix) where T : unmanaged
+        public static T LNorm<T>(this Matrix <T> matrix) where T : unmanaged
         {
             if(matrix is null)
                 throw new NullReferenceException();

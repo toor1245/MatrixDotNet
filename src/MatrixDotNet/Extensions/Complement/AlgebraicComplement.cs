@@ -1,5 +1,5 @@
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.MathExpression;
+using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet.Extensions.Complement
 {

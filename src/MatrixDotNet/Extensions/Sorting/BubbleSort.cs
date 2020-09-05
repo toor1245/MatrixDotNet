@@ -1,15 +1,14 @@
-﻿using MatrixDotNet.Extensions.MathExpression;
+﻿using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet.Extensions.Sorting
 {
-    public static partial class Sort
+    /// <summary>
+    /// Represents implementation of bubble sort.
+    /// </summary>
+    /// <typeparam name="T">unmanaged type.</typeparam>
+    public struct BubbleSort<T> : ISort<T> where T : unmanaged
     {
-        /// <summary>
-        /// Sorts matrix by rows.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        public static void BubbleSortByRows<T>(this Matrix<T> matrix) where T : unmanaged
+        public void SortByRows(Matrix<T> matrix)
         {
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -27,13 +26,8 @@ namespace MatrixDotNet.Extensions.Sorting
                 }
             }
         }
-
-        /// <summary>
-        /// Sorts matrix by column.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        public static void BubbleSortByColumn<T>(this Matrix<T> matrix) where T : unmanaged
+        
+        public void SortByColumns(Matrix<T> matrix)
         {
             for (int i = 0; i < matrix.Columns; i++)
             {
@@ -52,12 +46,7 @@ namespace MatrixDotNet.Extensions.Sorting
             }
         }
         
-        /// <summary>
-        /// Sorts main diagonal of matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        public static void BubbleSortMainDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
+        public void SortMainDiagonal(Matrix<T> matrix)
         {
             int x = matrix.Rows;
             int y = matrix.Columns;
@@ -77,12 +66,7 @@ namespace MatrixDotNet.Extensions.Sorting
             }
         }
         
-        /// <summary>
-        /// Sorts main diagonal of matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        public static void BubbleSortMinorDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
+        public void SortMinorDiagonal(Matrix<T> matrix)
         {
             int x = matrix.Rows;
             int y = matrix.Columns;
@@ -105,12 +89,7 @@ namespace MatrixDotNet.Extensions.Sorting
             }
         }
         
-        /// <summary>
-        /// Sorts whole matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        public static void BubbleSort<T>(this Matrix<T> matrix) where T : unmanaged
+        public void Sort(Matrix<T> matrix)
         {
 
             for (int j = 0; j < matrix.Length; j++)
@@ -141,5 +120,6 @@ namespace MatrixDotNet.Extensions.Sorting
                 }
             }
         }
+        
     }
 }

@@ -25,14 +25,14 @@ namespace MatrixDotNet.Extensions.Solver
 
                 int max = p;
                 for (int i = p + 1; i < N; i++) {
-                    if (Math.Abs(A[i,p]) > Math.Abs(A[max,p])) {
+                    if (System.Math.Abs(A[i,p]) > System.Math.Abs(A[max,p])) {
                         max = i;
                     }
                 }
                 double[] temp = A[p]; A[p] = A[max]; A[max] = temp;
                 double   t    = b[p]; b[p] = b[max]; b[max] = t;
 
-                if (Math.Abs(A[p][p]) <= 1e-10) {
+                if (System.Math.Abs(A[p][p]) <= 1e-10) {
                     return null;
                 }
 

@@ -3,25 +3,17 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace MatrixDotNet.Extensions.MathExpression
+namespace MatrixDotNet.Math
 {
-    internal static class MathExtension
+    public static partial class MathExtension
     {
         private static readonly Dictionary<(Type type,string op),Delegate> Cache =
             new Dictionary<(Type type, string op), Delegate>();
-
-        internal static bool IsFloatingPoint<T>()
-        {
-            return  typeof(T) == typeof(double) ||
-                    typeof(T) == typeof(float)  ||
-                    typeof(T) == typeof(decimal);
-        } 
-
-        #region Arithmetic and Logic Op
         
-        internal static T Add<T>(T left, T right) where T: unmanaged
+        public static T Add<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
+            
             if (Cache.TryGetValue((t, nameof(Add)),out var del))
                 return del is Func<T,T,T> specificFunc
                     ? specificFunc(left, right)
@@ -38,7 +30,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left, right);
         }
         
-        internal static T Sub<T>(T left, T right) where T: unmanaged
+        public static T Sub<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Sub)),out var del))
@@ -57,7 +49,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left, right);
         }
         
-        internal static T Multiply<T>(T left, T right) where T: unmanaged
+        public static T Multiply<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Multiply)),out var del))
@@ -76,7 +68,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left, right);
         }
         
-        internal static T Divide<T>(T left, T right) where T: unmanaged
+        public static T Divide<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Divide)),out var del))
@@ -95,7 +87,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left, right);
         }
         
-        internal static T DivideBy<T,U>(T left, U right) 
+        public static T DivideBy<T,U>(T left, U right) 
             where T : unmanaged
             where U : unmanaged
         {
@@ -117,7 +109,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left, right);
         }
         
-        internal static T MultiplyBy<T,U>(T left, U right) 
+        public static T MultiplyBy<T,U>(T left, U right) 
             where T : unmanaged
             where U : unmanaged
         {
@@ -139,46 +131,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left, right);
         }
         
-        internal static bool GreaterThan<T>(T left, T right) where T: unmanaged
-        {
-            var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(GreaterThan)),out var del))
-                return del is Func<T,T,bool> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(GreaterThan));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(t, nameof(right));
-            var body = Expression.GreaterThan(leftPar, rightPar);
-            
-            var func = Expression.Lambda<Func<T, T,bool>>(body, leftPar, rightPar).Compile();
-
-            Cache[(t, nameof(GreaterThan))] = func;
-
-            return func(left, right);
-        }
-        
-        internal static bool GreaterThanBy<T,U>(T left, U right) where T: unmanaged
-        {
-            var t = typeof(T);
-            var u = typeof(U);
-            if (Cache.TryGetValue((t, nameof(GreaterThanBy)),out var del))
-                return del is Func<T,U,bool> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(GreaterThanBy));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(t, nameof(right));
-            var body = Expression.GreaterThan(leftPar, Expression.Convert(Expression.Constant(right), t));
-            
-            var func = Expression.Lambda<Func<T, U, bool>>(body, leftPar, rightPar).Compile();
-
-            Cache[(t, nameof(GreaterThanBy))] = func;
-
-            return func(left, right);
-        }
-        
-        internal static T Increment<T>(T left) where T: unmanaged
+        public static T Increment<T>(T left) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Increment)),out var del))
@@ -196,7 +149,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left);
         }
         
-        internal static T Abs<T>(T left) where T: unmanaged
+        public static T Abs<T>(T left) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Abs)),out var del))
@@ -205,7 +158,7 @@ namespace MatrixDotNet.Extensions.MathExpression
                     : throw new InvalidOperationException(nameof(Abs));
             
             var leftPar = Expression.Parameter(t, nameof(left));
-            MethodInfo info = typeof(Math).GetMethod("Abs", new[] {leftPar.Type});
+            MethodInfo info = typeof(System.Math).GetMethod("Abs", new[] {leftPar.Type});
             if (info == null)
                 throw new InvalidOperationException(nameof(Abs));
 
@@ -218,7 +171,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left);
         }
         
-        internal static T Negate<T>(T left) where T: unmanaged
+        public static T Negate<T>(T left) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Negate)),out var del))
@@ -237,7 +190,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(left);
         }
         
-        internal static T Random<T>(int start,int end) where T: unmanaged
+        public static T Random<T>(int start,int end) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Random)),out var del))
@@ -263,7 +216,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             return func(start,end);
         }
         
-        internal static T Sqrt<T>(T arg) where T: unmanaged
+        public static T Sqrt<T>(T arg) where T: unmanaged
         {
             var t = typeof(T);
             if (Cache.TryGetValue((t, nameof(Sqrt)),out var del))
@@ -273,7 +226,7 @@ namespace MatrixDotNet.Extensions.MathExpression
             
             var argPar = Expression.Parameter(t, nameof(arg));
 
-            MethodInfo info = typeof(Math).GetMethod("Sqrt",new[]{argPar.Type});
+            MethodInfo info = typeof(System.Math).GetMethod("Sqrt",new[]{argPar.Type});
             
             if(info is null)
                 throw new InvalidOperationException(nameof(Sqrt));
@@ -286,6 +239,5 @@ namespace MatrixDotNet.Extensions.MathExpression
 
             return func(arg);
         }
-        #endregion
     }
 }

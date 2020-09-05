@@ -2,7 +2,7 @@
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
-using MatrixDotNet.Extensions.MathExpression;
+using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet.Extensions.Determinants
 {
@@ -63,7 +63,7 @@ namespace MatrixDotNet.Extensions.Determinants
             
             if(temp.Length == 4)
             {
-                return  MathExtension.Sub(
+                return MathExtension.Sub(
                     MathExtension.Multiply(temp[0, 0],temp[1, 1]),
                     MathExtension.Multiply(temp[0, 1],temp[1, 0]));
             }

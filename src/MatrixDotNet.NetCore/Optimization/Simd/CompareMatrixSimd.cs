@@ -118,7 +118,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
                     var vector1 = Avx.LoadVector256(pointer1 + i);
                     var vector2 = Avx.LoadVector256(pointer2 + i);
 
-                    if (Math.Abs(vector1.ToScalar() - vector2.ToScalar()) > 0.00001d)
+                    if (System.Math.Abs(vector1.ToScalar() - vector2.ToScalar()) > 0.00001d)
                     {
                         return false;
                     }
@@ -128,7 +128,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
 
                 while (i < lengthA)
                 {
-                    if (Math.Abs(span1[i] - span2[i]) > 0.00001d)
+                    if (System.Math.Abs(span1[i] - span2[i]) > 0.00001d)
                     {
                         return false;
                     }
@@ -162,7 +162,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
                     var vector1 = Avx.LoadVector256(pointer1 + i);
                     var vector2 = Avx.LoadVector256(pointer2 + i);
 
-                    if (Math.Abs(vector1.ToScalar() - vector2.ToScalar()) > 0.00001d)
+                    if (System.Math.Abs(vector1.ToScalar() - vector2.ToScalar()) > 0.00001d)
                     {
                         return false;
                     }
@@ -172,7 +172,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
 
                 while (i < lengthA)
                 {
-                    if (Math.Abs(span1[i] - span2[i]) > 0.00001f)
+                    if (System.Math.Abs(span1[i] - span2[i]) > 0.00001f)
                     {
                         return false;
                     }

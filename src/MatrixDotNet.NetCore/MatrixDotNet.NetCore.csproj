@@ -24,6 +24,7 @@ MatrixDotNet.Extensions works stable works with MatrixDotNet version 0.0.3.1
 If you didn't find answer for your question on this page, ask it on gitter .
 It whole works significantly faster than MatrixDotNet library due to unsafe programming and SIMD and reduce operations.
 </PackageReleaseNotes>
+        <RootNamespace>MatrixDotNet.Extensions.Core</RootNamespace>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
@@ -31,6 +32,7 @@ It whole works significantly faster than MatrixDotNet library due to unsafe prog
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\MatrixDotNet.Math\MatrixDotNet.Math.csproj" />
       <ProjectReference Include="..\MatrixDotNet\MatrixDotNet.csproj" />
     </ItemGroup>
 

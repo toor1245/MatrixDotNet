@@ -30,11 +30,11 @@ namespace MatrixDotNet.Extensions.Inverse
             for (int i = 0; i < size - 1; i++) 
             {
 
-                if (Math.Abs(a[i, i]) < 0.00001) 
+                if (System.Math.Abs(a[i, i]) < 0.00001) 
                 {
                     for (int j = i + 1; j < size; j++)
                     {
-                        if (Math.Abs(a[j, i]) < 0.00001) 
+                        if (System.Math.Abs(a[j, i]) < 0.00001) 
                         {
                             if (j == size - 1) 
                             {
@@ -64,11 +64,11 @@ namespace MatrixDotNet.Extensions.Inverse
             // Back substitution
             for (int i = size - 1; i > 0; i--) 
             {
-                if (Math.Abs(a[i, i]) < 0.00001) 
+                if (System.Math.Abs(a[i, i]) < 0.00001) 
                 {
                     for (int j = i + 1; j < size; j++) 
                     {
-                        if (Math.Abs(a[j, i]) < 0.00001)
+                        if (System.Math.Abs(a[j, i]) < 0.00001)
                         {
                             if (j == size - 1) 
                             {
@@ -100,7 +100,7 @@ namespace MatrixDotNet.Extensions.Inverse
             for (int i = 0; i < size; i++) 
             {
                 double d = a[i, i];
-                if (Math.Abs(d) < 0.00001) 
+                if (System.Math.Abs(d) < 0.00001) 
                     throw new MatrixDotNetException("Matrix is singular");
                 
                 for (int j = 0; j < size; j++) 

@@ -55,4 +55,8 @@
       <None Remove="templates\doctype.txt" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\MatrixDotNet.Math\MatrixDotNet.Math.csproj" />
+    </ItemGroup>
+
 </Project>

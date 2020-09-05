@@ -5,9 +5,7 @@ using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
-using MatrixDotNet.Extensions.MathExpression;
-using MatrixDotNet.Extensions.Statistics;
-using MatrixExtension = MatrixDotNet.Extensions.MatrixExtension;
+using MathExtension = MatrixDotNet.Math.MathExtension;
 
 
 namespace MatrixDotNet

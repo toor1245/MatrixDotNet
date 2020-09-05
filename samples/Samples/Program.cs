@@ -1,6 +1,13 @@
 using System;
+using System.Threading;
+using BenchmarkDotNet.Running;
 using MatrixDotNet;
+using MatrixDotNet.Extensions;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Core.Optimization.Unsafe.Sorting;
+using MatrixDotNet.Extensions.Sorting;
 using MatrixDotNet.Extensions.Statistics;
+using Samples.Samples;
 
 namespace Samples
 {
@@ -9,7 +16,7 @@ namespace Samples
         
         static void Main(string[] args)
         {
-            Matrix<double> matrix = new[,]
+            Matrix<double> matrix1 = new[,]
             {
                 { 5.7, 6.7,  6.2,  7.0  },
                 { 6.7, 7.7,  7.2,  11.0 },
@@ -18,8 +25,12 @@ namespace Samples
                 { 9.7, 10.7, 10.2, 2.0  }
             };
             
-            TableIntervals[] tables = {TableIntervals.Xi,TableIntervals.Ni };
-
+            
+            Matrix<int> matrix = BuildMatrix.Random<int>(5,5,-10,10);
+            matrix.Pretty();
+            CountingSort<int> sort;
+            sort.Sort(matrix);
+            matrix.Pretty();
         }
     }
 }

@@ -2,7 +2,7 @@
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
-using MatrixDotNet.Extensions.MathExpression;
+using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet.Extensions.Decompositions
 {
@@ -141,7 +141,7 @@ namespace MatrixDotNet.Extensions.Decompositions
                 for (int j = i + 1; j < n; j++)
                 {
                     double current = upper[i, j];
-                    if (Math.Abs(current) > Math.Abs(max))
+                    if (System.Math.Abs(current) > System.Math.Abs(max))
                     {
                         max = current;
                         index = j;

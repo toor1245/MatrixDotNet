@@ -1,5 +1,5 @@
 using System;
-using MatrixDotNet.Extensions.MathExpression;
+using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet.Extensions
 {
@@ -172,7 +172,7 @@ namespace MatrixDotNet.Extensions
                 {
                     var t = sum + matrix[i,j];
                     decimal error;
-                    if (Math.Abs(sum) >= matrix[i,j])
+                    if (System.Math.Abs(sum) >= matrix[i,j])
                     {
                         error = (sum - t) + matrix[i,j];
                     }
@@ -184,7 +184,7 @@ namespace MatrixDotNet.Extensions
                     sum = t;
                     t = cs + cs;
                     decimal error2;
-                    if (Math.Abs(cs) >= Math.Abs(error))
+                    if (System.Math.Abs(cs) >= System.Math.Abs(error))
                     {
                         error2 = (error - t) + cs;
                     }
@@ -209,7 +209,7 @@ namespace MatrixDotNet.Extensions
             {
                 var t = sum + matrix[dimension,j];
                 decimal error;
-                if (Math.Abs(sum) >= matrix[dimension,j])
+                if (System.Math.Abs(sum) >= matrix[dimension,j])
                 {
                     error = (sum - t) + matrix[dimension,j];
                 }
@@ -221,7 +221,7 @@ namespace MatrixDotNet.Extensions
                 sum = t;
                 t = cs + cs;
                 decimal error2;
-                if (Math.Abs(cs) >= Math.Abs(error))
+                if (System.Math.Abs(cs) >= System.Math.Abs(error))
                 {
                     error2 = (error - t) + cs;
                 }
@@ -247,7 +247,7 @@ namespace MatrixDotNet.Extensions
                 {
                     var t = sum + matrix[i,j];
                     double error;
-                    if (Math.Abs(sum) >= matrix[i,j])
+                    if (System.Math.Abs(sum) >= matrix[i,j])
                     {
                         error = (sum - t) + matrix[i,j];
                     }
@@ -259,7 +259,7 @@ namespace MatrixDotNet.Extensions
                     sum = t;
                     t = cs + cs;
                     double error2;
-                    if (Math.Abs(cs) >= Math.Abs(error))
+                    if (System.Math.Abs(cs) >= System.Math.Abs(error))
                     {
                         error2 = (error - t) + cs;
                     }
@@ -284,7 +284,7 @@ namespace MatrixDotNet.Extensions
             {
                 var t = sum + matrix[dimension,j];
                 double error;
-                if (Math.Abs(sum) >= matrix[dimension,j])
+                if (System.Math.Abs(sum) >= matrix[dimension,j])
                 {
                     error = (sum - t) + matrix[dimension,j];
                 }
@@ -296,7 +296,7 @@ namespace MatrixDotNet.Extensions
                 sum = t;
                 t = cs + cs;
                 double error2;
-                if (Math.Abs(cs) >= Math.Abs(error))
+                if (System.Math.Abs(cs) >= System.Math.Abs(error))
                 {
                     error2 = (error - t) + cs;
                 }
@@ -322,7 +322,7 @@ namespace MatrixDotNet.Extensions
                 {
                     float t = sum + matrix[i,j];
                     float error;
-                    if (Math.Abs(sum) >= matrix[i,j])
+                    if (System.Math.Abs(sum) >= matrix[i,j])
                     {
                         error = (sum - t) + matrix[i,j];
                     }
@@ -334,7 +334,7 @@ namespace MatrixDotNet.Extensions
                     sum = t;
                     t = cs + cs;
                     float error2;
-                    if (Math.Abs(cs) >= Math.Abs(error))
+                    if (System.Math.Abs(cs) >= System.Math.Abs(error))
                     {
                         error2 = (error - t) + cs;
                     }
@@ -359,7 +359,7 @@ namespace MatrixDotNet.Extensions
             {
                 var t = sum + matrix[dimension,j];
                 float error;
-                if (Math.Abs(sum) >= matrix[dimension,j])
+                if (System.Math.Abs(sum) >= matrix[dimension,j])
                 {
                     error = (sum - t) + matrix[dimension,j];
                 }
@@ -371,7 +371,7 @@ namespace MatrixDotNet.Extensions
                 sum = t;
                 t = cs + cs;
                 float error2;
-                if (Math.Abs(cs) >= Math.Abs(error))
+                if (System.Math.Abs(cs) >= System.Math.Abs(error))
                 {
                     error2 = (error - t) + cs;
                 }
