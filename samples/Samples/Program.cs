@@ -1,5 +1,6 @@
 using System;
 using MatrixDotNet.Extensions.Core;
+using MatrixDotNet.Extensions.Core.Extensions.Conversion;
 using MatrixDotNet.Extensions.Core.Extensions.Sorting;
 
 namespace Samples
@@ -63,21 +64,24 @@ namespace Samples
 
             //BenchmarkRunner.Run<BenchMatrixAsFixedBuffer>();
 
-            //ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
+            ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
 
             MatrixAsFixedBuffer matrixAsFixedBuffer1 = new double[,]
             {
                 {5, 5, 5, 5},
                 {1, 2, 3, 4},
                 {6, 7, 4, 9},
-                {6, 7, 8, 1}
+                {6, 7, 8, 1},
+                {5, 4, 1, 3}
             };
 
 
-            BubbleSortFixed sort;
-            
-            sort.SortByColumns(ref matrixAsFixedBuffer1);
-            Console.WriteLine(matrixAsFixedBuffer1);
+            // BubbleSortFixed sort;
+            // sort.SortByColumns(ref matrixAsFixedBuffer1);
+            var arr = new double[] { 1, 2 };
+            //var matrix = Converter.AddRow(ref matrixAsFixedBuffer1,arr,0);
+            var matrix2 = Converter.AddColumn(ref matrixAsFixedBuffer1, arr, 4);
+            Console.WriteLine(matrix2);
         }
     }
 }

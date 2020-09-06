@@ -15,28 +15,34 @@ namespace MatrixDotNet.Extensions.Core
         private const short Size = 6_561;
         
         [FieldOffset(0)]
-        public byte Rows;
+        private byte _rows;
         
         [FieldOffset(1)]
-        public byte Columns;
+        private byte _columns;
         
         [FieldOffset(2)]
-        public int Length;
+        private int _length;
         
         [FieldOffset(6)]
         private fixed double _array[Size];
 
         [FieldOffset(52494)]
-        public bool IsSquare;
+        private bool _isSquare;
 
         [FieldOffset(52495)]
-        public bool IsPrime;
+        private bool _isPrime;
         
         #endregion
         
         
         #region .properties
-        
+
+        public byte Rows => _rows;
+        public byte Columns => _columns;
+        public int Length => _length;
+        public bool IsPrime => _isPrime;
+        public bool IsSquare => _isSquare;
+
         /// <summary>
         /// Gets data of matrix as span.
         /// </summary>
@@ -46,7 +52,7 @@ namespace MatrixDotNet.Extensions.Core
             {
                 fixed (double* ptr = _array)
                 {
-                    return new Span<double>(ptr,Length);
+                    return new Span<double>(ptr,_length);
                 }
             }
         }
@@ -100,7 +106,7 @@ namespace MatrixDotNet.Extensions.Core
                 var span = new Span<double>(ptr,m * n);
                 var arr = Data;
                 
-                for (int i = 0; i < Length; i++)
+                for (int i = 0; i < _length; i++)
                 {
                     arr[i] = span[i];
                 }
@@ -123,11 +129,11 @@ namespace MatrixDotNet.Extensions.Core
             {
                 throw new MatrixDotNetException("Size must be less than 6_561!!!");
             }
-            Rows = rows;
-            Columns = columns;
-            Length = rows * columns;
-            IsSquare = rows == columns;
-            IsPrime = (rows & 0b01) == 0 && (columns & 0b01) == 0;
+            _rows = rows;
+            _columns = columns;
+            _length = rows * columns;
+            _isSquare = rows == columns;
+            _isPrime = (rows & 0b01) == 0 && (columns & 0b01) == 0;
         }
 
         /// <summary>
@@ -139,10 +145,10 @@ namespace MatrixDotNet.Extensions.Core
         /// <exception cref="MatrixDotNetException">matrices are not equal</exception>
         public static MatrixAsFixedBuffer AddByRef(ref MatrixAsFixedBuffer left,ref MatrixAsFixedBuffer right)
         {
-            var m = left.Rows;
-            var n = left.Columns;
+            var m = left._rows;
+            var n = left._columns;
             
-            if(m != right.Rows || n != right.Columns)
+            if(m != right._rows || n != right._columns)
                 throw new MatrixDotNetException("Not Equal");
             
             MatrixAsFixedBuffer matrix = new MatrixAsFixedBuffer(m,n);
@@ -170,16 +176,29 @@ namespace MatrixDotNet.Extensions.Core
         /// <returns></returns>
         public Span<double> GetColumn(int column)
         {
-            int m = Rows;
+            int m = _rows;
             fixed (double* ptr = _array)
             {
                 Span<double> span2 = new Span<double>(ptr,m);
-                Span<double> span = new Span<double>(ptr,Length);
+                Span<double> span = new Span<double>(ptr,_length);
                 for (int i = 0; i < m; i++)
                 {
-                    span2[i] = span[column + Columns * i];
+                    span2[i] = span[column + _columns * i];
                 }
                 return span2;
+            }
+        }
+
+        public void SetColumn(int column,Span<double> data)
+        {
+            int m = _rows;
+            fixed (double* ptr = _array)
+            {
+                Span<double> span2 = new Span<double>(ptr,_length);
+                for (int i = 0; i < m; i++)
+                {
+                    span2[column + _columns * i] = data[i];
+                }
             }
         }
         
@@ -188,10 +207,10 @@ namespace MatrixDotNet.Extensions.Core
             StringBuilder builder = new StringBuilder();
             fixed (double* ptr = _array)
             {
-                var span1 = new Span<double>(ptr,Length);
-                for (int i = 0; i < Rows; i++)
+                var span1 = new Span<double>(ptr,_length);
+                for (int i = 0; i < _rows; i++)
                 {
-                    var span = span1.Slice(i * Columns,Columns);
+                    var span = span1.Slice(i * _columns,_columns);
                     foreach (var t in span)
                     {
                         builder.Append(t + " ");
@@ -213,7 +232,7 @@ namespace MatrixDotNet.Extensions.Core
         /// </summary>
         /// <param name="i">the row.</param>
         /// <param name="j">the column.</param>
-        public ref double this[int i, int j] => ref _array[i + Columns * j];
+        public ref double this[int i, int j] => ref _array[i + _columns * j];
 
         /// <summary>
         /// Gets arr of matrix.
@@ -225,7 +244,7 @@ namespace MatrixDotNet.Extensions.Core
             {
                 fixed (double* ptr = _array)
                 {
-                    return new Span<double>(ptr,Length).Slice(i * Columns,Columns);
+                    return new Span<double>(ptr,_length).Slice(i * _columns,_columns);
                 }
             }
 
@@ -233,7 +252,7 @@ namespace MatrixDotNet.Extensions.Core
             {
                 fixed (double* ptr = _array)
                 {
-                    var span = new Span<double>(ptr,Length).Slice(i * Columns,Columns);
+                    var span = new Span<double>(ptr,_length).Slice(i * _columns,_columns);
                     for (int j = 0; j < span.Length; j++)
                     {
                         span[j] = value[j];
