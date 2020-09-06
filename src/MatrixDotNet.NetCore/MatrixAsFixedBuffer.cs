@@ -11,6 +11,8 @@ namespace MatrixDotNet.Extensions.Core
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct MatrixAsFixedBuffer
     {
+        #region .fields
+        
         private const short Size = 6_561;
         
         [FieldOffset(0)]
@@ -30,7 +32,35 @@ namespace MatrixDotNet.Extensions.Core
 
         [FieldOffset(52495)]
         public bool IsPrime;
+        
+        #endregion
+        
+        
+        #region .properties
+        
+        /// <summary>
+        /// Gets data of matrix as span.
+        /// </summary>
+        public Span<double> Data
+        {
+            get
+            {
+                fixed (double* ptr = _array)
+                {
+                    return new Span<double>(ptr,Length);
+                }
+            }
+        }
+        
+        #endregion
 
+        #region .ctor
+        
+        /// <summary>
+        /// Initialize empty matrix.
+        /// </summary>
+        /// <param name="rows"></param>
+        /// <param name="columns"></param>
         public MatrixAsFixedBuffer(byte rows,byte columns) : this()
         {
             Initialize(rows,columns);
@@ -41,6 +71,11 @@ namespace MatrixDotNet.Extensions.Core
             return new MatrixAsFixedBuffer(matrix);
         }
         
+        
+        /// <summary>
+        /// Initialize matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
         public MatrixAsFixedBuffer(double[,] matrix) : this()
         {
             var m = matrix.GetLength(0);
@@ -58,7 +93,16 @@ namespace MatrixDotNet.Extensions.Core
                 }
             }
         }
+        
+        #endregion
 
+        /// <summary>
+        /// Init data of matrix.
+        /// </summary>
+        /// <param name="rows">the rows</param>
+        /// <param name="columns">the columns</param>
+        /// <exception cref="MatrixDotNetException">length matrix more than 6_561.</exception>
+        #region .methods
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void Initialize(byte rows,byte columns)
         {
@@ -73,17 +117,13 @@ namespace MatrixDotNet.Extensions.Core
             IsPrime = (rows & 0b01) == 0 && (columns & 0b01) == 0;
         }
 
-        public Span<double> Data
-        {
-            get
-            {
-                fixed (double* ptr = _array)
-                {
-                    return new Span<double>(ptr,Length);
-                }
-            }
-        }
-        
+        /// <summary>
+        /// Adds two matrices.
+        /// </summary>
+        /// <param name="left">the left matrix.</param>
+        /// <param name="right">the right matrix.</param>
+        /// <returns></returns>
+        /// <exception cref="MatrixDotNetException">matrices are not equal</exception>
         public static MatrixAsFixedBuffer AddByRef(ref MatrixAsFixedBuffer left,ref MatrixAsFixedBuffer right)
         {
             var m = left.Rows;
@@ -109,9 +149,64 @@ namespace MatrixDotNet.Extensions.Core
             
             return matrix;
         }
+        
+        /// <summary>
+        /// Gets column by row.
+        /// </summary>
+        /// <param name="column"></param>
+        /// <returns></returns>
+        public Span<double> GetColumn(int column)
+        {
+            int m = Rows;
+            double* array = stackalloc double[m];
+            fixed (double* ptr = _array)
+            {
+                Span<double> span = new Span<double>(ptr,Length);
+                for (int i = 0; i < m; i++)
+                {
+                    array[i] = span[column + Columns * i];
+                }
+            }
 
+            return new Span<double>(array,m);
+        }
+        
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder();
+            fixed (double* ptr = _array)
+            {
+                var span1 = new Span<double>(ptr,Length);
+                for (int i = 0; i < Rows; i++)
+                {
+                    var span = span1.Slice(i * Columns,Columns);
+                    foreach (var t in span)
+                    {
+                        builder.Append(t + " ");
+                    }
+
+                    builder.AppendLine();
+                }
+            }
+
+            return builder.ToString();
+        }
+        
+        #endregion
+        
+        #region .indexators
+        
+        /// <summary>
+        /// Gets value by ref.
+        /// </summary>
+        /// <param name="i">the row.</param>
+        /// <param name="j">the column.</param>
         public ref double this[int i, int j] => ref _array[i + Columns * j];
 
+        /// <summary>
+        /// Gets arr of matrix.
+        /// </summary>
+        /// <param name="i">the row</param>
         public Span<double> this[int i]
         {
             get
@@ -134,42 +229,6 @@ namespace MatrixDotNet.Extensions.Core
                 }
             }
         }
-
-        public Span<double> GetColumn(int column)
-        {
-            int m = Rows;
-            double* array = stackalloc double[m];
-            fixed (double* ptr = _array)
-            {
-                Span<double> span = new Span<double>(ptr,Length);
-                for (int i = 0; i < m; i++)
-                {
-                    array[i] = span[column + Columns * i];
-                }
-            }
-
-            return new Span<double>(array,m);
-        }
-
-        public override string ToString()
-        {
-            StringBuilder builder = new StringBuilder();
-            fixed (double* ptr = _array)
-            {
-                var span1 = new Span<double>(ptr,Length);
-                for (int i = 0; i < Rows; i++)
-                {
-                    var span = span1.Slice(i * Columns,Columns);
-                    foreach (var t in span)
-                    {
-                        builder.Append(t + " ");
-                    }
-
-                    builder.AppendLine();
-                }
-            }
-
-            return builder.ToString();
-        }
+        #endregion
     }
 }
