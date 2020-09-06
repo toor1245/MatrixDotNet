@@ -78,6 +78,11 @@ namespace MatrixDotNet
                 _Matrix[i, j] = value;
             }
         }
+        
+        public ref T GetByRef(int i, int j)
+        {
+            return ref _Matrix[i, j];
+        }
 
         /// <summary>
         /// Gets or sets array by row.

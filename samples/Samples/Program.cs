@@ -1,12 +1,7 @@
 using System;
-using System.Threading;
+using System.Reflection.Metadata;
 using BenchmarkDotNet.Running;
-using MatrixDotNet;
-using MatrixDotNet.Extensions;
-using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Core.Optimization.Unsafe.Sorting;
-using MatrixDotNet.Extensions.Sorting;
-using MatrixDotNet.Extensions.Statistics;
+using MatrixDotNet.Extensions.Core;
 using Samples.Samples;
 
 namespace Samples
@@ -16,7 +11,7 @@ namespace Samples
         
         static void Main(string[] args)
         {
-            Matrix<double> matrix1 = new[,]
+            /*Matrix<double> matrix1 = new[,]
             {
                 { 5.7, 6.7,  6.2,  7.0  },
                 { 6.7, 7.7,  7.2,  11.0 },
@@ -31,6 +26,63 @@ namespace Samples
             CountingSort<int> sort;
             sort.Sort(matrix);
             matrix.Pretty();
+            */
+            
+            /*MatrixAsFixedBuffer buffer = new MatrixAsFixedBuffer(5,5);
+            for (int i = 0; i < buffer.Rows; i++)
+            {
+                for (int j = 0; j < buffer.Columns; j++)
+                {
+                    buffer[i, j] = i + j;
+                }
+            }
+            
+            buffer = MatrixAsFixedBuffer.AddByRef(ref buffer,ref buffer);
+            */
+
+            /*MatrixAsFixedBuffer matrixAsFixedBuffer1 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer2 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer3 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer4 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer5 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer6 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer7 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer8 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer9 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer10 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer matrixAsFixedBuffer11 = new MatrixAsFixedBuffer(80,80);
+            MatrixAsFixedBuffer.AddByRef(ref matrixAsFixedBuffer1, ref matrixAsFixedBuffer2);
+            MatrixAsFixedBuffer.AddByRef(ref matrixAsFixedBuffer4, ref matrixAsFixedBuffer3);
+            MatrixAsFixedBuffer.AddByRef(ref matrixAsFixedBuffer5, ref matrixAsFixedBuffer6);
+            MatrixAsFixedBuffer.AddByRef(ref matrixAsFixedBuffer1, ref matrixAsFixedBuffer7);
+            MatrixAsFixedBuffer.AddByRef(ref matrixAsFixedBuffer8, ref matrixAsFixedBuffer9);
+            MatrixAsFixedBuffer.AddByRef(ref matrixAsFixedBuffer11, ref matrixAsFixedBuffer10);
+
+            Console.WriteLine(matrixAsFixedBuffer1);
+            Console.WriteLine(matrixAsFixedBuffer2);
+            Console.WriteLine(matrixAsFixedBuffer3);
+            */
+
+            //BenchmarkRunner.Run<BenchMatrixAsFixedBuffer>();
+
+            //ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
+
+            MatrixAsFixedBuffer matrixAsFixedBuffer1 = new double[,]
+            {
+                {5, 5, 5, 5,7},
+                {1, 2, 3, 4,8},
+                {6, 7, 8, 9,3}
+            };
+
+            var arr = new double[] {1, 2, 3, 4, 6};
+            matrixAsFixedBuffer1[0] = arr;
+
+            foreach (var i in matrixAsFixedBuffer1[0])
+            {
+                Console.WriteLine(i);
+            }
+
+            Console.WriteLine(matrixAsFixedBuffer1);
         }
     }
 }
