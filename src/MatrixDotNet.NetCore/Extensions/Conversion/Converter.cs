@@ -1,23 +1,36 @@
 using System;
+using System.Runtime.Intrinsics;
 using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
 {
+    /// <summary>
+    /// Represents conversion operations for matrix with fixed buffer size.
+    /// </summary>
     public readonly ref struct Converter
     {
+        /// <summary>
+        /// Adds row for matrix with fixed buffer size.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <param name="data">the data which assign by index</param>
+        /// <param name="index">the row index</param>
+        /// <returns>Matrix with new row.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static unsafe MatrixAsFixedBuffer AddRow(ref MatrixAsFixedBuffer matrix,double[] data,int index)
         {
             if (matrix.Columns != data.Length)
             {
-                string message = $"length {nameof(data)}:{data.Length} != {nameof(matrix.Columns)} of matrix:{matrix.Columns}";
+                var message = $"length {nameof(data)}:{data.Length} != {nameof(matrix.Columns)} of matrix:{matrix.Columns}";
                 throw new MatrixDotNetException(message);
             }
             
             fixed (double* arr = data)
             {
-                byte n = matrix.Columns;
-                Span<double> span3 = new Span<double>(arr,n);
-                MatrixAsFixedBuffer matrixAsFixedBuffer = new MatrixAsFixedBuffer((byte)(matrix.Rows + 1),n);
+                var n = matrix.Columns;
+                var span3 = new Span<double>(arr,n);
+                var matrixAsFixedBuffer = new MatrixAsFixedBuffer((byte)(matrix.Rows + 1),n);
+                
                 for (int i = 0; i < index; i++)
                 {
                     matrixAsFixedBuffer[i] = matrix[i];
@@ -34,6 +47,14 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             }
         }
         
+        /// <summary>
+        /// Adds column for matrix with fixed buffer size.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <param name="data">the data.</param>
+        /// <param name="index">the column index.</param>
+        /// <returns>Matrix with new column.</returns>
+        /// <exception cref="MatrixDotNetException"></exception>
         public static unsafe MatrixAsFixedBuffer AddColumn(ref MatrixAsFixedBuffer matrix,double[] data,int index)
         {
             if (matrix.Rows != data.Length)
@@ -62,6 +83,15 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
 
                 return matrixAsFixedBuffer;
             }
+        }
+
+        public static void SwapRows(ref MatrixAsFixedBuffer matrix, int from, int to)
+        {
+            Vector256<double> vector256 = 
+            var temp = matrix[from];
+            matrix[from] = matrix[to];
+            matrix[to] = temp;
+
         }
     }
 }

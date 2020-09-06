@@ -2,8 +2,15 @@ using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions.Core.Extensions.Sorting
 {
-    public struct BubbleSortFixed : ISorting
+    /// <summary>
+    /// Represents bubble sorting algorithms of matrix with fixed buffer size.
+    /// </summary>
+    public readonly ref struct BubbleSortFixed
     {
+        /// <summary>
+        /// Sorts matrix by rows.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
         public void SortByRows(ref MatrixAsFixedBuffer matrix)
         {
             int n = matrix.Columns;
@@ -25,7 +32,11 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Sorting
                 }
             }
         }
-
+        
+        /// <summary>
+        /// Sorts matrix by column.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
         public void SortByColumns(ref MatrixAsFixedBuffer matrix)
         {
             int n = matrix.Columns;
@@ -47,6 +58,10 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Sorting
             }
         }
 
+        /// <summary>
+        /// Sorts minor diagonal of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
         public void SortMinorDiagonal(ref MatrixAsFixedBuffer matrix)
         {
             if (!matrix.IsSquare)
@@ -54,6 +69,10 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Sorting
             
         }
 
+        /// <summary>
+        /// Sorts main diagonal of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
         public void SortMainDiagonal(ref MatrixAsFixedBuffer matrix)
         {
             if (!matrix.IsSquare)
@@ -75,6 +94,10 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Sorting
             }
         }
         
+        /// <summary>
+        /// Sorts whole matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
         public void Sort(ref MatrixAsFixedBuffer matrix)
         {
             for (int i = 0; i < matrix.Length; i++)
