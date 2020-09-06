@@ -2,7 +2,6 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions.Core
@@ -65,12 +64,26 @@ namespace MatrixDotNet.Extensions.Core
         {
             Initialize(rows,columns);
         }
-
+        
+        /// <summary>
+        /// init implicit of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <returns>init matrix as fixed buffer</returns>
         public static implicit operator MatrixAsFixedBuffer(double[,] matrix)
         {
             return new MatrixAsFixedBuffer(matrix);
         }
-        
+
+        /// <summary>
+        /// init implicit of matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <returns>init matrix as fixed buffer</returns>
+        public static implicit operator MatrixAsFixedBuffer(Matrix<double> matrix)
+        {
+            return new MatrixAsFixedBuffer(matrix.GetMatrix());
+        }
         
         /// <summary>
         /// Initialize matrix.
@@ -158,17 +171,16 @@ namespace MatrixDotNet.Extensions.Core
         public Span<double> GetColumn(int column)
         {
             int m = Rows;
-            double* array = stackalloc double[m];
             fixed (double* ptr = _array)
             {
+                Span<double> span2 = new Span<double>(ptr,m);
                 Span<double> span = new Span<double>(ptr,Length);
                 for (int i = 0; i < m; i++)
                 {
-                    array[i] = span[column + Columns * i];
+                    span2[i] = span[column + Columns * i];
                 }
+                return span2;
             }
-
-            return new Span<double>(array,m);
         }
         
         public override string ToString()

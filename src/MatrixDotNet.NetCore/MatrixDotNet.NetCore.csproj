@@ -71,8 +71,4 @@ It whole works significantly faster than MatrixDotNet library due to unsafe prog
       </EmbeddedResource>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Extensions" />
-    </ItemGroup>
-
 </Project>

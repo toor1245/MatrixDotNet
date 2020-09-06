@@ -1,8 +1,6 @@
 using System;
-using System.Reflection.Metadata;
-using BenchmarkDotNet.Running;
 using MatrixDotNet.Extensions.Core;
-using Samples.Samples;
+using MatrixDotNet.Extensions.Core.Extensions.Sorting;
 
 namespace Samples
 {
@@ -69,19 +67,16 @@ namespace Samples
 
             MatrixAsFixedBuffer matrixAsFixedBuffer1 = new double[,]
             {
-                {5, 5, 5, 5,7},
-                {1, 2, 3, 4,8},
-                {6, 7, 8, 9,3}
+                {5, 5, 5, 5},
+                {1, 2, 3, 4},
+                {6, 7, 4, 9},
+                {6, 7, 8, 1}
             };
 
-            var arr = new double[] {1, 2, 3, 4, 6};
-            matrixAsFixedBuffer1[0] = arr;
 
-            foreach (var i in matrixAsFixedBuffer1[0])
-            {
-                Console.WriteLine(i);
-            }
-
+            BubbleSortFixed sort;
+            
+            sort.SortByColumns(ref matrixAsFixedBuffer1);
             Console.WriteLine(matrixAsFixedBuffer1);
         }
     }
