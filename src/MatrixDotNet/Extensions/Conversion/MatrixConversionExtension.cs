@@ -290,7 +290,6 @@ namespace MatrixDotNet.Extensions.Conversion
             if(matrix is null)
                 throw new NullReferenceException();
             
-
             var temp = matrix[indexDimension1, State.Column];
             matrix[indexDimension1, State.Column] = matrix[indexDimension2, State.Column];
             matrix[indexDimension2, State.Column] = temp;

@@ -26,22 +26,34 @@ namespace Samples.Samples
             _matrix = new Matrix<double>(80,80,5);
         }
         
-        [Benchmark]
+        // [Benchmark]
         public void SwapDefault()
         {
             MatrixConverter.SwapRows(_matrix, 1,6);
         }
         
-        [Benchmark]
+        // [Benchmark]
         public void SwapUnsafeDefault()
         {
             UnsafeConverter.SwapRows(_matrix,1,6);
         }
         
-        [Benchmark]
+        // [Benchmark]
         public void SwapFixed()
         {
             Converter.SwapRows(ref _buffer,1,6);
+        }
+        
+        [Benchmark]
+        public void SwapColumnDefault()
+        {
+            _matrix.SwapColumns(1, 6);
+        }
+        
+        [Benchmark]
+        public void SwapColumnFixed()
+        {
+            Converter.SwapColumns(ref _buffer,1,6);
         }
     }
 }

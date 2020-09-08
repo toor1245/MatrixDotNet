@@ -197,7 +197,7 @@ namespace MatrixDotNet.Extensions.Core
                 Span<double> span2 = new Span<double>(ptr,_length);
                 for (int i = 0; i < m; i++)
                 {
-                    span2[column + _columns * i] = data[i];
+                    span2[column * _columns + i] = data[i];
                 }
             }
         }

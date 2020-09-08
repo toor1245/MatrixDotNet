@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Exceptions;
@@ -87,8 +88,13 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 return matrixAsFixedBuffer;
             }
         }
-        
 
+        /// <summary>
+        /// Swaps rows with happen AVX2 or Unsafe swap.  
+        /// </summary>
+        /// <param name="matrix">the matrix with fixed buffer</param>
+        /// <param name="from">the index of row.</param>
+        /// <param name="to">the index of row.</param>
         public static unsafe void SwapRows(ref MatrixAsFixedBuffer matrix, int from, int to)
         {
             if (Avx.IsSupported)
@@ -98,8 +104,8 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 fixed (double* ptr1 = matrix[from])
                 fixed (double* ptr2 = matrix[to])
                 {
-
-                    while (i < matrix.Columns - Vector256<double>.Count)
+                    // Swaps rows.
+                    while (i < n - Vector256<double>.Count)
                     {
                         var vector2 = Avx.LoadVector256(ptr2 + i);
                         var vector1 = Avx.LoadVector256(ptr1 + i);
@@ -108,8 +114,8 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                         i += 4;
                     }
 
-
-                    while (i < matrix.Columns)
+                    // Swaps rows if columns length not prime.
+                    while (i < n)
                     {
                         var temp = matrix[from, i];
                         matrix[from, i] = matrix[to, i];
@@ -131,6 +137,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                     var i = from * n;
                     var j = to * n;
 
+                    // Swaps rows.
                     while (i < index)
                     {
                         var tmp = span[i];
@@ -139,6 +146,85 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                         i++;
                         j++;
                     }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Swaps columns with happen AVX2 or Unsafe swap.  
+        /// </summary>
+        /// <param name="matrix">the matrix with fixed buffer</param>
+        /// <param name="from">the index of column.</param>
+        /// <param name="to">the index of column.</param>
+        public static void SwapColumns(ref MatrixAsFixedBuffer matrix, int from, int to)
+        {
+
+            int m = matrix.Rows;
+            var i = 0;
+            
+            // Swaps columns.
+            while (i < m)
+            {
+                var tmp = matrix[i, from];
+                matrix[i, from] = matrix[i, to];
+                matrix[i, to] = tmp;
+                i++;
+            }
+        }
+
+        
+        /// <summary>
+        /// Copy matrix to by some criteria.
+        /// </summary>
+        public static unsafe void CopyToAvx(ref MatrixAsFixedBuffer matrix1,int dimension1, int start,ref MatrixAsFixedBuffer matrix2,int dimension2,int destinationIndex,int length)
+        {
+            if (Avx2.IsSupported)
+            {
+                int i = start;
+                int k = destinationIndex;
+                fixed (double* ptr1 = matrix1[dimension1])
+                fixed (double* ptr2 = matrix2[dimension2])
+                {
+                    while (k < length - Vector256<double>.Count)
+                    {
+                        var vector = Avx.LoadVector256(ptr1 + i);
+                        Avx.Store(ptr2 + destinationIndex,vector);
+                        i += 4;
+                        k += 4;
+                    }
+                }
+
+                for (;k < length; i++,k++)
+                {
+                    matrix2[dimension2, k] = matrix1[dimension1, i];
+                }
+            }
+            else
+            {
+                CopyTo(ref matrix1,dimension1,start,ref matrix2,dimension2,destinationIndex,length);
+            }
+        }
+        
+        /// <summary>
+        /// Copy matrix to by some criteria.
+        /// </summary>
+        /// <param name="matrix1">the matrix1</param>
+        /// <param name="dimension1">row index of matrix1</param>
+        /// <param name="start">start index by row of matrix1</param>
+        /// <param name="matrix2">the matrix2</param>
+        /// <param name="dimension2">row index of matrix2</param>
+        /// <param name="destinationIndex">start index by row of matrix2</param>
+        /// <param name="length">the length of copy data</param>
+        public static unsafe void CopyTo(ref MatrixAsFixedBuffer matrix1,int dimension1, int start,ref MatrixAsFixedBuffer matrix2,int dimension2,int destinationIndex,int length)
+        { 
+            fixed (double* ptr2 = matrix2._array)
+            fixed (double* ptr1 = matrix1._array)
+            {
+                Span<double> span2 = new Span<double>(ptr2, matrix2.Length);
+                Span<double> span1 = new Span<double>(ptr1, matrix1.Length);
+                for (int i = start, k = destinationIndex; k < length; i++, k++)
+                {
+                    span2[dimension2 * matrix2.Columns + k] = span1[dimension1 * matrix1.Columns + i];
                 }
             }
         }

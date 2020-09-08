@@ -1,6 +1,7 @@
 using System;
 using BenchmarkDotNet.Running;
 using MatrixDotNet.Extensions.Core;
+using MatrixDotNet.Extensions.Core.Extensions.Conversion;
 using Samples.Samples;
 
 namespace Samples
@@ -11,26 +12,23 @@ namespace Samples
         static void Main(string[] args)
         {
             
+            // BenchmarkRunner.Run<BenchAddRowFixedVsUnsafeMatrix>();
 
-
-          
-
-            BenchmarkRunner.Run<BenchAddRowFixedVsUnsafeMatrix>();
-
-            /*ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
+            // ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
 
             MatrixAsFixedBuffer matrixAsFixedBuffer1 = new double[,]
             {
-                {5, 5, 5, 5,5,6,7},
-                {1, 2, 3, 4,5,3,2},
-                {6, 7, 4, 9,6,4,2},
-                {6, 7, 8, 1,4,6,6},
-                {5, 4, 1, 3,1,2,3}
+                { 5, 5, 5, 5, 5 },
+                { 1, 2, 3, 4, 5 },
+                { 6, 7, 4, 9, 6 },
+                { 6, 7, 8, 1, 4 },
+                { 5, 4, 1, 3, 1 }
             };
             
-            Converter.SwapRows(ref matrixAsFixedBuffer1,2,1);
-            Console.WriteLine(matrixAsFixedBuffer1);
-            */
+            MatrixAsFixedBuffer matrix2 = new MatrixAsFixedBuffer(5,5);
+ 
+            Converter.CopyTo(ref matrixAsFixedBuffer1,1,0,ref matrix2,3,0,6);
+            Console.WriteLine(matrix2);
             
         }
     }
