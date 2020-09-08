@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
@@ -85,12 +86,24 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             }
         }
 
-        public static void SwapRows(ref MatrixAsFixedBuffer matrix, int from, int to)
+        public static unsafe  void SwapRows(ref MatrixAsFixedBuffer matrix, int from, int to)
         {
-            Vector256<double> vector256 = 
-            var temp = matrix[from];
-            matrix[from] = matrix[to];
-            matrix[to] = temp;
+
+            int i = 0;
+            int size = Vector256<double>.Count;
+            fixed (double* ptr1 = matrix[from])
+            fixed(double* ptr2 = matrix[to])
+            {
+                while (i < matrix.Columns)
+                {
+                    var vector1 = Avx.LoadVector256(ptr1 + i);
+                    var vector2 = Avx.LoadVector256(ptr2 + i);
+                    Avx.Store(ptr2,vector1);
+                    Avx.Store(ptr1,vector2);
+                    i += 4;
+                }
+
+            }
 
         }
     }

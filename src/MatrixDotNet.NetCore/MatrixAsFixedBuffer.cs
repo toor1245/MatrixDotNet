@@ -24,7 +24,7 @@ namespace MatrixDotNet.Extensions.Core
         private int _length;
         
         [FieldOffset(6)]
-        private fixed double _array[Size];
+        internal fixed double _array[Size];
 
         [FieldOffset(52494)]
         private bool _isSquare;

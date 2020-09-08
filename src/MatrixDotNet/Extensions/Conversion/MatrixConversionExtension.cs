@@ -308,7 +308,8 @@ namespace MatrixDotNet.Extensions.Conversion
         {
             var transport = new Matrix<T>(matrix.Columns,matrix.Rows);
             for (var i = 0; i < transport.Rows; i++)
-            for (var j = 0; j < transport.Columns; j++) transport[i, j] = matrix[j, i];
+                for (var j = 0; j < transport.Columns; j++) 
+                    transport[i, j] = matrix[j, i];
 
             return transport;
         }
