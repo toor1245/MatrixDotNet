@@ -65,10 +65,9 @@ namespace Samples
             Console.WriteLine(matrixAsFixedBuffer3);
             */
 
-            //BenchmarkRunner.Run<BenchMatrixAsFixedBuffer>();
+            BenchmarkRunner.Run<BenchAddRowFixedVsUnsafeMatrix>();
 
-            
-            ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
+            /*ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
 
             MatrixAsFixedBuffer matrixAsFixedBuffer1 = new double[,]
             {
@@ -81,6 +80,7 @@ namespace Samples
             
             Converter.SwapRows(ref matrixAsFixedBuffer1,2,1);
             Console.WriteLine(matrixAsFixedBuffer1);
+            */
             
         }
     }
