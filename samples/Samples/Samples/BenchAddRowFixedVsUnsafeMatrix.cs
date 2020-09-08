@@ -44,16 +44,46 @@ namespace Samples.Samples
             Converter.SwapRows(ref _buffer,1,6);
         }
         
-        [Benchmark]
+        // [Benchmark]
         public void SwapColumnDefault()
         {
             _matrix.SwapColumns(1, 6);
         }
         
-        [Benchmark]
+        // [Benchmark]
         public void SwapColumnFixed()
         {
             Converter.SwapColumns(ref _buffer,1,6);
+        }
+
+        //[Benchmark]
+        public void CopyToDefault()
+        {
+            MatrixConverter.CopyTo( _matrix,0,1,_matrix,1,0,_matrix.Columns - 1);
+        }
+        
+        //[Benchmark]
+        public void CopyToUnsafe()
+        { 
+            UnsafeConverter.CopyTo( _matrix,0,1,_matrix,1,0,_matrix.Columns);
+        }
+        
+        //[Benchmark]
+        public void CopyToFixed()
+        {
+            Converter.CopyTo(ref _buffer,0,1,ref _buffer,1,0,_buffer.Columns);
+        }
+        
+        //[Benchmark]
+        public void CopyToFixedAvx()
+        {
+            Converter.CopyToAvx(ref _buffer,0,1,ref _buffer,1,0,_buffer.Columns);
+        }
+        
+        [Benchmark]
+        public MatrixAsFixedBuffer AddFixed()
+        {
+            return MatrixAsFixedBuffer.AddByRef(ref _buffer, ref _buffer);
         }
     }
 }

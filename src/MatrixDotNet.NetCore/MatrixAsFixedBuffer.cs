@@ -1,6 +1,9 @@
 using System;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using MatrixDotNet.Exceptions;
 
@@ -33,7 +36,6 @@ namespace MatrixDotNet.Extensions.Core
         private bool _isPrime;
         
         #endregion
-        
         
         #region .properties
 
@@ -115,13 +117,14 @@ namespace MatrixDotNet.Extensions.Core
         
         #endregion
 
+        #region .methods
+        
         /// <summary>
         /// Init data of matrix.
         /// </summary>
         /// <param name="rows">the rows</param>
         /// <param name="columns">the columns</param>
         /// <exception cref="MatrixDotNetException">length matrix more than 6_561.</exception>
-        #region .methods
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private void Initialize(byte rows,byte columns)
         {
@@ -147,22 +150,111 @@ namespace MatrixDotNet.Extensions.Core
         {
             var m = left._rows;
             var n = left._columns;
-            
+
             if(m != right._rows || n != right._columns)
                 throw new MatrixDotNetException("Not Equal");
             
-            MatrixAsFixedBuffer matrix = new MatrixAsFixedBuffer(m,n);
+            var matrix = new MatrixAsFixedBuffer(m,n);
 
-            var a1 = left.Data;
-            var a2 = right.Data;
-            var a3 = matrix.Data;
-            
-            for (int i = 0; i < m; i++)
+            if (Avx2.IsSupported)
             {
-                for (int j = 0; j < n; j++)
+                int length = left._length;
+                fixed(double* ptr3 = matrix.Data)
+                fixed(double* ptr1 = left._array)
+                fixed(double* ptr2 = right._array)
                 {
-                    int num = i + m * j;
-                    a3[num] = a2[num] + a1[num];
+                    int i = 0;
+                    
+                    // Adds two matrices via AVX.
+                    while (i < length - Vector256<double>.Count)
+                    {
+                        var vector1 = Avx.LoadVector256(ptr1 + i);
+                        Avx.Store(ptr3 + i, Avx.Add(vector1, Avx.LoadVector256(ptr2 + i)));
+                        i += 4;
+                    }
+                    
+                    while (i < length)
+                    {
+                        matrix.Data[i] = left.Data[i] + right.Data[i];
+                        i++;
+                    }
+                }
+            }
+            else
+            {
+                var a1 = left.Data;
+                var a2 = right.Data;
+                var a3 = matrix.Data;
+
+                for (int i = 0; i < m; i++)
+                {
+                    for (int j = 0; j < n; j++)
+                    {
+                        int num = i + m * j;
+                        a3[num] = a2[num] + a1[num];
+                    }
+                }
+            }
+            
+            return matrix;
+        }
+
+        /// <summary>
+        /// Subtracts two matrices via AVX(if supported) or unsafe.
+        /// </summary>
+        /// <param name="left">the matrix with fixed buffer.</param>
+        /// <param name="right">the matrix with fixed buffer.</param>
+        /// <returns>new matrix from subtract two matrices. </returns>
+        /// <exception cref="MatrixDotNetException">matrices not equal by size.</exception>
+        public static MatrixAsFixedBuffer SubByRef(ref MatrixAsFixedBuffer left,ref MatrixAsFixedBuffer right)
+        {
+            var m = left._rows;
+            var n = left._columns;
+
+            if(m != right._rows || n != right._columns)
+                throw new MatrixDotNetException("Not Equal");
+            
+            var matrix = new MatrixAsFixedBuffer(m,n);
+
+            if (Avx2.IsSupported)
+            {
+                int length = left._length;
+                fixed(double* ptr3 = matrix.Data)
+                fixed(double* ptr1 = left._array)
+                fixed(double* ptr2 = right._array)
+                {
+                    int i = 0;
+                    
+                    // Adds two matrices via AVX.
+                    while (i < length - Vector256<double>.Count)
+                    {
+                        var vector1 = Avx.LoadVector256(ptr1 + i);
+                        var vector2 = Avx.LoadVector256(ptr2 + i);
+                        Avx.Store(ptr3 + i, Avx.Subtract(vector1,vector2));
+                        i += 4;
+                    }
+                    
+                    while (i < length)
+                    {
+                        matrix.Data[i] = left.Data[i] - right.Data[i];
+                        i++;
+                    }
+                }
+            }
+            else
+            {
+                var a1 = left.Data;
+                var a2 = right.Data;
+                var a3 = matrix.Data;
+
+                // Adds two matrices.
+                for (int i = 0; i < m; i++)
+                {
+                    for (int j = 0; j < n; j++)
+                    {
+                        int num = i + m * j;
+                        a3[num] = a2[num] - a1[num];
+                    }
                 }
             }
             

@@ -1,5 +1,4 @@
 using System;
-using System.Numerics;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Exceptions;
@@ -174,8 +173,15 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
 
         
         /// <summary>
-        /// Copy matrix to by some criteria.
+        /// Copy matrix to by some criteria via AVX2.
         /// </summary>
+        /// <param name="matrix1">the matrix1</param>
+        /// <param name="dimension1">row index of matrix1</param>
+        /// <param name="start">start index by row of matrix1</param>
+        /// <param name="matrix2">the matrix2</param>
+        /// <param name="dimension2">row index of matrix2</param>
+        /// <param name="destinationIndex">start index by row of matrix2</param>
+        /// <param name="length">the length of copy data</param>
         public static unsafe void CopyToAvx(ref MatrixAsFixedBuffer matrix1,int dimension1, int start,ref MatrixAsFixedBuffer matrix2,int dimension2,int destinationIndex,int length)
         {
             if (Avx2.IsSupported)
@@ -228,5 +234,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 }
             }
         }
+        
+        
     }
 }

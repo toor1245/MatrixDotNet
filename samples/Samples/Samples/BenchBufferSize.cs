@@ -7,7 +7,6 @@ namespace Samples.Samples
     [RyuJitX64Job]
     public class BenchBufferSize
     {
-
         public unsafe void Get()
         {
             var data = stackalloc FixedBuffer[10];
@@ -16,7 +15,6 @@ namespace Samples.Samples
                 Console.WriteLine(data[i].Array[i] = 10);
             }
         }
-        
     }
 
     public unsafe struct FixedBuffer
