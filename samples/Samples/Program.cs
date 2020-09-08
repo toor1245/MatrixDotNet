@@ -1,8 +1,9 @@
 using System;
 using BenchmarkDotNet.Running;
+using MatrixDotNet;
+using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Core;
 using MatrixDotNet.Extensions.Core.Extensions.Conversion;
-using MatrixDotNet.Extensions.Core.Extensions.Sorting;
 using Samples.Samples;
 
 namespace Samples
@@ -67,22 +68,19 @@ namespace Samples
             //BenchmarkRunner.Run<BenchMatrixAsFixedBuffer>();
 
             
-            /*ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
+            ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
 
             MatrixAsFixedBuffer matrixAsFixedBuffer1 = new double[,]
             {
-                {5, 5, 5, 5},
-                {1, 2, 3, 4},
-                {6, 7, 4, 9},
-                {6, 7, 8, 1},
-                {5, 4, 1, 3}
+                {5, 5, 5, 5,5,6,7},
+                {1, 2, 3, 4,5,3,2},
+                {6, 7, 4, 9,6,4,2},
+                {6, 7, 8, 1,4,6,6},
+                {5, 4, 1, 3,1,2,3}
             };
             
-            Converter.SwapRows(ref matrixAsFixedBuffer1,1,2);
+            Converter.SwapRows(ref matrixAsFixedBuffer1,2,1);
             Console.WriteLine(matrixAsFixedBuffer1);
-            */
-
-            BenchmarkRunner.Run<BenchAddRowFixedVsUnsafeMatrix>();
             
         }
     }

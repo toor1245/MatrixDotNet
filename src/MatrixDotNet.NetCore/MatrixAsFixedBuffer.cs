@@ -24,7 +24,7 @@ namespace MatrixDotNet.Extensions.Core
         private int _length;
         
         [FieldOffset(6)]
-        private fixed double _array[Size];
+        internal fixed double _array[Size];
 
         [FieldOffset(52494)]
         private bool _isSquare;
@@ -232,7 +232,7 @@ namespace MatrixDotNet.Extensions.Core
         /// </summary>
         /// <param name="i">the row.</param>
         /// <param name="j">the column.</param>
-        public ref double this[int i, int j] => ref _array[i + _columns * j];
+        public ref double this[int i, int j] => ref _array[i * _columns + j];
 
         /// <summary>
         /// Gets arr of matrix.

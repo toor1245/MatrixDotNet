@@ -1,6 +1,8 @@
 using System;
 using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Core.Optimization;
 
 namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
 {
@@ -85,13 +87,56 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             }
         }
 
-        public static void SwapRows(ref MatrixAsFixedBuffer matrix, int from, int to)
+        public static unsafe void SwapRows(ref MatrixAsFixedBuffer matrix, int from, int to)
         {
-            Vector256<double> vector256 = 
-            var temp = matrix[from];
-            matrix[from] = matrix[to];
-            matrix[to] = temp;
+            if (Avx.IsSupported)
+            {
+                int i = 0;
+                int n = matrix.Columns;
+                fixed (double* ptr1 = matrix[from])
+                fixed (double* ptr2 = matrix[to])
+                {
 
+                    while (i < matrix.Columns - Vector256<double>.Count)
+                    {
+                        var vector2 = Avx.LoadVector256(ptr2 + i);
+                        var vector1 = Avx.LoadVector256(ptr1 + i);
+                        Avx.Store(ptr2 + i, vector1);
+                        Avx.Store(ptr1 + i, vector2);
+                        i += 4;
+                    }
+
+                    while (i < matrix.Columns)
+                    {
+                        var temp = matrix[from,i];
+                        matrix[from,i] = matrix[to,i];
+                        matrix[to,i] = temp;
+                        i++;
+                    }
+                    
+                }
+            }
+            else
+            {
+
+                fixed (double* ptr1 = matrix._array)
+                {
+                    Span<double> span = new Span<double>(ptr1,matrix.Length);
+                    int m = matrix.Rows;
+                    int n = matrix.Columns;
+                    var index = from * n + m;
+                    var i = from * n;
+                    var j = to * n;
+
+                    while (i < index)
+                    {
+                        var tmp = span[i];
+                        span[i] = span[j];
+                        span[j] = tmp;
+                        i++; j++;
+                    }
+                }
+            }
         }
     }
 }
