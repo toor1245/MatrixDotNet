@@ -1,6 +1,7 @@
 #include "../headers/library.h"
 #include <iostream>
 
+#if _WIN_32
 namespace Matrix {
 
 //#region DllExport implementations.
@@ -115,6 +116,7 @@ namespace Matrix {
         }
     }
 }
+#endif
 
 
 //#endregion

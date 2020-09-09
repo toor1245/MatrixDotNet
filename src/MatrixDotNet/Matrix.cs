@@ -448,7 +448,7 @@ namespace MatrixDotNet
                 T sum = default;
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    sum = MathExtension.Add(sum, MathExtension.Multiply(matrix[j, i], array[j]));
+                    sum = MathExtension.Add(sum, MathExtension.Multiply(matrix[i, j], array[j]));
                 }
                 
                 if(i == array.Length)

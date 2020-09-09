@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/headers/StringBuilder.cpp
+../src/StringBuilder.h
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/src/StringBuilder.h
+
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/headers/library.h
+iostream
+-
+immintrin.h
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/headers/immintrin.h
+
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/src/StringBuilder.h
+
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/src/library.cpp
+../headers/library.h
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/headers/library.h
+iostream
+-
+

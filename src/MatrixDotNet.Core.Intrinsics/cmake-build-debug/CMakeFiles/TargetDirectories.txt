@@ -1,0 +1,3 @@
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nikolay/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-debug/CMakeFiles/MatrixDotNet_Core_Intrinsics.dir

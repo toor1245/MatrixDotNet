@@ -56,25 +56,25 @@ namespace Samples.Samples
             Converter.SwapColumns(ref _buffer,1,6);
         }
 
-        //[Benchmark]
+        // [Benchmark]
         public void CopyToDefault()
         {
             MatrixConverter.CopyTo( _matrix,0,1,_matrix,1,0,_matrix.Columns - 1);
         }
         
-        //[Benchmark]
+        // [Benchmark]
         public void CopyToUnsafe()
         { 
             UnsafeConverter.CopyTo( _matrix,0,1,_matrix,1,0,_matrix.Columns);
         }
         
-        //[Benchmark]
+        // [Benchmark]
         public void CopyToFixed()
         {
             Converter.CopyTo(ref _buffer,0,1,ref _buffer,1,0,_buffer.Columns);
         }
         
-        //[Benchmark]
+        // [Benchmark]
         public void CopyToFixedAvx()
         {
             Converter.CopyToAvx(ref _buffer,0,1,ref _buffer,1,0,_buffer.Columns);

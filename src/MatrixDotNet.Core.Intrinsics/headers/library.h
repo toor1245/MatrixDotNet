@@ -4,6 +4,7 @@
 #include <iostream>
 #include "immintrin.h"
 
+#ifdef _WIN_32
 #ifdef __cplusplus
     extern "C" {
 #endif
@@ -115,6 +116,7 @@ DllExport Matrix::Matrix* matrix_ctor2();
 
 #ifdef __cplusplus
     }
+#endif
 #endif
 
 #endif //MATRIXDOTNET_CORE_INTRINSICS_LIBRARY_H

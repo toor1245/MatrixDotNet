@@ -1,5 +1,4 @@
 using System;
-using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
@@ -260,19 +259,91 @@ namespace MatrixDotNet.Extensions.Core
             
             return matrix;
         }
+
+        
+        /// <summary>
+        /// Multiplies two matrices with fixed buffer.
+        /// </summary>
+        /// <param name="left">the left matrix.</param>
+        /// <param name="right">the right matrix.</param>
+        /// <returns>new matrix from multiply of two matrices</returns>
+        /// <exception cref="MatrixDotNetException">
+        /// throws exception if length columns of left matrix not equal length rows of right matrix
+        /// </exception>
+        public static MatrixAsFixedBuffer MulByRef(ref MatrixAsFixedBuffer left,ref MatrixAsFixedBuffer right)
+        {
+            if(left.Columns != right.Rows)
+                throw new MatrixDotNetException("");
+            
+#if OS_LINUX
+            return MulMatrix(ref left,ref right);
+#endif
+            
+#if OS_WINDOWS
+            if(Avx2.IsSupported)
+            {
+                   
+            }
+            else
+            {
+                return MulMatrix(ref left,ref right);
+            }
+#endif
+            
+#if OS_MAC
+            return MulMatrix(ref left,ref right);
+#endif
+        }
+
+        /// <summary>
+        /// Multiply two matrices which support LINUX,WINDOWS,MAC.
+        /// </summary>
+        /// <param name="left">the left matrix</param>
+        /// <param name="right">the right matrix.</param>
+        /// <returns></returns>
+        private static MatrixAsFixedBuffer MulMatrix(ref MatrixAsFixedBuffer left,ref MatrixAsFixedBuffer right)
+        {
+            var m = left.Rows;
+            var n = right.Columns;
+            var K = left.Columns;
+            var len1 = left.Length;
+            MatrixAsFixedBuffer matrix = new MatrixAsFixedBuffer(m,n);
+            fixed(double* pointer1 = left._array)
+            fixed(double* pointer2 = right._array)
+            fixed(double* pointer3 = matrix.Data)
+            {
+                Span<double> span1 = new Span<double>(pointer1,len1);
+                
+                for (int i = 0; i < m; i++)
+                {
+                    double* c = pointer3 + i * n;
+
+                    for (int k = 0; k < K; k++)
+                    {
+                        double* b = pointer2 + k * n;
+                        double a = span1[i * K + k];
+                        for (int j = 0; j < n; j++)
+                        {
+                            c[j] += a * b[j];
+                        }
+                    }
+                }
+                return matrix;
+            }
+        }
         
         /// <summary>
         /// Gets column by row.
         /// </summary>
-        /// <param name="column"></param>
+        /// <param name="column">the column.</param>
         /// <returns></returns>
         public Span<double> GetColumn(int column)
         {
             int m = _rows;
             fixed (double* ptr = _array)
             {
-                Span<double> span2 = new Span<double>(ptr,m);
-                Span<double> span = new Span<double>(ptr,_length);
+                var span2 = new Span<double>(ptr,m);
+                var span = new Span<double>(ptr,_length);
                 for (int i = 0; i < m; i++)
                 {
                     span2[i] = span[column + _columns * i];
@@ -281,12 +352,17 @@ namespace MatrixDotNet.Extensions.Core
             }
         }
 
+        /// <summary>
+        /// Sets column by index of column matrix.
+        /// </summary>
+        /// <param name="column">the index.</param>
+        /// <param name="data">the data.</param>
         public void SetColumn(int column,Span<double> data)
         {
             int m = _rows;
             fixed (double* ptr = _array)
             {
-                Span<double> span2 = new Span<double>(ptr,_length);
+                var span2 = new Span<double>(ptr,_length);
                 for (int i = 0; i < m; i++)
                 {
                     span2[column * _columns + i] = data[i];

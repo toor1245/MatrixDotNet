@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace MatrixDotNet.Extensions.Core.Optimization
 {
+#if OS_WINDOWS
     internal class Matrix
     {
         [DllImport(Data.Path,CallingConvention = CallingConvention.Cdecl)]
@@ -37,4 +38,5 @@ namespace MatrixDotNet.Extensions.Core.Optimization
             return matrix_mul(matrixA.Handle, matrixB.Handle);
         }
     }
+#endif
 }
