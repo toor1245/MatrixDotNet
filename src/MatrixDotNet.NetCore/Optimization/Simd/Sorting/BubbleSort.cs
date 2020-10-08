@@ -30,6 +30,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd.Sorting
                     Console.WriteLine(odd2);
                     Console.WriteLine(even2);
                     temp2 = Avx.MaskLoad(ptr + i,temp2);
+                    // just test
                     Console.WriteLine(temp2);
                 }
             }
