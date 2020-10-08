@@ -8,8 +8,8 @@ namespace Samples.Samples
 {
     public class UnsafeMulBenchmark
     {
-        private int[,] matrix = new int[5000,5000];
-        private int[,] matrix2 = new int[5000,5000];
+        private int[,] matrix = new int[3000,3000];
+        private int[,] matrix2 = new int[3000,3000];
         
         private Matrix<int> _matrix3;
         private Matrix<int> _matrix4;
@@ -45,7 +45,7 @@ namespace Samples.Samples
             return await UnsafeMatrix.MultiplyStrassenAsync(_matrix3, _matrix4);
         }
         
-        [Benchmark]
+        // [Benchmark]
         public Matrix<int> Default()
         {
             return UnsafeMatrix.Multiply(_matrix3, _matrix4);

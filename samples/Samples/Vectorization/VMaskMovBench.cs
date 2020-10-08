@@ -7,9 +7,9 @@ using Samples.Samples;
 
 namespace Samples.Vectorization
 {
-    public class Vmaskmov
+    public class VmaskmovBench
     {
-        public const int N = 100001;
+        public const int N = 10001;
         public double[] A = new double[N];
         public double[] B = new double[N];
         public double[] C = new double[N];
@@ -41,7 +41,7 @@ namespace Samples.Vectorization
         [Benchmark]
         public void WithoutVMaskMov()
         {
-            //Setup();
+            Setup();
             for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] > 0)
@@ -58,7 +58,7 @@ namespace Samples.Vectorization
         [Benchmark]
         public unsafe void VMaskMov()
         {
-            //Setup();
+            Setup();
             fixed (double* ptrA = A)
             fixed (double* ptrB = B)
             fixed (double* ptrC = C)
@@ -67,10 +67,10 @@ namespace Samples.Vectorization
             {
                 var source = new Span<double>(ptrA, N);
                 int i = 0;
-                var ymm8 = Vector256<double>.Zero;
+                var ymm8 = Vector256<double>.Zero; // 0 0 0 0
                 var ymm9 = Avx.Compare(ymm8, ymm8, FloatComparisonMode.OrderedNonSignaling);
 
-                while (i < source.Length - 8)
+                while (i < source.Length - 4)
                 {
                     var ymm1 = Avx.LoadVector256(ptrA + i);
                     var ymm2 = Avx.Compare(ymm8,ymm1, FloatComparisonMode.OrderedGreaterThanSignaling);

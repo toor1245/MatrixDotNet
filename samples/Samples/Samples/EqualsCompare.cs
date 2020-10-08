@@ -3,6 +3,7 @@ using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Core.Optimization.Simd;
 using MatrixDotNet.Extensions.Core.Optimization.Unsafe;
+using Simd = MatrixDotNet.Extensions.Core.Optimization.Simd.Statistics.Simd;
 
 namespace Samples.Samples
 {
