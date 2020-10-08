@@ -25,10 +25,10 @@ namespace MatrixDotNet.Extensions.Core
         [FieldOffset(2)]
         private int _length;
         
-        [FieldOffset(6)]
+        [FieldOffset(5)]
         internal fixed double _array[Size];
 
-        [FieldOffset(52494)]
+        [FieldOffset(7)]
         private bool _isSquare;
 
         [FieldOffset(52495)]
@@ -289,10 +289,7 @@ namespace MatrixDotNet.Extensions.Core
                 return MulMatrix(ref left,ref right);
             }
 #endif
-            
-#if OS_MAC
-            return MulMatrix(ref left,ref right);
-#endif
+            return new MatrixAsFixedBuffer();
         }
 
         /// <summary>

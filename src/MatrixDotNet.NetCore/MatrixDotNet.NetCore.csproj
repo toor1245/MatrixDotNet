@@ -7,7 +7,7 @@
         <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <ApplicationIcon>MatrixDotNet.ico</ApplicationIcon>
-        <Version>0.0.1</Version>
+        <Version>0.0.2</Version>
         <Authors>Nikolay Hohsadze</Authors>
         <Company>MatrixDotNet</Company>
         <Product>MatrixDotNet</Product>
@@ -18,7 +18,7 @@
         <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
         <RepositoryType>Library</RepositoryType>
         <PackageTags>matrix,MatrixDotNet,optimization,sse,avx,math,linear algebra,dotnet,solver,decomposition,factorization,</PackageTags>
-        <Description>MatrixDotNet.Extensions.Core is a extension for MatrixDotNet .NET Core 3.1 which increase perfomance with happen unsafe programming and SIMD.</Description>
+        <Description>Add MatrixAsFixedBuffer</Description>
         <Copyright>MatrixDotNet</Copyright>
         <NeutralLanguage> Английский</NeutralLanguage>
         <PackageReleaseNotes>Add new two namespaces Simd and Unsafe.

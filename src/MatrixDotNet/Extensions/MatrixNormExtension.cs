@@ -114,5 +114,19 @@ namespace MatrixDotNet.Extensions
 
             return sum;
         }
+
+        public static T NormFrobenius<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            T result = default;
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    result = MathExtension.Add(result,
+                        MathExtension.Multiply(matrix[i,j],matrix[i,j]));
+                }
+            }
+            return MathExtension.Sqrt(result);
+        }
     }
 }

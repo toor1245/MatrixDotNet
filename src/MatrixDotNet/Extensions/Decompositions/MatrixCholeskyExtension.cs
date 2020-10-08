@@ -1,4 +1,3 @@
-using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 
@@ -6,7 +5,7 @@ namespace MatrixDotNet.Extensions.Decompositions
 {
     public static partial class Decomposition
     {
-        public static unsafe void GetCholesky(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> transpose)
+        public static void GetCholesky(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> transpose)
         {
             if(!matrix.IsSquare)
                 throw new MatrixDotNetException("Matrix must be square");
@@ -56,7 +55,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             transpose = lower.Transpose();
         }
         
-        public static unsafe void GetCholesky(this Matrix<float> matrix,out Matrix<float> lower,out Matrix<float> transpose)
+        public static void GetCholesky(this Matrix<float> matrix,out Matrix<float> lower,out Matrix<float> transpose)
         {
             if(!matrix.IsSquare)
                 throw new MatrixDotNetException("Matrix must be square");
@@ -86,8 +85,7 @@ namespace MatrixDotNet.Extensions.Decompositions
                         }
 
                         lower[j, j] = (int) System.Math.Sqrt(matrix[j, j] - sum); 
-                    }  
-          
+                    }
                     else
                     { 
 

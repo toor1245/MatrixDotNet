@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -7,8 +8,8 @@ namespace MatrixDotNet.Math
 {
     public static partial class MathExtension
     {
-        private static readonly Dictionary<(Type type,string op),Delegate> Cache =
-            new Dictionary<(Type type, string op), Delegate>();
+        private static readonly ConcurrentDictionary<(Type type,string op),Delegate> Cache = 
+            new ConcurrentDictionary<(Type type, string op), Delegate>();
         
         public static T Add<T>(T left, T right) where T: unmanaged
         {

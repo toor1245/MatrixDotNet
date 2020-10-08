@@ -121,7 +121,6 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                         matrix[to, i] = temp;
                         i++;
                     }
-
                 }
             }
             else
@@ -234,7 +233,5 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 }
             }
         }
-        
-        
     }
 }

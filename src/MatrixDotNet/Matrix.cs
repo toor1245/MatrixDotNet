@@ -427,8 +427,8 @@ namespace MatrixDotNet
             }
             return res;
         }
-        
-        
+
+
         /// <summary>
         /// Returns vector sum of each multiply element of row.
         /// </summary>

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Description>lightweight library intended for math operations which works with generic programming.</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\MatrixDotNet\images\MatrixDotNet_128x128.png" Link="MatrixDotNet_128x128.png">
+        <PackagePath></PackagePath>
+        <Pack>True</Pack>
+      </None>
+    </ItemGroup>
+
+</Project>
