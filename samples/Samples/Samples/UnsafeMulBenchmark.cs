@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Core.Optimization.Unsafe;
+using MatrixDotNet.Extensions.Performance.Operations;
 
 namespace Samples.Samples
 {
@@ -42,13 +43,13 @@ namespace Samples.Samples
         [Benchmark]
         public async Task<Matrix<int>> Strassen()
         {
-            return await UnsafeMatrix.MultiplyStrassenAsync(_matrix3, _matrix4);
+            return await Optimization.MultiplyStrassenAsync(_matrix3, _matrix4);
         }
         
         // [Benchmark]
         public Matrix<int> Default()
         {
-            return UnsafeMatrix.Multiply(_matrix3, _matrix4);
+            return Optimization.Multiply(_matrix3, _matrix4);
         }
     }
 }

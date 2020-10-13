@@ -2,7 +2,7 @@ using BenchmarkDotNet.Attributes;
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Core.Optimization.Simd;
+using MatrixDotNet.Extensions.Core.Simd;
 
 namespace Samples.Samples
 {

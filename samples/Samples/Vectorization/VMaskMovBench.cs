@@ -2,7 +2,6 @@ using System;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet.Extensions.Core.Optimization.Simd;
 using Samples.Samples;
 
 namespace Samples.Vectorization

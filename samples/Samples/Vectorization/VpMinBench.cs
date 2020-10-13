@@ -1,8 +1,8 @@
 using System;
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet;
-using MatrixDotNet.Extensions.Core.Optimization.Simd.Statistics;
 using MatrixDotNet.Extensions.Statistics;
+using Simd = MatrixDotNet.Extensions.Core.Simd.Statistics.Simd;
 
 namespace Samples.Vectorization
 {

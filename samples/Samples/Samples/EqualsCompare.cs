@@ -1,9 +1,8 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Core.Optimization.Simd;
-using MatrixDotNet.Extensions.Core.Optimization.Unsafe;
-using Simd = MatrixDotNet.Extensions.Core.Optimization.Simd.Statistics.Simd;
+using MatrixDotNet.Extensions.Core.Simd;
+using MatrixDotNet.Extensions.Performance.Operations;
 
 namespace Samples.Samples
 {
@@ -24,7 +23,7 @@ namespace Samples.Samples
         [Benchmark]
         public bool EqualsUnsafe()
         {
-            return UnsafeMatrix.Equals(_matrix1,_matrix2);
+            return Optimization.Equals(_matrix1,_matrix2);
         }
         
         [Benchmark]

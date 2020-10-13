@@ -49,6 +49,11 @@
             return Add(A.Array,B);
         }
 
+        public static int operator *(Vector A,Vector B)
+        {
+            return Mul(A.Array,B.Array);
+        }
+
         private static Vector Add(int[] A, int[] B)
         {
             Vector C = new Vector(A.Length);
@@ -58,6 +63,17 @@
             }
 
             return C;
+        }
+
+        private static int Mul(int[] A,int[] B)
+        {
+            int res = 0;
+            for (int i = 0; i < A.Length; i++)
+            {
+                res += A[i] * B[i];
+            }
+
+            return res;
         }
 
         public override string ToString()
