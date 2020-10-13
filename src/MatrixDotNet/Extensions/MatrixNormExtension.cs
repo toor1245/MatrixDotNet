@@ -16,8 +16,6 @@ namespace MatrixDotNet.Extensions
         /// <exception cref="NullReferenceException"></exception>
         public static T LNorm<T>(this Matrix <T> matrix) where T : unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
 
             int rows = matrix.Rows;
             int columns = matrix.Columns;
@@ -58,9 +56,6 @@ namespace MatrixDotNet.Extensions
         /// <exception cref="NullReferenceException"></exception>
         public static T MNorm<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
-
             int rows = matrix.Rows;
             int columns = matrix.Columns;
             
@@ -99,9 +94,6 @@ namespace MatrixDotNet.Extensions
         /// <returns>Traceless of matrix.</returns>
         public static T Traceless<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             if (!matrix.IsSquare)
                 throw new MatrixDotNetException("Matrix is not square");
 

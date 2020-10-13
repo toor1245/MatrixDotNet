@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>netstandard2.1</TargetFramework>
 	<OS_WINDOWS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</OS_WINDOWS>
         <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</OS_MAC>
         <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
@@ -15,7 +15,6 @@
         <PackageTags>matrix,Matrix,MatrixDotNet,Math,linear algebra,statistics,solve,factorization,decomposition,dotnet,AVX,Sse,SIMD,optimization</PackageTags>
         <NeutralLanguage>en</NeutralLanguage>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
         <Version>0.0.5</Version>
         <DocumentationMarkdownURL>https://github.com/toor1245/MatrixDotNet/blob/master/README.md</DocumentationMarkdownURL>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -26,7 +25,6 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Copyright>MatrixDotNet</Copyright>
         <Company>MatrixDotNet</Company>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <ApplicationIcon>MatrixDotNet.ico</ApplicationIcon>
     </PropertyGroup>
 
@@ -41,14 +39,12 @@
   </PropertyGroup>
 
     <ItemGroup>
-      <None Include="..\..\LICENSE">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
       <None Include="images\MatrixDotNet_128x128.png">
         <Pack>True</Pack>
         <PackagePath></PackagePath>
       </None>
+      <None Remove="MatrixDotNet.ico" />
+      <None Remove="images\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -57,6 +53,18 @@
 
     <ItemGroup>
       <ProjectReference Include="..\MatrixDotNet.Math\MatrixDotNet.Math.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Runtime.Numerics" Version="4.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="images\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="images\**" />
     </ItemGroup>
 
 </Project>

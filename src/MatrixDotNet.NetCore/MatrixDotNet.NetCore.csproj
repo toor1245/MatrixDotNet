@@ -12,10 +12,8 @@
         <Company>MatrixDotNet</Company>
         <Product>MatrixDotNet</Product>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
         <RepositoryUrl>https://github.com/toor1245/MatrixDotNet/tree/master</RepositoryUrl>
-        <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
         <RepositoryType>Library</RepositoryType>
         <PackageTags>matrix,MatrixDotNet,optimization,sse,avx,math,linear algebra,dotnet,solver,decomposition,factorization,</PackageTags>
         <Description>Add MatrixAsFixedBuffer</Description>
@@ -39,41 +37,7 @@ It whole works significantly faster than MatrixDotNet library due to unsafe prog
       <ProjectReference Include="..\MatrixDotNet\MatrixDotNet.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="ImportDLL\MatrixDotNet_Core_Intrinsics.dll" />
-      <None Update="images\MatrixDotNet_128x128.png">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-      <None Include="..\..\LICENSE">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-      <None Include="..\MatrixDotNet\images\MatrixDotNet_128x128.png">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-    </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="DllImport\MatrixDotNet_Core_Intrinsics.dll" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="DllImports\MatrixDotNet_Core_Intrinsics.dll" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="MatrixDotNet_Core_Intrinsics.dll" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="Imports\MatrixDotNet_Core_Intrinsics.dll" />
-      <EmbeddedResource Include="Imports\MatrixDotNet_Core_Intrinsics.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </EmbeddedResource>
-    </ItemGroup>
-    
     <PropertyGroup Condition="'$(OS_WINDOWS)'=='true'">
     <DefineConstants>OS_WINDOWS</DefineConstants>
   </PropertyGroup> 

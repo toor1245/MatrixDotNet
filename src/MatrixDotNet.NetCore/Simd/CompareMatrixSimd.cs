@@ -3,7 +3,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.Extensions.Core.Optimization.Simd
+namespace MatrixDotNet.Extensions.Core.Simd
 {
     public static partial class Simd
     {
@@ -78,7 +78,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
                     {
                         return false;
                     }
-                    i += 4;
+                    i += 8;
                 }
                 
 
@@ -103,7 +103,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
             if(lengthA != lengthB)
                 throw new MatrixDotNetException("matrix A length not equal matrix B");
             
-            int size = 8;
+            int size = 4;
 
             fixed (double* pointer1 = a.GetMatrix())
             fixed (double* pointer2 = b.GetMatrix())
@@ -166,7 +166,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Simd
                     {
                         return false;
                     }
-                    i += 4;
+                    i += 8;
                 }
                 
 

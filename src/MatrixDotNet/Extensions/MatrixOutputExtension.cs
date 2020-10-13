@@ -18,6 +18,7 @@ namespace MatrixDotNet.Extensions
         {
             if (matrix is null)
                 throw new NullReferenceException();
+            
             {
                 StringBuilder builder = new StringBuilder();
                 builder.AppendLine($"Number of rows: {matrix.Rows}");

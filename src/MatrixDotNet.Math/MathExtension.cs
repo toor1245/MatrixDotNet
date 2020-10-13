@@ -31,6 +31,28 @@ namespace MatrixDotNet.Math
             return func(left, right);
         }
         
+        public static T AddBy<T,U>(T left, U right) 
+            where T : unmanaged
+            where U : unmanaged
+        {
+            var t = typeof(T);
+            var u = typeof(U);
+            if (Cache.TryGetValue((t, nameof(AddBy)),out var del))
+                return del is Func<T,U,T> specificFunc
+                    ? specificFunc(left, right)
+                    : throw new InvalidOperationException(nameof(AddBy));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var rightPar = Expression.Parameter(u,nameof(right));
+            var body = Expression.Add(leftPar, Expression.Convert(Expression.Constant(right), t));
+            
+            var func = Expression.Lambda<Func<T,U,T>>(body, leftPar, rightPar).Compile();
+
+            Cache[(t, nameof(AddBy))] = func;
+
+            return func(left, right);
+        }
+        
         public static T Sub<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
@@ -46,6 +68,28 @@ namespace MatrixDotNet.Math
             var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
 
             Cache[(t, nameof(Sub))] = func;
+
+            return func(left, right);
+        }
+        
+        public static T SubBy<T,U>(T left, U right) 
+            where T : unmanaged
+            where U : unmanaged
+        {
+            var t = typeof(T);
+            var u = typeof(U);
+            if (Cache.TryGetValue((t, nameof(SubBy)),out var del))
+                return del is Func<T,U,T> specificFunc
+                    ? specificFunc(left, right)
+                    : throw new InvalidOperationException(nameof(SubBy));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var rightPar = Expression.Parameter(u,nameof(right));
+            var body = Expression.Subtract(leftPar, Expression.Convert(Expression.Constant(right), t));
+            
+            var func = Expression.Lambda<Func<T,U,T>>(body, leftPar, rightPar).Compile();
+
+            Cache[(t, nameof(SubBy))] = func;
 
             return func(left, right);
         }

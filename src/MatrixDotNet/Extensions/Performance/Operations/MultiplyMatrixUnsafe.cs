@@ -2,11 +2,10 @@ using System;
 using System.Threading.Tasks;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
-using MatrixDotNet.Extensions.Core.Optimization.Unsafe.Conversion;
 
-namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
+namespace MatrixDotNet.Extensions.Performance.Operations
 {
-    public static partial class UnsafeMatrix
+    public static partial class Optimization
     {
         public static unsafe Matrix<int> Multiply(Matrix<int> matrixA, Matrix<int> matrixB)
         {
@@ -94,13 +93,13 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
             a.SplitMatrix(out var a11,out var a12,out var a21,out var a22);
             b.SplitMatrix(out var b11,out var b12,out var b21,out var b22);
 
-            Task<Matrix<int>> t1 = Task.Run(() => MultiplyStrassen(Add(a11, a22), Add(b11, b22)));
-            Task<Matrix<int>> t2 = Task.Run(() => MultiplyStrassen(Add(a21, a22), b11)); 
-            Task<Matrix<int>> t3 = Task.Run(() => MultiplyStrassen(a11,Sub(b12,b22))); 
-            Task<Matrix<int>> t4 = Task.Run(() => MultiplyStrassen(a22,Sub(b21,b11))); 
-            Task<Matrix<int>> t5 = Task.Run(() => MultiplyStrassen(Add(a11,a12), b22)); 
-            Task<Matrix<int>> t6 = Task.Run(() => MultiplyStrassen(Sub(a21,a11), Add(b11,b12)));
-            Task<Matrix<int>> t7 = Task.Run(() => MultiplyStrassen(Sub(a12,a22), Add(b21,b22))); 
+            Task<Matrix<int>> t1 = Task.Run(() => MultiplyStrassen(Optimization.Add(a11, a22), Optimization.Add(b11, b22)));
+            Task<Matrix<int>> t2 = Task.Run(() => MultiplyStrassen(Optimization.Add(a21, a22), b11)); 
+            Task<Matrix<int>> t3 = Task.Run(() => MultiplyStrassen(a11,Optimization.Sub(b12,b22))); 
+            Task<Matrix<int>> t4 = Task.Run(() => MultiplyStrassen(a22,Optimization.Sub(b21,b11))); 
+            Task<Matrix<int>> t5 = Task.Run(() => MultiplyStrassen(Optimization.Add(a11,a12), b22)); 
+            Task<Matrix<int>> t6 = Task.Run(() => MultiplyStrassen(Optimization.Sub(a21,a11), Optimization.Add(b11,b12)));
+            Task<Matrix<int>> t7 = Task.Run(() => MultiplyStrassen(Optimization.Sub(a12,a22), Optimization.Add(b21,b22))); 
             
             Matrix<int> p1 = await t1;
             Matrix<int> p2 = await t2;
@@ -112,11 +111,11 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
             
             
             var c11 = p1 + p4 - p5 + p7;
-            var c12 = Add(p3, p5);
-            var c21 = Add(p2, p4);
+            var c12 = Optimization.Add(p3, p5);
+            var c21 = Optimization.Add(p2, p4);
             var c22 = p1 + p3 - p2 + p6;
 
-            return UnsafeConverter.CollectMatrix(c11, c12, c21, c22);
+            return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
         }
         
         
@@ -143,7 +142,7 @@ namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
             var c21 = p2 + p4;
             var c22 = p1 + p3 - p2 + p6;
 
-            return UnsafeConverter.CollectMatrix(c11, c12, c21, c22);
+            return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
         }
     }
 }

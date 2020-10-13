@@ -19,12 +19,6 @@ namespace MatrixDotNet.Extensions
         /// <exception cref="IndexOutOfRangeException"></exception>
         public static T[] GetRow<T>(this Matrix<T> matrix,int index) where T : unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
-
-            if (index > matrix._Matrix.GetLength(1))
-                throw new IndexOutOfRangeException();
-            
             T[] array = new T[matrix._Matrix.GetLength(1)];
 
             for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
@@ -47,14 +41,8 @@ namespace MatrixDotNet.Extensions
         public static T[] GetColumn<T>(this Matrix<T> matrix, int index)
             where T : unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
-            
             T[] array = new T[matrix._Matrix.GetLength(0)];
             
-            if (index > matrix._Matrix.GetLength(0))
-                throw new IndexOutOfRangeException();
-
             for (int j = 0; j < matrix._Matrix.GetLength(0); j++)
             {
                 array[j] = matrix[j,index];
@@ -100,6 +88,7 @@ namespace MatrixDotNet.Extensions
             int x = matrix.Rows;
             int y = matrix.Columns;
             int c = x & ((x - y) >> 31) | y & (~(x - y) >> 31);
+            
             if(array.Length != c)
                 throw new MatrixDotNetException(
                     $"Length of matrix not equal matrix Min(Rows:{matrix.Rows},Columns:{matrix.Columns})");

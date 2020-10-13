@@ -69,14 +69,8 @@ namespace MatrixDotNet
         /// </exception>
         public T this[int i, int j]
         {
-            get
-            {
-                return _Matrix[i, j];
-            }
-            set
-            {
-                _Matrix[i, j] = value;
-            }
+            get => _Matrix[i, j];
+            set => _Matrix[i, j] = value;
         }
         
         public ref T GetByRef(int i, int j)

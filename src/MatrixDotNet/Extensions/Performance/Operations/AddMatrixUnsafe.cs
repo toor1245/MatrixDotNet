@@ -1,9 +1,9 @@
 using System;
 using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.Extensions.Core.Optimization.Unsafe
+namespace MatrixDotNet.Extensions.Performance.Operations
 {
-    public static partial class UnsafeMatrix
+    public static partial class Optimization
     {
         /// <summary>
         /// Add two matrices by elements.

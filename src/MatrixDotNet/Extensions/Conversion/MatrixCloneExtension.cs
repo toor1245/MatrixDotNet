@@ -1,4 +1,6 @@
-﻿namespace MatrixDotNet.Extensions.Conversion
+﻿using System;
+
+namespace MatrixDotNet.Extensions.Conversion
 {
     /// <summary>
     /// Represents converter which can change matrix.
@@ -16,12 +18,20 @@
         /// <param name="destinationIndex">start index.</param>
         /// <param name="length">length copy.</param>
         /// <typeparam name="T">unmanaged type</typeparam>
-        public static void CopyTo<T>(Matrix<T> matrix1,int dimension1, int start,Matrix<T> matrix2,int dimension2,int destinationIndex,int length) 
+        public static unsafe void CopyTo<T>(Matrix<T> matrix1,int dimension1, int start,Matrix<T> matrix2,int dimension2,int destinationIndex,int length) 
             where T : unmanaged
         {
-            for (int i = start, k = destinationIndex; k < length; i++,k++)
+            fixed (T* ptr2 = matrix2.GetMatrix())
+            fixed (T* ptr1 = matrix1.GetMatrix())
             {
-                matrix2[dimension2,k] = matrix1[dimension1,i];
+
+                Span<T> span2 = new Span<T>(ptr2,matrix2.Length);
+                Span<T> span1 = new Span<T>(ptr1,matrix1.Length);
+                for (int i = start, k = destinationIndex; k < length; i++,k++)
+                {
+                    span2[dimension2 * matrix2.Columns + k] = span1[dimension1 * matrix1.Columns + i];
+                }
+                
             }
         }
         
@@ -54,6 +64,30 @@
                 {
                     matrix2[k,dimension2] = matrix1[i,dimension1];
                 }    
+            }
+        }
+        
+        public static unsafe Matrix<T> Clone<T>(this Matrix<T> matrix) where T : unmanaged
+        {
+            int m = matrix.Rows;
+            int n = matrix.Columns;
+            
+            Matrix<T> res = new Matrix<T>(m,n);
+            int len = res.Length;
+
+            fixed (T* ptr1 = matrix.GetMatrix())
+            fixed (T* ptr2 = res.GetMatrix())
+            {
+                int i = 0;
+                Span<double> span1 = new Span<double>(ptr1,len);
+                Span<double> span2 = new Span<double>(ptr2,len);
+                while (i < len)
+                {
+                    span2[i] = span1[i];
+                    i += 1;
+                }
+
+                return res;
             }
         }
     }

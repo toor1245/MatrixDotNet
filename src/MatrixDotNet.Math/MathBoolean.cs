@@ -43,6 +43,46 @@ namespace MatrixDotNet.Math
                    (typeof(T) == typeof(double));
         }
         
+        public static bool Equal<T>(T left, T right) where T: unmanaged
+        {
+            var t = typeof(T);
+            if (Cache.TryGetValue((t, nameof(Equal)),out var del))
+                return del is Func<T,T,bool> specificFunc
+                    ? specificFunc(left, right)
+                    : throw new InvalidOperationException(nameof(Equal));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var rightPar = Expression.Parameter(t, nameof(right));
+            
+            var body = Expression.Equal(leftPar, rightPar);
+            
+            var func = Expression.Lambda<Func<T, T,bool>>(body, leftPar, rightPar).Compile();
+
+            Cache[(t, nameof(Equal))] = func;
+
+            return func(left, right);
+        }
+        
+        public static bool NotEqual<T>(T left, T right) where T: unmanaged
+        {
+            var t = typeof(T);
+            if (Cache.TryGetValue((t, nameof(NotEqual)),out var del))
+                return del is Func<T,T,bool> specificFunc
+                    ? specificFunc(left, right)
+                    : throw new InvalidOperationException(nameof(NotEqual));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var rightPar = Expression.Parameter(t, nameof(right));
+            
+            var body = Expression.NotEqual(leftPar, rightPar);
+            
+            var func = Expression.Lambda<Func<T, T,bool>>(body, leftPar, rightPar).Compile();
+
+            Cache[(t, nameof(NotEqual))] = func;
+
+            return func(left, right);
+        }
+        
         
         public static bool GreaterThan<T>(T left, T right) where T: unmanaged
         {

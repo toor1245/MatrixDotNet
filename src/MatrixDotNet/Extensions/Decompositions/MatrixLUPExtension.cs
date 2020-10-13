@@ -19,7 +19,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>The lower matrix.</returns>
         /// <exception cref="MatrixDotNetException">throws exception if matrix is not square.</exception>
-        public static Matrix<T> GetLowerMatrix<T>(this Matrix<T> matrix) where T : unmanaged
+        public static Matrix<T> GetLower<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
                 throw new MatrixDotNetException(
@@ -45,7 +45,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns></returns>
         /// <exception cref="MatrixDotNetException">throws exception if matrix is not square.</exception>
-        public static Matrix<T> GetUpperMatrix<T>(this Matrix<T> matrix) where T : unmanaged
+        public static Matrix<T> GetUpper<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
                 throw new MatrixDotNetException(
@@ -172,5 +172,123 @@ namespace MatrixDotNet.Extensions.Decompositions
                 }
             }
         }
+        
+        public static unsafe void GetLowerUpperPermutationUnsafe(this Matrix<double> matrix,out Matrix<double> lower,out Matrix<double> upper,out Matrix<double> matrixP)
+        {
+            if (matrix is null)
+                throw new NullReferenceException();
+
+            Exchanges = 0;
+            
+            
+            int n = matrix.Rows;
+            int m = matrix.Columns;
+            lower = matrix.CreateIdentityMatrix();
+            upper = MatrixConverter.Clone(matrix);
+            // load to P identity matrix.
+            matrixP = MatrixConverter.Clone(lower);
+            fixed(double* ptrU = upper.GetMatrix())
+            fixed(double* ptrL = lower.GetMatrix())
+            {
+                for (int i = 0; i < n - 1; i++)
+                {
+                    int index = i;
+                    double max = *(ptrU + index * m);
+                    double* mx = ptrU + i * m;
+                    double* test1 = ptrU + i * n;
+                    for (int j = i + 1; j < n; j++)
+                    {
+                        double current = test1[j];
+                        if (System.Math.Abs(current) > System.Math.Abs(max))
+                        {
+                            max = current;
+                            index = j;
+                        }
+                    }
+                    
+                    if(System.Math.Abs(max) < 0.0001) continue;
+                    
+                    if (index != i)
+                    {
+                        upper.SwapRows(i, index);
+                        matrixP.SwapRows(i, index);
+                        Exchanges++;
+
+                    }
+                    
+                    for (int j = i + 1; j < n; j++)
+                    {
+                        double* test2 = ptrU + j * m;
+                        double div = test2[i] / mx[i];
+                        *(ptrL + j * m) = div;
+                        test2 = ptrU + j * n;
+
+                        for (int k = i;  k < n; k++)
+                        {
+                            test2[k] = test2[k] - mx[k] * div;
+                        }
+                    }
+                }
+            }
+        }
+        
+        public static unsafe void GetLowerUpperPermutationUnsafe(this Matrix<float> matrix,out Matrix<float> lower,out Matrix<float> upper,out Matrix<float> matrixP)
+        {
+            if (matrix is null)
+                throw new NullReferenceException();
+            
+            int n = matrix.Rows;
+            int m = matrix.Columns;
+            lower = matrix.CreateIdentityMatrix();
+            upper = MatrixConverter.Clone(matrix);
+
+            Exchanges = 0;
+            
+            // load to P identity matrix.
+            matrixP = MatrixConverter.Clone(lower);
+            fixed(float* ptrU = upper.GetMatrix())
+            fixed(float* ptrL = lower.GetMatrix())
+            {
+                for (int i = 0; i < n - 1; i++)
+                {
+                    int index = i;
+                    double max = *(ptrU + index * m);
+                    float* mx = ptrU + i * m;
+                    float* test1 = ptrU + i * n;
+                    for (int j = i + 1; j < n; j++)
+                    {
+                        float current = test1[j];
+                        if (System.Math.Abs(current) > System.Math.Abs(max))
+                        {
+                            max = current;
+                            index = j;
+                        }
+                    }
+                    
+                    if(System.Math.Abs(max) < 0.0001) continue;
+                        
+                    if (index != i)
+                    {
+                        upper.SwapRows(i, index);
+                        matrixP.SwapRows(i, index);
+                        Exchanges++;
+                    }
+                    
+                    for (int j = i + 1; j < n; j++)
+                    {
+                        float* test2 = ptrU + j * m;
+                        float div = test2[i] / mx[i];
+                        *(ptrL + j * m) = div;
+                        test2 = ptrU + j * n;
+
+                        for (int k = i;  k < n; k++)
+                        {
+                            test2[k] = test2[k] - mx[k] * div;
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 }

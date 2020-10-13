@@ -3,7 +3,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.Extensions.Core.Optimization.Simd
+namespace MatrixDotNet.Extensions.Core.Simd
 {
     public static partial class Simd 
     {
