@@ -17,8 +17,7 @@ namespace Samples
         
         static void Main(string[] args)
         {
-
-            BenchmarkRunner.Run<StrassenSample>();
+            
         }
     }
 }

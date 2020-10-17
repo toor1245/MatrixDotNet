@@ -9,6 +9,7 @@
         <RepositoryType>Library</RepositoryType>
         <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
         <PackageTags>math, generic, calculation, matrix</PackageTags>
+        <Version>1.1.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
