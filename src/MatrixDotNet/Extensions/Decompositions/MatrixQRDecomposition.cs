@@ -1,4 +1,3 @@
-using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Math;
@@ -12,6 +11,49 @@ namespace MatrixDotNet.Extensions.Decompositions
             q = ProcessGrammShmidtByColumns(matrix).GetNormByColumns();
             r = q.Transpose() * matrix;
         }
+        
+        public static void EigenVectorQrIterative<T>(this Matrix<T> matrix,double accuracy,int maxIterations,out Matrix<T> iter,out Matrix<T> qIter) where T : unmanaged
+        {
+            iter = matrix.Clone() as Matrix<T>;
+            qIter = null;
+            for (int i = 0; i < maxIterations; i++)
+            {
+                iter.QrDecomposition(out var q,out var r);
+                iter = r * q;
+                if (qIter is null)
+                { 
+                    qIter = q;
+                }
+                else
+                {
+                    var qNew = qIter * q;
+                    bool isAchieved = true; // checks accuracy
+                    for (int j = 0; j < q.Columns; j++)
+                    {
+                        for (int k = 0; k < q.Rows; k++)
+                        {
+                            var sub = MathExtension.Sub(MathExtension.Abs(qNew[j, k]),MathExtension.Abs(qIter[j,k]));
+                            if (!MathExtension.GreaterThanBy(MathExtension.Abs(sub), accuracy)) 
+                                continue;
+                            isAchieved = false;
+                            break;
+                        }
+                        if (!isAchieved)
+                        {
+                            break;
+                        }
+                    }
+                    
+                    qIter = qNew;
+                    if (isAchieved)
+                    {
+                        break;
+                    }
+                }
+            }
+            
+        }
+        
         
         public static Matrix<T> ProcessGrammShmidtByRows<T>(this Matrix<T> matrix) where T : unmanaged
         {

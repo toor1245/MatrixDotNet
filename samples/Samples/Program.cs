@@ -1,14 +1,6 @@
-using System;
-using BenchmarkDotNet.Running;
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
-using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Decompositions;
-using MatrixDotNet.Extensions.Determinants;
-using MatrixDotNet.Extensions.Inverse;
-using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsTCPIP;
-using Microsoft.Diagnostics.Tracing.Parsers.MicrosoftWindowsWPF;
-using Samples.Samples;
 
 namespace Samples
 {
@@ -17,7 +9,16 @@ namespace Samples
         
         static void Main(string[] args)
         {
-            
+            Matrix<double> a = new double[,]
+            {
+                {12, -51, 4},
+                {6, 167, -68},
+                {-4, 24, -41}
+            };
+
+            a.QrDecomposition(out var q,out var r);
+            q.Pretty();
+            r.Pretty();
         }
     }
 }
