@@ -11,7 +11,7 @@ namespace Samples.Samples
         public static void Run()
         {
             // initialize matrix with random values.
-            Matrix<double> matrix = BuildMatrix.Random(3, 3, -10, 10);
+            Matrix<double> matrix = BuildMatrix.RandomDouble(3, 3, -10, 10);
             
             // display matrix.
             matrix.Pretty();

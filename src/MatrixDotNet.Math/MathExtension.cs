@@ -233,30 +233,10 @@ namespace MatrixDotNet.Math
             return func(left);
         }
         
-        public static T Random<T>(int start,int end) where T: unmanaged
+        [Obsolete("bool shit = true;", true)]
+        public static T Random<T>(int start,int end)
         {
-            var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(Random)),out var del))
-                return del is Func<int,int,T> specificFunc
-                    ? specificFunc(start,end)
-                    : throw new InvalidOperationException(nameof(Random));
-            
-            var startPar = Expression.Parameter(t, nameof(start));
-            var endPar = Expression.Parameter(t, nameof(end));
-
-            MethodInfo info = typeof(Random).GetMethod("Next", new[] {startPar.Type, endPar.Type});
-            
-            if(info is null)
-                throw new InvalidOperationException(nameof(Random));
-
-            var instance = Expression.New(typeof(Random));
-            var call = Expression.Call(instance, info,startPar, endPar);
-
-            var func = Expression.Lambda<Func<int,int,T>>(call,startPar,endPar).Compile();
-
-            Cache[(t, nameof(Random))] = func;
-
-            return func(start,end);
+            return default(T);
         }
         
         public static T Sqrt<T>(T arg) where T: unmanaged
@@ -265,20 +245,20 @@ namespace MatrixDotNet.Math
             if (Cache.TryGetValue((t, nameof(Sqrt)),out var del))
                 return del is Func<T,T> specificFunc
                     ? specificFunc(arg)
-                    : throw new InvalidOperationException(nameof(Random));
+                    : throw new InvalidOperationException(nameof(Sqrt));
             
             var argPar = Expression.Parameter(t, nameof(arg));
 
-            MethodInfo info = typeof(System.Math).GetMethod("Sqrt",new[]{argPar.Type});
+            MethodInfo info = typeof(System.Math).GetMethod(nameof(Sqrt),new[]{argPar.Type});
             
             if(info is null)
                 throw new InvalidOperationException(nameof(Sqrt));
 
             var call = Expression.Call(null, info,argPar);
 
-            var func = Expression.Lambda<Func<T,T>>(call,argPar).Compile();
+            var func = Expression.Lambda<Func<T,T>>(call, argPar).Compile();
 
-            Cache[(t, nameof(Random))] = func;
+            Cache[(t, nameof(Sqrt))] = func;
 
             return func(arg);
         }
