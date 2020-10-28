@@ -15,7 +15,7 @@ namespace Samples.Samples
         [GlobalSetup]
         public void Setup()
         {
-            _matrix1 = BuildMatrix.Random<int>(1024, 1024, 1, 123);
+            _matrix1 = BuildMatrix.RandomInt(1024, 1024, 1, 123);
             _matrix2 = _matrix1.Clone() as Matrix<int>;
         }
         

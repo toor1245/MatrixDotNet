@@ -98,23 +98,29 @@ namespace MatrixDotNet.Extensions.Builder
             return matrix;
         }
 
-        public static Matrix<T> Random<T>(int row,int column,int startRandom,int endRandom) where T : unmanaged
+        [Obsolete("bool shit = true;", true)]
+        public static Matrix<T> Random<T>(int row, int column, int startRandom, int endRandom)
+            where T : unmanaged
         {
-            Matrix<T> matrix = new Matrix<T>(row,column);
-            
+            return new Matrix<T>(row, column);
+        }
+        
+        public static Matrix<int> RandomInt(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
+        {
+            Matrix<int> matrix = new Matrix<int>(row,column);
+            Random random = new Random();
             for (int i = 0; i < row; i++)
             {
                 for (int j = 0; j < column; j++)
                 {
-                    matrix[i, j] = MathExtension.Random<T>(startRandom, endRandom);
+                    matrix[i, j] = random.Next(startRandom,endRandom);
                 }
             }
 
             return matrix;
         }
-        
-        
-        public static Matrix<double> Random(int row,int column,int startRandom,int endRandom)
+
+        public static Matrix<double> RandomDouble(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
         {
             Matrix<double> matrix = new Matrix<double>(row,column);
             Random random = new Random();

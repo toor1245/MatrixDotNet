@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
@@ -6,6 +7,9 @@ namespace MatrixDotNet.Math
 {
     public static partial class MathExtension
     {
+        private static readonly ConcurrentDictionary<(Type type,string op),Delegate> Cache = 
+            new ConcurrentDictionary<(Type type, string op), Delegate>();
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsFloatingPoint<T>()
         {

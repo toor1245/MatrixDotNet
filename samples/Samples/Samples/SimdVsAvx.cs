@@ -14,7 +14,7 @@ namespace Samples.Samples
         [GlobalSetup]
         public void Setup()
         {
-            _matrix = BuildMatrix.Random<int>(4096, 4096, 1, 123);
+            _matrix = BuildMatrix.RandomInt(4096, 4096, 1, 123);
         }
 
         [Benchmark]
