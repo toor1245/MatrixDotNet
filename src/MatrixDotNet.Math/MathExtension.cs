@@ -12,7 +12,17 @@ namespace MatrixDotNet.Math
         
         private static readonly ConcurrentDictionary<(Type, Type), Delegate> AddFuncCache = 
             new ConcurrentDictionary<(Type, Type), Delegate>();
+        
+        private static readonly ConcurrentDictionary<(Type, Type), Delegate> SubFuncCache = 
+            new ConcurrentDictionary<(Type, Type), Delegate>();
 
+        private static readonly ConcurrentDictionary<(Type, Type), Delegate> MultiplyFuncCache = 
+            new ConcurrentDictionary<(Type, Type), Delegate>();
+
+        private static readonly ConcurrentDictionary<(Type, Type), Delegate> DivideFuncCache = 
+            new ConcurrentDictionary<(Type, Type), Delegate>();
+
+        #region Add
         public static Func<T1, T2, TR> GetAddFunc<T1, T2, TR>()
         {
             var t1 = typeof(T1);
@@ -24,7 +34,7 @@ namespace MatrixDotNet.Math
             var leftPar = Expression.Parameter(t1, "left");
             var rightPar = Expression.Parameter(t2, "right");
             var body = Expression.Add(leftPar, rightPar);
-            
+
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
             AddFuncCache[(t1, t2)] = func;
@@ -36,7 +46,8 @@ namespace MatrixDotNet.Math
         {
             return GetAddFunc<T1, T2, T1>()(left, right);
         }
-
+        
+        [Obsolete("Use Add functions instead")]
         public static T1 AddBy<T1, T2>(T1 left, T2 right)
         {
             return GetAddFunc<T1, T2, T1>()(left, right);
@@ -45,130 +56,123 @@ namespace MatrixDotNet.Math
         public static TR Add<TR, T1, T2>(T1 left, T2 right)
         {
             return GetAddFunc<T1, T2, TR>()(left, right);
-        }
-        
-        public static T Sub<T>(T left, T right) where T: unmanaged
+        } 
+        #endregion
+
+        #region Substraction
+
+        public static Func<T1, T2, TR> GetSubFunc<T1, T2, TR>()
         {
-            var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(Sub)),out var del))
-                return del is Func<T,T,T> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(Sub));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(t, nameof(right));
+            var t1 = typeof(T1);
+            var t2 = typeof(T2);
+
+            if (SubFuncCache.TryGetValue((t1, t2), out var del))
+                return del as Func<T1, T2, TR>;
+
+            var leftPar = Expression.Parameter(t1, "left");
+            var rightPar = Expression.Parameter(t2, "right");
             var body = Expression.Subtract(leftPar, rightPar);
-            
-            var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
 
-            Cache[(t, nameof(Sub))] = func;
+            var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
-            return func(left, right);
+            SubFuncCache[(t1, t2)] = func;
+
+            return func;
+        }
+
+        public static T1 Sub<T1, T2>(T1 left, T2 right)
+        {
+            return GetSubFunc<T1, T2, T1>()(left, right);
         }
         
-        public static T SubBy<T,U>(T left, U right) 
-            where T : unmanaged
-            where U : unmanaged
+        [Obsolete("Use Sub functions instead")]
+        public static T1 SubBy<T1, T2>(T1 left, T2 right)
         {
-            var t = typeof(T);
-            var u = typeof(U);
-            if (Cache.TryGetValue((t, nameof(SubBy)),out var del))
-                return del is Func<T,U,T> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(SubBy));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(u,nameof(right));
-            var body = Expression.Subtract(leftPar, Expression.Convert(Expression.Constant(right), t));
-            
-            var func = Expression.Lambda<Func<T,U,T>>(body, leftPar, rightPar).Compile();
-
-            Cache[(t, nameof(SubBy))] = func;
-
-            return func(left, right);
+            return GetSubFunc<T1, T2, T1>()(left, right);
         }
-        
-        public static T Multiply<T>(T left, T right) where T: unmanaged
+
+        public static TR Sub<TR, T1, T2>(T1 left, T2 right)
         {
-            var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(Multiply)),out var del))
-                return del is Func<T,T,T> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(Multiply));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(t, nameof(right));
+            return GetSubFunc<T1, T2, TR>()(left, right);
+        } 
+
+        #endregion
+
+        #region Multiply
+
+        public static Func<T1, T2, TR> GetMultiplyFunc<T1, T2, TR>()
+        {
+            var t1 = typeof(T1);
+            var t2 = typeof(T2);
+
+            if (MultiplyFuncCache.TryGetValue((t1, t2), out var del))
+                return del as Func<T1, T2, TR>;
+
+            var leftPar = Expression.Parameter(t1, "left");
+            var rightPar = Expression.Parameter(t2, "right");
             var body = Expression.Multiply(leftPar, rightPar);
-            
-            var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
 
-            Cache[(t, nameof(Multiply))] = func;
+            var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
-            return func(left, right);
+            MultiplyFuncCache[(t1, t2)] = func;
+
+            return func;
         }
-        
-        public static T Divide<T>(T left, T right) where T: unmanaged
+
+        public static T1 Multiply<T1, T2>(T1 left, T2 right)
         {
-            var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(Divide)),out var del))
-                return del is Func<T,T,T> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(Divide));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(t, nameof(right));
+            return GetMultiplyFunc<T1, T2, T1>()(left, right);
+        }
+
+        [Obsolete("Use Multiply functions instead")]
+        public static T1 MultiplyBy<T1, T2>(T1 left, T2 right)
+        {
+            return GetMultiplyFunc<T1, T2, T1>()(left, right);
+        }
+
+        public static TR Multiply<TR, T1, T2>(T1 left, T2 right)
+        {
+            return GetMultiplyFunc<T1, T2, TR>()(left, right);
+        } 
+
+        #endregion
+
+        #region Divide
+        public static Func<T1, T2, TR> GetDivideFunc<T1, T2, TR>()
+        {
+            var t1 = typeof(T1);
+            var t2 = typeof(T2);
+
+            if (DivideFuncCache.TryGetValue((t1, t2), out var del))
+                return del as Func<T1, T2, TR>;
+
+            var leftPar = Expression.Parameter(t1, "left");
+            var rightPar = Expression.Parameter(t2, "right");
             var body = Expression.Divide(leftPar, rightPar);
-            
-            var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
 
-            Cache[(t, nameof(Divide))] = func;
+            var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
-            return func(left, right);
+            DivideFuncCache[(t1, t2)] = func;
+
+            return func;
         }
-        
-        public static T DivideBy<T,U>(T left, U right) 
-            where T : unmanaged
-            where U : unmanaged
+
+        public static T1 Divide<T1, T2>(T1 left, T2 right)
         {
-            var t = typeof(T);
-            var u = typeof(U);
-            if (Cache.TryGetValue((t, nameof(DivideBy)),out var del))
-                return del is Func<T,U,T> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(DivideBy));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(u,nameof(right));
-            var body = Expression.Divide(leftPar, Expression.Convert(Expression.Constant(right), t));
-            
-            var func = Expression.Lambda<Func<T,U,T>>(body, leftPar, rightPar).Compile();
-
-            Cache[(t, nameof(DivideBy))] = func;
-
-            return func(left, right);
+            return GetDivideFunc<T1, T2, T1>()(left, right);
         }
-        
-        public static T MultiplyBy<T,U>(T left, U right) 
-            where T : unmanaged
-            where U : unmanaged
+
+        [Obsolete("Use Divide functions instead")]
+        public static T1 DivideBy<T1, T2>(T1 left, T2 right)
         {
-            var t = typeof(T);
-            var u = typeof(U);
-            if (Cache.TryGetValue((t, nameof(MultiplyBy)),out var del))
-                return del is Func<T,U,T> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(MultiplyBy));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(u,nameof(right));
-            var body = Expression.Multiply(leftPar, Expression.Convert(Expression.Constant(right), t));
-            
-            var func = Expression.Lambda<Func<T,U,T>>(body, leftPar, rightPar).Compile();
-
-            Cache[(t, nameof(MultiplyBy))] = func;
-
-            return func(left, right);
+            return GetDivideFunc<T1, T2, T1>()(left, right);
         }
+
+        public static TR Divide<TR, T1, T2>(T1 left, T2 right)
+        {
+            return GetDivideFunc<T1, T2, TR>()(left, right);
+        }
+        #endregion
         
         public static T Increment<T>(T left) where T: unmanaged
         {

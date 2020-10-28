@@ -226,13 +226,13 @@ namespace MatrixDotNet
         /// </exception>
         public static Matrix<T> operator +(Matrix<T> left, Matrix<T> right)
         {
-            if (left.Length != right.Length)
+            if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
                 throw new MatrixDotNetException(
                     $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
                 
-            var func = MathExtension.GetAddFunc<T, T, T>();
+            var addFunc = MathExtension.GetAddFunc<T, T, T>();
 
             Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
 
@@ -240,13 +240,13 @@ namespace MatrixDotNet
             {
                 for (int j = 0; j < left.Columns; j++)
                 {
-                    matrix[i, j] = func(left[i,j], right[i,j]);
+                    matrix[i, j] = addFunc(left[i,j], right[i,j]);
                 }
             }
 
             return matrix;
-        } 
-        
+        }
+
         /// <summary>
         /// Subtract operation of two matrix.
         /// </summary>
@@ -258,11 +258,13 @@ namespace MatrixDotNet
         /// </exception>
         public static Matrix<T> operator -(Matrix<T> left, Matrix<T> right)
         {
-            if (left.Length != right.Length)
+            if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
                 throw new MatrixDotNetException(
                     $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
+
+            var subFunc = MathExtension.GetSubFunc<T, T, T>();
 
             Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
 
@@ -270,7 +272,7 @@ namespace MatrixDotNet
             {
                 for (int j = 0; j < left.Columns; j++)
                 {
-                    matrix[i, j] = MathExtension.Sub(left[i,j],right[i,j]);
+                    matrix[i, j] = subFunc(left[i,j],right[i,j]);
                 }
             }
 
@@ -292,6 +294,9 @@ namespace MatrixDotNet
                     $"matrix {nameof(left)} columns length must be equal matrix {nameof(right)} rows length");
             }
 
+            var addFunc = MathExtension.GetAddFunc<T, T, T>();
+            var multiplyFunc = MathExtension.GetMultiplyFunc<T, T, T>();
+
             Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
 
             for (int i = 0; i < left.Rows; i++)
@@ -300,9 +305,8 @@ namespace MatrixDotNet
                 {
                     for (int k = 0; k < left.Columns; k++)
                     {
-                        // matrix[i,j] += left[i,k] * right[k,j]; 
-                        matrix[i, j] = MathExtension
-                            .Add(matrix[i,j],MathExtension.Multiply(left[i,k],right[k,j]));
+                        // matrix[i,j] = matrix[i,j] + left[i,k] * right[k,j]; 
+                        matrix[i, j] = addFunc(matrix[i,j], multiplyFunc(left[i,k],right[k,j]));
                     }
                 }
             }
@@ -318,13 +322,13 @@ namespace MatrixDotNet
         /// <returns><see cref="Matrix{T}"/></returns>
         public static Matrix<T> operator *(Matrix<T> matrix, T digit)
         {
+            var multiplyFunc = MathExtension.GetMultiplyFunc<T, T, T>();
             Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    // result[i,j] = matrix[i,j] * matrix
-                    result[i, j] = MathExtension.Multiply(matrix[i,j],digit);
+                    result[i, j] = multiplyFunc(matrix[i,j],digit);
                 }
             }
             
@@ -339,17 +343,7 @@ namespace MatrixDotNet
         /// <returns><see cref="Matrix{T}"/></returns>
         public static Matrix<T> operator *(T digit, Matrix<T> matrix)
         {
-            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    // matrix1[i,j] = matrix[i,j] * matrix
-                    result[i, j] = MathExtension.Multiply(matrix[i,j],digit);
-                }
-            }
-            
-            return result;
+            return matrix * digit;
         }
         
         /// <summary>
@@ -360,13 +354,14 @@ namespace MatrixDotNet
         /// <returns></returns>
         public static Matrix<T> operator /(Matrix<T> matrix, T digit)
         {
+            var divideFunc = MathExtension.GetDivideFunc<T, T, T>();
+
             Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    // result[i,j] = matrix[i,j] * matrix
-                    result[i, j] = MathExtension.Divide(matrix[i,j],digit);
+                    result[i, j] = divideFunc(matrix[i,j],digit);
                 }
             }
             
@@ -379,17 +374,19 @@ namespace MatrixDotNet
         /// <param name="digit"></param>
         /// <param name="matrix"></param>
         /// <returns></returns>
-        public static Matrix<T> operator /(T digit,Matrix<T> matrix)
+        public static Matrix<T> operator /(T digit, Matrix<T> matrix)
         {
+            var divideFunc = MathExtension.GetDivideFunc<T, T, T>();
+
             Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    // result[i,j] = matrix[i,j] * matrix
-                    result[i, j] = MathExtension.Divide(digit,matrix[i,j]);
+                    result[i, j] = divideFunc(digit,matrix[i,j]);
                 }
             }
+
             return result;
         }
 
@@ -464,26 +461,7 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException"></exception>
         public static Vector<T> operator *(Vector<T> vector,Matrix<T> matrix)
         {
-            if (vector.Length != matrix.Columns)
-            {
-                throw new MatrixDotNetException("not equals");
-            }
-            
-            Vector<T> temp = new Vector<T>(vector.Length);
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                T sum = default;
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    sum = MathExtension.Add(sum, MathExtension.Multiply(matrix[i, j], vector[j]));
-                }
-                
-                if(i == vector.Length)
-                    break;
-
-                temp[i] = sum;
-            }
-            return temp;
+            return matrix * vector.Array;
         }
         
         /// <summary>
@@ -495,26 +473,7 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException"></exception>
         public static Vector<T> operator *(Matrix<T> matrix,Vector<T> vector)
         {
-            if (vector.Length != matrix.Columns)
-            {
-                throw new MatrixDotNetException("not equals");
-            }
-            
-            Vector<T> temp = new Vector<T>(vector.Length);
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                T sum = default;
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    sum = MathExtension.Add(sum, MathExtension.Multiply(matrix[i, j], vector[j]));
-                }
-                
-                if(i == vector.Length)
-                    break;
-
-                temp[i] = sum;
-            }
-            return temp;
+            return vector.Array * matrix;
         }
 
 
