@@ -1,6 +1,5 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -11,46 +10,41 @@ namespace MatrixDotNet.Math
         private static readonly ConcurrentDictionary<(Type type,string op),Delegate> Cache = 
             new ConcurrentDictionary<(Type type, string op), Delegate>();
         
-        public static T Add<T>(T left, T right) where T: unmanaged
+        private static readonly ConcurrentDictionary<(Type, Type), Delegate> AddFuncCache = 
+            new ConcurrentDictionary<(Type, Type), Delegate>();
+
+        public static Func<T1, T2, TR> GetAddFunc<T1, T2, TR>()
         {
-            var t = typeof(T);
-            
-            if (Cache.TryGetValue((t, nameof(Add)),out var del))
-                return del is Func<T,T,T> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(Add));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(t, nameof(right));
+            var t1 = typeof(T1);
+            var t2 = typeof(T2);
+
+            if (AddFuncCache.TryGetValue((t1, t2), out var del))
+                return del as Func<T1, T2, TR>;
+
+            var leftPar = Expression.Parameter(t1, "left");
+            var rightPar = Expression.Parameter(t2, "right");
             var body = Expression.Add(leftPar, rightPar);
             
-            var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
+            var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
-            Cache[(t, nameof(Add))] = func;
+            AddFuncCache[(t1, t2)] = func;
 
-            return func(left, right);
+            return func;
         }
-        
-        public static T AddBy<T,U>(T left, U right) 
-            where T : unmanaged
-            where U : unmanaged
+
+        public static T1 Add<T1, T2>(T1 left, T2 right)
         {
-            var t = typeof(T);
-            var u = typeof(U);
-            if (Cache.TryGetValue((t, nameof(AddBy)),out var del))
-                return del is Func<T,U,T> specificFunc
-                    ? specificFunc(left, right)
-                    : throw new InvalidOperationException(nameof(AddBy));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
-            var rightPar = Expression.Parameter(u,nameof(right));
-            var body = Expression.Add(leftPar, Expression.Convert(Expression.Constant(right), t));
-            
-            var func = Expression.Lambda<Func<T,U,T>>(body, leftPar, rightPar).Compile();
+            return GetAddFunc<T1, T2, T1>()(left, right);
+        }
 
-            Cache[(t, nameof(AddBy))] = func;
+        public static T1 AddBy<T1, T2>(T1 left, T2 right)
+        {
+            return GetAddFunc<T1, T2, T1>()(left, right);
+        }
 
-            return func(left, right);
+        public static TR Add<TR, T1, T2>(T1 left, T2 right)
+        {
+            return GetAddFunc<T1, T2, TR>()(left, right);
         }
         
         public static T Sub<T>(T left, T right) where T: unmanaged

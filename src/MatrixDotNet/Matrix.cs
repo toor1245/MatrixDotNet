@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 
+using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet
 {
@@ -232,13 +232,15 @@ namespace MatrixDotNet
                     $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
                 
+            var func = MathExtension.GetAddFunc<T, T, T>();
+
             Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
 
             for (int i = 0; i < left.Rows; i++)
             {
                 for (int j = 0; j < left.Columns; j++)
                 {
-                    matrix[i, j] = MathExtension.Add(left[i,j],right[i,j]);
+                    matrix[i, j] = func(left[i,j], right[i,j]);
                 }
             }
 
@@ -710,7 +712,6 @@ namespace MatrixDotNet
         } 
         
         #endregion
-        
     }
 
     /// <summary>
