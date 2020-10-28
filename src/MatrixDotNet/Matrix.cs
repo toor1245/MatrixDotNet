@@ -1,4 +1,4 @@
-using MatrixDotNet.Exceptions;
+﻿using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
 using System;
@@ -615,35 +615,32 @@ namespace MatrixDotNet
         public IEnumerator<T> GetEnumerator() =>
             new Enumerator(this);
 
-        /// <summary>
-        /// Checks on equals two matrix by rows - i ,columns - j
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentException"></exception>
+
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            Matrix<T> t = (Matrix<T>) obj;
-            var count = 0;
-            
-            for (int i = 0; i < t.Rows; i++)
+            Matrix<T> matrix = obj as Matrix<T>;
+
+            if (matrix is null || Rows != matrix.Rows || Columns != matrix.Columns)
+                return false;
+
+            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < t.Columns; j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
-                    if (this[i, j].Equals(t[i, j])) count++;
+                    if (!this[i, j].Equals(matrix[i, j]))
+                        return false;
                 }
             }
-            
-            return count == Length;
+
+            return true;
         }
 
-        /// <summary>
-        /// Gets hash code.
-        /// </summary>
-        /// <returns></returns>
+        /// <inheritdoc />
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            // ReSharper disable once NonReadonlyMemberInGetHashCode
+            return _Matrix.GetHashCode();
         }
         
         #endregion
