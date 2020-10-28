@@ -7,9 +7,6 @@ namespace MatrixDotNet.Math
 {
     public static partial class MathExtension
     {
-        private static readonly ConcurrentDictionary<(Type type,string op),Delegate> Cache = 
-            new ConcurrentDictionary<(Type type, string op), Delegate>();
-        
         private static readonly ConcurrentDictionary<(Type, Type), Delegate> AddFuncCache = 
             new ConcurrentDictionary<(Type, Type), Delegate>();
         
@@ -21,6 +18,18 @@ namespace MatrixDotNet.Math
 
         private static readonly ConcurrentDictionary<(Type, Type), Delegate> DivideFuncCache = 
             new ConcurrentDictionary<(Type, Type), Delegate>();
+
+        private static readonly ConcurrentDictionary<Type, Delegate> IncrementFuncCache = 
+            new ConcurrentDictionary<Type, Delegate>();
+
+        private static readonly ConcurrentDictionary<Type, Delegate> AbsFuncCache = 
+            new ConcurrentDictionary<Type, Delegate>();
+
+        private static readonly ConcurrentDictionary<Type, Delegate> NegateFuncCache = 
+            new ConcurrentDictionary<Type, Delegate>();
+
+        private static readonly ConcurrentDictionary<Type, Delegate> SqrtFuncCache = 
+            new ConcurrentDictionary<Type, Delegate>();
 
         #region Add
         public static Func<T1, T2, TR> GetAddFunc<T1, T2, TR>()
@@ -173,34 +182,40 @@ namespace MatrixDotNet.Math
             return GetDivideFunc<T1, T2, TR>()(left, right);
         }
         #endregion
-        
-        public static T Increment<T>(T left) where T: unmanaged
+
+        #region Increment
+        public static Func<T, T> GetIncrementFunc<T>()
         {
             var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(Increment)),out var del))
-                return del is Func<T,T> specificFunc
-                    ? specificFunc(left)
-                    : throw new InvalidOperationException(nameof(Increment));
-            
-            var leftPar = Expression.Parameter(t, nameof(left));
+            if (IncrementFuncCache.TryGetValue(t,out var del))
+                return del as Func<T, T>;
+
+            var leftPar = Expression.Parameter(t, "value");
             var body = Expression.Increment(leftPar);
             
             var func = Expression.Lambda<Func<T,T>>(body, leftPar).Compile();
 
-            Cache[(t, nameof(Increment))] = func;
+            IncrementFuncCache[t] = func;
 
-            return func(left);
+            return func;
         }
-        
-        public static T Abs<T>(T left) where T: unmanaged
+
+        public static T Increment<T>(T left)
+        {
+            return GetIncrementFunc<T>()(left);
+        }
+
+        #endregion
+
+        #region Abs
+
+        public static Func<T,T> GetAbsFunc<T>()
         {
             var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(Abs)),out var del))
-                return del is Func<T,T> specificFunc
-                    ? specificFunc(left)
-                    : throw new InvalidOperationException(nameof(Abs));
+            if (AbsFuncCache.TryGetValue(t, out var del))
+                return del as Func<T, T>;
             
-            var leftPar = Expression.Parameter(t, nameof(left));
+            var leftPar = Expression.Parameter(t, "value");
             MethodInfo info = typeof(System.Math).GetMethod("Abs", new[] {leftPar.Type});
             if (info == null)
                 throw new InvalidOperationException(nameof(Abs));
@@ -209,45 +224,50 @@ namespace MatrixDotNet.Math
 
             var func = Expression.Lambda<Func<T,T>>(call, leftPar).Compile();
 
-            Cache[(t, nameof(Abs))] = func;
+            AbsFuncCache[t] = func;
 
-            return func(left);
+            return func;
         }
-        
-        public static T Negate<T>(T left) where T: unmanaged
+
+        public static T Abs<T>(T left)
+        {
+            return GetAbsFunc<T>()(left);
+        }
+
+        #endregion
+
+        #region Negate
+        public static Func<T, T> GetNegateFunc<T>()
         {
             var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(Negate)),out var del))
-                return del is Func<T,T> specificFunc
-                    ? specificFunc(left)
-                    : throw new InvalidOperationException(nameof(Negate));
+            if (NegateFuncCache.TryGetValue(t, out var del))
+                return del as Func<T, T>;
             
-            var leftPar = Expression.Parameter(t, nameof(left));
+            var leftPar = Expression.Parameter(t, "value");
 
             var negate = Expression.Negate(leftPar);
 
             var func = Expression.Lambda<Func<T,T>>(negate, leftPar).Compile();
 
-            Cache[(t, nameof(Negate))] = func;
+            NegateFuncCache[t] = func;
 
-            return func(left);
+            return func;
         }
-        
-        [Obsolete("bool shit = true;", true)]
-        public static T Random<T>(int start,int end)
+
+        public static T Negate<T>(T left)
         {
-            return default(T);
+            return GetNegateFunc<T>()(left);
         }
-        
-        public static T Sqrt<T>(T arg) where T: unmanaged
+        #endregion
+
+        #region Sqrt
+        public static Func<T, T> Sqrt<T>()
         {
             var t = typeof(T);
-            if (Cache.TryGetValue((t, nameof(Sqrt)),out var del))
-                return del is Func<T,T> specificFunc
-                    ? specificFunc(arg)
-                    : throw new InvalidOperationException(nameof(Sqrt));
+            if (SqrtFuncCache.TryGetValue(t, out var del))
+                return del as Func<T, T>;
             
-            var argPar = Expression.Parameter(t, nameof(arg));
+            var argPar = Expression.Parameter(t, "value");
 
             MethodInfo info = typeof(System.Math).GetMethod(nameof(Sqrt),new[]{argPar.Type});
             
@@ -258,9 +278,21 @@ namespace MatrixDotNet.Math
 
             var func = Expression.Lambda<Func<T,T>>(call, argPar).Compile();
 
-            Cache[(t, nameof(Sqrt))] = func;
+            SqrtFuncCache[t] = func;
 
-            return func(arg);
+            return func;
+        }
+
+        public static T Sqrt<T>(T arg)
+        {
+            return Sqrt<T>()(arg);
+        }
+        #endregion
+
+        [Obsolete("bool shit = true;", true)]
+        public static T Random<T>(int start,int end)
+        {
+            return default(T);
         }
     }
 }
