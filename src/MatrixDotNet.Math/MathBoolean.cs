@@ -129,5 +129,25 @@ namespace MatrixDotNet.Math
 
             return func(left, right);
         }
+        
+        public static bool GreaterThanOrEqual<T>(T left, T right) where T: unmanaged
+        {
+            var t = typeof(T);
+            if (Cache.TryGetValue((t, nameof(GreaterThanOrEqual)),out var del))
+                return del is Func<T,T,bool> specificFunc
+                    ? specificFunc(left, right)
+                    : throw new InvalidOperationException(nameof(GreaterThanOrEqual));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var rightPar = Expression.Parameter(t, nameof(right));
+            
+            var body = Expression.GreaterThanOrEqual(leftPar, rightPar);
+            
+            var func = Expression.Lambda<Func<T, T,bool>>(body, leftPar, rightPar).Compile();
+
+            Cache[(t, nameof(GreaterThanOrEqual))] = func;
+
+            return func(left, right);
+        }
     }
 }
