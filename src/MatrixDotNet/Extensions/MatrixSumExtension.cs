@@ -1,4 +1,5 @@
 using System;
+using MatrixDotNet.Exceptions;
 using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet.Extensions
@@ -14,7 +15,8 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>Sum whole of matrix.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T Sum<T>(this Matrix<T> matrix) where T: unmanaged
+        public static T Sum<T>(this Matrix<T> matrix) 
+            where T: unmanaged
         {
             if(matrix is null)
                 throw new NullReferenceException();
@@ -39,7 +41,8 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>Sum row by index</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T SumByRow<T>(this Matrix<T> matrix, int dimension) where T: unmanaged
+        public static T SumByRow<T>(this Matrix<T> matrix, int dimension) 
+            where T: unmanaged
         {
             if(matrix is null)
                 throw new NullReferenceException();
@@ -62,7 +65,8 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>Sum column by index</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T SumByColumn<T>(this Matrix<T> matrix, int dimension) where T: unmanaged
+        public static T SumByColumn<T>(this Matrix<T> matrix, int dimension)
+            where T: unmanaged
         {
             if(matrix is null)
                 throw new NullReferenceException();
@@ -84,7 +88,8 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns></returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T[] SumByRows<T>(this Matrix<T> matrix) where T : unmanaged
+        public static T[] SumByRows<T>(this Matrix<T> matrix)
+            where T : unmanaged
         {
             if(matrix is null)
                 throw new NullReferenceException();
@@ -113,7 +118,8 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns></returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T[] SumByColumns<T>(this Matrix<T> matrix) where T : unmanaged
+        public static T[] SumByColumns<T>(this Matrix<T> matrix)
+            where T : unmanaged
         {
             if(matrix is null)
                 throw new NullReferenceException();
@@ -143,7 +149,8 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T SumByDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
+        public static T SumByDiagonal<T>(this Matrix<T> matrix) 
+            where T : unmanaged
         {
             if (matrix is null)
                 throw new NullReferenceException();
@@ -161,299 +168,198 @@ namespace MatrixDotNet.Extensions
         #endregion
         
         #region Klein
-        public static decimal KleinSum(this Matrix<decimal> matrix)
+
+        public static T GetKleinSum<T>(this Matrix<T> matrix) 
+            where T : unmanaged
         {
-            decimal sum = 0;
-            decimal cs = 0;
-            decimal ccs = 0;
+            if (!MathExtension.IsFloatingPoint<T>())
+            {
+                throw new MatrixDotNetException($"{typeof(T)} is not supported type must be floating type");
+            }
+            
+            T sum = default;
+            T cs = default;
+            T ccs = default;
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    var t = sum + matrix[i,j];
-                    decimal error;
-                    if (System.Math.Abs(sum) >= matrix[i,j])
+                    T t = MathExtension.Add(sum,matrix[i,j]);
+                    T error;
+                    
+                    if (MathExtension.GreaterThanOrEqual(MathExtension.Abs(sum),matrix[i,j]))
                     {
-                        error = (sum - t) + matrix[i,j];
+                        error = MathExtension.Add(MathExtension.Sub(sum,t),matrix[i,j]);
                     }
                     else
                     {
-                        error = (matrix[i,j] - t) + sum;
+                        error = MathExtension.Add(MathExtension.Sub(matrix[i,j],t),sum);
                     }
-
+                    
                     sum = t;
-                    t = cs + cs;
-                    decimal error2;
-                    if (System.Math.Abs(cs) >= System.Math.Abs(error))
+                    t = MathExtension.Add(cs,cs);
+                    T error2;
+                    
+                    if (MathExtension.GreaterThanOrEqual(MathExtension.Abs(cs),error))
                     {
-                        error2 = (error - t) + cs;
+                        error2 = MathExtension.Add(MathExtension.Sub(error,t),cs);
                     }
                     else
                     {
-                        error2 = (cs - t) + error;
+                        error2 = MathExtension.Add(MathExtension.Sub(cs,t),error);
                     }
 
                     cs = t;
-                    ccs += error2;
+                    ccs = MathExtension.Add(ccs,error2);
                 }
             }
-            return sum + cs + ccs;
+            return MathExtension.Add(MathExtension.Add(sum,cs),ccs);
+        }
+
+        public static T GetKleinSum<T>(this Matrix<T> matrix, int dimension, State state = State.Row) 
+            where T : unmanaged
+        {
+            if (!MathExtension.IsFloatingPoint<T>())
+            {
+                throw new MatrixDotNetException($"{typeof(T)} is not supported type must be floating type");
+            }
+
+            return state == State.Row ? GetKleinSumByRows(matrix,dimension) : GetKleinSumByColumns(matrix,dimension);
         }
         
-        public static decimal KleinSum(this Matrix<decimal> matrix, int dimension)
+        private static T GetKleinSumByRows<T>(this Matrix<T> matrix, int dimension) 
+            where T : unmanaged
         {
-            decimal sum = 0;
-            decimal cs = 0;
-            decimal ccs = 0;
+            T sum = default;
+            T cs = default;
+            T ccs = default;
+            
             for (int j = 0; j < matrix.Columns; j++)
             {
-                var t = sum + matrix[dimension,j];
-                decimal error;
-                if (System.Math.Abs(sum) >= matrix[dimension,j])
+                T t = MathExtension.Add(sum,matrix[dimension,j]);
+                T error;
+                
+                if (MathExtension.GreaterThanOrEqual(MathExtension.Abs(sum),matrix[dimension,j]))
                 {
-                    error = (sum - t) + matrix[dimension,j];
+                    error = MathExtension.Add(MathExtension.Sub(sum,t),matrix[dimension,j]);
                 }
                 else
                 {
-                    error = (matrix[dimension,j] - t) + sum;
+                    error = MathExtension.Add(MathExtension.Sub(matrix[dimension,j],t),sum);
                 }
-
+                
                 sum = t;
-                t = cs + cs;
-                decimal error2;
-                if (System.Math.Abs(cs) >= System.Math.Abs(error))
+                t = MathExtension.Add(cs,cs);
+                T error2;
+                
+                if (MathExtension.GreaterThanOrEqual(MathExtension.Abs(cs),error))
                 {
-                    error2 = (error - t) + cs;
+                    error2 = MathExtension.Add(MathExtension.Sub(error,t),cs);
                 }
                 else
                 {
-                    error2 = (cs - t) + error;
+                    error2 = MathExtension.Add(MathExtension.Sub(cs,t),error);
                 }
 
                 cs = t;
-                ccs += error2;
+                ccs = MathExtension.Add(ccs,error2);
             }
-            return sum + cs + ccs;
+            return MathExtension.Add(MathExtension.Add(sum,cs),ccs);
         }
         
-        public static double KleinSum(this Matrix<double> matrix)
+        private static T GetKleinSumByColumns<T>(this Matrix<T> matrix, int dimension) 
+            where T : unmanaged
         {
-            double sum = 0;
-            double cs = 0;
-            double ccs = 0;
-            for (int i = 0; i < matrix.Rows; i++)
+            T sum = default;
+            T cs = default;
+            T ccs = default;
+            
+            for (int j = 0; j < matrix.Rows; j++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
+                T t = MathExtension.Add(sum,matrix[j,dimension]);
+                T error;
+                
+                if (MathExtension.GreaterThanOrEqual(MathExtension.Abs(sum),matrix[j,dimension]))
                 {
-                    var t = sum + matrix[i,j];
-                    double error;
-                    if (System.Math.Abs(sum) >= matrix[i,j])
-                    {
-                        error = (sum - t) + matrix[i,j];
-                    }
-                    else
-                    {
-                        error = (matrix[i,j] - t) + sum;
-                    }
-
-                    sum = t;
-                    t = cs + cs;
-                    double error2;
-                    if (System.Math.Abs(cs) >= System.Math.Abs(error))
-                    {
-                        error2 = (error - t) + cs;
-                    }
-                    else
-                    {
-                        error2 = (cs - t) + error;
-                    }
-
-                    cs = t;
-                    ccs += error2;
-                }
-            }
-            return sum + cs + ccs;
-        }
-        
-        public static double KleinSum(this Matrix<double> matrix, int dimension)
-        {
-            double sum = 0;
-            double cs = 0;
-            double ccs = 0;
-            for (int j = 0; j < matrix.Columns; j++)
-            {
-                var t = sum + matrix[dimension,j];
-                double error;
-                if (System.Math.Abs(sum) >= matrix[dimension,j])
-                {
-                    error = (sum - t) + matrix[dimension,j];
+                    error = MathExtension.Add(MathExtension.Sub(sum,t),matrix[j,dimension]);
                 }
                 else
                 {
-                    error = (matrix[dimension,j] - t) + sum;
+                    error = MathExtension.Add(MathExtension.Sub(matrix[j,dimension],t),sum);
                 }
-
+                
                 sum = t;
-                t = cs + cs;
-                double error2;
-                if (System.Math.Abs(cs) >= System.Math.Abs(error))
+                t = MathExtension.Add(cs,cs);
+                T error2;
+                
+                if (MathExtension.GreaterThanOrEqual(MathExtension.Abs(cs),error))
                 {
-                    error2 = (error - t) + cs;
+                    error2 = MathExtension.Add(MathExtension.Sub(error,t),cs);
                 }
                 else
                 {
-                    error2 = (cs - t) + error;
+                    error2 = MathExtension.Add(MathExtension.Sub(cs,t),error);
                 }
 
                 cs = t;
-                ccs += error2;
+                ccs = MathExtension.Add(ccs,error2);
             }
-            return sum + cs + ccs;
+            return MathExtension.Add(MathExtension.Add(sum,cs),ccs);
         }
         
-        public static float KleinSum(this Matrix<float> matrix)
-        {
-            float sum = 0;
-            float cs = 0;
-            float ccs = 0;
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    float t = sum + matrix[i,j];
-                    float error;
-                    if (System.Math.Abs(sum) >= matrix[i,j])
-                    {
-                        error = (sum - t) + matrix[i,j];
-                    }
-                    else
-                    {
-                        error = (matrix[i,j] - t) + sum;
-                    }
 
-                    sum = t;
-                    t = cs + cs;
-                    float error2;
-                    if (System.Math.Abs(cs) >= System.Math.Abs(error))
-                    {
-                        error2 = (error - t) + cs;
-                    }
-                    else
-                    {
-                        error2 = (cs - t) + error;
-                    }
-
-                    cs = t;
-                    ccs += error2;
-                }
-            }
-            return sum + cs + ccs;
-        }
-        
-        public static float KleinSum(this Matrix<float> matrix, int dimension)
-        {
-            float sum = 0;
-            float cs = 0;
-            float ccs = 0;
-            for (int j = 0; j < matrix.Columns; j++)
-            {
-                var t = sum + matrix[dimension,j];
-                float error;
-                if (System.Math.Abs(sum) >= matrix[dimension,j])
-                {
-                    error = (sum - t) + matrix[dimension,j];
-                }
-                else
-                {
-                    error = (matrix[dimension,j] - t) + sum;
-                }
-
-                sum = t;
-                t = cs + cs;
-                float error2;
-                if (System.Math.Abs(cs) >= System.Math.Abs(error))
-                {
-                    error2 = (error - t) + cs;
-                }
-                else
-                {
-                    error2 = (cs - t) + error;
-                }
-
-                cs = t;
-                ccs += error2;
-            }
-            return sum + cs + ccs;
-        }
-        
         #endregion
 
         #region Kahan
-        public static double KahanSum(this Matrix<double> matrix,int dimension)
+        
+        public static T GetKahanSum<T>(this Matrix<T> matrix) 
+            where T : unmanaged
         {
-            double sum = 0;
-            double error = 0;
-            for (int i = 0; i < matrix.Columns; i++)
-            {
-                double y = matrix[dimension, i] - error;
-                double t = sum + y;
-                error = (t - sum) - matrix[dimension, i];
-                sum = t;
-            }
-
-            return sum;
-        }
-
-        public static double KahanSum(this Matrix<double> matrix)
-        {
-            double sum = 0;
-            double error = 0;
+            T sum = default;
+            T error = default;
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    double y = matrix[i,j] - error;
-                    double t = sum + y;
-                    error = (t - sum) - matrix[i,j];
+                    T y = MathExtension.Sub(matrix[i, j], error);
+                    T t = MathExtension.Add(sum, y);
+                    error = MathExtension.Sub(MathExtension.Sub(t, sum), matrix[i, j]);
                     sum = t;
                 }
-            }
-            return sum;
-        }
-        
-        public static float KahanSum(this Matrix<float> matrix)
-        {
-            float sum = 0f;
-            float error = 0f;
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    float y = matrix[i,j] - error;
-                    float t = sum + y;
-                    error = (t - sum) - matrix[i,j];
-                    sum = t;
-                }
-            }
-            return sum;
-        }
-        
-        public static float KahanSum(this Matrix<float> matrix,int dimension)
-        {
-            float sum = 0;
-            float error = 0;
-            for (int i = 0; i < matrix.Columns; i++)
-            {
-                float y = matrix[dimension, i] - error;
-                float t = sum + y;
-                error = (t - sum) - matrix[dimension, i];
-                sum = t;
             }
 
             return sum;
         }
-        
-        
+
+        public static T GetKahanSum<T>(this Matrix<T> matrix, int dimension,State state = State.Row) 
+            where T : unmanaged
+        {
+            T sum = default;
+            T error = default;
+            if (state == State.Row)
+            {
+                for (int i = 0; i < matrix.Columns; i++)
+                {
+                    T y = MathExtension.Sub(matrix[dimension, i], error);
+                    T t = MathExtension.Add(sum, y);
+                    error = MathExtension.Sub(MathExtension.Sub(t, sum), matrix[dimension, i]);
+                    sum = t;
+                }
+            }
+            else
+            {
+                for (int i = 0; i < matrix.Rows; i++)
+                {
+                    T y = MathExtension.Sub(matrix[i,dimension], error);
+                    T t = MathExtension.Add(sum, y);
+                    error = MathExtension.Sub(MathExtension.Sub(t, sum), matrix[i,dimension]);
+                    sum = t;
+                }
+            }
+
+            return sum;
+        }
+
         #endregion
     }
 }
