@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
@@ -9,7 +11,7 @@ namespace MatrixDotNet.Math
     {
         private static readonly ConcurrentDictionary<(Type type,string op),Delegate> Cache = 
             new ConcurrentDictionary<(Type type, string op), Delegate>();
-
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsFloatingPoint<T>()
         {
