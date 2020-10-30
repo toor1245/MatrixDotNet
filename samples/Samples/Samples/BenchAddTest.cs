@@ -24,7 +24,7 @@ namespace Samples.Samples
         public int MExtensionGeneric()
         {
             for (int i = 0; i < 10000; i++)
-                MathExtension<int, int, int>.GetAddFunc()(A, B);
+                MathGeneric<int, int, int>.GetAddFunc()(A, B);
             return 0;
         }
     }
