@@ -1,34 +1,263 @@
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 
 namespace MatrixDotNet.Math
 {
+    public static class MathExtension<T>
+    {
+        #region Increment
+
+        private static Func<T, T> IncrementFunc;
+
+        public static Func<T, T> GetIncrementFunc()
+        {
+            if (IncrementFunc != null)
+                return IncrementFunc;
+
+            var leftPar = Expression.Parameter(typeof(T), "value");
+            var body = Expression.Increment(leftPar);
+
+            var func = Expression.Lambda<Func<T, T>>(body, leftPar).Compile();
+
+            IncrementFunc = func;
+
+            return func;
+        }
+
+        public static T Increment(T left)
+        {
+            return GetIncrementFunc()(left);
+        }
+
+        #endregion
+
+        #region Abs
+
+        private static Func<T, T> AbsFunc;
+
+        public static Func<T, T> GetAbsFunc()
+        {
+            if (AbsFunc != null)
+                return AbsFunc;
+
+            var leftPar = Expression.Parameter(typeof(T), "value");
+
+            MethodInfo info = typeof(System.Math).GetMethod("Abs", new[] { leftPar.Type });
+            if (info == null)
+                throw new InvalidOperationException(nameof(Abs));
+
+            var call = Expression.Call(null, info, leftPar);
+
+            var func = Expression.Lambda<Func<T, T>>(call, leftPar).Compile();
+
+            AbsFunc = func;
+
+            return func;
+        }
+
+        public static T Abs(T left)
+        {
+            return GetAbsFunc()(left);
+        }
+
+        #endregion
+
+        #region Negate
+
+        private static Func<T, T> NegateFunc;
+
+        public static Func<T, T> GetNegateFunc()
+        {
+            if (NegateFunc != null)
+                return NegateFunc;
+
+            var leftPar = Expression.Parameter(typeof(T), "value");
+
+            var negate = Expression.Negate(leftPar);
+
+            var func = Expression.Lambda<Func<T, T>>(negate, leftPar).Compile();
+
+            NegateFunc = func;
+
+            return func;
+        }
+
+        public static T Negate(T left)
+        {
+            return GetNegateFunc()(left);
+        }
+        #endregion
+
+        #region Sqrt
+
+        private static Func<T, T> SqrtFunc;
+
+        public static Func<T, T> Sqrt()
+        {
+            if (SqrtFunc != null)
+                return SqrtFunc;
+
+            var argPar = Expression.Parameter(typeof(T), "value");
+
+            MethodInfo info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] { argPar.Type });
+
+            if (info is null)
+                throw new InvalidOperationException(nameof(Sqrt));
+
+            var call = Expression.Call(null, info, argPar);
+
+            var func = Expression.Lambda<Func<T, T>>(call, argPar).Compile();
+
+            SqrtFunc = func;
+
+            return func;
+        }
+
+        public static T Sqrt(T arg)
+        {
+            return Sqrt()(arg);
+        }
+
+        #endregion
+    }
+
+    public static class MathExtension<T1, T2, TR>
+    {
+        #region Add
+
+        private static Func<T1, T2, TR> AddFunc;
+
+        public static Func<T1, T2, TR> GetAddFunc()
+        {
+            if (AddFunc != null)
+                return AddFunc;
+
+            var leftPar = Expression.Parameter(typeof(T1), "left");
+            var rightPar = Expression.Parameter(typeof(T2), "right");
+            var body = Expression.Add(leftPar, rightPar);
+
+            var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
+
+            AddFunc = func;
+
+            return func;
+        }
+        public static TR Add(T1 left, T2 right)
+        {
+            return GetAddFunc()(left, right);
+        }
+
+        #endregion
+
+        #region Substraction
+
+        private static Func<T1, T2, TR> SubFunc;
+
+        public static Func<T1, T2, TR> GetSubFunc()
+        {
+            if (SubFunc != null)
+                return SubFunc;
+
+            var leftPar = Expression.Parameter(typeof(T1), "left");
+            var rightPar = Expression.Parameter(typeof(T2), "right");
+            var body = Expression.Subtract(leftPar, rightPar);
+
+            var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
+
+            SubFunc = func;
+
+            return func;
+        }
+
+        public static TR Sub(T1 left, T2 right)
+        {
+            return GetSubFunc()(left, right);
+        }
+
+        #endregion
+
+        #region Multiply
+
+        private static Func<T1, T2, TR> MultiplyFun;
+
+        public static Func<T1, T2, TR> GetMultiplyFunc()
+        {
+            if (MultiplyFun != null)
+                return MultiplyFun;
+
+            var leftPar = Expression.Parameter(typeof(T1), "left");
+            var rightPar = Expression.Parameter(typeof(T2), "right");
+            var body = Expression.Multiply(leftPar, rightPar);
+
+            var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
+
+            MultiplyFun = func;
+
+            return func;
+        }
+
+        public static TR Multiply(T1 left, T2 right)
+        {
+            return GetMultiplyFunc()(left, right);
+        }
+
+        #endregion
+
+        #region Divide
+
+        private static Func<T1, T2, TR> DivideFunc;
+
+        public static Func<T1, T2, TR> GetDivideFunc()
+        {
+            if (DivideFunc != null)
+                return DivideFunc;
+
+            var leftPar = Expression.Parameter(typeof(T1), "left");
+            var rightPar = Expression.Parameter(typeof(T2), "right");
+            var body = Expression.Divide(leftPar, rightPar);
+
+            var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
+
+            DivideFunc = func;
+
+            return func;
+        }
+
+        public static TR Divide(T1 left, T2 right)
+        {
+            return GetDivideFunc()(left, right);
+        }
+
+        #endregion
+    }
+
     public static partial class MathExtension
     {
-        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> AddFuncCache = 
-            new ConcurrentDictionary<(Type, Type, Type), Delegate>();
-        
-        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> SubFuncCache = 
+        private static readonly Dictionary<(Type, Type, Type), Delegate> AddFuncCache =
+            new Dictionary<(Type, Type, Type), Delegate>();
+
+        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> SubFuncCache =
             new ConcurrentDictionary<(Type, Type, Type), Delegate>();
 
-        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> MultiplyFuncCache = 
+        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> MultiplyFuncCache =
             new ConcurrentDictionary<(Type, Type, Type), Delegate>();
 
-        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> DivideFuncCache = 
+        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> DivideFuncCache =
             new ConcurrentDictionary<(Type, Type, Type), Delegate>();
 
-        private static readonly ConcurrentDictionary<Type, Delegate> IncrementFuncCache = 
+        private static readonly ConcurrentDictionary<Type, Delegate> IncrementFuncCache =
             new ConcurrentDictionary<Type, Delegate>();
 
-        private static readonly ConcurrentDictionary<Type, Delegate> AbsFuncCache = 
+        private static readonly ConcurrentDictionary<Type, Delegate> AbsFuncCache =
             new ConcurrentDictionary<Type, Delegate>();
 
-        private static readonly ConcurrentDictionary<Type, Delegate> NegateFuncCache = 
+        private static readonly ConcurrentDictionary<Type, Delegate> NegateFuncCache =
             new ConcurrentDictionary<Type, Delegate>();
 
-        private static readonly ConcurrentDictionary<Type, Delegate> SqrtFuncCache = 
+        private static readonly ConcurrentDictionary<Type, Delegate> SqrtFuncCache =
             new ConcurrentDictionary<Type, Delegate>();
 
         #region Add
@@ -56,7 +285,7 @@ namespace MatrixDotNet.Math
         {
             return GetAddFunc<T1, T2, T1>()(left, right);
         }
-        
+
         [Obsolete("Use Add functions instead")]
         public static T1 AddBy<T1, T2>(T1 left, T2 right)
         {
@@ -66,7 +295,7 @@ namespace MatrixDotNet.Math
         public static TR Add<T1, T2, TR>(T1 left, T2 right)
         {
             return GetAddFunc<T1, T2, TR>()(left, right);
-        } 
+        }
         #endregion
 
         #region Substraction
@@ -95,7 +324,7 @@ namespace MatrixDotNet.Math
         {
             return GetSubFunc<T1, T2, T1>()(left, right);
         }
-        
+
         [Obsolete("Use Sub functions instead")]
         public static T1 SubBy<T1, T2>(T1 left, T2 right)
         {
@@ -105,7 +334,7 @@ namespace MatrixDotNet.Math
         public static TR Sub<T1, T2, TR>(T1 left, T2 right)
         {
             return GetSubFunc<T1, T2, TR>()(left, right);
-        } 
+        }
 
         #endregion
 
@@ -145,7 +374,7 @@ namespace MatrixDotNet.Math
         public static TR Multiply<T1, T2, TR>(T1 left, T2 right)
         {
             return GetMultiplyFunc<T1, T2, TR>()(left, right);
-        } 
+        }
 
         #endregion
 
@@ -191,13 +420,13 @@ namespace MatrixDotNet.Math
         public static Func<T, T> GetIncrementFunc<T>()
         {
             var t = typeof(T);
-            if (IncrementFuncCache.TryGetValue(t,out var del))
+            if (IncrementFuncCache.TryGetValue(t, out var del))
                 return del as Func<T, T>;
 
             var leftPar = Expression.Parameter(t, "value");
             var body = Expression.Increment(leftPar);
-            
-            var func = Expression.Lambda<Func<T,T>>(body, leftPar).Compile();
+
+            var func = Expression.Lambda<Func<T, T>>(body, leftPar).Compile();
 
             IncrementFuncCache[t] = func;
 
@@ -213,20 +442,20 @@ namespace MatrixDotNet.Math
 
         #region Abs
 
-        public static Func<T,T> GetAbsFunc<T>()
+        public static Func<T, T> GetAbsFunc<T>()
         {
             var t = typeof(T);
             if (AbsFuncCache.TryGetValue(t, out var del))
                 return del as Func<T, T>;
-            
+
             var leftPar = Expression.Parameter(t, "value");
-            MethodInfo info = typeof(System.Math).GetMethod("Abs", new[] {leftPar.Type});
+            MethodInfo info = typeof(System.Math).GetMethod("Abs", new[] { leftPar.Type });
             if (info == null)
                 throw new InvalidOperationException(nameof(Abs));
 
             var call = Expression.Call(null, info, leftPar);
 
-            var func = Expression.Lambda<Func<T,T>>(call, leftPar).Compile();
+            var func = Expression.Lambda<Func<T, T>>(call, leftPar).Compile();
 
             AbsFuncCache[t] = func;
 
@@ -246,12 +475,12 @@ namespace MatrixDotNet.Math
             var t = typeof(T);
             if (NegateFuncCache.TryGetValue(t, out var del))
                 return del as Func<T, T>;
-            
+
             var leftPar = Expression.Parameter(t, "value");
 
             var negate = Expression.Negate(leftPar);
 
-            var func = Expression.Lambda<Func<T,T>>(negate, leftPar).Compile();
+            var func = Expression.Lambda<Func<T, T>>(negate, leftPar).Compile();
 
             NegateFuncCache[t] = func;
 
@@ -270,17 +499,17 @@ namespace MatrixDotNet.Math
             var t = typeof(T);
             if (SqrtFuncCache.TryGetValue(t, out var del))
                 return del as Func<T, T>;
-            
+
             var argPar = Expression.Parameter(t, "value");
 
-            MethodInfo info = typeof(System.Math).GetMethod(nameof(Sqrt),new[]{argPar.Type});
-            
-            if(info is null)
+            MethodInfo info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] { argPar.Type });
+
+            if (info is null)
                 throw new InvalidOperationException(nameof(Sqrt));
 
-            var call = Expression.Call(null, info,argPar);
+            var call = Expression.Call(null, info, argPar);
 
-            var func = Expression.Lambda<Func<T,T>>(call, argPar).Compile();
+            var func = Expression.Lambda<Func<T, T>>(call, argPar).Compile();
 
             SqrtFuncCache[t] = func;
 
@@ -294,7 +523,7 @@ namespace MatrixDotNet.Math
         #endregion
 
         [Obsolete("bool shit = true;", true)]
-        public static T Random<T>(int start,int end)
+        public static T Random<T>(int start, int end)
         {
             return default(T);
         }
