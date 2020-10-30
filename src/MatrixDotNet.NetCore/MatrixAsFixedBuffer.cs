@@ -89,7 +89,7 @@ namespace MatrixDotNet.Extensions.Core
         /// <returns>init matrix as fixed buffer</returns>
         public static implicit operator MatrixAsFixedBuffer(Matrix<double> matrix)
         {
-            return new MatrixAsFixedBuffer(matrix.GetMatrix());
+            return new MatrixAsFixedBuffer(matrix.GetMatrix(),matrix.Rows,matrix.Columns);
         }
         
         /// <summary>
@@ -100,6 +100,28 @@ namespace MatrixDotNet.Extensions.Core
         {
             var m = matrix.GetLength(0);
             var n = matrix.GetLength(1);
+            Initialize((byte)m,(byte)n);
+            
+            fixed (double* ptr = matrix)
+            {
+                var span = new Span<double>(ptr,m * n);
+                var arr = Data;
+                
+                for (int i = 0; i < _length; i++)
+                {
+                    arr[i] = span[i];
+                }
+            }
+        }
+
+        /// <summary>
+        /// Initialize matrix.
+        /// </summary>
+        /// <param name="matrix">the matrix</param>
+        /// <param name="m">number of rows of the matrix</param>
+        /// <param name="n">number of columns of the matrix</param>
+        public MatrixAsFixedBuffer(double[] matrix,int m,int n) : this()
+        {
             Initialize((byte)m,(byte)n);
             
             fixed (double* ptr = matrix)
