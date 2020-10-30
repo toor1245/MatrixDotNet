@@ -1,4 +1,5 @@
-﻿using MatrixDotNet.Math;
+﻿using System;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet
 {
@@ -30,6 +31,11 @@ namespace MatrixDotNet
             }
 
             return max;
+        }
+
+        public static void Sort<T>(this Vector<T> vector) where T : unmanaged
+        {
+            Array.Sort(vector.Array);
         }
     }
 }

@@ -124,7 +124,7 @@ namespace MatrixDotNetTests
 
             // Act
             var expected = Math.Pow(10, 16) + 80;
-            var actual = matrix.KahanSum();
+            var actual = matrix.GetKahanSum();
             
             // Assert
             Assert.Equal(expected,actual);
@@ -171,11 +171,47 @@ namespace MatrixDotNetTests
 
             // Act
             float actual = matrix.Sum();
-            float actual2 = matrix.KahanSum();
-            float actual3 = matrix.KleinSum();
+            float actual2 = matrix.GetKahanSum();
+            float actual3 = matrix.GetKleinSum();
             
             // Assert
             Assert.Equal(actual,actual2);
+            Assert.NotEqual(actual,actual3);
+        }
+        #endregion
+
+        #region Klain
+        
+        [Fact]
+        public void SumFloatKahanGetKlainTest_SumAllElementsMatrix_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<float> matrix = new Matrix<float>(100,100,1);
+            matrix[0, 0] = (float)Math.Pow(10,8);
+            
+
+            // Act
+            float actual = matrix.Sum();
+            float actual3 = matrix.GetKleinSum();
+            
+            // Assert
+            Assert.NotEqual(actual,actual3);
+        }
+        
+        [Fact]
+        public void GetSumKahanByRows_And_GetKlainByRowsTest_SumAllElementsMatrixByColumns_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<float> matrix = new Matrix<float>(100, 100, 1)
+            {
+                [0, 0] = (float) Math.Pow(10, 8)
+            };
+            
+            // Act
+            float actual = matrix.SumByColumn(0);
+            float actual3 = matrix.GetKleinSum(0,State.Column);
+
+            // Assert
             Assert.NotEqual(actual,actual3);
         }
         #endregion

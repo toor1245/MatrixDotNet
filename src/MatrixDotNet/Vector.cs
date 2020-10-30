@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
@@ -19,7 +20,10 @@ namespace MatrixDotNet
             Array = new T[n];
             Length = n;
         }
-
+        
+        /// <summary>
+        /// Assign array
+        /// </summary>
         public Vector(T[] array)
         {
             
@@ -28,6 +32,21 @@ namespace MatrixDotNet
             for (int i = 0; i < Length; i++)
             {
                 Array[i] = array[i];
+            }
+        }
+
+        /// <summary>
+        /// Initialize Vector and fill vector of specify value.
+        /// </summary>
+        /// <param name="length">the length of array</param>
+        /// <param name="fill">fill vector of specify value</param>
+        public Vector(int length,T fill)
+        {
+            Length = Length;
+            Array = new T[Length];
+            for (int i = 0; i < length; i++)
+            {
+                Array[i] = fill;
             }
         }
 
