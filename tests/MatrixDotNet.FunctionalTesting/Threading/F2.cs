@@ -1,7 +1,6 @@
 ﻿using System;
-using MatrixDotNet;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.Threading
 {
     public class F2
     {

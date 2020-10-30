@@ -1,7 +1,6 @@
 ﻿using System;
-using MatrixDotNet;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.Threading
 {
     public class F1
     {
@@ -19,10 +18,10 @@ namespace Samples.Samples
             Console.WriteLine("Thread 1 start");
             
             // init vectors and matrices
-            var A = new Vector(N);
-            var B = new Vector(N);
-            var C = new Vector(N);
-            var D = new Vector(N);
+            var A = new Vector<int>(N);
+            var B = new Vector<int>(N);
+            var C = new Vector<int>(N);
+            var D = new Vector<int>(N);
             var MA = new Matrix<int>(N,N,1); 
             var MD = new Matrix<int>(N,N,1);
 

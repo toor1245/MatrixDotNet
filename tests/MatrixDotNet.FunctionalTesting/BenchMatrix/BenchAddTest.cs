@@ -1,7 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Math;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.BenchMatrix
 {
     [MemoryDiagnoser]
     public class BenchAddTest

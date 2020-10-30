@@ -1,9 +1,8 @@
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Performance.Operations;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.BenchMatrix
 {
     [RyuJitX64Job]
     public class AddUnrollVsAdd

@@ -1,12 +1,13 @@
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet;
+using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Core;
-using MatrixDotNet.Extensions.Performance.Operations;
+using MatrixDotNet.Extensions.Core.Extensions.Conversion;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.BenchMatrixAsFixedBuffer
 {
     [MemoryDiagnoser]
-    public class BenchMatrixAsFixedBuffer
+    [RyuJitX64Job]
+    public class BenchSwapRowsFixedVsUnsafeVsDefault
     {
         private MatrixAsFixedBuffer _buffer;
         private Matrix<double> _matrix;
@@ -22,23 +23,19 @@ namespace Samples.Samples
             _matrix = new Matrix<double>(80,80,5);
         }
         
-        // [Benchmark]
-        public Matrix<double> AddDefault()
+        [Benchmark]
+        public Matrix<double> AddRowDefault()
         {
-            return _matrix + _matrix;
-        }
-
-        // [Benchmark]
-        public Matrix<double> AddUnsafe()
-        {
-            return Optimization.Add(_matrix, _matrix);
+            double[] row = new double[80];
+            return _matrix.AddRow(row,6);
         }
         
 
         [Benchmark]
         public MatrixAsFixedBuffer AddByRefTest()
         {
-            return MatrixAsFixedBuffer.AddByRef(ref _buffer, ref _buffer);
+            double[] row = new double[80];
+            return Converter.AddRow(ref _buffer,row,6);
         }
     }
 }

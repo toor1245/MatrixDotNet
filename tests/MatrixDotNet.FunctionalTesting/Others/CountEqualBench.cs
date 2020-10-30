@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.Others
 {
     public class CountEqualBench
     {
