@@ -23,9 +23,9 @@ namespace MatrixDotNet
         /// <summary>
         /// Gets matrix.
         /// </summary>
-        internal T[,] _Matrix { get; private set; }
+        internal T[] _Matrix { get; private set; }
 
-        public T[,] GetMatrix()
+        public T[] GetMatrix()
         {
             return _Matrix;
         }
@@ -34,16 +34,16 @@ namespace MatrixDotNet
         /// Gets length matrix.
         /// </summary>
         public int Length => _Matrix.Length;
-        
+
         /// <summary>
         /// Gets length row of matrix.
         /// </summary>
-        public int Rows => _Matrix.GetLength(0);
+        public int Rows { get; private set; }
 
         /// <summary>
         /// Gets length columns of matrix.
         /// </summary>
-        public int Columns => _Matrix.GetLength(1);
+        public int Columns { get; private set; }
 
         /// <summary>
         /// Checks square matrix.
@@ -69,13 +69,13 @@ namespace MatrixDotNet
         /// </exception>
         public T this[int i, int j]
         {
-            get => _Matrix[i, j];
-            set => _Matrix[i, j] = value;
+            get => _Matrix[i * Columns + j];
+            set => _Matrix[i * Columns + j] = value;
         }
         
         public ref T GetByRef(int i, int j)
         {
-            return ref _Matrix[i, j];
+            return ref _Matrix[i * Columns + j];
         }
 
         /// <summary>
@@ -103,16 +103,7 @@ namespace MatrixDotNet
         /// <exception cref="IndexOutOfRangeException"></exception>
         public T[] this[int i,State dimension]
         {
-            get
-            {
-                return dimension switch
-                {
-                    State.Row => this.GetRow(i),
-                    State.Column => this.GetColumn(i),
-                    _ => throw new ArgumentException("state error")
-                };
-            }
-
+            get => dimension == State.Row ? this.GetRow(i) : this.GetColumn(i);
             set
             {
                 if (dimension == State.Row)
@@ -122,12 +113,8 @@ namespace MatrixDotNet
                         this[i, j] = value[j];
                     }
                 }
-
-                if (dimension == State.Column)
+                else if (dimension == State.Column)
                 {
-                    if (!IsRangeColumn(i))
-                        throw new IndexOutOfRangeException();
-                    
                     for (int j = 0; j < Rows; j++)
                     {
                         this[j, i] = value[j];
@@ -138,24 +125,14 @@ namespace MatrixDotNet
         
         public T this[int m, int n,State dimension]
         {
-            get
-            {
-                return dimension switch
-                {
-                    State.Row => _Matrix[m,n],
-                    State.Column => _Matrix[n,m],
-                    _ => throw new ArgumentException("state error")
-                };
-            }
-
+            get => dimension == State.Row ? this[m, n] : this[n, m];
             set
             {
                 if (dimension == State.Row)
                 {
                     this[m, n] = value;
                 }
-
-                if (dimension == State.Column)
+                else
                 {
                     this[n, m] = value;
                 }
@@ -172,13 +149,15 @@ namespace MatrixDotNet
         /// <param name="matrix">the matrix.</param>
         public Matrix(T[,] matrix)
         {
-            _Matrix = new T[matrix.GetLength(0),matrix.GetLength(1)];
-            
+            Rows = matrix.GetLength(0);
+            Columns = matrix.GetLength(1);
+
+            _Matrix = new T[Rows * Columns];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    _Matrix[i,j] = matrix[i,j];
+                    this[i, j] = matrix[i,j];
                 }
             }
         }
@@ -188,9 +167,12 @@ namespace MatrixDotNet
         /// </summary>
         /// <param name="row">row</param>
         /// <param name="col">col</param>
-        public Matrix(int row,int col)
+        public Matrix(int row, int col)
         {
-            _Matrix = new T[row,col];
+            Rows = row;
+            Columns = col;
+
+            _Matrix = new T[row * col];
         }
 
         /// <summary>
@@ -199,15 +181,15 @@ namespace MatrixDotNet
         /// <param name="row">row</param>
         /// <param name="col">col</param>
         /// <param name="value">constant</param>
-        public unsafe Matrix(int row,int col,T value)
+        public Matrix(int row, int col, T value)
         {
-            _Matrix = new T[row,col];
-            for (int i = 0; i < row; i++)
+            Rows = row;
+            Columns = col;
+
+            _Matrix = new T[row * col];
+            for (int i = 0; i < row * col; i++)
             {
-                for (int j = 0; j < col; j++)
-                {
-                    _Matrix[i, j] = value;
-                }
+                _Matrix[i] = value;
             }
         }
         
@@ -509,24 +491,6 @@ namespace MatrixDotNet
         
         #region methods
         
-        // Checks matrix on range by rows - i, columns - j.
-        private bool IsRange(int i,int j)
-        {
-            return i < _Matrix.GetLength(0) && j < _Matrix.GetLength(1);
-        }
-
-        // Checks matrix on range by rows.
-        private bool IsRangeRow(int i)
-        {
-            return i < _Matrix.GetLength(0);
-        }
-
-        // Checks matrix on range by columns.
-        private bool IsRangeColumn(int j)
-        {
-            return j < _Matrix.GetLength(1);
-        }
-        
         /// <summary>
         /// <inheritdoc cref="object.ToString"/>
         /// </summary>
@@ -570,6 +534,28 @@ namespace MatrixDotNet
             return matrix.ToMatrix();
         }
 
+        /// <summary>
+        /// Implicit assign matrix.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        public static implicit operator Matrix<T>(T[][] matrix)
+        {
+            if (matrix.Length <= 0)
+            {
+                throw new MatrixDotNetException("Empty matrix... strange things!");
+            }
+
+            Matrix<T> result = new Matrix<T>(matrix.Length, matrix[0].Length);
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                for (int j = 0; j < matrix.Length; j++)
+                {
+                    result[i, j] = matrix[i][j];
+                }
+            }
+            return result;
+        }
 
         public IEnumerator<T> GetEnumerator() =>
             new Enumerator(this);

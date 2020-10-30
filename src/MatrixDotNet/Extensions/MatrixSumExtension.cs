@@ -1,6 +1,6 @@
 using System;
 using MatrixDotNet.Exceptions;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions
 {
@@ -18,9 +18,6 @@ namespace MatrixDotNet.Extensions
         public static T Sum<T>(this Matrix<T> matrix) 
             where T: unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
-            
             T sum = default;
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -44,12 +41,9 @@ namespace MatrixDotNet.Extensions
         public static T SumByRow<T>(this Matrix<T> matrix, int dimension) 
             where T: unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
-            
             T sum = default;
             
-            for (int i = 0; i < matrix._Matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix.Columns; i++)
             {
                 sum = MathExtension.Add(sum,matrix[dimension,i]);
             }
@@ -68,12 +62,9 @@ namespace MatrixDotNet.Extensions
         public static T SumByColumn<T>(this Matrix<T> matrix, int dimension)
             where T: unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
-            
             T sum = default;
             
-            for (int i = 0; i < matrix._Matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
                 sum = MathExtension.Add(sum,matrix[i,dimension]);
             }
@@ -94,13 +85,13 @@ namespace MatrixDotNet.Extensions
             if(matrix is null)
                 throw new NullReferenceException();
             
-            var array = new T[matrix._Matrix.GetLength(0)];
+            var array = new T[matrix.Rows];
             
-            for (int i = 0; i < matrix._Matrix.GetLength(0); i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
                 T sum = default;
                 
-                for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix.Columns; j++)
                 {
                     sum = MathExtension.Add(sum, matrix[i, j]); // sum = sum + matrix[i,j];
                 }
@@ -124,13 +115,13 @@ namespace MatrixDotNet.Extensions
             if(matrix is null)
                 throw new NullReferenceException();
             
-            var array = new T[matrix._Matrix.GetLength(1)];
+            var array = new T[matrix.Columns];
             
-            for (int i = 0; i < matrix._Matrix.GetLength(1); i++)
+            for (int i = 0; i < matrix.Columns; i++)
             {
                 T sum = default;
                 
-                for (int j = 0; j < matrix._Matrix.GetLength(0); j++)
+                for (int j = 0; j < matrix.Rows; j++)
                 {
                     sum = MathExtension.Add(sum, matrix[j, i]);
                 }
