@@ -19,9 +19,9 @@ namespace MatrixDotNet.Extensions
         /// <exception cref="IndexOutOfRangeException"></exception>
         public static T[] GetRow<T>(this Matrix<T> matrix,int index) where T : unmanaged
         {
-            T[] array = new T[matrix._Matrix.GetLength(1)];
+            T[] array = new T[matrix.Columns];
 
-            for (int j = 0; j < matrix._Matrix.GetLength(1); j++)
+            for (int j = 0; j < matrix.Columns; j++)
             {
                 array[j] = matrix[index,j];
             }
@@ -41,9 +41,9 @@ namespace MatrixDotNet.Extensions
         public static T[] GetColumn<T>(this Matrix<T> matrix, int index)
             where T : unmanaged
         {
-            T[] array = new T[matrix._Matrix.GetLength(0)];
+            T[] array = new T[matrix.Rows];
             
-            for (int j = 0; j < matrix._Matrix.GetLength(0); j++)
+            for (int j = 0; j < matrix.Rows; j++)
             {
                 array[j] = matrix[j,index];
             }
