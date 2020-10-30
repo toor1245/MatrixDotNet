@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -9,8 +8,8 @@ namespace MatrixDotNet.Math
 
     public static partial class MathExtension
     {
-        private static readonly Dictionary<(Type, Type, Type), Delegate> AddFuncCache =
-            new Dictionary<(Type, Type, Type), Delegate>();
+        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> AddFuncCache =
+            new ConcurrentDictionary<(Type, Type, Type), Delegate>();
 
         private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> SubFuncCache =
             new ConcurrentDictionary<(Type, Type, Type), Delegate>();
