@@ -1,6 +1,5 @@
+using System;
 using MatrixDotNet;
-using MatrixDotNet.Extensions;
-using MatrixDotNet.Extensions.Decompositions;
 
 namespace Samples
 {
@@ -16,9 +15,9 @@ namespace Samples
                 {-4, 24, -41}
             };
 
-            a.QrDecomposition(out var q,out var r);
-            q.Pretty();
-            r.Pretty();
+            Vector<Double> vector = a[0];
+            vector.Sort();
+            Console.WriteLine(vector);
         }
     }
 }

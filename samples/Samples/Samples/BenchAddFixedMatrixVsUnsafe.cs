@@ -1,7 +1,6 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Core;
-using MatrixDotNet.Extensions.Core.Optimization.Unsafe;
 using MatrixDotNet.Extensions.Performance.Operations;
 
 namespace Samples.Samples

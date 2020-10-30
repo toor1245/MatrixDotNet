@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
@@ -9,7 +11,7 @@ namespace MatrixDotNet.Math
     {
         private static readonly ConcurrentDictionary<(Type type,string op),Delegate> Cache = 
             new ConcurrentDictionary<(Type type, string op), Delegate>();
-
+        
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsFloatingPoint<T>()
         {
@@ -126,6 +128,26 @@ namespace MatrixDotNet.Math
             var func = Expression.Lambda<Func<T, U, bool>>(body, leftPar, rightPar).Compile();
 
             Cache[(t, nameof(GreaterThanBy))] = func;
+
+            return func(left, right);
+        }
+        
+        public static bool GreaterThanOrEqual<T>(T left, T right) where T: unmanaged
+        {
+            var t = typeof(T);
+            if (Cache.TryGetValue((t, nameof(GreaterThanOrEqual)),out var del))
+                return del is Func<T,T,bool> specificFunc
+                    ? specificFunc(left, right)
+                    : throw new InvalidOperationException(nameof(GreaterThanOrEqual));
+            
+            var leftPar = Expression.Parameter(t, nameof(left));
+            var rightPar = Expression.Parameter(t, nameof(right));
+            
+            var body = Expression.GreaterThanOrEqual(leftPar, rightPar);
+            
+            var func = Expression.Lambda<Func<T, T,bool>>(body, leftPar, rightPar).Compile();
+
+            Cache[(t, nameof(GreaterThanOrEqual))] = func;
 
             return func(left, right);
         }
