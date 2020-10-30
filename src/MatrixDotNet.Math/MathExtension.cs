@@ -62,7 +62,7 @@ namespace MatrixDotNet.Math
             return GetAddFunc<T1, T2, T1>()(left, right);
         }
 
-        public static TR Add<TR, T1, T2>(T1 left, T2 right)
+        public static TR Add<T1, T2, TR>(T1 left, T2 right)
         {
             return GetAddFunc<T1, T2, TR>()(left, right);
         } 
@@ -100,7 +100,7 @@ namespace MatrixDotNet.Math
             return GetSubFunc<T1, T2, T1>()(left, right);
         }
 
-        public static TR Sub<TR, T1, T2>(T1 left, T2 right)
+        public static TR Sub<T1, T2, TR>(T1 left, T2 right)
         {
             return GetSubFunc<T1, T2, TR>()(left, right);
         } 
@@ -139,7 +139,7 @@ namespace MatrixDotNet.Math
             return GetMultiplyFunc<T1, T2, T1>()(left, right);
         }
 
-        public static TR Multiply<TR, T1, T2>(T1 left, T2 right)
+        public static TR Multiply<T1, T2, TR>(T1 left, T2 right)
         {
             return GetMultiplyFunc<T1, T2, TR>()(left, right);
         } 
@@ -177,7 +177,7 @@ namespace MatrixDotNet.Math
             return GetDivideFunc<T1, T2, T1>()(left, right);
         }
 
-        public static TR Divide<TR, T1, T2>(T1 left, T2 right)
+        public static TR Divide<T1, T2, TR>(T1 left, T2 right)
         {
             return GetDivideFunc<T1, T2, TR>()(left, right);
         }
