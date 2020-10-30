@@ -7,17 +7,17 @@ namespace MatrixDotNet.Math
 {
     public static partial class MathExtension
     {
-        private static readonly ConcurrentDictionary<(Type, Type), Delegate> AddFuncCache = 
-            new ConcurrentDictionary<(Type, Type), Delegate>();
+        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> AddFuncCache = 
+            new ConcurrentDictionary<(Type, Type, Type), Delegate>();
         
-        private static readonly ConcurrentDictionary<(Type, Type), Delegate> SubFuncCache = 
-            new ConcurrentDictionary<(Type, Type), Delegate>();
+        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> SubFuncCache = 
+            new ConcurrentDictionary<(Type, Type, Type), Delegate>();
 
-        private static readonly ConcurrentDictionary<(Type, Type), Delegate> MultiplyFuncCache = 
-            new ConcurrentDictionary<(Type, Type), Delegate>();
+        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> MultiplyFuncCache = 
+            new ConcurrentDictionary<(Type, Type, Type), Delegate>();
 
-        private static readonly ConcurrentDictionary<(Type, Type), Delegate> DivideFuncCache = 
-            new ConcurrentDictionary<(Type, Type), Delegate>();
+        private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> DivideFuncCache = 
+            new ConcurrentDictionary<(Type, Type, Type), Delegate>();
 
         private static readonly ConcurrentDictionary<Type, Delegate> IncrementFuncCache = 
             new ConcurrentDictionary<Type, Delegate>();
@@ -36,8 +36,9 @@ namespace MatrixDotNet.Math
         {
             var t1 = typeof(T1);
             var t2 = typeof(T2);
+            var tr = typeof(TR);
 
-            if (AddFuncCache.TryGetValue((t1, t2), out var del))
+            if (AddFuncCache.TryGetValue((t1, t2, tr), out var del))
                 return del as Func<T1, T2, TR>;
 
             var leftPar = Expression.Parameter(t1, "left");
@@ -46,7 +47,7 @@ namespace MatrixDotNet.Math
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
-            AddFuncCache[(t1, t2)] = func;
+            AddFuncCache[(t1, t2, tr)] = func;
 
             return func;
         }
@@ -74,8 +75,9 @@ namespace MatrixDotNet.Math
         {
             var t1 = typeof(T1);
             var t2 = typeof(T2);
+            var tr = typeof(TR);
 
-            if (SubFuncCache.TryGetValue((t1, t2), out var del))
+            if (SubFuncCache.TryGetValue((t1, t2, tr), out var del))
                 return del as Func<T1, T2, TR>;
 
             var leftPar = Expression.Parameter(t1, "left");
@@ -84,7 +86,7 @@ namespace MatrixDotNet.Math
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
-            SubFuncCache[(t1, t2)] = func;
+            SubFuncCache[(t1, t2, tr)] = func;
 
             return func;
         }
@@ -113,8 +115,9 @@ namespace MatrixDotNet.Math
         {
             var t1 = typeof(T1);
             var t2 = typeof(T2);
+            var tr = typeof(TR);
 
-            if (MultiplyFuncCache.TryGetValue((t1, t2), out var del))
+            if (MultiplyFuncCache.TryGetValue((t1, t2, tr), out var del))
                 return del as Func<T1, T2, TR>;
 
             var leftPar = Expression.Parameter(t1, "left");
@@ -123,7 +126,7 @@ namespace MatrixDotNet.Math
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
-            MultiplyFuncCache[(t1, t2)] = func;
+            MultiplyFuncCache[(t1, t2, tr)] = func;
 
             return func;
         }
@@ -151,8 +154,9 @@ namespace MatrixDotNet.Math
         {
             var t1 = typeof(T1);
             var t2 = typeof(T2);
+            var tr = typeof(TR);
 
-            if (DivideFuncCache.TryGetValue((t1, t2), out var del))
+            if (DivideFuncCache.TryGetValue((t1, t2, tr), out var del))
                 return del as Func<T1, T2, TR>;
 
             var leftPar = Expression.Parameter(t1, "left");
@@ -161,7 +165,7 @@ namespace MatrixDotNet.Math
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
-            DivideFuncCache[(t1, t2)] = func;
+            DivideFuncCache[(t1, t2, tr)] = func;
 
             return func;
         }
