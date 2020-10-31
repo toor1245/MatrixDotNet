@@ -3,7 +3,7 @@ using MatrixDotNet;
 using MatrixDotNet.Extensions;
 using Xunit;
 
-namespace MatrixDotNetTests
+namespace MatrixDotNetTests.MatrixTests.StatisticsTests
 {
     public class MatrixSumExtension
     {

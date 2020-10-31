@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MatrixDotNet.FunctionalTesting.Threading
+﻿namespace MatrixDotNet.FunctionalTesting.ThreadingTests
 {
     public class F1
     {
@@ -15,9 +13,6 @@ namespace MatrixDotNet.FunctionalTesting.Threading
         // E = A + B + C + D * (MA * MD)
         public void RunF1()
         {
-            Console.WriteLine("Thread 1 start");
-            
-            // init vectors and matrices
             var A = new Vector<int>(N);
             var B = new Vector<int>(N);
             var C = new Vector<int>(N);
@@ -26,8 +21,6 @@ namespace MatrixDotNet.FunctionalTesting.Threading
             var MD = new Matrix<int>(N,N,1);
 
             var E = A + B + C + D.Array * (MA * MD);
-            Console.WriteLine("\nE = " + E + "\n");
-            Console.WriteLine("Thread 1 finish");
         }
     }
 }

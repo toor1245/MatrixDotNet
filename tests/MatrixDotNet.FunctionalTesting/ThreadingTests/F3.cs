@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MatrixDotNet.FunctionalTesting.Threading
+namespace MatrixDotNet.FunctionalTesting.ThreadingTests
 {
     public class F3
     {
@@ -26,11 +26,8 @@ namespace MatrixDotNet.FunctionalTesting.Threading
             // calculates by parts
             var res = new Vector<int>(P.Array * MO);
             var res2 = new Vector<int>(S.Array * (MR * MS));
-            
             var T = res + res2;
-            
             Console.WriteLine("\nT = " + T + "\n");
-            Console.WriteLine("Thread 3 finish");
         }
     }
 }
