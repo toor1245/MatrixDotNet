@@ -1,7 +1,6 @@
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.BenchMatrixAsFixedBuffer
 {
     // equally
     [MemoryDiagnoser]

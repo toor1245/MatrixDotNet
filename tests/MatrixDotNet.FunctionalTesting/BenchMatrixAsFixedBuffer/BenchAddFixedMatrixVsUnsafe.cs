@@ -1,9 +1,8 @@
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet;
 using MatrixDotNet.Extensions.Core;
 using MatrixDotNet.Extensions.Performance.Operations;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.BenchMatrixAsFixedBuffer
 {
     public class BenchAddFixedMatrixVsUnsafe
     {

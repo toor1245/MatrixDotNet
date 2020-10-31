@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.Others
 {
     [RyuJitX64Job]
     public class CountBench

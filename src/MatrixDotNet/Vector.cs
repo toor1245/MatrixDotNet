@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
@@ -24,14 +25,14 @@ namespace MatrixDotNet
         /// <summary>
         /// Assign array
         /// </summary>
-        public Vector(T[] array)
+        public unsafe Vector(T[] array)
         {
-            
             Length = array.Length;
             Array = new T[Length];
-            for (int i = 0; i < Length; i++)
+            fixed (T* ptr1 = Array)
+            fixed (T* ptr2 = array)
             {
-                Array[i] = array[i];
+                Unsafe.CopyBlock(ptr1,ptr2,(uint) (sizeof(T) * Length));
             }
         }
 
@@ -42,17 +43,16 @@ namespace MatrixDotNet
         /// <param name="fill">fill vector of specify value</param>
         public Vector(int length,T fill)
         {
-            Length = Length;
+            Length = length;
             Array = new T[Length];
-            for (int i = 0; i < length; i++)
-            {
-                Array[i] = fill;
-            }
+            System.Array.Fill(Array,fill);
         }
 
         public T this[int i]
         {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => Array[i];
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => Array[i] = value;
         }
 

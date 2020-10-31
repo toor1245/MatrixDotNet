@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 
-namespace Samples.Samples
+namespace MatrixDotNet.FunctionalTesting.BenchMatrixAsFixedBuffer
 {
     [MemoryDiagnoser]
     [RyuJitX64Job]

@@ -1,9 +1,8 @@
-using System;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Statistics;
 using Xunit;
 
-namespace MatrixDotNetTests
+namespace MatrixDotNetTests.MatrixTests.StatisticsTests
 {
     public class StatisticsTests
     {

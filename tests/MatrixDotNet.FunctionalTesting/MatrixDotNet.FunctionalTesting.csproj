@@ -6,24 +6,13 @@
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <PlatformTarget>x64</PlatformTarget>
-    </PropertyGroup>
-
     <ItemGroup>
       <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
-      <PackageReference Include="ObjectLayoutInspector" Version="0.1.2" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\MatrixDotNet.NetCore\MatrixDotNet.NetCore.csproj" />
       <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
-      <ProjectReference Include="..\..\tests\MatrixDotNet.FunctionalTesting\MatrixDotNet.FunctionalTesting.csproj" />
-      <ProjectReference Include="..\..\tests\MatrixDotNet.UnitTesting\MatrixDotNet.UnitTesting.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="MatrixDotNet_Core_Intrinsics.dll" />
     </ItemGroup>
 
 </Project>

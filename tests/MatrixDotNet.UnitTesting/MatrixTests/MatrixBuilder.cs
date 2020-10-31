@@ -2,7 +2,7 @@ using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using Xunit;
 
-namespace MatrixDotNetTests
+namespace MatrixDotNetTests.MatrixTests
 {
     public class MatrixBuilder
     {

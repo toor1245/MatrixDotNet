@@ -2,9 +2,8 @@ using System;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using BenchmarkDotNet.Attributes;
-using Samples.Samples;
 
-namespace Samples.Vectorization
+namespace MatrixDotNet.FunctionalTesting.BenchMatrix
 {
     public class VmaskmovBench
     {
