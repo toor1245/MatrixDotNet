@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
 using MathExtension = MatrixDotNet.Math.MathExtension;
 
@@ -144,95 +145,74 @@ namespace MatrixDotNet.Extensions.Conversion
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="arr">the array.</param>
-        /// <param name="columnIndex">column index.</param>
+        /// <param name="column">column index.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>A new matrix with new column.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static Matrix<T> AddColumn<T>(this Matrix<T> matrix, T[] arr, int columnIndex) where T : unmanaged
+        public static unsafe Matrix<T> AddColumn<T>(this Matrix<T> matrix, T[] arr, int column) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-            
-            var newColumn = matrix.Columns + 1; 
-            var temp = new Matrix<T>(matrix.Rows,newColumn);
-            
-            if (columnIndex == 0)
+            if (matrix.Rows != arr.Length)
             {
-                temp[0, State.Column] = arr;
-                for (var i = 1; i < newColumn; i++) CopyTo(State.Column,matrix,i - 1,0,temp,i,0,temp.Rows);
+                string message = $"length {nameof(arr)}:{arr.Length} != {nameof(matrix.Rows)} of matrix:{matrix.Rows}";
+                throw new MatrixDotNetException(message);
             }
-            else if (temp.Columns - 1 == columnIndex )
+
+            fixed (T* ptr = arr)
             {
-                temp[columnIndex, State.Column] = arr;
-                for (var i = 0; i < matrix.Columns; i++) CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
+                var m = matrix.Rows;
+                var span3 = new Span<T>(ptr, m);
+                var result = new Matrix<T>(m, matrix.Columns + 1);
+
+                for (int i = 0; i < column; i++)
+                {
+                    result[i, State.Column] = matrix[i, State.Column];
+                }
+
+                result.SetColumn(column, span3);
+
+                for (int i = column + 1; i < result.Columns; i++)
+                {
+                    result.SetColumn(i, matrix.GetColumn(i - 1));
+                }
+
+                return result;
             }
-            else
-            {
-                temp[columnIndex, State.Column] = arr;
-                for (int i = 0, k = 0; i < temp.Columns; i++)
-                    if (i < columnIndex)
-                    {
-                        CopyTo(State.Column,matrix,i,0,temp,i,0,temp.Rows);
-                    }
-                    else if (i == columnIndex)
-                    {
-                        temp[columnIndex, State.Column] = arr;
-                    }
-                    else
-                    {
-                        k = i - 1;
-                        CopyTo(State.Column,matrix,k,0,temp,i,0,temp.Rows);
-                    }
-            }
-            return temp;
         }
         
         
         /// <summary>
-        /// Add row of matrix by index.
+        /// Returns new matrix with added row.
         /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <param name="arr">the array</param>
-        /// <param name="rowIndex">ow index</param>
+        /// <param name="matrix">the matrix</param>
+        /// <param name="array">the row for new matrix</param>
+        /// <param name="row">index of row</param>
         /// <typeparam name="T">unmanaged type</typeparam>
-        /// <returns>A new matrix with new row.</returns>
-        /// <exception cref="NullReferenceException"></exception>
-        public static Matrix<T> AddRow<T>(this Matrix<T> matrix, T[] arr, int rowIndex) where T : unmanaged
+        /// <returns></returns>
+        /// <exception cref="MatrixDotNetException"></exception>
+        public static unsafe Matrix<T> AddRow<T>(this Matrix<T> matrix,T[] array,int row)
+            where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-            
+            if (matrix.Columns != array.Length)
+            {
+                var message =
+                    $"length {nameof(array)}:{array.Length} != {nameof(matrix.Columns)} of matrix:{matrix.Columns}";
+                throw new MatrixDotNetException(message);
+            }
             var newRows = matrix.Rows + 1; 
             var temp = new Matrix<T>(newRows,matrix.Columns);
+            fixed (T* ptr1 = array)
+            fixed (T* ptr2 = temp.GetMatrix())
+            fixed (T* ptr3 = matrix.GetMatrix())
+            {
+                int m = temp.Columns;
+                int aLength = array.Length;
+                Array.Copy(matrix._Matrix, temp._Matrix, row * m);
+                Unsafe.CopyBlock(ptr2 + row * m,ptr1,(uint) (sizeof(T) * aLength));
+                // finds difference len between whole matrix and length to index row.
+                int diff = sizeof(T) * temp.Length - (sizeof(T) * row * m + sizeof(T) * aLength);
+                Unsafe.CopyBlock(ptr2 + (row + 1) * m,ptr3 + row * m,(uint) diff);
+            }
             
-            if (rowIndex == 0)
-            {
-                temp[0, State.Row] = arr;
-                for (var i = 1; i < newRows; i++) CopyTo(State.Row,matrix,i - 1,0,temp,i,0,temp.Columns);
-            }
-            else if (temp.Columns - 1 == rowIndex )
-            {
-                temp[rowIndex, State.Row] = arr;
-                for (var i = 0; i < matrix.Rows; i++) CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
-            }
-            else
-            {
-                temp[rowIndex, State.Row] = arr;
-                for (int i = 0, k; i < newRows; i++)
-                    if (i < rowIndex)
-                    {
-                        CopyTo(State.Row,matrix,i,0,temp,i,0,temp.Columns);
-                    }
-                    else if (i == rowIndex)
-                    {
-                        temp[rowIndex, State.Row] = arr;
-                    }
-                    else
-                    {
-                        k = i - 1;
-                        CopyTo(State.Row,matrix,k,0,temp,i,0,temp.Columns);
-                    }
-            }
             return temp;
         }
 
