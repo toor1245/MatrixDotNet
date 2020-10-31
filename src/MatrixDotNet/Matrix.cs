@@ -555,19 +555,6 @@ namespace MatrixDotNet
             return matrix;
         }
         
-        public unsafe void SetColumn(int column,Span<T> data)
-        {
-            int m = Rows;
-            fixed (T* ptr = _Matrix)
-            {
-                var span2 = new Span<T>(ptr,Length);
-                for (int i = 0; i < m; i++)
-                {
-                    span2[column * Columns + i] = data[i];
-                }
-            }
-        }
-
         /// <summary>
         /// Implicit assign matrix.
         /// </summary>

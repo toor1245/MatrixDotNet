@@ -118,24 +118,20 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>A new matrix without the chosen row.</returns>
         /// <exception cref="NullReferenceException">.</exception>
-        public static Matrix<T> ReduceRow<T>(this Matrix<T> matrix, int row) where T : unmanaged
+        public static unsafe Matrix<T> ReduceRow<T>(this Matrix<T> matrix, int row) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
+            var newRows = matrix.Rows - 1; 
+            var temp = new Matrix<T>(newRows,matrix.Columns);
+            fixed (T* ptr2 = temp.GetMatrix())
+            fixed (T* ptr3 = matrix.GetMatrix())
+            {
+                int m = temp.Columns;
+                Array.Copy(matrix._Matrix, temp._Matrix, row * m);
+                // finds difference len between whole matrix and length to index row.
+                int diff = sizeof(T) * temp.Length - (sizeof(T) * row * m);
+                Unsafe.CopyBlock(ptr2 + row * m,ptr3 + (row + 1) * m,(uint) diff);
+            }
             
-            var newRow = matrix.Rows - 1;
-            var temp = new Matrix<T>(newRow,matrix.Columns);
-            
-            if (row == 0)
-                for (int i = 1, k = 0; k < newRow; i++,k++) CopyTo(State.Row,matrix,i,0,temp,k,0,temp.Columns);
-            else if (row == matrix.Rows - 1)
-                for (var i = 0; i < newRow; i++) CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
-            else
-                for (var i = 0; i < newRow; i++)
-                    if (i < row)
-                        CopyTo(State.Row,matrix,i,0,temp,i,0,matrix.Columns);
-                    else if (i >= row) CopyTo(State.Row,matrix,i + 1,0,temp,i,0,matrix.Columns);
-
             return temp;
         }
 
@@ -157,26 +153,23 @@ namespace MatrixDotNet.Extensions.Conversion
                 throw new MatrixDotNetException(message);
             }
 
-            fixed (T* ptr = arr)
+            var m = matrix.Rows;
+            var result = new Matrix<T>(m, matrix.Columns + 1);
+
+            for (int i = 0; i < column; i++)
             {
-                var m = matrix.Rows;
-                var span3 = new Span<T>(ptr, m);
-                var result = new Matrix<T>(m, matrix.Columns + 1);
-
-                for (int i = 0; i < column; i++)
-                {
-                    result[i, State.Column] = matrix[i, State.Column];
-                }
-
-                result.SetColumn(column, span3);
-
-                for (int i = column + 1; i < result.Columns; i++)
-                {
-                    result.SetColumn(i, matrix.GetColumn(i - 1));
-                }
-
-                return result;
+                result[i, State.Column] = matrix[i, State.Column];
             }
+
+            result[column, State.Column] = arr;
+
+            for (int i = column + 1; i < result.Columns; i++)
+            {
+                result[i, State.Column] = matrix[i - 1, State.Column];
+            }
+
+            return result;
+            
         }
         
         
