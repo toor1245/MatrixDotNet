@@ -54,15 +54,16 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>Pow</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Matrix<T> Pow<T>(this Matrix<T> matrix, uint degree) where T : unmanaged
+        public static Matrix<T> Pow<T>(this Matrix<T> matrix, uint degree)
+            where T : unmanaged
         {
             if (degree == 0)
                 return BuildMatrix.CreateIdentityMatrix<T>(matrix.Rows, matrix.Columns);
 
-            if (degree % 2 == 1)
+            if ((degree & 1) == 1)
                 return matrix.Pow(degree-1) * matrix;
             
-            var t = matrix.Pow(degree / 2);
+            var t = matrix.Pow(degree >> 1);
             return t * t;
         }
 
