@@ -90,23 +90,22 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="column">The index of matrix which reduce column.</param>
         /// <typeparam name="T">Unmanaged type.</typeparam>
         /// <returns>A new matrix without the chosen column.</returns>
-        public static Matrix<T> ReduceColumn<T>(this Matrix<T> matrix,int column) where T : unmanaged
+        public static unsafe Matrix<T> ReduceColumn<T>(this Matrix<T> matrix, int column) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
+            var newColumns = matrix.Columns - 1; 
+            var temp = new Matrix<T>(matrix.Rows,newColumns);
+            fixed (T* ptr2 = temp.GetMatrix())
+            fixed (T* ptr3 = matrix.GetMatrix())
+            {
+                int m = temp.Columns;
+                for (int i = 0; i < temp.Rows; i++)
+                {
+                    Unsafe.CopyBlock(ptr2 + i * m,ptr3 + i * matrix.Columns,(uint) (sizeof(T) * column));
+                    int len = temp.Columns - column;
+                    Unsafe.CopyBlock(ptr2 + i * m + column ,ptr3 + i * matrix.Columns + column + 1,(uint) (sizeof(T) * len));
+                }
+            }
             
-            var newColumn = matrix.Columns - 1; 
-            var temp = new Matrix<T>(matrix.Rows,newColumn);
-            
-            if (column == 0)
-                for (int i = 1, k = 0; k < newColumn; i++,k++) CopyTo(State.Column,matrix,i,0,temp,k,0,temp.Rows);
-            else if (column == matrix.Columns - 1)
-                for (var i = 0; i < newColumn; i++) CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
-            else
-                for (var i = 0; i < newColumn; i++)
-                    if (i < column)
-                        CopyTo(State.Column,matrix,i,0,temp,i,0,matrix.Rows);
-                    else if (i >= column) CopyTo(State.Column,matrix,i + 1,0,temp,i,0,matrix.Rows);
             return temp;
         }
 
@@ -145,7 +144,7 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>A new matrix with new column.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static unsafe Matrix<T> AddColumn<T>(this Matrix<T> matrix, T[] arr, int column) where T : unmanaged
+        public static Matrix<T> AddColumn<T>(this Matrix<T> matrix, T[] arr, int column) where T : unmanaged
         {
             if (matrix.Rows != arr.Length)
             {
