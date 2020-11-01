@@ -541,18 +541,16 @@ namespace MatrixDotNet
         /// Clones matrix.
         /// </summary>
         /// <returns>object.</returns>
-        public object Clone()
+        public unsafe object Clone()
         {
-            Matrix<T> matrix = new Matrix<T>(Rows,Columns);
-            for (int i = 0; i < Rows; i++)
+            Matrix<T> res = new Matrix<T>(this.Rows,this.Columns);
+            
+            fixed (T* srcPtr = _Matrix)
+            fixed (T* destPtr = res.GetMatrix())
             {
-                for (int j = 0; j < Columns; j++)
-                {
-                    matrix[i, j] = this[i, j];
-                }
+                Unsafe.CopyBlock(destPtr, srcPtr, (uint)(this.Length * sizeof(T)));
             }
-
-            return matrix;
+            return res;
         }
 
         /// <summary>
