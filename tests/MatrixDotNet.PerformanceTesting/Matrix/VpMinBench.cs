@@ -1,12 +1,11 @@
-using System;
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet;
+using MatrixDotNet.Extensions.Core.Simd.Statistics;
 using MatrixDotNet.Extensions.Statistics;
-using Simd = MatrixDotNet.Extensions.Core.Simd.Statistics.Simd;
+using System;
 
-namespace Samples.Vectorization
+namespace MatrixDotNet.PerformanceTesting.Matrix
 {
-    public class VpMinBench
+    public class VpMinBench : PerformanceTest
     {
         const int N = 1023;
         public Matrix<double> MatrixAvxX64 = new Matrix<double>(N,N);

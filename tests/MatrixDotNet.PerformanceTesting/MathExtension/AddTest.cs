@@ -1,10 +1,11 @@
-using BenchmarkDotNet.Attributes;
+﻿using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Core.Simd;
 
-namespace MatrixDotNet.FunctionalTesting.MathTests
+namespace MatrixDotNet.PerformanceTesting.MathExtension
 {
     [RyuJitX64Job]
-    public class GenericAddByFuncVsUnsafeAddBench
+    public class AddTest : PerformanceTest
     {
         private Matrix<double> _matrix1;
         private Matrix<double> _matrix2;
@@ -23,6 +24,12 @@ namespace MatrixDotNet.FunctionalTesting.MathTests
         }
         
         [Benchmark]
+        public Matrix<double> AddSimd()
+        {
+            return Simd.Add(_matrix1,_matrix2);
+        }
+
+        [Benchmark(Baseline = true)]
         public Matrix<double> AddGeneric()
         {
             return _matrix1 + _matrix2;

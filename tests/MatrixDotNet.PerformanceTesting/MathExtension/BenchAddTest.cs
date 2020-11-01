@@ -1,10 +1,10 @@
 ﻿using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Math;
 
-namespace MatrixDotNet.FunctionalTesting.BenchMatrix
+namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
 {
     [MemoryDiagnoser]
-    public class BenchAddTest
+    public class BenchAddTest : PerformanceTest
     {
         [Params(4096)]
         public int A;
@@ -16,7 +16,7 @@ namespace MatrixDotNet.FunctionalTesting.BenchMatrix
         public int MExtension()
         {
             for (int i = 0; i < 10000; i++)
-                MathExtension.GetAddFunc<int, int, int>()(A, B);
+                Math.MathExtension.GetAddFunc<int, int, int>()(A, B);
             return 0;
         }
 

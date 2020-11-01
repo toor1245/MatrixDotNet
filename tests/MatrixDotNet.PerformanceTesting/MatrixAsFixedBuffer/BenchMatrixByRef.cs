@@ -1,10 +1,10 @@
 using BenchmarkDotNet.Attributes;
 
-namespace MatrixDotNet.FunctionalTesting.BenchMatrixAsFixedBuffer
+namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBuffer
 {
     // equally
     [MemoryDiagnoser]
-    public class BenchMatrixByRef
+    public class BenchMatrixByRef : PerformanceTest
     {
         private Matrix<long> _matrix;
 

@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 
-namespace MatrixDotNet.FunctionalTesting.Others
+namespace MatrixDotNet.PerformanceTesting.Other
 {
     [RyuJitX64Job]
-    public class CountBench
+    public class CountBench : PerformanceTest
     {
         private List<int> arr;
         private int[] arr2;

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 
-namespace MatrixDotNet.FunctionalTesting.Others
+namespace MatrixDotNet.PerformanceTesting.Other
 {
-    public class CountEqualBench
+    public class CountEqualBench : PerformanceTest
     {
         private List<int> arr;
         private int[] arr2;
