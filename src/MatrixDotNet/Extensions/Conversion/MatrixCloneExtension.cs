@@ -67,28 +67,10 @@ namespace MatrixDotNet.Extensions.Conversion
             }
         }
         
-        public static unsafe Matrix<T> Clone<T>(this Matrix<T> matrix) where T : unmanaged
+        [Obsolete("Use usual Copy instead")]
+        public static Matrix<T> Clone<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            int m = matrix.Rows;
-            int n = matrix.Columns;
-            
-            Matrix<T> res = new Matrix<T>(m,n);
-            int len = res.Length;
-
-            fixed (T* ptr1 = matrix.GetMatrix())
-            fixed (T* ptr2 = res.GetMatrix())
-            {
-                int i = 0;
-                Span<double> span1 = new Span<double>(ptr1,len);
-                Span<double> span2 = new Span<double>(ptr2,len);
-                while (i < len)
-                {
-                    span2[i] = span1[i];
-                    i += 1;
-                }
-
-                return res;
-            }
+            return matrix.Clone() as Matrix<T>;
         }
     }
 }
