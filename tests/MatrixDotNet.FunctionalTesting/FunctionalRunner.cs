@@ -1,10 +1,12 @@
-using System.Threading;
 using MatrixDotNet.FunctionalTesting.ThreadingTests;
+using NUnit.Framework;
+using System.Threading;
 
 namespace MatrixDotNet.FunctionalTesting
 {
     public static class FunctionalRunner
     {
+        [Test]
         public static void RunConcurrentTest()
         {
             DataTest data = new DataTest(4);
@@ -19,6 +21,8 @@ namespace MatrixDotNet.FunctionalTesting
             t1.Join();
             t2.Join();
             t3.Join();
+
+            Assert.Pass();
         }
     }
 }

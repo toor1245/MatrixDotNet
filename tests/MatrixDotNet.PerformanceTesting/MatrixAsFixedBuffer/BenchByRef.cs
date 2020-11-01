@@ -1,11 +1,11 @@
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 
-namespace MatrixDotNet.FunctionalTesting.BenchMatrixAsFixedBuffer
+namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBuffer
 {
     [MemoryDiagnoser]
     [RyuJitX64Job]
-    public class BenchByRef
+    public class BenchByRef : PerformanceTest
     {
         private Struct32B _struct32B;
         private Struct112B _struct112B;

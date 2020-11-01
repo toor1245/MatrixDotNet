@@ -1,11 +1,11 @@
+using BenchmarkDotNet.Attributes;
 using System;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-using BenchmarkDotNet.Attributes;
 
-namespace MatrixDotNet.FunctionalTesting.BenchMatrix
+namespace MatrixDotNet.PerformanceTesting.Other
 {
-    public class VmaskmovBench
+    public class VmaskmovBench : PerformanceTest
     {
         public const int N = 10001;
         public double[] A = new double[N];
@@ -14,7 +14,7 @@ namespace MatrixDotNet.FunctionalTesting.BenchMatrix
         public double[] D = new double[N];
         public double[] E = new double[N];
         
-        [GlobalSetup]
+        [IterationSetup]
         public void Setup()
         {
             for (int i = 0; i < A.Length; i++)
@@ -32,14 +32,13 @@ namespace MatrixDotNet.FunctionalTesting.BenchMatrix
                 E[i] = 1;
                 C[i] = 2;
                 D[i] = 3;
-                
             }
         }
 
         [Benchmark]
         public void WithoutVMaskMov()
         {
-            Setup();
+            
             for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] > 0)
@@ -56,7 +55,6 @@ namespace MatrixDotNet.FunctionalTesting.BenchMatrix
         [Benchmark]
         public unsafe void VMaskMov()
         {
-            Setup();
             fixed (double* ptrA = A)
             fixed (double* ptrB = B)
             fixed (double* ptrC = C)

@@ -1,13 +1,12 @@
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Core.Simd;
 
-namespace Samples.Samples
+namespace MatrixDotNet.PerformanceTesting.Matrix
 {
     [RyuJitX64Job]
-    public class SimdVsAvx
+    public class SimdVsAvx : PerformanceTest
     {
         private Matrix<int> _matrix;
 

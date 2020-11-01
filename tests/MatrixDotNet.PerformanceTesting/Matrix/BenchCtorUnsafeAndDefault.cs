@@ -1,11 +1,11 @@
 using BenchmarkDotNet.Attributes;
 
-namespace MatrixDotNet.FunctionalTesting.BenchMatrix.BenchCtorUnsafeVsDefault
+namespace MatrixDotNet.PerformanceTesting.Matrix
 {
-    public class BenchCtorUnsafeAndDefault
+    public class BenchCtorUnsafeAndDefault : PerformanceTest
     {
-        private int n = 1000;
-
+        [Params(1000)]
+        public int N;
 
         [Benchmark]
         public void UnsafeCtorTest()
@@ -16,7 +16,7 @@ namespace MatrixDotNet.FunctionalTesting.BenchMatrix.BenchCtorUnsafeVsDefault
                 {2, 3, 4, 5},
                 {2, 3, 4, 5},
             };
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < N; i++)
             {
                 Matrix<int> m = new Matrix<int>(0,0);
                 // method not exists m.TestCtorUnsafe(temp);
@@ -32,7 +32,7 @@ namespace MatrixDotNet.FunctionalTesting.BenchMatrix.BenchCtorUnsafeVsDefault
                 {2, 3, 4, 5},
                 {2, 3, 4, 5},
             };
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < N; i++)
             {
                 Matrix<int> m = new Matrix<int>(0,0);
                 // method not exists m.TestCtorDefault(temp);

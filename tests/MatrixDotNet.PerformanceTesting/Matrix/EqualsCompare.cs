@@ -1,13 +1,12 @@
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Core.Simd;
 using MatrixDotNet.Extensions.Performance.Operations;
 
-namespace Samples.Samples
+namespace MatrixDotNet.PerformanceTesting.Matrix
 {
     [RyuJitX64Job]
-    public class EqualsCompare
+    public class EqualsCompare : PerformanceTest
     {
         private Matrix<int> _matrix1;
         private Matrix<int> _matrix2;
@@ -19,7 +18,6 @@ namespace Samples.Samples
             _matrix2 = _matrix1.Clone() as Matrix<int>;
         }
         
-
         [Benchmark]
         public bool EqualsUnsafe()
         {
