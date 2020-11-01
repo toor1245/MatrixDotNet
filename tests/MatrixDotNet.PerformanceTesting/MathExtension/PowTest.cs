@@ -2,10 +2,10 @@
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 
-namespace MatrixDotNet.FunctionalTesting.BenchMatrix
+namespace MatrixDotNet.PerformanceTesting.MathExtension
 {
     [MemoryDiagnoser]
-    public class PowBench
+    public class PowTest : PerformanceTest
     {
         private Matrix<int> _matrix;
         
