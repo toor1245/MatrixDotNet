@@ -1,5 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixDotNet", "MatrixDotNet\MatrixDotNet.csproj", "{A0400D7B-D215-4E35-913C-4D6A4CCA3BAC}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30621.155
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixDotNet", "MatrixDotNet\MatrixDotNet.csproj", "{A0400D7B-D215-4E35-913C-4D6A4CCA3BAC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "..\samples\Samples\Samples.csproj", "{6E7371FE-09F1-4777-8486-F71E7C644F89}"
