@@ -552,7 +552,7 @@ namespace MatrixDotNet
             }
             return res;
         }
-
+        
         /// <summary>
         /// Implicit assign matrix.
         /// </summary>

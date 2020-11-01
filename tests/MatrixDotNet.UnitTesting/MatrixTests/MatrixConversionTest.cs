@@ -1,10 +1,9 @@
 using System;
 using MatrixDotNet;
-using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
 using Xunit;
 
-namespace MatrixDotNetTests
+namespace MatrixDotNetTests.MatrixTests
 {
     public class MatrixConversionTest
     {
@@ -188,7 +187,7 @@ namespace MatrixDotNetTests
             
             Matrix<int> expected =  new[,]
             {
-                { 2, 3, 4 },
+                { 1, 3, 4 },
                 { 3, 4, 7 },
                 { 3, 4, 7 }
             };
