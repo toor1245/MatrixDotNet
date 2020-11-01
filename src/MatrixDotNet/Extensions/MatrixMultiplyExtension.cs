@@ -1,4 +1,5 @@
 ﻿using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 
 namespace MatrixDotNet.Extensions
@@ -53,29 +54,18 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>Pow</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Matrix<T> Pow<T>(this Matrix<T> matrix,int degree) where T : unmanaged
+        public static Matrix<T> Pow<T>(this Matrix<T> matrix, uint degree) where T : unmanaged
         {
-            if(!matrix.IsSquare)
-                throw new MatrixDotNetException("matrix is not square or not prime");
-            
-            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
+            if (degree == 0)
+                return BuildMatrix.CreateIdentityMatrix<T>(matrix.Rows, matrix.Columns);
 
-            if (degree == 1)
-                return matrix;
+            if (degree % 2 == 1)
+                return matrix.Pow(degree-1) * matrix;
             
-            if (degree == 2)
-                return matrix * matrix;
-            
-            result = matrix * matrix;
-            
-            for (int i = 1; i < degree; i++)
-            {
-                result *= matrix;
-            }
-
-            return result;
+            var t = matrix.Pow(degree / 2);
+            return t * t;
         }
-        
+
         /// <summary>
         /// Raises a matrix to a power.
         /// </summary>
@@ -84,7 +74,7 @@ namespace MatrixDotNet.Extensions
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>Pow</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Matrix<T> PowStrassen<T>(this Matrix<T> matrix,int degree) where T : unmanaged
+        public static Matrix<T> PowStrassen<T>(this Matrix<T> matrix, uint degree) where T : unmanaged
         {
             if(!matrix.IsSquare || !matrix.IsPrime)
                 throw new MatrixDotNetException("matrix is not square or not prime");
@@ -96,7 +86,7 @@ namespace MatrixDotNet.Extensions
             
             if (degree == 2)
                 return matrix * matrix;
-            
+
             MultiplyStrassen(matrix,matrix);
             
             for (int i = 0; i < degree; i++)
