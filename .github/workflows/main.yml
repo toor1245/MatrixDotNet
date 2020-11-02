@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    types: [closed]
-    branches:
-      - master
 
 jobs:
   build:
@@ -25,9 +21,6 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}        
       
-      - name: Setup Nuget.exe
-        uses: nuget/setup-nuget@v1.0.2
-
       - name: Build solution and generate NuGet package
         run: |  
           cd src
@@ -36,4 +29,6 @@ jobs:
       - name: Push generated package to Nuget
         run: |
           cd src
-          nuget push "out/*.nupkg" -ConfigFile ".nuget/packages.config" -src https://api.nuget.org/v3/index.json -SkipDuplicate -NoSymbols
+          dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org --configfile ".nuget/packages.config"
+          dotnet nuget enable source nuget.org
+          dotnet nuget push "out/*.nupkg" --skip-duplicate --no-symbols true
