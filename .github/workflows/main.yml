@@ -26,7 +26,7 @@ jobs:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}        
       
       - name: Setup Nuget.exe
-        uses: nuget/setup-nuget@v1
+        uses: nuget/setup-nuget@latest
 
       - name: Build solution and generate NuGet package
         run: |  
@@ -36,4 +36,4 @@ jobs:
       - name: Push generated package to Nuget
         run: |
           cd src
-          nuget push "out/*.nupkg" -Source https://api.nuget.org/v3/index.json -ConfigFile ".nuget/packages.config" -SkipDuplicate -NoSymbols
+          nuget push "out/*.nupkg" -ConfigFile ".nuget/packages.config" -src https://api.nuget.org/v3/index.json -SkipDuplicate -NoSymbols
