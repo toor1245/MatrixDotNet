@@ -36,4 +36,4 @@ jobs:
       - name: Push generated package to Nuget
         run: |
           cd src
-          nuget push "out/*.nupkg" -ConfigFile ".nuget/packages.config" -SkipDuplicate -NoSymbols
+          nuget push "out/*.nupkg" -Source https://api.nuget.org/v3/index.json -ConfigFile ".nuget/packages.config" -SkipDuplicate -NoSymbols
