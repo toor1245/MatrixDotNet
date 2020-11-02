@@ -29,4 +29,6 @@ jobs:
       - name: Push generated package to Nuget
         run: |  
           cd src/out
-          dotnet nuget push "*.nupkg" -k oy2ieuwry3dxhaqmglhaf7fek7hgtyvepmm3gmtyej25ay -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols true
+          dotnet nuget push "*.nupkg" -k $api_token -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols true
+        env:
+          api_token: ${{ secrets.MATRIX }}
