@@ -29,7 +29,7 @@ jobs:
         run: |  
           cd src
           dotnet pack -c Release -o out  
-          del /F 'out\Samples.*'
+          remove-item 'out\Samples.*'
 
       - name: Push generated package to GitHub registry
         run: dotnet nuget push ./MatrixDotNet/out/*.nupkg --skip-duplicate --no-symbols true
