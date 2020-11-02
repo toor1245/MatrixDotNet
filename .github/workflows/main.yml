@@ -25,10 +25,8 @@ jobs:
         run: |  
           cd src
           dotnet build -c Release -o out
-
+        
       - name: Push generated package to Nuget
-        run: |
-          cd src
-          dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org --configfile ".nuget/packages.config"
-          dotnet nuget enable source nuget.org
-          dotnet nuget push "out/*.nupkg" --skip-duplicate --no-symbols true
+        run: |  
+          cd src/out
+          dotnet nuget push "*.nupkg" --skip-duplicate --no-symbols true
