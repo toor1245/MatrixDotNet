@@ -34,4 +34,6 @@ jobs:
           dotnet build -c Release -o out
 
       - name: Push generated package to Nuget
-        run: nuget push "out/*.nupkg" -ConfigFile ".nuget/packages.config" -SkipDuplicate -NoSymbols
+        run: |
+          cd src
+          nuget push "out/*.nupkg" -ConfigFile ".nuget/packages.config" -SkipDuplicate -NoSymbols
