@@ -28,7 +28,7 @@ jobs:
       - name: Build solution and generate NuGet package
         run: |  
           cd src
-          dotnet pack -c Release -o out  
+          dotnet pack --force -c Release -o out  
           remove-item 'out\Samples.*'
 
       - name: Push generated package to GitHub registry
