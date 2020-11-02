@@ -24,13 +24,14 @@ jobs:
           source-url: https://nuget.pkg.github.com/toor1245/index.json
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}        
-          
+      
+      - name: Setup Nuget.exe
+        uses: nuget/setup-nuget@v1
+
       - name: Build solution and generate NuGet package
         run: |  
           cd src
           dotnet build -c Release -o out
 
       - name: Push generated package to Nuget
-        uses: nuget/setup-nuget@v1
-        run: |
-          nuget push "out/*.nupkg" -ConfigFile ".nuget/packages.config" -SkipDuplicate -NoSymbols
+        run: nuget push "out/*.nupkg" -ConfigFile ".nuget/packages.config" -SkipDuplicate -NoSymbols
