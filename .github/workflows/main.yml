@@ -27,7 +27,7 @@ jobs:
           
       - name: Build solution and generate NuGet package
         run: |  
-          cd MatrixDotNet/src
+          cd src
           dotnet pack -c Release -o out  
           del /F /Q "out\Samples.*"
 
