@@ -27,6 +27,11 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}        
       
+      - name: Run Unit Tests
+        run: |  
+          cd tests/MatrixDotNet.UnitTesting
+          dotnet test -c Release
+
       - name: Run Functional Tests
         run: |  
           cd tests/MatrixDotNet.FunctionalTesting
