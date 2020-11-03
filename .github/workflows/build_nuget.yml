@@ -1,25 +1,16 @@
 name: NuGet Generation
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - '!docs/*'
-      - '!README.md'
   pull_request:
     branches:
       - master
     types: [closed]
-    paths:
-      - '!docs/*'
-      - '!README.md'
 
 jobs:
   build:
-    runs-on: windows-latest
+    if: ${{ github.event.pull_request.merged == true }}
     name: Update NuGet package
-    if: github.event.pull_request.merged == true
+    runs-on: windows-latest
     steps:
 
       - name: Checkout repository
