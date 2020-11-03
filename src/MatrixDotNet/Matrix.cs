@@ -1,12 +1,12 @@
 ﻿using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
+using MatrixDotNet.Math;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
-using MatrixDotNet.Math;
 
 namespace MatrixDotNet
 {
@@ -571,19 +571,25 @@ namespace MatrixDotNet
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
-        public static implicit operator Matrix<T>(T[][] matrix)
+        public static unsafe implicit operator Matrix<T>(T[][] matrix)
         {
-            if (matrix.Length <= 0)
+            var columns = matrix[0].Length;
+            for (int i = 1; i < matrix.Length; i++)
             {
-                throw new MatrixDotNetException("Empty matrix... strange things!");
+                var prefetch = matrix[i].Length;
+                columns = prefetch & ((columns - prefetch) >> 31) | columns & (~(columns - prefetch) >> 31);
             }
 
-            Matrix<T> result = new Matrix<T>(matrix.Length, matrix[0].Length);
-            for (int i = 0; i < matrix.Length; i++)
+            Matrix<T> result = new Matrix<T>(matrix.Length, columns);
+
+            fixed (T* dstPtr = result._Matrix)
             {
-                for (int j = 0; j < matrix.Length; j++)
+                for (int i = 0; i < matrix.Length; i++)
                 {
-                    result[i, j] = matrix[i][j];
+                    fixed (T* srcPrt = matrix[i])
+                    {
+                        Unsafe.CopyBlock(dstPtr + i * result.Columns, srcPrt, (uint)(sizeof(T)*matrix[i].Length));
+                    }
                 }
             }
             return result;
@@ -630,59 +636,37 @@ namespace MatrixDotNet
         public struct Enumerator : IEnumerator<T>
         {
             private int _position;
-            private int _dimension;
-            private Matrix<T> _matrix;
+
+            private readonly Matrix<T> _matrix;
 
             internal Enumerator(Matrix<T> matrix)
             {
                 _position = -1;
-                _dimension = 0;
+
                 _matrix = matrix;
             }
             
             public bool MoveNext()
             {
-                int newPosition = _position + 1;
-                bool cross = false;
+                ++_position;
                 
-                
-                if (newPosition >= _matrix.Columns && _dimension < _matrix.Rows)
-                {
-                    _dimension++;
-                    newPosition = -1;
-                    cross = true;
-                }
-                if (newPosition < -1 || 
-                    newPosition >= _matrix.Columns ||
-                    _dimension >= _matrix.Rows) 
-                    return false;
-
-                if (cross)
-                {
-                    _position = newPosition + 1;
-                }
-                else
-                {
-                    _position = newPosition;    
-                }
-                
-                return true;
+                return (_position >= 0 && _position < _matrix.Length);
             }
 
             public void Reset()
             {
-                _dimension = 0;
                 _position = -1;
             }
             
-            public T Current => _matrix[_dimension, _position];
+            public T Current => _matrix._Matrix[_position];
 
             object IEnumerator.Current => Current;
 
+            /// <summary>
+            /// Isn't used here
+            /// </summary>
             public void Dispose()
-            {
-                GC.SuppressFinalize(true);
-            }
+            { }
         } 
         
         #endregion
