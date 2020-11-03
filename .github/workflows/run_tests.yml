@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - master
+    paths-ignore:
+      - '.github/workflows/build_nuget.yml'
+      - 'doc/*'
   workflow_dispatch:
   
 
