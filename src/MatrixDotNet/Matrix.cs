@@ -1,4 +1,4 @@
-﻿using MatrixDotNet.Exceptions;
+using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
 using System;
@@ -630,58 +630,35 @@ namespace MatrixDotNet
         public struct Enumerator : IEnumerator<T>
         {
             private int _position;
-            private int _dimension;
-            private Matrix<T> _matrix;
+
+            private readonly Matrix<T> _matrix;
 
             internal Enumerator(Matrix<T> matrix)
             {
                 _position = -1;
-                _dimension = 0;
+
                 _matrix = matrix;
             }
             
             public bool MoveNext()
             {
-                int newPosition = _position + 1;
-                bool cross = false;
+                ++_position;
                 
-                
-                if (newPosition >= _matrix.Columns && _dimension < _matrix.Rows)
-                {
-                    _dimension++;
-                    newPosition = -1;
-                    cross = true;
-                }
-                if (newPosition < -1 || 
-                    newPosition >= _matrix.Columns ||
-                    _dimension >= _matrix.Rows) 
-                    return false;
-
-                if (cross)
-                {
-                    _position = newPosition + 1;
-                }
-                else
-                {
-                    _position = newPosition;    
-                }
-                
-                return true;
+                return (_position < -1 || _position >= _matrix.Length);
             }
 
             public void Reset()
             {
-                _dimension = 0;
                 _position = -1;
             }
             
-            public T Current => _matrix[_dimension, _position];
+            public T Current => _matrix._Matrix[_position];
 
             object IEnumerator.Current => Current;
 
             public void Dispose()
             {
-                GC.SuppressFinalize(true);
+                GC.SuppressFinalize(this);
             }
         } 
         
