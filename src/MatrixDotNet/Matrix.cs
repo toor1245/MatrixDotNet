@@ -650,7 +650,7 @@ namespace MatrixDotNet
             {
                 ++_position;
                 
-                return (_position < -1 || _position >= _matrix.Length);
+                return (_position >= 0 && _position < _matrix.Length);
             }
 
             public void Reset()
@@ -662,10 +662,11 @@ namespace MatrixDotNet
 
             object IEnumerator.Current => Current;
 
+            /// <summary>
+            /// Isn't used here
+            /// </summary>
             public void Dispose()
-            {
-                GC.SuppressFinalize(this);
-            }
+            { }
         } 
         
         #endregion
