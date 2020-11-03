@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - master
-
+    paths:
+      - '!docs/*'
+      - '!README.md'
 jobs:
   build:
     runs-on: windows-latest
@@ -12,7 +14,7 @@ jobs:
     steps:
 
       - name: Checkout repository
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v1
