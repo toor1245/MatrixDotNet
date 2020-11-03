@@ -1,12 +1,12 @@
-using MatrixDotNet.Exceptions;
+﻿using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Conversion;
+using MatrixDotNet.Math;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
-using MatrixDotNet.Math;
 
 namespace MatrixDotNet
 {
@@ -571,19 +571,25 @@ namespace MatrixDotNet
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
-        public static implicit operator Matrix<T>(T[][] matrix)
+        public static unsafe implicit operator Matrix<T>(T[][] matrix)
         {
-            if (matrix.Length <= 0)
+            var columns = matrix[0].Length;
+            for (int i = 1; i < matrix.Length; i++)
             {
-                throw new MatrixDotNetException("Empty matrix... strange things!");
+                var prefetch = matrix[i].Length;
+                columns = prefetch & ((columns - prefetch) >> 31) | columns & (~(columns - prefetch) >> 31);
             }
 
-            Matrix<T> result = new Matrix<T>(matrix.Length, matrix[0].Length);
-            for (int i = 0; i < matrix.Length; i++)
+            Matrix<T> result = new Matrix<T>(matrix.Length, columns);
+
+            fixed (T* dstPtr = result._Matrix)
             {
-                for (int j = 0; j < matrix.Length; j++)
+                for (int i = 0; i < matrix.Length; i++)
                 {
-                    result[i, j] = matrix[i][j];
+                    fixed (T* srcPrt = matrix[i])
+                    {
+                        Unsafe.CopyBlock(dstPtr + i * result.Columns, srcPrt, (uint)(sizeof(T)*matrix[i].Length));
+                    }
                 }
             }
             return result;
