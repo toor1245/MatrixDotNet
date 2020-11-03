@@ -123,6 +123,9 @@ namespace MatrixDotNet
             {
                 if (dimension == State.Row)
                 {
+                    if (i >= Rows)
+                        throw new IndexOutOfRangeException();
+
                     fixed (T* ptr1 = _Matrix)
                     fixed (T* ptr2 = value)
                     {

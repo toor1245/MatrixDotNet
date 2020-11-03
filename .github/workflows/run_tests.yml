@@ -11,9 +11,8 @@ jobs:
     strategy:
       matrix:
         config:
-          - os: ubuntu-latest
-          - os: macos-latest
           - os: windows-latest
+          - os: ubuntu-latest
 
     name: Run tests
     steps:

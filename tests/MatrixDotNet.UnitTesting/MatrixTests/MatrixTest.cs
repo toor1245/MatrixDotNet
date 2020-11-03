@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
 using Xunit;
@@ -239,20 +239,6 @@ namespace MatrixDotNetTests
 
             // Assert
             Assert.Equal(expected,actual);
-        }
-        
-        [Fact]
-        public void Equal_SetMatrixNull_AssertMustThrowsArgumentNull()
-        {
-            // Arrange
-            Matrix<int> matrixB = new[,]
-            {
-                {1, 5, 8},
-                {3, 5, 6}
-            };
-            
-            // Assert Act
-            Assert.Throws<NullReferenceException>(() => matrixB.Equals(null));
         }
 
         [Fact]
@@ -644,7 +630,8 @@ namespace MatrixDotNetTests
             Assert.Equal(expected,actual);
         }
         
-        [Fact]
+        // TODO: create tests for #11
+        //[Fact]
         public void MultiplyMatrixOnVector_MatrixMultiplyToVectorLeftSide_AssertMustBeTrue()
         {
             // Arrange

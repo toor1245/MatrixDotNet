@@ -90,8 +90,12 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="column">The index of matrix which reduce column.</param>
         /// <typeparam name="T">Unmanaged type.</typeparam>
         /// <returns>A new matrix without the chosen column.</returns>
-        public static unsafe Matrix<T> ReduceColumn<T>(this Matrix<T> matrix, int column) where T : unmanaged
+        public static unsafe Matrix<T> ReduceColumn<T>(this Matrix<T> matrix, uint column)
+            where T : unmanaged
         {
+            if (column >= matrix.Columns)
+                throw new IndexOutOfRangeException();
+
             var newColumns = matrix.Columns - 1; 
             var temp = new Matrix<T>(matrix.Rows,newColumns);
             fixed (T* ptr2 = temp.GetMatrix())
@@ -101,7 +105,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 for (int i = 0; i < temp.Rows; i++)
                 {
                     Unsafe.CopyBlock(ptr2 + i * m,ptr3 + i * matrix.Columns,(uint) (sizeof(T) * column));
-                    int len = temp.Columns - column;
+                    uint len = (uint)temp.Columns - column;
                     Unsafe.CopyBlock(ptr2 + i * m + column ,ptr3 + i * matrix.Columns + column + 1,(uint) (sizeof(T) * len));
                 }
             }
@@ -117,8 +121,12 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>A new matrix without the chosen row.</returns>
         /// <exception cref="NullReferenceException">.</exception>
-        public static unsafe Matrix<T> ReduceRow<T>(this Matrix<T> matrix, int row) where T : unmanaged
+        public static unsafe Matrix<T> ReduceRow<T>(this Matrix<T> matrix, uint row)
+            where T : unmanaged
         {
+            if (row >= matrix.Rows)
+                throw new IndexOutOfRangeException();
+
             var newRows = matrix.Rows - 1; 
             var temp = new Matrix<T>(newRows,matrix.Columns);
             fixed (T* ptr2 = temp.GetMatrix())
@@ -127,8 +135,8 @@ namespace MatrixDotNet.Extensions.Conversion
                 int m = temp.Columns;
                 Array.Copy(matrix._Matrix, temp._Matrix, row * m);
                 // finds difference len between whole matrix and length to index row.
-                int diff = sizeof(T) * temp.Length - (sizeof(T) * row * m);
-                Unsafe.CopyBlock(ptr2 + row * m,ptr3 + (row + 1) * m,(uint) diff);
+                uint diff = (uint) (sizeof(T) * temp.Length - (sizeof(T) * row * m));
+                Unsafe.CopyBlock(ptr2 + row * m,ptr3 + (row + 1) * m, diff);
             }
             
             return temp;
