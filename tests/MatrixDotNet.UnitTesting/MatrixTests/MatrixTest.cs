@@ -1,9 +1,10 @@
 using System;
+using System.Collections.Generic;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
 using Xunit;
 
-namespace MatrixDotNetTests
+namespace MatrixDotNetTests.MatrixTests
 {
     public class MatrixTest
     {
@@ -74,24 +75,23 @@ namespace MatrixDotNetTests
         [Fact]
         public void EnumeratorMoveNext_ChecksTraversalOfMatrix_AssertMustBeEqual()
         {
-            // Arrange
             Matrix<int> matrix = new[,]
             {
                 {3, 5, 4},
                 {3, 2, 1}
             };
-            int[] result = new int[matrix.Length];
+            
+            var array = matrix.GetMatrix();
+            
             int index = 0;
 
-
-            // Act
-            foreach (var i in matrix)
+            using IEnumerator<int> enumerator = matrix.GetEnumerator();
+            while (enumerator.MoveNext())
             {
-                result[index] = i;
-                index++;
+                Assert.Equal(array[index], enumerator.Current);
+                ++index;
             }
-            // Assert
-            Assert.Equal(matrix,result);
+            Assert.Equal(array.Length, index);
         }
         
         [Fact]
