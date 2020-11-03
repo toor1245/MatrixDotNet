@@ -12,6 +12,7 @@ jobs:
       matrix:
         config:
           - os: windows-latest
+          - os: ubuntu-latest
 
     name: Run tests
     steps:
