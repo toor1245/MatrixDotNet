@@ -1,5 +1,5 @@
 using System;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -18,7 +18,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
             
             
-            return MathExtension.DivideBy(matrix.Sum(),matrix.Length);
+            return MathGeneric<T, int, T>.Divide(matrix.Sum(),matrix.Length);
         }
 
         
@@ -35,7 +35,7 @@ namespace MatrixDotNet.Extensions.Statistics
             if (!MathExtension.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
 
-            return MathExtension.DivideBy(matrix.SumByRow(index), matrix.Columns);
+            return MathGeneric<T, int, T>.Divide(matrix.SumByRow(index), matrix.Columns);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace MatrixDotNet.Extensions.Statistics
             if (!MathExtension.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
 
-            return MathExtension.DivideBy(matrix.SumByColumn(index), matrix.Rows);
+            return MathGeneric<T, int, T>.Divide(matrix.SumByColumn(index), matrix.Rows);
         }
         
         /// <summary>
@@ -70,7 +70,7 @@ namespace MatrixDotNet.Extensions.Statistics
             
             for (int i = 0; i < rows; i++)
             {
-                arr[i] = MathExtension.DivideBy(matrix.SumByRow(i), columns); 
+                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByRow(i), columns); 
             }
 
             return arr;
@@ -94,7 +94,7 @@ namespace MatrixDotNet.Extensions.Statistics
             
             for (int i = 0; i < columns; i++)
             {
-                arr[i] = MathExtension.DivideBy(matrix.SumByColumn(i), rows); 
+                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByColumn(i), rows); 
             }
             
             return arr;
