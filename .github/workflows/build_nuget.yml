@@ -1,15 +1,19 @@
-name: NuGet Generation
+name: Build and Release
 
 on:
-  pull_request:
-    branches:
-      - master
-    types: [closed]
+  push:
+    tags:
+      - 'v*'
+
+env:
+  # Stop wasting time caching packages
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  # Disable sending usage data to Microsoft
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
 
 jobs:
   build:
-    if: ${{ github.event.pull_request.merged == true }}
-    name: Update NuGet package
+    name: Build and Release
     runs-on: windows-latest
     steps:
 
@@ -17,7 +21,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup .NET Core @ Latest
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v1.7.2
  
       - name: Build solution and generate NuGet package
         run: |  
@@ -29,18 +33,16 @@ jobs:
           cd src/out
           dotnet nuget push "*.nupkg" -k ${{ secrets.MATRIX }} -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols true
       
-      #- name: Push generated packages to Github
-      #  run: |  
-      #    cd src/out
-      #    dotnet nuget push "*.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/toor1245/index.json --skip-duplicate --no-symbols true
-
-      - name: Create Release
+      - name: Push generated packages to Github
+        run: |  
+          cd src/out
+          dotnet nuget push "*.nupkg" -k ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/matrixdotnet/index.json --skip-duplicate --no-symbols true
+  
+      - name: Create Github Release
         id: create_release
         uses: actions/create-release@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          draft: true
-          prerelease: false
