@@ -2,7 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <Description>lightweight library intended for math operations which works with generic programming.</Description>
+        <Description>Lightweight library intended for math operations which works with generic programming
+
+With all answers see documentation or ask on gitter or github issues</Description>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
         <RepositoryUrl>https://github.com/toor1245/MatrixDotNet</RepositoryUrl>
@@ -10,31 +12,30 @@
         <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
         <PackageTags>math, generic, calculation, matrix</PackageTags>
         <Version>1.1.0.1</Version>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <Authors>Nikolay Hohsadze, Dilorfin</Authors>
+        <Company>MatrixDotNet</Company>
+        <NeutralLanguage>en</NeutralLanguage>
+        <Copyright>MatrixDotNet</Copyright>
     </PropertyGroup>
 
     <ItemGroup>
-      <None Remove="MatrixDotNet.ico" />
-      <None Remove="MatrixDotNet.ico" />
-      <None Update="images\MatrixDotNet_128x128.png">
-           <Pack>True</Pack>
-           <PackagePath></PackagePath>
-       </None>
-      <None Include="MatrixDotNet_128x128.png">
+      <None Include="..\..\.github\.nuget\images\MatrixDotNet_128x128.png" Link=".Nuget\MatrixDotNet_128x128.png">
         <Pack>True</Pack>
         <PackagePath></PackagePath>
       </None>
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Include="..\MatrixDotNet\images\MatrixDotNet_128x128.png" Link="MatrixDotNet_128x128.png">
-        <PackagePath></PackagePath>
+      <None Include="..\..\.github\.nuget\LICENSE" Link=".Nuget\LICENSE">
         <Pack>True</Pack>
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <PackagePath></PackagePath>
       </None>
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include=".Nuget\" />
     </ItemGroup>
 
 </Project>
