@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libMatrixDotNet_Core_Intrinsics.so -o libMatrixDotNet_Core_Intrinsics.so CMakeFiles/MatrixDotNet_Core_Intrinsics.dir/src/library.cpp.o CMakeFiles/MatrixDotNet_Core_Intrinsics.dir/headers/StringBuilder.cpp.o 
