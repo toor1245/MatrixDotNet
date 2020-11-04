@@ -1,4 +1,0 @@
-"D:\CLion 2020.1.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - NMake Makefiles" D:\RiderProjects\MatrixDotNet\src\MatrixDotNet.Core.Intrinsics
--- Configuring done
--- Generating done
--- Build files have been written to: D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-release-visual-studio

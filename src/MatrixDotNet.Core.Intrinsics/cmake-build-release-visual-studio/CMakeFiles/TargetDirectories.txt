@@ -1,3 +1,0 @@
-D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-release-visual-studio/CMakeFiles/MatrixDotNet_Core_Intrinsics.dir
-D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-release-visual-studio/CMakeFiles/edit_cache.dir
-D:/RiderProjects/MatrixDotNet/src/MatrixDotNet.Core.Intrinsics/cmake-build-release-visual-studio/CMakeFiles/rebuild_cache.dir

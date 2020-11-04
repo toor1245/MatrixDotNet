@@ -1,36 +1,41 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-	<OS_WINDOWS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</OS_WINDOWS>
-        <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</OS_MAC>
-        <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
-        <LangVersion>default</LangVersion>
-        <Title>MatrixDotNet</Title>
-        <Authors>Nikolay Hohsadze</Authors>
-        <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
-        <PackageIconUrl></PackageIconUrl>
-        <RepositoryUrl>https://github.com/toor1245/MatrixDotNet</RepositoryUrl>
-        <PackageTags>matrix,Matrix,MatrixDotNet,Math,linear algebra,statistics,solve,factorization,decomposition,dotnet,AVX,Sse,SIMD,optimization</PackageTags>
-        <NeutralLanguage>en</NeutralLanguage>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Version>0.0.6.2</Version>
-        <DocumentationMarkdownURL>https://github.com/toor1245/MatrixDotNet/blob/master/README.md</DocumentationMarkdownURL>
-        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-        <Description>Powerful MatrixDotNet library for matrix calculation</Description>
-        <RepositoryType>Library</RepositoryType>
-        <PackageReleaseNotes></PackageReleaseNotes>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <Copyright>MatrixDotNet</Copyright>
-        <Company>MatrixDotNet</Company>
-        <ApplicationIcon>MatrixDotNet.ico</ApplicationIcon>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
 
-<PropertyGroup Condition="'$(OS_WINDOWS)'=='true'">
+
+    <OS_WINDOWS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</OS_WINDOWS>
+    <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</OS_MAC>
+    <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
+
+
+    <LangVersion>default</LangVersion>
+    <Title>MatrixDotNet</Title>
+    <Authors>Nikolay Hohsadze, Dilorfin</Authors>
+    <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
+    <PackageIconUrl></PackageIconUrl>
+    <RepositoryUrl>https://github.com/toor1245/MatrixDotNet</RepositoryUrl>
+    <PackageTags>matrix,Matrix,MatrixDotNet,Math,linear algebra,statistics,solve,factorization,decomposition,dotnet,AVX,Sse,SIMD,optimization</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.6.2</Version>
+    <DocumentationMarkdownURL>https://github.com/toor1245/MatrixDotNet/blob/master/README.md</DocumentationMarkdownURL>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Powerful MatrixDotNet library for matrix calculation
+
+With all answers see documentation or ask on gitter or github issues</Description>
+    <RepositoryType>Library</RepositoryType>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Copyright>MatrixDotNet</Copyright>
+    <Company>MatrixDotNet</Company>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(OS_WINDOWS)'=='true'">
     <DefineConstants>OS_WINDOWS</DefineConstants>
-  </PropertyGroup> 
+  </PropertyGroup>
   <PropertyGroup Condition="'$(OS_MAC)'=='true'">
     <DefineConstants>OS_MAC</DefineConstants>
   </PropertyGroup>
@@ -38,47 +43,22 @@
     <DefineConstants>OS_LINUX</DefineConstants>
   </PropertyGroup>
 
-    <ItemGroup>
-      <None Include="images\MatrixDotNet_128x128.png">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-      <None Remove="MatrixDotNet.ico" />
-      <None Remove="images\**" />
-      <None Include="images\MatrixDotNet_128x128.png">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-      <None Include="LICENSE">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\.github\.nuget\images\MatrixDotNet_128x128.png" Link=".Nuget\MatrixDotNet_128x128.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\.github\.nuget\LICENSE" Link=".Nuget\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="templates\doctype.txt" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MatrixDotNet.Math\MatrixDotNet.Math.csproj" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\MatrixDotNet.Math\MatrixDotNet.Math.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="System.Runtime.Numerics" Version="4.3.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Compile Remove="images\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="images\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Update="LICENSE">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-
+  <ItemGroup>
+    <Folder Include=".Nuget\" />
+  </ItemGroup>
 </Project>
