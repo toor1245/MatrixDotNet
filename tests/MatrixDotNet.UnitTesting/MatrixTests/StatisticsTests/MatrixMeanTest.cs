@@ -6,7 +6,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
 {
     public class MatrixMeanTest
     {
-        //[Fact]
+        [Fact]
         public void MeanTest_GetsMeanWholeMatrix3x3_AssertMustBeEqual()
         {
             // Arrange
@@ -28,7 +28,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
             Assert.Equal(expected,actual);
         }
         
-        //[Fact]
+        [Fact]
         public void MeanByRowTest_GetsMeanFirstIndexByRowMatrix3x3_AssertMustBeEqual()
         {
             // Arrange
@@ -49,7 +49,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
             Assert.Equal(expected,actual);
         }
         
-        //[Fact]
+        [Fact]
         public void MeanByColumnTest_GetsMeanZeroIndexByRowMatrix3x3_AssertMustBeEqual()
         {
             // Arrange
@@ -70,7 +70,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
             Assert.Equal(expected,actual);
         }
         
-        //[Fact]
+        [Fact]
         public void MeanByRowsTest_GetsMeanByRowsMatrix3x3_AssertMustBeEqual()
         {
             // Arrange
@@ -92,7 +92,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
             Assert.Equal(expected,actual);
         }
         
-        //[Fact]
+        [Fact]
         public void MeanByColumnsTest_GetsMeanByColumnsMatrix3x3_AssertMustBeEqual()
         {
             // Arrange
