@@ -54,7 +54,7 @@ namespace MatrixDotNet.Math
             return func;
         }
 
-        public static TR Sub(T1 left, T2 right)
+        public static T Sub(T left, T right)
         {
             return GetSubFunc()(left, right);
         }
