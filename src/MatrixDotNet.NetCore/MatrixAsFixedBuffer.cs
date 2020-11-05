@@ -101,16 +101,11 @@ namespace MatrixDotNet.Extensions.Core
             var m = matrix.GetLength(0);
             var n = matrix.GetLength(1);
             Initialize((byte)m,(byte)n);
-            
-            fixed (double* ptr = matrix)
+
+            fixed (double* ptr1 = _array)
+            fixed (double* ptr2 = matrix)
             {
-                var span = new Span<double>(ptr,m * n);
-                var arr = Data;
-                
-                for (int i = 0; i < _length; i++)
-                {
-                    arr[i] = span[i];
-                }
+                Unsafe.CopyBlock(ptr1,ptr2,(uint) (sizeof(double) * matrix.Length));
             }
         }
 
@@ -297,21 +292,7 @@ namespace MatrixDotNet.Extensions.Core
             if(left.Columns != right.Rows)
                 throw new MatrixDotNetException("");
             
-#if OS_LINUX
             return MulMatrix(ref left,ref right);
-#endif
-            
-#if OS_WINDOWS
-            if(Avx2.IsSupported)
-            {
-                   
-            }
-            else
-            {
-                return MulMatrix(ref left,ref right);
-            }
-#endif
-            return new MatrixAsFixedBuffer();
         }
 
         /// <summary>

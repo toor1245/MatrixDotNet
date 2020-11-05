@@ -5,6 +5,7 @@ using MatrixDotNet.Math;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -321,7 +322,6 @@ namespace MatrixDotNet
                 {
                     for (int k = 0; k < left.Columns; k++)
                     {
-                        // matrix[i,j] = matrix[i,j] + left[i,k] * right[k,j]; 
                         matrix[i, j] = addFunc(matrix[i,j], multiplyFunc(left[i,k],right[k,j]));
                     }
                 }
@@ -405,7 +405,6 @@ namespace MatrixDotNet
 
             return result;
         }
-
         
         /// <summary>
         /// Returns vector sum of each multiply element of row.
@@ -475,9 +474,28 @@ namespace MatrixDotNet
         /// <param name="vector">vector.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Vector<T> operator *(Vector<T> vector,Matrix<T> matrix)
+        public static unsafe Vector<T> operator *(Vector<T> vector,Matrix<T> matrix)
         {
-            return matrix * vector.Array;
+            if (vector.Length != matrix.Columns)
+            {
+                throw new MatrixDotNetException("not equals");
+            }
+            
+            Vector<T> res = new Vector<T>(vector.Length);
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                T sum = default;
+                for (int j = 0; j < matrix.Columns; j++)
+                {
+                    sum = MathGeneric<T,T,T>.Add(sum, MathGeneric<T,T,T>.Multiply(matrix[j, i], vector[j]));
+                }
+                if (i == vector.Length)
+                {
+                    break;
+                }
+                res[i] = sum;
+            }
+            return res;
         }
         
         /// <summary>
@@ -487,9 +505,40 @@ namespace MatrixDotNet
         /// <param name="vector">vector.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Vector<T> operator *(Matrix<T> matrix,Vector<T> vector)
+        public static unsafe Vector<T> operator *(Matrix<T> matrix,Vector<T> vector)
         {
-            return vector.Array * matrix;
+            if (matrix.Rows != vector.Length)
+            {
+                throw new MatrixDotNetException("not equals");
+            }
+
+            int m = matrix.Rows;
+            int n = 1;
+            int K = matrix.Columns;
+            
+            Vector<T> result = new Vector<T>(m);
+            fixed(T* ptr1 = matrix._Matrix)
+            fixed(T* ptr2 = vector.Array)
+            fixed(T* ptr3 = result.Array)
+            {
+                Span<T> span1 = new Span<T>(ptr1,matrix.Length);
+                
+                for (int i = 0; i < m; i++)
+                {
+                    T* c = ptr3 + i * n;
+
+                    for (int k = 0; k < K; k++)
+                    {
+                        T* b = ptr2 + k * n;
+                        T a = span1[i * K + k];
+                        for (int j = 0; j < n; j++)
+                        {
+                            c[j] = MathUnsafe<T>.Add(c[j],MathUnsafe<T>.Mul(a,b[j]));
+                        }
+                    }
+                }
+                return result;
+            }
         }
 
 
@@ -546,7 +595,7 @@ namespace MatrixDotNet
         /// <returns>object.</returns>
         public unsafe object Clone()
         {
-            Matrix<T> res = new Matrix<T>(this.Rows,this.Columns);
+            Matrix<T> res = new Matrix<T>(Rows,Columns);
             
             fixed (T* srcPtr = _Matrix)
             fixed (T* destPtr = res.GetMatrix())
