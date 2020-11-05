@@ -1,33 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
 
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <PlatformTarget>x64</PlatformTarget>
-    </PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
-      <PackageReference Include="ObjectLayoutInspector" Version="0.1.2" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+  </ItemGroup>
 
-    <PropertyGroup>
-      <IsPackable>true</IsPackable>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\src\MatrixDotNet.NetCore\MatrixDotNet.NetCore.csproj" />
-      <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
-      <ProjectReference Include="..\..\tests\MatrixDotNet.FunctionalTesting\MatrixDotNet.FunctionalTesting.csproj" />
-      <ProjectReference Include="..\..\tests\MatrixDotNet.UnitTesting\MatrixDotNet.UnitTesting.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="MatrixDotNet_Core_Intrinsics.dll" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MatrixDotNet.NetCore\MatrixDotNet.NetCore.csproj" />
+    <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
+  </ItemGroup>
 
 </Project>
