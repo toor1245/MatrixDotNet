@@ -1,40 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <Description>lightweight library intended for math operations which works with generic programming.</Description>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/toor1245/MatrixDotNet</RepositoryUrl>
-        <RepositoryType>Library</RepositoryType>
-        <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
-        <PackageTags>math, generic, calculation, matrix</PackageTags>
-        <Version>1.1.0.1</Version>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
-    <ItemGroup>
-      <None Remove="MatrixDotNet.ico" />
-      <None Remove="MatrixDotNet.ico" />
-      <None Update="images\MatrixDotNet_128x128.png">
-           <Pack>True</Pack>
-           <PackagePath></PackagePath>
-       </None>
-      <None Include="MatrixDotNet_128x128.png">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-    </ItemGroup>
+    <Version>1.1.0.1</Version>
+    <RepositoryType>Library</RepositoryType>
+    <Company>MatrixDotNet</Company>
+    <Copyright>MatrixDotNet</Copyright>
+    <Authors>Nikolay Hohsadze, Dilorfin</Authors>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
+    <PackageProjectUrl>https://toor1245.github.io/MatrixDotNet/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/toor1245/MatrixDotNet</RepositoryUrl>
+    <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
+    <Description>Lightweight library intended for math operations which works with generic programming
 
-    <ItemGroup>
-      <None Include="..\MatrixDotNet\images\MatrixDotNet_128x128.png" Link="MatrixDotNet_128x128.png">
-        <PackagePath></PackagePath>
-        <Pack>True</Pack>
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
+With all answers see documentation or ask on gitter or github issues</Description>
+    <PackageTags>math, generic, calculation, matrix</PackageTags>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\.github\.nuget\images\MatrixDotNet_128x128.png" Link=".Nuget\MatrixDotNet_128x128.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE" Link=".Nuget\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
+  </ItemGroup>
 
 </Project>
