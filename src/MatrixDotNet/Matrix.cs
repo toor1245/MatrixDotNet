@@ -425,11 +425,13 @@ namespace MatrixDotNet
                 T sum = default;
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    sum = MathGeneric<T,T,T>.Add(sum, MathGeneric<T,T,T>.Multiply(matrix[j, i], array[j]));
+                    sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(matrix[j, i], array[j]));
                 }
-                
-                if(i == array.Length)
+
+                if (i == array.Length)
+                {
                     break;
+                }
 
                 res[i] = sum;
             }
@@ -456,11 +458,13 @@ namespace MatrixDotNet
                 T sum = default;
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    sum = MathGeneric<T,T,T>.Add(sum, MathGeneric<T,T,T>.Multiply(matrix[i, j], array[j]));
+                    sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(matrix[i, j], array[j]));
                 }
-                
-                if(i == array.Length)
+
+                if (i == array.Length)
+                {
                     break;
+                }
 
                 res[i] = sum;
             }
@@ -474,7 +478,7 @@ namespace MatrixDotNet
         /// <param name="vector">vector.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static unsafe Vector<T> operator *(Vector<T> vector,Matrix<T> matrix)
+        public static Vector<T> operator *(Vector<T> vector,Matrix<T> matrix)
         {
             if (vector.Length != matrix.Columns)
             {
@@ -487,7 +491,7 @@ namespace MatrixDotNet
                 T sum = default;
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    sum = MathGeneric<T,T,T>.Add(sum, MathGeneric<T,T,T>.Multiply(matrix[j, i], vector[j]));
+                    sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(matrix[j, i], vector[j]));
                 }
                 if (i == vector.Length)
                 {
