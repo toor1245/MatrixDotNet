@@ -26,7 +26,7 @@ namespace MatrixDotNet
         /// </summary>
         internal T[] _Matrix { get; private set; }
 
-        public T[] GetMatrix()
+        public T[] GetArray()
         {
             return _Matrix;
         }
@@ -602,7 +602,7 @@ namespace MatrixDotNet
             Matrix<T> res = new Matrix<T>(Rows,Columns);
             
             fixed (T* srcPtr = _Matrix)
-            fixed (T* destPtr = res.GetMatrix())
+            fixed (T* destPtr = res.GetArray())
             {
                 Unsafe.CopyBlock(destPtr, srcPtr, (uint)(this.Length * sizeof(T)));
             }

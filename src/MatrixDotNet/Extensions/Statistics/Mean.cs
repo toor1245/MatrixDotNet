@@ -18,7 +18,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
             
             
-            return MathGeneric<T, int, T>.Divide(matrix.Sum(),matrix.Length);
+            return MathGeneric<T, double, T>.Divide(matrix.Sum(),matrix.Length);
         }
 
         
@@ -35,7 +35,7 @@ namespace MatrixDotNet.Extensions.Statistics
             if (!MathExtension.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
 
-            return MathGeneric<T, int, T>.Divide(matrix.SumByRow(index), matrix.Columns);
+            return MathGeneric<T, double, T>.Divide(matrix.SumByRow(index), matrix.Columns);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace MatrixDotNet.Extensions.Statistics
             if (!MathExtension.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
 
-            return MathGeneric<T, int, T>.Divide(matrix.SumByColumn(index), matrix.Rows);
+            return MathGeneric<T, double, T>.Divide(matrix.SumByColumn(index), matrix.Rows);
         }
         
         /// <summary>
@@ -70,7 +70,7 @@ namespace MatrixDotNet.Extensions.Statistics
             
             for (int i = 0; i < rows; i++)
             {
-                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByRow(i), columns); 
+                arr[i] = MathGeneric<T, double, T>.Divide(matrix.SumByRow(i), columns); 
             }
 
             return arr;
@@ -94,7 +94,7 @@ namespace MatrixDotNet.Extensions.Statistics
             
             for (int i = 0; i < columns; i++)
             {
-                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByColumn(i), rows); 
+                arr[i] = MathExtension.DivideBy(matrix.SumByRow(i),columns); 
             }
             
             return arr;

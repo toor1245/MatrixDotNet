@@ -89,7 +89,7 @@ namespace MatrixDotNet.Extensions.Core
         /// <returns>init matrix as fixed buffer</returns>
         public static implicit operator MatrixAsFixedBuffer(Matrix<double> matrix)
         {
-            return new MatrixAsFixedBuffer(matrix.GetMatrix(),matrix.Rows,matrix.Columns);
+            return new MatrixAsFixedBuffer(matrix.GetArray(),matrix.Rows,matrix.Columns);
         }
         
         /// <summary>

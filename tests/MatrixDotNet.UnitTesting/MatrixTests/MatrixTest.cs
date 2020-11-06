@@ -81,7 +81,7 @@ namespace MatrixDotNetTests.MatrixTests
                 {3, 2, 1}
             };
             
-            var array = matrix.GetMatrix();
+            var array = matrix.GetArray();
             
             int index = 0;
 
