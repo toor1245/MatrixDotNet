@@ -228,7 +228,7 @@ namespace MatrixDotNet
                     $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
                 
-            var addFunc = MathExtension.GetAddFunc<T, T, T>();
+            var addFunc = MathGeneric<T>.GetAddFunc();
 
             Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
 
@@ -370,7 +370,7 @@ namespace MatrixDotNet
         /// <returns></returns>
         public static Matrix<T> operator /(Matrix<T> matrix, T digit)
         {
-            var divideFunc = MathExtension.GetDivideFunc<T, T, T>();
+            var divideFunc = MathGeneric<T>.GetDivideFunc();
 
             Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
@@ -392,7 +392,7 @@ namespace MatrixDotNet
         /// <returns></returns>
         public static Matrix<T> operator /(T digit, Matrix<T> matrix)
         {
-            var divideFunc = MathExtension.GetDivideFunc<T, T, T>();
+            var divideFunc = MathGeneric<T>.GetDivideFunc();
 
             Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
