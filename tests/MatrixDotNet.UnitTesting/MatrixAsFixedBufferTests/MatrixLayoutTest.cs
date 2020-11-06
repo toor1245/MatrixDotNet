@@ -7,10 +7,6 @@ namespace MatrixDotNetTests.MatrixAsFixedBufferTests
     
     public class MatrixLayoutTest
     {
-        [Fact]
-        public void Print()
-        {
-            ObjectLayoutInspector.TypeLayout.PrintLayout<MatrixAsFixedBuffer>();
-        }
+        
     }
 }
