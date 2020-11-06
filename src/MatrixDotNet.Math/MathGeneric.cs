@@ -6,6 +6,118 @@ namespace MatrixDotNet.Math
 {
     public static class MathGeneric<T>
     {
+        #region Add
+
+        private static Func<T, T, T> AddFunc;
+
+        public static Func<T, T, T> GetAddFunc()
+        {
+            if (AddFunc != null)
+                return AddFunc;
+
+            var leftPar = Expression.Parameter(typeof(T), "left");
+            var rightPar = Expression.Parameter(typeof(T), "right");
+
+            var body = Expression.Add(leftPar,  rightPar);
+
+            var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
+
+            AddFunc = func;
+
+            return func;
+        }
+        public static T Add(T left, T right)
+        {
+            return GetAddFunc()(left, right);
+        }
+
+        #endregion
+
+        #region Substraction
+
+        private static Func<T, T, T> SubFunc;
+
+        public static Func<T, T, T> GetSubFunc()
+        {
+            if (SubFunc != null)
+                return SubFunc;
+
+            var leftPar = Expression.Parameter(typeof(T), "left");
+            var rightPar = Expression.Parameter(typeof(T), "right");
+
+            var body = Expression.Subtract(leftPar, rightPar);
+
+            var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
+
+            SubFunc = func;
+
+            return func;
+        }
+
+        public static T Sub(T left, T right)
+        {
+            return GetSubFunc()(left, right);
+        }
+
+        #endregion
+
+        #region Multiply
+
+        private static Func<T, T, T> MultiplyFunc;
+
+        public static Func<T, T, T> GetMultiplyFunc()
+        {
+            if (MultiplyFunc != null)
+                return MultiplyFunc;
+
+            var leftPar = Expression.Parameter(typeof(T), "left");
+            var rightPar = Expression.Parameter(typeof(T), "right");
+            
+
+            var body = Expression.Multiply(leftPar,  rightPar);
+
+            var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
+
+            MultiplyFunc = func;
+
+            return func;
+        }
+
+        public static T Multiply(T left, T right)
+        {
+            return GetMultiplyFunc()(left, right);
+        }
+
+        #endregion
+
+        #region Divide
+
+        private static Func<T, T, T> DivideFunc;
+
+        public static Func<T, T, T> GetDivideFunc()
+        {
+            if (DivideFunc != null)
+                return DivideFunc;
+
+            var leftPar = Expression.Parameter(typeof(T), "left");
+            var rightPar = Expression.Parameter(typeof(T), "right");
+            
+            var body = Expression.Divide(leftPar, rightPar);
+
+            var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
+
+            DivideFunc = func;
+
+            return func;
+        }
+
+        public static T Divide(T left, T right)
+        {
+            return GetDivideFunc()(left, right);
+        }
+
+        #endregion
+
         #region Increment
 
         private static Func<T, T> IncrementFunc;
@@ -135,7 +247,9 @@ namespace MatrixDotNet.Math
 
             var leftPar = Expression.Parameter(typeof(T1), "left");
             var rightPar = Expression.Parameter(typeof(T2), "right");
-            var body = Expression.Add(leftPar, rightPar);
+
+            var resultType = typeof(TR);
+            var body = Expression.Add(Expression.Convert(leftPar, resultType),  Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -161,7 +275,9 @@ namespace MatrixDotNet.Math
 
             var leftPar = Expression.Parameter(typeof(T1), "left");
             var rightPar = Expression.Parameter(typeof(T2), "right");
-            var body = Expression.Subtract(leftPar, rightPar);
+
+            var resultType = typeof(TR);
+            var body = Expression.Subtract(Expression.Convert(leftPar, resultType),  Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -188,7 +304,9 @@ namespace MatrixDotNet.Math
 
             var leftPar = Expression.Parameter(typeof(T1), "left");
             var rightPar = Expression.Parameter(typeof(T2), "right");
-            var body = Expression.Multiply(leftPar, rightPar);
+            
+            var resultType = typeof(TR);
+            var body = Expression.Multiply(Expression.Convert(leftPar, resultType),  Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -215,7 +333,9 @@ namespace MatrixDotNet.Math
 
             var leftPar = Expression.Parameter(typeof(T1), "left");
             var rightPar = Expression.Parameter(typeof(T2), "right");
-            var body = Expression.Divide(leftPar, rightPar);
+            
+            var resultType = typeof(TR);
+            var body = Expression.Divide(Expression.Convert(leftPar, resultType),  Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
