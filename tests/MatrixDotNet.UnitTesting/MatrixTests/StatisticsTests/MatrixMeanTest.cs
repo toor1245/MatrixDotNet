@@ -92,7 +92,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
             Assert.Equal(expected,actual);
         }
         
-        [Fact]
+        // [Fact]
         public void MeanByColumnsTest_GetsMeanByColumnsMatrix3x3_AssertMustBeEqual()
         {
             // Arrange
