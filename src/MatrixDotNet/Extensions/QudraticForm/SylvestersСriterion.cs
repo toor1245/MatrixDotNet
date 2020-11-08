@@ -4,7 +4,7 @@ using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.QudraticForm
 {
-    public static partial class QudraticForm
+    public static partial class QuadraticForm
     {
         public static Form SylvestersCriterion<T>(Matrix<T> matrix) 
             where T : unmanaged
