@@ -621,7 +621,7 @@ namespace MatrixDotNet
         public override bool Equals(object obj)
         {
             Matrix<T> matrix = obj as Matrix<T>;
-            if (matrix is null)
+            if (matrix is null || Rows != matrix.Rows || Columns != matrix.Columns)
             {
                 return false;
             }
@@ -629,11 +629,6 @@ namespace MatrixDotNet
             if (matrix._Matrix == _Matrix)
             {
                 return true;
-            }
-            
-            if (Rows != matrix.Rows || Columns != matrix.Columns)
-            {
-                return false;
             }
 
             int i = 0;
