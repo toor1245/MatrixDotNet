@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.Text;
+using MatrixDotNet.Extensions.Statistics;
 
 namespace MatrixDotNet.Extensions.Options
 {
@@ -39,37 +40,22 @@ namespace MatrixDotNet.Extensions.Options
             builder.AppendLine("```");
             builder.AppendLine();
             
-            var output = InitColumnSize(matrix);
-            int sum = 0;
-            int[] slash = new int[matrix.Columns];
+            int a = $"{matrix.Min():G3}".Length;
+            int b = $"{matrix.Max():G3}".Length;
+            var width = (a > b ? a : b)+2;
+
             for (int i = 0; i < matrix.Columns; i++)
             {
-                sum += output[i] + 3;
-                string format = $"| {i} " + "".PadRight(output[i]);
-                slash[i] = format.Length;
-                builder.Append(format);
+                builder.AppendFormat($"| {{0, {width}:G3}}", i);
             }
 
-            builder.Append("|");
-            builder.AppendLine();
-            builder.Append("\n|");
-            int value = slash[0];
+            builder.Append("|\n|");
 
-            for (int i = 1, j = 0; i < matrix.Columns + sum;i++)
-            {  
-                if (i == value)
-                {
-                    builder.Append("|");
-                    j++;
-                    value += slash[j];
-                }
-                else
-                {
-                    builder.Append("-");
-                }
+            for (int i = 0; i < matrix.Columns; i++)
+            {
+                builder.Append("-|");
             }
 
-            builder.Append("|");
             builder.AppendLine();
             
             for (int i = 0; i < matrix.Rows; i++)
@@ -77,17 +63,7 @@ namespace MatrixDotNet.Extensions.Options
                 builder.Append("|");
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    var n = output[j];
-                    int length = $"{matrix[i, j]:f2}".Length;
-                    string format = $"{matrix[i, j]:f2}";
-                    if (length >= n)
-                    {
-                        builder.Append(format + "".PadRight(length - n + 3) + "|");
-                    }
-                    else
-                    {
-                        builder.Append(format + "".PadRight(n - length + 3) + "|");
-                    }
+                    builder.AppendFormat($"{{0, {width}:G3}}  |", matrix[i, j]);
                 }
 
                 builder.AppendLine();

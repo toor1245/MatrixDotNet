@@ -3,7 +3,6 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
-using MatrixDotNet.Extensions.Statistics;
 
 namespace MatrixDotNet.Extensions.Options
 {
@@ -79,30 +78,6 @@ namespace MatrixDotNet.Extensions.Options
         public abstract string Save<T>(Matrix<T> matrix) where T : unmanaged;
 
         public abstract void Open();
-
-        internal static int[] InitColumnSize<T>(Matrix<T> matrix) where T : unmanaged
-        {
-            var arr = matrix.MaxColumns();
-            var arr2 = matrix.MinColumns();
-            int[] output = new int[arr.Length];
-            
-            for (int i = 0; i < output.Length; i++)
-            {
-                var x = $"{arr[i]:f2}".Length;
-                var y = $"{arr2[i]:f2}".Length;
-
-                if (x > y)
-                {
-                    output[i] = x;
-                }
-                else
-                {
-                    output[i] = y;
-                }
-            }
-
-            return output;
-        }
         
         public Task BinarySaveAsync<T>(Matrix<T> matrix) where T : unmanaged
         {
