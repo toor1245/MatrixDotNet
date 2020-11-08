@@ -2,7 +2,7 @@ using MatrixDotNet;
 using MatrixDotNet.Extensions.Criteries;
 using Xunit;
 
-namespace MatrixDotNetTests.MatrixTests.QuadraticFormTests
+namespace MatrixDotNetTests.MatrixTests.CriteriesTests
 {
     public class SylvestersCriterionTests
     {
