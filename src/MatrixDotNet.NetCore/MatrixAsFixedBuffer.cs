@@ -294,24 +294,12 @@ namespace MatrixDotNet.Extensions.Core
         /// </exception>
         public static MatrixAsFixedBuffer MulByRef(ref MatrixAsFixedBuffer left,ref MatrixAsFixedBuffer right)
         {
-            if(left.Columns != right.Rows)
+            if (left.Columns != right.Rows)
+            {
                 throw new MatrixDotNetException("");
-            
-#if OS_LINUX
+            }
+
             return MulMatrix(ref left,ref right);
-#endif
-            
-#if OS_WINDOWS
-            if(Avx2.IsSupported)
-            {
-                   
-            }
-            else
-            {
-                return MulMatrix(ref left,ref right);
-            }
-#endif
-            return new MatrixAsFixedBuffer();
         }
 
         /// <summary>
