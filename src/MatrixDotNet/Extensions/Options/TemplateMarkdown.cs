@@ -1,5 +1,3 @@
-using System;
-using System.Diagnostics;
 using System.Text;
 using MatrixDotNet.Extensions.Statistics;
 
@@ -7,29 +5,22 @@ namespace MatrixDotNet.Extensions.Options
 {
     public sealed class TemplateMarkdown : Template
     {
-        protected override string Text => @$"```ini 
-{Assembly.FullName}";
-        
-        protected internal override string GetPath()
-        {
-            return base.GetPath() + FormatStorage.Markdown;
-        }
-        
-        protected override string FullPath => System.IO.Path.Combine(RootPath, Title) + FormatStorage.Markdown;
-
         public bool HasSize { get; }
 
         public TemplateMarkdown(string title,bool hasSize = false) : base(title)
         {
             HasSize = hasSize;
         }
-        
-        public override string Save<T>(Matrix<T> matrix)
+
+        public override string FileExtension => ".md";
+
+        public override string CreateText<T>(Matrix<T> matrix)
         {
             StringBuilder builder = new StringBuilder();
             Rows = matrix.Rows;
             Columns = matrix.Columns;
-            builder.AppendLine(Text);
+            builder.AppendLine(@$"```ini 
+{Assembly.FullName}");
             
             if (HasSize)
             {
@@ -71,12 +62,29 @@ namespace MatrixDotNet.Extensions.Options
 
             return builder.ToString();
         }
-
-        public override void Open()
+        
+        internal static int[] InitColumnSize<T>(Matrix<T> matrix) where T : unmanaged
         {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Process.Start(GetPath());
-            Console.ResetColor();
+            var arr = matrix.MaxColumns();
+            var arr2 = matrix.MinColumns();
+            int[] output = new int[arr.Length];
+            
+            for (int i = 0; i < output.Length; i++)
+            {
+                var x = $"{arr[i]:f2}".Length;
+                var y = $"{arr2[i]:f2}".Length;
+
+                if (x > y)
+                {
+                    output[i] = x;
+                }
+                else
+                {
+                    output[i] = y;
+                }
+            }
+
+            return output;
         }
     }
 }

@@ -1,9 +1,9 @@
-namespace MatrixDotNet.Extensions.QudraticForm
+namespace MatrixDotNet.Extensions.Criteries
 {
     /// <summary>
     /// Represents quadratic form.
     /// </summary>
-    public enum Form
+    public enum DefiniteType
     {
         Positive,
         Negative,

@@ -42,8 +42,8 @@ namespace MatrixDotNet.Extensions
         {
             try 
             {
-                using var stream = new StreamWriter(template.GetPath(),false,Encoding.UTF8);
-                await stream.WriteLineAsync(template.Save(matrix));
+                using var stream = new StreamWriter(template.RelativePath,false,Encoding.UTF8);
+                await stream.WriteLineAsync(template.CreateText(matrix));
                 await template.BinarySaveAsync(matrix);
             }
             catch (Exception e)
@@ -58,7 +58,7 @@ namespace MatrixDotNet.Extensions
         public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix,Template template) where T : unmanaged
         {
             await SaveAsync(matrix, template);
-            using var stream = new StreamReader(template.GetPath(),Encoding.UTF8);
+            using var stream = new StreamReader(template.RelativePath,Encoding.UTF8);
             await template.BinarySaveAsync(matrix);
             template.Open();
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -80,7 +80,6 @@ namespace MatrixDotNet.Extensions
             int a = $"{matrix.Min():G3}".Length;
             int b = $"{matrix.Max():G3}".Length;
             var n = (a > b ? a : b)+2;
-
             builder.AppendLine();
             
             for (int i = 0; i < matrix.Rows; i++)

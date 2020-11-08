@@ -1,6 +1,5 @@
-using System;
 using MatrixDotNet;
-using MatrixDotNet.Extensions.QudraticForm;
+using MatrixDotNet.Extensions.Criteries;
 using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests.QuadraticFormTests
@@ -18,10 +17,10 @@ namespace MatrixDotNetTests.MatrixTests.QuadraticFormTests
                 { 0, 1, -1 }
                 
             };
-            var expected = Form.Alternating;
+            var expected = DefiniteType.Alternating;
             
             // Act 
-            var actual = QuadraticForm.SylvestersCriterion(matrix);
+            var actual = Criterion.SylvestersCriterion(matrix);
             
             // Assert
             Assert.Equal(expected,actual);
@@ -37,10 +36,10 @@ namespace MatrixDotNetTests.MatrixTests.QuadraticFormTests
                 { -1,  1.5 }
                 
             };
-            var expected = Form.Positive;
+            var expected = DefiniteType.Positive;
             
             // Act 
-            var actual = QuadraticForm.SylvestersCriterion(matrix);
+            var actual = Criterion.SylvestersCriterion(matrix);
             
             // Assert
             Assert.Equal(expected,actual);
@@ -56,10 +55,10 @@ namespace MatrixDotNetTests.MatrixTests.QuadraticFormTests
                 {  2,  -1 }
                 
             };
-            var expected = Form.Negative;
+            var expected = DefiniteType.Negative;
             
             // Act 
-            var actual = QuadraticForm.SylvestersCriterion(matrix);
+            var actual = Criterion.SylvestersCriterion(matrix);
             
             // Assert
             Assert.Equal(expected,actual);

@@ -1,14 +1,19 @@
 using System.Collections.Generic;
+using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Decompositions;
 using MatrixDotNet.Math;
 
-namespace MatrixDotNet.Extensions.QudraticForm
+namespace MatrixDotNet.Extensions.Criteries
 {
-    public static partial class QuadraticForm
+    public static class Criterion
     {
-        public static Form SylvestersCriterion<T>(Matrix<T> matrix) 
+        public static DefiniteType SylvestersCriterion<T>(Matrix<T> matrix) 
             where T : unmanaged
         {
+            if (!matrix.IsSymmetric)
+            {
+                throw new MatrixDotNetException("the matrix is not symmetric");
+            }
             List<int> forms = GetForm(matrix);
             bool isFirstNeg = forms[0] == -1;
             int count = 0;
@@ -20,15 +25,15 @@ namespace MatrixDotNet.Extensions.QudraticForm
 
             if (count == forms.Count)
             {
-                return Form.Positive;
+                return DefiniteType.Positive;
             }
 
             if (isFirstNeg && count <= 0)
             {
-                return Form.Negative;
+                return DefiniteType.Negative;
             }
 
-            return Form.Alternating;
+            return DefiniteType.Alternating;
         }
 
         private static List<int> GetForm<T>(Matrix<T> matrix)

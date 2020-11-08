@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -9,9 +10,6 @@ namespace MatrixDotNet.Extensions.Options
     public abstract class Template
     {
         #region .properties
-        
-        protected abstract string Text { get; }
-
         public string Title { get; }
 
         protected static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
@@ -24,13 +22,15 @@ namespace MatrixDotNet.Extensions.Options
         
         protected int Columns { get; set; }
 
-        private static string Folder => Path.Combine(FormatStorage.MatrixLogs);
+        private static string Folder => Path.GetRelativePath(".", "MatrixLogs");
 
-        protected internal virtual string GetPath() => Path.Combine(Folder, Title);
-        
-        protected abstract string FullPath { get; }
+        public string RelativePath => Path.ChangeExtension(Path.Combine(Folder, Title), FileExtension);
 
-        private string PathBin => Path.Combine(Folder, Title) + FormatStorage.Dat;
+        public string FullPath => Path.GetFullPath(RelativePath);
+
+        private string PathBin => Path.ChangeExtension(Path.Combine(Folder, Title),".dat");
+
+        public abstract string FileExtension { get; }
 
         #endregion
 
@@ -39,16 +39,6 @@ namespace MatrixDotNet.Extensions.Options
         protected Template(string title)
         {
             Title = title;
-            IsExists();
-        }
-        
-        #endregion
-
-        #region .methods
-        
-
-        private static void IsExists()
-        {
             if (!Directory.Exists)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -57,28 +47,20 @@ namespace MatrixDotNet.Extensions.Options
                 Console.ResetColor();
             }
         }
+        
+        #endregion
+        
+        #region .methods
+        
+        public abstract string CreateText<T>(Matrix<T> matrix) where T : unmanaged;
 
-        protected void IsFileExists(string title)
+        public void Open()
         {
-            FileInfo fileInfo = new FileInfo(GetPath());
-            if (!fileInfo.Exists)
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"\\\\*** Created file at: {title}");
-                Console.ResetColor();
-            }
-            else
-            {
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine($"\\\\*** Update file at: {title}");
-                Console.ResetColor();
-            }
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Process.Start(RelativePath);
+            Console.ResetColor();
         }
 
-        public abstract string Save<T>(Matrix<T> matrix) where T : unmanaged;
-
-        public abstract void Open();
-        
         public Task BinarySaveAsync<T>(Matrix<T> matrix) where T : unmanaged
         {
             var binaryFormatter = new BinaryFormatter();

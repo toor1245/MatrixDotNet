@@ -66,7 +66,12 @@ namespace MatrixDotNet
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (Rows & 0b01) == 0 && (Columns & 0b01) == 0;
         }
-        
+
+        /// <summary>
+        /// Checks for symmetric matrix.
+        /// </summary>
+        public bool IsSymmetric => this == this.Transpose();
+
         #endregion
 
         #region indexators
