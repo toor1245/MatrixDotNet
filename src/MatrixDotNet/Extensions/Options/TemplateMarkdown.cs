@@ -1,7 +1,6 @@
 using System;
 using System.Diagnostics;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MatrixDotNet.Extensions.Options
 {
@@ -9,32 +8,13 @@ namespace MatrixDotNet.Extensions.Options
     {
         protected override string Text => @$"```ini 
 {Assembly.FullName}";
-
-        internal override string Path
+        
+        protected internal override string GetPath()
         {
-            get
-            {
-#if OS_WINDOWS
-                return @$"{Folder}\{Title}.md";
-#elif OS_LINUX
-                
-                return @$"{Folder}/{Title}.md";
-#endif
-            }
+            return base.GetPath() + FormatStorage.Markdown;
         }
-
-        internal override string FullPath
-        {
-            get
-            {
-#if OS_WINDOWS
-                return @$"{RootPath}\{Title}.md";
-#elif OS_LINUX
-                
-                return @$"{RootPath}/{Title}.md";
-#endif
-            }
-        }
+        
+        protected override string FullPath => System.IO.Path.Combine(RootPath, Title) + FormatStorage.Markdown;
 
         public bool HasSize { get; }
 
@@ -98,8 +78,8 @@ namespace MatrixDotNet.Extensions.Options
                 for (int j = 0; j < matrix.Columns; j++)
                 {
                     var n = output[j];
-                    int length = string.Format("{0:f2}",matrix[i, j]).Length;
-                    string format = string.Format("{0:f2}",matrix[i, j]);
+                    int length = $"{matrix[i, j]:f2}".Length;
+                    string format = $"{matrix[i, j]:f2}";
                     if (length >= n)
                     {
                         builder.Append(format + "".PadRight(length - n + 3) + "|");
@@ -116,16 +96,11 @@ namespace MatrixDotNet.Extensions.Options
             return builder.ToString();
         }
 
-        public override Task Open()
+        public override void Open()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-#if OS_WINDOWS
-            Process.Start("explorer.exe",Path);
-#elif OS_LINUX
-            Process.Start("cat", Path);
-#endif
+            Process.Start(GetPath());
             Console.ResetColor();
-            return Task.CompletedTask;
         }
     }
 }

@@ -13,46 +13,26 @@ namespace MatrixDotNet.Extensions.Options
         
         protected abstract string Text { get; }
 
-        public string Title { get;}
+        public string Title { get; }
 
         protected static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
-        
-        protected static DirectoryInfo Directory => new DirectoryInfo(Folder);
+
+        private static DirectoryInfo Directory => new DirectoryInfo(Folder);
 
         protected static string RootPath { get; } = Directory.FullName;
 
         protected int Rows { get; set; }
+        
         protected int Columns { get; set; }
 
-        protected static string Folder
-        {
-            get
-            {
-                
-#if OS_WINDOWS
-                return ".\\MatrixLogs";
-#elif OS_LINUX
-                return "MatrixLogs";
-#endif
-            }
-        }
+        private static string Folder => Path.Combine(FormatStorage.MatrixLogs);
+
+        protected internal virtual string GetPath() => Path.Combine(Folder, Title);
         
-        internal abstract string Path { get; }
-        
-        internal abstract string FullPath { get; }
-        
-        protected string PathBin
-        {
-            get
-            {
-#if OS_WINDOWS
-                return @$"{Folder}\{Title}.dat";
-#elif OS_LINUX
-                return @$"{Folder}/{Title}.dat";
-#endif
-            }
-        }
-        
+        protected abstract string FullPath { get; }
+
+        private string PathBin => Path.Combine(Folder, Title) + FormatStorage.Dat;
+
         #endregion
 
         #region .ctor
@@ -81,7 +61,7 @@ namespace MatrixDotNet.Extensions.Options
 
         protected void IsFileExists(string title)
         {
-            FileInfo fileInfo = new FileInfo(Path);
+            FileInfo fileInfo = new FileInfo(GetPath());
             if (!fileInfo.Exists)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
@@ -98,7 +78,7 @@ namespace MatrixDotNet.Extensions.Options
 
         public abstract string Save<T>(Matrix<T> matrix) where T : unmanaged;
 
-        public abstract Task Open();
+        public abstract void Open();
 
         internal static int[] InitColumnSize<T>(Matrix<T> matrix) where T : unmanaged
         {
@@ -108,8 +88,8 @@ namespace MatrixDotNet.Extensions.Options
             
             for (int i = 0; i < output.Length; i++)
             {
-                var x = string.Format("{0:f2}",arr[i]).Length;
-                var y = string.Format("{0:f2}", arr2[i]).Length;
+                var x = $"{arr[i]:f2}".Length;
+                var y = $"{arr2[i]:f2}".Length;
 
                 if (x > y)
                 {

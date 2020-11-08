@@ -41,7 +41,7 @@ namespace MatrixDotNet.Extensions
         {
             try 
             {
-                using var stream = new StreamWriter(template.Path,false,Encoding.UTF8);
+                using var stream = new StreamWriter(template.GetPath(),false,Encoding.UTF8);
                 await stream.WriteLineAsync(template.Save(matrix));
                 await template.BinarySaveAsync(matrix);
             }
@@ -57,9 +57,9 @@ namespace MatrixDotNet.Extensions
         public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix,Template template) where T : unmanaged
         {
             await SaveAsync(matrix, template);
-            using var stream = new StreamReader(template.Path,Encoding.UTF8);
+            using var stream = new StreamReader(template.GetPath(),Encoding.UTF8);
             await template.BinarySaveAsync(matrix);
-            await template.Open();
+            template.Open();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"\n\\\\*** File {template.Title} opened");
             Console.ResetColor();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
@@ -260,6 +261,19 @@ namespace MatrixDotNet.Extensions.Determinants
                 sign = -sign;
             }
             return result;
+        }
+
+        /// <summary>
+        /// Gets determinant of corner Minor`s matrix
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        /// <param name="row">index</param>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <returns>determinant of corner Minor</returns>
+        public static T GetCornerMinorDeterminant<T>(this Matrix<T> matrix,int row)
+            where T : unmanaged
+        {
+            return matrix.GetCornerMinor(row).GetLowerUpperDeterminant();
         }
     }
 }

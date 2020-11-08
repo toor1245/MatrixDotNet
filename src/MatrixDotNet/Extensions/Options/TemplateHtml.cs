@@ -1,50 +1,28 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace MatrixDotNet.Extensions.Options
 {
-    public sealed class TemplateHtml : Template 
+    public sealed class TemplateHtml : Template
     {
-        protected override string Text
-        {
-            get
-            {
-                return @"<!DOCTYPE html>
+        
+        protected override string Text =>
+            @"<!DOCTYPE html>
 <html>
 <head>
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous'>
 </head>
 <body>
 <table class='table'>";
-            }
-        }
 
-        internal override string Path
+        protected override string FullPath => Path.Combine(RootPath, Title) + FormatStorage.Html;
+
+        protected internal override string GetPath()
         {
-            get
-            {
-#if OS_WINDOWS
-                return @$"{Folder}\{Title}.html";
-#elif OS_LINUX
-                return @$"{Folder}/{Title}.html";
-#endif
-            }
+            return base.GetPath() + FormatStorage.Html;
         }
-
-        internal override string FullPath
-        {
-            get
-            {
-#if OS_WINDOWS
-                return @$"{RootPath}\{Title}.html";
-#elif OS_LINUX
-                return @$"{RootPath}/{Title}.html";
-#endif
-            }
-        }
-
 
         public TemplateHtml(string title) : base(title)
         {
@@ -91,14 +69,10 @@ namespace MatrixDotNet.Extensions.Options
             return builder.ToString();
         }
 
-        public override async Task Open()
+        public override void Open()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-#if OS_WINDOWS
-            Process.Start("explorer.exe",Path);
-#elif OS_LINUX
-            await ShellHelper.Bash($"firefox {Path}");
-#endif
+            Process.Start(GetPath());
             Console.ResetColor();
         }
     }

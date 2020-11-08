@@ -148,7 +148,7 @@ namespace MatrixDotNet.Extensions.Decompositions
                     }
                 }
                 
-                if(max == 0)
+                if(System.Math.Abs(max) < 0.0001)
                     continue;
 
                 if (index != i)

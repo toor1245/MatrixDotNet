@@ -11,7 +11,7 @@ namespace MatrixDotNet.Extensions.Determinants
         /// <returns></returns>
         public static double GetLowerUpperPermutationDeterminant(this Matrix<double> matrix)
         {
-            matrix.GetLowerUpperPermutation(out var lower,out var upper,out var p);
+            matrix.GetLowerUpperPermutation(out _,out var upper,out _);
             double det = 1;
             for (int i = 0; i < upper.Rows; i++)
             {
