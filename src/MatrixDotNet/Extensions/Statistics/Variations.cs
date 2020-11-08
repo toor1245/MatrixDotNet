@@ -1,4 +1,5 @@
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Statistics.TableSetup;
 using MathExtension = MatrixDotNet.Math.MathExtension;
 
 namespace MatrixDotNet.Extensions.Statistics

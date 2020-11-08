@@ -1,5 +1,6 @@
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Statistics;
+using MatrixDotNet.Extensions.Statistics.TableSetup;
 using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests.StatisticsTests
