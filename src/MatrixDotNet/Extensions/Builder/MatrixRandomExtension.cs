@@ -119,6 +119,21 @@ namespace MatrixDotNet.Extensions.Builder
 
             return matrix;
         }
+        
+        public static Matrix<byte> RandomByte(int row, int column, byte startRandom = byte.MinValue, byte endRandom = byte.MaxValue)
+        {
+            Matrix<byte> matrix = new Matrix<byte>(row,column);
+            Random random = new Random();
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    matrix[i, j] = (byte) random.Next(startRandom,endRandom);
+                }
+            }
+
+            return matrix;
+        }
 
         public static Matrix<double> RandomDouble(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
         {

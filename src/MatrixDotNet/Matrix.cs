@@ -5,6 +5,7 @@ using MatrixDotNet.Math;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Text;
 
@@ -620,21 +621,41 @@ namespace MatrixDotNet
         public override bool Equals(object obj)
         {
             Matrix<T> matrix = obj as Matrix<T>;
-
             if (matrix is null || Rows != matrix.Rows || Columns != matrix.Columns)
-                return false;
-
-            for (int i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
+                return false;
+            }
+            
+            if (matrix._Matrix == _Matrix)
+            {
+                return true;
+            }
+
+            int i = 0;
+            
+            for (; i < matrix.Length - System.Numerics.Vector<T>.Count; i += System.Numerics.Vector<T>.Count)
+            {
+                System.Numerics.Vector<T> vectorA = new System.Numerics.Vector<T>(GetArray(),i);
+                System.Numerics.Vector<T> vectorB = new System.Numerics.Vector<T>(matrix.GetArray(),i);
+                bool vector = Vector.EqualsAll(vectorA,vectorB);
+                if (!vector)
                 {
-                    if (!this[i, j].Equals(matrix[i, j]))
-                        return false;
+                    return false;
                 }
             }
 
+            for (; i < matrix._Matrix.Length; i++)
+            {
+                if (!_Matrix[i].Equals(matrix._Matrix[i]))
+                {
+                    return false;
+                }
+            }
+            
             return true;
         }
+        
+        
 
         /// <inheritdoc />
         public override int GetHashCode()
