@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.NotStableFeatures;
 using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests
@@ -195,6 +196,74 @@ namespace MatrixDotNetTests.MatrixTests
             
             // Act
             bool isEqual = matrixA.Equals(matrixB);
+            
+            // Assert
+            Assert.False(isEqual);
+        }
+        
+        [Fact]
+        public void Equalsnrolled_ChecksOnEqualsForElements_AssertMustBeTrue()
+        {
+            // Arrange
+            Matrix<byte> matrixA = new byte[,]
+            {
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 2, 1}
+            };
+            
+            Matrix<byte> matrixB = new Byte[,]
+            {
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 2, 1}
+            };
+            
+            
+            // Act
+            bool isEqual = UnsafeEqualsUnrolled.EqualBytesLongUnrolled(matrixA.GetArray(),matrixB.GetArray());
+            
+            // Assert
+            Assert.True(isEqual);
+        }
+        
+        [Fact]
+        public void EqualsUnrolled_ChecksOnEqualsElements_AssertMustBeFalse()
+        {
+            // Arrange
+            Matrix<byte> matrixA = new byte[,]
+            {
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 3, 4},
+                {3, 1, 1},
+                {3, 2, 4}
+            };
+            
+            Matrix<byte> matrixB = new Byte[,]
+            {
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 5, 4},
+                {3, 2, 1},
+                {3, 2, 1}
+            };
+            
+            
+            // Act
+            bool isEqual = UnsafeEqualsUnrolled.EqualBytesLongUnrolled(matrixA.GetArray(),matrixB.GetArray());
             
             // Assert
             Assert.False(isEqual);

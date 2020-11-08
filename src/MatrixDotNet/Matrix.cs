@@ -621,7 +621,7 @@ namespace MatrixDotNet
         public override bool Equals(object obj)
         {
             Matrix<T> matrix = obj as Matrix<T>;
-
+            
             if (matrix is null || Rows != matrix.Rows || Columns != matrix.Columns)
             {
                 return false;
@@ -651,6 +651,8 @@ namespace MatrixDotNet
             return true;
         }
         
+        
+
         /// <inheritdoc />
         public override int GetHashCode()
         {
