@@ -62,7 +62,7 @@ namespace MatrixDotNet.Extensions.Builder
             int n = matrix.Columns;
             
             Matrix<double> result = new Matrix<double>(m,n);
-            fixed(double* ptr = result.GetMatrix())
+            fixed(double* ptr = result.GetArray())
             {
                 for (int i = 0; i < m; i++)
                 {
@@ -82,7 +82,7 @@ namespace MatrixDotNet.Extensions.Builder
             int n = matrix.Columns;
             
             Matrix<int> result = new Matrix<int>(m,n);
-            fixed(int* ptr = result.GetMatrix())
+            fixed(int* ptr = result.GetArray())
             {
                 for (int i = 0; i < m; i++)
                 {
@@ -102,7 +102,7 @@ namespace MatrixDotNet.Extensions.Builder
             int n = matrix.Columns;
             
             Matrix<float> result = new Matrix<float>(m,n);
-            fixed(float* ptr = result.GetMatrix())
+            fixed(float* ptr = result.GetArray())
             {
                 for (int i = 0; i < m; i++)
                 {
@@ -122,7 +122,7 @@ namespace MatrixDotNet.Extensions.Builder
             int n = matrix.Columns;
             
             Matrix<long> result = new Matrix<long>(m,n);
-            fixed(long* ptr = result.GetMatrix())
+            fixed(long* ptr = result.GetArray())
             {
                 for (int i = 0; i < m; i++)
                 {

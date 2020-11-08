@@ -10,7 +10,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             if(!matrix.IsSquare)
                 throw new MatrixDotNetException("Matrix must be square");
             
-            if(matrix != matrix.Transpose())
+            if(!matrix.IsSymmetric)
                 throw new MatrixDotNetException("matrix is not symmetric");
 
             int m = matrix.Rows;
@@ -60,7 +60,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             if(!matrix.IsSquare)
                 throw new MatrixDotNetException("Matrix must be square");
             
-            if(matrix != matrix.Transpose())
+            if(!matrix.IsSymmetric)
                 throw new MatrixDotNetException("matrix is not symmetric");
 
             int m = matrix.Rows;
@@ -109,7 +109,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             if(!matrix.IsSquare)
                 throw new MatrixDotNetException("Matrix must be square");
             
-            if(matrix != matrix.Transpose())
+            if(!matrix.IsSymmetric)
                 throw new MatrixDotNetException("matrix is not symmetric");
 
             int m = matrix.Rows;

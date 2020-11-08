@@ -2,7 +2,7 @@ using System;
 using MatrixDotNet.Exceptions;
 using MathExtension = MatrixDotNet.Math.MathExtension;
 
-namespace MatrixDotNet.Extensions.Statistics
+namespace MatrixDotNet.Extensions.Statistics.TableSetup
 {
     /// <summary>
     /// Represents store data such as matrix, tables.
@@ -49,6 +49,5 @@ namespace MatrixDotNet.Extensions.Statistics
             
             throw new MatrixDotNetException("Not Found value");
         }
-        
     }
 }

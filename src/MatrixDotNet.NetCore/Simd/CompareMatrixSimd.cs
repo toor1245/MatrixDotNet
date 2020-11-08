@@ -17,8 +17,8 @@ namespace MatrixDotNet.Extensions.Core.Simd
             
             int size = 8;
 
-            fixed (long* pointer1 = a.GetMatrix())
-            fixed (long* pointer2 = b.GetMatrix())
+            fixed (long* pointer1 = a.GetArray())
+            fixed (long* pointer2 = b.GetArray())
             {
                 int i = 0;
 
@@ -61,8 +61,8 @@ namespace MatrixDotNet.Extensions.Core.Simd
             
             int size = 8;
 
-            fixed (int* pointer1 = a.GetMatrix())
-            fixed (int* pointer2 = b.GetMatrix())
+            fixed (int* pointer1 = a.GetArray())
+            fixed (int* pointer2 = b.GetArray())
             {
                 int i = 0;
 
@@ -105,8 +105,8 @@ namespace MatrixDotNet.Extensions.Core.Simd
             
             int size = 4;
 
-            fixed (double* pointer1 = a.GetMatrix())
-            fixed (double* pointer2 = b.GetMatrix())
+            fixed (double* pointer1 = a.GetArray())
+            fixed (double* pointer2 = b.GetArray())
             {
                 int i = 0;
 
@@ -149,8 +149,8 @@ namespace MatrixDotNet.Extensions.Core.Simd
             
             int size = 8;
 
-            fixed (float* pointer1 = a.GetMatrix())
-            fixed (float* pointer2 = b.GetMatrix())
+            fixed (float* pointer1 = a.GetArray())
+            fixed (float* pointer2 = b.GetArray())
             {
                 int i = 0;
 

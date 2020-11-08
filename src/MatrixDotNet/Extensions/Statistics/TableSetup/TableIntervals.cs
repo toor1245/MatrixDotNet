@@ -1,4 +1,4 @@
-namespace MatrixDotNet.Extensions.Statistics
+namespace MatrixDotNet.Extensions.Statistics.TableSetup
 {
     /// <summary>
     /// Represents columns for matrix intervals.

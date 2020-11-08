@@ -148,7 +148,7 @@ namespace MatrixDotNet.Extensions.Decompositions
                     }
                 }
                 
-                if(max == 0)
+                if(System.Math.Abs(max) < 0.0001)
                     continue;
 
                 if (index != i)
@@ -186,8 +186,8 @@ namespace MatrixDotNet.Extensions.Decompositions
             upper = MatrixConverter.Clone(matrix);
             // load to P identity matrix.
             matrixP = MatrixConverter.Clone(lower);
-            fixed(double* ptrU = upper.GetMatrix())
-            fixed(double* ptrL = lower.GetMatrix())
+            fixed(double* ptrU = upper.GetArray())
+            fixed(double* ptrL = lower.GetArray())
             {
                 for (int i = 0; i < n - 1; i++)
                 {
@@ -245,8 +245,8 @@ namespace MatrixDotNet.Extensions.Decompositions
             
             // load to P identity matrix.
             matrixP = MatrixConverter.Clone(lower);
-            fixed(float* ptrU = upper.GetMatrix())
-            fixed(float* ptrL = lower.GetMatrix())
+            fixed(float* ptrU = upper.GetArray())
+            fixed(float* ptrL = lower.GetArray())
             {
                 for (int i = 0; i < n - 1; i++)
                 {

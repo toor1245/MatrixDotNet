@@ -3,6 +3,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using MatrixDotNet.Extensions.Options;
+using MatrixDotNet.Extensions.Statistics;
 
 namespace MatrixDotNet.Extensions
 {
@@ -41,8 +42,8 @@ namespace MatrixDotNet.Extensions
         {
             try 
             {
-                using var stream = new StreamWriter(template.Path,false,Encoding.UTF8);
-                await stream.WriteLineAsync(template.Save(matrix));
+                using var stream = new StreamWriter(template.RelativePath,false,Encoding.UTF8);
+                await stream.WriteLineAsync(template.CreateText(matrix));
                 await template.BinarySaveAsync(matrix);
             }
             catch (Exception e)
@@ -57,9 +58,9 @@ namespace MatrixDotNet.Extensions
         public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix,Template template) where T : unmanaged
         {
             await SaveAsync(matrix, template);
-            using var stream = new StreamReader(template.Path,Encoding.UTF8);
+            using var stream = new StreamReader(template.RelativePath,Encoding.UTF8);
             await template.BinarySaveAsync(matrix);
-            await template.Open();
+            template.Open();
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"\n\\\\*** File {template.Title} opened");
             Console.ResetColor();
@@ -76,25 +77,16 @@ namespace MatrixDotNet.Extensions
         
         internal static string Output<T>(Matrix<T> matrix,StringBuilder builder) where T : unmanaged
         {
-            var output = Template.InitColumnSize(matrix);
+            int a = $"{matrix.Min():G3}".Length;
+            int b = $"{matrix.Max():G3}".Length;
+            var n = (a > b ? a : b)+2;
             builder.AppendLine();
             
             for (int i = 0; i < matrix.Rows; i++)
             {
-
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    var n = output[j];
-                    int length = string.Format("{0:f2}",matrix[i, j]).Length;
-                    string format = string.Format("{0:f2}",matrix[i, j]);
-                    if (length >= n)
-                    {
-                        builder.Append(" ".PadLeft(2) + format + "".PadRight(length - n) + "  |");    
-                    }
-                    else
-                    {
-                        builder.Append(" ".PadLeft(2) + format + "".PadRight(n - length) + "  |");
-                    }
+                    builder.AppendFormat($"{{0, {n}:G3}}  |", matrix[i, j]);
                 }
 
                 builder.AppendLine();

@@ -1,4 +1,4 @@
-namespace MatrixDotNet.Extensions.Statistics
+namespace MatrixDotNet.Extensions.Statistics.TableSetup
 {
     /// <summary>
     /// Represents configuration for <c>Variations</c>

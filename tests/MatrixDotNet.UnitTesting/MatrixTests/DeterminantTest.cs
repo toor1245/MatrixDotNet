@@ -1,9 +1,8 @@
 using MatrixDotNet;
-using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Determinants;
 using Xunit;
 
-namespace MatrixDotNetTests
+namespace MatrixDotNetTests.MatrixTests
 {
     public class DeterminantTest
     {
