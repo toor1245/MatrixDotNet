@@ -16,9 +16,9 @@ namespace MatrixDotNet.Extensions.Performance.Operations
 
             Matrix<int> matrix = new Matrix<int>(m,n);
 
-            fixed(int* pointer1 = matrixA.GetMatrix())
-            fixed(int* pointer2 = matrixB.GetMatrix())
-            fixed(int* pointer3 = matrix.GetMatrix())
+            fixed(int* pointer1 = matrixA.GetArray())
+            fixed(int* pointer2 = matrixB.GetArray())
+            fixed(int* pointer3 = matrix.GetArray())
             {
                 Span<int> span1 = new Span<int>(pointer1,len1);
                 
@@ -50,9 +50,9 @@ namespace MatrixDotNet.Extensions.Performance.Operations
 
             Matrix<double> matrix = new Matrix<double>(m,n);
 
-            fixed(double* pointer1 = matrixA.GetMatrix())
-            fixed(double* pointer2 = matrixB.GetMatrix())
-            fixed(double* pointer3 = matrix.GetMatrix())
+            fixed(double* pointer1 = matrixA.GetArray())
+            fixed(double* pointer2 = matrixB.GetArray())
+            fixed(double* pointer3 = matrix.GetArray())
             {
                 Span<int> span1 = new Span<int>(pointer1,len1);
                 

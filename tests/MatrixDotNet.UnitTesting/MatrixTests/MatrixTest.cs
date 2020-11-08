@@ -81,7 +81,7 @@ namespace MatrixDotNetTests.MatrixTests
                 {3, 2, 1}
             };
             
-            var array = matrix.GetMatrix();
+            var array = matrix.GetArray();
             
             int index = 0;
 
@@ -626,51 +626,6 @@ namespace MatrixDotNetTests.MatrixTests
             var actual = k / matrixA; 
             
 
-            // Assert
-            Assert.Equal(expected,actual);
-        }
-        
-        // TODO: create tests for #11
-        //[Fact]
-        public void MultiplyMatrixOnVector_MatrixMultiplyToVectorLeftSide_AssertMustBeTrue()
-        {
-            // Arrange
-            Matrix<int> matrixA = new[,]
-            {
-                {1, 5, 8},
-                {4, 5, 10},
-            };
-
-            int[] vector = { 1, 2, 4 };
-
-            int[] expected = { 43,54,0 };
-
-            // Act
-            int[] actual = vector * matrixA;
-            
-            
-            // Assert
-            Assert.Equal(expected,actual);
-        }
-        
-        [Fact]
-        public void MultiplyMatrixOnVector_MatrixMultiplyToVectorRightSide_AssertMustBeTrue()
-        {
-            // Arrange
-            Matrix<int> matrixA = new[,]
-            {
-                {1, 5, 8},
-                {4, 5, 10},
-            };
-
-            int[] vector = { 1, 2, 4 };
-
-            int[] expected = { 43,54,0 };
-
-            // Act
-            int[] actual = matrixA * vector;
-            
-            
             // Assert
             Assert.Equal(expected,actual);
         }

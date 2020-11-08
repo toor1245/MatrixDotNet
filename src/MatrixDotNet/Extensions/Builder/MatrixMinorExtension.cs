@@ -112,8 +112,8 @@ namespace MatrixDotNet.Extensions.Builder
                 throw new MatrixDotNetException("matrix is not square");
             }
             Matrix<T> minor = new Matrix<T>(row,row);
-            fixed(T* ptr1 = minor.GetMatrix())
-            fixed (T* ptr2 = matrix.GetMatrix())
+            fixed(T* ptr1 = minor.GetArray())
+            fixed (T* ptr2 = matrix.GetArray())
             {
                 for (int i = 0; i < row; i++)
                 {

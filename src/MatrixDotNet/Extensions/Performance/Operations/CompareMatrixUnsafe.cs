@@ -11,8 +11,8 @@ namespace MatrixDotNet.Extensions.Performance.Operations
                 throw new MatrixDotNetException("MatrixA");
             
             int length = matrixA.Length;
-            fixed(int* pointer1 = matrixA.GetMatrix())
-            fixed(int* pointer2 = matrixB.GetMatrix())
+            fixed(int* pointer1 = matrixA.GetArray())
+            fixed(int* pointer2 = matrixB.GetArray())
             {
                 Span<int> span1 = new Span<int>(pointer1,length);
                 Span<int> span2 = new Span<int>(pointer2,length);
@@ -31,8 +31,8 @@ namespace MatrixDotNet.Extensions.Performance.Operations
                 throw new MatrixDotNetException("MatrixA");
             
             int length = matrixA.Length;
-            fixed(float* pointer1 = matrixA.GetMatrix())
-            fixed(float* pointer2 = matrixB.GetMatrix())
+            fixed(float* pointer1 = matrixA.GetArray())
+            fixed(float* pointer2 = matrixB.GetArray())
             {
                 var span1 = new Span<float>(pointer1,length);
                 var span2 = new Span<float>(pointer2,length);
@@ -51,8 +51,8 @@ namespace MatrixDotNet.Extensions.Performance.Operations
                 throw new MatrixDotNetException("MatrixA");
             
             int length = matrixA.Length;
-            fixed(long* pointer1 = matrixA.GetMatrix())
-            fixed(long* pointer2 = matrixB.GetMatrix())
+            fixed(long* pointer1 = matrixA.GetArray())
+            fixed(long* pointer2 = matrixB.GetArray())
             {
                 var span1 = new Span<long>(pointer1,length);
                 var span2 = new Span<long>(pointer2,length);
@@ -71,8 +71,8 @@ namespace MatrixDotNet.Extensions.Performance.Operations
                 throw new MatrixDotNetException("MatrixA");
             
             int length = matrixA.Length;
-            fixed(double* pointer1 = matrixA.GetMatrix())
-            fixed(double* pointer2 = matrixB.GetMatrix())
+            fixed(double* pointer1 = matrixA.GetArray())
+            fixed(double* pointer2 = matrixB.GetArray())
             {
                 var span1 = new Span<double>(pointer1,length);
                 var span2 = new Span<double>(pointer2,length);

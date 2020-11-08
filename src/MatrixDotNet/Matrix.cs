@@ -25,7 +25,7 @@ namespace MatrixDotNet
         /// </summary>
         internal T[] _Matrix { get; private set; }
 
-        public T[] GetMatrix()
+        public T[] GetArray()
         {
             return _Matrix;
         }
@@ -450,27 +450,40 @@ namespace MatrixDotNet
         /// <param name="array">array.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static T[] operator *(Matrix<T> matrix,T[] array)
+        public static unsafe T[] operator *(Matrix<T> matrix,T[] array)
         {
-            if (array.Length != matrix.Columns)
+            if (matrix.Rows != array.Length)
             {
                 throw new MatrixDotNetException("not equals");
             }
-            var res= new T[array.Length];
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                T sum = default;
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    sum = MathGeneric<T,T,T>.Add(sum, MathGeneric<T,T,T>.Multiply(matrix[i, j], array[j]));
-                }
-                
-                if(i == array.Length)
-                    break;
 
-                res[i] = sum;
+            int m = matrix.Rows;
+            int n = 1;
+            int K = matrix.Columns;
+            
+            T[] result = new T[m];
+            fixed(T* ptr1 = matrix._Matrix)
+            fixed(T* ptr2 = array)
+            fixed(T* ptr3 = result)
+            {
+                Span<T> span1 = new Span<T>(ptr1,matrix.Length);
+                
+                for (int i = 0; i < m; i++)
+                {
+                    T* c = ptr3 + i * n;
+
+                    for (int k = 0; k < K; k++)
+                    {
+                        T* b = ptr2 + k * n;
+                        T a = span1[i * K + k];
+                        for (int j = 0; j < n; j++)
+                        {
+                            c[j] = MathUnsafe<T>.Add(c[j],MathUnsafe<T>.Mul(a,b[j]));
+                        }
+                    }
+                }
+                return result;
             }
-            return res;
         }
         
         /// <summary>
@@ -482,7 +495,7 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException"></exception>
         public static Vector<T> operator *(Vector<T> vector,Matrix<T> matrix)
         {
-            return matrix * vector.Array;
+            return vector.Array * matrix;
         }
         
         /// <summary>
@@ -494,10 +507,9 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException"></exception>
         public static Vector<T> operator *(Matrix<T> matrix,Vector<T> vector)
         {
-            return vector.Array * matrix;
+            return matrix * vector.Array;
         }
-
-
+        
         /// <summary>
         /// Compares all values left matrix with right matrix.
         /// Returns true if left matrix full equals right matrix.
@@ -554,7 +566,7 @@ namespace MatrixDotNet
             Matrix<T> res = new Matrix<T>(this.Rows,this.Columns);
             
             fixed (T* srcPtr = _Matrix)
-            fixed (T* destPtr = res.GetMatrix())
+            fixed (T* destPtr = res.GetArray())
             {
                 Unsafe.CopyBlock(destPtr, srcPtr, (uint)(this.Length * sizeof(T)));
             }

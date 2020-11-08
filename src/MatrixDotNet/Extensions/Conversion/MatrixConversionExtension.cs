@@ -98,8 +98,8 @@ namespace MatrixDotNet.Extensions.Conversion
 
             var newColumns = matrix.Columns - 1; 
             var temp = new Matrix<T>(matrix.Rows,newColumns);
-            fixed (T* ptr2 = temp.GetMatrix())
-            fixed (T* ptr3 = matrix.GetMatrix())
+            fixed (T* ptr2 = temp.GetArray())
+            fixed (T* ptr3 = matrix.GetArray())
             {
                 int m = temp.Columns;
                 for (int i = 0; i < temp.Rows; i++)
@@ -129,8 +129,8 @@ namespace MatrixDotNet.Extensions.Conversion
 
             var newRows = matrix.Rows - 1; 
             var temp = new Matrix<T>(newRows,matrix.Columns);
-            fixed (T* ptr2 = temp.GetMatrix())
-            fixed (T* ptr3 = matrix.GetMatrix())
+            fixed (T* ptr2 = temp.GetArray())
+            fixed (T* ptr3 = matrix.GetArray())
             {
                 int m = temp.Columns;
                 Array.Copy(matrix._Matrix, temp._Matrix, row * m);
@@ -201,8 +201,8 @@ namespace MatrixDotNet.Extensions.Conversion
             var newRows = matrix.Rows + 1; 
             var temp = new Matrix<T>(newRows,matrix.Columns);
             fixed (T* ptr1 = array)
-            fixed (T* ptr2 = temp.GetMatrix())
-            fixed (T* ptr3 = matrix.GetMatrix())
+            fixed (T* ptr2 = temp.GetArray())
+            fixed (T* ptr3 = matrix.GetArray())
             {
                 int m = temp.Columns;
                 int aLength = array.Length;
@@ -257,7 +257,7 @@ namespace MatrixDotNet.Extensions.Conversion
 
             int length = matrix.Length;
 
-            fixed (T* ptr1 = matrix.GetMatrix())
+            fixed (T* ptr1 = matrix.GetArray())
             {
                 Span<T> span = new Span<T>(ptr1,length);
 

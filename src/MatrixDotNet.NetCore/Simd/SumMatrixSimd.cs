@@ -10,7 +10,7 @@ namespace MatrixDotNet.Extensions.Core.Simd
         {
             int result;
 
-            fixed (int* pSource = matrix.GetMatrix())
+            fixed (int* pSource = matrix.GetArray())
             {
                 var source = new Span<int>(pSource,matrix.Length);
                 int i = 0;
@@ -79,7 +79,7 @@ namespace MatrixDotNet.Extensions.Core.Simd
         {
             double result;
 
-            fixed (double* pSource = matrix.GetMatrix())
+            fixed (double* pSource = matrix.GetArray())
             {
                 var source = new Span<double>(pSource,matrix.Length);
                 int i = 0;
@@ -129,7 +129,7 @@ namespace MatrixDotNet.Extensions.Core.Simd
         {
             float result;
 
-            fixed (float* pSource = matrix.GetMatrix())
+            fixed (float* pSource = matrix.GetArray())
             {
                 var source = new Span<float>(pSource,matrix.Length);
                 int i = 0;

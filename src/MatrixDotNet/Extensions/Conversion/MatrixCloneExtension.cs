@@ -21,8 +21,8 @@ namespace MatrixDotNet.Extensions.Conversion
         public static unsafe void CopyTo<T>(Matrix<T> matrix1,int dimension1, int start,Matrix<T> matrix2,int dimension2,int destinationIndex,int length) 
             where T : unmanaged
         {
-            fixed (T* ptr2 = matrix2.GetMatrix())
-            fixed (T* ptr1 = matrix1.GetMatrix())
+            fixed (T* ptr2 = matrix2.GetArray())
+            fixed (T* ptr1 = matrix1.GetArray())
             {
 
                 Span<T> span2 = new Span<T>(ptr2,matrix2.Length);

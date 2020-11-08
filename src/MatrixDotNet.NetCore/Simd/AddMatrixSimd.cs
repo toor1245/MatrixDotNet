@@ -21,9 +21,9 @@ namespace MatrixDotNet.Extensions.Core.Simd
             Matrix<int> matrix = new Matrix<int>(m,n);
             int lastIndexBlock = 8;
 
-            fixed(int* pointer1 = matrixA.GetMatrix())
-            fixed(int* pointer2 = matrixB.GetMatrix())
-            fixed(int* pointer3 = matrix.GetMatrix())
+            fixed(int* pointer1 = matrixA.GetArray())
+            fixed(int* pointer2 = matrixB.GetArray())
+            fixed(int* pointer3 = matrix.GetArray())
             {
                 Span<int> span1 = new Span<int>(pointer1,length);
                 Span<int> span2 = new Span<int>(pointer2,length);
@@ -75,9 +75,9 @@ namespace MatrixDotNet.Extensions.Core.Simd
             Matrix<long> matrix = new Matrix<long>(m,n);
             int lastIndexBlock = 8;
 
-            fixed(long* pointer1 = matrixA.GetMatrix())
-            fixed(long* pointer2 = matrixB.GetMatrix())
-            fixed(long* pointer3 = matrix.GetMatrix())
+            fixed(long* pointer1 = matrixA.GetArray())
+            fixed(long* pointer2 = matrixB.GetArray())
+            fixed(long* pointer3 = matrix.GetArray())
             {
                 Span<long> span1 = new Span<long>(pointer1,length);
                 Span<long> span2 = new Span<long>(pointer2,length);
@@ -128,9 +128,9 @@ namespace MatrixDotNet.Extensions.Core.Simd
             Matrix<double> matrix = new Matrix<double>(m,n);
             int lastIndexBlock = 8;
 
-            fixed(double* pointer1 = matrixA.GetMatrix())
-            fixed(double* pointer2 = matrixB.GetMatrix())
-            fixed(double* pointer3 = matrix.GetMatrix())
+            fixed(double* pointer1 = matrixA.GetArray())
+            fixed(double* pointer2 = matrixB.GetArray())
+            fixed(double* pointer3 = matrix.GetArray())
             {
                 Span<double> span1 = new Span<double>(pointer1,length);
                 Span<double> span2 = new Span<double>(pointer2,length);
@@ -181,9 +181,9 @@ namespace MatrixDotNet.Extensions.Core.Simd
             Matrix<float> matrix = new Matrix<float>(m,n);
             int lastIndexBlock = 8;
 
-            fixed(float* pointer1 = matrixA.GetMatrix())
-            fixed(float* pointer2 = matrixB.GetMatrix())
-            fixed(float* pointer3 = matrix.GetMatrix())
+            fixed(float* pointer1 = matrixA.GetArray())
+            fixed(float* pointer2 = matrixB.GetArray())
+            fixed(float* pointer3 = matrix.GetArray())
             {
                 Span<float> span1 = new Span<float>(pointer1,length);
                 Span<float> span2 = new Span<float>(pointer2,length);

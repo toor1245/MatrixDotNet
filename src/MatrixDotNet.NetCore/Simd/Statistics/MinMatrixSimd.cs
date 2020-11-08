@@ -10,7 +10,7 @@ namespace MatrixDotNet.Extensions.Core.Simd.Statistics
         public static unsafe double Min(this Matrix<double> matrix)
         {
             int i = 0;
-            fixed(double* ptr = matrix.GetMatrix())
+            fixed(double* ptr = matrix.GetArray())
             {
                 var span = new Span<double>(ptr,matrix.Length);
                 double minScalar = span[0];
@@ -57,7 +57,7 @@ namespace MatrixDotNet.Extensions.Core.Simd.Statistics
         public static unsafe int Min(this Matrix<int> matrix)
         {
             int i = 0;
-            fixed(int* ptr = matrix.GetMatrix())
+            fixed(int* ptr = matrix.GetArray())
             {
                 var span = new Span<int>(ptr,matrix.Length);
                 int minScalar = span[0];
@@ -101,7 +101,7 @@ namespace MatrixDotNet.Extensions.Core.Simd.Statistics
         public static unsafe float Min(this Matrix<float> matrix)
         {
             int i = 0;
-            fixed(float* ptr = matrix.GetMatrix())
+            fixed(float* ptr = matrix.GetArray())
             {
                 var span = new Span<float>(ptr,matrix.Length);
                 float minScalar = span[0];
