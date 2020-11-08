@@ -650,7 +650,7 @@ namespace MatrixDotNet
             
             return true;
         }
-
+        
         /// <inheritdoc />
         public override int GetHashCode()
         {
