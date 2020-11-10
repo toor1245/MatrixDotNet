@@ -49,6 +49,7 @@ namespace MatrixDotNet.Math
                    (typeof(T) == typeof(double));
         }
         
+        [Obsolete("Use Comparer<T>.Default instead")]
         public static bool Equal<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
@@ -69,6 +70,7 @@ namespace MatrixDotNet.Math
             return func(left, right);
         }
         
+        [Obsolete("Use Comparer<T>.Default instead")]
         public static bool NotEqual<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
@@ -89,7 +91,7 @@ namespace MatrixDotNet.Math
             return func(left, right);
         }
         
-        
+        [Obsolete("Use Comparer<T>.Default instead")]
         public static bool GreaterThan<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
@@ -110,6 +112,7 @@ namespace MatrixDotNet.Math
             return func(left, right);
         }
         
+        [Obsolete("Use Comparer<T>.Default instead")]
         public static bool GreaterThanBy<T,U>(T left, U right) where T: unmanaged
         {
             var t = typeof(T);
@@ -132,6 +135,7 @@ namespace MatrixDotNet.Math
             return func(left, right);
         }
         
+        [Obsolete("Use Comparer<T>.Default instead")]
         public static bool GreaterThanOrEqual<T>(T left, T right) where T: unmanaged
         {
             var t = typeof(T);
