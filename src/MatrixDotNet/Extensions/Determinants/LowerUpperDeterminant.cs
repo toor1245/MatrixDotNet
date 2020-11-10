@@ -1,5 +1,5 @@
 using MatrixDotNet.Extensions.Decompositions;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Determinants
 {
@@ -15,16 +15,16 @@ namespace MatrixDotNet.Extensions.Determinants
         {
             matrix.GetLowerUpper(out var lower,out var upper);
 
-            T lowerDet = MathExtension.Increment<T>(default);
-            T upperDet = MathExtension.Increment<T>(default);
+            T lowerDet = MathGeneric<T>.Increment(default);
+            T upperDet = MathGeneric<T>.Increment(default);
 
             for (int i = 0; i < matrix.Rows; i++)
             {
-                lowerDet = MathExtension.Multiply(lowerDet, lower[i, i]);
-                upperDet = MathExtension.Multiply(upperDet, upper[i, i]);
+                lowerDet = MathUnsafe<T>.Mul(lowerDet, lower[i, i]);
+                upperDet = MathUnsafe<T>.Mul(upperDet, upper[i, i]);
             }
 
-            return MathExtension.Multiply(lowerDet,upperDet);
+            return MathUnsafe<T>.Mul(lowerDet,upperDet);
         }
     }
 }

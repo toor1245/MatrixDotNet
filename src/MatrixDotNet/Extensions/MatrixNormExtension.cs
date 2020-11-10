@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
+
 
 namespace MatrixDotNet.Extensions
 {
@@ -28,7 +29,7 @@ namespace MatrixDotNet.Extensions
 
                 for (int j = 0; j < rows; j++)
                 {
-                    sum = MathExtension.Add(sum,MathExtension.Abs(matrix[j, i]));
+                    sum = MathUnsafe<T>.Add(sum,MathGeneric<T>.Abs(matrix[j, i]));
                 }
                 array[i] = sum;
             }
@@ -67,7 +68,7 @@ namespace MatrixDotNet.Extensions
 
                 for (int j = 0; j < columns; j++)
                 {
-                    sum = MathExtension.Add(sum,MathExtension.Abs(matrix[i,j]));
+                    sum = MathUnsafe<T>.Add(sum,MathGeneric<T>.Abs(matrix[i,j]));
                 }
                 array[i] = sum;
             }
@@ -101,7 +102,7 @@ namespace MatrixDotNet.Extensions
             
             for (int i = 0; i < matrix.Rows; i++)
             {
-                sum = MathExtension.Add(sum,matrix[i,i]);
+                sum = MathUnsafe<T>.Add(sum,matrix[i,i]);
             }
 
             return sum;
@@ -114,11 +115,11 @@ namespace MatrixDotNet.Extensions
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    result = MathExtension.Add(result,
-                        MathExtension.Multiply(matrix[i,j],matrix[i,j]));
+                    result = MathUnsafe<T>.Add(result,
+                        MathUnsafe<T>.Mul(matrix[i,j],matrix[i,j]));
                 }
             }
-            return MathExtension.Sqrt(result);
+            return MathGeneric<T>.Sqrt(result);
         }
     }
 }

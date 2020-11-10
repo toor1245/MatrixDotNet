@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
+
 
 namespace MatrixDotNet.Extensions.Conversion
 {
@@ -234,7 +235,7 @@ namespace MatrixDotNet.Extensions.Conversion
             for (var i = 0; i < matrix.Rows; i++)
             for (var j = 0; j < matrix.Columns; j++)
                 if (i == j)
-                    matrix[i, j] = MathExtension.Increment<T>(default);
+                    matrix[i, j] = MathGeneric<T>.Increment(default);
                 else
                     matrix[i, j] = default;
         }

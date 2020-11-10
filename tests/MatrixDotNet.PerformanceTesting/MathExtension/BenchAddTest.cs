@@ -1,7 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Math;
 
-namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
+namespace MatrixDotNet.PerformanceTesting.MathExtension
 {
     [MemoryDiagnoser]
     public class BenchAddTest : PerformanceTest
@@ -16,7 +16,9 @@ namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
         public int MExtension()
         {
             for (int i = 0; i < 10000; i++)
+#pragma warning disable 618
                 Math.MathExtension.GetAddFunc<int, int, int>()(A, B);
+#pragma warning restore 618
             return 0;
         }
 
