@@ -1,16 +1,18 @@
 ﻿using System;
-using MatrixDotNet.Math;
+using System.Collections.Generic;
 
 namespace MatrixDotNet
 {
     public static partial class VectorExtension
     {
-        public static T Min<T>(this Vector<T> vector) where T : unmanaged 
+        public static T Min<T>(this Vector<T> vector) where T : unmanaged
         {
+            var comparer = Comparer<T>.Default;
+
             T min = vector[0];
-            for (int i = 0; i < vector.Length; i++)
+            for (int i = 1; i < vector.Length; i++)
             {
-                if (MathExtension.GreaterThan(min,vector[i]))
+                if (comparer.Compare(min,vector[i]) > 0)
                 {
                     min = vector[i];
                 }
@@ -21,10 +23,12 @@ namespace MatrixDotNet
         
         public static T Max<T>(this Vector<T> vector) where T : unmanaged
         {
+            var comparer = Comparer<T>.Default;
+
             T max = vector[0];
-            for (int i = 0; i < vector.Length; i++)
+            for (int i = 1; i < vector.Length; i++)
             {
-                if (MathExtension.GreaterThan(vector[i],max))
+                if (comparer.Compare(max, vector[i]) < 0)
                 {
                     max = vector[i];
                 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Math;
@@ -32,8 +33,8 @@ namespace MatrixDotNet.Extensions.Decompositions
                     {
                         for (int k = 0; k < q.Rows; k++)
                         {
-                            var sub = MathExtension.Sub(MathExtension.Abs(qNew[j, k]),MathExtension.Abs(qIter[j,k]));
-                            if (!MathExtension.GreaterThanBy(MathExtension.Abs(sub), accuracy)) 
+                            var sub = MathUnsafe<T>.Sub(MathGeneric<T>.Abs(qNew[j, k]),MathGeneric<T>.Abs(qIter[j,k]));
+                            if (accuracy.CompareTo(MathGeneric<T>.Abs(sub)) <= 0) 
                                 continue;
                             isAchieved = false;
                             break;
@@ -57,7 +58,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         
         public static Matrix<T> ProcessGrammShmidtByRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
             {
                 throw new MatrixDotNetException("matrix must be floating point type such as " +
                                                 "Matrix<double>, Matrix<decimal>, Matrix<float>");
@@ -84,7 +85,7 @@ namespace MatrixDotNet.Extensions.Decompositions
                     Vector<T> bi = b[j];
                     T scalarProduct = ai * bi;
                     T biMul = bi * bi;
-                    T ci = MathExtension.Divide(scalarProduct,biMul);
+                    T ci = MathGeneric<T>.Divide(scalarProduct,biMul);
                     sum += ci * bi;
                 }
                 var res = ai - sum;
@@ -97,7 +98,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         
         public static Matrix<T> ProcessGrammShmidtByColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
             {
                 throw new MatrixDotNetException("matrix must be floating point type such as " +
                                                 "Matrix<double>, Matrix<decimal>, Matrix<float>");
@@ -125,7 +126,7 @@ namespace MatrixDotNet.Extensions.Decompositions
                     Vector<T> bi = b[j, State.Column];
                     T scalarProduct = ai * bi;
                     T biMul = bi * bi;
-                    T ci = MathExtension.Divide(scalarProduct,biMul);
+                    T ci = MathGeneric<T>.Divide(scalarProduct,biMul);
                     sum += ci * bi;
                 }
                 var res = ai - sum;
@@ -137,7 +138,7 @@ namespace MatrixDotNet.Extensions.Decompositions
 
         public static Matrix<T> GetNormByColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
             {
                 throw new MatrixDotNetException("matrix must be floating point type such as " +
                                                 "Matrix<double>, Matrix<decimal>, Matrix<float>");
@@ -152,7 +153,7 @@ namespace MatrixDotNet.Extensions.Decompositions
                 T val = vector.GetLengthVec();
                 for (int j = 0; j < m; j++)
                 {
-                    orthogonal[j, i] = MathExtension.Divide(matrix[j, i], val);
+                    orthogonal[j, i] = MathGeneric<T>.Divide(matrix[j, i], val);
                 }
             }
 
@@ -161,7 +162,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         
         public static Matrix<T> GetNormByRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
             {
                 throw new MatrixDotNetException("matrix must be floating point type such as " +
                                                 "Matrix<double>, Matrix<decimal>, Matrix<float>");
@@ -176,7 +177,7 @@ namespace MatrixDotNet.Extensions.Decompositions
                 T val = vector.GetLengthVec();
                 for (int j = 0; j < n; j++)
                 {
-                    orthogonal[i,j] = MathExtension.Divide(matrix[i,j], val);
+                    orthogonal[i,j] = MathGeneric<T>.Divide(matrix[i,j], val);
                 }
             }
 

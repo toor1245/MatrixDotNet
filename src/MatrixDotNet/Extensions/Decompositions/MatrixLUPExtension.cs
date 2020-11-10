@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
+
 
 namespace MatrixDotNet.Extensions.Decompositions
 {
@@ -82,15 +84,17 @@ namespace MatrixDotNet.Extensions.Decompositions
             // load to P identity matrix.
             matrixP = BuildMatrix.CreateIdentityMatrix<T>(matrix.Rows,matrix.Columns);
 
+            var comparer = Comparer<T>.Default;
+
             for (int i = 0; i < n; i++)
             {
                 T pivotValue = default;
                 int pivot = -1;
                 for (int j = i; j < n; j++)
                 {
-                    if(MathExtension.GreaterThan(MathExtension.Abs(matrixC[j,i]),pivotValue))
+                    if(comparer.Compare(MathGeneric<T>.Abs(matrixC[j,i]),pivotValue) > 0)
                     {
-                        pivotValue = MathExtension.Abs(matrixC[j, i]);
+                        pivotValue = MathGeneric<T>.Abs(matrixC[j, i]);
                         pivot = j;
                     }
                 }
@@ -101,11 +105,11 @@ namespace MatrixDotNet.Extensions.Decompositions
                     matrixC.SwapRows(pivot,i);
                     for (int j = i + 1; j < n; j++)
                     {
-                        matrixC[j, i] = MathExtension.Divide(matrixC[j, i],matrixC[i, i]);
+                        matrixC[j, i] = MathGeneric<T>.Divide(matrixC[j, i],matrixC[i, i]);
                         for (int k = i + 1; k < n; k++)
                         {
-                            matrixC[j, k] = MathExtension.Sub(matrixC[j, k],
-                                MathExtension.Multiply(matrixC[j, i], matrix[i, k]));
+                            matrixC[j, k] = MathUnsafe<T>.Sub(matrixC[j, k],
+                                MathUnsafe<T>.Mul(matrixC[j, i], matrix[i, k]));
                         }
                     }
                 }
@@ -183,9 +187,9 @@ namespace MatrixDotNet.Extensions.Decompositions
             int n = matrix.Rows;
             int m = matrix.Columns;
             lower = matrix.CreateIdentityMatrix();
-            upper = MatrixConverter.Clone(matrix);
+            upper = matrix.Clone() as Matrix<double>;
             // load to P identity matrix.
-            matrixP = MatrixConverter.Clone(lower);
+            matrixP = lower.Clone() as Matrix<double>;
             fixed(double* ptrU = upper.GetArray())
             fixed(double* ptrL = lower.GetArray())
             {
@@ -239,12 +243,12 @@ namespace MatrixDotNet.Extensions.Decompositions
             int n = matrix.Rows;
             int m = matrix.Columns;
             lower = matrix.CreateIdentityMatrix();
-            upper = MatrixConverter.Clone(matrix);
+            upper = matrix.Clone() as Matrix<float>;
 
             Exchanges = 0;
             
             // load to P identity matrix.
-            matrixP = MatrixConverter.Clone(lower);
+            matrixP = lower.Clone() as Matrix<float>;
             fixed(float* ptrU = upper.GetArray())
             fixed(float* ptrL = lower.GetArray())
             {

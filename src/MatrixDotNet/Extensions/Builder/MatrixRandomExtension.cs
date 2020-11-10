@@ -1,6 +1,6 @@
 using System;
 using MatrixDotNet.Exceptions;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+
 
 namespace MatrixDotNet.Extensions.Builder
 {

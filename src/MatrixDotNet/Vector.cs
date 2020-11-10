@@ -64,9 +64,9 @@ namespace MatrixDotNet
             T sum = default;
             for (int i = 0; i < Length; i++)
             {
-                sum = MathExtension.Add(sum, MathExtension.Multiply(this[i],this[i]));
+                sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(this[i],this[i]));
             }
-            return MathExtension.Sqrt(sum);
+            return MathGeneric<T>.Sqrt(sum);
         }
         
         private static Vector<T> Add(T[] a, T[] b)
@@ -75,7 +75,7 @@ namespace MatrixDotNet
             Vector<T> c = new Vector<T>(a.Length);
             for (int i = 0; i < c.Length; i++)
             {
-                c[i] = MathExtension.Add(a[i],b[i]);
+                c[i] = MathUnsafe<T>.Add(a[i],b[i]);
             }
 
             return c;
@@ -86,7 +86,7 @@ namespace MatrixDotNet
             Vector<T> c = new Vector<T>(b.Length);
             for (int i = 0; i < c.Length; i++)
             {
-                c[i] = MathExtension.Multiply(val,b[i]);
+                c[i] = MathUnsafe<T>.Mul(val,b[i]);
             }
 
             return c;
@@ -98,7 +98,7 @@ namespace MatrixDotNet
             Vector<T> c = new Vector<T>(a.Length);
             for (int i = 0; i < c.Length; i++)
             {
-                c[i] = MathExtension.Sub(a[i],b[i]);
+                c[i] = MathUnsafe<T>.Sub(a[i],b[i]);
             }
 
             return c;
@@ -112,8 +112,8 @@ namespace MatrixDotNet
             int i = 0;
             for (; i < a.Length - size; i += size)
             {
-                System.Numerics.Vector<T> va = new System.Numerics.Vector<T>(a,i);
-                System.Numerics.Vector<T> vb = new System.Numerics.Vector<T>(b,i);
+                var va = new System.Numerics.Vector<T>(a,i);
+                var vb = new System.Numerics.Vector<T>(b,i);
                 res = MathUnsafe<T>.Add(res,Vector.Dot(va, vb));
             }
 

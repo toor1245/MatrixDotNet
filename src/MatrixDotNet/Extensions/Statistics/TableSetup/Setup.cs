@@ -1,6 +1,7 @@
 using System;
 using MatrixDotNet.Exceptions;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
+
 
 namespace MatrixDotNet.Extensions.Statistics.TableSetup
 {
@@ -21,7 +22,7 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         /// <exception cref="ArgumentException"></exception>
         protected Setup(Matrix<T> matrix)
         {
-            if (!MathExtension.IsFloatingPoint<T>()) 
+            if (!MathGeneric.IsFloatingPoint<T>()) 
                 throw new ArgumentException("Matrix must be floating type.");
             
             ColumnNames = new string[matrix.Columns];

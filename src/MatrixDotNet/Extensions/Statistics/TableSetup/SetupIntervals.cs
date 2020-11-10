@@ -1,4 +1,4 @@
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using System.Collections.Generic;
 
 namespace MatrixDotNet.Extensions.Statistics.TableSetup
 {
@@ -49,11 +49,11 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
             var first = GetIndexColumn(TableIntervals.IntervalFirst);
             var second = GetIndexColumn(TableIntervals.IntervalSecond);
 
+            var comparer = Comparer<T>.Default;
             for (int i = 0; i < Matrix.Rows; i++)
             {
-                if (MathExtension.GreaterThan(Matrix[i,first], Matrix[i,second]))
+                if (comparer.Compare(Matrix[i,first], Matrix[i,second]) > 0)
                     return false;
-
             }
             return true;
         }

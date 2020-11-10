@@ -42,14 +42,18 @@ namespace MatrixDotNet.Extensions.Criteries
             List<int> forms = new List<int>();
             matrix.GetLowerUpper(out var lower, out var upper);
             
-            T lowerDet = MathExtension.Increment<T>(default);
-            T upperDet = MathExtension.Increment<T>(default);
+            T lowerDet = MathGeneric<T>.Increment(default);
+            T upperDet = MathGeneric<T>.Increment(default);
+
+            var comparer = Comparer<T>.Default;
 
             for (int j = 0; j < matrix.Rows; j++)
             {
-                lowerDet = MathExtension.Multiply(lowerDet, lower[j, j]);
-                upperDet = MathExtension.Multiply(upperDet, upper[j, j]);
-                var form = MathExtension.GreaterThanOrEqual(MathUnsafe<T>.Mul(lowerDet,upperDet),default);
+                lowerDet = MathUnsafe<T>.Mul(lowerDet, lower[j, j]);
+                upperDet = MathUnsafe<T>.Mul(upperDet, upper[j, j]);
+
+                var form = comparer.Compare(MathUnsafe<T>.Mul(lowerDet,upperDet),default) >= 0;
+
                 forms.Add(form ? 1 : -1);
             }
             return forms;

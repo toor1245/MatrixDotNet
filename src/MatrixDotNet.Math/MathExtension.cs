@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace MatrixDotNet.Math
 {
-
+    [Obsolete("Use MathGeneric instead")]
     public static partial class MathExtension
     {
         private static readonly ConcurrentDictionary<(Type, Type, Type), Delegate> AddFuncCache =
@@ -297,7 +297,7 @@ namespace MatrixDotNet.Math
         [Obsolete("bool shit = true;", true)]
         public static T Random<T>(int start, int end)
         {
-            return default(T);
+            return default;
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Math;
@@ -22,8 +23,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         public static bool IsIdentity<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (!MathExtension.IsSupported<T>())
-                throw new MatrixDotNetException("Not Supported data type");
+            var comparer = Comparer<T>.Default;
 
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -31,12 +31,12 @@ namespace MatrixDotNet.Extensions.Decompositions
                 {
                     if (i == j)
                     {
-                        if (MathExtension.NotEqual(matrix[i,j],MathExtension.Increment<T>(default)))
+                        if (comparer.Compare(matrix[i,j],MathGeneric<T>.Increment(default)) != 0)
                         {
                             return false;
                         }
                     }
-                    else if(MathExtension.NotEqual(matrix[i,j],default))
+                    else if(comparer.Compare(matrix[i,j],default) != 0)
                     {
                         return false;
                     }
