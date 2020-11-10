@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Numerics;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -17,21 +19,34 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T Max<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
-
-            T max = matrix[0,0];
-            Comparer comparer = Comparer.Default;
-            for (int i = 0; i < matrix.Rows; i++)
+            int size = System.Numerics.Vector<T>.Count;
+            System.Numerics.Vector<T> vmax = new System.Numerics.Vector<T>(matrix[0,0]);
+            int i = 0;
+            for (; i < matrix.Length - size; i += size )
             {
-                for (int j = 0; j < matrix.Columns; j++)
+                var va = new System.Numerics.Vector<T>(matrix.GetArray(),i);
+                var vless = Vector.GreaterThan(va,vmax);
+                vmax = Vector.ConditionalSelect(vless, va, vmax);
+            }
+
+            T max = vmax[0];
+            Comparer cmp = Comparer.Default;
+            for (int j = 0; j < size; j++)
+            {
+                if (cmp.Compare(max,vmax[j]) < 0)
                 {
-                    if(comparer.Compare(matrix[i,j],max) > 0)
-                    {
-                        max = matrix[i, j];
-                    }
+                    max = vmax[j];
                 }
             }
+
+            for (; i < matrix.Length; i++)
+            {
+                if (cmp.Compare(max,matrix._Matrix[i]) < 0)
+                {
+                    max = matrix._Matrix[i];
+                }
+            }
+
             return max;
         }
         

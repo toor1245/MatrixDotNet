@@ -104,17 +104,27 @@ namespace MatrixDotNet
             return c;
         }
 
-        private static T ScalarProduct(T[] a,T[] b)
+        private static T DotProduct(T[] a,T[] b)
         {
             CheckLength(a,b);
             T res = default;
-            for (int i = 0; i < a.Length; i++)
+            int size = System.Numerics.Vector<T>.Count;
+            int i = 0;
+            for (; i < a.Length - size; i += size)
             {
-                res = MathExtension.Add(res,MathExtension.Multiply(a[i],b[i]));
+                System.Numerics.Vector<T> va = new System.Numerics.Vector<T>(a,i);
+                System.Numerics.Vector<T> vb = new System.Numerics.Vector<T>(b,i);
+                res = MathUnsafe<T>.Add(res,Vector.Dot(va, vb));
+            }
+
+            for (; i < a.Length; i++)
+            {
+                res = MathUnsafe<T>.Add(res, MathUnsafe<T>.Mul(a[i],b[i]));
             }
             return res;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void CheckLength(T[] a,T[] b)
         {
             if(a.Length != b.Length)
@@ -127,14 +137,33 @@ namespace MatrixDotNet
                 throw new InvalidCastException("object is not Vector<T>");
             
             var vec = (Vector<T>)obj;
-            for (int i = 0; i < vec.Length; i++)
+
+            if (vec.Array == Array)
             {
-                if (!vec[i].Equals(this[i]))
+                return true;
+            }
+            
+            int i = 0;
+            
+            for (; i < vec.Length - System.Numerics.Vector<T>.Count; i += System.Numerics.Vector<T>.Count)
+            {
+                var vectorA = new System.Numerics.Vector<T>(Array,i);
+                var vectorB = new System.Numerics.Vector<T>(vec.Array,i);
+                bool vector = Vector.EqualsAll(vectorA,vectorB);
+                if (!vector)
                 {
                     return false;
                 }
             }
 
+            for (; i < vec.Length; i++)
+            {
+                if (!Array[i].Equals(vec.Array[i]))
+                {
+                    return false;
+                }
+            }
+            
             return true;
         }
         

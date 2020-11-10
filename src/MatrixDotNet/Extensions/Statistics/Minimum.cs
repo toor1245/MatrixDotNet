@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.Numerics;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -17,19 +19,31 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T Min<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix is null)
-                throw new NullReferenceException();
-
-            T min = matrix[0,0];
-            Comparer comparer = Comparer.Default;
-            for (int i = 0; i < matrix.Rows; i++)
+            int size = System.Numerics.Vector<T>.Count;
+            System.Numerics.Vector<T> vmin = new System.Numerics.Vector<T>(matrix[0,0]);
+            int i = 0;
+            for (; i < matrix.Length - size; i += size )
             {
-                for (int j = 0; j < matrix.Columns; j++)
+                var va = new System.Numerics.Vector<T>(matrix.GetArray(),i);
+                var vless = Vector.LessThan(va,vmin);
+                vmin = Vector.ConditionalSelect(vless, va, vmin);
+            }
+
+            T min = vmin[0];
+            Comparer cmp = Comparer.Default;
+            for (int j = 0; j < size; j++)
+            {
+                if (cmp.Compare(min,vmin[j]) > 0)
                 {
-                    if(comparer.Compare(matrix[i,j],min) < 0)
-                    {
-                        min = matrix[i, j];
-                    }
+                    min = vmin[j];
+                }
+            }
+
+            for (; i < matrix.Length; i++)
+            {
+                if (cmp.Compare(min,matrix._Matrix[i]) > 0)
+                {
+                    min = matrix._Matrix[i];
                 }
             }
 
