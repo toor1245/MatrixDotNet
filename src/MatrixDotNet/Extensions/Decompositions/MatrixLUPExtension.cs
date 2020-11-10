@@ -187,9 +187,9 @@ namespace MatrixDotNet.Extensions.Decompositions
             int n = matrix.Rows;
             int m = matrix.Columns;
             lower = matrix.CreateIdentityMatrix();
-            upper = MatrixConverter.Clone(matrix);
+            upper = matrix.Clone() as Matrix<double>;
             // load to P identity matrix.
-            matrixP = MatrixConverter.Clone(lower);
+            matrixP = lower.Clone() as Matrix<double>;
             fixed(double* ptrU = upper.GetArray())
             fixed(double* ptrL = lower.GetArray())
             {
@@ -243,12 +243,12 @@ namespace MatrixDotNet.Extensions.Decompositions
             int n = matrix.Rows;
             int m = matrix.Columns;
             lower = matrix.CreateIdentityMatrix();
-            upper = MatrixConverter.Clone(matrix);
+            upper = matrix.Clone() as Matrix<float>;
 
             Exchanges = 0;
             
             // load to P identity matrix.
-            matrixP = MatrixConverter.Clone(lower);
+            matrixP = lower.Clone() as Matrix<float>;
             fixed(float* ptrU = upper.GetArray())
             fixed(float* ptrL = lower.GetArray())
             {

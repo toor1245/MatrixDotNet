@@ -5,7 +5,6 @@ using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Math;
 
-
 namespace MatrixDotNet.Extensions.Determinants
 {
     public static partial class Determinant
@@ -24,10 +23,8 @@ namespace MatrixDotNet.Extensions.Determinants
             {
                 throw new MatrixDotNetException("the matrix is not square",nameof(matrix));
             }
-            
-            double[,] temp = matrix.ToPrimitive() as double[,];
-            
-            if(temp is null)
+
+            if(!(matrix.ToPrimitive() is double[,] temp))
                 throw new NullReferenceException();
             
             if(temp.Length == 4)
