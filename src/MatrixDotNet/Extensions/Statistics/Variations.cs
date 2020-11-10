@@ -1,6 +1,6 @@
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Statistics.TableSetup;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -13,18 +13,18 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <summary>
         /// Gets standard deviation
         /// </summary>
-        public T StandardDeviation => MathExtension.Sqrt(GetSampleDispersion());
+        public T StandardDeviation => MathGeneric<T>.Sqrt(GetSampleDispersion());
         
         /// <summary>
         /// Gets coefficient of variations.
         /// </summary>
         /// <returns>Coefficient of variations</returns>
-        public T Coefficient => MathExtension.Divide(StandardDeviation, GetSampleMeanByTable(TableVariations.Xi));
+        public T Coefficient => MathGeneric<T>.Divide(StandardDeviation, GetSampleMeanByTable(TableVariations.Xi));
         
         /// <summary>
         /// Checks on uniform Coefficient of variations.
         /// </summary>
-        public bool IsUniform => MathExtension.GreaterThanBy(Coefficient, 0.30);
+        public bool IsUniform => 0.30.CompareTo(Coefficient) < 0;
         
         /// <summary>
         /// Gets corrected standard deviation.
@@ -32,7 +32,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <remarks>
         /// Finds by formula: sqrt(s^2).
         /// </remarks>
-        public T CorrectedStandardDeviation => MathExtension.Sqrt(GetCorrectedDispersion());
+        public T CorrectedStandardDeviation => MathGeneric<T>.Sqrt(GetCorrectedDispersion());
         
         /// <summary>
         /// Initialize configuration.
@@ -82,7 +82,7 @@ namespace MatrixDotNet.Extensions.Statistics
 
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = MathExtension.Abs(MathExtension.Sub(xi[i], mean));
+                arr[i] = MathGeneric<T>.Abs(MathUnsafe<T>.Sub(xi[i], mean));
             }
 
             return arr;
@@ -98,10 +98,10 @@ namespace MatrixDotNet.Extensions.Statistics
             T[] arr = GetModulesDevMean();
             for (int i = 0; i < Matrix.Rows; i++)
             {
-                sum = MathExtension.Add(sum, arr[i]);
+                sum = MathUnsafe<T>.Add(sum, arr[i]);
             }
 
-            return MathExtension.DivideBy(sum, Matrix.Rows);
+            return MathGeneric<T, int, T>.Divide(sum, Matrix.Rows);
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             var a = Matrix.Max();
             var b = Matrix.Min();
-            return MathExtension.Sub(a, b);
+            return MathUnsafe<T>.Sub(a, b);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             var a = Matrix.MaxByColumn(GetIndexColumn(table));
             var b = Matrix.MinByColumn(GetIndexColumn(table));
-            return MathExtension.Sub(a, b);
+            return MathUnsafe<T>.Sub(a, b);
         }
 
         /// <summary>
@@ -136,7 +136,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             var a = Matrix.MaxByColumn(index);
             var b = Matrix.MinByColumn(index);
-            return MathExtension.Sub(a, b);
+            return MathUnsafe<T>.Sub(a, b);
         }
 
         /// <summary>
@@ -152,11 +152,11 @@ namespace MatrixDotNet.Extensions.Statistics
             
             for (int i = 0; i < Matrix.Rows; i++)
             {
-                var operation = MathExtension.Sub(xi[i],mean);
-                sum = MathExtension.Add(sum,MathExtension.Multiply(operation,operation));
+                var operation = MathUnsafe<T>.Sub(xi[i],mean);
+                sum = MathUnsafe<T>.Add(sum,MathUnsafe<T>.Mul(operation,operation));
             }
 
-            return MathExtension.DivideBy(sum,Matrix.Rows);
+            return MathGeneric<T, int, T>.Divide(sum,Matrix.Rows);
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace MatrixDotNet.Extensions.Statistics
         public T GetCorrectedDispersion()
         {
             var n = Matrix.Rows;
-            return MathExtension.MultiplyBy(GetSampleDispersion(),n - 1 / n);
+            return MathGeneric<T, double, T>.Multiply(GetSampleDispersion(),n - 1 / n);
         }
     }
 }

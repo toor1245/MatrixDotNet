@@ -3,7 +3,8 @@ using System.Threading;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
+
 
 namespace MatrixDotNet.Extensions.Determinants
 {
@@ -64,20 +65,20 @@ namespace MatrixDotNet.Extensions.Determinants
             
             if(temp.Length == 4)
             {
-                return MathExtension.Sub(
-                    MathExtension.Multiply(temp[0, 0],temp[1, 1]),
-                    MathExtension.Multiply(temp[0, 1],temp[1, 0]));
+                return MathUnsafe<T>.Sub(
+                    MathUnsafe<T>.Mul(temp[0, 0],temp[1, 1]),
+                    MathUnsafe<T>.Mul(temp[0, 1],temp[1, 0]));
             }
 
             T result = default;
-            T sign = MathExtension.Increment<T>(default);
+            T sign = MathGeneric<T>.Increment(default);
 
             for (int i = 0; i < temp.Columns; i++)
             {
                 Matrix<T> minr = matrix.GetMinor(i);
-                result = MathExtension.Add(result,
-                    MathExtension.Multiply(MathExtension.Multiply(sign, temp[0, i]), GetDeterminant<T>(minr)));
-                sign = MathExtension.Sub(sign,MathExtension.Sub(sign,sign));
+                result = MathUnsafe<T>.Add(result,
+                    MathUnsafe<T>.Mul(MathUnsafe<T>.Mul(sign, temp[0, i]), GetDeterminant<T>(minr)));
+                sign = MathUnsafe<T>.Sub(sign,MathUnsafe<T>.Sub(sign,sign));
             }
 
             return result;

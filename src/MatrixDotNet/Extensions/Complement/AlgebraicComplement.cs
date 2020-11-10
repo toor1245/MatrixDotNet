@@ -1,5 +1,5 @@
 using MatrixDotNet.Extensions.Builder;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Complement
 {
@@ -20,7 +20,7 @@ namespace MatrixDotNet.Extensions.Complement
                 {
                     if ((i + j & 0b01) != 0)
                     {
-                        res[i, j] = MathExtension.Negate(res[i, j]);
+                        res[i, j] = MathGeneric<T>.Negate(res[i, j]);
                     }
                 }
             }

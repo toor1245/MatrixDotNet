@@ -14,7 +14,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="ArgumentException">matrix is not: float, double, decimal.</exception>
         public static T Mean<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
             
             
@@ -32,7 +32,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="ArgumentException">matrix is not: float, double, decimal.</exception>
         public static T MeanByRow<T>(this Matrix<T> matrix,int index) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
 
             return MathGeneric<T, int, T>.Divide(matrix.SumByRow(index), matrix.Columns);
@@ -47,7 +47,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <returns>mean value by column.</returns>
         public static T MeanByColumn<T>(this Matrix<T> matrix, int index) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
 
             return MathGeneric<T, int, T>.Divide(matrix.SumByColumn(index), matrix.Rows);
@@ -61,7 +61,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <returns>mean value by each row.</returns>
         public static T[] MeanByRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
 
             var rows = matrix.Rows;
@@ -85,7 +85,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <returns>mean value by each row.</returns>
         public static T[] MeanByColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (!MathExtension.IsFloatingPoint<T>())
+            if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
             
             var rows = matrix.Rows;

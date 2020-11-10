@@ -1,5 +1,6 @@
 using MatrixDotNet.Exceptions;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
+
 
 namespace MatrixDotNet.Extensions.Decompositions
 {
@@ -32,7 +33,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             
             for (int i = 0; i < n; i++)
             {
-                lower[0, i, State.Column] = MathExtension.Divide(matrix[0, State.Column][i], upper[0, 0]);
+                lower[0, i, State.Column] = MathGeneric<T>.Divide(matrix[0, State.Column][i], upper[0, 0]);
             }
             
             for (int i = 1; i < n; i++)
@@ -43,12 +44,12 @@ namespace MatrixDotNet.Extensions.Decompositions
                     T sumU = default;
                     for (int k = 0; k < i; k++)
                     {
-                        sumU = MathExtension.Add(sumU, MathExtension.Multiply(lower[i, k], upper[k, j]));
-                        sumL = MathExtension.Add(sumL, MathExtension.Multiply(lower[j, k], upper[k, i]));
+                        sumU = MathUnsafe<T>.Add(sumU, MathUnsafe<T>.Mul(lower[i, k], upper[k, j]));
+                        sumL = MathUnsafe<T>.Add(sumL, MathUnsafe<T>.Mul(lower[j, k], upper[k, i]));
                     }
                     
-                    upper[i, j] = MathExtension.Sub(matrix[i, j],sumU);
-                    lower[j, i] = MathExtension.Divide(MathExtension.Sub(matrix[j, i],sumL),upper[i,i]);
+                    upper[i, j] = MathUnsafe<T>.Sub(matrix[i, j],sumU);
+                    lower[j, i] = MathGeneric<T>.Divide(MathUnsafe<T>.Sub(matrix[j, i],sumL),upper[i,i]);
                 }
             }
         }

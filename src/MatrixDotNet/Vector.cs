@@ -64,9 +64,9 @@ namespace MatrixDotNet
             T sum = default;
             for (int i = 0; i < Length; i++)
             {
-                sum = MathExtension.Add(sum, MathExtension.Multiply(this[i],this[i]));
+                sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(this[i],this[i]));
             }
-            return MathExtension.Sqrt(sum);
+            return MathGeneric<T>.Sqrt(sum);
         }
         
         private static Vector<T> Add(T[] a, T[] b)
@@ -75,7 +75,7 @@ namespace MatrixDotNet
             Vector<T> c = new Vector<T>(a.Length);
             for (int i = 0; i < c.Length; i++)
             {
-                c[i] = MathExtension.Add(a[i],b[i]);
+                c[i] = MathUnsafe<T>.Add(a[i],b[i]);
             }
 
             return c;
@@ -86,7 +86,7 @@ namespace MatrixDotNet
             Vector<T> c = new Vector<T>(b.Length);
             for (int i = 0; i < c.Length; i++)
             {
-                c[i] = MathExtension.Multiply(val,b[i]);
+                c[i] = MathUnsafe<T>.Mul(val,b[i]);
             }
 
             return c;
@@ -98,7 +98,7 @@ namespace MatrixDotNet
             Vector<T> c = new Vector<T>(a.Length);
             for (int i = 0; i < c.Length; i++)
             {
-                c[i] = MathExtension.Sub(a[i],b[i]);
+                c[i] = MathUnsafe<T>.Sub(a[i],b[i]);
             }
 
             return c;
@@ -110,7 +110,7 @@ namespace MatrixDotNet
             T res = default;
             for (int i = 0; i < a.Length; i++)
             {
-                res = MathExtension.Add(res,MathExtension.Multiply(a[i],b[i]));
+                res = MathUnsafe<T>.Add(res,MathUnsafe<T>.Mul(a[i],b[i]));
             }
             return res;
         }

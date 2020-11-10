@@ -565,7 +565,6 @@ namespace MatrixDotNetTests.MatrixTests
                 {3, 5, 6},
             };
             
-            int k = 2;
             Matrix<int> expected = new[,]
             {
                 {2, 10, 16},
@@ -590,7 +589,6 @@ namespace MatrixDotNetTests.MatrixTests
                 {3, 5, 6},
             };
             
-            int k = 2;
             Matrix<int> expected = new[,]
             {
                 {2, 10, 16},

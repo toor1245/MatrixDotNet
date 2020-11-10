@@ -1,5 +1,6 @@
 using MatrixDotNet.Exceptions;
-using MathExtension = MatrixDotNet.Math.MathExtension;
+using MatrixDotNet.Math;
+
 
 namespace MatrixDotNet.Extensions.Builder
 {
@@ -25,7 +26,7 @@ namespace MatrixDotNet.Extensions.Builder
             
             for (int i = 0; i < row; i++)
             {
-                matrix[i, i] = MathExtension.Increment<T>(default);
+                matrix[i, i] = MathGeneric<T>.Increment(default);
             }
 
             return matrix;
@@ -47,7 +48,7 @@ namespace MatrixDotNet.Extensions.Builder
             
             for (int i = 0; i < matrix.Rows; i++)
             {
-                result[i, i] = MathExtension.Increment<T>(default);
+                result[i, i] = MathGeneric<T>.Increment(default);
             }
             
             return result;

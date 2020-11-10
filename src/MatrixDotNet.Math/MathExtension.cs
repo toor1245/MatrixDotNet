@@ -297,7 +297,7 @@ namespace MatrixDotNet.Math
         [Obsolete("bool shit = true;", true)]
         public static T Random<T>(int start, int end)
         {
-            return default(T);
+            return default;
         }
     }
 }
