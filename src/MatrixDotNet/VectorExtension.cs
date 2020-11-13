@@ -12,7 +12,7 @@ namespace MatrixDotNet
             T min = vector[0];
             for (int i = 1; i < vector.Length; i++)
             {
-                if (comparer.Compare(min,vector[i]) > 0)
+                if (comparer.Compare(min, vector[i]) > 0)
                 {
                     min = vector[i];
                 }
@@ -20,7 +20,7 @@ namespace MatrixDotNet
 
             return min;
         }
-        
+
         public static T Max<T>(this Vector<T> vector) where T : unmanaged
         {
             var comparer = Comparer<T>.Default;

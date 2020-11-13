@@ -1,13 +1,13 @@
-using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Decompositions;
 using MatrixDotNet.Math;
+using System.Collections.Generic;
 
 namespace MatrixDotNet.Extensions.Criteries
 {
     public static class Criterion
     {
-        public static DefiniteType SylvestersCriterion<T>(Matrix<T> matrix) 
+        public static DefiniteType SylvestersCriterion<T>(Matrix<T> matrix)
             where T : unmanaged
         {
             if (!matrix.IsSymmetric)
@@ -41,7 +41,7 @@ namespace MatrixDotNet.Extensions.Criteries
         {
             List<int> forms = new List<int>();
             matrix.GetLowerUpper(out var lower, out var upper);
-            
+
             T lowerDet = MathGeneric<T>.Increment(default);
             T upperDet = MathGeneric<T>.Increment(default);
 
@@ -52,7 +52,7 @@ namespace MatrixDotNet.Extensions.Criteries
                 lowerDet = MathUnsafe<T>.Mul(lowerDet, lower[j, j]);
                 upperDet = MathUnsafe<T>.Mul(upperDet, upper[j, j]);
 
-                var form = comparer.Compare(MathUnsafe<T>.Mul(lowerDet,upperDet),default) >= 0;
+                var form = comparer.Compare(MathUnsafe<T>.Mul(lowerDet, upperDet), default) >= 0;
 
                 forms.Add(form ? 1 : -1);
             }

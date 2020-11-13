@@ -17,7 +17,7 @@ namespace MatrixDotNet.Extensions.Inverse
 
             return 1 / matrix.GetLowerUpperDeterminant() * alg;
         }
-        
+
         /// <summary>
         /// Gets inverse matrix.
         /// </summary>
@@ -29,7 +29,7 @@ namespace MatrixDotNet.Extensions.Inverse
 
             return 1 / matrix.GetLowerUpperDeterminant() * alg;
         }
-        
+
         /// <summary>
         /// Gets inverse matrix.
         /// </summary>

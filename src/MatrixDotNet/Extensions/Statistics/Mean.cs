@@ -1,5 +1,5 @@
-using System;
 using MatrixDotNet.Math;
+using System;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -16,12 +16,12 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
-            
-            
-            return MathGeneric<T, int, T>.Divide(matrix.Sum(),matrix.Length);
+
+
+            return MathGeneric<T, int, T>.Divide(matrix.Sum(), matrix.Length);
         }
 
-        
+
         /// <summary>
         /// Gets mean value by row.
         /// </summary>
@@ -30,7 +30,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>mean value by row </returns>
         /// <exception cref="ArgumentException">matrix is not: float, double, decimal.</exception>
-        public static T MeanByRow<T>(this Matrix<T> matrix,int index) where T : unmanaged
+        public static T MeanByRow<T>(this Matrix<T> matrix, int index) where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
@@ -52,7 +52,7 @@ namespace MatrixDotNet.Extensions.Statistics
 
             return MathGeneric<T, int, T>.Divide(matrix.SumByColumn(index), matrix.Rows);
         }
-        
+
         /// <summary>
         /// Gets mean value by each row.
         /// </summary>
@@ -67,16 +67,16 @@ namespace MatrixDotNet.Extensions.Statistics
             var rows = matrix.Rows;
             var columns = matrix.Columns;
             var arr = new T[rows];
-            
+
             for (int i = 0; i < rows; i++)
             {
-                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByRow(i), columns); 
+                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByRow(i), columns);
             }
 
             return arr;
         }
 
-        
+
         /// <summary>
         /// Gets mean value by each row.
         /// </summary>
@@ -87,16 +87,16 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
-            
+
             var rows = matrix.Rows;
             var columns = matrix.Columns;
             var arr = new T[columns];
-            
+
             for (int i = 0; i < columns; i++)
             {
-                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByColumn(i), rows); 
+                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByColumn(i), rows);
             }
-            
+
             return arr;
         }
     }

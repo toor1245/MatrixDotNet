@@ -6,13 +6,13 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
     /// Represents store data such as matrix, tables.
     /// Share interval operations.
     /// </summary>
-    public abstract class SetupIntervals<T> : Setup<T>  where T : unmanaged
+    public abstract class SetupIntervals<T> : Setup<T> where T : unmanaged
     {
         /// <summary>
         /// Gets table intervals.
         /// </summary>
         protected TableIntervals[] Intervals { get; }
-        
+
         /// <summary>
         /// Initialize settings for <c>Intervals</c>
         /// </summary>
@@ -20,13 +20,13 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         protected SetupIntervals(ConfigIntervals<T> config) : base(config.Matrix)
         {
             Intervals = config.Intervals;
-            
-            for (int i = 0, k = 2; i < Intervals.Length; i++,k++)
+
+            for (int i = 0, k = 2; i < Intervals.Length; i++, k++)
             {
                 ColumnNames[k] = Intervals[i].ToString();
-                ColumnNumber[k] = (int)Intervals[i];
+                ColumnNumber[k] = (int) Intervals[i];
             }
-            
+
         }
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         {
             return FindColumn((int) tableIntervals);
         }
-        
-        
+
+
         /// <summary>
         /// Checks matrix on correct intervals. 
         /// </summary>
@@ -52,7 +52,7 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
             var comparer = Comparer<T>.Default;
             for (int i = 0; i < Matrix.Rows; i++)
             {
-                if (comparer.Compare(Matrix[i,first], Matrix[i,second]) > 0)
+                if (comparer.Compare(Matrix[i, first], Matrix[i, second]) > 0)
                     return false;
             }
             return true;
