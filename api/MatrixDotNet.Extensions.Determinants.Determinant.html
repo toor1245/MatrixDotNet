@@ -1,0 +1,1258 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Determinant
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Determinant
+   ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MatrixDotNet.Extensions.Determinants.Determinant">
+  
+  
+  <h1 id="MatrixDotNet_Extensions_Determinants_Determinant" data-uid="MatrixDotNet.Extensions.Determinants.Determinant" class="text-break">Class Determinant
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Determinant</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MatrixDotNet.Extensions.Determinants.html">MatrixDotNet.Extensions.Determinants</a></h6>
+  <h6><strong>Assembly</strong>: MatrixDotNet.dll</h6>
+  <h5 id="MatrixDotNet_Extensions_Determinants_Determinant_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Determinant : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_MatrixDotNet_Matrix_System_Decimal__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant(MatrixDotNet.Matrix%7BSystem.Decimal%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/CholeskyDeterminant.cs/#L55">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_MatrixDotNet_Matrix_System_Decimal__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant(MatrixDotNet.Matrix{System.Decimal})">GetCholeskyDeterminant(Matrix&lt;Decimal&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static decimal GetCholeskyDeterminant(this Matrix&lt;decimal&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Decimal</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><p>determinant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_MatrixDotNet_Matrix_System_Double__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant(MatrixDotNet.Matrix%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/CholeskyDeterminant.cs/#L13">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_MatrixDotNet_Matrix_System_Double__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant(MatrixDotNet.Matrix{System.Double})">GetCholeskyDeterminant(Matrix&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetCholeskyDeterminant(this Matrix&lt;double&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>determinant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_MatrixDotNet_Matrix_System_Single__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant(MatrixDotNet.Matrix%7BSystem.Single%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/CholeskyDeterminant.cs/#L34">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetCholeskyDeterminant_MatrixDotNet_Matrix_System_Single__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetCholeskyDeterminant(MatrixDotNet.Matrix{System.Single})">GetCholeskyDeterminant(Matrix&lt;Single&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetCholeskyDeterminant(this Matrix&lt;float&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>determinant.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetCornerMinorDeterminant__1_MatrixDotNet_Matrix___0__System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetCornerMinorDeterminant%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/MinorDeterminant.cs/#L271">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetCornerMinorDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetCornerMinorDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetCornerMinorDeterminant__1_MatrixDotNet_Matrix___0__System_Int32_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetCornerMinorDeterminant``1(MatrixDotNet.Matrix{``0},System.Int32)">GetCornerMinorDeterminant&lt;T&gt;(Matrix&lt;T&gt;, Int32)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant of corner Minor`s matrix</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T GetCornerMinorDeterminant&lt;T&gt;(this Matrix&lt;T&gt; matrix, int row)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>determinant of corner Minor</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetDeterminant__1_MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetDeterminant%60%601(MatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/MinorDeterminant.cs/#L54">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetDeterminant__1_MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetDeterminant``1(MatrixDotNet.Matrix{``0})">GetDeterminant&lt;T&gt;(Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T GetDeterminant&lt;T&gt;(this Matrix&lt;T&gt; matrix)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetDoubleDeterminant__1_MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant%60%601(MatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/MinorDeterminant.cs/#L20">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetDoubleDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetDoubleDeterminant__1_MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant``1(MatrixDotNet.Matrix{``0})">GetDoubleDeterminant&lt;T&gt;(Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetDoubleDeterminant&lt;T&gt;(this Matrix&lt;T&gt; matrix)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetLowerUpperDeterminant__1_MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetLowerUpperDeterminant%60%601(MatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/LowerUpperDeterminant.cs/#L14">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetLowerUpperDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetLowerUpperDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetLowerUpperDeterminant__1_MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetLowerUpperDeterminant``1(MatrixDotNet.Matrix{``0})">GetLowerUpperDeterminant&lt;T&gt;(Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets LU determinant.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T GetLowerUpperDeterminant&lt;T&gt;(this Matrix&lt;T&gt; matrix)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Determinant</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetLowerUpperPermutationDeterminant_MatrixDotNet_Matrix_System_Double__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetLowerUpperPermutationDeterminant(MatrixDotNet.Matrix%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/LUPDeterminant.cs/#L12">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetLowerUpperPermutationDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetLowerUpperPermutationDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetLowerUpperPermutationDeterminant_MatrixDotNet_Matrix_System_Double__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetLowerUpperPermutationDeterminant(MatrixDotNet.Matrix{System.Double})">GetLowerUpperPermutationDeterminant(Matrix&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets LUP determinant.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetLowerUpperPermutationDeterminant(this Matrix&lt;double&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetLupDeterminantUnsafe_MatrixDotNet_Matrix_System_Double__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetLupDeterminantUnsafe(MatrixDotNet.Matrix%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/LUPDeterminant.cs/#L29">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetLupDeterminantUnsafe_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetLupDeterminantUnsafe*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetLupDeterminantUnsafe_MatrixDotNet_Matrix_System_Double__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetLupDeterminantUnsafe(MatrixDotNet.Matrix{System.Double})">GetLupDeterminantUnsafe(Matrix&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds determinant of matrix with happen LUP.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetLupDeterminantUnsafe(this Matrix&lt;double&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>the determinant of matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetLupDeterminantUnsafe_MatrixDotNet_Matrix_System_Single__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetLupDeterminantUnsafe(MatrixDotNet.Matrix%7BSystem.Single%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/LUPDeterminant.cs/#L51">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetLupDeterminantUnsafe_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetLupDeterminantUnsafe*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetLupDeterminantUnsafe_MatrixDotNet_Matrix_System_Single__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetLupDeterminantUnsafe(MatrixDotNet.Matrix{System.Single})">GetLupDeterminantUnsafe(Matrix&lt;Single&gt;)</h4>
+  <div class="markdown level1 summary"><p>Finds determinant of matrix with happen LUP.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetLupDeterminantUnsafe(this Matrix&lt;float&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>the determinant of matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Decimal__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix%7BSystem.Decimal%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/MinorDeterminant.cs/#L236">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Decimal__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Decimal})">GetMinorDeterminant(Matrix&lt;Decimal&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static decimal GetMinorDeterminant(this Matrix&lt;decimal&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Decimal</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><p>double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Double__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/MinorDeterminant.cs/#L200">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Double__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Double})">GetMinorDeterminant(Matrix&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMinorDeterminant(this Matrix&lt;double&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Int32__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix%7BSystem.Int32%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/MinorDeterminant.cs/#L92">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Int32__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Int32})">GetMinorDeterminant(Matrix&lt;Int32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetMinorDeterminant(this Matrix&lt;int&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Int64__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix%7BSystem.Int64%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/MinorDeterminant.cs/#L128">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Int64__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Int64})">GetMinorDeterminant(Matrix&lt;Int64&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long GetMinorDeterminant(this Matrix&lt;long&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Single__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix%7BSystem.Single%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/MinorDeterminant.cs/#L164">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Single__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Single})">GetMinorDeterminant(Matrix&lt;Single&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetMinorDeterminant(this Matrix&lt;float&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>double.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_MatrixDotNet_Matrix_System_Decimal__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant(MatrixDotNet.Matrix%7BSystem.Decimal%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/ShurDeterminant.cs/#L63">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_MatrixDotNet_Matrix_System_Decimal__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant(MatrixDotNet.Matrix{System.Decimal})">GetShurDeterminant(Matrix&lt;Decimal&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant by Shur`s complement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static decimal GetShurDeterminant(this Matrix&lt;decimal&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Decimal</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Decimal</span></td>
+        <td><p>Determinant</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>The matrix is not prime.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_MatrixDotNet_Matrix_System_Double__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant(MatrixDotNet.Matrix%7BSystem.Double%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/ShurDeterminant.cs/#L17">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_MatrixDotNet_Matrix_System_Double__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant(MatrixDotNet.Matrix{System.Double})">GetShurDeterminant(Matrix&lt;Double&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant by Shur`s complement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetShurDeterminant(this Matrix&lt;double&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Double</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><p>Determinant</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>The matrix is not prime.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_MatrixDotNet_Matrix_System_Single__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant(MatrixDotNet.Matrix%7BSystem.Single%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/ShurDeterminant.cs/#L40">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant*"></a>
+  <h4 id="MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_MatrixDotNet_Matrix_System_Single__" data-uid="MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant(MatrixDotNet.Matrix{System.Single})">GetShurDeterminant(Matrix&lt;Single&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets determinant by Shur`s complement.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float GetShurDeterminant(this Matrix&lt;float&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;<span class="xref">System.Single</span>&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Single</span></td>
+        <td><p>Determinant</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>The matrix is not prime.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Determinants_Determinant.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Determinants.Determinant%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Determinants/ShurDeterminant.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

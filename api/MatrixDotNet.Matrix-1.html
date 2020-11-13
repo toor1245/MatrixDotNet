@@ -1,0 +1,2156 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Matrix&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Matrix&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MatrixDotNet.Matrix`1">
+  
+  
+  <h1 id="MatrixDotNet_Matrix_1" data-uid="MatrixDotNet.Matrix`1" class="text-break">Class Matrix&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents math matrix.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">Matrix&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IEnumerable</span>&lt;T&gt;</div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MatrixDotNet.html">MatrixDotNet</a></h6>
+  <h6><strong>Assembly</strong>: MatrixDotNet.dll</h6>
+  <h5 id="MatrixDotNet_Matrix_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Matrix&lt;T&gt; : ICloneable, IEnumerable&lt;T&gt; where T : struct</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>integral type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1__ctor__0_0__0___.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.%23ctor(%600%5B0%3A%2C0%3A%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L175">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1__ctor_" data-uid="MatrixDotNet.Matrix`1.#ctor*"></a>
+  <h4 id="MatrixDotNet_Matrix_1__ctor__0_0__0___" data-uid="MatrixDotNet.Matrix`1.#ctor(`0[0:,0:])">Matrix(T[,])</h4>
+  <div class="markdown level1 summary"><p>Initialize matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix(T[, ] matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[,]</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1__ctor_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.%23ctor(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L194">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1__ctor_" data-uid="MatrixDotNet.Matrix`1.#ctor*"></a>
+  <h4 id="MatrixDotNet_Matrix_1__ctor_System_Int32_System_Int32_" data-uid="MatrixDotNet.Matrix`1.#ctor(System.Int32,System.Int32)">Matrix(Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix(int row, int col)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>row</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">col</span></td>
+        <td><p>col</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1__ctor_System_Int32_System_Int32__0_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.%23ctor(System.Int32%2CSystem.Int32%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L207">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1__ctor_" data-uid="MatrixDotNet.Matrix`1.#ctor*"></a>
+  <h4 id="MatrixDotNet_Matrix_1__ctor_System_Int32_System_Int32__0_" data-uid="MatrixDotNet.Matrix`1.#ctor(System.Int32,System.Int32,`0)">Matrix(Int32, Int32, T)</h4>
+  <div class="markdown level1 summary"><p>Creates matrix with init constant value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix(int row, int col, T value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>row</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">col</span></td>
+        <td><p>col</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>constant</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Columns.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Columns%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L51">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Columns_" data-uid="MatrixDotNet.Matrix`1.Columns*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Columns" data-uid="MatrixDotNet.Matrix`1.Columns">Columns</h4>
+  <div class="markdown level1 summary"><p>Gets length columns of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Columns { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_IsPrime.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.IsPrime%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L65">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_IsPrime_" data-uid="MatrixDotNet.Matrix`1.IsPrime*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_IsPrime" data-uid="MatrixDotNet.Matrix`1.IsPrime">IsPrime</h4>
+  <div class="markdown level1 summary"><p>Checks for pairing of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsPrime { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_IsSquare.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.IsSquare%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L56">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_IsSquare_" data-uid="MatrixDotNet.Matrix`1.IsSquare*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_IsSquare" data-uid="MatrixDotNet.Matrix`1.IsSquare">IsSquare</h4>
+  <div class="markdown level1 summary"><p>Checks square matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSquare { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_IsSymmetric.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.IsSymmetric%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L74">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_IsSymmetric_" data-uid="MatrixDotNet.Matrix`1.IsSymmetric*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_IsSymmetric" data-uid="MatrixDotNet.Matrix`1.IsSymmetric">IsSymmetric</h4>
+  <div class="markdown level1 summary"><p>Checks for symmetric matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSymmetric { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Item_System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Item(System.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L107">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Item_" data-uid="MatrixDotNet.Matrix`1.Item*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Item_System_Int32_" data-uid="MatrixDotNet.Matrix`1.Item(System.Int32)">Item[Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets array by row.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] this[int i] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">i</span></td>
+        <td><p>the row</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Item_System_Int32_MatrixDotNet_State_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Item(System.Int32%2CMatrixDotNet.State)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L125">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Item_" data-uid="MatrixDotNet.Matrix`1.Item*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Item_System_Int32_MatrixDotNet_State_" data-uid="MatrixDotNet.Matrix`1.Item(System.Int32,MatrixDotNet.State)">Item[Int32, State]</h4>
+  <div class="markdown level1 summary"><p>Gets or sets array by rows or columns.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] this[int i, State dimension] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">i</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.State.html">State</a></td>
+        <td><span class="parametername">dimension</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Item_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Item(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L88">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Item_" data-uid="MatrixDotNet.Matrix`1.Item*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Item_System_Int32_System_Int32_" data-uid="MatrixDotNet.Matrix`1.Item(System.Int32,System.Int32)">Item[Int32, Int32]</h4>
+  <div class="markdown level1 summary"><p>Gets element matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T this[int i, int j] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">i</span></td>
+        <td><p>the index by rows.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">j</span></td>
+        <td><p>the index by columns.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Item_System_Int32_System_Int32_MatrixDotNet_State_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Item(System.Int32%2CSystem.Int32%2CMatrixDotNet.State)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L151">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Item_" data-uid="MatrixDotNet.Matrix`1.Item*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Item_System_Int32_System_Int32_MatrixDotNet_State_" data-uid="MatrixDotNet.Matrix`1.Item(System.Int32,System.Int32,MatrixDotNet.State)">Item[Int32, Int32, State]</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T this[int m, int n, State dimension] { get; set; }</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">m</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">n</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.State.html">State</a></td>
+        <td><span class="parametername">dimension</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Length.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Length%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L37">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Length_" data-uid="MatrixDotNet.Matrix`1.Length*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Length" data-uid="MatrixDotNet.Matrix`1.Length">Length</h4>
+  <div class="markdown level1 summary"><p>Gets length matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Rows.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Rows%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L46">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Rows_" data-uid="MatrixDotNet.Matrix`1.Rows*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Rows" data-uid="MatrixDotNet.Matrix`1.Rows">Rows</h4>
+  <div class="markdown level1 summary"><p>Gets length row of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Rows { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Clone.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Clone%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L565">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Clone_" data-uid="MatrixDotNet.Matrix`1.Clone*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Clone" data-uid="MatrixDotNet.Matrix`1.Clone">Clone()</h4>
+  <div class="markdown level1 summary"><p>Clones matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Clone()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><p>object.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Equals_System_Object_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Equals(System.Object)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L621">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Equals_" data-uid="MatrixDotNet.Matrix`1.Equals*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Equals_System_Object_" data-uid="MatrixDotNet.Matrix`1.Equals(System.Object)">Equals(Object)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_GetArray.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.GetArray%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L29">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_GetArray_" data-uid="MatrixDotNet.Matrix`1.GetArray*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_GetArray" data-uid="MatrixDotNet.Matrix`1.GetArray">GetArray()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] GetArray()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_GetByRef_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.GetByRef(System.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L97">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_GetByRef_" data-uid="MatrixDotNet.Matrix`1.GetByRef*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_GetByRef_System_Int32_System_Int32_" data-uid="MatrixDotNet.Matrix`1.GetByRef(System.Int32,System.Int32)">GetByRef(Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetByRef(int i, int j)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">i</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">j</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_GetEnumerator.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L616">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_GetEnumerator_" data-uid="MatrixDotNet.Matrix`1.GetEnumerator*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_GetEnumerator" data-uid="MatrixDotNet.Matrix`1.GetEnumerator">GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerator</span>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_GetHashCode.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.GetHashCode%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L661">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_GetHashCode_" data-uid="MatrixDotNet.Matrix`1.GetHashCode*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_GetHashCode" data-uid="MatrixDotNet.Matrix`1.GetHashCode">GetHashCode()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_Plus_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Plus(MatrixDotNet.Matrix%7B%600%7D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L251">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Plus_" data-uid="MatrixDotNet.Matrix`1.Plus*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Plus_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.Plus(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Plus(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; Plus(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_ToString.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L550">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_ToString_" data-uid="MatrixDotNet.Matrix`1.ToString*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_ToString" data-uid="MatrixDotNet.Matrix`1.ToString">ToString()</h4>
+  <div class="markdown level1 summary"><p><inheritdoc cref="!:object.ToString"></inheritdoc></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><p><see cref="!:System.String"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="operators">Operators
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Addition_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Addition(MatrixDotNet.Matrix%7B%600%7D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L228">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Addition_" data-uid="MatrixDotNet.Matrix`1.op_Addition*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Addition_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Addition(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Addition(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Add operation of two matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator +(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>left matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>right matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>Length of two matrix not equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Division__0_MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Division(%600%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L399">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Division_" data-uid="MatrixDotNet.Matrix`1.op_Division*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Division__0_MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Division(`0,MatrixDotNet.Matrix{`0})">Division(T, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Divide operation matrix on digit left side.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator /(T digit, Matrix&lt;T&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">digit</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Division_MatrixDotNet_Matrix__0___0_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Division(MatrixDotNet.Matrix%7B%600%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L377">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Division_" data-uid="MatrixDotNet.Matrix`1.op_Division*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Division_MatrixDotNet_Matrix__0___0_" data-uid="MatrixDotNet.Matrix`1.op_Division(MatrixDotNet.Matrix{`0},`0)">Division(Matrix&lt;T&gt;, T)</h4>
+  <div class="markdown level1 summary"><p>Divide operation matrix on digit right side.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator /(Matrix&lt;T&gt; matrix, T digit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">digit</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Equality_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Equality(MatrixDotNet.Matrix%7B%600%7D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L522">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Equality_" data-uid="MatrixDotNet.Matrix`1.op_Equality*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Equality_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Equality(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Equality(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Compares all values left matrix with right matrix.
+Returns true if left matrix full equals right matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator ==(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>matrix A</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>matrix B</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><p><see cref="!:Boolean"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Implicit__0______MatrixDotNet_Matrix__0_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Implicit(%600%5B%5D%5B%5D)~MatrixDotNet.Matrix%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L592">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Implicit_" data-uid="MatrixDotNet.Matrix`1.op_Implicit*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Implicit__0______MatrixDotNet_Matrix__0_" data-uid="MatrixDotNet.Matrix`1.op_Implicit(`0[][])~MatrixDotNet.Matrix{`0}">Implicit(T[][] to Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit assign matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Matrix&lt;T&gt;(T[][] matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[][]</td>
+        <td><span class="parametername">matrix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Implicit__0_0__0____MatrixDotNet_Matrix__0_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Implicit(%600%5B0%3A%2C0%3A%5D)~MatrixDotNet.Matrix%7B%600%7D%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L582">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Implicit_" data-uid="MatrixDotNet.Matrix`1.op_Implicit*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Implicit__0_0__0____MatrixDotNet_Matrix__0_" data-uid="MatrixDotNet.Matrix`1.op_Implicit(`0[0:,0:])~MatrixDotNet.Matrix{`0}">Implicit(T[,] to Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Implicit assign matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static implicit operator Matrix&lt;T&gt;(T[, ] matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[,]</td>
+        <td><span class="parametername">matrix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Inequality_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Inequality(MatrixDotNet.Matrix%7B%600%7D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L537">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Inequality_" data-uid="MatrixDotNet.Matrix`1.op_Inequality*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Inequality_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Inequality(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Inequality(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Compares all values left matrix with right matrix.
+Returns true if minimum one element of left matrix not equals right matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool operator !=(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Multiply__0_MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Multiply(%600%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L366">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply__0_MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Multiply(`0,MatrixDotNet.Matrix{`0})">Multiply(T, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Multiply operation matrix on digit left side.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator *(T digit, Matrix&lt;T&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">digit</span></td>
+        <td><p>digit</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Multiply__0___MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Multiply(%600%5B%5D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L423">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply__0___MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Multiply(`0[],MatrixDotNet.Matrix{`0})">Multiply(T[], Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns vector sum of each multiply element of row.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[] operator *(T[] array, Matrix&lt;T&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><p>sum of each multiply element of row.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0___0_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Multiply(MatrixDotNet.Matrix%7B%600%7D%2C%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L345">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0___0_" data-uid="MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0)">Multiply(Matrix&lt;T&gt;, T)</h4>
+  <div class="markdown level1 summary"><p>Multiply operation matrix on digit right side.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator *(Matrix&lt;T&gt; matrix, T digit)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">digit</span></td>
+        <td><p>digit.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0___0___.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Multiply(MatrixDotNet.Matrix%7B%600%7D%2C%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L454">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0___0___" data-uid="MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},`0[])">Multiply(Matrix&lt;T&gt;, T[])</h4>
+  <div class="markdown level1 summary"><p>Returns vector sum of each multiply element of row.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[] operator *(Matrix&lt;T&gt; matrix, T[] array)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>array.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><p>sum of each multiply element of row.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Multiply(MatrixDotNet.Matrix%7B%600%7D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L311">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Multiply(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Multiply operation of two matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator *(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Vector__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Multiply(MatrixDotNet.Matrix%7B%600%7D%2CMatrixDotNet.Vector%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L509">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Vector__0__" data-uid="MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Vector{`0})">Multiply(Matrix&lt;T&gt;, Vector&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns vector sum of each multiply element of row.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector&lt;T&gt; operator *(Matrix&lt;T&gt; matrix, Vector&lt;T&gt; vector)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Vector-1.html">Vector</a>&lt;T&gt;</td>
+        <td><span class="parametername">vector</span></td>
+        <td><p>vector.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Vector-1.html">Vector</a>&lt;T&gt;</td>
+        <td><p>sum of each multiply element of row.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Vector__0__MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Multiply(MatrixDotNet.Vector%7B%600%7D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L497">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Multiply_" data-uid="MatrixDotNet.Matrix`1.op_Multiply*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Vector__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Vector{`0},MatrixDotNet.Matrix{`0})">Multiply(Vector&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Returns vector sum of each multiply element of row.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Vector&lt;T&gt; operator *(Vector&lt;T&gt; vector, Matrix&lt;T&gt; matrix)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Vector-1.html">Vector</a>&lt;T&gt;</td>
+        <td><span class="parametername">vector</span></td>
+        <td><p>vector.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Vector-1.html">Vector</a>&lt;T&gt;</td>
+        <td><p>sum of each multiply element of row.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1_op_Subtraction_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.op_Subtraction(MatrixDotNet.Matrix%7B%600%7D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L281">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_op_Subtraction_" data-uid="MatrixDotNet.Matrix`1.op_Subtraction*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_op_Subtraction_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__" data-uid="MatrixDotNet.Matrix`1.op_Subtraction(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})">Subtraction(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Subtract operation of two matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; operator -(Matrix&lt;T&gt; left, Matrix&lt;T&gt; right)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">left</span></td>
+        <td><p>left matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">right</span></td>
+        <td><p>right matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>Length of two matrix not equal.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">IEnumerable&lt;&gt;</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetRow__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.GetRow&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetColumn__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.GetColumn&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetDiagonal__1_MatrixDotNet_Matrix___0__">MatrixExtension.GetDiagonal&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_SetDiagonal__1_MatrixDotNet_Matrix___0____0___">MatrixExtension.SetDiagonal&lt;T&gt;(Matrix&lt;T&gt;, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Pow__1_MatrixDotNet_Matrix___0__System_UInt32_">MatrixExtension.Pow&lt;T&gt;(Matrix&lt;T&gt;, UInt32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_PowStrassen__1_MatrixDotNet_Matrix___0__System_UInt32_">MatrixExtension.PowStrassen&lt;T&gt;(Matrix&lt;T&gt;, UInt32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_LNorm__1_MatrixDotNet_Matrix___0__">MatrixExtension.LNorm&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_MNorm__1_MatrixDotNet_Matrix___0__">MatrixExtension.MNorm&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Traceless__1_MatrixDotNet_Matrix___0__">MatrixExtension.Traceless&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_NormFrobenius__1_MatrixDotNet_Matrix___0__">MatrixExtension.NormFrobenius&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Pretty__1_MatrixDotNet_Matrix___0__">MatrixExtension.Pretty&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_SaveAsync__1_MatrixDotNet_Matrix___0__MatrixDotNet_Extensions_Options_Template_">MatrixExtension.SaveAsync&lt;T&gt;(Matrix&lt;T&gt;, Template)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_SaveAndOpenAsync__1_MatrixDotNet_Matrix___0__MatrixDotNet_Extensions_Options_Template_">MatrixExtension.SaveAndOpenAsync&lt;T&gt;(Matrix&lt;T&gt;, Template)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_Sum__1_MatrixDotNet_Matrix___0__">MatrixExtension.Sum&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_SumByRow__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.SumByRow&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_SumByColumn__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.SumByColumn&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_SumByRows__1_MatrixDotNet_Matrix___0__">MatrixExtension.SumByRows&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_SumByColumns__1_MatrixDotNet_Matrix___0__">MatrixExtension.SumByColumns&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_SumByDiagonal__1_MatrixDotNet_Matrix___0__">MatrixExtension.SumByDiagonal&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetKleinSum__1_MatrixDotNet_Matrix___0__">MatrixExtension.GetKleinSum&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetKleinSum__1_MatrixDotNet_Matrix___0__System_Int32_MatrixDotNet_State_">MatrixExtension.GetKleinSum&lt;T&gt;(Matrix&lt;T&gt;, Int32, State)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetKahanSum__1_MatrixDotNet_Matrix___0__">MatrixExtension.GetKahanSum&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.MatrixExtension.html#MatrixDotNet_Extensions_MatrixExtension_GetKahanSum__1_MatrixDotNet_Matrix___0__System_Int32_MatrixDotNet_State_">MatrixExtension.GetKahanSum&lt;T&gt;(Matrix&lt;T&gt;, Int32, State)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_CreateIdentityMatrix__1_MatrixDotNet_Matrix___0__">BuildMatrix.CreateIdentityMatrix&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_GetMinorMatrix__1_MatrixDotNet_Matrix___0__">BuildMatrix.GetMinorMatrix&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_GetMinorMatrix__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_">BuildMatrix.GetMinorMatrix&lt;T&gt;(Matrix&lt;T&gt;, Int32, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_GetMinor__1_MatrixDotNet_Matrix___0__System_Int32_">BuildMatrix.GetMinor&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_GetCornerMinor__1_MatrixDotNet_Matrix___0__System_Int32_">BuildMatrix.GetCornerMinor&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Complement.MatrixExtension.html#MatrixDotNet_Extensions_Complement_MatrixExtension_AlgebraicComplement__1_MatrixDotNet_Matrix___0__">MatrixExtension.AlgebraicComplement&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Clone__1_MatrixDotNet_Matrix___0__">MatrixConverter.Clone&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Concat__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__">MatrixConverter.Concat&lt;T&gt;(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_ToPrimitive__1_MatrixDotNet_Matrix___0__">MatrixConverter.ToPrimitive&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_ReduceColumn__1_MatrixDotNet_Matrix___0__System_UInt32_">MatrixConverter.ReduceColumn&lt;T&gt;(Matrix&lt;T&gt;, UInt32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_ReduceRow__1_MatrixDotNet_Matrix___0__System_UInt32_">MatrixConverter.ReduceRow&lt;T&gt;(Matrix&lt;T&gt;, UInt32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_AddColumn__1_MatrixDotNet_Matrix___0____0___System_Int32_">MatrixConverter.AddColumn&lt;T&gt;(Matrix&lt;T&gt;, T[], Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_AddRow__1_MatrixDotNet_Matrix___0____0___System_Int32_">MatrixConverter.AddRow&lt;T&gt;(Matrix&lt;T&gt;, T[], Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_ToIdentityMatrix__1_MatrixDotNet_Matrix___0__">MatrixConverter.ToIdentityMatrix&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_SwapRows__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_">MatrixConverter.SwapRows&lt;T&gt;(Matrix&lt;T&gt;, Int32, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_SwapColumns__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_">MatrixConverter.SwapColumns&lt;T&gt;(Matrix&lt;T&gt;, Int32, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Transpose__1_MatrixDotNet_Matrix___0__">MatrixConverter.Transpose&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_SplitMatrix__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___">MatrixConverter.SplitMatrix&lt;T&gt;(Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_LqDecomposition__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___">Decomposition.LqDecomposition&lt;T&gt;(Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_GetLowerUpper__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___">Decomposition.GetLowerUpper&lt;T&gt;(Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_GetLower__1_MatrixDotNet_Matrix___0__">Decomposition.GetLower&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_GetUpper__1_MatrixDotNet_Matrix___0__">Decomposition.GetUpper&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_GetLowerUpperPermutation__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___">Decomposition.GetLowerUpperPermutation&lt;T&gt;(Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_QrDecomposition__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___">Decomposition.QrDecomposition&lt;T&gt;(Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_EigenVectorQrIterative__1_MatrixDotNet_Matrix___0__System_Double_System_Int32_MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___">Decomposition.EigenVectorQrIterative&lt;T&gt;(Matrix&lt;T&gt;, Double, Int32, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_ProcessGrammShmidtByRows__1_MatrixDotNet_Matrix___0__">Decomposition.ProcessGrammShmidtByRows&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_ProcessGrammShmidtByColumns__1_MatrixDotNet_Matrix___0__">Decomposition.ProcessGrammShmidtByColumns&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_GetNormByColumns__1_MatrixDotNet_Matrix___0__">Decomposition.GetNormByColumns&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_GetNormByRows__1_MatrixDotNet_Matrix___0__">Decomposition.GetNormByRows&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_IsIdentity__1_MatrixDotNet_Matrix___0__">Decomposition.IsIdentity&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_GetQuasiTriangular__1_MatrixDotNet_Matrix___0__">Decomposition.GetQuasiTriangular&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetLowerUpperDeterminant__1_MatrixDotNet_Matrix___0__">Determinant.GetLowerUpperDeterminant&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetDoubleDeterminant__1_MatrixDotNet_Matrix___0__">Determinant.GetDoubleDeterminant&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetDeterminant__1_MatrixDotNet_Matrix___0__">Determinant.GetDeterminant&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetCornerMinorDeterminant__1_MatrixDotNet_Matrix___0__System_Int32_">Determinant.GetCornerMinorDeterminant&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Solver.Solve.html#MatrixDotNet_Extensions_Solver_Solve_KramerSolve__1_MatrixDotNet_Matrix___0____0___">Solve.KramerSolve&lt;T&gt;(Matrix&lt;T&gt;, T[])</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_Sort__1_MatrixDotNet_Matrix___0__">MatrixSortExtension.Sort&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_Sort__1_MatrixDotNet_Matrix___0__IComparer___0__">MatrixSortExtension.Sort&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByRows__1_MatrixDotNet_Matrix___0__">MatrixSortExtension.SortByRows&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByRows__1_MatrixDotNet_Matrix___0__IComparer___0__">MatrixSortExtension.SortByRows&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByColumns__1_MatrixDotNet_Matrix___0__">MatrixSortExtension.SortByColumns&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByColumns__1_MatrixDotNet_Matrix___0__IComparer___0__">MatrixSortExtension.SortByColumns&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_Max__1_MatrixDotNet_Matrix___0__">MatrixExtension.Max&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MaxByRow__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.MaxByRow&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MaxByColumn__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.MaxByColumn&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MaxByColumn__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32__">MatrixExtension.MaxByColumn&lt;T&gt;(Matrix&lt;T&gt;, Int32, out Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MaxRows__1_MatrixDotNet_Matrix___0__">MatrixExtension.MaxRows&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MaxColumns__1_MatrixDotNet_Matrix___0__">MatrixExtension.MaxColumns&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MaxByMainDiagonal__1_MatrixDotNet_Matrix___0__">MatrixExtension.MaxByMainDiagonal&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_Mean__1_MatrixDotNet_Matrix___0__">MatrixExtension.Mean&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MeanByRow__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.MeanByRow&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MeanByColumn__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.MeanByColumn&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MeanByRows__1_MatrixDotNet_Matrix___0__">MatrixExtension.MeanByRows&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MeanByColumns__1_MatrixDotNet_Matrix___0__">MatrixExtension.MeanByColumns&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_Min__1_MatrixDotNet_Matrix___0__">MatrixExtension.Min&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MinByRow__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.MinByRow&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MinByColumn__1_MatrixDotNet_Matrix___0__System_Int32_">MatrixExtension.MinByColumn&lt;T&gt;(Matrix&lt;T&gt;, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MinColumns__1_MatrixDotNet_Matrix___0__">MatrixExtension.MinColumns&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_MinRows__1_MatrixDotNet_Matrix___0__">MatrixExtension.MinRows&lt;T&gt;(Matrix&lt;T&gt;)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Matrix_1.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Matrix.cs/#L18" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

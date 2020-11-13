@@ -1,0 +1,956 @@
+{
+  "homepages": [],
+  "source_base_path": "/github/workspace/docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Exceptions.MatrixDotNetException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Exceptions.MatrixDotNetException.html",
+          "hash": "atJrrpbzRXdPBeWMPZ3ISQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Exceptions.html",
+          "hash": "nyYLKu4PK6RIe7ATdCgQQA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Builder.BuildMatrix.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Builder.BuildMatrix.html",
+          "hash": "hULvS+2sD2UoWjJxaj5U6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Builder.html",
+          "hash": "p18xKT1xEjuoo5BO4dnwqA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Complement.MatrixExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Complement.MatrixExtension.html",
+          "hash": "ZPGPo5WOeTpelKLACE+ASg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Complement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Complement.html",
+          "hash": "F0LfQPqF2bemkudx1f7xBg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Conversion.MatrixConverter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html",
+          "hash": "p59Hy24kjK/cu/+D7uYx0A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Conversion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Conversion.html",
+          "hash": "blF9p8wF1n7h0np1WZfIBQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Conversion.Converter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Conversion.Converter.html",
+          "hash": "qdQ+bA9aIOWk8deDpFKznw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Conversion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Conversion.html",
+          "hash": "WJv0Yx29Rdyqxqi7sq2JvA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.BubbleSortFixed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.BubbleSortFixed.html",
+          "hash": "yWtLOroftbQAU3Ir1qSgww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.ISorting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.ISorting.html",
+          "hash": "g7lhp87ywTonTYAFvRfKLw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.html",
+          "hash": "TkzyHtssBp176uduE6p1Lw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.html",
+          "hash": "+LlXvoBmp8JZgVArpRWObA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Simd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Simd.html",
+          "hash": "EpjjPYESHFuhEWR0qNC85A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Statistics.Simd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Statistics.Simd.html",
+          "hash": "XhbZ7AzPtjY6i3Hzz2REbA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Statistics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Statistics.html",
+          "hash": "D1dqyENZmpCgegS7XnoT5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Simd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.Simd.html",
+          "hash": "WbGF2PxoZpiLAJ9LfTZpXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Core.html",
+          "hash": "wbKKOYlX5acc/LLufxiOlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Criteries.Criterion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Criteries.Criterion.html",
+          "hash": "WcimQhSUERCPiselVteMvw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Criteries.DefiniteType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Criteries.DefiniteType.html",
+          "hash": "vxhO51YSRu9CXOJ4XBCAig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Criteries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Criteries.html",
+          "hash": "kDKNEsZh/3fJIqdaA1585w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Decompositions.Decomposition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Decompositions.Decomposition.html",
+          "hash": "ZrUR0a9TbOVMISfFEmpCww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Decompositions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Decompositions.html",
+          "hash": "y3gpAz7DpePZVANhK8JOtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Determinants.Determinant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Determinants.Determinant.html",
+          "hash": "NJF5gor+vPVO5G5nSXQzFw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Determinants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Determinants.html",
+          "hash": "a3gmt8hYzyKqUVejBND/dw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Inverse.MatrixExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Inverse.MatrixExtension.html",
+          "hash": "oumocl5Fwc9CcW83weHCFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Inverse.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Inverse.html",
+          "hash": "QFizdPaYstD/LkitOTwJnw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.MatrixExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.MatrixExtension.html",
+          "hash": "usTSjCYz0stbUJYyzEgwGA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Options.Template.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Options.Template.html",
+          "hash": "LP7vYr+E0dlKzuR+G1mlXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Options.TemplateHtml.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Options.TemplateHtml.html",
+          "hash": "8auRwWk58frGfTbypZXkOA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Options.TemplateMarkdown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Options.TemplateMarkdown.html",
+          "hash": "2a2wOZm/ohMlf8bOsNir6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Options.html",
+          "hash": "Z7gdpstB9lTjVV1Ail4AUQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Performance.Operations.Optimization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html",
+          "hash": "8UpU8FkCWS78Dd3FhijV7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Performance.Operations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Performance.Operations.html",
+          "hash": "8ipoyK1hJAQm78p5zGwFxg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Solver.Solve.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Solver.Solve.html",
+          "hash": "Y/Xft7uGJmnaPwNXG4YJ/Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Solver.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Solver.html",
+          "hash": "h46nbIR0Ma4YMuXOjaNllw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html",
+          "hash": "zXPfCCDgsM0uGfDY1tcvjA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Sorting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Sorting.html",
+          "hash": "Ksn7PYKHgxs7XWfGrAw9Jg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.EmpiricalSample.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.EmpiricalSample.html",
+          "hash": "MYYz4CDvp+c+RcRskRBx1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.Intervals-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.Intervals-1.html",
+          "hash": "4XK8Nxlcp8YNI5RwKU+xpg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.MatrixExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.MatrixExtension.html",
+          "hash": "i5OGnm8IKWsVGqW6IGw0sA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.ConfigIntervals-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.ConfigIntervals-1.html",
+          "hash": "yzZm9/+bMoC/Oz54GK0YXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.ConfigVariations-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.ConfigVariations-1.html",
+          "hash": "/Cs2oqOOFRFN7PfTbycPfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.IConfig-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.IConfig-1.html",
+          "hash": "xvFI6tSMl75ovEOV8dfv1Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.html",
+          "hash": "ValGRXDcSC4bcNWarp20jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.SetupIntervals-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.SetupIntervals-1.html",
+          "hash": "Bjb6hAEeK67R1ebtqEk1+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.SetupVariations-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.SetupVariations-1.html",
+          "hash": "Bm3AM0XOQAwJi2qjjLuBQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.TableIntervals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.TableIntervals.html",
+          "hash": "K3jG3YjPapqPRupm0V5idQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.TableVariations.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.TableVariations.html",
+          "hash": "mA7CVT/m3J9Df1/yYzU5Mg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.html",
+          "hash": "YFbntqBYScvy9y4zSeA0yA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.Variations-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.Variations-1.html",
+          "hash": "TUcet+7qUCUxNeH842SOkw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Statistics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Statistics.html",
+          "hash": "H6GarZ0UrgNLPP00BqtyfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.html",
+          "hash": "J9jV1cRc5TOVhKjtN5CXdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Math.MathExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Math.MathExtension.html",
+          "hash": "U2AOkffeqGXGEqLa7mKgzA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Math.MathGeneric-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Math.MathGeneric-1.html",
+          "hash": "G5uWwwzzW0d+jXCLrDFieA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Math.MathGeneric-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Math.MathGeneric-3.html",
+          "hash": "jnZ9iiZ5U0qe5n/Y3E6O2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Math.MathGeneric.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Math.MathGeneric.html",
+          "hash": "D6gdTp6pyaN19BPuuo5H2w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Math.MathUnsafe-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Math.MathUnsafe-1.html",
+          "hash": "9PhtDyeBvVdbDI7zedsJLQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Math.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Math.html",
+          "hash": "hY3t2jvagLEX801exzt7Iw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Matrix-1.Enumerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Matrix-1.Enumerator.html",
+          "hash": "lWBtuBGeAGhL6xd0O00Gbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Matrix-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Matrix-1.html",
+          "hash": "fGv/VjyRGwqeotsYZsO0vw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.MatrixComplex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.MatrixComplex.html",
+          "hash": "81GbA/hf6jUxlCLamVB92Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NotStableFeatures.UnsafeEqualsUnrolled.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NotStableFeatures.UnsafeEqualsUnrolled.html",
+          "hash": "BfFKdS4EvLTjTIBk6VM1pA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NotStableFeatures.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NotStableFeatures.html",
+          "hash": "pXnloMR7dI/KhzeLEc6izw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.State.html",
+          "hash": "lnR1RjHdEXMMAIRaagVQsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Vector-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Vector-1.html",
+          "hash": "M1TLkeQhiYE5SCjzRLWzxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.VectorExtension.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.VectorExtension.html",
+          "hash": "qM56RyDUhjJCpFy/zlbfgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.html",
+          "hash": "NRRCrfy1M4M5oLtOwhocPw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "thLZCdxNivbot+rceicsyw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "oh3dALVwb+mU3q1fSE6JmA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "K2It/gofVVapgEGs1vRp/g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "t7iiFrmuYmrKWisdq+lN6Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "xZT74CTYSbqad6uWYvEG0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "k+/dkjFuwAVS32HduMpmBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 69,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

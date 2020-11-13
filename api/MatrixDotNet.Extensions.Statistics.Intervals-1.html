@@ -1,0 +1,573 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Intervals&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Intervals&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1">
+  
+  
+  <h1 id="MatrixDotNet_Extensions_Statistics_Intervals_1" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1" class="text-break">Class Intervals&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents calculations any statistics operations where first two columns are <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.TableIntervals.html">TableIntervals</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.html">Setup</a>&lt;T&gt;</div>
+    <div class="level2"><a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.SetupIntervals-1.html">SetupIntervals</a>&lt;T&gt;</div>
+    <div class="level3"><span class="xref">Intervals&lt;T&gt;</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.SetupIntervals-1.html#MatrixDotNet_Extensions_Statistics_TableSetup_SetupIntervals_1_Intervals">SetupIntervals&lt;T&gt;.Intervals</a>
+    </div>
+    <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.SetupIntervals-1.html#MatrixDotNet_Extensions_Statistics_TableSetup_SetupIntervals_1_GetIndexColumn_MatrixDotNet_Extensions_Statistics_TableSetup_TableIntervals_">SetupIntervals&lt;T&gt;.GetIndexColumn(TableIntervals)</a>
+    </div>
+    <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.SetupIntervals-1.html#MatrixDotNet_Extensions_Statistics_TableSetup_SetupIntervals_1_IsCorrectInterval">SetupIntervals&lt;T&gt;.IsCorrectInterval()</a>
+    </div>
+    <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.html#MatrixDotNet_Extensions_Statistics_TableSetup_Setup_1_Matrix">Setup&lt;T&gt;.Matrix</a>
+    </div>
+    <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.html#MatrixDotNet_Extensions_Statistics_TableSetup_Setup_1_ColumnNames">Setup&lt;T&gt;.ColumnNames</a>
+    </div>
+    <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.html#MatrixDotNet_Extensions_Statistics_TableSetup_Setup_1_ColumnNumber">Setup&lt;T&gt;.ColumnNumber</a>
+    </div>
+    <div>
+      <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.html#MatrixDotNet_Extensions_Statistics_TableSetup_Setup_1_FindColumn_System_Int32_">Setup&lt;T&gt;.FindColumn(Int32)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MatrixDotNet.Extensions.Statistics.html">MatrixDotNet.Extensions.Statistics</a></h6>
+  <h6><strong>Assembly</strong>: MatrixDotNet.dll</h6>
+  <h5 id="MatrixDotNet_Extensions_Statistics_Intervals_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class Intervals&lt;T&gt; : SetupIntervals&lt;T&gt; where T : struct</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1__ctor_MatrixDotNet_Extensions_Statistics_TableSetup_ConfigIntervals__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.%23ctor(MatrixDotNet.Extensions.Statistics.TableSetup.ConfigIntervals%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L115">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1__ctor_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.#ctor*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1__ctor_MatrixDotNet_Extensions_Statistics_TableSetup_ConfigIntervals__0__" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.#ctor(MatrixDotNet.Extensions.Statistics.TableSetup.ConfigIntervals{`0})">Intervals(ConfigIntervals&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initialize matrix with columns intervals.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Intervals(ConfigIntervals&lt;T&gt; config)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.ConfigIntervals-1.html">ConfigIntervals</a>&lt;T&gt;</td>
+        <td><span class="parametername">config</span></td>
+        <td><p>the configuration.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>throws exception if columns of matrix less than 3,
+throws exception if length <a class="xref" href="MatrixDotNet.Extensions.Statistics.TableSetup.ConfigIntervals-1.html#MatrixDotNet_Extensions_Statistics_TableSetup_ConfigIntervals_1_Intervals">Intervals</a> length more than matrix column.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_AccumulatedFrequency.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.AccumulatedFrequency%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L86">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_AccumulatedFrequency_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.AccumulatedFrequency*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_AccumulatedFrequency" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.AccumulatedFrequency">AccumulatedFrequency</h4>
+  <div class="markdown level1 summary"><p>Gets accumulated frequency.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T[] AccumulatedFrequency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><p>Accumulated frequency.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_LengthModalInterval.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.LengthModalInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L33">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_LengthModalInterval_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.LengthModalInterval*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_LengthModalInterval" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.LengthModalInterval">LengthModalInterval</h4>
+  <div class="markdown level1 summary"><p>Gets Length modal interval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T LengthModalInterval { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_LowBoundModalInterval.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.LowBoundModalInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L66">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_LowBoundModalInterval_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.LowBoundModalInterval*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_LowBoundModalInterval" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.LowBoundModalInterval">LowBoundModalInterval</h4>
+  <div class="markdown level1 summary"><p>Gets low bound modal interval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T LowBoundModalInterval { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_MaxFrequency.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.MaxFrequency%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L28">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_MaxFrequency_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.MaxFrequency*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_MaxFrequency" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.MaxFrequency">MaxFrequency</h4>
+  <div class="markdown level1 summary"><p>Gets max frequency.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T MaxFrequency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_MedianInterval.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.MedianInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L96">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_MedianInterval_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.MedianInterval*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_MedianInterval" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.MedianInterval">MedianInterval</h4>
+  <div class="markdown level1 summary"><p>Gets median interval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T MedianInterval { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_ModalInterval.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.ModalInterval%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L91">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_ModalInterval_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.ModalInterval*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_ModalInterval" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.ModalInterval">ModalInterval</h4>
+  <div class="markdown level1 summary"><p>Gets modal interval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T ModalInterval { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_NextFrequency.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.NextFrequency%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L52">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_NextFrequency_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.NextFrequency*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_NextFrequency" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.NextFrequency">NextFrequency</h4>
+  <div class="markdown level1 summary"><p>Gets next frequency after max frequency in column Ni.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T NextFrequency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_PreviousAccumulatedFrequency.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.PreviousAccumulatedFrequency%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L71">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_PreviousAccumulatedFrequency_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.PreviousAccumulatedFrequency*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_PreviousAccumulatedFrequency" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.PreviousAccumulatedFrequency">PreviousAccumulatedFrequency</h4>
+  <div class="markdown level1 summary"><p>Gets previous accumulated frequency</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T PreviousAccumulatedFrequency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_PreviousFrequency.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.PreviousFrequency%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L38">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_PreviousFrequency_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.PreviousFrequency*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_PreviousFrequency" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.PreviousFrequency">PreviousFrequency</h4>
+  <div class="markdown level1 summary"><p>Gets previous frequency before max frequency in column Ni.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T PreviousFrequency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_VolumeStatisticalPopulation.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.VolumeStatisticalPopulation%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L101">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_VolumeStatisticalPopulation_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.VolumeStatisticalPopulation*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_VolumeStatisticalPopulation" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.VolumeStatisticalPopulation">VolumeStatisticalPopulation</h4>
+  <div class="markdown level1 summary"><p>Gets volume of the statistical population</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T VolumeStatisticalPopulation { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1_GetIntervalRowMean.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601.GetIntervalRowMean%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L156">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Statistics_Intervals_1_GetIntervalRowMean_" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.GetIntervalRowMean*"></a>
+  <h4 id="MatrixDotNet_Extensions_Statistics_Intervals_1_GetIntervalRowMean" data-uid="MatrixDotNet.Extensions.Statistics.Intervals`1.GetIntervalRowMean">GetIntervalRowMean()</h4>
+  <div class="markdown level1 summary"><p>Gets interval row mean value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T GetIntervalRowMean()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>interval row mean value.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Statistics_Intervals_1.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Statistics.Intervals%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Statistics/Intervals.cs/#L11" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

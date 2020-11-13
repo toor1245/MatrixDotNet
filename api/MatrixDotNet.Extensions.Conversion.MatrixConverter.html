@@ -1,0 +1,1384 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MatrixConverter
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MatrixConverter
+   ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter">
+  
+  
+  <h1 id="MatrixDotNet_Extensions_Conversion_MatrixConverter" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter" class="text-break">Class MatrixConverter
+  </h1>
+  <div class="markdown level0 summary"><p>Represents converter which can change matrix.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">MatrixConverter</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="MatrixDotNet.Extensions.Conversion.html">MatrixDotNet.Extensions.Conversion</a></h6>
+  <h6><strong>Assembly</strong>: MatrixDotNet.dll</h6>
+  <h5 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class MatrixConverter : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_AddColumn__1_MatrixDotNet_Matrix___0____0___System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.AddColumn%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2C%60%600%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L156">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_AddColumn_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.AddColumn*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_AddColumn__1_MatrixDotNet_Matrix___0____0___System_Int32_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.AddColumn``1(MatrixDotNet.Matrix{``0},``0[],System.Int32)">AddColumn&lt;T&gt;(Matrix&lt;T&gt;, T[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Add column of matrix by index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; AddColumn&lt;T&gt;(this Matrix&lt;T&gt; matrix, T[] arr, int column)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">arr</span></td>
+        <td><p>the array.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">column</span></td>
+        <td><p>column index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p>A new matrix with new column.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_AddRow__1_MatrixDotNet_Matrix___0____0___System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.AddRow%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2C%60%600%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L193">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_AddRow_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.AddRow*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_AddRow__1_MatrixDotNet_Matrix___0____0___System_Int32_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.AddRow``1(MatrixDotNet.Matrix{``0},``0[],System.Int32)">AddRow&lt;T&gt;(Matrix&lt;T&gt;, T[], Int32)</h4>
+  <div class="markdown level1 summary"><p>Returns new matrix with added row.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; AddRow&lt;T&gt;(this Matrix&lt;T&gt; matrix, T[] array, int row)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix</p>
+</td>
+      </tr>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">array</span></td>
+        <td><p>the row for new matrix</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>index of row</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_Clone__1_MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone%60%601(MatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixCloneExtension.cs/#L70">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_Clone_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_Clone__1_MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone``1(MatrixDotNet.Matrix{``0})">Clone&lt;T&gt;(Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; Clone&lt;T&gt;(this Matrix&lt;T&gt; matrix)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_CollectMatrix__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.CollectMatrix%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CMatrixDotNet.Matrix%7B%60%600%7D%2CMatrixDotNet.Matrix%7B%60%600%7D%2CMatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L360">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_CollectMatrix_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.CollectMatrix*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_CollectMatrix__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.CollectMatrix``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0})">CollectMatrix&lt;T&gt;(Matrix&lt;T&gt;, Matrix&lt;T&gt;, Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Collects square matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; CollectMatrix&lt;T&gt;(Matrix&lt;T&gt; a11, Matrix&lt;T&gt; a12, Matrix&lt;T&gt; a21, Matrix&lt;T&gt; a22)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a11</span></td>
+        <td><p>the matrix a11</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a12</span></td>
+        <td><p>the matrix a12</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a21</span></td>
+        <td><p>the matrix a21</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a22</span></td>
+        <td><p>the matrix a22</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p>Collect matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_Concat__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.Concat%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CMatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L24">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_Concat_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.Concat*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_Concat__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.Concat``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0})">Concat&lt;T&gt;(Matrix&lt;T&gt;, Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Joins two matrix, matrix A rows must be equals matrix B rows.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; Concat&lt;T&gt;(this Matrix&lt;T&gt; matrix1, Matrix&lt;T&gt; matrix2)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix1</span></td>
+        <td><p>The matrix A.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix2</span></td>
+        <td><p>The matrix B.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p>Joins two matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>Throws if matrix1.Rows != matrix2.Rows.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_CopyTo__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_MatrixDotNet_Matrix___0__System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.CopyTo%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CSystem.Int32%2CSystem.Int32%2CMatrixDotNet.Matrix%7B%60%600%7D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixCloneExtension.cs/#L21">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_CopyTo_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.CopyTo*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_CopyTo__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_MatrixDotNet_Matrix___0__System_Int32_System_Int32_System_Int32_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.CopyTo``1(MatrixDotNet.Matrix{``0},System.Int32,System.Int32,MatrixDotNet.Matrix{``0},System.Int32,System.Int32,System.Int32)">CopyTo&lt;T&gt;(Matrix&lt;T&gt;, Int32, Int32, Matrix&lt;T&gt;, Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Copy to matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CopyTo&lt;T&gt;(Matrix&lt;T&gt; matrix1, int dimension1, int start, Matrix&lt;T&gt; matrix2, int dimension2, int destinationIndex, int length)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix1</span></td>
+        <td><p>copy from matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">dimension1</span></td>
+        <td><p>dimension matrix1.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>start index which start copy.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix2</span></td>
+        <td><p>copy to matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">dimension2</span></td>
+        <td><p>dimension matrix2</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">destinationIndex</span></td>
+        <td><p>start index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>length copy.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_CopyTo__1_MatrixDotNet_State_MatrixDotNet_Matrix___0__System_Int32_System_Int32_MatrixDotNet_Matrix___0__System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.CopyTo%60%601(MatrixDotNet.State%2CMatrixDotNet.Matrix%7B%60%600%7D%2CSystem.Int32%2CSystem.Int32%2CMatrixDotNet.Matrix%7B%60%600%7D%2CSystem.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixCloneExtension.cs/#L50">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_CopyTo_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.CopyTo*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_CopyTo__1_MatrixDotNet_State_MatrixDotNet_Matrix___0__System_Int32_System_Int32_MatrixDotNet_Matrix___0__System_Int32_System_Int32_System_Int32_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.CopyTo``1(MatrixDotNet.State,MatrixDotNet.Matrix{``0},System.Int32,System.Int32,MatrixDotNet.Matrix{``0},System.Int32,System.Int32,System.Int32)">CopyTo&lt;T&gt;(State, Matrix&lt;T&gt;, Int32, Int32, Matrix&lt;T&gt;, Int32, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Copy to matrix by row or column.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CopyTo&lt;T&gt;(State state, Matrix&lt;T&gt; matrix1, int dimension1, int start, Matrix&lt;T&gt; matrix2, int dimension2, int destinationIndex, int length)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.State.html">State</a></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>row or column.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix1</span></td>
+        <td><p>copy from matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">dimension1</span></td>
+        <td><p>dimension matrix1.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">start</span></td>
+        <td><p>start index which start copy.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix2</span></td>
+        <td><p>copy to matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">dimension2</span></td>
+        <td><p>dimension matrix2</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">destinationIndex</span></td>
+        <td><p>start index.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">length</span></td>
+        <td><p>length copy.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_ReduceColumn__1_MatrixDotNet_Matrix___0__System_UInt32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.ReduceColumn%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L94">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ReduceColumn_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ReduceColumn*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ReduceColumn__1_MatrixDotNet_Matrix___0__System_UInt32_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ReduceColumn``1(MatrixDotNet.Matrix{``0},System.UInt32)">ReduceColumn&lt;T&gt;(Matrix&lt;T&gt;, UInt32)</h4>
+  <div class="markdown level1 summary"><p>Reduces column of matrix by index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; ReduceColumn&lt;T&gt;(this Matrix&lt;T&gt; matrix, uint column)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>The matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">column</span></td>
+        <td><p>The index of matrix which reduce column.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p>A new matrix without the chosen column.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Unmanaged type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_ReduceRow__1_MatrixDotNet_Matrix___0__System_UInt32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.ReduceRow%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CSystem.UInt32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L125">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ReduceRow_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ReduceRow*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ReduceRow__1_MatrixDotNet_Matrix___0__System_UInt32_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ReduceRow``1(MatrixDotNet.Matrix{``0},System.UInt32)">ReduceRow&lt;T&gt;(Matrix&lt;T&gt;, UInt32)</h4>
+  <div class="markdown level1 summary"><p>Reduces row of matrix by index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; ReduceRow&lt;T&gt;(this Matrix&lt;T&gt; matrix, uint row)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.UInt32</span></td>
+        <td><span class="parametername">row</span></td>
+        <td><p>index of matrix which reduce column.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p>A new matrix without the chosen row.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_SplitMatrix__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.SplitMatrix%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CMatrixDotNet.Matrix%7B%60%600%7D%40%2CMatrixDotNet.Matrix%7B%60%600%7D%40%2CMatrixDotNet.Matrix%7B%60%600%7D%40%2CMatrixDotNet.Matrix%7B%60%600%7D%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L328">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_SplitMatrix_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.SplitMatrix*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_SplitMatrix__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___MatrixDotNet_Matrix___0___" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.SplitMatrix``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0}@,MatrixDotNet.Matrix{``0}@,MatrixDotNet.Matrix{``0}@,MatrixDotNet.Matrix{``0}@)">SplitMatrix&lt;T&gt;(Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;, out Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Splits matrix by 4 parts.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SplitMatrix&lt;T&gt;(this Matrix&lt;T&gt; a, out Matrix&lt;T&gt; a11, out Matrix&lt;T&gt; a12, out Matrix&lt;T&gt; a21, out Matrix&lt;T&gt; a22)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a</span></td>
+        <td><p>the matrix which want splits.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a11</span></td>
+        <td><p>the matrix a11.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a12</span></td>
+        <td><p>the matrix a12.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a21</span></td>
+        <td><p>the matrix a21.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">a22</span></td>
+        <td><p>the matrix a22.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>The matrix is not square.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_SwapColumns__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.SwapColumns%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L288">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_SwapColumns_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.SwapColumns*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_SwapColumns__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.SwapColumns``1(MatrixDotNet.Matrix{``0},System.Int32,System.Int32)">SwapColumns&lt;T&gt;(Matrix&lt;T&gt;, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Swap rows of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SwapColumns&lt;T&gt;(this Matrix&lt;T&gt; matrix, int indexDimension1, int indexDimension2)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">indexDimension1</span></td>
+        <td><p>the dimension 1</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">indexDimension2</span></td>
+        <td><p>the dimension 2</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>throws exception if indexDimension1 equals indexDimension2 or matrix is null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_SwapRows__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.SwapRows%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L251">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_SwapRows_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.SwapRows*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_SwapRows__1_MatrixDotNet_Matrix___0__System_Int32_System_Int32_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.SwapRows``1(MatrixDotNet.Matrix{``0},System.Int32,System.Int32)">SwapRows&lt;T&gt;(Matrix&lt;T&gt;, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Swap rows of matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SwapRows&lt;T&gt;(this Matrix&lt;T&gt; matrix, int dimension1, int dimension2)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">dimension1</span></td>
+        <td><p>the dimension 1</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">dimension2</span></td>
+        <td><p>the dimension 2</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>throws exception if indexDimension1 equals indexDimension2 or matrix is null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_ToIdentityMatrix__1_MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.ToIdentityMatrix%60%601(MatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L227">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ToIdentityMatrix_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ToIdentityMatrix*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ToIdentityMatrix__1_MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ToIdentityMatrix``1(MatrixDotNet.Matrix{``0})">ToIdentityMatrix&lt;T&gt;(Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Changes this matrix to identity matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ToIdentityMatrix&lt;T&gt;(this Matrix&lt;T&gt; matrix)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
+        <td><p>throws exception if matrix is not square</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_ToMatrix__1___0_0__0___.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix%60%601(%60%600%5B0%3A%2C0%3A%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L74">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ToMatrix_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ToMatrix__1___0_0__0___" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix``1(``0[0:,0:])">ToMatrix&lt;T&gt;(T[,])</h4>
+  <div class="markdown level1 summary"><p>Convert primitive matrix to <a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix&lt;T&gt;</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; ToMatrix&lt;T&gt;(this T[, ] matrix)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[,]</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>primitive matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_ToPrimitive__1_MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive%60%601(MatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L55">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ToPrimitive_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_ToPrimitive__1_MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive``1(MatrixDotNet.Matrix{``0})">ToPrimitive&lt;T&gt;(Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Convert matrix to primitive matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static T[, ] ToPrimitive&lt;T&gt;(this Matrix&lt;T&gt; matrix)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix A</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[,]</td>
+        <td><p>primitive matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter_Transpose__1_MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter.Transpose%60%601(MatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L305">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Extensions_Conversion_MatrixConverter_Transpose_" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.Transpose*"></a>
+  <h4 id="MatrixDotNet_Extensions_Conversion_MatrixConverter_Transpose__1_MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.Conversion.MatrixConverter.Transpose``1(MatrixDotNet.Matrix{``0})">Transpose&lt;T&gt;(Matrix&lt;T&gt;)</h4>
+  <div class="markdown level1 summary"><p>Gets transport matrix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Matrix&lt;T&gt; Transpose&lt;T&gt;(this Matrix&lt;T&gt; matrix)
+    where T : struct</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><span class="parametername">matrix</span></td>
+        <td><p>the matrix.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Matrix-1.html">Matrix</a>&lt;T&gt;</td>
+        <td><p>Transpose matrix</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>unmanaged type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/new/docs-ci-cd/apiSpec/new?filename=MatrixDotNet_Extensions_Conversion_MatrixConverter.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.Conversion.MatrixConverter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/src/MatrixDotNet/Extensions/Conversion/MatrixConversionExtension.cs/#L12" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
