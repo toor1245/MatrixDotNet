@@ -1,17 +1,17 @@
+using MatrixDotNet.Exceptions;
 using System;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
 {
     /// <summary>
-    /// Represents conversion operations for matrix with fixed buffer size.
+    ///     Represents conversion operations for matrix with fixed buffer size.
     /// </summary>
     public readonly ref struct Converter
     {
         /// <summary>
-        /// Adds row for matrix with fixed buffer size.
+        ///     Adds row for matrix with fixed buffer size.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <param name="data">the data which assign by index</param>
@@ -31,26 +31,20 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             {
                 var n = matrix.Columns;
                 var span3 = new Span<double>(arr, n);
-                var matrixAsFixedBuffer = new MatrixAsFixedBuffer((byte) (matrix.Rows + 1), n);
+                var matrixAsFixedBuffer = new MatrixAsFixedBuffer((byte)(matrix.Rows + 1), n);
 
-                for (int i = 0; i < index; i++)
-                {
-                    matrixAsFixedBuffer[i] = matrix[i];
-                }
+                for (var i = 0; i < index; i++) matrixAsFixedBuffer[i] = matrix[i];
 
                 matrixAsFixedBuffer[index] = span3;
 
-                for (int i = index + 1; i < matrixAsFixedBuffer.Rows; i++)
-                {
-                    matrixAsFixedBuffer[i] = matrix[i - 1];
-                }
+                for (var i = index + 1; i < matrixAsFixedBuffer.Rows; i++) matrixAsFixedBuffer[i] = matrix[i - 1];
 
                 return matrixAsFixedBuffer;
             }
         }
 
         /// <summary>
-        /// Adds column for matrix with fixed buffer size.
+        ///     Adds column for matrix with fixed buffer size.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="data">the data.</param>
@@ -61,7 +55,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
         {
             if (matrix.Rows != data.Length)
             {
-                string message =
+                var message =
                     $"length {nameof(data)}:{data.Length} != {nameof(matrix.Rows)} of matrix:{matrix.Rows}";
                 throw new MatrixDotNetException(message);
             }
@@ -70,26 +64,21 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             {
                 var m = matrix.Rows;
                 var span3 = new Span<double>(arr, m);
-                var matrixAsFixedBuffer = new MatrixAsFixedBuffer(m, (byte) (matrix.Columns + 1));
+                var matrixAsFixedBuffer = new MatrixAsFixedBuffer(m, (byte)(matrix.Columns + 1));
 
-                for (int i = 0; i < index; i++)
-                {
-                    matrixAsFixedBuffer.SetColumn(i, matrix.GetColumn(i));
-                }
+                for (var i = 0; i < index; i++) matrixAsFixedBuffer.SetColumn(i, matrix.GetColumn(i));
 
                 matrixAsFixedBuffer.SetColumn(index, span3);
 
-                for (int i = index + 1; i < matrixAsFixedBuffer.Columns; i++)
-                {
+                for (var i = index + 1; i < matrixAsFixedBuffer.Columns; i++)
                     matrixAsFixedBuffer.SetColumn(i, matrix.GetColumn(i - 1));
-                }
 
                 return matrixAsFixedBuffer;
             }
         }
 
         /// <summary>
-        /// Swaps rows with happen AVX2 or Unsafe swap.  
+        ///     Swaps rows with happen AVX2 or Unsafe swap.
         /// </summary>
         /// <param name="matrix">the matrix with fixed buffer</param>
         /// <param name="from">the index of row.</param>
@@ -98,7 +87,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
         {
             if (Avx.IsSupported)
             {
-                int i = 0;
+                var i = 0;
                 int n = matrix.Columns;
                 fixed (double* ptr1 = matrix[from])
                 fixed (double* ptr2 = matrix[to])
@@ -125,10 +114,9 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             }
             else
             {
-
                 fixed (double* ptr1 = matrix._array)
                 {
-                    Span<double> span = new Span<double>(ptr1, matrix.Length);
+                    var span = new Span<double>(ptr1, matrix.Length);
                     int m = matrix.Rows;
                     int n = matrix.Columns;
                     var index = from * n + m;
@@ -149,17 +137,16 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
         }
 
         /// <summary>
-        /// Swaps columns with happen AVX2 or Unsafe swap.  
+        ///     Swaps columns with happen AVX2 or Unsafe swap.
         /// </summary>
         /// <param name="matrix">the matrix with fixed buffer</param>
         /// <param name="from">the index of column.</param>
         /// <param name="to">the index of column.</param>
         public static void SwapColumns(ref MatrixAsFixedBuffer matrix, int from, int to)
         {
-
             int m = matrix.Rows;
             var i = 0;
-            
+
             // Swaps columns.
             while (i < m)
             {
@@ -170,9 +157,9 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             }
         }
 
-        
+
         /// <summary>
-        /// Copy matrix to by some criteria via AVX2.
+        ///     Copy matrix to by some criteria via AVX2.
         /// </summary>
         /// <param name="matrix1">the matrix1</param>
         /// <param name="dimension1">row index of matrix1</param>
@@ -181,37 +168,35 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
         /// <param name="dimension2">row index of matrix2</param>
         /// <param name="destinationIndex">start index by row of matrix2</param>
         /// <param name="length">the length of copy data</param>
-        public static unsafe void CopyToAvx(ref MatrixAsFixedBuffer matrix1,int dimension1, int start,ref MatrixAsFixedBuffer matrix2,int dimension2,int destinationIndex,int length)
+        public static unsafe void CopyToAvx(ref MatrixAsFixedBuffer matrix1, int dimension1, int start,
+            ref MatrixAsFixedBuffer matrix2, int dimension2, int destinationIndex, int length)
         {
             if (Avx2.IsSupported)
             {
-                int i = start;
-                int k = destinationIndex;
+                var i = start;
+                var k = destinationIndex;
                 fixed (double* ptr1 = matrix1[dimension1])
                 fixed (double* ptr2 = matrix2[dimension2])
                 {
                     while (k < length - Vector256<double>.Count)
                     {
                         var vector = Avx.LoadVector256(ptr1 + i);
-                        Avx.Store(ptr2 + destinationIndex,vector);
+                        Avx.Store(ptr2 + destinationIndex, vector);
                         i += 4;
                         k += 4;
                     }
                 }
 
-                for (;k < length; i++,k++)
-                {
-                    matrix2[dimension2, k] = matrix1[dimension1, i];
-                }
+                for (; k < length; i++, k++) matrix2[dimension2, k] = matrix1[dimension1, i];
             }
             else
             {
-                CopyTo(ref matrix1,dimension1,start,ref matrix2,dimension2,destinationIndex,length);
+                CopyTo(ref matrix1, dimension1, start, ref matrix2, dimension2, destinationIndex, length);
             }
         }
-        
+
         /// <summary>
-        /// Copy matrix to by some criteria.
+        ///     Copy matrix to by some criteria.
         /// </summary>
         /// <param name="matrix1">the matrix1</param>
         /// <param name="dimension1">row index of matrix1</param>
@@ -220,17 +205,16 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
         /// <param name="dimension2">row index of matrix2</param>
         /// <param name="destinationIndex">start index by row of matrix2</param>
         /// <param name="length">the length of copy data</param>
-        public static unsafe void CopyTo(ref MatrixAsFixedBuffer matrix1,int dimension1, int start,ref MatrixAsFixedBuffer matrix2,int dimension2,int destinationIndex,int length)
-        { 
+        public static unsafe void CopyTo(ref MatrixAsFixedBuffer matrix1, int dimension1, int start,
+            ref MatrixAsFixedBuffer matrix2, int dimension2, int destinationIndex, int length)
+        {
             fixed (double* ptr2 = matrix2._array)
             fixed (double* ptr1 = matrix1._array)
             {
-                Span<double> span2 = new Span<double>(ptr2, matrix2.Length);
-                Span<double> span1 = new Span<double>(ptr1, matrix1.Length);
+                var span2 = new Span<double>(ptr2, matrix2.Length);
+                var span1 = new Span<double>(ptr1, matrix1.Length);
                 for (int i = start, k = destinationIndex; k < length; i++, k++)
-                {
                     span2[dimension2 * matrix2.Columns + k] = span1[dimension1 * matrix1.Columns + i];
-                }
             }
         }
     }
