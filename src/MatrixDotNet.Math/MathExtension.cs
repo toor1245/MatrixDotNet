@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.Linq.Expressions;
-using System.Reflection;
 
 namespace MatrixDotNet.Math
 {
@@ -32,7 +31,14 @@ namespace MatrixDotNet.Math
         private static readonly ConcurrentDictionary<Type, Delegate> SqrtFuncCache =
             new ConcurrentDictionary<Type, Delegate>();
 
+        [Obsolete("bool shit = true;", true)]
+        public static T Random<T>(int start, int end)
+        {
+            return default;
+        }
+
         #region Add
+
         public static Func<T1, T2, TR> GetAddFunc<T1, T2, TR>()
         {
             var t1 = typeof(T1);
@@ -68,6 +74,7 @@ namespace MatrixDotNet.Math
         {
             return GetAddFunc<T1, T2, TR>()(left, right);
         }
+
         #endregion
 
         #region Substraction
@@ -151,6 +158,7 @@ namespace MatrixDotNet.Math
         #endregion
 
         #region Divide
+
         public static Func<T1, T2, TR> GetDivideFunc<T1, T2, TR>()
         {
             var t1 = typeof(T1);
@@ -186,9 +194,11 @@ namespace MatrixDotNet.Math
         {
             return GetDivideFunc<T1, T2, TR>()(left, right);
         }
+
         #endregion
 
         #region Increment
+
         public static Func<T, T> GetIncrementFunc<T>()
         {
             var t = typeof(T);
@@ -221,7 +231,7 @@ namespace MatrixDotNet.Math
                 return del as Func<T, T>;
 
             var leftPar = Expression.Parameter(t, "value");
-            MethodInfo info = typeof(System.Math).GetMethod("Abs", new[] { leftPar.Type });
+            var info = typeof(System.Math).GetMethod("Abs", new[] { leftPar.Type });
             if (info == null)
                 throw new InvalidOperationException(nameof(Abs));
 
@@ -242,6 +252,7 @@ namespace MatrixDotNet.Math
         #endregion
 
         #region Negate
+
         public static Func<T, T> GetNegateFunc<T>()
         {
             var t = typeof(T);
@@ -263,9 +274,11 @@ namespace MatrixDotNet.Math
         {
             return GetNegateFunc<T>()(left);
         }
+
         #endregion
 
         #region Sqrt
+
         public static Func<T, T> Sqrt<T>()
         {
             var t = typeof(T);
@@ -274,7 +287,7 @@ namespace MatrixDotNet.Math
 
             var argPar = Expression.Parameter(t, "value");
 
-            MethodInfo info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] { argPar.Type });
+            var info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] { argPar.Type });
 
             if (info is null)
                 throw new InvalidOperationException(nameof(Sqrt));
@@ -292,12 +305,7 @@ namespace MatrixDotNet.Math
         {
             return Sqrt<T>()(arg);
         }
-        #endregion
 
-        [Obsolete("bool shit = true;", true)]
-        public static T Random<T>(int start, int end)
-        {
-            return default;
-        }
+        #endregion
     }
 }

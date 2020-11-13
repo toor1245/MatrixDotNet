@@ -18,7 +18,8 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T2), "right");
 
             var resultType = typeof(TR);
-            var body = Expression.Add(Expression.Convert(leftPar, resultType), Expression.Convert(rightPar, resultType));
+            var body = Expression.Add(Expression.Convert(leftPar, resultType),
+                Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -26,6 +27,7 @@ namespace MatrixDotNet.Math
 
             return func;
         }
+
         public static TR Add(T1 left, T2 right)
         {
             return GetAddFunc()(left, right);
@@ -46,7 +48,8 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T2), "right");
 
             var resultType = typeof(TR);
-            var body = Expression.Subtract(Expression.Convert(leftPar, resultType), Expression.Convert(rightPar, resultType));
+            var body = Expression.Subtract(Expression.Convert(leftPar, resultType),
+                Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -75,7 +78,8 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T2), "right");
 
             var resultType = typeof(TR);
-            var body = Expression.Multiply(Expression.Convert(leftPar, resultType), Expression.Convert(rightPar, resultType));
+            var body = Expression.Multiply(Expression.Convert(leftPar, resultType),
+                Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -104,7 +108,8 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T2), "right");
 
             var resultType = typeof(TR);
-            var body = Expression.Divide(Expression.Convert(leftPar, resultType), Expression.Convert(rightPar, resultType));
+            var body = Expression.Divide(Expression.Convert(leftPar, resultType),
+                Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 

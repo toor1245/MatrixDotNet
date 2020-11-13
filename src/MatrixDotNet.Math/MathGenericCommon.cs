@@ -8,8 +8,8 @@ namespace MatrixDotNet.Math
         public static bool IsFloatingPoint<T>()
         {
             return typeof(T) == typeof(double) ||
-                    typeof(T) == typeof(float) ||
-                    typeof(T) == typeof(decimal);
+                   typeof(T) == typeof(float) ||
+                   typeof(T) == typeof(decimal);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -29,16 +29,16 @@ namespace MatrixDotNet.Math
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsSupported<T>()
         {
-            return (typeof(T) == typeof(byte)) ||
-                   (typeof(T) == typeof(sbyte)) ||
-                   (typeof(T) == typeof(short)) ||
-                   (typeof(T) == typeof(ushort)) ||
-                   (typeof(T) == typeof(int)) ||
-                   (typeof(T) == typeof(uint)) ||
-                   (typeof(T) == typeof(long)) ||
-                   (typeof(T) == typeof(ulong)) ||
-                   (typeof(T) == typeof(float)) ||
-                   (typeof(T) == typeof(double));
+            return typeof(T) == typeof(byte) ||
+                   typeof(T) == typeof(sbyte) ||
+                   typeof(T) == typeof(short) ||
+                   typeof(T) == typeof(ushort) ||
+                   typeof(T) == typeof(int) ||
+                   typeof(T) == typeof(uint) ||
+                   typeof(T) == typeof(long) ||
+                   typeof(T) == typeof(ulong) ||
+                   typeof(T) == typeof(float) ||
+                   typeof(T) == typeof(double);
         }
     }
 }
