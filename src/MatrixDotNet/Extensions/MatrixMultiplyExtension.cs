@@ -8,7 +8,7 @@ namespace MatrixDotNet.Extensions
     public static partial class MatrixExtension
     {
         #region Strassen
-        
+
         /// <summary>
         /// Strassen`s multiply, use when matrix rows > 32.
         /// </summary>
@@ -18,14 +18,14 @@ namespace MatrixDotNet.Extensions
         /// <returns>the new matrix from multiply of two matrices.</returns>
         public static Matrix<T> MultiplyStrassen<T>(Matrix<T> a, Matrix<T> b) where T : unmanaged
         {
-            if (a.Rows < 32) 
+            if (a.Rows < 32)
             {
                 return a * b;
             }
 
-            a.SplitMatrix(out var a11,out var a12,out var a21,out var a22);
-            b.SplitMatrix(out var b11,out var b12,out var b21,out var b22);
-            
+            a.SplitMatrix(out var a11, out var a12, out var a21, out var a22);
+            b.SplitMatrix(out var b11, out var b12, out var b21, out var b22);
+
             Matrix<T> p1 = MultiplyStrassen(a11 + a22, b11 + b22);
             Matrix<T> p2 = MultiplyStrassen(a21 + a22, b11);
             Matrix<T> p3 = MultiplyStrassen(a11, b12 - b22);
@@ -41,11 +41,11 @@ namespace MatrixDotNet.Extensions
 
             return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
         }
-        
+
         #endregion
-        
+
         #region Degree
-        
+
         /// <summary>
         /// Raises a matrix to a power.
         /// </summary>
@@ -61,8 +61,8 @@ namespace MatrixDotNet.Extensions
                 return BuildMatrix.CreateIdentityMatrix<T>(matrix.Rows, matrix.Columns);
 
             if ((degree & 1) == 1)
-                return matrix.Pow(degree-1) * matrix;
-            
+                return matrix.Pow(degree - 1) * matrix;
+
             var t = matrix.Pow(degree >> 1);
             return t * t;
         }
@@ -77,22 +77,22 @@ namespace MatrixDotNet.Extensions
         /// <exception cref="MatrixDotNetException"></exception>
         public static Matrix<T> PowStrassen<T>(this Matrix<T> matrix, uint degree) where T : unmanaged
         {
-            if(!matrix.IsSquare || !matrix.IsPrime)
+            if (!matrix.IsSquare || !matrix.IsPrime)
                 throw new MatrixDotNetException("matrix is not square or not prime");
-            
-            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
-            
+
+            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
+
             if (degree == 1)
                 return matrix;
-            
+
             if (degree == 2)
                 return matrix * matrix;
 
-            MultiplyStrassen(matrix,matrix);
-            
+            MultiplyStrassen(matrix, matrix);
+
             for (int i = 0; i < degree; i++)
             {
-                result = MultiplyStrassen(result,matrix);
+                result = MultiplyStrassen(result, matrix);
             }
 
             return result;

@@ -10,7 +10,7 @@ namespace MatrixDotNet.Extensions.Experimenting
 
         private MethodBody Body { get; set; }
 
-        public Experiment(string description,MethodBody body)
+        public Experiment(string description, MethodBody body)
         {
             Description = description;
             Body = body;

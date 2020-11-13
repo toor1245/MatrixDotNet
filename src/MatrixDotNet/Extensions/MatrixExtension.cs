@@ -1,5 +1,5 @@
-﻿using System;
-using MatrixDotNet.Exceptions;
+﻿using MatrixDotNet.Exceptions;
+using System;
 
 namespace MatrixDotNet.Extensions
 {
@@ -17,18 +17,18 @@ namespace MatrixDotNet.Extensions
         /// <returns></returns>
         /// <exception cref="NullReferenceException"></exception>
         /// <exception cref="IndexOutOfRangeException"></exception>
-        public static T[] GetRow<T>(this Matrix<T> matrix,int index) where T : unmanaged
+        public static T[] GetRow<T>(this Matrix<T> matrix, int index) where T : unmanaged
         {
             T[] array = new T[matrix.Columns];
 
             for (int j = 0; j < matrix.Columns; j++)
             {
-                array[j] = matrix[index,j];
+                array[j] = matrix[index, j];
             }
-            
+
             return array;
         }
-        
+
         /// <summary>
         /// Gets column array of matrix by columns index.
         /// </summary>
@@ -42,16 +42,16 @@ namespace MatrixDotNet.Extensions
             where T : unmanaged
         {
             T[] array = new T[matrix.Rows];
-            
+
             for (int j = 0; j < matrix.Rows; j++)
             {
-                array[j] = matrix[j,index];
+                array[j] = matrix[j, index];
             }
-            
+
             return array;
         }
 
-        
+
         /// <summary>
         /// Gets diagonal of matrix.
         /// </summary>
@@ -63,14 +63,14 @@ namespace MatrixDotNet.Extensions
             int x = matrix.Rows;
             int y = matrix.Columns;
             int c = x & ((x - y) >> 31) | y & (~(x - y) >> 31);
-            
+
             T[] array = new T[c];
-            
+
             for (int i = 0; i < c; i++)
             {
-                array[i] = matrix[i,i];
+                array[i] = matrix[i, i];
             }
-            
+
             return array;
         }
 
@@ -83,19 +83,19 @@ namespace MatrixDotNet.Extensions
         /// <exception cref="MatrixDotNetException">
         /// throws exception if <c>Length</c> of matrix not equal matrix <c>Min(Rows,Columns)</c>.
         /// </exception>
-        public static void SetDiagonal<T>(this Matrix<T> matrix,T[] array) where T : unmanaged
+        public static void SetDiagonal<T>(this Matrix<T> matrix, T[] array) where T : unmanaged
         {
             int x = matrix.Rows;
             int y = matrix.Columns;
             int c = x & ((x - y) >> 31) | y & (~(x - y) >> 31);
-            
-            if(array.Length != c)
+
+            if (array.Length != c)
                 throw new MatrixDotNetException(
                     $"Length of matrix not equal matrix Min(Rows:{matrix.Rows},Columns:{matrix.Columns})");
 
             for (int i = 0; i < c; i++)
-            { 
-                matrix[i,i] = array[i];
+            {
+                matrix[i, i] = array[i];
             }
         }
     }

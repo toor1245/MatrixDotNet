@@ -1,6 +1,6 @@
-using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
+using System;
 
 
 namespace MatrixDotNet.Extensions.Statistics.TableSetup
@@ -22,16 +22,16 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         /// <exception cref="ArgumentException"></exception>
         protected Setup(Matrix<T> matrix)
         {
-            if (!MathGeneric.IsFloatingPoint<T>()) 
+            if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException("Matrix must be floating type.");
-            
+
             ColumnNames = new string[matrix.Columns];
             ColumnNumber = new int[matrix.Columns];
-            
+
             Matrix = matrix;
-            
+
         }
-        
+
         /// <summary>
         /// Finds column index in matrix.
         /// </summary>
@@ -41,13 +41,13 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         protected int FindColumn(int nameIndex)
         {
             var find = nameIndex;
-            
+
             for (int i = 0; i < ColumnNumber.Length; i++)
             {
                 if (find == ColumnNumber[i])
                     return i;
             }
-            
+
             throw new MatrixDotNetException("Not Found value");
         }
     }

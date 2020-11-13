@@ -24,7 +24,7 @@ namespace MatrixDotNet.Extensions.Complement
                     }
                 }
             }
-            
+
             return res;
         }
     }
