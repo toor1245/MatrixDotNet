@@ -23,7 +23,7 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
             for (int i = 0; i < variations.Variations.Length; i++)
             {
                 ColumnNames[i] = Variations[i].ToString();
-                ColumnNumber[i] = (int)Variations[i];
+                ColumnNumber[i] = (int) Variations[i];
             }
 
             // Checks on exists Xi column in matrix.
@@ -37,7 +37,7 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         /// <returns>Index of column</returns>
         protected int GetIndexColumn(TableVariations tableVariations)
         {
-            return FindColumn((int)tableVariations);
+            return FindColumn((int) tableVariations);
         }
     }
 }

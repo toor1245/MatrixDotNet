@@ -117,7 +117,7 @@ namespace MatrixDotNet.Extensions.Builder
             {
                 for (int i = 0; i < row; i++)
                 {
-                    Unsafe.CopyBlock(ptr1 + i * row, ptr2 + i * row, (uint)(sizeof(T) * row));
+                    Unsafe.CopyBlock(ptr1 + i * row, ptr2 + i * row, (uint) (sizeof(T) * row));
                 }
             }
 

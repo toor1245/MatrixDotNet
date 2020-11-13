@@ -31,7 +31,7 @@ namespace MatrixDotNet
             fixed (T* ptr1 = Array)
             fixed (T* ptr2 = array)
             {
-                Unsafe.CopyBlock(ptr1, ptr2, (uint)(sizeof(T) * Length));
+                Unsafe.CopyBlock(ptr1, ptr2, (uint) (sizeof(T) * Length));
             }
         }
 
@@ -125,7 +125,7 @@ namespace MatrixDotNet
             if (!(obj is Vector<T>))
                 throw new InvalidCastException("object is not Vector<T>");
 
-            var vec = (Vector<T>)obj;
+            var vec = (Vector<T>) obj;
             for (int i = 0; i < vec.Length; i++)
             {
                 if (!vec[i].Equals(this[i]))

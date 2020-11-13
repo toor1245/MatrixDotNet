@@ -31,7 +31,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             {
                 var n = matrix.Columns;
                 var span3 = new Span<double>(arr, n);
-                var matrixAsFixedBuffer = new MatrixAsFixedBuffer((byte)(matrix.Rows + 1), n);
+                var matrixAsFixedBuffer = new MatrixAsFixedBuffer((byte) (matrix.Rows + 1), n);
 
                 for (var i = 0; i < index; i++) matrixAsFixedBuffer[i] = matrix[i];
 
@@ -64,7 +64,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
             {
                 var m = matrix.Rows;
                 var span3 = new Span<double>(arr, m);
-                var matrixAsFixedBuffer = new MatrixAsFixedBuffer(m, (byte)(matrix.Columns + 1));
+                var matrixAsFixedBuffer = new MatrixAsFixedBuffer(m, (byte) (matrix.Columns + 1));
 
                 for (var i = 0; i < index; i++) matrixAsFixedBuffer.SetColumn(i, matrix.GetColumn(i));
 

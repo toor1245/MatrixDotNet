@@ -128,7 +128,7 @@ namespace MatrixDotNet.Extensions.Builder
             {
                 for (int j = 0; j < column; j++)
                 {
-                    matrix[i, j] = (byte)random.Next(startRandom, endRandom);
+                    matrix[i, j] = (byte) random.Next(startRandom, endRandom);
                 }
             }
 

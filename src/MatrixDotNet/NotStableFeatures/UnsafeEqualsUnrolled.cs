@@ -24,9 +24,9 @@ namespace MatrixDotNet.NotStableFeatures
             {
                 int len = data1.Length;
                 int rem = len % (sizeof(long) * 16);
-                long* b1 = (long*)bytes1;
-                long* b2 = (long*)bytes2;
-                long* e1 = (long*)(bytes1 + len - rem);
+                long* b1 = (long*) bytes1;
+                long* b2 = (long*) bytes2;
+                long* e1 = (long*) (bytes1 + len - rem);
 
                 while (b1 < e1)
                 {

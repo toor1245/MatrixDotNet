@@ -105,9 +105,9 @@ namespace MatrixDotNet.Extensions.Conversion
                 int m = temp.Columns;
                 for (int i = 0; i < temp.Rows; i++)
                 {
-                    Unsafe.CopyBlock(ptr2 + i * m, ptr3 + i * matrix.Columns, (uint)(sizeof(T) * column));
-                    uint len = (uint)temp.Columns - column;
-                    Unsafe.CopyBlock(ptr2 + i * m + column, ptr3 + i * matrix.Columns + column + 1, (uint)(sizeof(T) * len));
+                    Unsafe.CopyBlock(ptr2 + i * m, ptr3 + i * matrix.Columns, (uint) (sizeof(T) * column));
+                    uint len = (uint) temp.Columns - column;
+                    Unsafe.CopyBlock(ptr2 + i * m + column, ptr3 + i * matrix.Columns + column + 1, (uint) (sizeof(T) * len));
                 }
             }
 
@@ -136,7 +136,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 int m = temp.Columns;
                 Array.Copy(matrix._Matrix, temp._Matrix, row * m);
                 // finds difference len between whole matrix and length to index row.
-                uint diff = (uint)(sizeof(T) * temp.Length - (sizeof(T) * row * m));
+                uint diff = (uint) (sizeof(T) * temp.Length - (sizeof(T) * row * m));
                 Unsafe.CopyBlock(ptr2 + row * m, ptr3 + (row + 1) * m, diff);
             }
 
@@ -208,10 +208,10 @@ namespace MatrixDotNet.Extensions.Conversion
                 int m = temp.Columns;
                 int aLength = array.Length;
                 Array.Copy(matrix._Matrix, temp._Matrix, row * m);
-                Unsafe.CopyBlock(ptr2 + row * m, ptr1, (uint)(sizeof(T) * aLength));
+                Unsafe.CopyBlock(ptr2 + row * m, ptr1, (uint) (sizeof(T) * aLength));
                 // finds difference len between whole matrix and length to index row.
                 int diff = sizeof(T) * temp.Length - (sizeof(T) * row * m + sizeof(T) * aLength);
-                Unsafe.CopyBlock(ptr2 + (row + 1) * m, ptr3 + row * m, (uint)diff);
+                Unsafe.CopyBlock(ptr2 + (row + 1) * m, ptr3 + row * m, (uint) diff);
             }
 
             return temp;

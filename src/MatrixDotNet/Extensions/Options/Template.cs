@@ -73,7 +73,7 @@ namespace MatrixDotNet.Extensions.Options
         {
             var binaryFormatter = new BinaryFormatter();
             using var stream = new FileStream(PathBin, FileMode.OpenOrCreate);
-            var des = (Matrix<T>)binaryFormatter.Deserialize(stream);
+            var des = (Matrix<T>) binaryFormatter.Deserialize(stream);
             return Task.FromResult(des);
         }
 

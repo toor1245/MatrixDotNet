@@ -123,15 +123,15 @@ namespace MatrixDotNet.Extensions.Statistics
 
             ColumnNames[0] = TableIntervals.IntervalFirst.ToString();
             ColumnNames[1] = TableIntervals.IntervalSecond.ToString();
-            ColumnNumber[0] = (int)TableIntervals.IntervalFirst;
-            ColumnNumber[1] = (int)TableIntervals.IntervalSecond;
+            ColumnNumber[0] = (int) TableIntervals.IntervalFirst;
+            ColumnNumber[1] = (int) TableIntervals.IntervalSecond;
 
             if (ColumnNames.Length - 2 > Intervals.Length)
             {
                 for (int i = Intervals.Length - 1; i < ColumnNumber.Length; i++)
                 {
                     ColumnNames[i] = TableIntervals.Column.ToString();
-                    ColumnNumber[i] = (int)TableIntervals.Column;
+                    ColumnNumber[i] = (int) TableIntervals.Column;
                 }
             }
 

@@ -88,7 +88,7 @@ namespace MatrixDotNet.Extensions.Core
         {
             var m = matrix.GetLength(0);
             var n = matrix.GetLength(1);
-            Initialize((byte)m, (byte)n);
+            Initialize((byte) m, (byte) n);
 
             fixed (double* ptr = matrix)
             {
@@ -107,7 +107,7 @@ namespace MatrixDotNet.Extensions.Core
         /// <param name="n">number of columns of the matrix</param>
         public MatrixAsFixedBuffer(double[] matrix, int m, int n) : this()
         {
-            Initialize((byte)m, (byte)n);
+            Initialize((byte) m, (byte) n);
 
             fixed (double* ptr = matrix)
             {

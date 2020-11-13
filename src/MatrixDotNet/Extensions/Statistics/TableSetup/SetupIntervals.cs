@@ -24,7 +24,7 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
             for (int i = 0, k = 2; i < Intervals.Length; i++, k++)
             {
                 ColumnNames[k] = Intervals[i].ToString();
-                ColumnNumber[k] = (int)Intervals[i];
+                ColumnNumber[k] = (int) Intervals[i];
             }
 
         }
@@ -36,7 +36,7 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         /// <returns></returns>
         protected int GetIndexColumn(TableIntervals tableIntervals)
         {
-            return FindColumn((int)tableIntervals);
+            return FindColumn((int) tableIntervals);
         }
 
 

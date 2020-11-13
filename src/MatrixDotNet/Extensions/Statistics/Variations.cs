@@ -51,7 +51,7 @@ namespace MatrixDotNet.Extensions.Statistics
             for (int i = length; i < n; i++)
             {
                 ColumnNames[i] = TableIntervals.Column.ToString();
-                ColumnNumber[i] = (int)TableIntervals.Column;
+                ColumnNumber[i] = (int) TableIntervals.Column;
             }
 
         }

@@ -135,7 +135,7 @@ namespace MatrixDotNet
                     fixed (T* ptr1 = _Matrix)
                     fixed (T* ptr2 = value)
                     {
-                        Unsafe.CopyBlock(ptr1 + i * Columns, ptr2, (uint)(sizeof(T) * value.Length));
+                        Unsafe.CopyBlock(ptr1 + i * Columns, ptr2, (uint) (sizeof(T) * value.Length));
                     }
                 }
                 else if (dimension == State.Column)
@@ -181,7 +181,7 @@ namespace MatrixDotNet
             fixed (T* ptr1 = _Matrix)
             fixed (T* ptr2 = matrix)
             {
-                Unsafe.CopyBlock(ptr1, ptr2, (uint)(sizeof(T) * Length));
+                Unsafe.CopyBlock(ptr1, ptr2, (uint) (sizeof(T) * Length));
             }
         }
 
@@ -569,7 +569,7 @@ namespace MatrixDotNet
             fixed (T* srcPtr = _Matrix)
             fixed (T* destPtr = res.GetArray())
             {
-                Unsafe.CopyBlock(destPtr, srcPtr, (uint)(this.Length * sizeof(T)));
+                Unsafe.CopyBlock(destPtr, srcPtr, (uint) (this.Length * sizeof(T)));
             }
             return res;
         }
@@ -606,7 +606,7 @@ namespace MatrixDotNet
                 {
                     fixed (T* srcPrt = matrix[i])
                     {
-                        Unsafe.CopyBlock(dstPtr + i * result.Columns, srcPrt, (uint)(sizeof(T) * matrix[i].Length));
+                        Unsafe.CopyBlock(dstPtr + i * result.Columns, srcPrt, (uint) (sizeof(T) * matrix[i].Length));
                     }
                 }
             }
