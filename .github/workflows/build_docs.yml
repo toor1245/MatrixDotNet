@@ -1,0 +1,29 @@
+name: Build docfx documentation
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [closed]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build and Release
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - uses: nikeee/docfx-action@v1.0.0
+        name: Build Documentation
+        with:
+          args: docs/docfx.json
+
+        # See https://github.com/maxheld83/ghpages
+      - name: Publish Documentation on GitHub Pages
+        uses: maxheld83/ghpages@v0.3.0
+        env:
+          BUILD_DIR: docs/_site
+          GH_PAT: ${{ secrets.GH_PAT }} 
