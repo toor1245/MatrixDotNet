@@ -17,25 +17,25 @@ namespace MatrixDotNet.Extensions.Decompositions
         /// <param name="upper">the upper triangular matrix.</param>
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <exception cref="MatrixDotNetException">throws exception if matrix is not square</exception>
-        public static void GetLowerUpper<T>(this Matrix<T> matrix,out Matrix<T> lower,out Matrix<T> upper) where T : unmanaged
+        public static void GetLowerUpper<T>(this Matrix<T> matrix, out Matrix<T> lower, out Matrix<T> upper) where T : unmanaged
         {
             if (!matrix.IsSquare)
                 throw new MatrixDotNetException(
                     $"matrix is not square\n Rows: {matrix.Rows}\n Columns: {matrix.Columns}");
 
             int n = matrix.Columns;
-            
-            lower = new Matrix<T>(n,n);
+
+            lower = new Matrix<T>(n, n);
             upper = new Matrix<T>(n, n)
             {
                 [0, State.Row] = matrix[0, State.Row]
             };
-            
+
             for (int i = 0; i < n; i++)
             {
                 lower[0, i, State.Column] = MathGeneric<T>.Divide(matrix[0, State.Column][i], upper[0, 0]);
             }
-            
+
             for (int i = 1; i < n; i++)
             {
                 for (int j = i; j < n; j++)
@@ -47,9 +47,9 @@ namespace MatrixDotNet.Extensions.Decompositions
                         sumU = MathUnsafe<T>.Add(sumU, MathUnsafe<T>.Mul(lower[i, k], upper[k, j]));
                         sumL = MathUnsafe<T>.Add(sumL, MathUnsafe<T>.Mul(lower[j, k], upper[k, i]));
                     }
-                    
-                    upper[i, j] = MathUnsafe<T>.Sub(matrix[i, j],sumU);
-                    lower[j, i] = MathGeneric<T>.Divide(MathUnsafe<T>.Sub(matrix[j, i],sumL),upper[i,i]);
+
+                    upper[i, j] = MathUnsafe<T>.Sub(matrix[i, j], sumU);
+                    lower[j, i] = MathGeneric<T>.Divide(MathUnsafe<T>.Sub(matrix[j, i], sumL), upper[i, i]);
                 }
             }
         }

@@ -13,7 +13,7 @@ namespace MatrixDotNet.Extensions.Determinants
         /// <returns>Determinant</returns>
         public static T GetLowerUpperDeterminant<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            matrix.GetLowerUpper(out var lower,out var upper);
+            matrix.GetLowerUpper(out var lower, out var upper);
 
             T lowerDet = MathGeneric<T>.Increment(default);
             T upperDet = MathGeneric<T>.Increment(default);
@@ -24,7 +24,7 @@ namespace MatrixDotNet.Extensions.Determinants
                 upperDet = MathUnsafe<T>.Mul(upperDet, upper[i, i]);
             }
 
-            return MathUnsafe<T>.Mul(lowerDet,upperDet);
+            return MathUnsafe<T>.Mul(lowerDet, upperDet);
         }
     }
 }
