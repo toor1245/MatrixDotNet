@@ -1,13 +1,13 @@
-using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Math;
+using System.Collections.Generic;
 
 namespace MatrixDotNet.Extensions.Decompositions
 {
-    public static partial class Decomposition 
+    public static partial class Decomposition
     {
-        public static void ShurDecomposition(this Matrix<double> matrix, 
+        public static void ShurDecomposition(this Matrix<double> matrix,
             out Matrix<double> orthogonal,
             out Matrix<double> upper,
             out Matrix<double> ortTranspose)
@@ -19,7 +19,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             ortTranspose = orthogonal.Transpose();
             upper = matrix * orthogonal;
         }
-        
+
         public static bool IsIdentity<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
@@ -31,18 +31,18 @@ namespace MatrixDotNet.Extensions.Decompositions
                 {
                     if (i == j)
                     {
-                        if (comparer.Compare(matrix[i,j],MathGeneric<T>.Increment(default)) != 0)
+                        if (comparer.Compare(matrix[i, j], MathGeneric<T>.Increment(default)) != 0)
                         {
                             return false;
                         }
                     }
-                    else if(comparer.Compare(matrix[i,j],default) != 0)
+                    else if (comparer.Compare(matrix[i, j], default) != 0)
                     {
                         return false;
                     }
                 }
             }
-            
+
             return true;
         }
 
@@ -50,8 +50,8 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
                 throw new MatrixDotNetException("matrix is not square");
-            
-            var quasi = new Matrix<T>(matrix.Rows,matrix.Columns);
+
+            var quasi = new Matrix<T>(matrix.Rows, matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 quasi[i, i] = matrix[i, i];

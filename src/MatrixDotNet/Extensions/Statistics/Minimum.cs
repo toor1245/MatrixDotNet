@@ -17,16 +17,16 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T Min<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix is null)
+            if (matrix is null)
                 throw new NullReferenceException();
 
-            T min = matrix[0,0];
+            T min = matrix[0, 0];
             Comparer comparer = Comparer.Default;
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    if(comparer.Compare(matrix[i,j],min) < 0)
+                    if (comparer.Compare(matrix[i, j], min) < 0)
                     {
                         min = matrix[i, j];
                     }
@@ -44,17 +44,17 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>Minimum element by index row.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T MinByRow<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
+        public static T MinByRow<T>(this Matrix<T> matrix, int dimension) where T : unmanaged
         {
-            if(matrix is null)
+            if (matrix is null)
                 throw new NullReferenceException();
 
-            T min = matrix[dimension,0];
+            T min = matrix[dimension, 0];
             Comparer comparer = Comparer.Default;
 
             for (int j = 0; j < matrix.Columns; j++)
             {
-                if(comparer.Compare(matrix[dimension,j],min) < 0)
+                if (comparer.Compare(matrix[dimension, j], min) < 0)
                 {
                     min = matrix[dimension, j];
                 }
@@ -62,7 +62,7 @@ namespace MatrixDotNet.Extensions.Statistics
 
             return min;
         }
-        
+
         /// <summary>
         /// Gets minimum value of matrix by column index.
         /// </summary>
@@ -71,25 +71,25 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>Minimum value by column index.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static T MinByColumn<T>(this Matrix<T> matrix,int dimension) where T : unmanaged
+        public static T MinByColumn<T>(this Matrix<T> matrix, int dimension) where T : unmanaged
         {
-            if(matrix is null)
+            if (matrix is null)
                 throw new NullReferenceException();
 
-            T min = matrix[0,dimension];
+            T min = matrix[0, dimension];
             Comparer comparer = Comparer.Default;
 
             for (int j = 0; j < matrix.Rows; j++)
             {
-                if(comparer.Compare(matrix[dimension,j],min) < 0)
+                if (comparer.Compare(matrix[dimension, j], min) < 0)
                 {
-                    min = matrix[j,dimension];
+                    min = matrix[j, dimension];
                 }
             }
 
             return min;
         }
-        
+
         /// <summary>
         /// Gets minimum value by each column.
         /// </summary>
@@ -99,19 +99,19 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T[] MinColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix is null)
+            if (matrix is null)
                 throw new NullReferenceException();
 
             T[] result = new T[matrix.Columns];
             Comparer comparer = Comparer.Default;
             for (int i = 0; i < matrix.Columns; i++)
             {
-                T max = matrix[0,i];
+                T max = matrix[0, i];
                 for (int j = 0; j < matrix.Rows; j++)
                 {
-                    if(comparer.Compare(matrix[j,i],max) < 0)
+                    if (comparer.Compare(matrix[j, i], max) < 0)
                     {
-                        max = matrix[j,i];
+                        max = matrix[j, i];
                     }
                 }
 
@@ -120,8 +120,8 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return result;
         }
-        
-        
+
+
         /// <summary>
         /// Gets minimum value by each row.
         /// </summary>
@@ -131,19 +131,19 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T[] MinRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(matrix is null)
+            if (matrix is null)
                 throw new NullReferenceException();
 
             T[] result = new T[matrix.Rows];
             Comparer comparer = Comparer.Default;
             for (int i = 0; i < matrix.Rows; i++)
             {
-                T max = matrix[i,0];
+                T max = matrix[i, 0];
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    if(comparer.Compare(matrix[i,j],max) < 0)
+                    if (comparer.Compare(matrix[i, j], max) < 0)
                     {
-                        max = matrix[i,j];
+                        max = matrix[i, j];
                     }
                 }
 
@@ -152,7 +152,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return result;
         }
-        
+
         /// <summary>
         /// Gets minimum of matrix with happen bitwise operations.
         /// </summary>
@@ -162,7 +162,7 @@ namespace MatrixDotNet.Extensions.Statistics
         public static long BitMin(this Matrix<long> matrix)
         {
             long min = matrix[0, 0];
-            
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
@@ -173,7 +173,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets minimum of matrix with happen bitwise operations.
         /// </summary>
@@ -193,7 +193,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets minimum of matrix with happen bitwise operations.
         /// </summary>
@@ -213,7 +213,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets minimum of matrix with happen bitwise operations.
         /// </summary>
@@ -241,7 +241,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <param name="dimension">row index.</param>
         /// <returns>minimum value by row.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static long BitMinByRow(this Matrix<long> matrix,int dimension)
+        public static long BitMinByRow(this Matrix<long> matrix, int dimension)
         {
             long min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
@@ -251,7 +251,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets maximum value by row index with happen bitwise operations.
         /// </summary>
@@ -259,7 +259,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <param name="dimension">row index.</param>
         /// <returns>maximum value by row.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static int BitMinByRow(this Matrix<int> matrix,int dimension)
+        public static int BitMinByRow(this Matrix<int> matrix, int dimension)
         {
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
@@ -269,7 +269,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets maximum value by row index with happen bitwise operations.
         /// </summary>
@@ -277,7 +277,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <param name="dimension">row index.</param>
         /// <returns>maximum value by row.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static int BitMinByRow(this Matrix<short> matrix,int dimension)
+        public static int BitMinByRow(this Matrix<short> matrix, int dimension)
         {
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
@@ -287,7 +287,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets maximum value by row index with happen bitwise operations.
         /// </summary>
@@ -295,7 +295,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <param name="dimension">row index.</param>
         /// <returns>maximum value by row.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static int BitMinByRow(this Matrix<byte> matrix,int dimension)
+        public static int BitMinByRow(this Matrix<byte> matrix, int dimension)
         {
             int min = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
@@ -315,7 +315,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static long BitMinByColumn(this Matrix<long> matrix, int dimension)
         {
-            long min = matrix[0,dimension];
+            long min = matrix[0, dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
@@ -323,7 +323,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets minimum value by column index with happen bitwise operations.
         /// </summary>
@@ -333,7 +333,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByColumn(this Matrix<int> matrix, int dimension)
         {
-            int min = matrix[0,dimension];
+            int min = matrix[0, dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
@@ -341,7 +341,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets minimum value by column index with happen bitwise operations.
         /// </summary>
@@ -351,7 +351,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByColumn(this Matrix<short> matrix, int dimension)
         {
-            int min = matrix[0,dimension];
+            int min = matrix[0, dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
@@ -359,7 +359,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
-        
+
         /// <summary>
         /// Gets minimum value by column index with happen bitwise operations.
         /// </summary>
@@ -369,7 +369,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMinByColumn(this Matrix<byte> matrix, int dimension)
         {
-            int min = matrix[0,dimension];
+            int min = matrix[0, dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];

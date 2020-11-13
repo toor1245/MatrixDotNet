@@ -22,7 +22,7 @@ namespace MatrixDotNet.Extensions.Sorting
         {
             for (int i = 0; i < matrix.Rows; i++)
             {
-                Array.Sort(matrix._Matrix, i*matrix.Columns, matrix.Columns);
+                Array.Sort(matrix._Matrix, i * matrix.Columns, matrix.Columns);
             }
         }
 
@@ -31,7 +31,7 @@ namespace MatrixDotNet.Extensions.Sorting
         {
             for (int i = 0; i < matrix.Rows; i++)
             {
-                Array.Sort(matrix._Matrix, i*matrix.Columns, matrix.Columns, comparer);
+                Array.Sort(matrix._Matrix, i * matrix.Columns, matrix.Columns, comparer);
             }
         }
 

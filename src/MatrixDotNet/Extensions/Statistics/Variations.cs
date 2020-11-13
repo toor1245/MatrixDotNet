@@ -14,18 +14,18 @@ namespace MatrixDotNet.Extensions.Statistics
         /// Gets standard deviation
         /// </summary>
         public T StandardDeviation => MathGeneric<T>.Sqrt(GetSampleDispersion());
-        
+
         /// <summary>
         /// Gets coefficient of variations.
         /// </summary>
         /// <returns>Coefficient of variations</returns>
         public T Coefficient => MathGeneric<T>.Divide(StandardDeviation, GetSampleMeanByTable(TableVariations.Xi));
-        
+
         /// <summary>
         /// Checks on uniform Coefficient of variations.
         /// </summary>
         public bool IsUniform => 0.30.CompareTo(Coefficient) < 0;
-        
+
         /// <summary>
         /// Gets corrected standard deviation.
         /// </summary>
@@ -33,7 +33,7 @@ namespace MatrixDotNet.Extensions.Statistics
         /// Finds by formula: sqrt(s^2).
         /// </remarks>
         public T CorrectedStandardDeviation => MathGeneric<T>.Sqrt(GetCorrectedDispersion());
-        
+
         /// <summary>
         /// Initialize configuration.
         /// </summary>
@@ -51,11 +51,11 @@ namespace MatrixDotNet.Extensions.Statistics
             for (int i = length; i < n; i++)
             {
                 ColumnNames[i] = TableIntervals.Column.ToString();
-                ColumnNumber[i] = (int) TableIntervals.Column;
+                ColumnNumber[i] = (int)TableIntervals.Column;
             }
 
         }
-        
+
         /// <summary>
         /// Gets <c>mean</c> value by column table. 
         /// </summary>
@@ -65,7 +65,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             if (table != TableVariations.Column)
                 throw new MatrixDotNetException("TableVariations.Column not allow");
-            
+
             return Matrix.MeanByColumn(GetIndexColumn(table));
         }
 
@@ -146,17 +146,17 @@ namespace MatrixDotNet.Extensions.Statistics
         public T GetSampleDispersion()
         {
             T mean = GetSampleMeanByTable(TableVariations.Xi);
-            
+
             T[] xi = Matrix[GetIndexColumn(TableVariations.Xi), State.Column];
             T sum = default;
-            
+
             for (int i = 0; i < Matrix.Rows; i++)
             {
-                var operation = MathUnsafe<T>.Sub(xi[i],mean);
-                sum = MathUnsafe<T>.Add(sum,MathUnsafe<T>.Mul(operation,operation));
+                var operation = MathUnsafe<T>.Sub(xi[i], mean);
+                sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(operation, operation));
             }
 
-            return MathGeneric<T, int, T>.Divide(sum,Matrix.Rows);
+            return MathGeneric<T, int, T>.Divide(sum, Matrix.Rows);
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace MatrixDotNet.Extensions.Statistics
         public T GetCorrectedDispersion()
         {
             var n = Matrix.Rows;
-            return MathGeneric<T, double, T>.Multiply(GetSampleDispersion(),n - 1 / n);
+            return MathGeneric<T, double, T>.Multiply(GetSampleDispersion(), n - 1 / n);
         }
     }
 }

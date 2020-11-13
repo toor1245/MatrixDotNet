@@ -1,15 +1,15 @@
-﻿using System;
+﻿using MatrixDotNet.Extensions.Options;
+using MatrixDotNet.Extensions.Statistics;
+using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
-using MatrixDotNet.Extensions.Options;
-using MatrixDotNet.Extensions.Statistics;
 
 namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-        
+
         /// <summary>
         /// Pretty output.
         /// </summary>
@@ -19,18 +19,18 @@ namespace MatrixDotNet.Extensions
         {
             if (matrix is null)
                 throw new NullReferenceException();
-            
+
             {
                 StringBuilder builder = new StringBuilder();
                 builder.AppendLine($"Number of rows: {matrix.Rows}");
                 builder.AppendLine($"Number of columns: {matrix.Columns}\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine(Output(matrix,builder));
+                Console.WriteLine(Output(matrix, builder));
                 Console.ResetColor();
             }
         }
-        
-        
+
+
         /// <summary>
         /// Saves matrix to html or markdown.
         /// </summary>
@@ -38,11 +38,11 @@ namespace MatrixDotNet.Extensions
         /// <param name="template">config for creates html or markdown.</param>
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>Saves matrix to html or markdown.</returns>
-        public static async Task SaveAsync<T>(this Matrix<T> matrix,Template template) where T : unmanaged
+        public static async Task SaveAsync<T>(this Matrix<T> matrix, Template template) where T : unmanaged
         {
-            try 
+            try
             {
-                using var stream = new StreamWriter(template.RelativePath,false,Encoding.UTF8);
+                using var stream = new StreamWriter(template.RelativePath, false, Encoding.UTF8);
                 await stream.WriteLineAsync(template.CreateText(matrix));
                 await template.BinarySaveAsync(matrix);
             }
@@ -55,10 +55,10 @@ namespace MatrixDotNet.Extensions
             }
         }
 
-        public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix,Template template) where T : unmanaged
+        public static async Task SaveAndOpenAsync<T>(this Matrix<T> matrix, Template template) where T : unmanaged
         {
             await SaveAsync(matrix, template);
-            using var stream = new StreamReader(template.RelativePath,Encoding.UTF8);
+            using var stream = new StreamReader(template.RelativePath, Encoding.UTF8);
             await template.BinarySaveAsync(matrix);
             template.Open();
             Console.ForegroundColor = ConsoleColor.Magenta;
@@ -73,15 +73,15 @@ namespace MatrixDotNet.Extensions
             Console.ResetColor();
             return await template.BinaryOpenAsync<T>();
         }
-        
-        
-        internal static string Output<T>(Matrix<T> matrix,StringBuilder builder) where T : unmanaged
+
+
+        internal static string Output<T>(Matrix<T> matrix, StringBuilder builder) where T : unmanaged
         {
             int a = $"{matrix.Min():G3}".Length;
             int b = $"{matrix.Max():G3}".Length;
-            var n = (a > b ? a : b)+2;
+            var n = (a > b ? a : b) + 2;
             builder.AppendLine();
-            
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)

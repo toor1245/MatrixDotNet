@@ -37,7 +37,7 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         /// <returns>Index of column</returns>
         protected int GetIndexColumn(TableVariations tableVariations)
         {
-            return FindColumn((int) tableVariations);
+            return FindColumn((int)tableVariations);
         }
     }
 }

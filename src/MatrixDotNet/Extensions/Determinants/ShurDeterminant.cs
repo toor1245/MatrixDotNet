@@ -1,4 +1,3 @@
-using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Complement;
 
@@ -16,19 +15,19 @@ namespace MatrixDotNet.Extensions.Determinants
         /// </exception>
         public static double GetShurDeterminant(this Matrix<double> matrix)
         {
-            if(!matrix.IsPrime)
+            if (!matrix.IsPrime)
                 throw new MatrixDotNetException("matrix is not prime");
-            
+
             var res = matrix.SchurComplement(out var a11);
 
             var res1 = a11.GetLowerUpperDeterminant();
-            
-            if(System.Math.Abs(res1) < 0.00001)
+
+            if (System.Math.Abs(res1) < 0.00001)
                 throw new MatrixDotNetException("a11 matrix determinant = 0");
 
             return res1 * res.GetLowerUpperDeterminant();
         }
-        
+
         /// <summary>
         /// Gets determinant by Shur`s complement. 
         /// </summary>
@@ -39,19 +38,19 @@ namespace MatrixDotNet.Extensions.Determinants
         /// </exception>
         public static float GetShurDeterminant(this Matrix<float> matrix)
         {
-            if(!matrix.IsPrime)
+            if (!matrix.IsPrime)
                 throw new MatrixDotNetException("matrix is not prime");
-            
+
             var res = matrix.SchurComplement(out var a11);
 
             var res1 = a11.GetLowerUpperDeterminant();
-            
-            if(System.Math.Abs(res1) < 0.00001)
+
+            if (System.Math.Abs(res1) < 0.00001)
                 throw new MatrixDotNetException("a11 matrix determinant = 0");
 
             return res1 * res.GetDeterminant();
         }
-        
+
         /// <summary>
         /// Gets determinant by Shur`s complement. 
         /// </summary>
@@ -62,14 +61,14 @@ namespace MatrixDotNet.Extensions.Determinants
         /// </exception>
         public static decimal GetShurDeterminant(this Matrix<decimal> matrix)
         {
-            if(!matrix.IsPrime)
+            if (!matrix.IsPrime)
                 throw new MatrixDotNetException("matrix is not prime");
-            
+
             var res = matrix.SchurComplement(out var a11);
 
             var res1 = a11.GetLowerUpperDeterminant();
-            
-            if(System.Math.Abs(res1) < 0.00001m)
+
+            if (System.Math.Abs(res1) < 0.00001m)
                 throw new MatrixDotNetException("a11 matrix determinant = 0");
 
             return res1 * res.GetDeterminant();
