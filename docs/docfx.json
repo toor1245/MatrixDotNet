@@ -60,6 +60,18 @@
     "noLangKeyword": false,
     "keepFileLink": false,
     "cleanupCacheHistory": true,
-    "disableGitFeatures": false
+    "disableGitFeatures": false,
+    "globalMetadata" :
+    {
+      "_appTitle" : "MatrixDotNet",
+      "_appFooter" : "Copyright &copy; 2020 MatrixDotNet",
+      "_appLogoPath" : "images/logo/matrix.svg",
+      "_appFaviconPath": "images/logo/matrix.ico",
+      "_enableSearch": true
+    },
+    "sitemap":
+    {
+      "baseUrl": " https://toor1245.github.io/MatrixDotNet/"
+    }
   }
 }

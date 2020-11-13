@@ -1,5 +1,7 @@
 - name: Articles
   href: articles/
 - name: Api Documentation
-  href: api/
-  homepage: api/index.md
+  href: api
+  homepage: api/index.html
+- name: Github
+  href: https://github.com/toor1245/MatrixDotNet
