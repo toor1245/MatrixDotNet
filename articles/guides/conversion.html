@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Conversion matrix overview. | MatrixDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Conversion matrix overview. | MatrixDotNet ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../../images/logo/matrix.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/logo/matrix.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="conversion-matrix-overview">Conversion matrix overview.</h1>
+
+<p>Conversion of matrix consist in <code>MatrixDotNet.Extensions.Conversion</code> which contains static class <code>MatrixConverter</code>.</p>
+<h3 id="how-change-size-of-matrix">How change size of Matrix?</h3>
+<h5 id="lets-consider-the-following-sample">Lets consider the following sample.</h5>
+<p>In this sample i`ll demonstrate how you can add column or row in any position of matrix and reduce them.</p>
+<pre><code class="lang-c#">using System;
+using MatrixDotNet;
+using MatrixDotNet.Extensions;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Conversion;
+
+namespace Sample
+{
+    public class ConverterSample
+    {
+        public static void Run()
+        {
+            // Build matrix.
+            Matrix&lt;int&gt; matrix = BuildMatrix.Build(3,3,
+                (x, y) =&gt; x + y * y,
+                new[] { 43, 23, 54 },
+                new[] { 52, 12, 21 });
+
+            Console.WriteLine(&quot;Before conversion:&quot;);
+            matrix.Pretty();
+            
+            // Add row to matrix by index.
+            Matrix&lt;int&gt; matrixA = matrix.AddRow(new[] { 1, 2, 3 }, 1);
+            Console.WriteLine(&quot;Add row to matrix on second row index:&quot;);
+            matrixA.Pretty();
+            
+            // Add column to matrix by index.
+            Matrix&lt;int&gt; matrixB = matrix.AddColumn(new[] { 4, 5, 6 }, 2);
+            Console.WriteLine(&quot;Add column to matrix on second column index:&quot;);
+            matrixB.Pretty();
+            
+            // now we will reduce this new column and row.
+            Matrix&lt;int&gt; matrixC = matrix.ReduceColumn(2);
+            Matrix&lt;int&gt; matrixD = matrix.ReduceRow(1);
+            Console.WriteLine(&quot;After reduce:&quot;);
+            matrixC.Pretty();
+            matrixD.Pretty();
+
+            // Also in MatrixDotNet you can join two matrix with the same size row length.
+            Matrix&lt;int&gt; matrixF = matrixA.Concat(matrixA);
+            matrixF.Pretty();
+        }
+    }
+}
+</code></pre>
+<h4 id="output">Output</h4>
+<pre><code class="lang-ini">Before conversion:
+
+Number of rows: 3
+Number of columns: 3
+
+  2747  |  187  |  484  |
+  2727  |  167  |  464  |
+  2758  |  198  |  495  |
+
+Add row to matrix on second row index:
+
+Number of rows: 4
+Number of columns: 3
+
+  2747  |  187  |  484  |
+  1     |  2    |  3    |
+  2727  |  167  |  464  |
+  2758  |  198  |  495  |
+
+Add column to matrix on second column index:
+
+Number of rows: 3
+Number of columns: 4
+
+  2747  |  187  |  4  |  484  |
+  2727  |  167  |  5  |  464  |
+  2758  |  198  |  6  |  495  |
+
+After reduce:
+
+Number of rows: 3
+Number of columns: 2
+
+  2747  |  187  |
+  2727  |  167  |
+  2758  |  198  |
+
+
+Number of rows: 2
+Number of columns: 3
+
+  2747  |  187  |  484  |
+  2758  |  198  |  495  |
+
+
+Number of rows: 4
+Number of columns: 6
+
+  2747  |  187  |  484  |  2747  |  187  |  484  |
+  1     |  2    |  3    |  1     |  2    |  3    |
+  2727  |  167  |  464  |  2727  |  167  |  464  |
+  2758  |  198  |  495  |  2758  |  198  |  495  |
+</code></pre>
+<h3 id="how-to-cast-matrix-to-two-dimensional-array">How to cast matrix to two-dimensional array?</h3>
+<pre><code class="lang-c#">using System;
+using MatrixDotNet;
+using MatrixDotNet.Extensions;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Conversion;
+
+namespace Sample {
+
+    public class ConverterSample()
+    {
+        public static void CastRun()
+        {
+            // Build matrix.
+            Matrix&lt;int&gt; matrixA = BuildMatrix.Build(3,3,
+                (x, y) =&gt; x + y * y,
+                new[] { 43, 23, 54 },
+                new[] { 52, 12, 21 });
+            
+            // If you want cast Matrix to two-dimensional
+            // array use method ToPrimitive.
+            int[,] array = matrixA.ToPrimitive();
+            
+            // Converts two-dimensional array to Matrix.
+            var matrixB = array.ToMatrix();
+        }
+    }
+}
+</code></pre>
+<p>As you can see for convert matrix to two-dimensional array you can easily use method <code>ToPrimitive</code>.</p>
+<h5 id="if-you-didnt-find-answer-for-your-question-on-this-page-ask-it-on-gitter">If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</h5>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/conversion.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2020 MatrixDotNet
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

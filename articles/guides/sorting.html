@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sorting overview. | MatrixDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Sorting overview. | MatrixDotNet ">
+    <meta name="generator" content="docfx 2.45.1.0">
+    
+    <link rel="shortcut icon" href="../../images/logo/matrix.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    <meta property="docfx:rel" content="../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/logo/matrix.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sorting-overview">Sorting overview.</h1>
+
+<h3 id="bubble-sort-in-matrixdotnet">Bubble sort in MatrixDotNet</h3>
+<p>Bubble sort is a simple algorithm of sorting, which effective on small size array. Difficult algorithm - O(n<sup>2</sup>)</p>
+<h4 id="lets-consider-how-in-matrixdotnet-can-sort-matrix">Lets consider how in MatrixDotNet can sort matrix.</h4>
+<p>Sorting of matrix consist in <code>MatrixDotNet.Extensions.Sorting</code>. Also we will use <code>MatrixDotNet.Extensions.Builder</code> which contain static class <code>BuildMatrix</code> for
+to simplify matrix creation.</p>
+<pre><code class="lang-c#">using System;
+using MatrixDotNet;
+using MatrixDotNet.Extensions;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Sorting;
+
+namespace Sample
+{
+    public class BubbleSortSample
+    {
+        public static void Run()
+        {
+            // Build Matrix available from version 0.0.3+.
+            Matrix&lt;int&gt; matrixA = BuildMatrix.Build(5, 5, 
+                (x,y) =&gt; x * x + y,
+                new[] { -1, -232, 3, 4, 5 },
+                new[] { -5, -6, -9, 132, 12 } 
+                );
+
+            Console.WriteLine(&quot;initial matrix view:&quot;);
+            matrixA.Pretty();
+            
+            // 1. Sorts whole matrix. 
+            matrixA.BubbleSort();
+            Console.WriteLine(&quot;Bubble sort MatrixA&quot;);
+            matrixA.Pretty();
+            
+            
+            // Builds Identity matrix.
+            Matrix&lt;int&gt; matrixE = BuildMatrix.CreateIdentityMatrix&lt;int&gt;(4,4);
+            
+            
+            // 2. Sorts all rows of matrix.
+            matrixE.BubbleSortByRows();
+            Console.WriteLine(&quot;Sorts matrixE by rows:&quot;);
+            matrixE.Pretty();
+            
+            
+            // 3. Sorts all columns of matrix.
+            matrixE.BubbleSortByColumn();
+            Console.WriteLine(&quot;Sorts matrixE by columns:&quot;);
+            matrixE.Pretty();
+            
+            
+            // 3. Sorts main diagonal of matrix.
+            matrixA.BubbleSortMainDiagonal();
+            Console.WriteLine(&quot;Sorts main diagonal of matrixA:&quot;);
+            matrixA.Pretty();
+            
+            
+            // 4. Sorts minor diagonal of matrix.
+            matrixA.BubbleSortMinorDiagonal();
+            Console.WriteLine(&quot;Sorts minor diagonal of matrixA:&quot;);
+            matrixA.Pretty();
+        }
+    }
+}
+</code></pre>
+<h4 id="output">Output</h4>
+<pre><code>initial matrix view:
+
+Number of rows: 5
+Number of columns: 5
+
+  -4     |  -5     |  -8     |  133    |  13     |
+  53819  |  53818  |  53815  |  53956  |  53836  |
+  4      |  3      |  0      |  141    |  21     |
+  11     |  10     |  7      |  148    |  28     |
+  20     |  19     |  16     |  157    |  37     |
+
+Bubble sort MatrixA
+
+Number of rows: 5
+Number of columns: 5
+
+  -8     |  -5     |  -4     |  0      |  3      |
+  4      |  7      |  10     |  11     |  13     |
+  16     |  19     |  20     |  21     |  28     |
+  37     |  133    |  141    |  148    |  157    |
+  53815  |  53818  |  53819  |  53836  |  53956  |
+
+Sorts matrixE by rows:
+
+Number of rows: 4
+Number of columns: 4
+
+  0  |  0  |  0  |  1  |
+  0  |  0  |  0  |  1  |
+  0  |  0  |  0  |  1  |
+  0  |  0  |  0  |  1  |
+
+Sorts matrixE by columns:
+
+Number of rows: 4
+Number of columns: 4
+
+  0  |  0  |  0  |  1  |
+  0  |  0  |  0  |  1  |
+  0  |  0  |  0  |  1  |
+  0  |  0  |  0  |  1  |
+
+Sorts main diagonal of matrixA:
+
+Number of rows: 5
+Number of columns: 5
+
+  -8     |  -5     |  -4     |  0      |  3      |
+  4      |  7      |  10     |  11     |  13     |
+  16     |  19     |  20     |  21     |  28     |
+  37     |  133    |  141    |  148    |  157    |
+  53815  |  53818  |  53819  |  53836  |  53956  |
+
+Sorts minor diagonal of matrixA:
+
+Number of rows: 5
+Number of columns: 5
+
+  -8     |  -5     |  -4     |  0      |  3      |
+  4      |  7      |  10     |  11     |  13     |
+  16     |  19     |  20     |  21     |  28     |
+  37     |  133    |  141    |  148    |  157    |
+  53815  |  53818  |  53819  |  53836  |  53956  |
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Now at the moment from version 0.0.3 <code>MatrixDotNet</code> only support bubble sort.</p>
+</div>
+<h5 id="if-you-didnt-find-answer-for-your-question-on-this-page-ask-it-on-gitter">If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</h5>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/sorting.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2020 MatrixDotNet
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

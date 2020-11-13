@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Add your introductions here! </title>
+    <title>Overview | MatrixDotNet </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Add your introductions here! ">
+    <meta name="title" content="Overview | MatrixDotNet ">
     <meta name="generator" content="docfx 2.45.1.0">
     
-    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="shortcut icon" href="../images/logo/matrix.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
     
-    
+    <meta property="docfx:rel" content="../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -35,7 +35,7 @@
               </button>
               
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="">
+                <img id="logo" class="svg" src="../images/logo/matrix.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -56,6 +56,16 @@
           </div>
         </div>
       </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
       <div role="main" class="container body-content hide-when-search">
         
         <div class="sidenav hide-when-search">
@@ -67,8 +77,171 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="add-your-introductions-here">Add your introductions here!</h1>
+<h1 id="overview">Overview</h1>
 
+<h3 id="install">Install</h3>
+<p>Create new console application and install the <a href="https://www.nuget.org/packages/MatrixDotNet/">MatrixDotNet</a> NuGet package. We support:</p>
+<ul>
+<li>Projects: classic and modern with PackageReferences</li>
+<li>Runtimes: Full .NET Framework (4.6+), .NET Core (2.0+), Mono</li>
+<li>OS: Windows, Linux, MacOS</li>
+<li>Languages: C#</li>
+</ul>
+<h3 id="how-to-use-matrix">How to use Matrix?</h3>
+<p>MatrixDotNet supports all simple operations related matrix.</p>
+<h5 id="how-to-create-matrix">How to create matrix?</h5>
+<pre><code class="lang-c#">class Program
+{
+	static void Main(string[] args)
+	{
+        int[,] a = new int[3, 3]
+        {
+            { 10, -7, 0 },
+            { -3, 6,  2 },
+            { 5, -1,  5 }
+        };
+        
+        // First way. 
+        Matrix&lt;int&gt; matrixA = new Matrix&lt;int&gt;(a);
+        
+        // Second way: primitive way, assign by deep copy nor by reference!!!
+        Matrix&lt;int&gt; matrixB = a;
+        
+        Matrix&lt;int&gt; matrixC = new int[10, 10];
+
+        Matrix&lt;int&gt; matrixD = new[,]
+        {
+            {1, 2, 3},
+            {2 ,4, 6},
+        };
+        
+        // Third way initialize all values 0 or constant value.
+        Matrix&lt;int&gt; matrixE = new Matrix&lt;int&gt;(row:5,col:3);
+        
+        Matrix&lt;int&gt; matrixF = new Matrix&lt;int&gt;(row:3,col:5,value:5);
+    }
+}
+</code></pre>
+<h5 id="simple-operations-of-matrix">Simple operations of matrix.</h5>
+<pre><code class="lang-c#">public class SimpleOperations
+{
+    public static void Run()
+    {
+        // init matrix
+        int[,] a = new int[3, 3]
+        {
+            { 10, -7, 0 },
+            { -3, 6,  2 },
+            { 5, -1,  5 }
+        };
+
+        int[,] b = new int[3, 4]
+        {
+            { 11, -2, 1, 6 },
+            { -8, 4,  2, 3 },
+            { 4, -4,  5, 8 },
+        };
+        
+        int[] vector = {2, 7, 5, 4};
+
+        int k = 3;
+        
+        Matrix&lt;int&gt; matrixA = a;
+
+        Matrix&lt;int&gt; matrixB = b;
+            
+        // Multiply.
+        Matrix&lt;int&gt; matrixC = matrixA * matrixB;
+        Matrix&lt;int&gt; matrixD = matrixC * k;
+        
+        // Sum .
+        Matrix&lt;int&gt; matrixE = matrixB + k * matrixB;
+        
+        // Subtract.
+        Matrix&lt;int&gt; matrixF = 2 * matrixA - matrixA;
+        
+        // Divide.
+        Matrix&lt;int&gt; matrixG = matrixA / 2;
+        
+        // Multiply to vector
+        int[] vectorA = matrixB * vector;
+
+        // Pretty output.
+        matrixA.Pretty();
+        matrixB.Pretty();
+        matrixC.Pretty();
+        matrixD.Pretty();
+        matrixE.Pretty();
+        matrixF.Pretty();
+        matrixG.Pretty();
+        
+        Console.Write(&quot;VectorA result: &quot;);
+        foreach (var i in vectorA)
+        {
+            Console.Write(i + &quot; &quot;);
+        }
+    }
+}
+</code></pre>
+<h5 id="output">Output</h5>
+<pre><code class="lang-ini">Number of rows: 3
+Number of columns: 3
+
+  10,00       |  -7,00       |  0,00        |
+  -3,00       |  6,00        |  2,00        |
+  5,00        |  -1,00       |  5,00        |
+
+
+Number of rows: 3
+Number of columns: 4
+
+  11,00       |  -2,00       |  1,00        |  6,00        |
+  -8,00       |  4,00        |  2,00        |  3,00        |
+  4,00        |  -4,00       |  5,00        |  8,00        |
+
+
+Number of rows: 3
+Number of columns: 4
+
+  166,00      |  -48,00      |  -4,00       |  39,00       |
+  -73,00      |  22,00       |  19,00       |  16,00       |
+  83,00       |  -34,00      |  28,00       |  67,00       |
+
+
+Number of rows: 3
+Number of columns: 4
+
+  498,00      |  -144,00     |  -12,00      |  117,00      |
+  -219,00     |  66,00       |  57,00       |  48,00       |
+  249,00      |  -102,00     |  84,00       |  201,00      |
+
+
+Number of rows: 3
+Number of columns: 4
+
+  44,00       |  -8,00       |  4,00        |  24,00       |
+  -32,00      |  16,00       |  8,00        |  12,00       |
+  16,00       |  -16,00      |  20,00       |  32,00       |
+
+
+Number of rows: 3
+Number of columns: 3
+
+  10,00       |  -7,00       |  0,00        |
+  -3,00       |  6,00        |  2,00        |
+  5,00        |  -1,00       |  5,00        |
+
+
+Number of rows: 3
+Number of columns: 3
+
+  5,00        |  -3,00       |  0,00        |
+  -1,00       |  3,00        |  1,00        |
+  2,00        |  0,00        |  2,00        |
+
+VectorA result: 37 34 37 0
+</code></pre>
+<p>If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</p>
 </article>
           </div>
           
@@ -77,7 +250,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/toor1245/MatrixDotNet/blob/docs-ci-cd/docs/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -96,8 +269,8 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
+            Copyright &copy; 2020 MatrixDotNet
             
-            <span>Generated by <strong>DocFX</strong></span>
           </div>
         </div>
       </footer>
