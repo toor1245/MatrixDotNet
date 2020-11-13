@@ -203,10 +203,6 @@ code{
     border-radius: 2px;
 }
 
-.hljs{
-    color: #bbb;
-}
-
 .toc .nav > li.active > .expand-stub::before, .toc .nav > li.in > .expand-stub::before, .toc .nav > li.in.active > .expand-stub::before, .toc .nav > li.filtered > .expand-stub::before {
     content: "▾";
 }
