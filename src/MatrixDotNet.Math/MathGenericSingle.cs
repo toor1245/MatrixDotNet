@@ -145,7 +145,7 @@ namespace MatrixDotNet.Math
 
             var leftPar = Expression.Parameter(typeof(T), "value");
 
-            var info = typeof(System.Math).GetMethod("Abs", new[] {leftPar.Type});
+            var info = typeof(System.Math).GetMethod("Abs", new[] { leftPar.Type });
             if (info == null)
                 throw new InvalidOperationException(nameof(Abs));
 
