@@ -17,4 +17,8 @@
     <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="logs" />
+  </ItemGroup>
+
 </Project>

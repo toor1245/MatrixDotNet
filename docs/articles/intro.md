@@ -4,48 +4,19 @@
 Create new console application and install the [MatrixDotNet](https://www.nuget.org/packages/MatrixDotNet/) NuGet package. We support:
 
 * Projects: classic and modern with PackageReferences
-* Runtimes: Full .NET Framework (4.6+), .NET Core (2.0+), Mono
+* Runtimes: .NETStandard 2.1, NET Core 3.1+
 * OS: Windows, Linux, MacOS
 * Languages: C#
 
-### How to use Matrix?
-MatrixDotNet supports all simple operations related matrix.
+MatrixDotNet contains three main structures: 
+* <a href = "#Matrix">Matrix<T></a>
+* <a href = "#Vector">Vector<T></a>
+* <a href = "#MatrixComplex">MatrixComplex</a>
 
 ##### How to create matrix?
 
-```c#
-class Program
-{
-	static void Main(string[] args)
-	{
-        int[,] a = new int[3, 3]
-        {
-            { 10, -7, 0 },
-            { -3, 6,  2 },
-            { 5, -1,  5 }
-        };
-        
-        // First way. 
-        Matrix<int> matrixA = new Matrix<int>(a);
-        
-        // Second way: primitive way, assign by deep copy nor by reference!!!
-        Matrix<int> matrixB = a;
-        
-        Matrix<int> matrixC = new int[10, 10];
+[!code-csharp[CreateMatrixSample.cs](../../samples/Samples/Samples/MatrixSamples/MatrixCreateSample.cs)]
 
-        Matrix<int> matrixD = new[,]
-        {
-            {1, 2, 3},
-            {2 ,4, 6},
-        };
-        
-        // Third way initialize all values 0 or constant value.
-        Matrix<int> matrixE = new Matrix<int>(row:5,col:3);
-        
-        Matrix<int> matrixF = new Matrix<int>(row:3,col:5,value:5);
-    }
-}
-```
 ##### Simple operations of matrix.
 
 ```c#
