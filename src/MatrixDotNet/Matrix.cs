@@ -76,7 +76,7 @@ namespace MatrixDotNet
         #endregion
 
         #region indexators
-        
+
         /// <summary>
         /// Gets element matrix.
         /// </summary>
@@ -89,11 +89,11 @@ namespace MatrixDotNet
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => _Matrix[i * Columns + j];
-            
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => _Matrix[i * Columns + j] = value;
         }
-        
+
         public ref T GetByRef(int i, int j)
         {
             return ref _Matrix[i * Columns + j];
@@ -122,7 +122,7 @@ namespace MatrixDotNet
         /// <param name="i"></param>
         /// <param name="dimension"></param>
         /// <exception cref="IndexOutOfRangeException"></exception>
-        public unsafe T[] this[int i,State dimension]
+        public unsafe T[] this[int i, State dimension]
         {
             get => dimension == State.Row ? this.GetRow(i) : this.GetColumn(i);
             set
@@ -135,7 +135,7 @@ namespace MatrixDotNet
                     fixed (T* ptr1 = _Matrix)
                     fixed (T* ptr2 = value)
                     {
-                        Unsafe.CopyBlock(ptr1 + i * Columns,ptr2,(uint) (sizeof(T) * value.Length));
+                        Unsafe.CopyBlock(ptr1 + i * Columns, ptr2, (uint) (sizeof(T) * value.Length));
                     }
                 }
                 else if (dimension == State.Column)
@@ -147,8 +147,8 @@ namespace MatrixDotNet
                 }
             }
         }
-        
-        public T this[int m, int n,State dimension]
+
+        public T this[int m, int n, State dimension]
         {
             get => dimension == State.Row ? this[m, n] : this[n, m];
             set
@@ -163,11 +163,11 @@ namespace MatrixDotNet
                 }
             }
         }
-        
+
         #endregion
-        
+
         #region .ctor
-        
+
         /// <summary>
         /// Initialize matrix.
         /// </summary>
@@ -181,11 +181,11 @@ namespace MatrixDotNet
             fixed (T* ptr1 = _Matrix)
             fixed (T* ptr2 = matrix)
             {
-                Unsafe.CopyBlock(ptr1,ptr2,(uint) (sizeof(T) * Length));
+                Unsafe.CopyBlock(ptr1, ptr2, (uint) (sizeof(T) * Length));
             }
         }
-        
-        
+
+
         /// <summary>
         /// Creates matrix.
         /// </summary>
@@ -209,9 +209,9 @@ namespace MatrixDotNet
             Rows = row;
             Columns = col;
             _Matrix = new T[row * col];
-            Array.Fill(_Matrix,value);
+            Array.Fill(_Matrix, value);
         }
-        
+
         #endregion
 
         #region operators
@@ -232,22 +232,22 @@ namespace MatrixDotNet
                 throw new MatrixDotNetException(
                     $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
-                
+
             var addFunc = MathGeneric<T>.GetAddFunc();
 
-            Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
+            Matrix<T> matrix = new Matrix<T>(left.Rows, right.Columns);
 
             for (int i = 0; i < left.Rows; i++)
             {
                 for (int j = 0; j < left.Columns; j++)
                 {
-                    matrix[i, j] = addFunc(left[i,j], right[i,j]);
+                    matrix[i, j] = addFunc(left[i, j], right[i, j]);
                 }
             }
 
             return matrix;
         }
-        
+
         public static Matrix<T> Plus(Matrix<T> left, Matrix<T> right)
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
@@ -255,14 +255,14 @@ namespace MatrixDotNet
                 throw new MatrixDotNetException(
                     $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
-            
-            Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
+
+            Matrix<T> matrix = new Matrix<T>(left.Rows, right.Columns);
 
             for (int i = 0; i < left.Rows; i++)
             {
                 for (int j = 0; j < left.Columns; j++)
                 {
-                    matrix[i, j] = MathUnsafe<T>.Add(left[i,j], right[i,j]);
+                    matrix[i, j] = MathUnsafe<T>.Add(left[i, j], right[i, j]);
                 }
             }
 
@@ -286,21 +286,21 @@ namespace MatrixDotNet
                     $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
 
-            var subFunc = MathGeneric<T,T,T>.GetSubFunc();
+            var subFunc = MathGeneric<T, T, T>.GetSubFunc();
 
-            Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
+            Matrix<T> matrix = new Matrix<T>(left.Rows, right.Columns);
 
             for (int i = 0; i < left.Rows; i++)
             {
                 for (int j = 0; j < left.Columns; j++)
                 {
-                    matrix[i, j] = subFunc(left[i,j],right[i,j]);
+                    matrix[i, j] = subFunc(left[i, j], right[i, j]);
                 }
             }
 
             return matrix;
-        } 
-        
+        }
+
         /// <summary>
         /// Multiply operation of two matrix.
         /// </summary>
@@ -316,10 +316,10 @@ namespace MatrixDotNet
                     $"matrix {nameof(left)} columns length must be equal matrix {nameof(right)} rows length");
             }
 
-            var addFunc = MathGeneric<T,T,T>.GetAddFunc();
-            var multiplyFunc = MathGeneric<T,T,T>.GetMultiplyFunc();
+            var addFunc = MathGeneric<T, T, T>.GetAddFunc();
+            var multiplyFunc = MathGeneric<T, T, T>.GetMultiplyFunc();
 
-            Matrix<T> matrix = new Matrix<T>(left.Rows,right.Columns);
+            Matrix<T> matrix = new Matrix<T>(left.Rows, right.Columns);
 
             for (int i = 0; i < left.Rows; i++)
             {
@@ -328,14 +328,14 @@ namespace MatrixDotNet
                     for (int k = 0; k < left.Columns; k++)
                     {
                         // matrix[i,j] = matrix[i,j] + left[i,k] * right[k,j]; 
-                        matrix[i, j] = addFunc(matrix[i,j], multiplyFunc(left[i,k],right[k,j]));
+                        matrix[i, j] = addFunc(matrix[i, j], multiplyFunc(left[i, k], right[k, j]));
                     }
                 }
             }
 
             return matrix;
-        } 
-        
+        }
+
         /// <summary>
         /// Multiply operation matrix on digit right side.
         /// </summary>
@@ -344,19 +344,19 @@ namespace MatrixDotNet
         /// <returns><see cref="Matrix{T}"/></returns>
         public static Matrix<T> operator *(Matrix<T> matrix, T digit)
         {
-            var multiplyFunc = MathGeneric<T,T,T>.GetMultiplyFunc();
-            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
+            var multiplyFunc = MathGeneric<T, T, T>.GetMultiplyFunc();
+            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    result[i, j] = multiplyFunc(matrix[i,j],digit);
+                    result[i, j] = multiplyFunc(matrix[i, j], digit);
                 }
             }
-            
+
             return result;
         }
-       
+
         /// <summary>
         /// Multiply operation matrix on digit left side.
         /// </summary>
@@ -367,7 +367,7 @@ namespace MatrixDotNet
         {
             return matrix * digit;
         }
-        
+
         /// <summary>
         /// Divide operation matrix on digit right side.
         /// </summary>
@@ -378,18 +378,18 @@ namespace MatrixDotNet
         {
             var divideFunc = MathGeneric<T>.GetDivideFunc();
 
-            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
+            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    result[i, j] = divideFunc(matrix[i,j],digit);
+                    result[i, j] = divideFunc(matrix[i, j], digit);
                 }
             }
-            
+
             return result;
         }
-        
+
         /// <summary>
         /// Divide operation matrix on digit left side.
         /// </summary>
@@ -400,19 +400,19 @@ namespace MatrixDotNet
         {
             var divideFunc = MathGeneric<T>.GetDivideFunc();
 
-            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
+            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    result[i, j] = divideFunc(digit,matrix[i,j]);
+                    result[i, j] = divideFunc(digit, matrix[i, j]);
                 }
             }
 
             return result;
         }
 
-        
+
         /// <summary>
         /// Returns vector sum of each multiply element of row.
         /// </summary>
@@ -426,16 +426,16 @@ namespace MatrixDotNet
             {
                 throw new MatrixDotNetException("not equals");
             }
-            T[] res= new T[array.Length];
+            T[] res = new T[array.Length];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 T sum = default;
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    sum = MathGeneric<T,T,T>.Add(sum, MathGeneric<T,T,T>.Multiply(matrix[j, i], array[j]));
+                    sum = MathGeneric<T, T, T>.Add(sum, MathGeneric<T, T, T>.Multiply(matrix[j, i], array[j]));
                 }
-                
-                if(i == array.Length)
+
+                if (i == array.Length)
                     break;
 
                 res[i] = sum;
@@ -451,7 +451,7 @@ namespace MatrixDotNet
         /// <param name="array">array.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static unsafe T[] operator *(Matrix<T> matrix,T[] array)
+        public static unsafe T[] operator *(Matrix<T> matrix, T[] array)
         {
             if (matrix.Rows != array.Length)
             {
@@ -461,14 +461,14 @@ namespace MatrixDotNet
             int m = matrix.Rows;
             int n = 1;
             int K = matrix.Columns;
-            
+
             T[] result = new T[m];
-            fixed(T* ptr1 = matrix._Matrix)
-            fixed(T* ptr2 = array)
-            fixed(T* ptr3 = result)
+            fixed (T* ptr1 = matrix._Matrix)
+            fixed (T* ptr2 = array)
+            fixed (T* ptr3 = result)
             {
-                Span<T> span1 = new Span<T>(ptr1,matrix.Length);
-                
+                Span<T> span1 = new Span<T>(ptr1, matrix.Length);
+
                 for (int i = 0; i < m; i++)
                 {
                     T* c = ptr3 + i * n;
@@ -479,14 +479,14 @@ namespace MatrixDotNet
                         T a = span1[i * K + k];
                         for (int j = 0; j < n; j++)
                         {
-                            c[j] = MathUnsafe<T>.Add(c[j],MathUnsafe<T>.Mul(a,b[j]));
+                            c[j] = MathUnsafe<T>.Add(c[j], MathUnsafe<T>.Mul(a, b[j]));
                         }
                     }
                 }
                 return result;
             }
         }
-        
+
         /// <summary>
         /// Returns vector sum of each multiply element of row.
         /// </summary>
@@ -494,11 +494,11 @@ namespace MatrixDotNet
         /// <param name="vector">vector.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Vector<T> operator *(Vector<T> vector,Matrix<T> matrix)
+        public static Vector<T> operator *(Vector<T> vector, Matrix<T> matrix)
         {
             return vector.Array * matrix;
         }
-        
+
         /// <summary>
         /// Returns vector sum of each multiply element of row.
         /// </summary>
@@ -506,11 +506,11 @@ namespace MatrixDotNet
         /// <param name="vector">vector.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Vector<T> operator *(Matrix<T> matrix,Vector<T> vector)
+        public static Vector<T> operator *(Matrix<T> matrix, Vector<T> vector)
         {
             return matrix * vector.Array;
         }
-        
+
         /// <summary>
         /// Compares all values left matrix with right matrix.
         /// Returns true if left matrix full equals right matrix.
@@ -521,9 +521,9 @@ namespace MatrixDotNet
         /// <exception cref="NullReferenceException">Throws if left or right matrix are null.</exception>
         public static bool operator ==(Matrix<T> left, Matrix<T> right)
         {
-            if(left is null || right is null)
+            if (left is null || right is null)
                 throw new NullReferenceException();
-            
+
             return left.Equals(right);
         }
 
@@ -540,9 +540,9 @@ namespace MatrixDotNet
         }
 
         #endregion
-        
+
         #region methods
-        
+
         /// <summary>
         /// <inheritdoc cref="object.ToString"/>
         /// </summary>
@@ -550,7 +550,7 @@ namespace MatrixDotNet
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            return MatrixExtension.Output(this,builder);
+            return MatrixExtension.Output(this, builder);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -564,16 +564,16 @@ namespace MatrixDotNet
         /// <returns>object.</returns>
         public unsafe object Clone()
         {
-            Matrix<T> res = new Matrix<T>(this.Rows,this.Columns);
-            
+            Matrix<T> res = new Matrix<T>(this.Rows, this.Columns);
+
             fixed (T* srcPtr = _Matrix)
             fixed (T* destPtr = res.GetArray())
             {
-                Unsafe.CopyBlock(destPtr, srcPtr, (uint)(this.Length * sizeof(T)));
+                Unsafe.CopyBlock(destPtr, srcPtr, (uint) (this.Length * sizeof(T)));
             }
             return res;
         }
-        
+
         /// <summary>
         /// Implicit assign matrix.
         /// </summary>
@@ -606,7 +606,7 @@ namespace MatrixDotNet
                 {
                     fixed (T* srcPrt = matrix[i])
                     {
-                        Unsafe.CopyBlock(dstPtr + i * result.Columns, srcPrt, (uint)(sizeof(T)*matrix[i].Length));
+                        Unsafe.CopyBlock(dstPtr + i * result.Columns, srcPrt, (uint) (sizeof(T) * matrix[i].Length));
                     }
                 }
             }
@@ -625,19 +625,19 @@ namespace MatrixDotNet
             {
                 return false;
             }
-            
+
             if (matrix._Matrix == _Matrix)
             {
                 return true;
             }
 
             int i = 0;
-            
+
             for (; i < matrix.Length - System.Numerics.Vector<T>.Count; i += System.Numerics.Vector<T>.Count)
             {
-                System.Numerics.Vector<T> vectorA = new System.Numerics.Vector<T>(GetArray(),i);
-                System.Numerics.Vector<T> vectorB = new System.Numerics.Vector<T>(matrix.GetArray(),i);
-                bool vector = Vector.EqualsAll(vectorA,vectorB);
+                System.Numerics.Vector<T> vectorA = new System.Numerics.Vector<T>(GetArray(), i);
+                System.Numerics.Vector<T> vectorB = new System.Numerics.Vector<T>(matrix.GetArray(), i);
+                bool vector = Vector.EqualsAll(vectorA, vectorB);
                 if (!vector)
                 {
                     return false;
@@ -651,11 +651,11 @@ namespace MatrixDotNet
                     return false;
                 }
             }
-            
+
             return true;
         }
-        
-        
+
+
 
         /// <inheritdoc />
         public override int GetHashCode()
@@ -663,11 +663,11 @@ namespace MatrixDotNet
             // ReSharper disable once NonReadonlyMemberInGetHashCode
             return _Matrix.GetHashCode();
         }
-        
+
         #endregion
 
         #region enumerator
-        
+
         /// <summary>
         /// Represents implementations IEnumerator.
         /// </summary>
@@ -683,11 +683,11 @@ namespace MatrixDotNet
 
                 _matrix = matrix;
             }
-            
+
             public bool MoveNext()
             {
                 ++_position;
-                
+
                 return (_position >= 0 && _position < _matrix.Length);
             }
 
@@ -695,7 +695,7 @@ namespace MatrixDotNet
             {
                 _position = -1;
             }
-            
+
             public T Current => _matrix._Matrix[_position];
 
             object IEnumerator.Current => Current;
@@ -705,8 +705,8 @@ namespace MatrixDotNet
             /// </summary>
             public void Dispose()
             { }
-        } 
-        
+        }
+
         #endregion
     }
 }

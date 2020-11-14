@@ -12,9 +12,9 @@ namespace MatrixDotNet.Extensions.Core.Simd
 
             fixed (int* pSource = matrix.GetArray())
             {
-                var source = new Span<int>(pSource,matrix.Length);
-                int i = 0;
-                int size = source.Length - 8;
+                var source = new Span<int>(pSource, matrix.Length);
+                var i = 0;
+                var size = source.Length - 8;
 
                 if (Avx2.IsSupported)
                 {
@@ -24,12 +24,12 @@ namespace MatrixDotNet.Extensions.Core.Simd
                         vresult = Avx2.Add(vresult, Avx.LoadVector256(pSource + i));
                         i += size;
                     }
-                
+
                     vresult = Avx2.HorizontalAdd(vresult, vresult);
                     vresult = Avx2.HorizontalAdd(vresult, vresult);
-                    
+
                     result = vresult.ToScalar();
-                
+
                     while (i < source.Length)
                     {
                         result += pSource[i];
@@ -44,11 +44,12 @@ namespace MatrixDotNet.Extensions.Core.Simd
                         vresult = Sse2.Add(vresult, Sse2.LoadVector128(pSource + i));
                         i += 4;
                     }
+
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
-                    
+
                     result = vresult.ToScalar();
-                
+
                     while (i < source.Length)
                     {
                         result += pSource[i];
@@ -60,30 +61,29 @@ namespace MatrixDotNet.Extensions.Core.Simd
                     var vresult = Vector128<int>.Zero;
                     vresult = Sse2.Add(vresult, Sse2.Shuffle(vresult, 0x4E));
                     vresult = Sse2.Add(vresult, Sse2.Shuffle(vresult, 0xB1));
-                    
+
                     result = vresult.ToScalar();
-                
+
                     while (i < source.Length)
                     {
                         result += pSource[i];
                         i += 1;
                     }
                 }
-                
             }
 
             return result;
         }
-        
+
         public static unsafe double SumAll(this Matrix<double> matrix)
         {
             double result;
 
             fixed (double* pSource = matrix.GetArray())
             {
-                var source = new Span<double>(pSource,matrix.Length);
-                int i = 0;
-                int size = source.Length - 8;
+                var source = new Span<double>(pSource, matrix.Length);
+                var i = 0;
+                var size = source.Length - 8;
 
                 if (Avx2.IsSupported)
                 {
@@ -93,10 +93,10 @@ namespace MatrixDotNet.Extensions.Core.Simd
                         vresult = Avx.Add(vresult, Avx.LoadVector256(pSource + i));
                         i += size;
                     }
-                
+
                     vresult = Avx.HorizontalAdd(vresult, vresult);
                     vresult = Avx.HorizontalAdd(vresult, vresult);
-                    
+
                     result = vresult.ToScalar();
                 }
                 else
@@ -107,33 +107,32 @@ namespace MatrixDotNet.Extensions.Core.Simd
                         vresult = Sse2.Add(vresult, Sse2.LoadVector128(pSource + i));
                         i += 4;
                     }
+
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
-                    
+
                     result = vresult.ToScalar();
-                    
                 }
-                
+
                 while (i < source.Length)
                 {
                     result += pSource[i];
                     i += 1;
                 }
-
             }
 
             return result;
         }
-        
+
         public static unsafe float SumAll(this Matrix<float> matrix)
         {
             float result;
 
             fixed (float* pSource = matrix.GetArray())
             {
-                var source = new Span<float>(pSource,matrix.Length);
-                int i = 0;
-                int size = source.Length - 8;
+                var source = new Span<float>(pSource, matrix.Length);
+                var i = 0;
+                var size = source.Length - 8;
 
                 if (Avx2.IsSupported)
                 {
@@ -143,10 +142,10 @@ namespace MatrixDotNet.Extensions.Core.Simd
                         vresult = Avx.Add(vresult, Avx.LoadVector256(pSource + i));
                         i += size;
                     }
-                
+
                     vresult = Avx.HorizontalAdd(vresult, vresult);
                     vresult = Avx.HorizontalAdd(vresult, vresult);
-                    
+
                     result = vresult.ToScalar();
                 }
                 else
@@ -154,22 +153,21 @@ namespace MatrixDotNet.Extensions.Core.Simd
                     var vresult = Vector128<float>.Zero;
                     while (i < source.Length - size)
                     {
-                        vresult = Sse2.Add(vresult, Sse2.LoadVector128(pSource + i));
+                        vresult = Sse.Add(vresult, Sse.LoadVector128(pSource + i));
                         i += 4;
                     }
+
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
-                    
+
                     result = vresult.ToScalar();
-                    
                 }
-                
+
                 while (i < source.Length)
                 {
                     result += pSource[i];
                     i += 1;
                 }
-
             }
 
             return result;

@@ -1,0 +1,4 @@
+- name: Performance
+  href: getting_started.md
+- name: Statistics
+  href: statistics.md

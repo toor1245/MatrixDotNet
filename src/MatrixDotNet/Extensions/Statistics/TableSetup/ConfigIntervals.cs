@@ -15,13 +15,13 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         /// <inheritdoc cref="IConfig{T}.Matrix"/>
         /// </summary>
         public Matrix<T> Matrix { get; }
-        
+
         /// <summary>
         /// Initialize matrix and table for intervals.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="intervals">the intervals.</param>
-        public ConfigIntervals(Matrix<T> matrix,TableIntervals[] intervals)
+        public ConfigIntervals(Matrix<T> matrix, TableIntervals[] intervals)
         {
             Intervals = intervals;
             Matrix = matrix;

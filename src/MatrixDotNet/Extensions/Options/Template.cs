@@ -19,7 +19,7 @@ namespace MatrixDotNet.Extensions.Options
         protected static string RootPath { get; } = Directory.FullName;
 
         protected int Rows { get; set; }
-        
+
         protected int Columns { get; set; }
 
         private static string Folder => Path.GetRelativePath(".", "MatrixLogs");
@@ -28,7 +28,7 @@ namespace MatrixDotNet.Extensions.Options
 
         public string FullPath => Path.GetFullPath(RelativePath);
 
-        private string PathBin => Path.ChangeExtension(Path.Combine(Folder, Title),".dat");
+        private string PathBin => Path.ChangeExtension(Path.Combine(Folder, Title), ".dat");
 
         public abstract string FileExtension { get; }
 
@@ -47,11 +47,11 @@ namespace MatrixDotNet.Extensions.Options
                 Console.ResetColor();
             }
         }
-        
+
         #endregion
-        
+
         #region .methods
-        
+
         public abstract string CreateText<T>(Matrix<T> matrix) where T : unmanaged;
 
         public void Open()
@@ -64,19 +64,19 @@ namespace MatrixDotNet.Extensions.Options
         public Task BinarySaveAsync<T>(Matrix<T> matrix) where T : unmanaged
         {
             var binaryFormatter = new BinaryFormatter();
-            using var stream = new FileStream(PathBin,FileMode.OpenOrCreate);
-            binaryFormatter.Serialize(stream,matrix);
+            using var stream = new FileStream(PathBin, FileMode.OpenOrCreate);
+            binaryFormatter.Serialize(stream, matrix);
             return Task.CompletedTask;
         }
 
         public Task<Matrix<T>> BinaryOpenAsync<T>() where T : unmanaged
         {
             var binaryFormatter = new BinaryFormatter();
-            using var stream = new FileStream(PathBin,FileMode.OpenOrCreate);
-            var des = (Matrix<T>)binaryFormatter.Deserialize(stream);
+            using var stream = new FileStream(PathBin, FileMode.OpenOrCreate);
+            var des = (Matrix<T>) binaryFormatter.Deserialize(stream);
             return Task.FromResult(des);
         }
-        
+
         #endregion
     }
 }

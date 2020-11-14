@@ -11,26 +11,26 @@ namespace MatrixDotNet.Extensions.Statistics
     public sealed class Intervals<T> : SetupIntervals<T> where T : unmanaged
     {
         #region .fields
-        
+
         private int _indexFrequency;
-        
+
         #endregion
-        
+
         #region .properties
-        
+
         private int Index => _indexFrequency;
 
         private int ColumnIndex => GetIndexColumn(TableIntervals.Ni);
-        
+
         /// <summary>
         /// Gets max frequency.
         /// </summary>
-        public T MaxFrequency => Matrix.MaxByColumn(ColumnIndex,out _indexFrequency);
-        
+        public T MaxFrequency => Matrix.MaxByColumn(ColumnIndex, out _indexFrequency);
+
         /// <summary>
         /// Gets Length modal interval.
         /// </summary>
-        public T LengthModalInterval => MathUnsafe<T>.Sub(Matrix[_indexFrequency,1], Matrix[_indexFrequency,0]);
+        public T LengthModalInterval => MathUnsafe<T>.Sub(Matrix[_indexFrequency, 1], Matrix[_indexFrequency, 0]);
 
         /// <summary>
         /// Gets previous frequency before max frequency in column Ni.
@@ -39,7 +39,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             get
             {
-                if(_indexFrequency - 1 != -1)
+                if (_indexFrequency - 1 != -1)
                     return Matrix[_indexFrequency - 1, ColumnIndex];
 
                 return default;
@@ -53,7 +53,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             get
             {
-                if(_indexFrequency + 1 < Matrix.Columns)
+                if (_indexFrequency + 1 < Matrix.Columns)
                     return Matrix[_indexFrequency + 1, ColumnIndex];
 
                 return default;
@@ -72,13 +72,13 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             get
             {
-                if(_indexFrequency - 1 != -1)
+                if (_indexFrequency - 1 != -1)
                     return AccumulatedFrequency[_indexFrequency - 1];
 
                 return default;
             }
         }
-        
+
         /// <summary>
         /// Gets accumulated frequency.
         /// </summary>
@@ -94,14 +94,14 @@ namespace MatrixDotNet.Extensions.Statistics
         /// Gets median interval.
         /// </summary>
         public T MedianInterval { get; }
-        
+
         /// <summary>
         /// Gets volume of the statistical population
         /// </summary>
         public T VolumeStatisticalPopulation => Matrix.SumByColumn(ColumnIndex);
-        
+
         #endregion
-        
+
         #region .ctor
 
         /// <summary>
@@ -125,13 +125,13 @@ namespace MatrixDotNet.Extensions.Statistics
             ColumnNames[1] = TableIntervals.IntervalSecond.ToString();
             ColumnNumber[0] = (int) TableIntervals.IntervalFirst;
             ColumnNumber[1] = (int) TableIntervals.IntervalSecond;
-            
+
             if (ColumnNames.Length - 2 > Intervals.Length)
             {
                 for (int i = Intervals.Length - 1; i < ColumnNumber.Length; i++)
                 {
                     ColumnNames[i] = TableIntervals.Column.ToString();
-                    ColumnNumber[i] = (int)TableIntervals.Column;
+                    ColumnNumber[i] = (int) TableIntervals.Column;
                 }
             }
 
@@ -144,11 +144,11 @@ namespace MatrixDotNet.Extensions.Statistics
             ModalInterval = GetModalInterval();
             MedianInterval = GetMedianInterval();
         }
-        
+
         #endregion
-        
+
         #region .methods
-        
+
         /// <summary>
         /// Gets interval row mean value.
         /// </summary>
@@ -160,13 +160,13 @@ namespace MatrixDotNet.Extensions.Statistics
             T upper = default;
             for (var i = 0; i < Matrix.Rows; i++)
             {
-                upper = MathUnsafe<T>.Add(upper,MathUnsafe<T>.Mul(Matrix[i,xi],Matrix[i,ni]));
+                upper = MathUnsafe<T>.Add(upper, MathUnsafe<T>.Mul(Matrix[i, xi], Matrix[i, ni]));
             }
 
             return MathGeneric<T>.Divide(upper, VolumeStatisticalPopulation);
         }
 
-        
+
         /// <summary>
         /// Gets modal interval.
         /// </summary>
@@ -180,14 +180,14 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             var upper = MathUnsafe<T>.Sub(MaxFrequency, PreviousFrequency);
             var lower = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(MaxFrequency, PreviousFrequency),
-                MathUnsafe<T>.Sub(MaxFrequency,NextFrequency));
-            
-            
+                MathUnsafe<T>.Sub(MaxFrequency, NextFrequency));
+
+
             return MathUnsafe<T>.Add(LowBoundModalInterval,
                 MathUnsafe<T>.Mul(MathGeneric<T>.Divide(upper, lower), LengthModalInterval));
         }
 
-        
+
         /// <summary>
         /// Gets MedianInterval
         /// </summary>
@@ -201,23 +201,23 @@ namespace MatrixDotNet.Extensions.Statistics
             return MathUnsafe<T>.Add(LowBoundModalInterval,
                 MathUnsafe<T>.Mul(MathGeneric<T>.Divide(upper, lower), LengthModalInterval));
         }
-        
-        
+
+
         // calculate accumulated frequency.
         private T[] GetAccumulatedFrequency()
         {
             var accumulatedFreq = new T[Matrix.Rows];
-            accumulatedFreq[0] = Matrix[0,ColumnIndex];
-            for (int i = 0,k = 1; k < Matrix.Rows; i++,k++)
+            accumulatedFreq[0] = Matrix[0, ColumnIndex];
+            for (int i = 0, k = 1; k < Matrix.Rows; i++, k++)
             {
-                accumulatedFreq[k] = MathUnsafe<T>.Add(accumulatedFreq[i],Matrix[k,ColumnIndex]);
+                accumulatedFreq[k] = MathUnsafe<T>.Add(accumulatedFreq[i], Matrix[k, ColumnIndex]);
             }
 
             return accumulatedFreq;
         }
-        
-        
+
+
         #endregion
-        
+
     }
 }

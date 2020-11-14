@@ -1,4 +1,8 @@
-- name: Introduction
+- name: Overview
   href: intro.md
 - name: Guides
   href: guides/toc.yml
+- name: Optimization
+  href: features/toc.yml
+- name: License
+  href: license.md

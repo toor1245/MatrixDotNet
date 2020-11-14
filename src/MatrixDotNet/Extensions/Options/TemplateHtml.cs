@@ -23,12 +23,12 @@ namespace MatrixDotNet.Extensions.Options
             builder.AppendLine("\t<thead class='thead-dark'>");
             builder.AppendLine("\t\t<tr>");
             builder.AppendLine("\t\t<th scope='col'>#</th>");
-            
+
             for (int i = 0; i < matrix.Columns; i++)
             {
                 builder.AppendLine($"\t\t<th scope='col'>{i}</th>");
             }
-            
+
             builder.AppendLine("\t\t<tr>");
             builder.AppendLine("\t</thead>");
             builder.AppendLine("\t<tbody>");
@@ -36,21 +36,21 @@ namespace MatrixDotNet.Extensions.Options
             {
                 builder.AppendLine("\t\t<tr>");
                 builder.AppendLine($"\t\t\t<th scope='row'>{i}</th>");
-                
+
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    builder.AppendLine($"\t\t\t<td>{matrix[i,j]}</td>");
+                    builder.AppendLine($"\t\t\t<td>{matrix[i, j]}</td>");
                 }
 
                 builder.AppendLine("\t\t</tr>");
             }
-            
+
             builder.AppendLine("\t</tbody>");
             builder.AppendLine("</table>");
             builder.AppendLine("</body>");
-            
+
             return builder.ToString();
         }
-        
+
     }
 }
