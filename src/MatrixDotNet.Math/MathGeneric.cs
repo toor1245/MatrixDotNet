@@ -22,7 +22,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             AddFunc = func;
 
             return func;
@@ -52,7 +51,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             SubFunc = func;
 
             return func;
@@ -82,7 +80,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             MultiplyFunc = func;
 
             return func;
@@ -112,7 +109,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             DivideFunc = func;
 
             return func;
@@ -142,7 +138,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             LeftShiftFunc = func;
 
             return func;
@@ -172,7 +167,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             RightShiftFunc = func;
 
             return func;
@@ -201,7 +195,6 @@ namespace MatrixDotNet.Math
             var body = Expression.Or(Expression.Convert(leftPar, resultType), Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             OrFunc = func;
 
             return func;
@@ -231,7 +224,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             AndFunc = func;
 
             return func;
@@ -258,7 +250,6 @@ namespace MatrixDotNet.Math
             var body = Expression.Not(Expression.Convert(leftPar, resultType));
 
             var func = Expression.Lambda<Func<T1, TR>>(body, leftPar).Compile();
-
             NotFunc = func;
 
             return func;
