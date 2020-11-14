@@ -21,11 +21,11 @@ namespace MatrixDotNet.Extensions.Statistics
         public static T Max<T>(this Matrix<T> matrix) where T : unmanaged
         {
             int size = System.Numerics.Vector<T>.Count;
-            var vmax = new System.Numerics.Vector<T>(matrix[0,0]);
-            for (int i = 0; i < matrix.Length / size; i++ )
+            var vmax = new System.Numerics.Vector<T>(matrix[0, 0]);
+            for (int i = 0; i < matrix.Length / size; i++)
             {
                 var va = new System.Numerics.Vector<T>(matrix.GetArray(), i * size);
-                var vless = Vector.GreaterThan(va,vmax);
+                var vless = Vector.GreaterThan(va, vmax);
                 vmax = Vector.ConditionalSelect(vless, va, vmax);
             }
 
@@ -33,7 +33,7 @@ namespace MatrixDotNet.Extensions.Statistics
             Comparer<T> cmp = Comparer<T>.Default;
             for (int j = 1; j < size; j++)
             {
-                if (cmp.Compare(max,vmax[j]) < 0)
+                if (cmp.Compare(max, vmax[j]) < 0)
                 {
                     max = vmax[j];
                 }
@@ -41,7 +41,7 @@ namespace MatrixDotNet.Extensions.Statistics
 
             for (int i = 0; i < matrix.Length % size; i++)
             {
-                if (cmp.Compare(max,matrix._Matrix[i]) < 0)
+                if (cmp.Compare(max, matrix._Matrix[i]) < 0)
                 {
                     max = matrix._Matrix[i];
                 }
@@ -62,7 +62,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             T max = matrix[dimension, 0];
             Comparer comparer = Comparer.Default;
-          
+
             for (int j = 0; j < matrix.Columns; j++)
             {
                 if (comparer.Compare(matrix[dimension, j], max) > 0)
@@ -70,7 +70,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = matrix[dimension, j];
                 }
             }
-          
+
             return max;
         }
 
@@ -147,8 +147,8 @@ namespace MatrixDotNet.Extensions.Statistics
                 }
 
                 result[i] = max;
-
             }
+
             return result;
         }
 
@@ -176,6 +176,7 @@ namespace MatrixDotNet.Extensions.Statistics
 
                 result[i] = max;
             }
+
             return result;
         }
 
@@ -223,6 +224,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
                 }
             }
+
             return max;
         }
 
@@ -243,6 +245,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
                 }
             }
+
             return max;
         }
 
@@ -263,6 +266,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
                 }
             }
+
             return max;
         }
 
@@ -283,6 +287,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = prefetch & ((max - prefetch) >> 15) | max & (~(max - prefetch) >> 15);
                 }
             }
+
             return max;
         }
 
@@ -301,6 +306,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[dimension, i];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -320,6 +326,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[dimension, i];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -338,6 +345,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[dimension, i];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -356,6 +364,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[dimension, i];
                 max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
             }
+
             return max;
         }
 
@@ -374,6 +383,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[i, dimension];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -392,6 +402,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[i, dimension];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -410,6 +421,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[i, dimension];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -428,6 +440,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[i, dimension];
                 max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
             }
+
             return max;
         }
     }

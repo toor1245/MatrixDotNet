@@ -26,7 +26,6 @@ namespace MatrixDotNet
         /// <param name="n">the length of vector</param>
         public Vector(int n)
         {
-            Array = new T[n];
             Length = n;
         }
 
@@ -64,7 +63,7 @@ namespace MatrixDotNet
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => Array[i];
-            
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => Array[i] = value;
         }
@@ -79,6 +78,7 @@ namespace MatrixDotNet
             {
                 sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(this[i], this[i]));
             }
+
             return MathGeneric<T>.Sqrt(sum);
         }
 
@@ -90,17 +90,17 @@ namespace MatrixDotNet
         /// <returns>new vector after addition of two vectors</returns>
         private static Vector<T> Add(T[] a, T[] b)
         {
-            CheckLength(a,b);
+            CheckLength(a, b);
             Vector<T> vc = new Vector<T>(a.Length);
-            
+
             for (int i = 0; i < vc.Length; i++)
             {
-                vc[i] = MathUnsafe<T>.Add(a[i],b[i]);
+                vc[i] = MathUnsafe<T>.Add(a[i], b[i]);
             }
 
             return vc;
         }
-        
+
         /// <summary>
         /// Represents multiplication of value on vector.
         /// </summary>
@@ -110,15 +110,15 @@ namespace MatrixDotNet
         private static Vector<T> Mul(T val, T[] b)
         {
             Vector<T> vc = new Vector<T>(b.Length);
-            
+
             for (int i = 0; i < vc.Length; i++)
             {
-                vc[i] = MathUnsafe<T>.Mul(val,b[i]);
+                vc[i] = MathUnsafe<T>.Mul(val, b[i]);
             }
 
             return vc;
         }
-        
+
         /// <summary>
         /// Represents subtraction of two vectors.
         /// </summary>
@@ -127,12 +127,12 @@ namespace MatrixDotNet
         /// <returns>new vector after subtraction of two vectors</returns>
         private static Vector<T> Sub(T[] a, T[] b)
         {
-            CheckLength(a,b);
+            CheckLength(a, b);
             var vc = new Vector<T>(a.Length);
-            
+
             for (int i = 0; i < vc.Length; i++)
             {
-                vc[i] = MathUnsafe<T>.Sub(a[i],b[i]);
+                vc[i] = MathUnsafe<T>.Sub(a[i], b[i]);
             }
 
             return vc;
@@ -145,27 +145,27 @@ namespace MatrixDotNet
         /// <param name="a">the left vector</param>
         /// <param name="b">the right vector</param>
         /// <returns>new vector after multiplication of two vectors</returns>
-        private static T DotProduct(T[] a,T[] b)
+        private static T DotProduct(T[] a, T[] b)
         {
-            CheckLength(a,b);
-           
+            CheckLength(a, b);
+
             T res = default;
             int size = System.Numerics.Vector<T>.Count;
             int i = 0;
             int lastIndexBlock = a.Length - a.Length % size;
-            
+
             for (; i < lastIndexBlock; i += size)
             {
-                var va = new System.Numerics.Vector<T>(a,i);
-                var vb = new System.Numerics.Vector<T>(b,i);
-                res = MathUnsafe<T>.Add(res,Vector.Dot(va, vb));
+                var va = new System.Numerics.Vector<T>(a, i);
+                var vb = new System.Numerics.Vector<T>(b, i);
+                res = MathUnsafe<T>.Add(res, Vector.Dot(va, vb));
             }
 
             for (; i < a.Length; i++)
             {
-                res = MathUnsafe<T>.Add(res, MathUnsafe<T>.Mul(a[i],b[i]));
+                res = MathUnsafe<T>.Add(res, MathUnsafe<T>.Mul(a[i], b[i]));
             }
-            
+
             return res;
         }
 
@@ -186,8 +186,8 @@ namespace MatrixDotNet
                 throw new InvalidCastException("object is not Vector<T>");
             }
 
-            var vec = (Vector<T>)obj;
-            
+            var vec = (Vector<T>) obj;
+
             if (vec.Array.Length != Length)
             {
                 return false;
@@ -201,31 +201,31 @@ namespace MatrixDotNet
             int i = 0;
             int size = System.Numerics.Vector<T>.Count;
             int lastIndexBlock = vec.Length - vec.Length % size;
-            
+
             for (; i < lastIndexBlock; i += size)
             {
-                var vectorA = new System.Numerics.Vector<T>(Array,i);
-                var vectorB = new System.Numerics.Vector<T>(vec.Array,i);
-                bool equal = Vector.EqualsAll(vectorA,vectorB);
+                var vectorA = new System.Numerics.Vector<T>(Array, i);
+                var vectorB = new System.Numerics.Vector<T>(vec.Array, i);
+                bool equal = Vector.EqualsAll(vectorA, vectorB);
                 if (!equal)
                 {
                     return false;
                 }
             }
-            
+
             var cmp = Comparer<T>.Default;
-            
+
             for (; i < vec.Length; i++)
             {
-                if (cmp.Compare(Array[i],vec.Array[i]) != 0)
+                if (cmp.Compare(Array[i], vec.Array[i]) != 0)
                 {
                     return false;
                 }
             }
-            
+
             return true;
         }
-        
+
         /// <inheritdoc/>
         public override int GetHashCode()
         {

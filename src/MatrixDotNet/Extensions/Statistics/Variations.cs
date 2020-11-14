@@ -53,7 +53,6 @@ namespace MatrixDotNet.Extensions.Statistics
                 ColumnNames[i] = TableIntervals.Column.ToString();
                 ColumnNumber[i] = (int) TableIntervals.Column;
             }
-
         }
 
         /// <summary>

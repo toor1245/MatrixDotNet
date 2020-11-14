@@ -10,7 +10,7 @@ namespace MatrixDotNet
             {
                 throw new NullReferenceException();
             }
-            
+
             return a.Equals(b);
         }
 
@@ -62,7 +62,7 @@ namespace MatrixDotNet
 
         public static T operator *(Vector<T> a, Vector<T> b)
         {
-            return DotProduct(a.Array,b.Array);
+            return DotProduct(a.Array, b.Array);
         }
 
         public static implicit operator Vector<T>(T[] arr)
