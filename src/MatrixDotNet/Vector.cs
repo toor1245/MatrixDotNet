@@ -27,6 +27,7 @@ namespace MatrixDotNet
         public Vector(int n)
         {
             Length = n;
+            Array = new T[Length];
         }
 
         /// <summary>
