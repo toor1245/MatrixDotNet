@@ -1,9 +1,3 @@
-function onPageLoad() {
-    if(window.localStorage.getItem("theme") === "light") {
-		setLightTheme();
-	}
-}
-
 function changeColorTheme() {	
 	let currentTheme = window.localStorage.getItem("theme");
 
