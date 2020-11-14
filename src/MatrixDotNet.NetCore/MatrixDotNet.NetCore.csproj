@@ -18,13 +18,22 @@
     <Copyright>MatrixDotNet</Copyright>
     <NeutralLanguage>en</NeutralLanguage>
     <PackageReleaseNotes></PackageReleaseNotes>
-    
+
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
 
-    <OS_WINDOWS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</OS_WINDOWS>
-    <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</OS_MAC>
-    <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
+    <OS_WINDOWS
+      Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+      true
+    </OS_WINDOWS>
+    <OS_MAC
+      Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">
+      true
+    </OS_MAC>
+    <OS_LINUX
+      Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">
+      true
+    </OS_LINUX>
   </PropertyGroup>
 
   <ItemGroup>

@@ -15,13 +15,13 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         /// Gets Variations.
         /// </summary>
         public TableVariations[] Variations { get; }
-        
+
         /// <summary>
         /// Initialize matrix and table for variations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="variations">the variations</param>
-        public ConfigVariations(Matrix<T> matrix,TableVariations[] variations)
+        public ConfigVariations(Matrix<T> matrix, TableVariations[] variations)
         {
             Matrix = matrix;
             Variations = variations;

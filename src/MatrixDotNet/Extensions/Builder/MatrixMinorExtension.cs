@@ -1,7 +1,7 @@
-using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Determinants;
+using System.Runtime.CompilerServices;
 
 namespace MatrixDotNet.Extensions.Builder
 {
@@ -19,29 +19,29 @@ namespace MatrixDotNet.Extensions.Builder
         /// <exception cref="MatrixDotNetException">Throws exception if matrix is not square</exception>
         public static Matrix<T> GetMinorMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(!matrix.IsSquare)
+            if (!matrix.IsSquare)
                 throw new MatrixDotNetException("matrix is not square");
-            
-            Matrix<T> minor = new Matrix<T>(matrix.Rows,matrix.Columns);
+
+            Matrix<T> minor = new Matrix<T>(matrix.Rows, matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    if (matrix.GetMinorMatrix(i,j).Length == 1)
+                    if (matrix.GetMinorMatrix(i, j).Length == 1)
                     {
-                        minor[i, j] = matrix.GetMinorMatrix(i,j)[0,0];
+                        minor[i, j] = matrix.GetMinorMatrix(i, j)[0, 0];
                     }
                     else
                     {
-                        var res = matrix.GetMinorMatrix(i,j).GetDeterminant();
+                        var res = matrix.GetMinorMatrix(i, j).GetDeterminant();
                         minor[i, j] = res;
                     }
                 }
             }
-            
+
             return minor;
         }
-        
+
         /// <summary>
         /// Gets Minor`s matrix by row and column.
         /// </summary>
@@ -65,10 +65,10 @@ namespace MatrixDotNet.Extensions.Builder
                 }
                 m++;
             }
-            
+
             return result;
         }
-        
+
         /// <summary>
         /// Gets minor of matrix by row.
         /// </summary>
@@ -76,7 +76,7 @@ namespace MatrixDotNet.Extensions.Builder
         /// <param name="n">n</param>
         /// <typeparam name="T"></typeparam>
         /// <returns>Minor`s matrix by row index</returns>
-        public static Matrix<T> GetMinor<T>(this Matrix<T> matrix,int n)
+        public static Matrix<T> GetMinor<T>(this Matrix<T> matrix, int n)
             where T : unmanaged
         {
             T[,] result = new T[matrix.Rows - 1, matrix.Rows - 1];
@@ -93,7 +93,7 @@ namespace MatrixDotNet.Extensions.Builder
             }
             return result.ToMatrix();
         }
-        
+
         /// <summary>
         /// Gets corner Minor.
         /// </summary>
@@ -104,20 +104,20 @@ namespace MatrixDotNet.Extensions.Builder
         /// <exception cref="MatrixDotNetException">
         /// throws if matrix is not square.
         /// </exception>
-        public static unsafe Matrix<T> GetCornerMinor<T>(this Matrix<T> matrix,int row)
+        public static unsafe Matrix<T> GetCornerMinor<T>(this Matrix<T> matrix, int row)
             where T : unmanaged
         {
             if (!matrix.IsSquare)
             {
                 throw new MatrixDotNetException("matrix is not square");
             }
-            Matrix<T> minor = new Matrix<T>(row,row);
-            fixed(T* ptr1 = minor.GetArray())
+            Matrix<T> minor = new Matrix<T>(row, row);
+            fixed (T* ptr1 = minor.GetArray())
             fixed (T* ptr2 = matrix.GetArray())
             {
                 for (int i = 0; i < row; i++)
                 {
-                    Unsafe.CopyBlock(ptr1 + i * row,ptr2 + i * row,(uint) (sizeof(T) * row));
+                    Unsafe.CopyBlock(ptr1 + i * row, ptr2 + i * row, (uint) (sizeof(T) * row));
                 }
             }
 

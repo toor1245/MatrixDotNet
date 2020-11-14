@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq.Expressions;
-using System.Reflection;
 
 namespace MatrixDotNet.Math
 {
@@ -26,6 +25,7 @@ namespace MatrixDotNet.Math
 
             return func;
         }
+
         public static T Add(T left, T right)
         {
             return GetAddFunc()(left, right);
@@ -155,7 +155,7 @@ namespace MatrixDotNet.Math
 
             var leftPar = Expression.Parameter(typeof(T), "value");
 
-            MethodInfo info = typeof(System.Math).GetMethod("Abs", new[] { leftPar.Type });
+            var info = typeof(System.Math).GetMethod("Abs", new[] { leftPar.Type });
             if (info == null)
                 throw new InvalidOperationException(nameof(Abs));
 
@@ -199,6 +199,7 @@ namespace MatrixDotNet.Math
         {
             return GetNegateFunc()(left);
         }
+
         #endregion
 
         #region Sqrt
@@ -212,7 +213,7 @@ namespace MatrixDotNet.Math
 
             var argPar = Expression.Parameter(typeof(T), "value");
 
-            MethodInfo info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] { argPar.Type });
+            var info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] { argPar.Type });
 
             if (info is null)
                 throw new InvalidOperationException(nameof(Sqrt));

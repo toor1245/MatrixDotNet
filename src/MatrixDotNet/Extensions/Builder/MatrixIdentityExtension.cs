@@ -19,11 +19,11 @@ namespace MatrixDotNet.Extensions.Builder
         /// <exception cref="MatrixDotNetException"></exception>
         public static Matrix<T> CreateIdentityMatrix<T>(int row, int col) where T : unmanaged
         {
-            if(row != col)
+            if (row != col)
                 throw new MatrixDotNetException($"Matrix is not square!!!\nRows: {row}\nColumns: {col}");
-            
-            Matrix<T> matrix = new Matrix<T>(row,col);
-            
+
+            Matrix<T> matrix = new Matrix<T>(row, col);
+
             for (int i = 0; i < row; i++)
             {
                 matrix[i, i] = MathGeneric<T>.Increment(default);
@@ -31,7 +31,7 @@ namespace MatrixDotNet.Extensions.Builder
 
             return matrix;
         }
-        
+
         /// <summary>
         /// Creates identity matrix by this size of matrix.
         /// </summary>
@@ -41,29 +41,29 @@ namespace MatrixDotNet.Extensions.Builder
         /// <exception cref="MatrixDotNetException">throws exception if matrix is not square</exception>
         public static Matrix<T> CreateIdentityMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if(!matrix.IsSquare)
+            if (!matrix.IsSquare)
                 throw new MatrixDotNetException($"Matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
-            
-            Matrix<T> result = new Matrix<T>(matrix.Rows,matrix.Columns);
-            
+
+            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 result[i, i] = MathGeneric<T>.Increment(default);
             }
-            
+
             return result;
         }
-        
-         public static unsafe Matrix<double> CreateIdentityMatrix(this Matrix<double> matrix)
+
+        public static unsafe Matrix<double> CreateIdentityMatrix(this Matrix<double> matrix)
         {
-            if(!matrix.IsSquare)
+            if (!matrix.IsSquare)
                 throw new MatrixDotNetException($"Matrix is not square!!!");
-            
+
             int m = matrix.Rows;
             int n = matrix.Columns;
-            
-            Matrix<double> result = new Matrix<double>(m,n);
-            fixed(double* ptr = result.GetArray())
+
+            Matrix<double> result = new Matrix<double>(m, n);
+            fixed (double* ptr = result.GetArray())
             {
                 for (int i = 0; i < m; i++)
                 {
@@ -73,17 +73,17 @@ namespace MatrixDotNet.Extensions.Builder
                 return result;
             }
         }
-        
+
         public static unsafe Matrix<int> CreateIdentityMatrix(this Matrix<int> matrix)
         {
-            if(!matrix.IsSquare)
+            if (!matrix.IsSquare)
                 throw new MatrixDotNetException($"Matrix is not square!!!");
-            
+
             int m = matrix.Rows;
             int n = matrix.Columns;
-            
-            Matrix<int> result = new Matrix<int>(m,n);
-            fixed(int* ptr = result.GetArray())
+
+            Matrix<int> result = new Matrix<int>(m, n);
+            fixed (int* ptr = result.GetArray())
             {
                 for (int i = 0; i < m; i++)
                 {
@@ -93,17 +93,17 @@ namespace MatrixDotNet.Extensions.Builder
                 return result;
             }
         }
-        
+
         public static unsafe Matrix<float> CreateIdentityMatrix(this Matrix<float> matrix)
         {
-            if(!matrix.IsSquare)
+            if (!matrix.IsSquare)
                 throw new MatrixDotNetException($"Matrix is not square!!!");
-            
+
             int m = matrix.Rows;
             int n = matrix.Columns;
-            
-            Matrix<float> result = new Matrix<float>(m,n);
-            fixed(float* ptr = result.GetArray())
+
+            Matrix<float> result = new Matrix<float>(m, n);
+            fixed (float* ptr = result.GetArray())
             {
                 for (int i = 0; i < m; i++)
                 {
@@ -113,17 +113,17 @@ namespace MatrixDotNet.Extensions.Builder
                 return result;
             }
         }
-        
+
         public static unsafe Matrix<long> CreateIdentityMatrix(this Matrix<long> matrix)
         {
-            if(!matrix.IsSquare)
+            if (!matrix.IsSquare)
                 throw new MatrixDotNetException($"Matrix is not square!!!");
-            
+
             int m = matrix.Rows;
             int n = matrix.Columns;
-            
-            Matrix<long> result = new Matrix<long>(m,n);
-            fixed(long* ptr = result.GetArray())
+
+            Matrix<long> result = new Matrix<long>(m, n);
+            fixed (long* ptr = result.GetArray())
             {
                 for (int i = 0; i < m; i++)
                 {

@@ -1,5 +1,5 @@
-using System.Text;
 using MatrixDotNet.Extensions.Statistics;
+using System.Text;
 
 namespace MatrixDotNet.Extensions.Options
 {
@@ -7,7 +7,7 @@ namespace MatrixDotNet.Extensions.Options
     {
         public bool HasSize { get; }
 
-        public TemplateMarkdown(string title,bool hasSize = false) : base(title)
+        public TemplateMarkdown(string title, bool hasSize = false) : base(title)
         {
             HasSize = hasSize;
         }
@@ -21,7 +21,7 @@ namespace MatrixDotNet.Extensions.Options
             Columns = matrix.Columns;
             builder.AppendLine(@$"```ini 
 {Assembly.FullName}");
-            
+
             if (HasSize)
             {
                 builder.AppendLine($"Number of rows: {Rows};");
@@ -30,10 +30,10 @@ namespace MatrixDotNet.Extensions.Options
 
             builder.AppendLine("```");
             builder.AppendLine();
-            
+
             int a = $"{matrix.Min():G3}".Length;
             int b = $"{matrix.Max():G3}".Length;
-            var width = (a > b ? a : b)+2;
+            var width = (a > b ? a : b) + 2;
 
             for (int i = 0; i < matrix.Columns; i++)
             {
@@ -48,7 +48,7 @@ namespace MatrixDotNet.Extensions.Options
             }
 
             builder.AppendLine();
-            
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 builder.Append("|");
@@ -62,13 +62,13 @@ namespace MatrixDotNet.Extensions.Options
 
             return builder.ToString();
         }
-        
+
         internal static int[] InitColumnSize<T>(Matrix<T> matrix) where T : unmanaged
         {
             var arr = matrix.MaxColumns();
             var arr2 = matrix.MinColumns();
             int[] output = new int[arr.Length];
-            
+
             for (int i = 0; i < output.Length; i++)
             {
                 var x = $"{arr[i]:f2}".Length;

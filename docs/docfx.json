@@ -3,14 +3,10 @@
     {
       "src": [
         {
+          "src": "..",
           "files": [
-            "src/**.csproj",
-          ],
-          "exclude": [
-            "**/obj/**",
-            "**/bin/**"
-          ],
-          "src": ".."
+            "src/MatrixDotNet*/**.csproj"
+          ]
         }
       ],
       "dest": "api",
@@ -53,22 +49,30 @@
         ]
       }
     ],
-    "dest": "../docs",
+    "dest": "_site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
-      "default"
+      "default", 
+      "templates/darkfx"
     ],
     "postProcessors": [],
     "markdownEngineName": "markdig",
     "noLangKeyword": false,
     "keepFileLink": false,
-    "cleanupCacheHistory": false,
+    "cleanupCacheHistory": true,
     "disableGitFeatures": false,
+    "globalMetadata" :
+    {
+      "_appTitle" : "MatrixDotNet",
+      "_appFooter" : "Copyright &copy; 2020 MatrixDotNet",
+      "_appLogoPath" : "images/logo/matrix.svg",
+      "_appFaviconPath": "images/logo/matrix.ico",
+      "_enableSearch": true
+    },
     "sitemap":
-     {
+    {
       "baseUrl": " https://toor1245.github.io/MatrixDotNet/"
-     }
     }
   }
 }

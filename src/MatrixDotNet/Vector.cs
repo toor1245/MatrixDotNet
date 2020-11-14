@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Numerics;
+
 using System.Runtime.CompilerServices;
 using System.Text;
-using MatrixDotNet.Exceptions;
-using MatrixDotNet.Math;
 
 namespace MatrixDotNet
 {
@@ -14,7 +13,7 @@ namespace MatrixDotNet
         /// Gets array of <c>Vector</c>.
         /// </summary>
         public T[] Array { get; }
-        
+
         /// <summary>
         /// Gets length of array.
         /// </summary>
@@ -29,7 +28,7 @@ namespace MatrixDotNet
             Array = new T[n];
             Length = n;
         }
-        
+
         /// <summary>
         /// Assign array
         /// </summary>
@@ -40,7 +39,7 @@ namespace MatrixDotNet
             fixed (T* ptr1 = Array)
             fixed (T* ptr2 = array)
             {
-                Unsafe.CopyBlock(ptr1,ptr2,(uint) (sizeof(T) * Length));
+                Unsafe.CopyBlock(ptr1, ptr2, (uint) (sizeof(T) * Length));
             }
         }
 
@@ -49,11 +48,11 @@ namespace MatrixDotNet
         /// </summary>
         /// <param name="length">the length of array</param>
         /// <param name="fill">fill vector of specify value</param>
-        public Vector(int length,T fill)
+        public Vector(int length, T fill)
         {
             Length = length;
             Array = new T[Length];
-            System.Array.Fill(Array,fill);
+            System.Array.Fill(Array, fill);
         }
 
         /// <summary>
@@ -77,11 +76,11 @@ namespace MatrixDotNet
             T sum = default;
             for (int i = 0; i < Length; i++)
             {
-                sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(this[i],this[i]));
+                sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(this[i], this[i]));
             }
             return MathGeneric<T>.Sqrt(sum);
         }
-        
+
         /// <summary>
         /// Adds two vectors.
         /// </summary>
@@ -138,6 +137,7 @@ namespace MatrixDotNet
             return vc;
         }
 
+
         /// <summary>
         /// Represents defines dot(scalar) product.
         /// </summary>
@@ -147,7 +147,7 @@ namespace MatrixDotNet
         private static T DotProduct(T[] a,T[] b)
         {
             CheckLength(a,b);
-            
+           
             T res = default;
             int size = System.Numerics.Vector<T>.Count;
             int i = 0;
@@ -238,7 +238,7 @@ namespace MatrixDotNet
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            
+
             for (int i = 0; i < Array.Length; i++)
             {
                 builder.Append(Array[i] + " ");
