@@ -231,7 +231,7 @@ namespace MatrixDotNet.Math
                 return del as Func<T, T>;
 
             var leftPar = Expression.Parameter(t, "value");
-            var info = typeof(System.Math).GetMethod("Abs", new[] {leftPar.Type});
+            var info = typeof(System.Math).GetMethod("Abs", new[] { leftPar.Type });
             if (info == null)
                 throw new InvalidOperationException(nameof(Abs));
 
@@ -287,7 +287,7 @@ namespace MatrixDotNet.Math
 
             var argPar = Expression.Parameter(t, "value");
 
-            var info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] {argPar.Type});
+            var info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] { argPar.Type });
 
             if (info is null)
                 throw new InvalidOperationException(nameof(Sqrt));

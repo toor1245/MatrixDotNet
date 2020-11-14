@@ -200,7 +200,7 @@ namespace MatrixDotNet.Math
 
             var argPar = Expression.Parameter(typeof(T), "value");
 
-            var info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] {argPar.Type});
+            var info = typeof(System.Math).GetMethod(nameof(Sqrt), new[] { argPar.Type });
 
             if (info is null)
                 throw new InvalidOperationException(nameof(Sqrt));
