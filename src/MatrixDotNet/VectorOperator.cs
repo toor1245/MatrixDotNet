@@ -7,9 +7,11 @@ namespace MatrixDotNet
         public static bool operator ==(Vector<T> a,Vector<T> b)
         {
             if (a is null || b is null)
+            {
                 throw new NullReferenceException();
+            }
 
-            return Equals(a,b);
+            return a.Equals(b);
         }
 
 

@@ -1,7 +1,6 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using System.Numerics;
-using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -20,18 +19,17 @@ namespace MatrixDotNet.Extensions.Statistics
         public static T Min<T>(this Matrix<T> matrix) where T : unmanaged
         {
             int size = System.Numerics.Vector<T>.Count;
-            System.Numerics.Vector<T> vmin = new System.Numerics.Vector<T>(matrix[0,0]);
-            int i = 0;
-            for (; i < matrix.Length - size; i += size )
+            var vmin = new System.Numerics.Vector<T>(matrix[0,0]);
+            for (int i = 0; i < matrix.Length / size; i++ )
             {
-                var va = new System.Numerics.Vector<T>(matrix.GetArray(),i);
+                var va = new System.Numerics.Vector<T>(matrix.GetArray(),i * size);
                 var vless = Vector.LessThan(va,vmin);
                 vmin = Vector.ConditionalSelect(vless, va, vmin);
             }
 
             T min = vmin[0];
-            Comparer cmp = Comparer.Default;
-            for (int j = 0; j < size; j++)
+            Comparer<T> cmp = Comparer<T>.Default;
+            for (int j = 1; j < size; j++)
             {
                 if (cmp.Compare(min,vmin[j]) > 0)
                 {
@@ -39,7 +37,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 }
             }
 
-            for (; i < matrix.Length; i++)
+            for (int i = 0; i < matrix.Length % size; i++)
             {
                 if (cmp.Compare(min,matrix._Matrix[i]) > 0)
                 {
@@ -64,11 +62,11 @@ namespace MatrixDotNet.Extensions.Statistics
                 throw new NullReferenceException();
 
             T min = matrix[dimension,0];
-            Comparer comparer = Comparer.Default;
+            Comparer<T> cmp = Comparer<T>.Default;
 
             for (int j = 0; j < matrix.Columns; j++)
             {
-                if(comparer.Compare(matrix[dimension,j],min) < 0)
+                if(cmp.Compare(matrix[dimension,j],min) < 0)
                 {
                     min = matrix[dimension, j];
                 }
@@ -91,11 +89,11 @@ namespace MatrixDotNet.Extensions.Statistics
                 throw new NullReferenceException();
 
             T min = matrix[0,dimension];
-            Comparer comparer = Comparer.Default;
+            Comparer<T> cmp = Comparer<T>.Default;
 
             for (int j = 0; j < matrix.Rows; j++)
             {
-                if(comparer.Compare(matrix[dimension,j],min) < 0)
+                if(cmp.Compare(matrix[dimension,j],min) < 0)
                 {
                     min = matrix[j,dimension];
                 }
@@ -117,13 +115,14 @@ namespace MatrixDotNet.Extensions.Statistics
                 throw new NullReferenceException();
 
             T[] result = new T[matrix.Columns];
-            Comparer comparer = Comparer.Default;
+            Comparer<T> cmp = Comparer<T>.Default;
+            
             for (int i = 0; i < matrix.Columns; i++)
             {
                 T max = matrix[0,i];
                 for (int j = 0; j < matrix.Rows; j++)
                 {
-                    if(comparer.Compare(matrix[j,i],max) < 0)
+                    if(cmp.Compare(matrix[j,i],max) < 0)
                     {
                         max = matrix[j,i];
                     }
@@ -149,13 +148,14 @@ namespace MatrixDotNet.Extensions.Statistics
                 throw new NullReferenceException();
 
             T[] result = new T[matrix.Rows];
-            Comparer comparer = Comparer.Default;
+            Comparer<T> cmp = Comparer<T>.Default;
+            
             for (int i = 0; i < matrix.Rows; i++)
             {
                 T max = matrix[i,0];
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    if(comparer.Compare(matrix[i,j],max) < 0)
+                    if(cmp.Compare(matrix[i,j],max) < 0)
                     {
                         max = matrix[i,j];
                     }
@@ -247,6 +247,7 @@ namespace MatrixDotNet.Extensions.Statistics
             }
             return min;
         }
+
 
         /// <summary>
         /// Gets minimum value by row index with happen bitwise operations.

@@ -387,7 +387,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
             int expected = -6;
 
             // Act
-            int actual = matrixA.Min();
+            int actual = matrixA.BitMin();
 
             // Assert
             Assert.Equal(expected,actual);

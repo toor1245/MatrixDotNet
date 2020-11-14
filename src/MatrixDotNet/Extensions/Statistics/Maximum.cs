@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Numerics;
 using MatrixDotNet.Math;
 
@@ -20,18 +21,17 @@ namespace MatrixDotNet.Extensions.Statistics
         public static T Max<T>(this Matrix<T> matrix) where T : unmanaged
         {
             int size = System.Numerics.Vector<T>.Count;
-            System.Numerics.Vector<T> vmax = new System.Numerics.Vector<T>(matrix[0,0]);
-            int i = 0;
-            for (; i < matrix.Length - size; i += size )
+            var vmax = new System.Numerics.Vector<T>(matrix[0,0]);
+            for (int i = 0; i < matrix.Length / size; i++ )
             {
-                var va = new System.Numerics.Vector<T>(matrix.GetArray(),i);
+                var va = new System.Numerics.Vector<T>(matrix.GetArray(),i * size);
                 var vless = Vector.GreaterThan(va,vmax);
                 vmax = Vector.ConditionalSelect(vless, va, vmax);
             }
 
             T max = vmax[0];
-            Comparer cmp = Comparer.Default;
-            for (int j = 0; j < size; j++)
+            Comparer<T> cmp = Comparer<T>.Default;
+            for (int j = 1; j < size; j++)
             {
                 if (cmp.Compare(max,vmax[j]) < 0)
                 {
@@ -39,7 +39,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 }
             }
 
-            for (; i < matrix.Length; i++)
+            for (int i = 0; i < matrix.Length % size; i++)
             {
                 if (cmp.Compare(max,matrix._Matrix[i]) < 0)
                 {
