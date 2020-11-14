@@ -126,7 +126,7 @@ namespace MatrixDotNet.Math
         #endregion
 
         #region LeftShift
-        
+
         private static Func<T1, T2, TR> LeftShiftFunc;
 
         public static Func<T1, T2, TR> GetLeftShiftFunc()
@@ -138,7 +138,8 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T2), "right");
 
             var resultType = typeof(TR);
-            var body = Expression.LeftShift(Expression.Convert(leftPar, resultType), Expression.Convert(rightPar, resultType));
+            var body = Expression.LeftShift(Expression.Convert(leftPar, resultType),
+                Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -151,11 +152,11 @@ namespace MatrixDotNet.Math
         {
             return GetLeftShiftFunc()(left, right);
         }
-        
+
         #endregion
 
         #region RightShift
-        
+
         private static Func<T1, T2, TR> RightShiftFunc;
 
         public static Func<T1, T2, TR> GetRightShiftFunc()
@@ -167,7 +168,8 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T2), "right");
 
             var resultType = typeof(TR);
-            var body = Expression.RightShift(Expression.Convert(leftPar, resultType), Expression.Convert(rightPar, resultType));
+            var body = Expression.RightShift(Expression.Convert(leftPar, resultType),
+                Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -180,11 +182,11 @@ namespace MatrixDotNet.Math
         {
             return GetRightShiftFunc()(left, right);
         }
-        
+
         #endregion
-        
+
         #region Or
-        
+
         private static Func<T1, T2, TR> OrFunc;
 
         public static Func<T1, T2, TR> GetOrFunc()
@@ -209,11 +211,11 @@ namespace MatrixDotNet.Math
         {
             return GetOrFunc()(left, right);
         }
-        
+
         #endregion
-        
+
         #region And
-        
+
         private static Func<T1, T2, TR> AndFunc;
 
         public static Func<T1, T2, TR> GetAndFunc()
@@ -225,7 +227,8 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T2), "right");
 
             var resultType = typeof(TR);
-            var body = Expression.And(Expression.Convert(leftPar, resultType), Expression.Convert(rightPar, resultType));
+            var body = Expression.And(Expression.Convert(leftPar, resultType),
+                Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
 
@@ -238,11 +241,11 @@ namespace MatrixDotNet.Math
         {
             return GetAndFunc()(left, right);
         }
-        
+
         #endregion
-        
+
         #region And
-        
+
         private static Func<T1, TR> NotFunc;
 
         public static Func<T1, TR> GetNotFunc()
@@ -256,7 +259,7 @@ namespace MatrixDotNet.Math
 
             var func = Expression.Lambda<Func<T1, TR>>(body, leftPar).Compile();
 
-            NotFunc  = func;
+            NotFunc = func;
 
             return func;
         }
@@ -265,7 +268,7 @@ namespace MatrixDotNet.Math
         {
             return GetNotFunc()(left);
         }
-        
+
         #endregion
     }
 }
