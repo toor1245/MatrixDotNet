@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿using System;
+=======
+using System;
+>>>>>>> dev-toor-avx
 using System.Collections.Generic;
 using System.Numerics;
 
