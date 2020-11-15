@@ -12,13 +12,28 @@
    | MatrixDotNet ">
     <meta name="generator" content="docfx 2.56.5.0">
     
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
     <link rel="shortcut icon" href="../images/logo/matrix.ico">
+    
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
+    
+    <link id="hljs-stylesheet" rel="stylesheet" href="../styles/hljs/vs-dark.css">
+    
+    <script type="text/javascript" src="../styles/theme.js"></script>
+    <script>
+      if(window.localStorage.getItem("theme") === "light") {
+        setLightTheme();
+      }
+      else setDarkTheme();
+      document.addEventListener('DOMContentLoaded', setIcons, false);
+    </script>
+  
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+  
     
     <meta property="docfx:rel" content="../">
     
@@ -41,11 +56,16 @@
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+              <div class="navbar-right">
+                <div class="navbar-buttons">
+                  <a onclick="changeColorTheme();"><i id="lightbulb" class="far fa-lightbulb"></i></a>
                 </div>
-              </form>
+                <form class="navbar-form" role="search" id="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </nav>
@@ -63,7 +83,7 @@
         <div id="search-results">
           <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+            <p><i class="fas fa-spinner index-loading"></i></p>
           </div>
           <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
@@ -451,5 +471,6 @@
     <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </body>
 </html>

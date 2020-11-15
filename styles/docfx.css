@@ -225,7 +225,8 @@ article section {
   white-space: nowrap;
 }
 .breadcrumb > li + li:before {
-  content: "\00a0/";
+  content: "⯈";
+	font-size: 75%;
 }
 #autocollapse.collapsed .navbar-header {
   float: none;
@@ -513,12 +514,12 @@ body .toc{
 .toc .nav > li.in > .expand-stub::before,
 .toc .nav > li.in.active > .expand-stub::before,
 .toc .nav > li.filtered > .expand-stub::before {
-    content: "-";
+    content: "▾";
 }
 
 .toc .nav > li > .expand-stub::before,
 .toc .nav > li.active > .expand-stub::before {
-    content: "+";
+    content: "▸";
 }
 
 .toc .nav > li.filtered > ul,
@@ -578,15 +579,11 @@ body .toc{
 .toc-filter > input:focus {
   outline: 0;
 }
-.toc-filter > .filter-icon {
-  position: absolute;
-  top: 10px;
-  left: 5px;
-}
 .toc-filter > .clear-icon {
   position: absolute;
-  top: 10px;
-  right: 5px;
+	top: 17px;
+	right: 15px;
+	cursor: pointer;
 }
 .article {
   margin-top: 120px;
@@ -683,7 +680,7 @@ body .toc{
   padding: 2px 15px;
 }
 .affix ul ul > li > a:before {
-  content: ">";
+  content: "|";
   font-size: 14px;
   top: -1px;
   left: 5px;
@@ -902,18 +899,6 @@ pre > code .line-highlight {
     -moz-osx-font-smoothing:grayscale;
     margin-right: 5px;
     font-weight: normal;
-}
-
-.alert-info h5:before {
-    content:"\e086"
-}
-
-.alert-warning h5:before {
-    content:"\e127"
-}
-
-.alert-danger h5:before {
-    content:"\e107"
 }
 
 /* For Embedded Video */
