@@ -5,7 +5,6 @@ using MatrixDotNet.Extensions;
 
 namespace Samples.Samples.MatrixSamples
 {
-    [Output(DefineProject.MatrixSamples)]
     public class AbsorptionSample : SampleTest
     {
         public static string Run()

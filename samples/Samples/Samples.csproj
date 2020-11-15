@@ -18,10 +18,4 @@
     <ProjectReference Include="..\..\src\MatrixDotNet.NetCore\MatrixDotNet.NetCore.csproj" />
     <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="logs" />
-    <Folder Include="logs\LUSample" />
-  </ItemGroup>
-
 </Project>

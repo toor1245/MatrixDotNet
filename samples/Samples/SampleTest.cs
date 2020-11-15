@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using NUnit.Framework;
-using Samples.Samples;
+﻿using NUnit.Framework;
 
 namespace Samples
 {
@@ -13,12 +11,8 @@ namespace Samples
             {
                 Assert.Pass();
             }
-
-            var attrs = GetType().GetCustomAttribute<Output>();
-            if (attrs != null)
-            {
-                SampleRunner.Run(GetType(), attrs.Project);
-            }
+            
+            SampleRunner.Run(GetType());
         }
     }
 }
