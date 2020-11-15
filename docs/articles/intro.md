@@ -22,6 +22,8 @@ There are many ways creates of matrix so let's consider the following sample how
 As you can see class `Matrix` can assign any type implicit such as one, two dimensional and jugged array.
 Matrix stores your data in one dimensional array, you can get with happen method `GetArray()`.
 
+> [MatrixCreateSample.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/MatrixSamples/MatrixCreateSample.cs)
+
 ##### Output 
 
 [!code-csharp[Run](../../samples/Samples/logs/MatrixCreateSample/Run.txt)]
