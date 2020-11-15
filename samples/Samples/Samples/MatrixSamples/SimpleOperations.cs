@@ -4,9 +4,9 @@ using MatrixDotNet;
 namespace Samples.Samples.MatrixSamples
 {
     [Output]
-    public class SimpleOperations
+    public class SimpleOperations : SampleTest
     {
-        public static void Run()
+        public static string Run()
         {
             StringBuilder builder = new StringBuilder();
             
@@ -46,7 +46,6 @@ namespace Samples.Samples.MatrixSamples
             // Divide.
             Matrix<int> matrixG = matrixA / 2;
             
-            // output.
             builder.AppendLine(matrixA.ToString());
             builder.AppendLine(matrixB.ToString());
             builder.AppendLine(matrixC.ToString());
@@ -54,6 +53,7 @@ namespace Samples.Samples.MatrixSamples
             builder.AppendLine(matrixE.ToString());
             builder.AppendLine(matrixF.ToString());
             builder.AppendLine(matrixG.ToString());
+            return builder.ToString();
         }
     }
 }

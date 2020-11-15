@@ -8,7 +8,11 @@ namespace Samples
         public void StartTest()
         {
             if (GetType() == typeof(SampleTest))
+            {
                 Assert.Pass();
+            }
+            
+            SampleRunner.Run(GetType(),DefineProject.MatrixSamples);
         }
     }
 }

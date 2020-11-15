@@ -4,7 +4,7 @@ using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Decompositions;
 
-namespace Samples.Samples
+namespace Samples.Samples.MatrixSamples
 {
     public class LUPSample
     {

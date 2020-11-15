@@ -2,9 +2,9 @@
 {
     public enum DefineProject
     {
-        Matrix,
-        MatrixComplex,
-        MatrixAsFixed,
-        Vector
+        MatrixSamples,
+        MatrixComplexSamples,
+        MatrixAsFixedSamples,
+        VectorSamples
     }
 }

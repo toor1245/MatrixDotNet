@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
 
 namespace Samples
@@ -16,14 +17,26 @@ namespace Samples
             }
         }
         
-        public static void Run<T>(DefineProject project)
+        public static void Run(Type t,DefineProject project)
         {
             var data = @"D:\MatrixDotNet\samples\Samples\Samples\";
-            if (project == DefineProject.Matrix)
+
+            var projects = new[] 
             {
-                data = Path.Combine(data, "MatrixSamples");
+                DefineProject.MatrixSamples,
+                DefineProject.VectorSamples,
+                DefineProject.MatrixComplexSamples,
+                DefineProject.MatrixAsFixedSamples
+            };
+
+            foreach (var i in projects)
+            {
+                if (project == i)
+                {
+                    data = Path.Combine(data, i.ToString());
+                }
             }
-            var t = typeof(T);
+            
             var str = Path.Combine(Folder, t.Name);
             var info = new DirectoryInfo(str);
             

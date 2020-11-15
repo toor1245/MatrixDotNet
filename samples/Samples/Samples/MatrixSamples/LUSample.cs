@@ -5,10 +5,10 @@ using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Decompositions;
 
-namespace Samples.Samples
+namespace Samples.Samples.MatrixSamples
 {
     [Output]
-    public class LUSample
+    public class LUSample : SampleTest
     {
         public static string Run()
         {

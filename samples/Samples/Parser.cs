@@ -29,7 +29,7 @@ namespace Samples
 
                 if (lines[i].Contains(type.Name))
                 {
-                    lines[i] = lines[i].Replace(type.Name,$"{type.Name + "Docs"}");
+                    lines[i] = lines[i].Replace($"    public class {type.Name} : SampleTest",$"    public class {type.Name + "Docs"}");
                 }
                 
                 if (lines[i].Contains("namespace"))
