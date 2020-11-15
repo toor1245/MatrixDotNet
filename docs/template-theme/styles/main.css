@@ -146,15 +146,12 @@ article h4 {
 	position: absolute;
 	top: 17px;
 	right: 15px;
+	cursor: pointer;
 }
 
 .toc-filter>input:focus {
 	color: var(--color-foreground);
 	transition: all ease 0.25s;
-}
-
-.toc-filter>.filter-icon {
-	display: none;
 }
 
 .sidetoc>.toc {
@@ -223,18 +220,6 @@ pre {
 code {
 	background: var(--color-background-dark) !important;
 	border-radius: 2px;
-}
-
-.toc .nav>li.active>.expand-stub::before, .toc .nav>li.in>.expand-stub::before, .toc .nav>li.in.active>.expand-stub::before, .toc .nav>li.filtered>.expand-stub::before {
-	content: "▾";
-}
-
-.toc .nav>li>.expand-stub::before, .toc .nav>li.active>.expand-stub::before {
-	content: "▸";
-}
-
-.affix ul ul>li>a:before {
-	content: "|";
 }
 
 .breadcrumb .label.label-primary {

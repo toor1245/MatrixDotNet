@@ -513,12 +513,12 @@ body .toc{
 .toc .nav > li.in > .expand-stub::before,
 .toc .nav > li.in.active > .expand-stub::before,
 .toc .nav > li.filtered > .expand-stub::before {
-    content: "-";
+    content: "▾";
 }
 
 .toc .nav > li > .expand-stub::before,
 .toc .nav > li.active > .expand-stub::before {
-    content: "+";
+    content: "▸";
 }
 
 .toc .nav > li.filtered > ul,
@@ -683,7 +683,7 @@ body .toc{
   padding: 2px 15px;
 }
 .affix ul ul > li > a:before {
-  content: ">";
+  content: "|";
   font-size: 14px;
   top: -1px;
   left: 5px;
