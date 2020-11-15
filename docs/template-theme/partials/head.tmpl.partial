@@ -19,7 +19,7 @@
   
   <link id="hljs-stylesheet" rel="stylesheet" href="{{_rel}}styles/hljs/vs-dark.css">
   
-  <script type="text/javascript" src="{{_rel}}styles/main.js" async></script>
+  <script type="text/javascript" src="{{_rel}}styles/theme.js" async></script>
   <script async>
     if(window.localStorage.getItem("theme") === "light") {
       setLightTheme();
