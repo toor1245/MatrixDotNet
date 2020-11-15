@@ -1,12 +1,13 @@
 body {
 	color: var(--color-foreground);
+	background-color: var(--color-background);
+
 	font-family: "Open Sans", sans-serif;
 	line-height: 1.5;
 	font-size: 14px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	word-wrap: break-word;
-	background-color: var(--color-background);
 }
 
 h1 {
@@ -38,7 +39,7 @@ article h1, article h2, article h3, article h4 {
 
 article h4 {
 	padding-bottom: 8px;
-	border-bottom: 2px solid var(--color-underline);
+	border-bottom: 2px solid var(--color-foreground);
 }
 
 .navbar-brand>img {
@@ -50,8 +51,7 @@ article h4 {
 }
 
 .subnav {
-	border-top: 1px solid var(--color-underline);
-	background-color: var(--color-background-subnav);
+	background-color: var(--color-subnav-background);
 }
 
 .navbar-right {
@@ -60,46 +60,41 @@ article h4 {
 
 .navbar-buttons {
 	overflow: hidden;
+	z-index: 100;
 }
 
 .navbar-buttons>a {
 	display: block;
-	color: var(--color-navbar);
+	color: var(--color-navbar-text);
 	text-align: center;
-	padding: 14px 16px;
+	padding: 10px 16px;
 	text-decoration: none;
-	font-size: 20px;
-}
-
-.navbar-buttons>a:hover {
-	/*TODO: make it more uniform */
-	background-color: var(--color-navbar);
-	color: #101010;
+	font-size: 18px;
 }
 
 .navbar-inverse {
-	background-color: var(--color-background-dark);
+	background-color: var(--color-navbar-background);
 	z-index: 100;
 }
 
 .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
-	color: var(--color-navbar);
-	background-color: var(--color-background-dark);
+	color: var(--color-navbar-text);
+	background-color: var(--color-navbar-background);
 	border-bottom: 3px solid transparent;
 	padding-bottom: 12px;
 }
 
-.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
-	color: var(--color-foreground);
-	background-color: var(--color-background-dark);
-	border-bottom: 3px solid var(--color-background-subnav);
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-buttons>a:hover {
+	color: var(--color-navbar-active);
+	background-color: var(--color-navbar-background);
+	border-bottom: 3px solid var(--color-navbar-active);
 	transition: all ease 0.25s;
 }
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
-	color: var(--color-foreground);
-	background-color: var(--color-background-dark);
-	border-bottom: 3px solid var(--color-foreground);
+	color: var(--color-navbar-active);
+	background-color: var(--color-navbar-background);
+	border-bottom: 3px solid var(--color-navbar-active);
 	transition: all ease 0.25s;
 }
 
@@ -114,6 +109,10 @@ article h4 {
 
 .toc .nav>li>a {
 	color: var(--color-foreground);
+}
+
+.toc .nav > li.active > a {
+    color: var(--color-toc-active);
 }
 
 .sidefilter {
@@ -239,7 +238,7 @@ code {
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: baseline;
-	color: var(--color-breadcrumb);
+	color: var(--color-toc-active);
 
 	cursor: default;
 }
@@ -250,12 +249,12 @@ code {
 }
 
 #breadcrumb .breadcrumb>li a:hover {
-	color: var(--color-foreground);
+	color: var(--color-breadcrumb-hover);
 	transition: all ease 0.25s;
 }
 
 .breadcrumb>li+li:before {
-	color: var(--color-background-dark);
+	color: var(--color-breadcrumb);
 }
 
 .toc .level1>li {
@@ -312,8 +311,8 @@ blockquote {
 }
 
 .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
-	background-color: var(--color-background-subnav);
-	border-color: var(--color-background-subnav);
+	background-color: var(--color-subnav-background);
+	border-color: var(--color-subnav-background);
 }
 
 .breadcrumb>li, .pagination {
