@@ -3,14 +3,13 @@
 namespace Samples.Samples
 {
     [AttributeUsage(AttributeTargets.Class)]
-    public class Output: Attribute
+    public class Output : Attribute
     {
-        public Output()
+        public DefineProject Project { get; }
+        
+        public Output(DefineProject project)
         {
-            Result = GetType();
+            Project = project;
         }
-
-        public Type Result { get;  }
-
     }
 }

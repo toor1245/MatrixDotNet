@@ -7,39 +7,44 @@ namespace Samples
     public static class Parser
     {
         private static string _source;
-        
-        public static void Parse(string src,string path,Type type)
+
+        public static void Parse(string src, string path, Type type)
         {
             _source = File.ReadAllText(src);
-            string[] stringSeparators = { "\r\n" };
+            string[] stringSeparators = {"\r\n"};
 
             _source = _source.Replace("string", "void");
-            _source = _source.Replace("[Output]", string.Empty);
 
             var builder = new StringBuilder();
             var lines = _source.Split(stringSeparators, StringSplitOptions.None);
-            
-            for(int i = 0; i < lines.Length;i++)
+
+            for (int i = 0; i < lines.Length; i++)
             {
-                if (string.IsNullOrWhiteSpace(lines[i]) || 
+                if (string.IsNullOrWhiteSpace(lines[i]) ||
                     lines[i].Contains("builder") || lines[i].Contains("Console") || lines[i].Contains("Pretty"))
+                {
+                    continue;
+                }
+
+                if (lines[i].Contains("[Output"))
                 {
                     continue;
                 }
 
                 if (lines[i].Contains(type.Name))
                 {
-                    lines[i] = lines[i].Replace($"    public class {type.Name} : SampleTest",$"    public class {type.Name + "Docs"}");
+                    lines[i] = lines[i].Replace($"    public class {type.Name} : SampleTest",
+                        $"    public class {type.Name + "Docs"}");
                 }
-                
+
                 if (lines[i].Contains("namespace"))
                 {
                     int indexOf = lines[i].IndexOf("Samples", StringComparison.Ordinal);
-                    
+
                     lines[i] = lines[i]
                         .Remove(indexOf, lines[i].Length - indexOf)
-                        .Insert(indexOf,"Samples.logs." + type.Name);
-                    
+                        .Insert(indexOf, "Samples.logs." + type.Name);
+
                     builder.AppendLine();
                 }
 
