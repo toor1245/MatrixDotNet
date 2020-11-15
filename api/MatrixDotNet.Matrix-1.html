@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Matrix&lt;T&gt;
    | MatrixDotNet ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../images/logo/matrix.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -93,13 +93,31 @@
   </div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEnumerable</span>&lt;T&gt;</div>
+    <div><span class="xref">System.ICloneable</span></div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="MatrixDotNet.html">MatrixDotNet</a></h6>
   <h6><strong>Assembly</strong>: MatrixDotNet.dll</h6>
   <h5 id="MatrixDotNet_Matrix_1_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class Matrix&lt;T&gt; : ICloneable, IEnumerable&lt;T&gt; where T : struct</code></pre>
+    <pre><code class="lang-csharp hljs">[Serializable]
+public sealed class Matrix&lt;T&gt; : ICloneable, IEnumerable&lt;T&gt;, IEnumerable where T : struct</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -414,6 +432,21 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IndexOutOfRangeException</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/toor1245/MatrixDotNet/new/dev-toor-docs/apiSpec/new?filename=MatrixDotNet_Matrix_1_Item_System_Int32_MatrixDotNet_State_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Item(System.Int32%2CMatrixDotNet.State)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -463,6 +496,21 @@
     <tbody>
       <tr>
         <td>T[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IndexOutOfRangeException</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -519,6 +567,22 @@
       <tr>
         <td><span class="xref">T</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IndexOutOfRangeException</span></td>
+        <td><p>Throws if index out of range</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -722,6 +786,8 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.Equals(System.Object)</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/toor1245/MatrixDotNet/new/dev-toor-docs/apiSpec/new?filename=MatrixDotNet_Matrix_1_GetArray.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.GetArray%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -829,7 +895,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IEnumerator</span>&lt;T&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -864,6 +930,8 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.GetHashCode()</span></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/toor1245/MatrixDotNet/new/dev-toor-docs/apiSpec/new?filename=MatrixDotNet_Matrix_1_Plus_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Plus(MatrixDotNet.Matrix%7B%600%7D%2CMatrixDotNet.Matrix%7B%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
@@ -925,7 +993,7 @@
   </span>
   <a id="MatrixDotNet_Matrix_1_ToString_" data-uid="MatrixDotNet.Matrix`1.ToString*"></a>
   <h4 id="MatrixDotNet_Matrix_1_ToString" data-uid="MatrixDotNet.Matrix`1.ToString">ToString()</h4>
-  <div class="markdown level1 summary"><p><inheritdoc cref="!:object.ToString"></inheritdoc></p>
+  <div class="markdown level1 summary"><p><inheritdoc cref="M:System.Object.ToString"></inheritdoc></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -943,11 +1011,13 @@
     <tbody>
       <tr>
         <td><span class="xref">System.String</span></td>
-        <td><p><see cref="!:System.String"></see></p>
+        <td><p><span class="xref">System.String</span></p>
 </td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.Object.ToString()</span></div>
   <h3 id="operators">Operators
   </h3>
   <span class="small pull-right mobile-hide">
@@ -1180,7 +1250,23 @@ Returns true if left matrix full equals right matrix.</p>
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td><p><see cref="!:Boolean"></see></p>
+        <td><p><span class="xref">System.Boolean</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.NullReferenceException</span></td>
+        <td><p>Throws if left or right matrix are null.</p>
 </td>
       </tr>
     </tbody>
@@ -1871,9 +1957,47 @@ Returns true if minimum one element of left matrix not equals right matrix.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/dev-toor-docs/apiSpec/new?filename=MatrixDotNet_Matrix_1_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/dev-toor-docs/src/MatrixDotNet/Matrix.cs/#L556">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_System_Collections_IEnumerable_GetEnumerator_" data-uid="MatrixDotNet.Matrix`1.System#Collections#IEnumerable#GetEnumerator*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_System_Collections_IEnumerable_GetEnumerator" data-uid="MatrixDotNet.Matrix`1.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IEnumerator IEnumerable.GetEnumerator()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.IEnumerator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEnumerable&lt;&gt;</span>
+      <span class="xref">System.ICloneable</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.Generic.IEnumerable&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerable</span>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
@@ -2057,19 +2181,19 @@ Returns true if minimum one element of left matrix not equals right matrix.</p>
       <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_Sort__1_MatrixDotNet_Matrix___0__">MatrixSortExtension.Sort&lt;T&gt;(Matrix&lt;T&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_Sort__1_MatrixDotNet_Matrix___0__IComparer___0__">MatrixSortExtension.Sort&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_Sort__1_MatrixDotNet_Matrix___0__System_Collections_Generic_IComparer___0__">MatrixSortExtension.Sort&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
   </div>
   <div>
       <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByRows__1_MatrixDotNet_Matrix___0__">MatrixSortExtension.SortByRows&lt;T&gt;(Matrix&lt;T&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByRows__1_MatrixDotNet_Matrix___0__IComparer___0__">MatrixSortExtension.SortByRows&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByRows__1_MatrixDotNet_Matrix___0__System_Collections_Generic_IComparer___0__">MatrixSortExtension.SortByRows&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
   </div>
   <div>
       <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByColumns__1_MatrixDotNet_Matrix___0__">MatrixSortExtension.SortByColumns&lt;T&gt;(Matrix&lt;T&gt;)</a>
   </div>
   <div>
-      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByColumns__1_MatrixDotNet_Matrix___0__IComparer___0__">MatrixSortExtension.SortByColumns&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
+      <a class="xref" href="MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByColumns__1_MatrixDotNet_Matrix___0__System_Collections_Generic_IComparer___0__">MatrixSortExtension.SortByColumns&lt;T&gt;(Matrix&lt;T&gt;, IComparer&lt;T&gt;)</a>
   </div>
   <div>
       <a class="xref" href="MatrixDotNet.Extensions.Statistics.MatrixExtension.html#MatrixDotNet_Extensions_Statistics_MatrixExtension_Max__1_MatrixDotNet_Matrix___0__">MatrixExtension.Max&lt;T&gt;(Matrix&lt;T&gt;)</a>
@@ -2138,7 +2262,8 @@ Returns true if minimum one element of left matrix not equals right matrix.</p>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

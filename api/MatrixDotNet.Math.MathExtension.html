@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MathExtension
    | MatrixDotNet ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../images/logo/matrix.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -90,11 +90,36 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">MathExtension</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="MatrixDotNet.Math.html">MatrixDotNet.Math</a></h6>
   <h6><strong>Assembly</strong>: MatrixDotNet.Math.dll</h6>
   <h5 id="MatrixDotNet_Math_MathExtension_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static class MathExtension : object</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use MathGeneric instead&quot;)]
+public static class MathExtension</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
@@ -319,7 +344,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T1 AddBy&lt;T1, T2&gt;(T1 left, T2 right)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Add functions instead&quot;)]
+public static T1 AddBy&lt;T1, T2&gt;(T1 left, T2 right)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -602,7 +628,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T1 DivideBy&lt;T1, T2&gt;(T1 left, T2 right)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Divide functions instead&quot;)]
+public static T1 DivideBy&lt;T1, T2&gt;(T1 left, T2 right)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -673,7 +700,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool Equal&lt;T&gt;(T left, T right)
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Comparer&lt;T&gt;.Default instead&quot;)]
+public static bool Equal&lt;T&gt;(T left, T right)
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -753,7 +781,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;T, T&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;T, T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -798,7 +826,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;T1, T2, TR&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;T1, T2, TR&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -851,7 +879,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;T1, T2, TR&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;T1, T2, TR&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -904,7 +932,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;T, T&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;T, T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -949,7 +977,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;T1, T2, TR&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;T1, T2, TR&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1002,7 +1030,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;T, T&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;T, T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1047,7 +1075,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;T1, T2, TR&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;T1, T2, TR&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1088,7 +1116,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool GreaterThan&lt;T&gt;(T left, T right)
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Comparer&lt;T&gt;.Default instead&quot;)]
+public static bool GreaterThan&lt;T&gt;(T left, T right)
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1156,7 +1185,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool GreaterThanBy&lt;T, U&gt;(T left, U right)
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Comparer&lt;T&gt;.Default instead&quot;)]
+public static bool GreaterThanBy&lt;T, U&gt;(T left, U right)
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1228,7 +1258,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool GreaterThanOrEqual&lt;T&gt;(T left, T right)
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Comparer&lt;T&gt;.Default instead&quot;)]
+public static bool GreaterThanOrEqual&lt;T&gt;(T left, T right)
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1639,7 +1670,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T1 MultiplyBy&lt;T1, T2&gt;(T1 left, T2 right)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Multiply functions instead&quot;)]
+public static T1 MultiplyBy&lt;T1, T2&gt;(T1 left, T2 right)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1772,7 +1804,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool NotEqual&lt;T&gt;(T left, T right)
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Comparer&lt;T&gt;.Default instead&quot;)]
+public static bool NotEqual&lt;T&gt;(T left, T right)
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1840,7 +1873,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T Random&lt;T&gt;(int start, int end)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;bool shit = true;&quot;, true)]
+public static T Random&lt;T&gt;(int start, int end)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1919,7 +1953,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Func</span>&lt;T, T&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;T, T&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -2160,7 +2194,8 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static T1 SubBy&lt;T1, T2&gt;(T1 left, T2 right)</code></pre>
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;Use Sub functions instead&quot;)]
+public static T1 SubBy&lt;T1, T2&gt;(T1 left, T2 right)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -2234,7 +2269,8 @@
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

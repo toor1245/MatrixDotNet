@@ -8,7 +8,7 @@
     <title>Overview | MatrixDotNet </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Overview | MatrixDotNet ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../images/logo/matrix.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -59,11 +59,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -95,7 +95,41 @@
 </ul>
 <h3 id="matrix">Matrix</h3>
 <p>There are many ways creates of matrix so let's consider the following sample how to create Matrix.</p>
-<pre><code class="lang-csharp" name="CreateMatrixSample.cs">
+<pre><code class="lang-csharp" name="CreateMatrixSample.cs">using System.Text;
+using MatrixDotNet;
+
+namespace Samples.logs.MatrixCreateSample
+{
+    public class MatrixCreateSampleDocs
+    {
+        public static void Run()
+        {
+            int[,] a = new int[3, 3]
+            {
+                {10, -7, 0},
+                {-3, 6, 2},
+                {5, -1, 5}
+            };
+
+            // First way. 
+            Matrix&lt;int&gt; matrixA = new Matrix&lt;int&gt;(a);
+
+            // Second way: primitive way, assign by deep copy nor by reference!!!
+            Matrix&lt;int&gt; matrixB = a;
+            Matrix&lt;int&gt; matrixC = new int[10, 10];
+            Matrix&lt;int&gt; matrixD = new[,]
+            {
+                {1, 2, 3},
+                {2, 4, 6},
+            };
+
+            // Third way initialize all values 0 or constant value.
+            Matrix&lt;int&gt; matrixE = new Matrix&lt;int&gt;(row: 5, col: 3);
+            Matrix&lt;int&gt; matrixF = new Matrix&lt;int&gt;(row: 3, col: 5, value: 5);
+        }
+    }
+}
+
 </code></pre>
 <p>As you can see class <code>Matrix</code> can assign any type implicit such as one, two dimensional and jugged array.
 Matrix stores your data in one dimensional array, you can get with happen method <code>GetArray()</code>.</p>
@@ -144,7 +178,50 @@ Matrix F:
 
 </code></pre><h4 id="simple-operations-of-matrix">Simple operations of matrix.</h4>
 <p>So, as we know how to create matrix let's to try make routine operations with matrix.</p>
-<pre><code class="lang-csharp" name="CreateMatrixSample.cs">
+<pre><code class="lang-csharp" name="CreateMatrixSample.cs">using System.Text;
+using MatrixDotNet;
+
+namespace Samples.logs.SimpleOperations
+{
+    public class SimpleOperationsDocs
+    {
+        public static void Run()
+        {
+
+            // init matrix
+            int[,] a = new int[3, 3]
+            {
+                {10, -7, 0},
+                {-3, 6, 2},
+                {5, -1, 5}
+            };
+            int[,] b = new int[3, 4]
+            {
+                {11, -2, 1, 6},
+                {-8, 4, 2, 3},
+                {4, -4, 5, 8},
+            };
+            int[] vector = {2, 7, 5, 4};
+            int k = 3;
+            Matrix&lt;int&gt; matrixA = a;
+            Matrix&lt;int&gt; matrixB = b;
+
+            // Multiply.
+            Matrix&lt;int&gt; matrixC = matrixA * matrixB;
+            Matrix&lt;int&gt; matrixD = matrixC * k;
+
+            // Sum.
+            Matrix&lt;int&gt; matrixE = matrixB + k * matrixB;
+
+            // Subtract.
+            Matrix&lt;int&gt; matrixF = 2 * matrixA - matrixA;
+
+            // Divide.
+            Matrix&lt;int&gt; matrixG = matrixA / 2;
+        }
+    }
+}
+
 </code></pre>
 <p>As you can see thanks overload operators, it's possible write less code and becomes more readable.</p>
 <h5 id="output-1">Output</h5>
@@ -209,7 +286,8 @@ matrix G:
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Struct Matrix&lt;T&gt;.Enumerator
    | MatrixDotNet ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../images/logo/matrix.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -61,11 +61,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -88,13 +88,36 @@
   <div class="markdown level0 conceptual"></div>
   <div classs="implements">
     <h5>Implements</h5>
-    <div><span class="xref">IEnumerator</span>&lt;T&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerator</span>&lt;T&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerator</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.ValueType.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ValueType.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.ValueType.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="MatrixDotNet.html">MatrixDotNet</a></h6>
   <h6><strong>Assembly</strong>: MatrixDotNet.dll</h6>
   <h5 id="MatrixDotNet_Matrix_1_Enumerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;T&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public struct Enumerator : IEnumerator&lt;T&gt;, IEnumerator, IDisposable</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -191,9 +214,47 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
   </div>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/toor1245/MatrixDotNet/new/dev-toor-docs/apiSpec/new?filename=MatrixDotNet_Matrix_1_Enumerator_System_Collections_IEnumerator_Current.md&amp;value=---%0Auid%3A%20MatrixDotNet.Matrix%601.Enumerator.System%23Collections%23IEnumerator%23Current%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/dev-toor-docs/src/MatrixDotNet/Matrix.cs/#L701">View Source</a>
+  </span>
+  <a id="MatrixDotNet_Matrix_1_Enumerator_System_Collections_IEnumerator_Current_" data-uid="MatrixDotNet.Matrix`1.Enumerator.System#Collections#IEnumerator#Current*"></a>
+  <h4 id="MatrixDotNet_Matrix_1_Enumerator_System_Collections_IEnumerator_Current" data-uid="MatrixDotNet.Matrix`1.Enumerator.System#Collections#IEnumerator#Current">IEnumerator.Current</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">object IEnumerator.Current { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
-      <span class="xref">IEnumerator&lt;&gt;</span>
+      <span class="xref">System.Collections.Generic.IEnumerator&lt;T&gt;</span>
+  </div>
+  <div>
+      <span class="xref">System.Collections.IEnumerator</span>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
   </div>
 </article>
           </div>
@@ -211,7 +272,8 @@
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

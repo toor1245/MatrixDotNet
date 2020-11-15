@@ -8,7 +8,7 @@
     <title>Summation Kahan and Klein overview. | MatrixDotNet </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Summation Kahan and Klein overview. | MatrixDotNet ">
-    <meta name="generator" content="docfx 2.45.1.0">
+    <meta name="generator" content="docfx 2.56.5.0">
     
     <link rel="shortcut icon" href="../../images/logo/matrix.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -59,11 +59,11 @@
       <div class="container body-content">
         
         <div id="search-results">
-          <div class="search-list"></div>
+          <div class="search-list">Search Results for <span></span></div>
           <div class="sr-items">
             <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
           </div>
-          <ul id="pagination"></ul>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
         </div>
       </div>
       <div role="main" class="container body-content hide-when-search">
@@ -147,7 +147,57 @@ IEEE 754 notation:</p>
 <li>a<sup>x + y</sup> ≠ a<sup>x</sup> * a<sup>y</sup></li>
 </ul>
 <h5 id="lets-consider-the-following-sample">Lets consider the following sample:</h5>
-<pre><code class="lang-csharp" name="AbsorptionSample.cs">
+<pre><code class="lang-csharp" name="AbsorptionSample.cs">using System;
+using System.Text;
+using MatrixDotNet;
+using MatrixDotNet.Extensions;
+
+namespace Samples.logs.AbsorptionSample
+{
+    public class AbsorptionSampleDocs
+    {
+        public static void Run()
+        {
+
+            // initialize Matrix.
+            Matrix&lt;double&gt; matrix64Klein = new double[5, 5];
+            Matrix&lt;double&gt; matrix64Kahan = new double[5, 5];
+            Matrix&lt;decimal&gt; matrix128 = new decimal[5, 5];
+
+            // assign max value for demonstration absorption.
+            matrix64Kahan[0, 0] = Math.Pow(10,16);
+            matrix64Klein[0, 0] = Math.Pow(10,16);
+            matrix128[0, 0] = (decimal) Math.Pow(10,28);
+
+            // make error
+            for (int i = 0; i &lt; matrix64Klein.Rows; i++)
+            {
+                for (int j = 1; j &lt; matrix64Klein.Columns; j++)
+                {
+                    matrix64Kahan[i, j] = 1;
+                    matrix64Klein[i, j] = 0.1;
+                    matrix128[i, j] = 0.1m;
+                }
+            }
+
+            // compare algorithms of summation first case
+            double defaultSum0 = matrix64Kahan.Sum();
+            double kahanSum0 = matrix64Kahan.GetKahanSum();
+            double kleinSum0 = matrix64Kahan.GetKleinSum();
+
+            // compare algorithms of summation second case
+            double defaultSum1 = matrix64Klein.Sum();
+            double kahanSum1 = matrix64Klein.GetKahanSum();
+            double kleinSum1 = matrix64Klein.GetKleinSum();
+
+            // compare algorithms of summation third case
+            decimal defaultSum2 = matrix128.Sum();
+            decimal kahanSum2 = matrix128.GetKahanSum();
+            decimal kleinSum2 = matrix128.GetKleinSum();
+        }
+    }
+}
+
 </code></pre>
 <p>As you can see we have three matrix with 64 and 128 bit, so next step assign max values for this matrices for demonstration hit in absorption.
 For invoke Klein's or Kahan's algorithm must invoke method <code>GetKahanSum()</code> and <code>GetKleinSum()</code><br>
@@ -188,7 +238,8 @@ Klein calculates with less error, but at the same time it works slower than Kaha
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+                <h5>In This Article</h5>
+                <div></div>
               </nav>
             </div>
           </div>

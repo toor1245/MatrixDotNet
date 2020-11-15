@@ -108,31 +108,31 @@ references:
   isSpec: "True"
   fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Build
   nameWithType: BuildMatrix.Build
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,Func{``0,``0,``0},``0[])
+- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,System.Func{``0,``0,``0},``0[])
   name: Build<T>(Int32, Int32, Func<T, T, T>, T[])
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_Build__1_System_Int32_System_Int32_Func___0___0___0____0___
-  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,Func{``0,``0,``0},``0[])
+  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_Build__1_System_Int32_System_Int32_System_Func___0___0___0____0___
+  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,System.Func{``0,``0,``0},``0[])
   name.vb: Build(Of T)(Int32, Int32, Func(Of T, T, T), T())
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Build<T>(System.Int32, System.Int32, Func<T, T, T>, T[])
-  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.Build(Of T)(System.Int32, System.Int32, Func(Of T, T, T), T())
+  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Build<T>(System.Int32, System.Int32, System.Func<T, T, T>, T[])
+  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.Build(Of T)(System.Int32, System.Int32, System.Func(Of T, T, T), T())
   nameWithType: BuildMatrix.Build<T>(Int32, Int32, Func<T, T, T>, T[])
   nameWithType.vb: BuildMatrix.Build(Of T)(Int32, Int32, Func(Of T, T, T), T())
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,Func{``0,``0,``0},``0[],``0[])
+- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,System.Func{``0,``0,``0},``0[],``0[])
   name: Build<T>(Int32, Int32, Func<T, T, T>, T[], T[])
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_Build__1_System_Int32_System_Int32_Func___0___0___0____0_____0___
-  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,Func{``0,``0,``0},``0[],``0[])
+  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_Build__1_System_Int32_System_Int32_System_Func___0___0___0____0_____0___
+  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,System.Func{``0,``0,``0},``0[],``0[])
   name.vb: Build(Of T)(Int32, Int32, Func(Of T, T, T), T(), T())
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Build<T>(System.Int32, System.Int32, Func<T, T, T>, T[], T[])
-  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.Build(Of T)(System.Int32, System.Int32, Func(Of T, T, T), T(), T())
+  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Build<T>(System.Int32, System.Int32, System.Func<T, T, T>, T[], T[])
+  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.Build(Of T)(System.Int32, System.Int32, System.Func(Of T, T, T), T(), T())
   nameWithType: BuildMatrix.Build<T>(Int32, Int32, Func<T, T, T>, T[], T[])
   nameWithType.vb: BuildMatrix.Build(Of T)(Int32, Int32, Func(Of T, T, T), T(), T())
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,Func{``0,``0},``0[])
+- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,System.Func{``0,``0},``0[])
   name: Build<T>(Int32, Int32, Func<T, T>, T[])
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_Build__1_System_Int32_System_Int32_Func___0___0____0___
-  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,Func{``0,``0},``0[])
+  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_Build__1_System_Int32_System_Int32_System_Func___0___0____0___
+  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.Build``1(System.Int32,System.Int32,System.Func{``0,``0},``0[])
   name.vb: Build(Of T)(Int32, Int32, Func(Of T, T), T())
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Build<T>(System.Int32, System.Int32, Func<T, T>, T[])
-  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.Build(Of T)(System.Int32, System.Int32, Func(Of T, T), T())
+  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Build<T>(System.Int32, System.Int32, System.Func<T, T>, T[])
+  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.Build(Of T)(System.Int32, System.Int32, System.Func(Of T, T), T())
   nameWithType: BuildMatrix.Build<T>(Int32, Int32, Func<T, T>, T[])
   nameWithType.vb: BuildMatrix.Build(Of T)(Int32, Int32, Func(Of T, T), T())
 - uid: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Double})
@@ -1136,13 +1136,13 @@ references:
   isSpec: "True"
   fullName: MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.Rows
   nameWithType: MatrixAsFixedBuffer.Rows
-- uid: MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn(System.Int32,Span{System.Double})
+- uid: MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn(System.Int32,System.Span{System.Double})
   name: SetColumn(Int32, Span<Double>)
-  href: api/MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Core_MatrixAsFixedBuffer_SetColumn_System_Int32_Span_System_Double__
-  commentId: M:MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn(System.Int32,Span{System.Double})
+  href: api/MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Core_MatrixAsFixedBuffer_SetColumn_System_Int32_System_Span_System_Double__
+  commentId: M:MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn(System.Int32,System.Span{System.Double})
   name.vb: SetColumn(Int32, Span(Of Double))
-  fullName: MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn(System.Int32, Span<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn(System.Int32, Span(Of System.Double))
+  fullName: MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn(System.Int32, System.Span<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn(System.Int32, System.Span(Of System.Double))
   nameWithType: MatrixAsFixedBuffer.SetColumn(Int32, Span<Double>)
   nameWithType.vb: MatrixAsFixedBuffer.SetColumn(Int32, Span(Of Double))
 - uid: MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.SetColumn*
@@ -3040,13 +3040,13 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort(Of T)(MatrixDotNet.Matrix(Of T))
   nameWithType: MatrixSortExtension.Sort<T>(Matrix<T>)
   nameWithType.vb: MatrixSortExtension.Sort(Of T)(Matrix(Of T))
-- uid: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort``1(MatrixDotNet.Matrix{``0},IComparer{``0})
+- uid: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort``1(MatrixDotNet.Matrix{``0},System.Collections.Generic.IComparer{``0})
   name: Sort<T>(Matrix<T>, IComparer<T>)
-  href: api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_Sort__1_MatrixDotNet_Matrix___0__IComparer___0__
-  commentId: M:MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort``1(MatrixDotNet.Matrix{``0},IComparer{``0})
+  href: api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_Sort__1_MatrixDotNet_Matrix___0__System_Collections_Generic_IComparer___0__
+  commentId: M:MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort``1(MatrixDotNet.Matrix{``0},System.Collections.Generic.IComparer{``0})
   name.vb: Sort(Of T)(Matrix(Of T), IComparer(Of T))
-  fullName: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort<T>(MatrixDotNet.Matrix<T>, IComparer<T>)
-  fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort(Of T)(MatrixDotNet.Matrix(Of T), IComparer(Of T))
+  fullName: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort<T>(MatrixDotNet.Matrix<T>, System.Collections.Generic.IComparer<T>)
+  fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.Sort(Of T)(MatrixDotNet.Matrix(Of T), System.Collections.Generic.IComparer(Of T))
   nameWithType: MatrixSortExtension.Sort<T>(Matrix<T>, IComparer<T>)
   nameWithType.vb: MatrixSortExtension.Sort(Of T)(Matrix(Of T), IComparer(Of T))
 - uid: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns*
@@ -3065,13 +3065,13 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns(Of T)(MatrixDotNet.Matrix(Of T))
   nameWithType: MatrixSortExtension.SortByColumns<T>(Matrix<T>)
   nameWithType.vb: MatrixSortExtension.SortByColumns(Of T)(Matrix(Of T))
-- uid: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns``1(MatrixDotNet.Matrix{``0},IComparer{``0})
+- uid: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns``1(MatrixDotNet.Matrix{``0},System.Collections.Generic.IComparer{``0})
   name: SortByColumns<T>(Matrix<T>, IComparer<T>)
-  href: api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByColumns__1_MatrixDotNet_Matrix___0__IComparer___0__
-  commentId: M:MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns``1(MatrixDotNet.Matrix{``0},IComparer{``0})
+  href: api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByColumns__1_MatrixDotNet_Matrix___0__System_Collections_Generic_IComparer___0__
+  commentId: M:MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns``1(MatrixDotNet.Matrix{``0},System.Collections.Generic.IComparer{``0})
   name.vb: SortByColumns(Of T)(Matrix(Of T), IComparer(Of T))
-  fullName: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns<T>(MatrixDotNet.Matrix<T>, IComparer<T>)
-  fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns(Of T)(MatrixDotNet.Matrix(Of T), IComparer(Of T))
+  fullName: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns<T>(MatrixDotNet.Matrix<T>, System.Collections.Generic.IComparer<T>)
+  fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByColumns(Of T)(MatrixDotNet.Matrix(Of T), System.Collections.Generic.IComparer(Of T))
   nameWithType: MatrixSortExtension.SortByColumns<T>(Matrix<T>, IComparer<T>)
   nameWithType.vb: MatrixSortExtension.SortByColumns(Of T)(Matrix(Of T), IComparer(Of T))
 - uid: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows*
@@ -3090,13 +3090,13 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows(Of T)(MatrixDotNet.Matrix(Of T))
   nameWithType: MatrixSortExtension.SortByRows<T>(Matrix<T>)
   nameWithType.vb: MatrixSortExtension.SortByRows(Of T)(Matrix(Of T))
-- uid: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows``1(MatrixDotNet.Matrix{``0},IComparer{``0})
+- uid: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows``1(MatrixDotNet.Matrix{``0},System.Collections.Generic.IComparer{``0})
   name: SortByRows<T>(Matrix<T>, IComparer<T>)
-  href: api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByRows__1_MatrixDotNet_Matrix___0__IComparer___0__
-  commentId: M:MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows``1(MatrixDotNet.Matrix{``0},IComparer{``0})
+  href: api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html#MatrixDotNet_Extensions_Sorting_MatrixSortExtension_SortByRows__1_MatrixDotNet_Matrix___0__System_Collections_Generic_IComparer___0__
+  commentId: M:MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows``1(MatrixDotNet.Matrix{``0},System.Collections.Generic.IComparer{``0})
   name.vb: SortByRows(Of T)(Matrix(Of T), IComparer(Of T))
-  fullName: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows<T>(MatrixDotNet.Matrix<T>, IComparer<T>)
-  fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows(Of T)(MatrixDotNet.Matrix(Of T), IComparer(Of T))
+  fullName: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows<T>(MatrixDotNet.Matrix<T>, System.Collections.Generic.IComparer<T>)
+  fullName.vb: MatrixDotNet.Extensions.Sorting.MatrixSortExtension.SortByRows(Of T)(MatrixDotNet.Matrix(Of T), System.Collections.Generic.IComparer(Of T))
   nameWithType: MatrixSortExtension.SortByRows<T>(Matrix<T>, IComparer<T>)
   nameWithType.vb: MatrixSortExtension.SortByRows(Of T)(Matrix(Of T), IComparer(Of T))
 - uid: MatrixDotNet.Extensions.Statistics
@@ -5830,6 +5830,25 @@ references:
   fullName.vb: MatrixDotNet.Matrix(Of T).Enumerator.Reset
   nameWithType: Matrix<T>.Enumerator.Reset
   nameWithType.vb: Matrix(Of T).Enumerator.Reset
+- uid: MatrixDotNet.Matrix`1.Enumerator.System#Collections#IEnumerator#Current
+  name: IEnumerator.Current
+  href: api/MatrixDotNet.Matrix-1.Enumerator.html#MatrixDotNet_Matrix_1_Enumerator_System_Collections_IEnumerator_Current
+  commentId: P:MatrixDotNet.Matrix`1.Enumerator.System#Collections#IEnumerator#Current
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MatrixDotNet.Matrix<T>.Enumerator.System.Collections.IEnumerator.Current
+  fullName.vb: MatrixDotNet.Matrix(Of T).Enumerator.System.Collections.IEnumerator.Current
+  nameWithType: Matrix<T>.Enumerator.IEnumerator.Current
+  nameWithType.vb: Matrix(Of T).Enumerator.System.Collections.IEnumerator.Current
+- uid: MatrixDotNet.Matrix`1.Enumerator.System#Collections#IEnumerator#Current*
+  name: IEnumerator.Current
+  href: api/MatrixDotNet.Matrix-1.Enumerator.html#MatrixDotNet_Matrix_1_Enumerator_System_Collections_IEnumerator_Current_
+  commentId: Overload:MatrixDotNet.Matrix`1.Enumerator.System#Collections#IEnumerator#Current
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerator.Current
+  fullName: MatrixDotNet.Matrix<T>.Enumerator.System.Collections.IEnumerator.Current
+  fullName.vb: MatrixDotNet.Matrix(Of T).Enumerator.System.Collections.IEnumerator.Current
+  nameWithType: Matrix<T>.Enumerator.IEnumerator.Current
+  nameWithType.vb: Matrix(Of T).Enumerator.System.Collections.IEnumerator.Current
 - uid: MatrixDotNet.Matrix`1.Equals(System.Object)
   name: Equals(Object)
   href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Equals_System_Object_
@@ -6262,6 +6281,25 @@ references:
   fullName.vb: MatrixDotNet.Matrix(Of T).Rows
   nameWithType: Matrix<T>.Rows
   nameWithType.vb: Matrix(Of T).Rows
+- uid: MatrixDotNet.Matrix`1.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_System_Collections_IEnumerable_GetEnumerator
+  commentId: M:MatrixDotNet.Matrix`1.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  fullName: MatrixDotNet.Matrix<T>.System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: MatrixDotNet.Matrix(Of T).System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: Matrix<T>.IEnumerable.GetEnumerator()
+  nameWithType.vb: Matrix(Of T).System.Collections.IEnumerable.GetEnumerator()
+- uid: MatrixDotNet.Matrix`1.System#Collections#IEnumerable#GetEnumerator*
+  name: IEnumerable.GetEnumerator
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_System_Collections_IEnumerable_GetEnumerator_
+  commentId: Overload:MatrixDotNet.Matrix`1.System#Collections#IEnumerable#GetEnumerator
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+  fullName: MatrixDotNet.Matrix<T>.System.Collections.IEnumerable.GetEnumerator
+  fullName.vb: MatrixDotNet.Matrix(Of T).System.Collections.IEnumerable.GetEnumerator
+  nameWithType: Matrix<T>.IEnumerable.GetEnumerator
+  nameWithType.vb: Matrix(Of T).System.Collections.IEnumerable.GetEnumerator
 - uid: MatrixDotNet.Matrix`1.ToString
   name: ToString()
   href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_ToString
