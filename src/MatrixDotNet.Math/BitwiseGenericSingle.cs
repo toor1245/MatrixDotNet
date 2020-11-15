@@ -3,28 +3,28 @@ using System.Linq.Expressions;
 
 namespace MatrixDotNet.Math
 {
-    public class BitwiseGeneric<T1, TR>
+    public class BitwiseGeneric<T>
     {
         #region Not
 
-        private static Func<T1, TR> NotFunc;
+        private static Func<T,T> NotFunc;
 
-        public static Func<T1, TR> GetNotFunc()
+        public static Func<T,T> GetNotFunc()
         {
             if (NotFunc != null)
                 return NotFunc;
 
-            var leftPar = Expression.Parameter(typeof(T1), "left");
-            var resultType = typeof(TR);
+            var leftPar = Expression.Parameter(typeof(T), "left");
+            var resultType = typeof(T);
             var body = Expression.Not(Expression.Convert(leftPar, resultType));
 
-            var func = Expression.Lambda<Func<T1, TR>>(body, leftPar).Compile();
+            var func = Expression.Lambda<Func<T,T>>(body, leftPar).Compile();
             NotFunc = func;
 
             return func;
         }
 
-        public static TR Not(T1 left)
+        public static T Not(T left)
         {
             return GetNotFunc()(left);
         }
