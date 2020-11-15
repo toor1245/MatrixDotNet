@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Text;
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
@@ -17,21 +17,17 @@ namespace Samples.Samples
             // initialize matrix with random values.
             Matrix<double> matrix = BuildMatrix.RandomDouble(5, 5, -10, 10);
             
-            // display matrix.
             builder.AppendLine(matrix.ToString());
             
             // LU decomposition.
             matrix.GetLowerUpper(out var lower,out var upper);
             
-            // display lower-triangular matrix.
             Console.WriteLine("lower-triangular matrix");
             lower.Pretty();
             
-            // display upper-triangular matrix.
             Console.WriteLine("upper-triangular matrix");
             upper.Pretty();
             
-            // A = LU
             Console.WriteLine("A = LU");
             Console.WriteLine(lower * upper);
 

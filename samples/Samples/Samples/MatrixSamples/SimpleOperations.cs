@@ -3,6 +3,7 @@ using MatrixDotNet;
 
 namespace Samples.Samples.MatrixSamples
 {
+    [Output]
     public class SimpleOperations
     {
         public static void Run()

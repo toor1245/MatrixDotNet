@@ -1,5 +1,4 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Reflection;
 
 namespace Samples
@@ -17,9 +16,13 @@ namespace Samples
             }
         }
         
-        public static void Run<T>()
+        public static void Run<T>(DefineProject project)
         {
-            Console.WriteLine(Folder);
+            var data = @"D:\MatrixDotNet\samples\Samples\Samples\";
+            if (project == DefineProject.Matrix)
+            {
+                data = Path.Combine(data, "MatrixSamples");
+            }
             var t = typeof(T);
             var str = Path.Combine(Folder, t.Name);
             var info = new DirectoryInfo(str);
@@ -35,12 +38,13 @@ namespace Samples
             foreach (var mi in methods)
             {
                 var call = (string) mi.Invoke(t, new object[] { });
-                using var sw = new StreamWriter(Path.GetRelativePath(@".", Path.Combine(Folder, t.Name, mi.Name + ".md")),false);
+                using var sw = new StreamWriter(Path.GetRelativePath(@".", Path.Combine(Folder, t.Name, mi.Name + ".txt")),false);
                 sw.WriteLine(call);
             }
-            
-            Parser parser = new Parser(@"D:\MatrixDotNet\samples\Samples\Samples\" + t.Name + ".cs");
-            Console.WriteLine(parser.Source);
+
+            var src = Path.Combine(data,t.Name) + ".cs";
+            var path = Path.GetRelativePath(@".", Path.Combine(str, t.Name + "Docs.cs"));
+            Parser.Parse(src,path,t);
         }
     }
 }

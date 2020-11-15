@@ -1,5 +1,4 @@
-﻿using System;
-using MatrixDotNet;
+﻿using MatrixDotNet;
 
 namespace Samples.Samples.MatrixSamples
 {

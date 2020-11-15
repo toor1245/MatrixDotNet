@@ -1,13 +1,13 @@
-using Samples.Samples;
+using Samples.Samples.MatrixSamples;
 
 namespace Samples
 {
-    class Program
+    public class Program
     {
         
         static void Main(string[] args)
         {
-            SampleRunner.Run<LUSample>();
+            SampleRunner.Run<SimpleOperations>(DefineProject.Matrix);
         }
     }
 }

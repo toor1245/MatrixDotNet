@@ -1,84 +1,62 @@
 ﻿using System;
 using System.IO;
-
-using System.Text.RegularExpressions;
+using System.Text;
 
 namespace Samples
 {
-    public class Parser
+    public static class Parser
     {
-        private readonly char[] _spaceChars = { ' ', '\n', '\r', '\t' };
-        public  string Source { get; set; }
-        private int _offset;
-
-        public Parser(string src)
-        {
-            Source = File.ReadAllText(src);
-            var regex = new Regex(@"(\w*builder\S*;)");
-            var regex2 = new Regex(@"StringBuilder\D*;");
-            var regex3 = new Regex(@"return");
-            var matches = regex.Matches(Source);
-            var matches2 = regex2.Matches(Source);
-            var matches3 = regex3.Matches(Source);
-            if (matches.Count > 0)
-            {
-                foreach (Match match in matches)
-                {
-                    Source = Source.Replace(match.Value, "");
-                }
-
-                foreach (Match match in matches2)
-                {
-                    Source = Source.Replace(match.Value, "");
-                }
-                
-                foreach (Match match in matches3)
-                {
-                    Source = Source.Replace(match.Value, "");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Совпадений не найдено");
-            }
-            //Parse();
-        }
+        private static string _source;
         
-        private void Parse()
+        public static void Parse(string src,string path,Type type)
         {
-            while(InBounds())
+            _source = File.ReadAllText(src);
+            string[] stringSeparators = { "\r\n" };
+
+            _source = _source.Replace("string", "void");
+            _source = _source.Replace("[Output]", string.Empty);
+
+            var builder = new StringBuilder();
+            var lines = _source.Split(stringSeparators, StringSplitOptions.None);
+            
+            for(int i = 0; i < lines.Length;i++)
             {
-                if(!InBounds()) break;
-                if (Source[_offset].IsAnyOf(_spaceChars))
+                if (string.IsNullOrWhiteSpace(lines[i]) || 
+                    lines[i].Contains("builder") || lines[i].Contains("Console") || lines[i].Contains("Pretty"))
                 {
-                    _offset++;
-                    continue;;
-                }
-                ProcessDynamic();
-            }
-        }
-        
-        private void ProcessDynamic()
-        {
-            foreach(var def in DynamicTokenDefinition.Dynamics)
-            {
-                var match = def.Representation.Match(Source, _offset);
-                if (!match.Success)
-                {
-                    _offset++;
                     continue;
                 }
 
-                var replace = Regex.Replace(Source,@"(builder\S*;)",string.Empty);
-                Source = replace;
-                _offset += match.Length;
+                if (lines[i].Contains(type.Name))
+                {
+                    lines[i] = lines[i].Replace(type.Name,$"{type.Name + "Docs"}");
+                }
+                
+                if (lines[i].Contains("namespace"))
+                {
+                    int indexOf = lines[i].IndexOf("Samples", StringComparison.Ordinal);
+                    
+                    lines[i] = lines[i]
+                        .Remove(indexOf, lines[i].Length - indexOf)
+                        .Insert(indexOf,"Samples.logs." + type.Name);
+                    
+                    builder.AppendLine();
+                }
+
+                if (lines[i].Contains("//"))
+                {
+                    builder.AppendLine();
+                }
+
+                builder.AppendLine(lines[i]);
             }
+
+            using (var sw = new StreamWriter(path, false, Encoding.UTF8))
+            {
+                sw.WriteLine(builder.ToString());
+            }
+
+            Console.WriteLine(builder.ToString());
         }
-	
-        private bool InBounds()
-        {
-            return _offset < Source.Length;
-        }
-        
     }
 }

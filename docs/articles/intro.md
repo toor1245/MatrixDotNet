@@ -13,7 +13,7 @@ MatrixDotNet contains three main structures:
 * <a href = "#Vector">Vector<T></a>
 * <a href = "#MatrixComplex">MatrixComplex</a>
 
-##### How to create matrix?
+#### Matrix
 
 [!code-csharp[CreateMatrixSample.cs](../../samples/Samples/Samples/MatrixSamples/MatrixCreateSample.cs)]
 
