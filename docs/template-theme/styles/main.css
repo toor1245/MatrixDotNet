@@ -135,17 +135,9 @@ article h4 {
 
 .toc-filter>input {
 	border: none;
-	border-radius: unset;
 	background-color: var(--color-background-input);
 	padding: 5px 0 5px 20px;
 	font-size: 90%
-}
-
-.toc-filter>.clear-icon {
-	position: absolute;
-	top: 17px;
-	right: 15px;
-	cursor: pointer;
 }
 
 .toc-filter>input:focus {
@@ -203,22 +195,6 @@ article h4 {
 
 .alert-danger {
 	color: #d32f2f;
-}
-
-pre {
-	padding: 9.5px;
-	margin: 0 0 10px;
-	font-size: 13px;
-	word-break: break-all;
-	word-wrap: break-word;
-	background-color: var(--color-background-dark);
-	border-radius: 0;
-	border: none;
-}
-
-code {
-	background: var(--color-background-dark) !important;
-	border-radius: 2px;
 }
 
 .breadcrumb .label.label-primary {
