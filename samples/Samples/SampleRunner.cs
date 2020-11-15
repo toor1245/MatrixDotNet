@@ -1,42 +1,29 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 
 namespace Samples
 {
     public static class SampleRunner
     {
-        private static string Folder => Path.GetRelativePath(@"MatrixDotNet/samples/Samples/", "logs");
+        private static string LogsFolder => Path.GetRelativePath(@"MatrixDotNet/samples/Samples/", "logs");
 
-        private static readonly DefineProject[] Projects;
+        private static string SourcesFolder => Directory.GetParent(Environment.CurrentDirectory)?.Parent?.Parent?.FullName;
+
+        private static string SamplesFolder => Path.Combine(SourcesFolder, "Samples/");
 
         static SampleRunner()
         {
-            var di = new DirectoryInfo(Folder);
+            var di = new DirectoryInfo(LogsFolder);
             if (!di.Exists)
             {
                 di.Create();
             }
-
-            Projects = new[]
-            {
-                DefineProject.MatrixSamples,
-                DefineProject.VectorSamples,
-                DefineProject.MatrixComplexSamples,
-                DefineProject.MatrixAsFixedSamples
-            };
         }
 
         public static void Run(Type t, DefineProject project)
         {
-            var data = Projects
-                .Where(i => project == i)
-                .Aggregate(@"D:\MatrixDotNet\samples\Samples\Samples\",
-                    (current, i) => Path.Combine(current, i.ToString()));
-
-
-            var str = Path.Combine(Folder, t.Name);
+            var str = Path.Combine(LogsFolder, t.Name);
             var info = new DirectoryInfo(str);
 
             if (!info.Exists)
@@ -51,12 +38,12 @@ namespace Samples
             {
                 var call = (string) mi.Invoke(t, new object[] { });
                 using var sw =
-                    new StreamWriter(Path.GetRelativePath(@".", Path.Combine(Folder, t.Name, mi.Name + ".txt")), false);
+                    new StreamWriter(Path.GetRelativePath(@".", Path.Combine(LogsFolder, t.Name, mi.Name + ".txt")), false);
                 sw.WriteLine(call);
             }
 
-            var src = Path.Combine(data, t.Name) + ".cs";
-            var path = Path.GetRelativePath(@".", Path.Combine(str, t.Name + "Docs.cs"));
+            var src = Directory.GetFiles(SamplesFolder, $"{t.Name}.cs", SearchOption.AllDirectories)[0];
+            var path = Path.Combine(str, t.Name + "Docs.cs");
             Parser.Parse(src, path, t);
         }
     }
