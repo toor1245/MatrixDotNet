@@ -1,4 +1,24 @@
-function changeColorTheme() {	
+function setIcons() {
+    let notes = Array.from(document.getElementsByClassName("NOTE"));
+          notes.concat(Array.from(document.getElementsByClassName("TIP")));
+          for (let i = 0; i < notes.length; i++) {
+              let title = notes[i].getElementsByTagName("h5")[0];
+              title.innerHTML = '<i class="fas fa-info-circle"></i> ' + title.innerHTML;
+          }
+          let warnings = document.getElementsByClassName("WARNING");
+          for (let i = 0; i < warnings.length; i++) {
+              let title = warnings[i].getElementsByTagName("h5")[0];
+              title.innerHTML = '<i class="fas fa-exclamation-triangle"></i> ' + title.innerHTML;
+          }
+          var danger = Array.from(document.getElementsByClassName("IMPORTANT"));
+          danger.concat(Array.from(document.getElementsByClassName("CAUTION")));
+          for (let i = 0; i < danger.length; i++) {
+              let title = danger[i].getElementsByTagName("h5")[0];
+              title.innerHTML = '<i class="fas fa-skull-crossbones"></i> ' + title.innerHTML;
+          }
+}
+
+function changeColorTheme() {
 	let currentTheme = window.localStorage.getItem("theme");
 
 	if(!currentTheme || currentTheme === "dark") {

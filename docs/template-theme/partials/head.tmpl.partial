@@ -20,11 +20,12 @@
   <link id="hljs-stylesheet" rel="stylesheet" href="{{_rel}}styles/hljs/vs-dark.css">
   
   <script type="text/javascript" src="{{_rel}}styles/theme.js" ></script>
-  <script >
+  <script>
     if(window.localStorage.getItem("theme") === "light") {
       setLightTheme();
     }
     else setDarkTheme();
+    document.addEventListener('DOMContentLoaded', setIcons, false);
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">

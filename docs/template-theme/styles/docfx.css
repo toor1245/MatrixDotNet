@@ -901,18 +901,6 @@ pre > code .line-highlight {
     font-weight: normal;
 }
 
-.alert-info h5:before {
-    content:"\e086"
-}
-
-.alert-warning h5:before {
-    content:"\e127"
-}
-
-.alert-danger h5:before {
-    content:"\e107"
-}
-
 /* For Embedded Video */
 div.embeddedvideo {
     padding-top: 56.25%;
