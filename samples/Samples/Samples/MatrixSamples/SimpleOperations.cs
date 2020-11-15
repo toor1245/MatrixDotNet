@@ -55,12 +55,5 @@ namespace Samples.Samples.MatrixSamples
 
             return builder.ToString();
         }
-
-        public static string Run2()
-        {
-            StringBuilder builder = new StringBuilder();
-            builder.AppendLine("Test");
-            return builder.ToString();
-        }
     }
 }

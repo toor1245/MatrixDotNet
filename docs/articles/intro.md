@@ -13,135 +13,33 @@ MatrixDotNet contains three main structures:
 * <a href = "#Vector">Vector<T></a>
 * <a href = "#MatrixComplex">MatrixComplex</a>
 
-#### Matrix
+### Matrix
 
-[!code-csharp[CreateMatrixSample.cs](../../samples/Samples/Samples/MatrixSamples/MatrixCreateSample.cs)]
+There are many ways creates of matrix so let's consider the following sample how to create Matrix.   
 
-##### Simple operations of matrix.
+[!code-csharp[CreateMatrixSample.cs](../../samples/Samples/logs/MatrixCreateSample/MatrixCreateSampleDocs.cs)]
 
-```c#
-public class SimpleOperations
-{
-    public static void Run()
-    {
-        // init matrix
-        int[,] a = new int[3, 3]
-        {
-            { 10, -7, 0 },
-            { -3, 6,  2 },
-            { 5, -1,  5 }
-        };
+As you can see class `Matrix` can assign any type implicit such as one, two dimensional and jugged array.
+Matrix stores your data in one dimensional array, you can get with happen method `GetArray()`.
 
-        int[,] b = new int[3, 4]
-        {
-            { 11, -2, 1, 6 },
-            { -8, 4,  2, 3 },
-            { 4, -4,  5, 8 },
-        };
-        
-        int[] vector = {2, 7, 5, 4};
+##### Output 
 
-        int k = 3;
-        
-        Matrix<int> matrixA = a;
+[!code-csharp[Run](../../samples/Samples/logs/MatrixCreateSample/Run.txt)]
 
-        Matrix<int> matrixB = b;
-            
-        // Multiply.
-        Matrix<int> matrixC = matrixA * matrixB;
-        Matrix<int> matrixD = matrixC * k;
-        
-        // Sum .
-        Matrix<int> matrixE = matrixB + k * matrixB;
-        
-        // Subtract.
-        Matrix<int> matrixF = 2 * matrixA - matrixA;
-        
-        // Divide.
-        Matrix<int> matrixG = matrixA / 2;
-        
-        // Multiply to vector
-        int[] vectorA = matrixB * vector;
+#### Simple operations of matrix.
 
-        // Pretty output.
-        matrixA.Pretty();
-        matrixB.Pretty();
-        matrixC.Pretty();
-        matrixD.Pretty();
-        matrixE.Pretty();
-        matrixF.Pretty();
-        matrixG.Pretty();
-        
-        Console.Write("VectorA result: ");
-        foreach (var i in vectorA)
-        {
-            Console.Write(i + " ");
-        }
-    }
-}
-```
+So, as we know how to create matrix let's to try make routine operations with matrix.  
+
+[!code-csharp[CreateMatrixSample.cs](../../samples/Samples/logs/SimpleOperations/SimpleOperationsDocs.cs)]
+
+As you can see thanks overload operators, it's possible write less code and becomes more readable.   
 
 ##### Output
-```ini
-Number of rows: 3
-Number of columns: 3
 
-  10,00       |  -7,00       |  0,00        |
-  -3,00       |  6,00        |  2,00        |
-  5,00        |  -1,00       |  5,00        |
+[!code-csharp[Run](../../samples/Samples/logs/SimpleOperations/Run.txt)]
 
-
-Number of rows: 3
-Number of columns: 4
-
-  11,00       |  -2,00       |  1,00        |  6,00        |
-  -8,00       |  4,00        |  2,00        |  3,00        |
-  4,00        |  -4,00       |  5,00        |  8,00        |
-
-
-Number of rows: 3
-Number of columns: 4
-
-  166,00      |  -48,00      |  -4,00       |  39,00       |
-  -73,00      |  22,00       |  19,00       |  16,00       |
-  83,00       |  -34,00      |  28,00       |  67,00       |
-
-
-Number of rows: 3
-Number of columns: 4
-
-  498,00      |  -144,00     |  -12,00      |  117,00      |
-  -219,00     |  66,00       |  57,00       |  48,00       |
-  249,00      |  -102,00     |  84,00       |  201,00      |
-
-
-Number of rows: 3
-Number of columns: 4
-
-  44,00       |  -8,00       |  4,00        |  24,00       |
-  -32,00      |  16,00       |  8,00        |  12,00       |
-  16,00       |  -16,00      |  20,00       |  32,00       |
-
-
-Number of rows: 3
-Number of columns: 3
-
-  10,00       |  -7,00       |  0,00        |
-  -3,00       |  6,00        |  2,00        |
-  5,00        |  -1,00       |  5,00        |
-
-
-Number of rows: 3
-Number of columns: 3
-
-  5,00        |  -3,00       |  0,00        |
-  -1,00       |  3,00        |  1,00        |
-  2,00        |  0,00        |  2,00        |
-
-VectorA result: 37 34 37 0
-```
-
-If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
+> [!NOTE]
+> If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
 
 
 
