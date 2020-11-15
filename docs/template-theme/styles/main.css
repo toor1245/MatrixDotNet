@@ -229,17 +229,24 @@ code {
 	font-size: 100%;
 }
 
-#breadcrumb .breadcrumb>li a {
+#breadcrumb .breadcrumb>li {
+	padding: 0;
 	border-radius: 0;
 	font-weight: normal;
 	font-size: 85%;
 	display: inline;
-	padding: 0 .6em 0;
 	line-height: 1;
 	text-align: center;
 	white-space: nowrap;
 	vertical-align: baseline;
 	color: var(--color-breadcrumb);
+
+	cursor: default;
+}
+
+#breadcrumb .breadcrumb>li a {
+	color: var(--color-breadcrumb);
+	cursor: pointer;
 }
 
 #breadcrumb .breadcrumb>li a:hover {
@@ -248,10 +255,7 @@ code {
 }
 
 .breadcrumb>li+li:before {
-	content: "⯈";
-	font-size: 75%;
 	color: var(--color-background-dark);
-	padding: 0;
 }
 
 .toc .level1>li {

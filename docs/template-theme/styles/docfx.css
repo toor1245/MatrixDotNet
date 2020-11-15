@@ -225,7 +225,8 @@ article section {
   white-space: nowrap;
 }
 .breadcrumb > li + li:before {
-  content: "\00a0/";
+  content: "⯈";
+	font-size: 75%;
 }
 #autocollapse.collapsed .navbar-header {
   float: none;
