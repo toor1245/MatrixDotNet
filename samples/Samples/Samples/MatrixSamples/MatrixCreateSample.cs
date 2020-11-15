@@ -3,7 +3,6 @@ using MatrixDotNet;
 
 namespace Samples.Samples.MatrixSamples
 {
-    [Output(DefineProject.MatrixSamples)]
     public class MatrixCreateSample : SampleTest
     {
         public static string Run()

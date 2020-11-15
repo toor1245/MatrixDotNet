@@ -21,7 +21,7 @@ namespace Samples
             }
         }
 
-        public static void Run(Type t, DefineProject project)
+        public static void Run(Type t)
         {
             var str = Path.Combine(LogsFolder, t.Name);
             var info = new DirectoryInfo(str);

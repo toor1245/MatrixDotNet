@@ -7,7 +7,6 @@ using MatrixDotNet.Extensions.Decompositions;
 
 namespace Samples.Samples.MatrixSamples
 {
-    [Output(DefineProject.MatrixSamples)]
     public class LUSample : SampleTest
     {
         public static string Run()
