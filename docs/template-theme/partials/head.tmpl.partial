@@ -1,4 +1,4 @@
-{{!Copyright (c) Oscar Vasquez. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
 
 <head>
   <meta charset="utf-8">
@@ -8,13 +8,28 @@
   <meta name="title" content="{{#title}}{{title}}{{/title}}{{^title}}{{>partials/title}}{{/title}} {{#_appTitle}}| {{_appTitle}} {{/_appTitle}}">
   <meta name="generator" content="docfx {{_docfxVersion}}">
   {{#_description}}<meta name="description" content="{{_description}}">{{/_description}}
+  <meta property="docfx:navrel" content="{{_navRel}}">
+  <meta property="docfx:tocrel" content="{{_tocRel}}">
+
   <link rel="shortcut icon" href="{{_rel}}{{{_appFaviconPath}}}{{^_appFaviconPath}}favicon.ico{{/_appFaviconPath}}">
+  
   <link rel="stylesheet" href="{{_rel}}styles/docfx.vendor.css">
   <link rel="stylesheet" href="{{_rel}}styles/docfx.css">
   <link rel="stylesheet" href="{{_rel}}styles/main.css">
+  
+  <link id="hljs-stylesheet" rel="stylesheet" href="{{_rel}}styles/hljs/vs-dark.css">
+  
+  <script type="text/javascript" src="{{_rel}}styles/theme.js" ></script>
+  <script>
+    if(window.localStorage.getItem("theme") === "light") {
+      setLightTheme();
+    }
+    else setDarkTheme();
+    document.addEventListener('DOMContentLoaded', setIcons, false);
+  </script>
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <meta property="docfx:navrel" content="{{_navRel}}">
-  <meta property="docfx:tocrel" content="{{_tocRel}}">
+
   {{#_noindex}}<meta name="searchOption" content="noindex">{{/_noindex}}
   {{#_enableSearch}}<meta property="docfx:rel" content="{{_rel}}">{{/_enableSearch}}
   {{#_enableNewTab}}<meta property="docfx:newtab" content="true">{{/_enableNewTab}}

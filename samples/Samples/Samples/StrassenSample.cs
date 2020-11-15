@@ -7,9 +7,9 @@ namespace Samples.Samples
 {
     public class StrassenSample
     {
-        private int[,] matrix = new int[5000,5000];
-        private int[,] matrix2 = new int[5000,5000];
-        
+        private int[,] matrix = new int[5000, 5000];
+        private int[,] matrix2 = new int[5000, 5000];
+
         private Matrix<int> _matrix3;
         private Matrix<int> _matrix4;
 
@@ -25,8 +25,9 @@ namespace Samples.Samples
                     matrix[i, j] = random.Next(1, 10);
                 }
             }
+
             _matrix3 = new Matrix<int>(matrix);
-            
+
             for (int i = 0; i < matrix2.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix2.GetLength(1); j++)
@@ -34,7 +35,7 @@ namespace Samples.Samples
                     matrix2[i, j] = random2.Next(1, 10);
                 }
             }
-            
+
             _matrix4 = new Matrix<int>(matrix2);
         }
 
@@ -43,13 +44,13 @@ namespace Samples.Samples
         {
             return _matrix3 * _matrix4;
         }
-        
+
         [Benchmark]
         public Matrix<int> StrassenPara()
         {
             return MatrixExtension.MultiplyStrassen(_matrix3, _matrix4);
         }
-        
+
         [Benchmark]
         public Matrix<int> Strassen()
         {

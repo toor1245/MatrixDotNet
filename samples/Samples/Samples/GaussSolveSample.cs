@@ -6,7 +6,6 @@ namespace Samples.Samples
 {
     public class GaussSolveSample
     {
-
         public static void Run()
         {
             // initialize matrix.
@@ -17,10 +16,10 @@ namespace Samples.Samples
                 {5, 9, 15}
             };
 
-            double[] right = { 1, 23, 5 };
+            double[] right = {1, 23, 5};
 
             double[] res = matrix.GaussSolve(right);
-            for(var i = 0; i < res.Length; i++)
+            for (var i = 0; i < res.Length; i++)
             {
                 Console.Write($"x{i}: {res[i]}\n");
             }
