@@ -14,7 +14,7 @@
     <div class="collapse navbar-collapse" id="navbar">
       <div class="navbar-right">
         <div class="navbar-buttons">
-          <a onclick="changeColorTheme();">&#9728;</a>
+          <a onclick="changeColorTheme();"><i id="lightbulb" class="far fa-lightbulb"></i></a>
         </div>
         <form class="navbar-form" role="search" id="search">
           <div class="form-group">
