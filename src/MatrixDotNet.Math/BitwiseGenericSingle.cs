@@ -7,18 +7,17 @@ namespace MatrixDotNet.Math
     {
         #region Not
 
-        private static Func<T,T> NotFunc;
+        private static Func<T, T> NotFunc;
 
-        public static Func<T,T> GetNotFunc()
+        public static Func<T, T> GetNotFunc()
         {
             if (NotFunc != null)
                 return NotFunc;
 
             var leftPar = Expression.Parameter(typeof(T), "left");
-            var resultType = typeof(T);
-            var body = Expression.Not(Expression.Convert(leftPar, resultType));
+            var body = Expression.Not(leftPar);
 
-            var func = Expression.Lambda<Func<T,T>>(body, leftPar).Compile();
+            var func = Expression.Lambda<Func<T, T>>(body, leftPar).Compile();
             NotFunc = func;
 
             return func;
