@@ -178,7 +178,7 @@ Matrix F:
 
 </code></pre><h4 id="simple-operations-of-matrix">Simple operations of matrix.</h4>
 <p>So, as we know how to create matrix let's to try make routine operations with matrix.</p>
-<pre><code class="lang-csharp" name="CreateMatrixSample.cs">using System.Text;
+<pre><code class="lang-csharp" name="CreateMatrixSampleDocs.cs">using System.Text;
 using MatrixDotNet;
 
 namespace Samples.logs.SimpleOperations
@@ -223,6 +223,9 @@ namespace Samples.logs.SimpleOperations
 }
 
 </code></pre>
+<blockquote>
+<p><a href="https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/MatrixSamples/SimpleOperations.cs">CreateMatrixSample.cs</a></p>
+</blockquote>
 <p>As you can see thanks overload operators, it's possible write less code and becomes more readable.</p>
 <h5 id="output-1">Output</h5>
 <pre><code class="lang-csharp" name="Run">matrix A:
@@ -268,6 +271,136 @@ matrix G:
    2  |   0  |   2  |
 
 
+</code></pre><h3 id="vector">Vector</h3>
+<p>The next structure is Vector.</p>
+<p>Let's consider the following sample which demonstrates how to create vector.</p>
+<pre><code class="lang-csharp" name="VectorSimpleOperationsDocs.cs">using System.Text;
+using MatrixDotNet;
+
+namespace Samples.logs.CreateVectorSample
+{
+    public class CreateVectorSampleDocs
+    {
+
+        // Below you can see all ways how to create vector in explicit and implicit form
+        public static void Run()
+        {
+
+            // basic approach for create matrix just pass length of vector
+            Vector&lt;int&gt; va = new Vector&lt;int&gt;(5);
+
+            // init vector with fill values.
+            Vector&lt;int&gt; vb = new Vector&lt;int&gt;(5, 5);
+
+            // third way is implicit assign array.
+            Vector&lt;int&gt; vc = new[] { 1, 2, 3, 4, 5 };
+        }
+    }
+}
+
+</code></pre>
+<blockquote>
+<p><a href="https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/VectorSamples/CreateVectorSample.cs">SimpleOperations.cs</a></p>
+</blockquote>
+<h5 id="output-2">Output</h5>
+<pre><code class="lang-csharp" name="Run">0 |0 |0 |0 |0 |
+5 |5 |5 |5 |5 |
+1 |2 |3 |4 |5 |
+
+</code></pre><h4 id="routine-operations-with-vector">Routine operations with <code>Vector</code></h4>
+<p>So let's consider <code>Vector</code> operations as well as in <code>Matrix</code></p>
+<pre><code class="lang-csharp" name="VectorSimpleOperationsDocs.cs">using System.Text;
+using MatrixDotNet;
+using MatrixDotNet.Extensions.Builder;
+
+namespace Samples.logs.VectorSimpleOperations
+{
+    public class VectorSimpleOperationsDocs
+    {
+
+        // Below you can see all ways how to execute routine operations with vector.
+        public static void Run()
+        {
+
+            // init vector va with fill three value.
+            Vector&lt;int&gt; va = new Vector&lt;int&gt;(5,3);
+
+            // init vector vb.
+            Vector&lt;int&gt; vb = new[] { 1, 2, 3, 4, 5 };
+
+            // add of two vectors.
+            var vc = vb + va;
+
+            // multiply vectors on constant.
+            var vk = 5 * vc;
+
+            // subtract of two vectors.
+            var vd = vk - vc;
+
+            // subtract of two vectors.
+            var ve = vd - vk;
+
+            // multiply vectors on constant.
+            var vg = ve * vc;
+
+            // multiply vector on matrix and vice versa
+            Matrix&lt;int&gt; ma = BuildMatrix.RandomInt(5, 5, -10, 10);
+            var vq = ma * ve;
+            var vt = ve * ma;
+        }
+    }
+}
+
+</code></pre>
+<blockquote>
+<p><a href="https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/VectorSamples/VectorSimpleOperations.cs">SimpleOperations.cs</a></p>
+</blockquote>
+<h5 id="output-3">Output</h5>
+<pre><code class="lang-csharp" name="Run">0 |0 |0 |0 |0 |
+5 |5 |5 |5 |5 |
+1 |2 |3 |4 |5 |
+
+</code></pre><h3 id="matrixcomplex">MatrixComplex</h3>
+<p>The last structure and the newest is <code>MatrixComplex</code>, for now MatrixComplex in difference from <code>Matrix</code> and <code>Vector</code> have only fundamental operations.
+MatrixComplex still in development stage.</p>
+<p>Take a look below on sample.</p>
+<pre><code class="lang-csharp" name="CreateMatrixComplexDocs.cs">using System.Text;
+using MatrixDotNet;
+
+namespace Samples.logs.CreateMatrixComplex
+{
+    public class CreateMatrixComplexDocs
+    {
+
+        // Below you can see all ways how to create MatrixComplex for now.
+        public static void Run()
+        {
+            MatrixComplex ma = new MatrixComplex(5,5);
+            MatrixComplex mb = new MatrixComplex(5,5);
+
+            // addition of two complex matrix.
+            var mc = ma + mb;
+
+            // subtraction of two complex matrix.
+            var md = ma - mc;
+
+            // addition of two complex matrix.
+            var me = ma * md;
+        }
+    }
+}
+
+</code></pre>
+<blockquote>
+<p><a href="https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/MatrixComplexSamples/CreateMatrixComplex.cs">CreateMatrixComplex.cs</a></p>
+</blockquote>
+<h5 id="output-4">Output</h5>
+<pre><code class="lang-csharp" name="Run">ma: MatrixDotNet.MatrixComplex
+mb: MatrixDotNet.MatrixComplex
+mc: MatrixDotNet.MatrixComplex
+md: MatrixDotNet.MatrixComplex
+me: MatrixDotNet.MatrixComplex
+
 </code></pre>
 <div class="NOTE">
 <h5>Note</h5>
@@ -281,7 +414,7 @@ matrix G:
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/toor1245/MatrixDotNet/blob/dev-toor-docs/docs/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/intro.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

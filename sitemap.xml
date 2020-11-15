@@ -2,487 +2,487 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/index.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Exceptions.MatrixDotNetException.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Exceptions.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Builder.BuildMatrix.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Builder.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Complement.MatrixExtension.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Complement.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Conversion.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Extensions.Conversion.Converter.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Extensions.Conversion.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Extensions.Sorting.BubbleSortFixed.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Extensions.Sorting.ISorting.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Extensions.Sorting.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Simd.Simd.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Simd.Statistics.Simd.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Simd.Statistics.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.Simd.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Core.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Criteries.Criterion.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Criteries.DefiniteType.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Criteries.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Decompositions.Decomposition.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Decompositions.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Determinants.Determinant.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Determinants.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Inverse.MatrixExtension.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Inverse.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.MatrixExtension.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Options.Template.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Options.TemplateHtml.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Options.TemplateMarkdown.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Options.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Performance.Operations.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Solver.Solve.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Solver.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Sorting.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.EmpiricalSample.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.Intervals-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.MatrixExtension.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.ConfigIntervals-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.ConfigVariations-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.IConfig-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.SetupIntervals-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.SetupVariations-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.TableIntervals.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.TableVariations.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.TableSetup.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.Variations-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.Statistics.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Extensions.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Math.MathExtension.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Math.MathGeneric.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Math.MathGeneric-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Math.MathGeneric-3.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Math.MathUnsafe-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Math.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Matrix-1.Enumerator.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Matrix-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.MatrixComplex.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.NotStableFeatures.UnsafeEqualsUnrolled.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.NotStableFeatures.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.State.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.Vector-1.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.VectorExtension.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/api/MatrixDotNet.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/features/getting_started.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/features/statistics.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/guides/absorption.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/guides/access.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/guides/bitwise.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/guides/conversion.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/guides/sorting.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/guides/Strassen.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/intro.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/articles/license.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://toor1245.github.io/MatrixDotNet/index.html</loc>
-    <lastmod>2020-11-15T02:59:02+00:00</lastmod>
+    <lastmod>2020-11-15T09:08:52+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
