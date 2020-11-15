@@ -137,7 +137,7 @@ article h4 {
 .toc-filter>input {
 	border: none;
 	border-radius: unset;
-	background-color: var(--color-background-subnav);
+	background-color: var(--color-background-input);
 	padding: 5px 0 5px 20px;
 	font-size: 90%
 }
@@ -273,7 +273,7 @@ code {
 }
 
 .form-control {
-	background-color: var(--color-background-subnav);
+	background-color: var(--color-background-input);
 	border: none;
 	border-radius: 0;
 	-webkit-box-shadow: none;

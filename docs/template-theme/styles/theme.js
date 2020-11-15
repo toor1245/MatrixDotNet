@@ -19,6 +19,7 @@ function setLightTheme() {
     root.style.setProperty('--color-toc-hover', "#fff");
     root.style.setProperty('--color-background', "white");
     root.style.setProperty('--color-background-subnav', "#333337");
+    root.style.setProperty('--color-background-input', "white");
     root.style.setProperty('--color-background-dark', "#ddd");
     root.style.setProperty('--color-background-table-alt', "#212123");
     root.style.setProperty('--color-background-quote', " #69696e");
@@ -37,6 +38,7 @@ function setDarkTheme() {
 	root.style.setProperty('--color-toc-hover', "#fff");
 	root.style.setProperty('--color-background', "#2d2d30");
 	root.style.setProperty('--color-background-subnav', "#333337");
+    root.style.setProperty('--color-background-input', "#333337");
 	root.style.setProperty('--color-background-dark', "#1e1e1e");
 	root.style.setProperty('--color-background-table-alt', "#212123");
     root.style.setProperty('--color-background-quote', " #69696e");
