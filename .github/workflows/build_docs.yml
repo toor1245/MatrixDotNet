@@ -7,19 +7,36 @@ on:
     types: [closed]
   workflow_dispatch:
 
+env:
+  # Stop wasting time caching packages
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  # Disable sending usage data to Microsoft
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
 jobs:
   build:
     name: Build and Release
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - uses: nikeee/docfx-action@v1.0.0
-        name: Build Documentation
-        with:
-          args: docs/docfx.json
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1.7.2
+
+      - name: Build code samples for documentation
+        run: dotnet test "samples/Samples" -c Release
+
+      - name: Download docfx
+        run: |
+          $docfx_url=(Invoke-WebRequest -URI 'https://api.github.com/repos/dotnet/docfx/releases/latest' | ConvertFrom-Json).assets.browser_download_url
+          Invoke-WebRequest -Uri $docfx_url -OutFile "./docfx.zip"
+          Expand-Archive -LiteralPath "./docfx.zip" -DestinationPath "./docfx-bin/"
+        shell: powershell
+
+      - name: Build documentation
+        run: docfx-bin/docfx.exe docs/docfx.json
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

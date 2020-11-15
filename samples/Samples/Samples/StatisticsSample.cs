@@ -11,19 +11,19 @@ namespace Samples.Samples
             // initialize matrix.
             Matrix<double> matrix = new[,]
             {
-                { 5.7, 6.7,  6.2,  7  },
-                { 6.7, 7.7,  7.2,  11 },
-                { 7.7, 8.7,  8.2,  6  },
-                { 8.7, 9.7,  9.2,  4  },
-                { 9.7, 10.7, 10.2, 2  }
+                {5.7, 6.7, 6.2, 7},
+                {6.7, 7.7, 7.2, 11},
+                {7.7, 8.7, 8.2, 6},
+                {8.7, 9.7, 9.2, 4},
+                {9.7, 10.7, 10.2, 2}
             };
 
             // choose column which will be mark.
-            TableIntervals[] table = {TableIntervals.Xi,TableIntervals.Ni};
-            
+            TableIntervals[] table = {TableIntervals.Xi, TableIntervals.Ni};
+
             // sets configuration for intervals
-            var configIntervals = new ConfigIntervals<double>(matrix,table);
-            
+            var configIntervals = new ConfigIntervals<double>(matrix, table);
+
             // calculate matrix with intervals.
             var intervals = new Intervals<double>(configIntervals);
 
@@ -35,7 +35,6 @@ namespace Samples.Samples
 
             // gets median interval
             double median = intervals.MedianInterval;
-            
         }
     }
 }

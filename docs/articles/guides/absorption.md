@@ -40,86 +40,19 @@ Many arithmetic rules don’t work with float and double in general:
 * a<sup>x + y</sup> &ne; a<sup>x</sup> * a<sup>y</sup>
     
 ##### Lets consider the following sample:
-```c#
-using System;
-using MatrixDotNet;
-using MatrixDotNet.Extensions;
 
-namespace Sample
-{
-    public class AbsorptionDemonstrate
-    {
-        public static void Run()
-        {
-            // initialize Matrix
-            Matrix<double> matrix64Klein = new double[5, 5];
-            Matrix<double> matrix64Kahan = new double[5, 5];
-            Matrix<decimal> matrix128 = new decimal[5, 5];
+[!code-csharp[AbsorptionSample.cs](../../../samples/Samples/logs/AbsorptionSample/AbsorptionSampleDocs.cs)]
 
-            matrix64Kahan[0, 0] = Math.Pow(10,16);
-            matrix64Klein[0, 0] = Math.Pow(10,16);
-            matrix128[0, 0] = (decimal)Math.Pow(10,28);
-            
-            for (int i = 0; i < matrix64Klein.Rows; i++)
-            {
-                for (int j = 1; j < matrix64Klein.Columns; j++)
-                {
-                    matrix64Kahan[i, j] = 1;
-                    matrix64Klein[i, j] = 0.1;
-                    matrix128[i, j] = 0.1m;
-                }
-            }
-            
-            double defaultSum0 = matrix64Kahan.Sum();
-            double kahanSum0 = matrix64Kahan.KahanSum();
-            double kleinSum0 = matrix64Kahan.KleinSum();
-
-            double defaultSum1 = matrix64Klein.Sum();
-            double kahanSum1 = matrix64Klein.KahanSum();
-            double kleinSum1 = matrix64Klein.KleinSum();
-            
-            decimal defaultSum2 = matrix128.Sum();
-            decimal kleinSum2 = matrix128.KleinSum();
-
-            Console.WriteLine("\t\t64 bit");
-            Console.WriteLine("Default sum: {0:N}", defaultSum0);
-            Console.WriteLine("Kahan sum:   {0:N}", kahanSum0);
-            Console.WriteLine("Klein sum:   {0:N}", kleinSum0);
-            
-            Console.WriteLine("\n\t\t64 bit");
-            Console.WriteLine("Default sum: {0:N}", defaultSum1);
-            Console.WriteLine("Kahan sum:   {0:N}", kahanSum1);
-            Console.WriteLine("Klein sum:   {0:N}", kleinSum1);
-            
-            Console.WriteLine("\n\t\t128 bit");
-            Console.WriteLine("Default sum: {0:N}", defaultSum2);
-            Console.WriteLine("Klein sum:   {0:N}", kleinSum2);
-        }
-    }
-}
-```
+As you can see we have three matrix with 64 and 128 bit, so next step assign max values for this matrices for demonstration hit in absorption.
+For invoke Klein's or Kahan's algorithm must invoke method `GetKahanSum()` and `GetKleinSum()`  
+Klein's algorithm have the most accuracy summation of matrix than Kahan's, however if values not big you can use Kahan's algorithm.     
 
 #### Output
-```ini
-                64 bit
-Default sum: 10 000 000 000 000 000,00
-Kahan sum:   10 000 000 000 000 020,00
-Klein sum:   10 000 000 000 000 020,00
 
-                64 bit
-Default sum: 10 000 000 000 000 000,00
-Kahan sum:   10 000 000 000 000 000,00
-Klein sum:   10 000 000 000 000 002,00
+[!code-csharp[AbsorptionSample.cs](../../../samples/Samples/logs/AbsorptionSample/Run.txt)]
 
-                128 bit
-Default sum: 10 000 000 000 000 000 000 000 000 000,00
-Klein sum:   10 000 000 000 000 000 000 000 000 002,00
-```
-As you can see, the default sum counts incorrectly, the runtime rounds it because the floating type precision is not enough to handle digit numbers.
-
+Thus, the default sum counts incorrectly, the runtime rounds it because the floating type precision is not enough to handle digit numbers.
 Klein calculates with less error, but at the same time it works slower than Kahan.
 
-> There is no Kahan algorithm for decimal, since the usual sum will count correctly, but the algorithm cannot cope with accuracy.
-
-
-If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
+> [!NOTE]
+> If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).

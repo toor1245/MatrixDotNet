@@ -594,5 +594,6 @@ Frequency=1757816 Hz, Resolution=568.8878 ns, Timer=TSC
 As you can see BitMin() method works faster(x1.725) than DefaultMin(). Because we eliminate branch prediction.
 See more information about Bitwise operations in [article](https://toor1245.github.io/MatrixDotNet/articles/intro.html).
 
+> [!NOTE]
+> If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
 
-> See more information [site](https://toor1245.github.io/MatrixDotNet/) 

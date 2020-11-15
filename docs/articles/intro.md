@@ -4,173 +4,85 @@
 Create new console application and install the [MatrixDotNet](https://www.nuget.org/packages/MatrixDotNet/) NuGet package. We support:
 
 * Projects: classic and modern with PackageReferences
-* Runtimes: Full .NET Framework (4.6+), .NET Core (2.0+), Mono
+* Runtimes: .NETStandard 2.1, NET Core 3.1+
 * OS: Windows, Linux, MacOS
 * Languages: C#
 
-### How to use Matrix?
-MatrixDotNet supports all simple operations related matrix.
+MatrixDotNet contains three main structures: 
+* <a href = "#Matrix">Matrix<T></a>
+* <a href = "#Vector">Vector<T></a>
+* <a href = "#MatrixComplex">MatrixComplex</a>
 
-##### How to create matrix?
+### Matrix
 
-```c#
-class Program
-{
-	static void Main(string[] args)
-	{
-        int[,] a = new int[3, 3]
-        {
-            { 10, -7, 0 },
-            { -3, 6,  2 },
-            { 5, -1,  5 }
-        };
-        
-        // First way. 
-        Matrix<int> matrixA = new Matrix<int>(a);
-        
-        // Second way: primitive way, assign by deep copy nor by reference!!!
-        Matrix<int> matrixB = a;
-        
-        Matrix<int> matrixC = new int[10, 10];
+There are many ways creates of matrix so let's consider the following sample how to create Matrix.   
 
-        Matrix<int> matrixD = new[,]
-        {
-            {1, 2, 3},
-            {2 ,4, 6},
-        };
-        
-        // Third way initialize all values 0 or constant value.
-        Matrix<int> matrixE = new Matrix<int>(row:5,col:3);
-        
-        Matrix<int> matrixF = new Matrix<int>(row:3,col:5,value:5);
-    }
-}
-```
-##### Simple operations of matrix.
+[!code-csharp[CreateMatrixSample.cs](../../samples/Samples/logs/MatrixCreateSample/MatrixCreateSampleDocs.cs)]
 
-```c#
-public class SimpleOperations
-{
-    public static void Run()
-    {
-        // init matrix
-        int[,] a = new int[3, 3]
-        {
-            { 10, -7, 0 },
-            { -3, 6,  2 },
-            { 5, -1,  5 }
-        };
+As you can see class `Matrix` can assign any type implicit such as one, two dimensional and jugged array.
+Matrix stores your data in one dimensional array, you can get with happen method `GetArray()`.
 
-        int[,] b = new int[3, 4]
-        {
-            { 11, -2, 1, 6 },
-            { -8, 4,  2, 3 },
-            { 4, -4,  5, 8 },
-        };
-        
-        int[] vector = {2, 7, 5, 4};
+> [MatrixCreateSample.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/MatrixSamples/MatrixCreateSample.cs)
 
-        int k = 3;
-        
-        Matrix<int> matrixA = a;
+##### Output 
 
-        Matrix<int> matrixB = b;
-            
-        // Multiply.
-        Matrix<int> matrixC = matrixA * matrixB;
-        Matrix<int> matrixD = matrixC * k;
-        
-        // Sum .
-        Matrix<int> matrixE = matrixB + k * matrixB;
-        
-        // Subtract.
-        Matrix<int> matrixF = 2 * matrixA - matrixA;
-        
-        // Divide.
-        Matrix<int> matrixG = matrixA / 2;
-        
-        // Multiply to vector
-        int[] vectorA = matrixB * vector;
+[!code-csharp[Run](../../samples/Samples/logs/MatrixCreateSample/Run.txt)]
 
-        // Pretty output.
-        matrixA.Pretty();
-        matrixB.Pretty();
-        matrixC.Pretty();
-        matrixD.Pretty();
-        matrixE.Pretty();
-        matrixF.Pretty();
-        matrixG.Pretty();
-        
-        Console.Write("VectorA result: ");
-        foreach (var i in vectorA)
-        {
-            Console.Write(i + " ");
-        }
-    }
-}
-```
+#### Simple operations of matrix.
+
+So, as we know how to create matrix let's to try make routine operations with matrix.  
+
+[!code-csharp[CreateMatrixSampleDocs.cs](../../samples/Samples/logs/SimpleOperations/SimpleOperationsDocs.cs)]
+
+> [CreateMatrixSample.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/MatrixSamples/SimpleOperations.cs)
+
+As you can see thanks overload operators, it's possible write less code and becomes more readable.   
 
 ##### Output
-```ini
-Number of rows: 3
-Number of columns: 3
 
-  10,00       |  -7,00       |  0,00        |
-  -3,00       |  6,00        |  2,00        |
-  5,00        |  -1,00       |  5,00        |
+[!code-csharp[Run](../../samples/Samples/logs/SimpleOperations/Run.txt)]
 
+### Vector
 
-Number of rows: 3
-Number of columns: 4
+The next structure is Vector.
 
-  11,00       |  -2,00       |  1,00        |  6,00        |
-  -8,00       |  4,00        |  2,00        |  3,00        |
-  4,00        |  -4,00       |  5,00        |  8,00        |
+Let's consider the following sample which demonstrates how to create vector.
 
+[!code-csharp[VectorSimpleOperationsDocs.cs](../../samples/Samples/logs/CreateVectorSample/CreateVectorSampleDocs.cs)]
 
-Number of rows: 3
-Number of columns: 4
+> [SimpleOperations.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/VectorSamples/CreateVectorSample.cs)
 
-  166,00      |  -48,00      |  -4,00       |  39,00       |
-  -73,00      |  22,00       |  19,00       |  16,00       |
-  83,00       |  -34,00      |  28,00       |  67,00       |
+##### Output
 
+[!code-csharp[Run](../../samples/Samples/logs/CreateVectorSample/Run.txt)]
 
-Number of rows: 3
-Number of columns: 4
+#### Routine operations with `Vector`
 
-  498,00      |  -144,00     |  -12,00      |  117,00      |
-  -219,00     |  66,00       |  57,00       |  48,00       |
-  249,00      |  -102,00     |  84,00       |  201,00      |
+So let's consider `Vector` operations as well as in `Matrix`
+ 
+[!code-csharp[VectorSimpleOperationsDocs.cs](../../samples/Samples/logs/VectorSimpleOperations/VectorSimpleOperationsDocs.cs)]
+ 
+> [SimpleOperations.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/VectorSamples/VectorSimpleOperations.cs)
 
+##### Output
+[!code-csharp[Run](../../samples/Samples/logs/CreateVectorSample/Run.txt)]
 
-Number of rows: 3
-Number of columns: 4
+### MatrixComplex
 
-  44,00       |  -8,00       |  4,00        |  24,00       |
-  -32,00      |  16,00       |  8,00        |  12,00       |
-  16,00       |  -16,00      |  20,00       |  32,00       |
+The last structure and the newest is `MatrixComplex`, for now MatrixComplex in difference from `Matrix` and `Vector` have only fundamental operations.
+MatrixComplex still in development stage.
 
+Take a look below on sample.
 
-Number of rows: 3
-Number of columns: 3
+[!code-csharp[CreateMatrixComplexDocs.cs](../../samples/Samples/logs/CreateMatrixComplex/CreateMatrixComplexDocs.cs)]
+ 
+> [CreateMatrixComplex.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/MatrixComplexSamples/CreateMatrixComplex.cs)
 
-  10,00       |  -7,00       |  0,00        |
-  -3,00       |  6,00        |  2,00        |
-  5,00        |  -1,00       |  5,00        |
-
-
-Number of rows: 3
-Number of columns: 3
-
-  5,00        |  -3,00       |  0,00        |
-  -1,00       |  3,00        |  1,00        |
-  2,00        |  0,00        |  2,00        |
-
-VectorA result: 37 34 37 0
-```
-
-If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
+##### Output
+[!code-csharp[Run](../../samples/Samples/logs/CreateMatrixComplex/Run.txt)]
+ 
+> [!NOTE]
+> If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
 
 
 
