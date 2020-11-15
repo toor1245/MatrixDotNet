@@ -27,7 +27,7 @@ function setLightTheme() {
     root.style.setProperty('--color-toc-active', "#337ab7");
 
     root.style.setProperty('--color-background', "#fff");
-    root.style.setProperty('--color-background-input', "white");
+    root.style.setProperty('--color-background-input', "#f2f2f2");
     root.style.setProperty('--color-background-dark', "#ddd");
     root.style.setProperty('--color-background-table-alt', "#f9f9f9");
     root.style.setProperty('--color-background-quote', " #69696e");
