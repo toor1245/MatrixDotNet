@@ -513,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.MatrixExtension.html",
-          "hash": "LsPjPtRjls/b+cbBT1gtGg=="
+          "hash": "JnbPh2CCCtTg1DsFZFM69A=="
         }
       },
       "is_incremental": false,
@@ -633,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.Variations-1.html",
-          "hash": "SEUb2dX1aL71MGmrKHtC9Q=="
+          "hash": "Vbp0ZIvmCvprMNQdtOVQRA=="
         }
       },
       "is_incremental": false,
@@ -665,6 +665,30 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Math.BitwiseGeneric-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Math.BitwiseGeneric-1.html",
+          "hash": "rhxJdfaTbIL6SoSB/QTLYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Math.BitwiseGeneric-3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Math.BitwiseGeneric-3.html",
+          "hash": "qRz2pQKKDJo3MsimdTIUMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/MatrixDotNet.Math.MathExtension.yml",
       "output": {
         ".html": {
@@ -681,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathGeneric-1.html",
-          "hash": "VywCWOnW0EkwEy8qVQp6/w=="
+          "hash": "PiwfgFe8GrsWgtSC9DAcKw=="
         }
       },
       "is_incremental": false,
@@ -693,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathGeneric-3.html",
-          "hash": "8pVF+HZw//8AC+AGIc9uiw=="
+          "hash": "QXztREZTHQPzN37oSMKbiw=="
         }
       },
       "is_incremental": false,
@@ -729,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.html",
-          "hash": "UX6L67AZY5LwyfBDT3CUXA=="
+          "hash": "mSjBGQSOu7PEvqW/KG2a6g=="
         }
       },
       "is_incremental": false,
@@ -741,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.Enumerator.html",
-          "hash": "/rDNml63s94K0YJXCob+wg=="
+          "hash": "v6SxztFfU2w/FQQliAWJKA=="
         }
       },
       "is_incremental": false,
@@ -753,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.html",
-          "hash": "v3xojKQpBjK+oEiPEN01PA=="
+          "hash": "pk1tgiIg9dQH89l2kCDjuA=="
         }
       },
       "is_incremental": false,
@@ -765,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.MatrixComplex.html",
-          "hash": "0GDZPzUSZEr9mU6W3Q5TGQ=="
+          "hash": "VoDqJp61CEV33kz1ZkeA2w=="
         }
       },
       "is_incremental": false,
@@ -813,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Vector-1.html",
-          "hash": "4MKNHcTAVpMFyXVOe3qE4Q=="
+          "hash": "9vofDhlqr19SxvigoSL/6w=="
         }
       },
       "is_incremental": false,
@@ -861,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "+4dAvAPevZYvrYxtHSP0qw=="
+          "hash": "IGdmdgieC+fhxMsOQbz/tg=="
         }
       },
       "is_incremental": false,
@@ -1113,7 +1137,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 69,
+          "total_file_count": 71,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

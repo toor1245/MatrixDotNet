@@ -4545,6 +4545,194 @@ references:
   commentId: N:MatrixDotNet.Math
   fullName: MatrixDotNet.Math
   nameWithType: MatrixDotNet.Math
+- uid: MatrixDotNet.Math.BitwiseGeneric`1
+  name: BitwiseGeneric<T>
+  href: api/MatrixDotNet.Math.BitwiseGeneric-1.html
+  commentId: T:MatrixDotNet.Math.BitwiseGeneric`1
+  name.vb: BitwiseGeneric(Of T)
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T>
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T)
+  nameWithType: BitwiseGeneric<T>
+  nameWithType.vb: BitwiseGeneric(Of T)
+- uid: MatrixDotNet.Math.BitwiseGeneric`1.GetNotFunc
+  name: GetNotFunc()
+  href: api/MatrixDotNet.Math.BitwiseGeneric-1.html#MatrixDotNet_Math_BitwiseGeneric_1_GetNotFunc
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`1.GetNotFunc
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T>.GetNotFunc()
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T).GetNotFunc()
+  nameWithType: BitwiseGeneric<T>.GetNotFunc()
+  nameWithType.vb: BitwiseGeneric(Of T).GetNotFunc()
+- uid: MatrixDotNet.Math.BitwiseGeneric`1.GetNotFunc*
+  name: GetNotFunc
+  href: api/MatrixDotNet.Math.BitwiseGeneric-1.html#MatrixDotNet_Math_BitwiseGeneric_1_GetNotFunc_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`1.GetNotFunc
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T>.GetNotFunc
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T).GetNotFunc
+  nameWithType: BitwiseGeneric<T>.GetNotFunc
+  nameWithType.vb: BitwiseGeneric(Of T).GetNotFunc
+- uid: MatrixDotNet.Math.BitwiseGeneric`1.Not(`0)
+  name: Not(T)
+  href: api/MatrixDotNet.Math.BitwiseGeneric-1.html#MatrixDotNet_Math_BitwiseGeneric_1_Not__0_
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`1.Not(`0)
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T>.Not(T)
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T).Not(T)
+  nameWithType: BitwiseGeneric<T>.Not(T)
+  nameWithType.vb: BitwiseGeneric(Of T).Not(T)
+- uid: MatrixDotNet.Math.BitwiseGeneric`1.Not*
+  name: Not
+  href: api/MatrixDotNet.Math.BitwiseGeneric-1.html#MatrixDotNet_Math_BitwiseGeneric_1_Not_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`1.Not
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T>.Not
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T).Not
+  nameWithType: BitwiseGeneric<T>.Not
+  nameWithType.vb: BitwiseGeneric(Of T).Not
+- uid: MatrixDotNet.Math.BitwiseGeneric`3
+  name: BitwiseGeneric<T1, T2, TR>
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html
+  commentId: T:MatrixDotNet.Math.BitwiseGeneric`3
+  name.vb: BitwiseGeneric(Of T1, T2, TR)
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR)
+  nameWithType: BitwiseGeneric<T1, T2, TR>
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR)
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.And(`0,`1)
+  name: And(T1, T2)
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_And__0__1_
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`3.And(`0,`1)
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.And(T1, T2)
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).And(T1, T2)
+  nameWithType: BitwiseGeneric<T1, T2, TR>.And(T1, T2)
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).And(T1, T2)
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.And*
+  name: And
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_And_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`3.And
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.And
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).And
+  nameWithType: BitwiseGeneric<T1, T2, TR>.And
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).And
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.GetAndFunc
+  name: GetAndFunc()
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_GetAndFunc
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`3.GetAndFunc
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.GetAndFunc()
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).GetAndFunc()
+  nameWithType: BitwiseGeneric<T1, T2, TR>.GetAndFunc()
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).GetAndFunc()
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.GetAndFunc*
+  name: GetAndFunc
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_GetAndFunc_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`3.GetAndFunc
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.GetAndFunc
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).GetAndFunc
+  nameWithType: BitwiseGeneric<T1, T2, TR>.GetAndFunc
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).GetAndFunc
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.GetLeftShiftFunc
+  name: GetLeftShiftFunc()
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_GetLeftShiftFunc
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`3.GetLeftShiftFunc
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.GetLeftShiftFunc()
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).GetLeftShiftFunc()
+  nameWithType: BitwiseGeneric<T1, T2, TR>.GetLeftShiftFunc()
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).GetLeftShiftFunc()
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.GetLeftShiftFunc*
+  name: GetLeftShiftFunc
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_GetLeftShiftFunc_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`3.GetLeftShiftFunc
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.GetLeftShiftFunc
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).GetLeftShiftFunc
+  nameWithType: BitwiseGeneric<T1, T2, TR>.GetLeftShiftFunc
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).GetLeftShiftFunc
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.GetOrFunc
+  name: GetOrFunc()
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_GetOrFunc
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`3.GetOrFunc
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.GetOrFunc()
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).GetOrFunc()
+  nameWithType: BitwiseGeneric<T1, T2, TR>.GetOrFunc()
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).GetOrFunc()
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.GetOrFunc*
+  name: GetOrFunc
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_GetOrFunc_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`3.GetOrFunc
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.GetOrFunc
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).GetOrFunc
+  nameWithType: BitwiseGeneric<T1, T2, TR>.GetOrFunc
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).GetOrFunc
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.GetRightShiftFunc
+  name: GetRightShiftFunc()
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_GetRightShiftFunc
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`3.GetRightShiftFunc
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.GetRightShiftFunc()
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).GetRightShiftFunc()
+  nameWithType: BitwiseGeneric<T1, T2, TR>.GetRightShiftFunc()
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).GetRightShiftFunc()
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.GetRightShiftFunc*
+  name: GetRightShiftFunc
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_GetRightShiftFunc_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`3.GetRightShiftFunc
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.GetRightShiftFunc
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).GetRightShiftFunc
+  nameWithType: BitwiseGeneric<T1, T2, TR>.GetRightShiftFunc
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).GetRightShiftFunc
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.LeftShift(`0,`1)
+  name: LeftShift(T1, T2)
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_LeftShift__0__1_
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`3.LeftShift(`0,`1)
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.LeftShift(T1, T2)
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).LeftShift(T1, T2)
+  nameWithType: BitwiseGeneric<T1, T2, TR>.LeftShift(T1, T2)
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).LeftShift(T1, T2)
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.LeftShift*
+  name: LeftShift
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_LeftShift_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`3.LeftShift
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.LeftShift
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).LeftShift
+  nameWithType: BitwiseGeneric<T1, T2, TR>.LeftShift
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).LeftShift
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.Or(`0,`1)
+  name: Or(T1, T2)
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_Or__0__1_
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`3.Or(`0,`1)
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.Or(T1, T2)
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).Or(T1, T2)
+  nameWithType: BitwiseGeneric<T1, T2, TR>.Or(T1, T2)
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).Or(T1, T2)
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.Or*
+  name: Or
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_Or_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`3.Or
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.Or
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).Or
+  nameWithType: BitwiseGeneric<T1, T2, TR>.Or
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).Or
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.RightShift(`0,`1)
+  name: RightShift(T1, T2)
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_RightShift__0__1_
+  commentId: M:MatrixDotNet.Math.BitwiseGeneric`3.RightShift(`0,`1)
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.RightShift(T1, T2)
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).RightShift(T1, T2)
+  nameWithType: BitwiseGeneric<T1, T2, TR>.RightShift(T1, T2)
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).RightShift(T1, T2)
+- uid: MatrixDotNet.Math.BitwiseGeneric`3.RightShift*
+  name: RightShift
+  href: api/MatrixDotNet.Math.BitwiseGeneric-3.html#MatrixDotNet_Math_BitwiseGeneric_3_RightShift_
+  commentId: Overload:MatrixDotNet.Math.BitwiseGeneric`3.RightShift
+  isSpec: "True"
+  fullName: MatrixDotNet.Math.BitwiseGeneric<T1, T2, TR>.RightShift
+  fullName.vb: MatrixDotNet.Math.BitwiseGeneric(Of T1, T2, TR).RightShift
+  nameWithType: BitwiseGeneric<T1, T2, TR>.RightShift
+  nameWithType.vb: BitwiseGeneric(Of T1, T2, TR).RightShift
 - uid: MatrixDotNet.Math.MathExtension
   name: MathExtension
   href: api/MatrixDotNet.Math.MathExtension.html
