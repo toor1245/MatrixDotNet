@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RootNamespace>MatrixDotNet.Extensions.Core</RootNamespace>
 
-    <Version>0.0.2</Version>
+    <Version>0.0.7</Version>
     <Authors>Nikolay Hohsadze, Dilorfin</Authors>
     <Company>MatrixDotNet</Company>
     <Product>MatrixDotNet.NetCore</Product>
@@ -22,16 +22,13 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageIcon>MatrixDotNet_128x128.png</PackageIcon>
 
-    <OS_WINDOWS
-      Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <OS_WINDOWS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
       true
     </OS_WINDOWS>
-    <OS_MAC
-      Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">
+    <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">
       true
     </OS_MAC>
-    <OS_LINUX
-      Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">
+    <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">
       true
     </OS_LINUX>
   </PropertyGroup>

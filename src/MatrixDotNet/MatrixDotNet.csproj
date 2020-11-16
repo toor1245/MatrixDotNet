@@ -6,7 +6,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <Title>MatrixDotNet</Title>
-    <Version>0.0.6.2</Version>
+    <Version>0.0.7</Version>
     <RepositoryType>Library</RepositoryType>
     <Copyright>MatrixDotNet</Copyright>
     <Company>MatrixDotNet</Company>
