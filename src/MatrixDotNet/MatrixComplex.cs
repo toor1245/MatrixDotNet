@@ -93,6 +93,7 @@ namespace MatrixDotNet
                         }
                     }
                 }
+
                 return matrix;
             }
         }
@@ -109,6 +110,7 @@ namespace MatrixDotNet
                     matrix[i, j] = left[i, j] / right;
                 }
             }
+
             return matrix;
         }
 
@@ -124,6 +126,7 @@ namespace MatrixDotNet
                     matrix[i, j] = right / left[i, j];
                 }
             }
+
             return matrix;
         }
 
@@ -139,6 +142,7 @@ namespace MatrixDotNet
                     matrix[i, j] = right * left[i, j];
                 }
             }
+
             return matrix;
         }
 
@@ -154,6 +158,7 @@ namespace MatrixDotNet
                     matrix[i, j] = left[i, j] * right;
                 }
             }
+
             return matrix;
         }
     }

@@ -1,5 +1,8 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Numerics;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -17,21 +20,33 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T Max<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
-            T max = matrix[0, 0];
-            Comparer comparer = Comparer.Default;
-            for (int i = 0; i < matrix.Rows; i++)
+            int size = System.Numerics.Vector<T>.Count;
+            var vmax = new System.Numerics.Vector<T>(matrix[0, 0]);
+            for (int i = 0; i < matrix.Length / size; i++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
+                var va = new System.Numerics.Vector<T>(matrix.GetArray(), i * size);
+                var vless = Vector.GreaterThan(va, vmax);
+                vmax = Vector.ConditionalSelect(vless, va, vmax);
+            }
+
+            T max = vmax[0];
+            Comparer<T> cmp = Comparer<T>.Default;
+            for (int j = 1; j < size; j++)
+            {
+                if (cmp.Compare(max, vmax[j]) < 0)
                 {
-                    if (comparer.Compare(matrix[i, j], max) > 0)
-                    {
-                        max = matrix[i, j];
-                    }
+                    max = vmax[j];
                 }
             }
+
+            for (int i = 0; i < matrix.Length % size; i++)
+            {
+                if (cmp.Compare(max, matrix._Matrix[i]) < 0)
+                {
+                    max = matrix._Matrix[i];
+                }
+            }
+
             return max;
         }
 
@@ -45,11 +60,9 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T MaxByRow<T>(this Matrix<T> matrix, int dimension) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T max = matrix[dimension, 0];
             Comparer comparer = Comparer.Default;
+
             for (int j = 0; j < matrix.Columns; j++)
             {
                 if (comparer.Compare(matrix[dimension, j], max) > 0)
@@ -57,6 +70,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = matrix[dimension, j];
                 }
             }
+
             return max;
         }
 
@@ -71,9 +85,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T MaxByColumn<T>(this Matrix<T> matrix, int dimension) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T max = matrix[0, dimension];
             Comparer comparer = Comparer.Default;
             for (int j = 0; j < matrix.Rows; j++)
@@ -98,9 +109,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T MaxByColumn<T>(this Matrix<T> matrix, int dimension, out int index) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T max = matrix[0, dimension];
             index = 0;
             Comparer comparer = Comparer.Default;
@@ -125,9 +133,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T[] MaxRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T[] result = new T[matrix.Rows];
             Comparer comparer = Comparer.Default;
             for (int i = 0; i < matrix.Rows; i++)
@@ -142,8 +147,8 @@ namespace MatrixDotNet.Extensions.Statistics
                 }
 
                 result[i] = max;
-
             }
+
             return result;
         }
 
@@ -156,9 +161,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T[] MaxColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T[] result = new T[matrix.Columns];
             Comparer comparer = Comparer.Default;
             for (int i = 0; i < matrix.Columns; i++)
@@ -174,6 +176,7 @@ namespace MatrixDotNet.Extensions.Statistics
 
                 result[i] = max;
             }
+
             return result;
         }
 
@@ -186,9 +189,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T MaxByMainDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             Comparer comparer = Comparer.Default;
             T max = matrix[0, 0];
 
@@ -215,9 +215,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMax(this Matrix<int> matrix)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[0, 0];
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -227,6 +224,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
                 }
             }
+
             return max;
         }
 
@@ -238,9 +236,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMax(this Matrix<byte> matrix)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[0, 0];
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -250,6 +245,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
                 }
             }
+
             return max;
         }
 
@@ -261,9 +257,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static long BitMax(this Matrix<long> matrix)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             long max = matrix[0, 0];
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -273,6 +266,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
                 }
             }
+
             return max;
         }
 
@@ -284,9 +278,6 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMax(this Matrix<short> matrix)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[0, 0];
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -296,6 +287,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     max = prefetch & ((max - prefetch) >> 15) | max & (~(max - prefetch) >> 15);
                 }
             }
+
             return max;
         }
 
@@ -308,15 +300,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByRow(this Matrix<int> matrix, int dimension)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension, i];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -330,15 +320,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByRow(this Matrix<byte> matrix, int dimension)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension, i];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -351,15 +339,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByRow(this Matrix<short> matrix, int dimension)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[dimension, 0];
             for (int i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension, i];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -372,15 +358,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static long BitMaxByRow(this Matrix<long> matrix, int dimension)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             long max = matrix[dimension, 0];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[dimension, i];
                 max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
             }
+
             return max;
         }
 
@@ -393,15 +377,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByColumn(this Matrix<byte> matrix, int dimension)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[0, dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -414,15 +396,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByColumn(this Matrix<short> matrix, int dimension)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[0, dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -435,15 +415,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static int BitMaxByColumn(this Matrix<int> matrix, int dimension)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int max = matrix[0, dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
                 max = prefetch & ((max - prefetch) >> 31) | max & (~(max - prefetch) >> 31);
             }
+
             return max;
         }
 
@@ -456,15 +434,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static long BitMaxByColumn(this Matrix<long> matrix, int dimension)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             long max = matrix[0, dimension];
             for (int i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
                 max = prefetch & ((max - prefetch) >> 63) | max & (~(max - prefetch) >> 63);
             }
+
             return max;
         }
     }

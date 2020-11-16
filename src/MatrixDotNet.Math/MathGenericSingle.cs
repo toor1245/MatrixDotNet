@@ -18,9 +18,7 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T), "right");
 
             var body = Expression.Add(leftPar, rightPar);
-
             var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
-
             AddFunc = func;
 
             return func;
@@ -46,9 +44,7 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T), "right");
 
             var body = Expression.Subtract(leftPar, rightPar);
-
             var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
-
             SubFunc = func;
 
             return func;
@@ -75,9 +71,7 @@ namespace MatrixDotNet.Math
 
 
             var body = Expression.Multiply(leftPar, rightPar);
-
             var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
-
             MultiplyFunc = func;
 
             return func;
@@ -103,9 +97,7 @@ namespace MatrixDotNet.Math
             var rightPar = Expression.Parameter(typeof(T), "right");
 
             var body = Expression.Divide(leftPar, rightPar);
-
             var func = Expression.Lambda<Func<T, T, T>>(body, leftPar, rightPar).Compile();
-
             DivideFunc = func;
 
             return func;
@@ -129,9 +121,7 @@ namespace MatrixDotNet.Math
 
             var leftPar = Expression.Parameter(typeof(T), "value");
             var body = Expression.Increment(leftPar);
-
             var func = Expression.Lambda<Func<T, T>>(body, leftPar).Compile();
-
             IncrementFunc = func;
 
             return func;
@@ -160,9 +150,7 @@ namespace MatrixDotNet.Math
                 throw new InvalidOperationException(nameof(Abs));
 
             var call = Expression.Call(null, info, leftPar);
-
             var func = Expression.Lambda<Func<T, T>>(call, leftPar).Compile();
-
             AbsFunc = func;
 
             return func;
@@ -189,7 +177,6 @@ namespace MatrixDotNet.Math
             var negate = Expression.Negate(leftPar);
 
             var func = Expression.Lambda<Func<T, T>>(negate, leftPar).Compile();
-
             NegateFunc = func;
 
             return func;
@@ -221,7 +208,6 @@ namespace MatrixDotNet.Math
             var call = Expression.Call(null, info, argPar);
 
             var func = Expression.Lambda<Func<T, T>>(call, argPar).Compile();
-
             SqrtFunc = func;
 
             return func;

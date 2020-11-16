@@ -22,7 +22,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             AddFunc = func;
 
             return func;
@@ -52,7 +51,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             SubFunc = func;
 
             return func;
@@ -82,7 +80,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             MultiplyFunc = func;
 
             return func;
@@ -112,7 +109,6 @@ namespace MatrixDotNet.Math
                 Expression.Convert(rightPar, resultType));
 
             var func = Expression.Lambda<Func<T1, T2, TR>>(body, leftPar, rightPar).Compile();
-
             DivideFunc = func;
 
             return func;

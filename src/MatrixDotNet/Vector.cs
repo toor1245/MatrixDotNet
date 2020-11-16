@@ -1,13 +1,18 @@
-﻿using MatrixDotNet.Exceptions;
-using MatrixDotNet.Math;
 using System;
+using System.Collections.Generic;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Text;
+using MatrixDotNet.Exceptions;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet
 {
     public partial class Vector<T> where T : unmanaged
     {
+        /// <summary>
+        /// Gets array of <c>Vector</c>.
+        /// </summary>
         public T[] Array { get; }
 
         /// <summary>
@@ -15,10 +20,14 @@ namespace MatrixDotNet
         /// </summary>
         public int Length { get; }
 
+        /// <summary>
+        /// Creates empty array with <c>n</c> length.
+        /// </summary>
+        /// <param name="n">the length of vector</param>
         public Vector(int n)
         {
-            Array = new T[n];
             Length = n;
+            Array = new T[Length];
         }
 
         /// <summary>
@@ -47,10 +56,15 @@ namespace MatrixDotNet
             System.Array.Fill(Array, fill);
         }
 
+        /// <summary>
+        /// Gets element of vector.
+        /// </summary>
+        /// <param name="i">the index of vector</param>
         public T this[int i]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => Array[i];
+
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             set => Array[i] = value;
         }
@@ -65,70 +79,146 @@ namespace MatrixDotNet
             {
                 sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(this[i], this[i]));
             }
+
             return MathGeneric<T>.Sqrt(sum);
         }
 
+        /// <summary>
+        /// Adds two vectors.
+        /// </summary>
+        /// <param name="a">the left vector</param>
+        /// <param name="b">the right vector</param>
+        /// <returns>new vector after addition of two vectors</returns>
         private static Vector<T> Add(T[] a, T[] b)
         {
             CheckLength(a, b);
-            Vector<T> c = new Vector<T>(a.Length);
-            for (int i = 0; i < c.Length; i++)
+            Vector<T> vc = new Vector<T>(a.Length);
+
+            for (int i = 0; i < vc.Length; i++)
             {
-                c[i] = MathUnsafe<T>.Add(a[i], b[i]);
+                vc[i] = MathUnsafe<T>.Add(a[i], b[i]);
             }
 
-            return c;
+            return vc;
         }
 
+        /// <summary>
+        /// Represents multiplication of value on vector.
+        /// </summary>
+        /// <param name="val">the left vector</param>
+        /// <param name="b">the right vector</param>
+        /// <returns>new vector after multiply constant on vector.</returns>
         private static Vector<T> Mul(T val, T[] b)
         {
-            Vector<T> c = new Vector<T>(b.Length);
-            for (int i = 0; i < c.Length; i++)
+            Vector<T> vc = new Vector<T>(b.Length);
+
+            for (int i = 0; i < vc.Length; i++)
             {
-                c[i] = MathUnsafe<T>.Mul(val, b[i]);
+                vc[i] = MathUnsafe<T>.Mul(val, b[i]);
             }
 
-            return c;
+            return vc;
         }
 
+        /// <summary>
+        /// Represents subtraction of two vectors.
+        /// </summary>
+        /// <param name="a">the left vector</param>
+        /// <param name="b">the right vector</param>
+        /// <returns>new vector after subtraction of two vectors</returns>
         private static Vector<T> Sub(T[] a, T[] b)
         {
             CheckLength(a, b);
-            Vector<T> c = new Vector<T>(a.Length);
-            for (int i = 0; i < c.Length; i++)
+            var vc = new Vector<T>(a.Length);
+
+            for (int i = 0; i < vc.Length; i++)
             {
-                c[i] = MathUnsafe<T>.Sub(a[i], b[i]);
+                vc[i] = MathUnsafe<T>.Sub(a[i], b[i]);
             }
 
-            return c;
+            return vc;
         }
 
-        private static T ScalarProduct(T[] a, T[] b)
+
+        /// <summary>
+        /// Represents defines dot(scalar) product.
+        /// </summary>
+        /// <param name="a">the left vector</param>
+        /// <param name="b">the right vector</param>
+        /// <returns>new vector after multiplication of two vectors</returns>
+        private static T DotProduct(T[] a, T[] b)
         {
             CheckLength(a, b);
+
             T res = default;
-            for (int i = 0; i < a.Length; i++)
+            int size = System.Numerics.Vector<T>.Count;
+            int i = 0;
+            int lastIndexBlock = a.Length - a.Length % size;
+
+            for (; i < lastIndexBlock; i += size)
+            {
+                var va = new System.Numerics.Vector<T>(a, i);
+                var vb = new System.Numerics.Vector<T>(b, i);
+                res = MathUnsafe<T>.Add(res, Vector.Dot(va, vb));
+            }
+
+            for (; i < a.Length; i++)
             {
                 res = MathUnsafe<T>.Add(res, MathUnsafe<T>.Mul(a[i], b[i]));
             }
+
             return res;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void CheckLength(T[] a, T[] b)
         {
             if (a.Length != b.Length)
+            {
                 throw new MatrixDotNetException("a length not equals b length");
+            }
         }
 
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (!(obj is Vector<T>))
+            {
                 throw new InvalidCastException("object is not Vector<T>");
+            }
 
             var vec = (Vector<T>) obj;
-            for (int i = 0; i < vec.Length; i++)
+
+            if (vec.Array.Length != Length)
             {
-                if (!vec[i].Equals(this[i]))
+                return false;
+            }
+
+            if (vec.Array == Array)
+            {
+                return true;
+            }
+
+            int i = 0;
+            int size = System.Numerics.Vector<T>.Count;
+            int lastIndexBlock = vec.Length - vec.Length % size;
+
+            for (; i < lastIndexBlock; i += size)
+            {
+                var vectorA = new System.Numerics.Vector<T>(Array, i);
+                var vectorB = new System.Numerics.Vector<T>(vec.Array, i);
+                bool equal = Vector.EqualsAll(vectorA, vectorB);
+                if (!equal)
+                {
+                    return false;
+                }
+            }
+
+            var cmp = Comparer<T>.Default;
+
+            for (; i < vec.Length; i++)
+            {
+                if (cmp.Compare(Array[i], vec.Array[i]) != 0)
                 {
                     return false;
                 }
@@ -137,6 +227,7 @@ namespace MatrixDotNet
             return true;
         }
 
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
             unchecked
@@ -145,6 +236,7 @@ namespace MatrixDotNet
             }
         }
 
+        /// <inheritdoc/>
         public override string ToString()
         {
             var builder = new StringBuilder();

@@ -194,7 +194,8 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <returns>Median interval.</returns>
         private T GetMedianInterval()
         {
-            var upper = MathGeneric<double, T, T>.Sub(MathGeneric<T, double, double>.Multiply(VolumeStatisticalPopulation, 0.5),
+            var upper = MathGeneric<double, T, T>.Sub(
+                MathGeneric<T, double, double>.Multiply(VolumeStatisticalPopulation, 0.5),
                 PreviousAccumulatedFrequency);
 
             var lower = MaxFrequency;
@@ -216,8 +217,6 @@ namespace MatrixDotNet.Extensions.Statistics
             return accumulatedFreq;
         }
 
-
         #endregion
-
     }
 }

@@ -1,5 +1,6 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Numerics;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -17,19 +18,30 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T Min<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
-            T min = matrix[0, 0];
-            Comparer comparer = Comparer.Default;
-            for (int i = 0; i < matrix.Rows; i++)
+            int size = System.Numerics.Vector<T>.Count;
+            var vmin = new System.Numerics.Vector<T>(matrix[0, 0]);
+            for (int i = 0; i < matrix.Length / size; i++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
+                var va = new System.Numerics.Vector<T>(matrix.GetArray(), i * size);
+                var vless = Vector.LessThan(va, vmin);
+                vmin = Vector.ConditionalSelect(vless, va, vmin);
+            }
+
+            T min = vmin[0];
+            Comparer<T> cmp = Comparer<T>.Default;
+            for (int j = 1; j < size; j++)
+            {
+                if (cmp.Compare(min, vmin[j]) > 0)
                 {
-                    if (comparer.Compare(matrix[i, j], min) < 0)
-                    {
-                        min = matrix[i, j];
-                    }
+                    min = vmin[j];
+                }
+            }
+
+            for (int i = 0; i < matrix.Length % size; i++)
+            {
+                if (cmp.Compare(min, matrix._Matrix[i]) > 0)
+                {
+                    min = matrix._Matrix[i];
                 }
             }
 
@@ -46,15 +58,12 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T MinByRow<T>(this Matrix<T> matrix, int dimension) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T min = matrix[dimension, 0];
-            Comparer comparer = Comparer.Default;
+            Comparer<T> cmp = Comparer<T>.Default;
 
             for (int j = 0; j < matrix.Columns; j++)
             {
-                if (comparer.Compare(matrix[dimension, j], min) < 0)
+                if (cmp.Compare(matrix[dimension, j], min) < 0)
                 {
                     min = matrix[dimension, j];
                 }
@@ -73,15 +82,12 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T MinByColumn<T>(this Matrix<T> matrix, int dimension) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T min = matrix[0, dimension];
-            Comparer comparer = Comparer.Default;
+            Comparer<T> cmp = Comparer<T>.Default;
 
             for (int j = 0; j < matrix.Rows; j++)
             {
-                if (comparer.Compare(matrix[dimension, j], min) < 0)
+                if (cmp.Compare(matrix[dimension, j], min) < 0)
                 {
                     min = matrix[j, dimension];
                 }
@@ -99,25 +105,23 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T[] MinColumns<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T[] result = new T[matrix.Columns];
-            Comparer comparer = Comparer.Default;
+            Comparer<T> cmp = Comparer<T>.Default;
+
             for (int i = 0; i < matrix.Columns; i++)
             {
                 T max = matrix[0, i];
                 for (int j = 0; j < matrix.Rows; j++)
                 {
-                    if (comparer.Compare(matrix[j, i], max) < 0)
+                    if (cmp.Compare(matrix[j, i], max) < 0)
                     {
                         max = matrix[j, i];
                     }
                 }
 
                 result[i] = max;
-
             }
+
             return result;
         }
 
@@ -131,25 +135,23 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T[] MinRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T[] result = new T[matrix.Rows];
-            Comparer comparer = Comparer.Default;
+            Comparer<T> cmp = Comparer<T>.Default;
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 T max = matrix[i, 0];
                 for (int j = 0; j < matrix.Columns; j++)
                 {
-                    if (comparer.Compare(matrix[i, j], max) < 0)
+                    if (cmp.Compare(matrix[i, j], max) < 0)
                     {
                         max = matrix[i, j];
                     }
                 }
 
                 result[i] = max;
-
             }
+
             return result;
         }
 
@@ -171,6 +173,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
                 }
             }
+
             return min;
         }
 
@@ -191,6 +194,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
                 }
             }
+
             return min;
         }
 
@@ -211,6 +215,7 @@ namespace MatrixDotNet.Extensions.Statistics
                     min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
                 }
             }
+
             return min;
         }
 
@@ -231,8 +236,10 @@ namespace MatrixDotNet.Extensions.Statistics
                     min = min & ((min - prefetch) >> 7) | prefetch & (~(min - prefetch) >> 7);
                 }
             }
+
             return min;
         }
+
 
         /// <summary>
         /// Gets minimum value by row index with happen bitwise operations.
@@ -249,6 +256,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[dimension, i];
                 min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
             }
+
             return min;
         }
 
@@ -267,6 +275,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[dimension, i];
                 min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
             }
+
             return min;
         }
 
@@ -285,6 +294,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[dimension, i];
                 min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
             }
+
             return min;
         }
 
@@ -303,6 +313,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[dimension, i];
                 min = min & ((min - prefetch) >> 7) | prefetch & (~(min - prefetch) >> 7);
             }
+
             return min;
         }
 
@@ -321,6 +332,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[i, dimension];
                 min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
             }
+
             return min;
         }
 
@@ -339,6 +351,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[i, dimension];
                 min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
             }
+
             return min;
         }
 
@@ -357,6 +370,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[i, dimension];
                 min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
             }
+
             return min;
         }
 
@@ -375,6 +389,7 @@ namespace MatrixDotNet.Extensions.Statistics
                 var prefetch = matrix[i, dimension];
                 min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
             }
+
             return min;
         }
     }

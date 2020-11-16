@@ -426,6 +426,7 @@ namespace MatrixDotNet
             {
                 throw new MatrixDotNetException("not equals");
             }
+
             T[] res = new T[array.Length];
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -440,6 +441,7 @@ namespace MatrixDotNet
 
                 res[i] = sum;
             }
+
             return res;
         }
 
@@ -483,6 +485,7 @@ namespace MatrixDotNet
                         }
                     }
                 }
+
                 return result;
             }
         }
@@ -571,6 +574,7 @@ namespace MatrixDotNet
             {
                 Unsafe.CopyBlock(destPtr, srcPtr, (uint) (this.Length * sizeof(T)));
             }
+
             return res;
         }
 
@@ -610,6 +614,7 @@ namespace MatrixDotNet
                     }
                 }
             }
+
             return result;
         }
 
@@ -654,7 +659,6 @@ namespace MatrixDotNet
 
             return true;
         }
-
 
 
         /// <inheritdoc />
@@ -704,7 +708,8 @@ namespace MatrixDotNet
             /// Isn't used here
             /// </summary>
             public void Dispose()
-            { }
+            {
+            }
         }
 
         #endregion

@@ -7,9 +7,11 @@ namespace MatrixDotNet
         public static bool operator ==(Vector<T> a, Vector<T> b)
         {
             if (a is null || b is null)
+            {
                 throw new NullReferenceException();
+            }
 
-            return Equals(a, b);
+            return a.Equals(b);
         }
 
 
@@ -60,7 +62,7 @@ namespace MatrixDotNet
 
         public static T operator *(Vector<T> a, Vector<T> b)
         {
-            return ScalarProduct(a.Array, b.Array);
+            return DotProduct(a.Array, b.Array);
         }
 
         public static implicit operator Vector<T>(T[] arr)
