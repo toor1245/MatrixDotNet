@@ -239,11 +239,11 @@ namespace MatrixDotNet
         /// <inheritdoc/>
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
 
-            for (int i = 0; i < Array.Length; i++)
+            foreach (var t in Array)
             {
-                builder.Append(Array[i] + " ");
+                builder.Append(t + " |");
             }
 
             return builder.ToString();
