@@ -37,14 +37,14 @@ namespace MatrixDotNet.Extensions.Solver
             {
                 for (int j = 0; j < matrix.Rows; j++)
                 {
-                     temp[j, i] = arr[j];
+                    temp[j, i] = arr[j];
                 }
-                vr[i] = MathUnsafe<T>.Div(temp.GetDeterminant(),det);
+                vr[i] = MathUnsafe<T>.Div(temp.GetDeterminant(), det);
             }
-            
+
             return vr;
         }
-        
+
         /// <summary>
         /// Gets determinant matrix by Kramer algorithm.
         /// </summary>
@@ -76,10 +76,10 @@ namespace MatrixDotNet.Extensions.Solver
                 {
                     temp[j, i] = arr[j];
                 }
-                
-                vr[i] = MathUnsafe<T>.Div(temp.GetDeterminant(),det);
+
+                vr[i] = MathUnsafe<T>.Div(temp.GetDeterminant(), det);
             }
-            
+
             return vr;
         }
     }

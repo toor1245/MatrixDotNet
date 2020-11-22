@@ -346,7 +346,7 @@ namespace MatrixDotNet
         {
             var multiplyFunc = MathGeneric<T, T, T>.GetMultiplyFunc();
             Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
-            
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
@@ -401,7 +401,7 @@ namespace MatrixDotNet
         {
             var divideFunc = MathGeneric<T>.GetDivideFunc();
             Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
-            
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
@@ -429,7 +429,7 @@ namespace MatrixDotNet
             }
 
             T[] res = new T[array.Length];
-            
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 T sum = default;
@@ -630,7 +630,7 @@ namespace MatrixDotNet
         public override bool Equals(object obj)
         {
             var matrix = obj as Matrix<T>;
-            
+
             if (matrix is null || Rows != matrix.Rows || Columns != matrix.Columns)
             {
                 return false;
@@ -648,7 +648,7 @@ namespace MatrixDotNet
                 var vectorA = new Vector<T>(GetArray(), i);
                 var vectorB = new Vector<T>(matrix.GetArray(), i);
                 bool vector = Vector.EqualsAll(vectorA, vectorB);
-                
+
                 if (!vector)
                 {
                     return false;

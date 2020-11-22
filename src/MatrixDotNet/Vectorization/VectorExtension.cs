@@ -10,7 +10,7 @@ namespace MatrixDotNet.Vectorization
             var comparer = Comparer<T>.Default;
 
             T min = vector[0];
-            
+
             for (int i = 1; i < vector.Length; i++)
             {
                 if (comparer.Compare(min, vector[i]) > 0)

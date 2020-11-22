@@ -13,7 +13,7 @@ namespace MatrixDotNet.Vectorization
 
             return a.Equals(b);
         }
-        
+
         public static bool operator !=(Vector<T> a, Vector<T> b)
         {
             return !(a == b);

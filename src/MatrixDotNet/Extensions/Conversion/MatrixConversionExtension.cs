@@ -27,14 +27,14 @@ namespace MatrixDotNet.Extensions.Conversion
             int m = matrix1.Rows;
             int n1 = matrix1.Columns;
             int n2 = n1 + matrix2.Columns;
-            
+
             if (m != matrix2.Rows)
             {
                 throw new MatrixDotNetException("Rows must be equals");
             }
 
-            var res = new Matrix<T>(m,  n2);
-            
+            var res = new Matrix<T>(m, n2);
+
             for (var i = 0; i < m; i++)
             {
                 for (int j = 0, k = 0; j < n2; j++)
@@ -53,7 +53,7 @@ namespace MatrixDotNet.Extensions.Conversion
 
             return res;
         }
-        
+
         /// <summary>
         /// Reduces column of matrix by index.
         /// </summary>
@@ -71,7 +71,7 @@ namespace MatrixDotNet.Extensions.Conversion
 
             var newColumns = matrix.Columns - 1;
             var temp = new Matrix<T>(matrix.Rows, newColumns);
-            
+
             fixed (T* ptr2 = temp.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
             {
@@ -208,11 +208,11 @@ namespace MatrixDotNet.Extensions.Conversion
                     $"matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
 
             for (var i = 0; i < matrix.Rows; i++)
-            for (var j = 0; j < matrix.Columns; j++)
-                if (i == j)
-                    matrix[i, j] = MathGeneric<T>.Increment(default);
-                else
-                    matrix[i, j] = default;
+                for (var j = 0; j < matrix.Columns; j++)
+                    if (i == j)
+                        matrix[i, j] = MathGeneric<T>.Increment(default);
+                    else
+                        matrix[i, j] = default;
         }
 
         /// <summary>

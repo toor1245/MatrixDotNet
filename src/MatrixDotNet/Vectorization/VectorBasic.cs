@@ -20,14 +20,14 @@ namespace MatrixDotNet.Vectorization
             where T : unmanaged
         {
             int n = va.Length;
-            
+
             if (n != vb.Length)
             {
                 throw new MatrixDotNetException("vector length is not equal");
             }
-            
+
             int size = System.Numerics.Vector<T>.Count;
-            var mr = new Matrix<T>(n,n);
+            var mr = new Matrix<T>(n, n);
             int lastIndexBlock = n - n % size;
             int j = 0;
 
@@ -40,7 +40,7 @@ namespace MatrixDotNet.Vectorization
                         var vd = new System.Numerics.Vector<T>(vb.Array, j);
                         var vc = Vector.Multiply(va[i], vd);
                         var res = (T*) Unsafe.AsPointer(ref vc);
-                        Unsafe.CopyBlock(ptr + i * mr.Columns + j,res,(uint) (sizeof(T) * size));
+                        Unsafe.CopyBlock(ptr + i * mr.Columns + j, res, (uint) (sizeof(T) * size));
                     }
                 }
 
@@ -53,7 +53,7 @@ namespace MatrixDotNet.Vectorization
                     }
                 }
             }
-            
+
             return mr;
         }
     }

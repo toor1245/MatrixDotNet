@@ -8,7 +8,7 @@ namespace MatrixDotNet.Extensions.Determinants
 {
     public static partial class Determinant
     {
-        
+
         /// <summary>
         /// Gets determinant of matrix.
         /// </summary>
@@ -16,14 +16,14 @@ namespace MatrixDotNet.Extensions.Determinants
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>double.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static T GetDeterminant<T>(this Matrix<T> matrix) 
+        public static T GetDeterminant<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
             if (!matrix.IsSquare)
             {
                 throw new MatrixDotNetException("the matrix is not square", nameof(matrix));
             }
-            
+
             if (matrix.Length == 4)
             {
                 return MathUnsafe<T>.Sub(
@@ -44,7 +44,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
             return result;
         }
-        
+
         /// <summary>
         /// Gets determinant of corner Minor`s matrix
         /// </summary>
