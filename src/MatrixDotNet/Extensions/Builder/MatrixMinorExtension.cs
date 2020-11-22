@@ -52,12 +52,14 @@ namespace MatrixDotNet.Extensions.Builder
         /// <returns>Minor`s matrix by row and column index.</returns>
         public static Matrix<T> GetMinorMatrix<T>(this Matrix<T> matrix, int row, int col) where T : unmanaged
         {
-            Matrix<T> result = new Matrix<T>(matrix.Rows - 1, matrix.Columns - 1);
-            int m = 0, k;
+            var result = new Matrix<T>(matrix.Rows - 1, matrix.Columns - 1);
+            int m = 0;
+
             for (int i = 0; i < matrix.Rows; i++)
             {
                 if (i == row) continue;
-                k = 0;
+                var k = 0;
+                
                 for (int j = 0; j < matrix.Columns; j++)
                 {
                     if (j == col) continue;
@@ -79,19 +81,21 @@ namespace MatrixDotNet.Extensions.Builder
         public static Matrix<T> GetMinor<T>(this Matrix<T> matrix, int n)
             where T : unmanaged
         {
-            T[,] result = new T[matrix.Rows - 1, matrix.Rows - 1];
+            var result = new Matrix<T>(matrix.Rows - 1, matrix.Rows - 1);
 
             for (int i = 1; i < matrix.Rows; i++)
             {
                 for (int j = 0, col = 0; j < matrix.Columns; j++)
                 {
                     if (j == n)
+                    {
                         continue;
+                    }
                     result[i - 1, col] = matrix[i, j];
                     col++;
                 }
             }
-            return result.ToMatrix();
+            return result;
         }
 
         /// <summary>
@@ -111,7 +115,9 @@ namespace MatrixDotNet.Extensions.Builder
             {
                 throw new MatrixDotNetException("matrix is not square");
             }
-            Matrix<T> minor = new Matrix<T>(row, row);
+            
+            var minor = new Matrix<T>(row, row);
+            
             fixed (T* ptr1 = minor.GetArray())
             fixed (T* ptr2 = matrix.GetArray())
             {

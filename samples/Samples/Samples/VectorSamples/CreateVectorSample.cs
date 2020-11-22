@@ -11,15 +11,15 @@ namespace Samples.Samples.VectorSamples
             StringBuilder builder = new StringBuilder();
             
             // basic approach for create matrix just pass length of vector
-            Vector<int> va = new Vector<int>(5);
+            MatrixDotNet.Vectorization.Vector<int> va = new MatrixDotNet.Vectorization.Vector<int>(5);
             builder.AppendLine(va.ToString());
             
             // init vector with fill values.
-            Vector<int> vb = new Vector<int>(5, 5);
+            MatrixDotNet.Vectorization.Vector<int> vb = new MatrixDotNet.Vectorization.Vector<int>(5, 5);
             builder.AppendLine(vb.ToString());
             
             // third way is implicit assign array.
-            Vector<int> vc = new[] { 1, 2, 3, 4, 5 };
+            MatrixDotNet.Vectorization.Vector<int> vc = new[] { 1, 2, 3, 4, 5 };
             builder.AppendLine(vc.ToString());
             
             return builder.ToString();

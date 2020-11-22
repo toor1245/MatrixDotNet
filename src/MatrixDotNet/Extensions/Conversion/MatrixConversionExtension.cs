@@ -24,66 +24,36 @@ namespace MatrixDotNet.Extensions.Conversion
         public static Matrix<T> Concat<T>(this Matrix<T> matrix1, Matrix<T> matrix2)
             where T : unmanaged
         {
-            if (matrix1 is null || matrix2 is null)
-                throw new NullReferenceException();
-
-            if (matrix1.Rows != matrix2.Rows)
+            int m = matrix1.Rows;
+            int n1 = matrix1.Columns;
+            int n2 = n1 + matrix2.Columns;
+            
+            if (m != matrix2.Rows)
+            {
                 throw new MatrixDotNetException("Rows must be equals");
+            }
 
-            var res = new Matrix<T>(matrix1.Rows, matrix1.Columns + matrix2.Columns);
-            for (var i = 0; i < matrix1.Rows; i++)
-                for (int j = 0, k = 0; j < matrix1.Columns + matrix2.Columns; j++)
-                    if (j < matrix1.Columns)
+            var res = new Matrix<T>(m,  n2);
+            
+            for (var i = 0; i < m; i++)
+            {
+                for (int j = 0, k = 0; j < n2; j++)
+                {
+                    if (j < n1)
                     {
                         res[i, j] = matrix1[i, j];
                     }
                     else
                     {
-                        res[i, k + matrix1.Columns] = matrix2[i, k];
+                        res[i, k + n1] = matrix2[i, k];
                         k++;
                     }
+                }
+            }
 
             return res;
         }
-
-        /// <summary>
-        /// Convert matrix to primitive matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix A</param>
-        /// <typeparam name="T">unmanaged type</typeparam>
-        /// <returns>primitive matrix</returns>
-        public static T[,] ToPrimitive<T>(this Matrix<T> matrix)
-            where T : unmanaged
-        {
-            if (matrix is null)
-                throw new NullReferenceException();
-
-            var matrix1 = new T[matrix.Rows, matrix.Columns];
-
-            for (var i = 0; i < matrix.Rows; i++)
-                for (var j = 0; j < matrix.Columns; j++) matrix1[i, j] = matrix[i, j];
-            return matrix1;
-        }
-
-        /// <summary>
-        /// Convert primitive matrix to <see cref="Matrix{T}"/>.
-        /// </summary>
-        /// <param name="matrix">primitive matrix.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <returns></returns>
-        public static Matrix<T> ToMatrix<T>(this T[,] matrix)
-            where T : unmanaged
-        {
-            if (matrix is null)
-                throw new NullReferenceException();
-
-            var matrix1 = new Matrix<T>(matrix.GetLength(0), matrix.GetLength(1));
-
-            for (var i = 0; i < matrix1.Rows; i++)
-                for (var j = 0; j < matrix1.Columns; j++) matrix1[i, j] = matrix[i, j];
-            return matrix1;
-        }
-
+        
         /// <summary>
         /// Reduces column of matrix by index.
         /// </summary>
@@ -95,10 +65,13 @@ namespace MatrixDotNet.Extensions.Conversion
             where T : unmanaged
         {
             if (column >= matrix.Columns)
+            {
                 throw new IndexOutOfRangeException();
+            }
 
             var newColumns = matrix.Columns - 1;
             var temp = new Matrix<T>(matrix.Rows, newColumns);
+            
             fixed (T* ptr2 = temp.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
             {
@@ -106,8 +79,9 @@ namespace MatrixDotNet.Extensions.Conversion
                 for (int i = 0; i < temp.Rows; i++)
                 {
                     Unsafe.CopyBlock(ptr2 + i * m, ptr3 + i * matrix.Columns, (uint) (sizeof(T) * column));
-                    uint len = (uint) temp.Columns - column;
-                    Unsafe.CopyBlock(ptr2 + i * m + column, ptr3 + i * matrix.Columns + column + 1, (uint) (sizeof(T) * len));
+                    uint len = (uint) m - column;
+                    Unsafe.CopyBlock(ptr2 + i * m + column, ptr3 + i * matrix.Columns + column + 1,
+                        (uint) (sizeof(T) * len));
                 }
             }
 
@@ -177,7 +151,6 @@ namespace MatrixDotNet.Extensions.Conversion
             }
 
             return result;
-
         }
 
 
@@ -199,6 +172,7 @@ namespace MatrixDotNet.Extensions.Conversion
                     $"length {nameof(array)}:{array.Length} != {nameof(matrix.Columns)} of matrix:{matrix.Columns}";
                 throw new MatrixDotNetException(message);
             }
+
             var newRows = matrix.Rows + 1;
             var temp = new Matrix<T>(newRows, matrix.Columns);
             fixed (T* ptr1 = array)
@@ -230,14 +204,15 @@ namespace MatrixDotNet.Extensions.Conversion
                 throw new NullReferenceException();
 
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException($"matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
+                throw new MatrixDotNetException(
+                    $"matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
 
             for (var i = 0; i < matrix.Rows; i++)
-                for (var j = 0; j < matrix.Columns; j++)
-                    if (i == j)
-                        matrix[i, j] = MathGeneric<T>.Increment(default);
-                    else
-                        matrix[i, j] = default;
+            for (var j = 0; j < matrix.Columns; j++)
+                if (i == j)
+                    matrix[i, j] = MathGeneric<T>.Increment(default);
+                else
+                    matrix[i, j] = default;
         }
 
         /// <summary>
@@ -272,7 +247,8 @@ namespace MatrixDotNet.Extensions.Conversion
                     span[i] = span[j];
                     span[j] = tmp;
 
-                    i++; j++;
+                    i++;
+                    j++;
                 }
             }
         }
@@ -285,7 +261,8 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="indexDimension2">the dimension 2</param>
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <exception cref="MatrixDotNetException">throws exception if indexDimension1 equals indexDimension2 or matrix is null</exception>
-        public static void SwapColumns<T>(this Matrix<T> matrix, int indexDimension1, int indexDimension2) where T : unmanaged
+        public static void SwapColumns<T>(this Matrix<T> matrix, int indexDimension1, int indexDimension2)
+            where T : unmanaged
         {
             if (matrix is null)
                 throw new NullReferenceException();
@@ -307,8 +284,12 @@ namespace MatrixDotNet.Extensions.Conversion
         {
             var transport = new Matrix<T>(matrix.Columns, matrix.Rows);
             for (var i = 0; i < transport.Rows; i++)
+            {
                 for (var j = 0; j < transport.Columns; j++)
+                {
                     transport[i, j] = matrix[j, i];
+                }
+            }
 
             return transport;
         }
@@ -325,7 +306,8 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <exception cref="MatrixDotNetException">
         ///  The matrix is not square.
         /// </exception>
-        public static void SplitMatrix<T>(this Matrix<T> a, out Matrix<T> a11, out Matrix<T> a12, out Matrix<T> a21, out Matrix<T> a22)
+        public static void SplitMatrix<T>(this Matrix<T> a, out Matrix<T> a11, out Matrix<T> a12, out Matrix<T> a21,
+            out Matrix<T> a22)
             where T : unmanaged
         {
             if (!a.IsSquare)
@@ -337,7 +319,6 @@ namespace MatrixDotNet.Extensions.Conversion
             a12 = new Matrix<T>(n, n);
             a21 = new Matrix<T>(n, n);
             a22 = new Matrix<T>(n, n);
-
 
             for (var i = 0; i < n; i++)
             {

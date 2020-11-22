@@ -346,6 +346,7 @@ namespace MatrixDotNet
         {
             var multiplyFunc = MathGeneric<T, T, T>.GetMultiplyFunc();
             Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
+            
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
@@ -399,8 +400,8 @@ namespace MatrixDotNet
         public static Matrix<T> operator /(T digit, Matrix<T> matrix)
         {
             var divideFunc = MathGeneric<T>.GetDivideFunc();
-
             Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
+            
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
@@ -428,6 +429,7 @@ namespace MatrixDotNet
             }
 
             T[] res = new T[array.Length];
+            
             for (int i = 0; i < matrix.Rows; i++)
             {
                 T sum = default;
@@ -497,7 +499,7 @@ namespace MatrixDotNet
         /// <param name="vector">vector.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Vector<T> operator *(Vector<T> vector, Matrix<T> matrix)
+        public static Vectorization.Vector<T> operator *(Vectorization.Vector<T> vector, Matrix<T> matrix)
         {
             return vector.Array * matrix;
         }
@@ -509,7 +511,7 @@ namespace MatrixDotNet
         /// <param name="vector">vector.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Vector<T> operator *(Matrix<T> matrix, Vector<T> vector)
+        public static Vectorization.Vector<T> operator *(Matrix<T> matrix, Vectorization.Vector<T> vector)
         {
             return matrix * vector.Array;
         }
@@ -525,7 +527,9 @@ namespace MatrixDotNet
         public static bool operator ==(Matrix<T> left, Matrix<T> right)
         {
             if (left is null || right is null)
+            {
                 throw new NullReferenceException();
+            }
 
             return left.Equals(right);
         }
@@ -567,12 +571,12 @@ namespace MatrixDotNet
         /// <returns>object.</returns>
         public unsafe object Clone()
         {
-            Matrix<T> res = new Matrix<T>(this.Rows, this.Columns);
+            var res = new Matrix<T>(Rows, Columns);
 
             fixed (T* srcPtr = _Matrix)
             fixed (T* destPtr = res.GetArray())
             {
-                Unsafe.CopyBlock(destPtr, srcPtr, (uint) (this.Length * sizeof(T)));
+                Unsafe.CopyBlock(destPtr, srcPtr, (uint) (Length * sizeof(T)));
             }
 
             return res;
@@ -585,7 +589,7 @@ namespace MatrixDotNet
         /// <returns></returns>
         public static implicit operator Matrix<T>(T[,] matrix)
         {
-            return matrix.ToMatrix();
+            return new Matrix<T>(matrix);
         }
 
         /// <summary>
@@ -602,7 +606,7 @@ namespace MatrixDotNet
                 columns = prefetch & ((columns - prefetch) >> 31) | columns & (~(columns - prefetch) >> 31);
             }
 
-            Matrix<T> result = new Matrix<T>(matrix.Length, columns);
+            var result = new Matrix<T>(matrix.Length, columns);
 
             fixed (T* dstPtr = result._Matrix)
             {
@@ -625,7 +629,8 @@ namespace MatrixDotNet
         /// <inheritdoc />
         public override bool Equals(object obj)
         {
-            Matrix<T> matrix = obj as Matrix<T>;
+            var matrix = obj as Matrix<T>;
+            
             if (matrix is null || Rows != matrix.Rows || Columns != matrix.Columns)
             {
                 return false;
@@ -638,11 +643,12 @@ namespace MatrixDotNet
 
             int i = 0;
 
-            for (; i < matrix.Length - System.Numerics.Vector<T>.Count; i += System.Numerics.Vector<T>.Count)
+            for (; i < matrix.Length - Vector<T>.Count; i += Vector<T>.Count)
             {
-                System.Numerics.Vector<T> vectorA = new System.Numerics.Vector<T>(GetArray(), i);
-                System.Numerics.Vector<T> vectorB = new System.Numerics.Vector<T>(matrix.GetArray(), i);
+                var vectorA = new Vector<T>(GetArray(), i);
+                var vectorB = new Vector<T>(matrix.GetArray(), i);
                 bool vector = Vector.EqualsAll(vectorA, vectorB);
+                
                 if (!vector)
                 {
                     return false;

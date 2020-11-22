@@ -20,9 +20,11 @@ namespace MatrixDotNet.Extensions.Builder
         public static Matrix<T> CreateIdentityMatrix<T>(int row, int col) where T : unmanaged
         {
             if (row != col)
+            {
                 throw new MatrixDotNetException($"Matrix is not square!!!\nRows: {row}\nColumns: {col}");
+            }
 
-            Matrix<T> matrix = new Matrix<T>(row, col);
+            var matrix = new Matrix<T>(row, col);
 
             for (int i = 0; i < row; i++)
             {
@@ -44,7 +46,7 @@ namespace MatrixDotNet.Extensions.Builder
             if (!matrix.IsSquare)
                 throw new MatrixDotNetException($"Matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
 
-            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
+            var result = new Matrix<T>(matrix.Rows, matrix.Columns);
 
             for (int i = 0; i < matrix.Rows; i++)
             {
@@ -52,86 +54,6 @@ namespace MatrixDotNet.Extensions.Builder
             }
 
             return result;
-        }
-
-        public static unsafe Matrix<double> CreateIdentityMatrix(this Matrix<double> matrix)
-        {
-            if (!matrix.IsSquare)
-                throw new MatrixDotNetException($"Matrix is not square!!!");
-
-            int m = matrix.Rows;
-            int n = matrix.Columns;
-
-            Matrix<double> result = new Matrix<double>(m, n);
-            fixed (double* ptr = result.GetArray())
-            {
-                for (int i = 0; i < m; i++)
-                {
-                    double* diagonal = ptr + i * m;
-                    diagonal[i] = 1;
-                }
-                return result;
-            }
-        }
-
-        public static unsafe Matrix<int> CreateIdentityMatrix(this Matrix<int> matrix)
-        {
-            if (!matrix.IsSquare)
-                throw new MatrixDotNetException($"Matrix is not square!!!");
-
-            int m = matrix.Rows;
-            int n = matrix.Columns;
-
-            Matrix<int> result = new Matrix<int>(m, n);
-            fixed (int* ptr = result.GetArray())
-            {
-                for (int i = 0; i < m; i++)
-                {
-                    int* diagonal = ptr + i * m;
-                    diagonal[i] = 1;
-                }
-                return result;
-            }
-        }
-
-        public static unsafe Matrix<float> CreateIdentityMatrix(this Matrix<float> matrix)
-        {
-            if (!matrix.IsSquare)
-                throw new MatrixDotNetException($"Matrix is not square!!!");
-
-            int m = matrix.Rows;
-            int n = matrix.Columns;
-
-            Matrix<float> result = new Matrix<float>(m, n);
-            fixed (float* ptr = result.GetArray())
-            {
-                for (int i = 0; i < m; i++)
-                {
-                    float* diagonal = ptr + i * m;
-                    diagonal[i] = 1;
-                }
-                return result;
-            }
-        }
-
-        public static unsafe Matrix<long> CreateIdentityMatrix(this Matrix<long> matrix)
-        {
-            if (!matrix.IsSquare)
-                throw new MatrixDotNetException($"Matrix is not square!!!");
-
-            int m = matrix.Rows;
-            int n = matrix.Columns;
-
-            Matrix<long> result = new Matrix<long>(m, n);
-            fixed (long* ptr = result.GetArray())
-            {
-                for (int i = 0; i < m; i++)
-                {
-                    long* diagonal = ptr + i * m;
-                    diagonal[i] = 1;
-                }
-                return result;
-            }
         }
     }
 }

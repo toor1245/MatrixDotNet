@@ -12,11 +12,11 @@ namespace Samples.Samples.VectorSamples
             StringBuilder builder = new StringBuilder();
             
             // init vector va with fill three value.
-            Vector<int> va = new Vector<int>(5,3);
+            MatrixDotNet.Vectorization.Vector<int> va = new MatrixDotNet.Vectorization.Vector<int>(5,3);
             builder.AppendLine("va = " + va);
 
             // init vector vb.
-            Vector<int> vb = new[] { 1, 2, 3, 4, 5 };
+            MatrixDotNet.Vectorization.Vector<int> vb = new[] { 1, 2, 3, 4, 5 };
             builder.AppendLine("vb = " + vb);
             
             // add of two vectors.

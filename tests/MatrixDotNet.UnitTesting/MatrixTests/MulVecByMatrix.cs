@@ -17,8 +17,8 @@ namespace MatrixDotNetTests.MatrixTests
                 {6,0,0,7}
             };
 
-            Vector<int> vec = new[]{2, 5, 1, 8};
-            Vector<int> expected = new int[] {50, 15, 9, 76};
+            MatrixDotNet.Vectorization.Vector<int> vec = new[]{2, 5, 1, 8};
+            MatrixDotNet.Vectorization.Vector<int> expected = new int[] {50, 15, 9, 76};
             
             // Act
             var actual = vec * matrix;
@@ -39,8 +39,8 @@ namespace MatrixDotNetTests.MatrixTests
                 {6,0,0,7}
             };
 
-            Vector<int> vec = new[]{2, 5, 1, 8};
-            Vector<int> expected = new int[] {4, 47, 5, 68};
+            MatrixDotNet.Vectorization.Vector<int> vec = new[]{2, 5, 1, 8};
+            MatrixDotNet.Vectorization.Vector<int> expected = new int[] {4, 47, 5, 68};
             
             // Act
             var actual = matrix * vec;
