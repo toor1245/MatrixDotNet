@@ -22,7 +22,7 @@ namespace MatrixDotNet.Extensions.Builder
             if (!matrix.IsSquare)
                 throw new MatrixDotNetException("matrix is not square");
 
-            Matrix<T> minor = new Matrix<T>(matrix.Rows, matrix.Columns);
+            var minor = new Matrix<T>(matrix.Rows, matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
             {
                 for (int j = 0; j < matrix.Columns; j++)
@@ -59,12 +59,12 @@ namespace MatrixDotNet.Extensions.Builder
             {
                 if (i == row) continue;
                 var k = 0;
-                
                 for (int j = 0; j < matrix.Columns; j++)
                 {
                     if (j == col) continue;
                     result[m, k++] = matrix[i, j];
                 }
+
                 m++;
             }
 
@@ -91,10 +91,12 @@ namespace MatrixDotNet.Extensions.Builder
                     {
                         continue;
                     }
+
                     result[i - 1, col] = matrix[i, j];
                     col++;
                 }
             }
+
             return result;
         }
 
@@ -115,9 +117,9 @@ namespace MatrixDotNet.Extensions.Builder
             {
                 throw new MatrixDotNetException("matrix is not square");
             }
-            
+
             var minor = new Matrix<T>(row, row);
-            
+
             fixed (T* ptr1 = minor.GetArray())
             fixed (T* ptr2 = matrix.GetArray())
             {
