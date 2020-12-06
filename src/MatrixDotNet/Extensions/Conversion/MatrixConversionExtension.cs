@@ -25,27 +25,27 @@ namespace MatrixDotNet.Extensions.Conversion
             where T : unmanaged
         {
             int m = matrix1.Rows;
-            int n1 = matrix1.Columns;
-            int n2 = n1 + matrix2.Columns;
+            int n = matrix1.Columns;
+            int lenColumns = n + matrix2.Columns;
 
             if (m != matrix2.Rows)
             {
                 throw new MatrixDotNetException("Rows must be equals");
             }
 
-            var res = new Matrix<T>(m, n2);
+            var res = new Matrix<T>(m, lenColumns);
 
             for (var i = 0; i < m; i++)
             {
-                for (int j = 0, k = 0; j < n2; j++)
+                for (int j = 0, k = 0; j < lenColumns; j++)
                 {
-                    if (j < n1)
+                    if (j < n)
                     {
                         res[i, j] = matrix1[i, j];
                     }
                     else
                     {
-                        res[i, k + n1] = matrix2[i, k];
+                        res[i, k + n] = matrix2[i, k];
                         k++;
                     }
                 }
@@ -76,12 +76,12 @@ namespace MatrixDotNet.Extensions.Conversion
             fixed (T* ptr3 = matrix.GetArray())
             {
                 int m = temp.Columns;
+                uint len = (uint) m - column;
                 for (int i = 0; i < temp.Rows; i++)
                 {
-                    Unsafe.CopyBlock(ptr2 + i * m, ptr3 + i * matrix.Columns, (uint) (sizeof(T) * column));
-                    uint len = (uint) m - column;
-                    Unsafe.CopyBlock(ptr2 + i * m + column, ptr3 + i * matrix.Columns + column + 1,
-                        (uint) (sizeof(T) * len));
+                    T* src = ptr3 + i * matrix.Columns;
+                    Unsafe.CopyBlock(ptr2 + i * m, src, (uint) (sizeof(T) * column));
+                    Unsafe.CopyBlock(ptr2 + i * m + column, src + column + 1, (uint) (sizeof(T) * len));
                 }
             }
 

@@ -148,7 +148,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             Matrix<T> orthogonal = new Matrix<T>(m, n);
             for (int i = 0; i < n; i++)
             {
-                Vectorization.Vector<T> vector = new Vectorization.Vector<T>(matrix[i, State.Column]);
+                var vector = new Vectorization.Vector<T>(matrix[i, State.Column]);
                 T val = vector.GetLengthVec();
                 for (int j = 0; j < m; j++)
                 {
@@ -172,7 +172,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             Matrix<T> orthogonal = new Matrix<T>(m, n);
             for (int i = 0; i < m; i++)
             {
-                Vectorization.Vector<T> vector = new Vectorization.Vector<T>(matrix[i]);
+                var vector = new Vectorization.Vector<T>(matrix[i]);
                 T val = vector.GetLengthVec();
                 for (int j = 0; j < n; j++)
                 {

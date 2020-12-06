@@ -18,11 +18,11 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T Min<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            int size = System.Numerics.Vector<T>.Count;
-            var vmin = new System.Numerics.Vector<T>(matrix[0, 0]);
+            int size = Vector<T>.Count;
+            var vmin = new Vector<T>(matrix[0, 0]);
             for (int i = 0; i < matrix.Length / size; i++)
             {
-                var va = new System.Numerics.Vector<T>(matrix.GetArray(), i * size);
+                var va = new Vector<T>(matrix.GetArray(), i * size);
                 var vless = Vector.LessThan(va, vmin);
                 vmin = Vector.ConditionalSelect(vless, va, vmin);
             }

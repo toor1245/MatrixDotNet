@@ -2,6 +2,7 @@
 using MatrixDotNet;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Vectorization;
 
 namespace Samples.Samples.MatrixSamples
 {
@@ -14,16 +15,16 @@ namespace Samples.Samples.MatrixSamples
             Matrix<int> matrix = BuildMatrix.RandomInt(4, 4, -10, 10);
             
             // gets vector of matrix by row index.
-            MatrixDotNet.Vectorization.Vector<int> arr1 = matrix[0, State.Row];
+            Vector<int> arr1 = matrix[0, State.Row];
             builder.AppendLine("gets vector by row index: " + arr1);
 
             // gets vector of matrix by column index
-            MatrixDotNet.Vectorization.Vector<int> arr2 = matrix[0, State.Column];
+            Vector<int> arr2 = matrix[0, State.Column];
             builder.AppendLine("gets vector by column index: " + arr2);
             
             // gets vector via method
-            MatrixDotNet.Vectorization.Vector<int> arr3 = matrix.GetColumn(1);
-            MatrixDotNet.Vectorization.Vector<int> arr4 = matrix.GetRow(2);
+            Vector<int> arr3 = matrix.GetColumn(1);
+            Vector<int> arr4 = matrix.GetRow(2);
             builder.AppendLine("gets vector by column index via method: " + arr3);
             builder.AppendLine("gets vector by row index via method: " + arr4);
             

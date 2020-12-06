@@ -1,5 +1,4 @@
-﻿using System;
-using System.Numerics;
+﻿using System.Numerics;
 using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
@@ -43,13 +42,12 @@ namespace MatrixDotNet.Vectorization
                         Unsafe.CopyBlock(ptr + i * mr.Columns + j, res, (uint) (sizeof(T) * size));
                     }
                 }
-
-                int k = j;
+                
                 for (int i = 0; i < mr.Rows; i++)
                 {
-                    for (j = k; j < n; j++)
+                    for (int k = j; j < n; j++)
                     {
-                        mr[i, j] = MathUnsafe<T>.Mul(va[i], vb[j]);
+                        mr[i, k] = MathUnsafe<T>.Mul(va[i], vb[k]);
                     }
                 }
             }

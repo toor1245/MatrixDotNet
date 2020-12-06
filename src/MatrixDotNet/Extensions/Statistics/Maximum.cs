@@ -20,11 +20,11 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T Max<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            int size = System.Numerics.Vector<T>.Count;
-            var vmax = new System.Numerics.Vector<T>(matrix[0, 0]);
+            int size = Vector<T>.Count;
+            var vmax = new Vector<T>(matrix[0, 0]);
             for (int i = 0; i < matrix.Length / size; i++)
             {
-                var va = new System.Numerics.Vector<T>(matrix.GetArray(), i * size);
+                var va = new Vector<T>(matrix.GetArray(), i * size);
                 var vless = Vector.GreaterThan(va, vmax);
                 vmax = Vector.ConditionalSelect(vless, va, vmax);
             }

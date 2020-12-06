@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Vectorization;
 
 namespace Samples.Samples.VectorSamples
 {
@@ -12,11 +13,11 @@ namespace Samples.Samples.VectorSamples
             StringBuilder builder = new StringBuilder();
             
             // init vector va with fill three value.
-            MatrixDotNet.Vectorization.Vector<int> va = new MatrixDotNet.Vectorization.Vector<int>(5,3);
+            Vector<int> va = new Vector<int>(5,3);
             builder.AppendLine("va = " + va);
 
             // init vector vb.
-            MatrixDotNet.Vectorization.Vector<int> vb = new[] { 1, 2, 3, 4, 5 };
+            Vector<int> vb = new[] { 1, 2, 3, 4, 5 };
             builder.AppendLine("vb = " + vb);
             
             // add of two vectors.
