@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Builder.BuildMatrix.html",
-          "hash": "Jfys80syp6BWVLO9pq0o4g=="
+          "hash": "4qzhusmtwgDLX0hK2sjciQ=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html",
-          "hash": "wsKuQ0iatH3tJRgFLOi6aQ=="
+          "hash": "OKojg9fVAWeV3FiviBEa7w=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Decompositions.Decomposition.html",
-          "hash": "CbF7eZVYiw1iCKLyvqYqRA=="
+          "hash": "eC4XoWRmI/dROGWn7LPe+g=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Determinants.Determinant.html",
-          "hash": "jEV5NQbizKul2roeOQA7qA=="
+          "hash": "kr5UIW1oAMLyQ1jv8eIGsA=="
         }
       },
       "is_incremental": false,
@@ -441,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Solver.Solve.html",
-          "hash": "M9l16pUO6pvDz/Sk/mnCCg=="
+          "hash": "Ndrvcs8Io1DmLZR8ou+wzA=="
         }
       },
       "is_incremental": false,
@@ -765,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.Enumerator.html",
-          "hash": "v6SxztFfU2w/FQQliAWJKA=="
+          "hash": "SIcDQwqazPJNsJ4UfNfpCg=="
         }
       },
       "is_incremental": false,
@@ -777,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.html",
-          "hash": "pk1tgiIg9dQH89l2kCDjuA=="
+          "hash": "t4LTFG4tAoNPqt0BNbdQmw=="
         }
       },
       "is_incremental": false,
@@ -833,11 +833,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Vector-1.yml",
+      "source_relative_path": "api/MatrixDotNet.Vectorization.Vector-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/MatrixDotNet.Vector-1.html",
-          "hash": "9vofDhlqr19SxvigoSL/6w=="
+          "relative_path": "api/MatrixDotNet.Vectorization.Vector-1.html",
+          "hash": "E8yD46etjhaIGJR0x2LjEw=="
         }
       },
       "is_incremental": false,
@@ -845,11 +845,23 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.VectorExtension.yml",
+      "source_relative_path": "api/MatrixDotNet.Vectorization.VectorExtension.yml",
       "output": {
         ".html": {
-          "relative_path": "api/MatrixDotNet.VectorExtension.html",
-          "hash": "2IJ1WvX1eWWXcDyFz0RQwQ=="
+          "relative_path": "api/MatrixDotNet.Vectorization.VectorExtension.html",
+          "hash": "OtIwkkFQc4WFnQt5yAPAWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Vectorization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Vectorization.html",
+          "hash": "iIpMm+VZN1iOkGY70XhhMQ=="
         }
       },
       "is_incremental": false,
@@ -861,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.html",
-          "hash": "RqwYAl1EC8i4gqLvZwmjlg=="
+          "hash": "hviwdji5T3DiaqbWaUxl4Q=="
         }
       },
       "is_incremental": false,
@@ -885,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "IGdmdgieC+fhxMsOQbz/tg=="
+          "hash": "HUzlBnQ74TH5HRFZFq3+6Q=="
         }
       },
       "is_incremental": false,
@@ -893,11 +905,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/features/getting_started.md",
+      "source_relative_path": "articles/features/core/getting_started.md",
       "output": {
         ".html": {
-          "relative_path": "articles/features/getting_started.html",
-          "hash": "oW7lL1JTP5ZrU5WNG7WewA=="
+          "relative_path": "articles/features/core/getting_started.html",
+          "hash": "Wap6Mga29oMKDEI0EB/CNQ=="
         }
       },
       "is_incremental": false,
@@ -905,11 +917,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/features/statistics.md",
+      "source_relative_path": "articles/features/main/Strassen.md",
       "output": {
         ".html": {
-          "relative_path": "articles/features/statistics.html",
-          "hash": "6UkAYQuM7yamGcARGIzZrg=="
+          "relative_path": "articles/features/main/Strassen.html",
+          "hash": "I5PySPIIbk9h3dZcWiCqdA=="
         }
       },
       "is_incremental": false,
@@ -917,11 +929,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/guides/Strassen.md",
+      "source_relative_path": "articles/features/main/absorption.md",
       "output": {
         ".html": {
-          "relative_path": "articles/guides/Strassen.html",
-          "hash": "v01wQ3SMtDGt/kNCc6q7Rg=="
+          "relative_path": "articles/features/main/absorption.html",
+          "hash": "JlIGJ81FDF0rMhC95cosBw=="
         }
       },
       "is_incremental": false,
@@ -929,11 +941,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/guides/absorption.md",
+      "source_relative_path": "articles/features/math/getting_started.md",
       "output": {
         ".html": {
-          "relative_path": "articles/guides/absorption.html",
-          "hash": "A+re4hb5ynyS6BF+q/b2HQ=="
+          "relative_path": "articles/features/math/getting_started.html",
+          "hash": "dB9Dl3xHbUVsP64usrdW1A=="
         }
       },
       "is_incremental": false,
@@ -941,11 +953,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/guides/access.md",
+      "source_relative_path": "articles/guides/basic/access.md",
       "output": {
         ".html": {
-          "relative_path": "articles/guides/access.html",
-          "hash": "alKmiJv77++8IjeR45onug=="
+          "relative_path": "articles/guides/basic/access.html",
+          "hash": "CmHhHj/C6yjj43sIGZvXLg=="
         }
       },
       "is_incremental": false,
@@ -953,11 +965,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/guides/bitwise.md",
+      "source_relative_path": "articles/guides/basic/conversion.md",
       "output": {
         ".html": {
-          "relative_path": "articles/guides/bitwise.html",
-          "hash": "wmmP+mEc//UI7rAuFDzFew=="
+          "relative_path": "articles/guides/basic/conversion.html",
+          "hash": "zYoZnexGSa9zBdDHFvnMYQ=="
         }
       },
       "is_incremental": false,
@@ -965,11 +977,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/guides/conversion.md",
+      "source_relative_path": "articles/guides/basic/getting_started.md",
       "output": {
         ".html": {
-          "relative_path": "articles/guides/conversion.html",
-          "hash": "HqaT/efQqO/6Zk+/vlyvwQ=="
+          "relative_path": "articles/guides/basic/getting_started.html",
+          "hash": "LkZOI7bFEAKWbTzM+pP3vw=="
         }
       },
       "is_incremental": false,
@@ -977,11 +989,71 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/guides/sorting.md",
+      "source_relative_path": "articles/guides/basic/sorting.md",
       "output": {
         ".html": {
-          "relative_path": "articles/guides/sorting.html",
-          "hash": "UC56Sp0gvHQmQytWdNob8g=="
+          "relative_path": "articles/guides/basic/sorting.html",
+          "hash": "AUAgPSAiA/3Rr1B5TZCcKA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guides/criteries/getting_started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guides/criteries/getting_started.html",
+          "hash": "rDkq7nDsNd7GrI+DpWq3DA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guides/decomposition/getting_started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guides/decomposition/getting_started.html",
+          "hash": "iwUNJlsrW7lMFxna9nDl9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guides/determinant/getting_started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guides/determinant/getting_started.html",
+          "hash": "yAUi87sqFGjKC/L7zB3y6g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guides/solve/getting_started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guides/solve/getting_started.html",
+          "hash": "51iVnJG9cmCERSxCy8mD7w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/guides/statistics/getting_started.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guides/statistics/getting_started.html",
+          "hash": "dvSoE20fbDYUH5Rbkh9WtA=="
         }
       },
       "is_incremental": false,
@@ -993,7 +1065,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "SIi6h23TdTWer1AQ/fFRAQ=="
+          "hash": "kzNKT5CCMK1rDA8o+oWCeQ=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +1089,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "42zI3Bv37nJYwapQP3XyTg=="
+          "hash": "9B9SqMrU1j+Yp9D2/AFyMQ=="
         }
       },
       "is_incremental": false,
@@ -1131,13 +1203,13 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 12,
+          "total_file_count": 17,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 71,
+          "total_file_count": 72,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

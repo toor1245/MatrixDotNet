@@ -135,42 +135,6 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.Build(Of T)(System.Int32, System.Int32, System.Func(Of T, T), T())
   nameWithType: BuildMatrix.Build<T>(Int32, Int32, Func<T, T>, T[])
   nameWithType.vb: BuildMatrix.Build(Of T)(Int32, Int32, Func(Of T, T), T())
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Double})
-  name: CreateIdentityMatrix(Matrix<Double>)
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_CreateIdentityMatrix_MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Double})
-  name.vb: CreateIdentityMatrix(Matrix(Of Double))
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: BuildMatrix.CreateIdentityMatrix(Matrix<Double>)
-  nameWithType.vb: BuildMatrix.CreateIdentityMatrix(Matrix(Of Double))
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Int32})
-  name: CreateIdentityMatrix(Matrix<Int32>)
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_CreateIdentityMatrix_MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Int32})
-  name.vb: CreateIdentityMatrix(Matrix(Of Int32))
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: BuildMatrix.CreateIdentityMatrix(Matrix<Int32>)
-  nameWithType.vb: BuildMatrix.CreateIdentityMatrix(Matrix(Of Int32))
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Int64})
-  name: CreateIdentityMatrix(Matrix<Int64>)
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_CreateIdentityMatrix_MatrixDotNet_Matrix_System_Int64__
-  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Int64})
-  name.vb: CreateIdentityMatrix(Matrix(Of Int64))
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix<System.Int64>)
-  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix(Of System.Int64))
-  nameWithType: BuildMatrix.CreateIdentityMatrix(Matrix<Int64>)
-  nameWithType.vb: BuildMatrix.CreateIdentityMatrix(Matrix(Of Int64))
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Single})
-  name: CreateIdentityMatrix(Matrix<Single>)
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_CreateIdentityMatrix_MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix{System.Single})
-  name.vb: CreateIdentityMatrix(Matrix(Of Single))
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix(MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: BuildMatrix.CreateIdentityMatrix(Matrix<Single>)
-  nameWithType.vb: BuildMatrix.CreateIdentityMatrix(Matrix(Of Single))
 - uid: MatrixDotNet.Extensions.Builder.BuildMatrix.CreateIdentityMatrix*
   name: CreateIdentityMatrix
   href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_CreateIdentityMatrix_
@@ -583,38 +547,6 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToIdentityMatrix(Of T)(MatrixDotNet.Matrix(Of T))
   nameWithType: MatrixConverter.ToIdentityMatrix<T>(Matrix<T>)
   nameWithType.vb: MatrixConverter.ToIdentityMatrix(Of T)(Matrix(Of T))
-- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix*
-  name: ToMatrix
-  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_ToMatrix_
-  commentId: Overload:MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix
-  nameWithType: MatrixConverter.ToMatrix
-- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix``1(``0[0:,0:])
-  name: ToMatrix<T>(T[,])
-  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_ToMatrix__1___0_0__0___
-  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix``1(``0[0:,0:])
-  name.vb: ToMatrix(Of T)(T(,))
-  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix<T>(T[,])
-  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToMatrix(Of T)(T(,))
-  nameWithType: MatrixConverter.ToMatrix<T>(T[,])
-  nameWithType.vb: MatrixConverter.ToMatrix(Of T)(T(,))
-- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive*
-  name: ToPrimitive
-  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_ToPrimitive_
-  commentId: Overload:MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive
-  nameWithType: MatrixConverter.ToPrimitive
-- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive``1(MatrixDotNet.Matrix{``0})
-  name: ToPrimitive<T>(Matrix<T>)
-  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_ToPrimitive__1_MatrixDotNet_Matrix___0__
-  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive``1(MatrixDotNet.Matrix{``0})
-  name.vb: ToPrimitive(Of T)(Matrix(Of T))
-  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive<T>(MatrixDotNet.Matrix<T>)
-  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.ToPrimitive(Of T)(MatrixDotNet.Matrix(Of T))
-  nameWithType: MatrixConverter.ToPrimitive<T>(Matrix<T>)
-  nameWithType.vb: MatrixConverter.ToPrimitive(Of T)(Matrix(Of T))
 - uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Transpose*
   name: Transpose
   href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Transpose_
@@ -1457,19 +1389,6 @@ references:
   commentId: T:MatrixDotNet.Extensions.Decompositions.Decomposition
   fullName: MatrixDotNet.Extensions.Decompositions.Decomposition
   nameWithType: Decomposition
-- uid: MatrixDotNet.Extensions.Decompositions.Decomposition.DimensionReductionPca
-  name: DimensionReductionPca()
-  href: api/MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_DimensionReductionPca
-  commentId: M:MatrixDotNet.Extensions.Decompositions.Decomposition.DimensionReductionPca
-  fullName: MatrixDotNet.Extensions.Decompositions.Decomposition.DimensionReductionPca()
-  nameWithType: Decomposition.DimensionReductionPca()
-- uid: MatrixDotNet.Extensions.Decompositions.Decomposition.DimensionReductionPca*
-  name: DimensionReductionPca
-  href: api/MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_DimensionReductionPca_
-  commentId: Overload:MatrixDotNet.Extensions.Decompositions.Decomposition.DimensionReductionPca
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Decompositions.Decomposition.DimensionReductionPca
-  nameWithType: Decomposition.DimensionReductionPca
 - uid: MatrixDotNet.Extensions.Decompositions.Decomposition.EigenVectorQrIterative*
   name: EigenVectorQrIterative
   href: api/MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_EigenVectorQrIterative_
@@ -1840,22 +1759,6 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Determinants.Determinant.GetDeterminant(Of T)(MatrixDotNet.Matrix(Of T))
   nameWithType: Determinant.GetDeterminant<T>(Matrix<T>)
   nameWithType.vb: Determinant.GetDeterminant(Of T)(Matrix(Of T))
-- uid: MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant*
-  name: GetDoubleDeterminant
-  href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetDoubleDeterminant_
-  commentId: Overload:MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant
-  nameWithType: Determinant.GetDoubleDeterminant
-- uid: MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant``1(MatrixDotNet.Matrix{``0})
-  name: GetDoubleDeterminant<T>(Matrix<T>)
-  href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetDoubleDeterminant__1_MatrixDotNet_Matrix___0__
-  commentId: M:MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant``1(MatrixDotNet.Matrix{``0})
-  name.vb: GetDoubleDeterminant(Of T)(Matrix(Of T))
-  fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant<T>(MatrixDotNet.Matrix<T>)
-  fullName.vb: MatrixDotNet.Extensions.Determinants.Determinant.GetDoubleDeterminant(Of T)(MatrixDotNet.Matrix(Of T))
-  nameWithType: Determinant.GetDoubleDeterminant<T>(Matrix<T>)
-  nameWithType.vb: Determinant.GetDoubleDeterminant(Of T)(Matrix(Of T))
 - uid: MatrixDotNet.Extensions.Determinants.Determinant.GetLowerUpperDeterminant*
   name: GetLowerUpperDeterminant
   href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetLowerUpperDeterminant_
@@ -1913,58 +1816,6 @@ references:
   isSpec: "True"
   fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetLupDeterminantUnsafe
   nameWithType: Determinant.GetLupDeterminantUnsafe
-- uid: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Decimal})
-  name: GetMinorDeterminant(Matrix<Decimal>)
-  href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Decimal__
-  commentId: M:MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Decimal})
-  name.vb: GetMinorDeterminant(Matrix(Of Decimal))
-  fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix<System.Decimal>)
-  fullName.vb: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix(Of System.Decimal))
-  nameWithType: Determinant.GetMinorDeterminant(Matrix<Decimal>)
-  nameWithType.vb: Determinant.GetMinorDeterminant(Matrix(Of Decimal))
-- uid: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Double})
-  name: GetMinorDeterminant(Matrix<Double>)
-  href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Double})
-  name.vb: GetMinorDeterminant(Matrix(Of Double))
-  fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Determinant.GetMinorDeterminant(Matrix<Double>)
-  nameWithType.vb: Determinant.GetMinorDeterminant(Matrix(Of Double))
-- uid: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Int32})
-  name: GetMinorDeterminant(Matrix<Int32>)
-  href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Int32})
-  name.vb: GetMinorDeterminant(Matrix(Of Int32))
-  fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Determinant.GetMinorDeterminant(Matrix<Int32>)
-  nameWithType.vb: Determinant.GetMinorDeterminant(Matrix(Of Int32))
-- uid: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Int64})
-  name: GetMinorDeterminant(Matrix<Int64>)
-  href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Int64__
-  commentId: M:MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Int64})
-  name.vb: GetMinorDeterminant(Matrix(Of Int64))
-  fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix<System.Int64>)
-  fullName.vb: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix(Of System.Int64))
-  nameWithType: Determinant.GetMinorDeterminant(Matrix<Int64>)
-  nameWithType.vb: Determinant.GetMinorDeterminant(Matrix(Of Int64))
-- uid: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Single})
-  name: GetMinorDeterminant(Matrix<Single>)
-  href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix{System.Single})
-  name.vb: GetMinorDeterminant(Matrix(Of Single))
-  fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant(MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Determinant.GetMinorDeterminant(Matrix<Single>)
-  nameWithType.vb: Determinant.GetMinorDeterminant(Matrix(Of Single))
-- uid: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant*
-  name: GetMinorDeterminant
-  href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetMinorDeterminant_
-  commentId: Overload:MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Determinants.Determinant.GetMinorDeterminant
-  nameWithType: Determinant.GetMinorDeterminant
 - uid: MatrixDotNet.Extensions.Determinants.Determinant.GetShurDeterminant(MatrixDotNet.Matrix{System.Decimal})
   name: GetShurDeterminant(Matrix<Decimal>)
   href: api/MatrixDotNet.Extensions.Determinants.Determinant.html#MatrixDotNet_Extensions_Determinants_Determinant_GetShurDeterminant_MatrixDotNet_Matrix_System_Decimal__
@@ -2978,24 +2829,6 @@ references:
   isSpec: "True"
   fullName: MatrixDotNet.Extensions.Solver.Solve.GaussSolve
   nameWithType: Solve.GaussSolve
-- uid: MatrixDotNet.Extensions.Solver.Solve.KramerSolve(MatrixDotNet.Matrix{System.Double},System.Double[])
-  name: KramerSolve(Matrix<Double>, Double[])
-  href: api/MatrixDotNet.Extensions.Solver.Solve.html#MatrixDotNet_Extensions_Solver_Solve_KramerSolve_MatrixDotNet_Matrix_System_Double__System_Double___
-  commentId: M:MatrixDotNet.Extensions.Solver.Solve.KramerSolve(MatrixDotNet.Matrix{System.Double},System.Double[])
-  name.vb: KramerSolve(Matrix(Of Double), Double())
-  fullName: MatrixDotNet.Extensions.Solver.Solve.KramerSolve(MatrixDotNet.Matrix<System.Double>, System.Double[])
-  fullName.vb: MatrixDotNet.Extensions.Solver.Solve.KramerSolve(MatrixDotNet.Matrix(Of System.Double), System.Double())
-  nameWithType: Solve.KramerSolve(Matrix<Double>, Double[])
-  nameWithType.vb: Solve.KramerSolve(Matrix(Of Double), Double())
-- uid: MatrixDotNet.Extensions.Solver.Solve.KramerSolve(MatrixDotNet.Matrix{System.Single},System.Single[])
-  name: KramerSolve(Matrix<Single>, Single[])
-  href: api/MatrixDotNet.Extensions.Solver.Solve.html#MatrixDotNet_Extensions_Solver_Solve_KramerSolve_MatrixDotNet_Matrix_System_Single__System_Single___
-  commentId: M:MatrixDotNet.Extensions.Solver.Solve.KramerSolve(MatrixDotNet.Matrix{System.Single},System.Single[])
-  name.vb: KramerSolve(Matrix(Of Single), Single())
-  fullName: MatrixDotNet.Extensions.Solver.Solve.KramerSolve(MatrixDotNet.Matrix<System.Single>, System.Single[])
-  fullName.vb: MatrixDotNet.Extensions.Solver.Solve.KramerSolve(MatrixDotNet.Matrix(Of System.Single), System.Single())
-  nameWithType: Solve.KramerSolve(Matrix<Single>, Single[])
-  nameWithType.vb: Solve.KramerSolve(Matrix(Of Single), Single())
 - uid: MatrixDotNet.Extensions.Solver.Solve.KramerSolve*
   name: KramerSolve
   href: api/MatrixDotNet.Extensions.Solver.Solve.html#MatrixDotNet_Extensions_Solver_Solve_KramerSolve_
@@ -3012,6 +2845,15 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Solver.Solve.KramerSolve(Of T)(MatrixDotNet.Matrix(Of T), T())
   nameWithType: Solve.KramerSolve<T>(Matrix<T>, T[])
   nameWithType.vb: Solve.KramerSolve(Of T)(Matrix(Of T), T())
+- uid: MatrixDotNet.Extensions.Solver.Solve.KramerSolve``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Vectorization.Vector{``0})
+  name: KramerSolve<T>(Matrix<T>, Vector<T>)
+  href: api/MatrixDotNet.Extensions.Solver.Solve.html#MatrixDotNet_Extensions_Solver_Solve_KramerSolve__1_MatrixDotNet_Matrix___0__MatrixDotNet_Vectorization_Vector___0__
+  commentId: M:MatrixDotNet.Extensions.Solver.Solve.KramerSolve``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Vectorization.Vector{``0})
+  name.vb: KramerSolve(Of T)(Matrix(Of T), Vector(Of T))
+  fullName: MatrixDotNet.Extensions.Solver.Solve.KramerSolve<T>(MatrixDotNet.Matrix<T>, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Extensions.Solver.Solve.KramerSolve(Of T)(MatrixDotNet.Matrix(Of T), MatrixDotNet.Vectorization.Vector(Of T))
+  nameWithType: Solve.KramerSolve<T>(Matrix<T>, Vector<T>)
+  nameWithType.vb: Solve.KramerSolve(Of T)(Matrix(Of T), Vector(Of T))
 - uid: MatrixDotNet.Extensions.Sorting
   name: MatrixDotNet.Extensions.Sorting
   href: api/MatrixDotNet.Extensions.Sorting.html
@@ -6389,22 +6231,22 @@ references:
   fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
   nameWithType: Matrix<T>.Multiply(Matrix<T>, Matrix<T>)
   nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), Matrix(Of T))
-- uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Vectorization.Vector{`0})
   name: Multiply(Matrix<T>, Vector<T>)
-  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Matrix__0__MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Matrix{`0},MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Multiply(Matrix(Of T), Vector(Of T))
-  fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Matrix<T>, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Matrix(Of T), MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Matrix<T>.Multiply(Matrix<T>, Vector<T>)
   nameWithType.vb: Matrix(Of T).Multiply(Matrix(Of T), Vector(Of T))
-- uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Vector{`0},MatrixDotNet.Matrix{`0})
+- uid: MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Matrix{`0})
   name: Multiply(Vector<T>, Matrix<T>)
-  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Vector__0__MatrixDotNet_Matrix__0__
-  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Vector{`0},MatrixDotNet.Matrix{`0})
+  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_op_Multiply_MatrixDotNet_Vectorization_Vector__0__MatrixDotNet_Matrix__0__
+  commentId: M:MatrixDotNet.Matrix`1.op_Multiply(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Matrix{`0})
   name.vb: Multiply(Vector(Of T), Matrix(Of T))
-  fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Vector<T>, MatrixDotNet.Matrix<T>)
-  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Vector(Of T), MatrixDotNet.Matrix(Of T))
+  fullName: MatrixDotNet.Matrix<T>.Multiply(MatrixDotNet.Vectorization.Vector<T>, MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Matrix(Of T).Multiply(MatrixDotNet.Vectorization.Vector(Of T), MatrixDotNet.Matrix(Of T))
   nameWithType: Matrix<T>.Multiply(Vector<T>, Matrix<T>)
   nameWithType.vb: Matrix(Of T).Multiply(Vector(Of T), Matrix(Of T))
 - uid: MatrixDotNet.Matrix`1.op_Multiply*
@@ -6724,383 +6566,405 @@ references:
   commentId: F:MatrixDotNet.State.Row
   fullName: MatrixDotNet.State.Row
   nameWithType: State.Row
-- uid: MatrixDotNet.Vector`1
+- uid: MatrixDotNet.Vectorization
+  name: MatrixDotNet.Vectorization
+  href: api/MatrixDotNet.Vectorization.html
+  commentId: N:MatrixDotNet.Vectorization
+  fullName: MatrixDotNet.Vectorization
+  nameWithType: MatrixDotNet.Vectorization
+- uid: MatrixDotNet.Vectorization.Vector`1
   name: Vector<T>
-  href: api/MatrixDotNet.Vector-1.html
-  commentId: T:MatrixDotNet.Vector`1
+  href: api/MatrixDotNet.Vectorization.Vector-1.html
+  commentId: T:MatrixDotNet.Vectorization.Vector`1
   name.vb: Vector(Of T)
-  fullName: MatrixDotNet.Vector<T>
-  fullName.vb: MatrixDotNet.Vector(Of T)
+  fullName: MatrixDotNet.Vectorization.Vector<T>
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T)
   nameWithType: Vector<T>
   nameWithType.vb: Vector(Of T)
-- uid: MatrixDotNet.Vector`1.#ctor(`0[])
+- uid: MatrixDotNet.Vectorization.Vector`1.#ctor(`0[])
   name: Vector(T[])
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1__ctor__0___
-  commentId: M:MatrixDotNet.Vector`1.#ctor(`0[])
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1__ctor__0___
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.#ctor(`0[])
   name.vb: Vector(T())
-  fullName: MatrixDotNet.Vector<T>.Vector(T[])
-  fullName.vb: MatrixDotNet.Vector(Of T).Vector(T())
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Vector(T[])
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Vector(T())
   nameWithType: Vector<T>.Vector(T[])
   nameWithType.vb: Vector(Of T).Vector(T())
-- uid: MatrixDotNet.Vector`1.#ctor(System.Int32)
+- uid: MatrixDotNet.Vectorization.Vector`1.#ctor(System.Int32)
   name: Vector(Int32)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1__ctor_System_Int32_
-  commentId: M:MatrixDotNet.Vector`1.#ctor(System.Int32)
-  fullName: MatrixDotNet.Vector<T>.Vector(System.Int32)
-  fullName.vb: MatrixDotNet.Vector(Of T).Vector(System.Int32)
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1__ctor_System_Int32_
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.#ctor(System.Int32)
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Vector(System.Int32)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Vector(System.Int32)
   nameWithType: Vector<T>.Vector(Int32)
   nameWithType.vb: Vector(Of T).Vector(Int32)
-- uid: MatrixDotNet.Vector`1.#ctor(System.Int32,`0)
+- uid: MatrixDotNet.Vectorization.Vector`1.#ctor(System.Int32,`0)
   name: Vector(Int32, T)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1__ctor_System_Int32__0_
-  commentId: M:MatrixDotNet.Vector`1.#ctor(System.Int32,`0)
-  fullName: MatrixDotNet.Vector<T>.Vector(System.Int32, T)
-  fullName.vb: MatrixDotNet.Vector(Of T).Vector(System.Int32, T)
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1__ctor_System_Int32__0_
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.#ctor(System.Int32,`0)
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Vector(System.Int32, T)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Vector(System.Int32, T)
   nameWithType: Vector<T>.Vector(Int32, T)
   nameWithType.vb: Vector(Of T).Vector(Int32, T)
-- uid: MatrixDotNet.Vector`1.#ctor*
+- uid: MatrixDotNet.Vectorization.Vector`1.#ctor*
   name: Vector
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1__ctor_
-  commentId: Overload:MatrixDotNet.Vector`1.#ctor
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1__ctor_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.#ctor
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Vector
-  fullName.vb: MatrixDotNet.Vector(Of T).Vector
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Vector
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Vector
   nameWithType: Vector<T>.Vector
   nameWithType.vb: Vector(Of T).Vector
-- uid: MatrixDotNet.Vector`1.Array
+- uid: MatrixDotNet.Vectorization.Vector`1.Array
   name: Array
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_Array
-  commentId: P:MatrixDotNet.Vector`1.Array
-  fullName: MatrixDotNet.Vector<T>.Array
-  fullName.vb: MatrixDotNet.Vector(Of T).Array
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Array
+  commentId: P:MatrixDotNet.Vectorization.Vector`1.Array
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Array
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Array
   nameWithType: Vector<T>.Array
   nameWithType.vb: Vector(Of T).Array
-- uid: MatrixDotNet.Vector`1.Array*
+- uid: MatrixDotNet.Vectorization.Vector`1.Array*
   name: Array
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_Array_
-  commentId: Overload:MatrixDotNet.Vector`1.Array
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Array_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.Array
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Array
-  fullName.vb: MatrixDotNet.Vector(Of T).Array
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Array
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Array
   nameWithType: Vector<T>.Array
   nameWithType.vb: Vector(Of T).Array
-- uid: MatrixDotNet.Vector`1.Equals(System.Object)
+- uid: MatrixDotNet.Vectorization.Vector`1.Equals(System.Object)
   name: Equals(Object)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_Equals_System_Object_
-  commentId: M:MatrixDotNet.Vector`1.Equals(System.Object)
-  fullName: MatrixDotNet.Vector<T>.Equals(System.Object)
-  fullName.vb: MatrixDotNet.Vector(Of T).Equals(System.Object)
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Equals_System_Object_
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.Equals(System.Object)
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Equals(System.Object)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Equals(System.Object)
   nameWithType: Vector<T>.Equals(Object)
   nameWithType.vb: Vector(Of T).Equals(Object)
-- uid: MatrixDotNet.Vector`1.Equals*
+- uid: MatrixDotNet.Vectorization.Vector`1.Equals*
   name: Equals
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_Equals_
-  commentId: Overload:MatrixDotNet.Vector`1.Equals
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Equals_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.Equals
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Equals
-  fullName.vb: MatrixDotNet.Vector(Of T).Equals
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Equals
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Equals
   nameWithType: Vector<T>.Equals
   nameWithType.vb: Vector(Of T).Equals
-- uid: MatrixDotNet.Vector`1.GetHashCode
+- uid: MatrixDotNet.Vectorization.Vector`1.GetHashCode
   name: GetHashCode()
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_GetHashCode
-  commentId: M:MatrixDotNet.Vector`1.GetHashCode
-  fullName: MatrixDotNet.Vector<T>.GetHashCode()
-  fullName.vb: MatrixDotNet.Vector(Of T).GetHashCode()
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_GetHashCode
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.GetHashCode
+  fullName: MatrixDotNet.Vectorization.Vector<T>.GetHashCode()
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).GetHashCode()
   nameWithType: Vector<T>.GetHashCode()
   nameWithType.vb: Vector(Of T).GetHashCode()
-- uid: MatrixDotNet.Vector`1.GetHashCode*
+- uid: MatrixDotNet.Vectorization.Vector`1.GetHashCode*
   name: GetHashCode
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_GetHashCode_
-  commentId: Overload:MatrixDotNet.Vector`1.GetHashCode
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_GetHashCode_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.GetHashCode
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.GetHashCode
-  fullName.vb: MatrixDotNet.Vector(Of T).GetHashCode
+  fullName: MatrixDotNet.Vectorization.Vector<T>.GetHashCode
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).GetHashCode
   nameWithType: Vector<T>.GetHashCode
   nameWithType.vb: Vector(Of T).GetHashCode
-- uid: MatrixDotNet.Vector`1.GetLengthVec
+- uid: MatrixDotNet.Vectorization.Vector`1.GetLengthVec
   name: GetLengthVec()
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_GetLengthVec
-  commentId: M:MatrixDotNet.Vector`1.GetLengthVec
-  fullName: MatrixDotNet.Vector<T>.GetLengthVec()
-  fullName.vb: MatrixDotNet.Vector(Of T).GetLengthVec()
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_GetLengthVec
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.GetLengthVec
+  fullName: MatrixDotNet.Vectorization.Vector<T>.GetLengthVec()
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).GetLengthVec()
   nameWithType: Vector<T>.GetLengthVec()
   nameWithType.vb: Vector(Of T).GetLengthVec()
-- uid: MatrixDotNet.Vector`1.GetLengthVec*
+- uid: MatrixDotNet.Vectorization.Vector`1.GetLengthVec*
   name: GetLengthVec
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_GetLengthVec_
-  commentId: Overload:MatrixDotNet.Vector`1.GetLengthVec
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_GetLengthVec_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.GetLengthVec
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.GetLengthVec
-  fullName.vb: MatrixDotNet.Vector(Of T).GetLengthVec
+  fullName: MatrixDotNet.Vectorization.Vector<T>.GetLengthVec
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).GetLengthVec
   nameWithType: Vector<T>.GetLengthVec
   nameWithType.vb: Vector(Of T).GetLengthVec
-- uid: MatrixDotNet.Vector`1.Item(System.Int32)
+- uid: MatrixDotNet.Vectorization.Vector`1.Item(System.Int32)
   name: Item[Int32]
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_Item_System_Int32_
-  commentId: P:MatrixDotNet.Vector`1.Item(System.Int32)
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Item_System_Int32_
+  commentId: P:MatrixDotNet.Vectorization.Vector`1.Item(System.Int32)
   name.vb: Item(Int32)
-  fullName: MatrixDotNet.Vector<T>.Item[System.Int32]
-  fullName.vb: MatrixDotNet.Vector(Of T).Item(System.Int32)
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Item[System.Int32]
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Item(System.Int32)
   nameWithType: Vector<T>.Item[Int32]
   nameWithType.vb: Vector(Of T).Item(Int32)
-- uid: MatrixDotNet.Vector`1.Item*
+- uid: MatrixDotNet.Vectorization.Vector`1.Item*
   name: Item
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_Item_
-  commentId: Overload:MatrixDotNet.Vector`1.Item
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Item_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.Item
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Item
-  fullName.vb: MatrixDotNet.Vector(Of T).Item
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Item
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Item
   nameWithType: Vector<T>.Item
   nameWithType.vb: Vector(Of T).Item
-- uid: MatrixDotNet.Vector`1.Length
+- uid: MatrixDotNet.Vectorization.Vector`1.Length
   name: Length
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_Length
-  commentId: P:MatrixDotNet.Vector`1.Length
-  fullName: MatrixDotNet.Vector<T>.Length
-  fullName.vb: MatrixDotNet.Vector(Of T).Length
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Length
+  commentId: P:MatrixDotNet.Vectorization.Vector`1.Length
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Length
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Length
   nameWithType: Vector<T>.Length
   nameWithType.vb: Vector(Of T).Length
-- uid: MatrixDotNet.Vector`1.Length*
+- uid: MatrixDotNet.Vectorization.Vector`1.Length*
   name: Length
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_Length_
-  commentId: Overload:MatrixDotNet.Vector`1.Length
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Length_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.Length
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Length
-  fullName.vb: MatrixDotNet.Vector(Of T).Length
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Length
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Length
   nameWithType: Vector<T>.Length
   nameWithType.vb: Vector(Of T).Length
-- uid: MatrixDotNet.Vector`1.op_Addition(`0[],MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Addition(`0[],MatrixDotNet.Vectorization.Vector{`0})
   name: Addition(T[], Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Addition__0___MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Vector`1.op_Addition(`0[],MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Addition__0___MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Addition(`0[],MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Addition(T(), Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Addition(T[], MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Addition(T(), MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Addition(T[], MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Addition(T(), MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Addition(T[], Vector<T>)
   nameWithType.vb: Vector(Of T).Addition(T(), Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Addition(MatrixDotNet.Vector{`0},`0[])
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Addition(MatrixDotNet.Vectorization.Vector{`0},`0[])
   name: Addition(Vector<T>, T[])
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Addition_MatrixDotNet_Vector__0___0___
-  commentId: M:MatrixDotNet.Vector`1.op_Addition(MatrixDotNet.Vector{`0},`0[])
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Addition_MatrixDotNet_Vectorization_Vector__0___0___
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Addition(MatrixDotNet.Vectorization.Vector{`0},`0[])
   name.vb: Addition(Vector(Of T), T())
-  fullName: MatrixDotNet.Vector<T>.Addition(MatrixDotNet.Vector<T>, T[])
-  fullName.vb: MatrixDotNet.Vector(Of T).Addition(MatrixDotNet.Vector(Of T), T())
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Addition(MatrixDotNet.Vectorization.Vector<T>, T[])
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Addition(MatrixDotNet.Vectorization.Vector(Of T), T())
   nameWithType: Vector<T>.Addition(Vector<T>, T[])
   nameWithType.vb: Vector(Of T).Addition(Vector(Of T), T())
-- uid: MatrixDotNet.Vector`1.op_Addition(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Addition(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name: Addition(Vector<T>, Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Addition_MatrixDotNet_Vector__0__MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Vector`1.op_Addition(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Addition_MatrixDotNet_Vectorization_Vector__0__MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Addition(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Addition(Vector(Of T), Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Addition(MatrixDotNet.Vector<T>, MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Addition(MatrixDotNet.Vector(Of T), MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Addition(MatrixDotNet.Vectorization.Vector<T>, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Addition(MatrixDotNet.Vectorization.Vector(Of T), MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Addition(Vector<T>, Vector<T>)
   nameWithType.vb: Vector(Of T).Addition(Vector(Of T), Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Addition*
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Addition*
   name: Addition
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Addition_
-  commentId: Overload:MatrixDotNet.Vector`1.op_Addition
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Addition_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.op_Addition
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Addition
-  fullName.vb: MatrixDotNet.Vector(Of T).Addition
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Addition
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Addition
   nameWithType: Vector<T>.Addition
   nameWithType.vb: Vector(Of T).Addition
-- uid: MatrixDotNet.Vector`1.op_Equality(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Equality(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name: Equality(Vector<T>, Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Equality_MatrixDotNet_Vector__0__MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Vector`1.op_Equality(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Equality_MatrixDotNet_Vectorization_Vector__0__MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Equality(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Equality(Vector(Of T), Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Equality(MatrixDotNet.Vector<T>, MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Equality(MatrixDotNet.Vector(Of T), MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Equality(MatrixDotNet.Vectorization.Vector<T>, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Equality(MatrixDotNet.Vectorization.Vector(Of T), MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Equality(Vector<T>, Vector<T>)
   nameWithType.vb: Vector(Of T).Equality(Vector(Of T), Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Equality*
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Equality*
   name: Equality
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Equality_
-  commentId: Overload:MatrixDotNet.Vector`1.op_Equality
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Equality_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.op_Equality
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Equality
-  fullName.vb: MatrixDotNet.Vector(Of T).Equality
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Equality
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Equality
   nameWithType: Vector<T>.Equality
   nameWithType.vb: Vector(Of T).Equality
-- uid: MatrixDotNet.Vector`1.op_Implicit(`0[])~MatrixDotNet.Vector{`0}
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Implicit(`0[])~MatrixDotNet.Vectorization.Vector{`0}
   name: Implicit(T[] to Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Implicit__0____MatrixDotNet_Vector__0_
-  commentId: M:MatrixDotNet.Vector`1.op_Implicit(`0[])~MatrixDotNet.Vector{`0}
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Implicit__0____MatrixDotNet_Vectorization_Vector__0_
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Implicit(`0[])~MatrixDotNet.Vectorization.Vector{`0}
   name.vb: Widening(T() to Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Implicit(T[] to MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Widening(T() to MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Implicit(T[] to MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Widening(T() to MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Implicit(T[] to Vector<T>)
   nameWithType.vb: Vector(Of T).Widening(T() to Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Implicit*
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Implicit*
   name: Implicit
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Implicit_
-  commentId: Overload:MatrixDotNet.Vector`1.op_Implicit
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Implicit_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.op_Implicit
   isSpec: "True"
   name.vb: Widening
-  fullName: MatrixDotNet.Vector<T>.Implicit
-  fullName.vb: MatrixDotNet.Vector(Of T).Widening
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Implicit
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Widening
   nameWithType: Vector<T>.Implicit
   nameWithType.vb: Vector(Of T).Widening
-- uid: MatrixDotNet.Vector`1.op_Inequality(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Inequality(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name: Inequality(Vector<T>, Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Inequality_MatrixDotNet_Vector__0__MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Vector`1.op_Inequality(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Inequality_MatrixDotNet_Vectorization_Vector__0__MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Inequality(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Inequality(Vector(Of T), Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Inequality(MatrixDotNet.Vector<T>, MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Inequality(MatrixDotNet.Vector(Of T), MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Inequality(MatrixDotNet.Vectorization.Vector<T>, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Inequality(MatrixDotNet.Vectorization.Vector(Of T), MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Inequality(Vector<T>, Vector<T>)
   nameWithType.vb: Vector(Of T).Inequality(Vector(Of T), Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Inequality*
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Inequality*
   name: Inequality
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Inequality_
-  commentId: Overload:MatrixDotNet.Vector`1.op_Inequality
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Inequality_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.op_Inequality
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Inequality
-  fullName.vb: MatrixDotNet.Vector(Of T).Inequality
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Inequality
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Inequality
   nameWithType: Vector<T>.Inequality
   nameWithType.vb: Vector(Of T).Inequality
-- uid: MatrixDotNet.Vector`1.op_Multiply(`0,MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Multiply(`0,MatrixDotNet.Vectorization.Vector{`0})
   name: Multiply(T, Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Multiply__0_MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Vector`1.op_Multiply(`0,MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Multiply__0_MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Multiply(`0,MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Multiply(T, Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Multiply(T, MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Multiply(T, MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Multiply(T, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Multiply(T, MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Multiply(T, Vector<T>)
   nameWithType.vb: Vector(Of T).Multiply(T, Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Multiply(MatrixDotNet.Vector{`0},`0)
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Multiply(MatrixDotNet.Vectorization.Vector{`0},`0)
   name: Multiply(Vector<T>, T)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Multiply_MatrixDotNet_Vector__0___0_
-  commentId: M:MatrixDotNet.Vector`1.op_Multiply(MatrixDotNet.Vector{`0},`0)
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Multiply_MatrixDotNet_Vectorization_Vector__0___0_
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Multiply(MatrixDotNet.Vectorization.Vector{`0},`0)
   name.vb: Multiply(Vector(Of T), T)
-  fullName: MatrixDotNet.Vector<T>.Multiply(MatrixDotNet.Vector<T>, T)
-  fullName.vb: MatrixDotNet.Vector(Of T).Multiply(MatrixDotNet.Vector(Of T), T)
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Multiply(MatrixDotNet.Vectorization.Vector<T>, T)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Multiply(MatrixDotNet.Vectorization.Vector(Of T), T)
   nameWithType: Vector<T>.Multiply(Vector<T>, T)
   nameWithType.vb: Vector(Of T).Multiply(Vector(Of T), T)
-- uid: MatrixDotNet.Vector`1.op_Multiply(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Multiply(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name: Multiply(Vector<T>, Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Multiply_MatrixDotNet_Vector__0__MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Vector`1.op_Multiply(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Multiply_MatrixDotNet_Vectorization_Vector__0__MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Multiply(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Multiply(Vector(Of T), Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Multiply(MatrixDotNet.Vector<T>, MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Multiply(MatrixDotNet.Vector(Of T), MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Multiply(MatrixDotNet.Vectorization.Vector<T>, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Multiply(MatrixDotNet.Vectorization.Vector(Of T), MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Multiply(Vector<T>, Vector<T>)
   nameWithType.vb: Vector(Of T).Multiply(Vector(Of T), Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Multiply*
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Multiply*
   name: Multiply
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Multiply_
-  commentId: Overload:MatrixDotNet.Vector`1.op_Multiply
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Multiply_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.op_Multiply
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Multiply
-  fullName.vb: MatrixDotNet.Vector(Of T).Multiply
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Multiply
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Multiply
   nameWithType: Vector<T>.Multiply
   nameWithType.vb: Vector(Of T).Multiply
-- uid: MatrixDotNet.Vector`1.op_Subtraction(`0[],MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Subtraction(`0[],MatrixDotNet.Vectorization.Vector{`0})
   name: Subtraction(T[], Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Subtraction__0___MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Vector`1.op_Subtraction(`0[],MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Subtraction__0___MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Subtraction(`0[],MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Subtraction(T(), Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Subtraction(T[], MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Subtraction(T(), MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Subtraction(T[], MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Subtraction(T(), MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Subtraction(T[], Vector<T>)
   nameWithType.vb: Vector(Of T).Subtraction(T(), Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Subtraction(MatrixDotNet.Vector{`0},`0[])
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Subtraction(MatrixDotNet.Vectorization.Vector{`0},`0[])
   name: Subtraction(Vector<T>, T[])
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Subtraction_MatrixDotNet_Vector__0___0___
-  commentId: M:MatrixDotNet.Vector`1.op_Subtraction(MatrixDotNet.Vector{`0},`0[])
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Subtraction_MatrixDotNet_Vectorization_Vector__0___0___
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Subtraction(MatrixDotNet.Vectorization.Vector{`0},`0[])
   name.vb: Subtraction(Vector(Of T), T())
-  fullName: MatrixDotNet.Vector<T>.Subtraction(MatrixDotNet.Vector<T>, T[])
-  fullName.vb: MatrixDotNet.Vector(Of T).Subtraction(MatrixDotNet.Vector(Of T), T())
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Subtraction(MatrixDotNet.Vectorization.Vector<T>, T[])
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Subtraction(MatrixDotNet.Vectorization.Vector(Of T), T())
   nameWithType: Vector<T>.Subtraction(Vector<T>, T[])
   nameWithType.vb: Vector(Of T).Subtraction(Vector(Of T), T())
-- uid: MatrixDotNet.Vector`1.op_Subtraction(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Subtraction(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name: Subtraction(Vector<T>, Vector<T>)
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Subtraction_MatrixDotNet_Vector__0__MatrixDotNet_Vector__0__
-  commentId: M:MatrixDotNet.Vector`1.op_Subtraction(MatrixDotNet.Vector{`0},MatrixDotNet.Vector{`0})
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Subtraction_MatrixDotNet_Vectorization_Vector__0__MatrixDotNet_Vectorization_Vector__0__
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.op_Subtraction(MatrixDotNet.Vectorization.Vector{`0},MatrixDotNet.Vectorization.Vector{`0})
   name.vb: Subtraction(Vector(Of T), Vector(Of T))
-  fullName: MatrixDotNet.Vector<T>.Subtraction(MatrixDotNet.Vector<T>, MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.Vector(Of T).Subtraction(MatrixDotNet.Vector(Of T), MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Subtraction(MatrixDotNet.Vectorization.Vector<T>, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Subtraction(MatrixDotNet.Vectorization.Vector(Of T), MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: Vector<T>.Subtraction(Vector<T>, Vector<T>)
   nameWithType.vb: Vector(Of T).Subtraction(Vector(Of T), Vector(Of T))
-- uid: MatrixDotNet.Vector`1.op_Subtraction*
+- uid: MatrixDotNet.Vectorization.Vector`1.op_Subtraction*
   name: Subtraction
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_op_Subtraction_
-  commentId: Overload:MatrixDotNet.Vector`1.op_Subtraction
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_op_Subtraction_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.op_Subtraction
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.Subtraction
-  fullName.vb: MatrixDotNet.Vector(Of T).Subtraction
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Subtraction
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Subtraction
   nameWithType: Vector<T>.Subtraction
   nameWithType.vb: Vector(Of T).Subtraction
-- uid: MatrixDotNet.Vector`1.ToString
+- uid: MatrixDotNet.Vectorization.Vector`1.ToString
   name: ToString()
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_ToString
-  commentId: M:MatrixDotNet.Vector`1.ToString
-  fullName: MatrixDotNet.Vector<T>.ToString()
-  fullName.vb: MatrixDotNet.Vector(Of T).ToString()
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_ToString
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.ToString
+  fullName: MatrixDotNet.Vectorization.Vector<T>.ToString()
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).ToString()
   nameWithType: Vector<T>.ToString()
   nameWithType.vb: Vector(Of T).ToString()
-- uid: MatrixDotNet.Vector`1.ToString*
+- uid: MatrixDotNet.Vectorization.Vector`1.ToString*
   name: ToString
-  href: api/MatrixDotNet.Vector-1.html#MatrixDotNet_Vector_1_ToString_
-  commentId: Overload:MatrixDotNet.Vector`1.ToString
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_ToString_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.ToString
   isSpec: "True"
-  fullName: MatrixDotNet.Vector<T>.ToString
-  fullName.vb: MatrixDotNet.Vector(Of T).ToString
+  fullName: MatrixDotNet.Vectorization.Vector<T>.ToString
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).ToString
   nameWithType: Vector<T>.ToString
   nameWithType.vb: Vector(Of T).ToString
-- uid: MatrixDotNet.VectorExtension
+- uid: MatrixDotNet.Vectorization.VectorExtension
   name: VectorExtension
-  href: api/MatrixDotNet.VectorExtension.html
-  commentId: T:MatrixDotNet.VectorExtension
-  fullName: MatrixDotNet.VectorExtension
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html
+  commentId: T:MatrixDotNet.Vectorization.VectorExtension
+  fullName: MatrixDotNet.Vectorization.VectorExtension
   nameWithType: VectorExtension
-- uid: MatrixDotNet.VectorExtension.Max*
+- uid: MatrixDotNet.Vectorization.VectorExtension.Max*
   name: Max
-  href: api/MatrixDotNet.VectorExtension.html#MatrixDotNet_VectorExtension_Max_
-  commentId: Overload:MatrixDotNet.VectorExtension.Max
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Max_
+  commentId: Overload:MatrixDotNet.Vectorization.VectorExtension.Max
   isSpec: "True"
-  fullName: MatrixDotNet.VectorExtension.Max
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Max
   nameWithType: VectorExtension.Max
-- uid: MatrixDotNet.VectorExtension.Max``1(MatrixDotNet.Vector{``0})
+- uid: MatrixDotNet.Vectorization.VectorExtension.Max``1(MatrixDotNet.Vectorization.Vector{``0})
   name: Max<T>(Vector<T>)
-  href: api/MatrixDotNet.VectorExtension.html#MatrixDotNet_VectorExtension_Max__1_MatrixDotNet_Vector___0__
-  commentId: M:MatrixDotNet.VectorExtension.Max``1(MatrixDotNet.Vector{``0})
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Max__1_MatrixDotNet_Vectorization_Vector___0__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Max``1(MatrixDotNet.Vectorization.Vector{``0})
   name.vb: Max(Of T)(Vector(Of T))
-  fullName: MatrixDotNet.VectorExtension.Max<T>(MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.VectorExtension.Max(Of T)(MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Max<T>(MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Max(Of T)(MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: VectorExtension.Max<T>(Vector<T>)
   nameWithType.vb: VectorExtension.Max(Of T)(Vector(Of T))
-- uid: MatrixDotNet.VectorExtension.Min*
+- uid: MatrixDotNet.Vectorization.VectorExtension.Min*
   name: Min
-  href: api/MatrixDotNet.VectorExtension.html#MatrixDotNet_VectorExtension_Min_
-  commentId: Overload:MatrixDotNet.VectorExtension.Min
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Min_
+  commentId: Overload:MatrixDotNet.Vectorization.VectorExtension.Min
   isSpec: "True"
-  fullName: MatrixDotNet.VectorExtension.Min
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Min
   nameWithType: VectorExtension.Min
-- uid: MatrixDotNet.VectorExtension.Min``1(MatrixDotNet.Vector{``0})
+- uid: MatrixDotNet.Vectorization.VectorExtension.Min``1(MatrixDotNet.Vectorization.Vector{``0})
   name: Min<T>(Vector<T>)
-  href: api/MatrixDotNet.VectorExtension.html#MatrixDotNet_VectorExtension_Min__1_MatrixDotNet_Vector___0__
-  commentId: M:MatrixDotNet.VectorExtension.Min``1(MatrixDotNet.Vector{``0})
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Min__1_MatrixDotNet_Vectorization_Vector___0__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Min``1(MatrixDotNet.Vectorization.Vector{``0})
   name.vb: Min(Of T)(Vector(Of T))
-  fullName: MatrixDotNet.VectorExtension.Min<T>(MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.VectorExtension.Min(Of T)(MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Min<T>(MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Min(Of T)(MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: VectorExtension.Min<T>(Vector<T>)
   nameWithType.vb: VectorExtension.Min(Of T)(Vector(Of T))
-- uid: MatrixDotNet.VectorExtension.Sort*
+- uid: MatrixDotNet.Vectorization.VectorExtension.Sort*
   name: Sort
-  href: api/MatrixDotNet.VectorExtension.html#MatrixDotNet_VectorExtension_Sort_
-  commentId: Overload:MatrixDotNet.VectorExtension.Sort
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Sort_
+  commentId: Overload:MatrixDotNet.Vectorization.VectorExtension.Sort
   isSpec: "True"
-  fullName: MatrixDotNet.VectorExtension.Sort
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Sort
   nameWithType: VectorExtension.Sort
-- uid: MatrixDotNet.VectorExtension.Sort``1(MatrixDotNet.Vector{``0})
+- uid: MatrixDotNet.Vectorization.VectorExtension.Sort``1(MatrixDotNet.Vectorization.Vector{``0})
   name: Sort<T>(Vector<T>)
-  href: api/MatrixDotNet.VectorExtension.html#MatrixDotNet_VectorExtension_Sort__1_MatrixDotNet_Vector___0__
-  commentId: M:MatrixDotNet.VectorExtension.Sort``1(MatrixDotNet.Vector{``0})
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Sort__1_MatrixDotNet_Vectorization_Vector___0__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Sort``1(MatrixDotNet.Vectorization.Vector{``0})
   name.vb: Sort(Of T)(Vector(Of T))
-  fullName: MatrixDotNet.VectorExtension.Sort<T>(MatrixDotNet.Vector<T>)
-  fullName.vb: MatrixDotNet.VectorExtension.Sort(Of T)(MatrixDotNet.Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Sort<T>(MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Sort(Of T)(MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: VectorExtension.Sort<T>(Vector<T>)
   nameWithType.vb: VectorExtension.Sort(Of T)(Vector(Of T))
+- uid: MatrixDotNet.Vectorization.VectorExtension.TensorProduct*
+  name: TensorProduct
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_TensorProduct_
+  commentId: Overload:MatrixDotNet.Vectorization.VectorExtension.TensorProduct
+  isSpec: "True"
+  fullName: MatrixDotNet.Vectorization.VectorExtension.TensorProduct
+  nameWithType: VectorExtension.TensorProduct
+- uid: MatrixDotNet.Vectorization.VectorExtension.TensorProduct``1(MatrixDotNet.Vectorization.Vector{``0},MatrixDotNet.Vectorization.Vector{``0})
+  name: TensorProduct<T>(Vector<T>, Vector<T>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_TensorProduct__1_MatrixDotNet_Vectorization_Vector___0__MatrixDotNet_Vectorization_Vector___0__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.TensorProduct``1(MatrixDotNet.Vectorization.Vector{``0},MatrixDotNet.Vectorization.Vector{``0})
+  name.vb: TensorProduct(Of T)(Vector(Of T), Vector(Of T))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.TensorProduct<T>(MatrixDotNet.Vectorization.Vector<T>, MatrixDotNet.Vectorization.Vector<T>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.TensorProduct(Of T)(MatrixDotNet.Vectorization.Vector(Of T), MatrixDotNet.Vectorization.Vector(Of T))
+  nameWithType: VectorExtension.TensorProduct<T>(Vector<T>, Vector<T>)
+  nameWithType.vb: VectorExtension.TensorProduct(Of T)(Vector(Of T), Vector(Of T))
