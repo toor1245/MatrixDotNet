@@ -42,7 +42,7 @@ namespace MatrixDotNet.Vectorization
                         Unsafe.CopyBlock(ptr + i * mr.Columns + j, res, (uint) (sizeof(T) * size));
                     }
                 }
-                
+
                 for (int i = 0; i < mr.Rows; i++)
                 {
                     for (int k = j; k < n; k++)

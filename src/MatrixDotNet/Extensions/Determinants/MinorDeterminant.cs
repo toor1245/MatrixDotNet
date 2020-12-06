@@ -28,7 +28,7 @@ namespace MatrixDotNet.Extensions.Determinants
             {
                 throw new NullReferenceException(nameof(temp));
             }
-            
+
             if (matrix.Length == 4)
             {
                 return MathUnsafe<T>.Sub(
@@ -43,7 +43,7 @@ namespace MatrixDotNet.Extensions.Determinants
             {
                 var minor = matrix.GetMinor(i);
                 var calc = MathUnsafe<T>.Mul(MathUnsafe<T>.Mul(sign, temp[0, i]), GetDeterminant(minor));
-                result = MathUnsafe<T>.Add(result,calc);
+                result = MathUnsafe<T>.Add(result, calc);
                 sign = MathGeneric<T>.Negate(sign);
             }
 
