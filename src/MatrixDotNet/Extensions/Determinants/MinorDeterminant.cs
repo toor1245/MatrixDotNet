@@ -24,16 +24,11 @@ namespace MatrixDotNet.Extensions.Determinants
                 throw new MatrixDotNetException("the matrix is not square", nameof(matrix));
             }
 
-            if (!(matrix.Clone() is Matrix<T> temp))
-            {
-                throw new NullReferenceException(nameof(temp));
-            }
-
             if (matrix.Length == 4)
             {
                 return MathUnsafe<T>.Sub(
-                    MathUnsafe<T>.Mul(temp[0, 0], temp[1, 1]),
-                    MathUnsafe<T>.Mul(temp[0, 1], temp[1, 0]));
+                    MathUnsafe<T>.Mul(matrix[0, 0], matrix[1, 1]),
+                    MathUnsafe<T>.Mul(matrix[0, 1], matrix[1, 0]));
             }
 
             T result = default;
@@ -42,7 +37,7 @@ namespace MatrixDotNet.Extensions.Determinants
             for (int i = 0; i < matrix.Columns; i++)
             {
                 var minor = matrix.GetMinor(i);
-                var calc = MathUnsafe<T>.Mul(MathUnsafe<T>.Mul(sign, temp[0, i]), GetDeterminant(minor));
+                var calc = MathUnsafe<T>.Mul(MathUnsafe<T>.Mul(sign, matrix[0, i]), GetDeterminant(minor));
                 result = MathUnsafe<T>.Add(result, calc);
                 sign = MathGeneric<T>.Negate(sign);
             }
