@@ -31,7 +31,8 @@ namespace MatrixDotNet.PerformanceTesting
 #endif
 
             Assert.IsFalse(summary.HasCriticalValidationErrors, "Critical validation error");
-            Assert.IsEmpty(summary.ValidationErrors, "Not critical validation errors");
+            Assert.IsTrue(summary.ValidationErrors.IsEmpty, "Not critical validation errors");
+            Assert.IsFalse(summary.Reports.IsEmpty, "Here is no test results... Are you alright?");
             Assert.IsTrue(summary.Reports.All(r => r.Success), "One of benchmarks has failed");
         }
     }
