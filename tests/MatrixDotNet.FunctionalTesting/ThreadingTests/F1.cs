@@ -13,10 +13,10 @@
         // E = A + B + C + D * (MA * MD)
         public void RunF1()
         {
-            var A = new Vector<int>(N);
-            var B = new Vector<int>(N);
-            var C = new Vector<int>(N);
-            var D = new Vector<int>(N);
+            var A = new Vectorization.Vector<int>(N);
+            var B = new Vectorization.Vector<int>(N);
+            var C = new Vectorization.Vector<int>(N);
+            var D = new Vectorization.Vector<int>(N);
             var MA = new Matrix<int>(N,N,1); 
             var MD = new Matrix<int>(N,N,1);
 

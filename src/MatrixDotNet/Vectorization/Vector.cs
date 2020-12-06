@@ -6,7 +6,7 @@ using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
 
-namespace MatrixDotNet
+namespace MatrixDotNet.Vectorization
 {
     public partial class Vector<T> where T : unmanaged
     {
@@ -110,7 +110,7 @@ namespace MatrixDotNet
         /// <returns>new vector after multiply constant on vector.</returns>
         private static Vector<T> Mul(T val, T[] b)
         {
-            Vector<T> vc = new Vector<T>(b.Length);
+            var vc = new Vector<T>(b.Length);
 
             for (int i = 0; i < vc.Length; i++)
             {
@@ -240,11 +240,16 @@ namespace MatrixDotNet
         public override string ToString()
         {
             var builder = new StringBuilder();
+            builder.Append("<");
 
-            foreach (var t in Array)
+            for (int i = 0; i < Array.Length - 1; i++)
             {
-                builder.Append(t + " |");
+                builder.Append($"{Array[i]},");
             }
+
+            builder.Append(Array[^1]);
+            builder.Append(">");
+            builder.AppendLine();
 
             return builder.ToString();
         }

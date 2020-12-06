@@ -1,4 +1,8 @@
-- name: Performance
-  href: getting_started.md
-- name: Statistics
-  href: statistics.md
+- name: MatrixDotNet
+  href: main/toc.yml
+  
+- name: MatrixDotNet.Math
+  href: math/toc.yml
+  
+- name: MatrixDotNet.Core
+  href: core/toc.yml

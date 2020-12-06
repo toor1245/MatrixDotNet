@@ -1,6 +1,6 @@
 using System;
 
-namespace MatrixDotNet
+namespace MatrixDotNet.Vectorization
 {
     public partial class Vector<T> where T : unmanaged
     {
@@ -13,7 +13,6 @@ namespace MatrixDotNet
 
             return a.Equals(b);
         }
-
 
         public static bool operator !=(Vector<T> a, Vector<T> b)
         {

@@ -14,10 +14,10 @@ namespace MatrixDotNet.FunctionalTesting.ThreadingTests
         // E = A + B + C + D * (MA * MD)
         public void RunF1()
         {
-            var A = new Vector<int>(N,1);
-            var B = new Vector<int>(N,1);
-            var C = new Vector<int>(N,1);
-            var D = new Vector<int>(N,1);
+            var A = new Vectorization.Vector<int>(N,1);
+            var B = new Vectorization.Vector<int>(N,1);
+            var C = new Vectorization.Vector<int>(N,1);
+            var D = new Vectorization.Vector<int>(N,1);
             var MA = new Matrix<int>(N,N,1); 
             var MD = new Matrix<int>(N,N,1);
 
@@ -42,15 +42,15 @@ namespace MatrixDotNet.FunctionalTesting.ThreadingTests
         {
             // init vectors and matrices
             Console.WriteLine("Thread 3 start");
-            var P = new Vector<int>(N,1);
-            var S = new Vector<int>(N,1);
+            var P = new Vectorization.Vector<int>(N,1);
+            var S = new Vectorization.Vector<int>(N,1);
             var MO = new Matrix<int>(N,N,1);
             var MR = new Matrix<int>(N,N,1);
             var MS = new Matrix<int>(N,N,1);
             
             // calculates by parts
-            var res = new Vector<int>(P.Array * MO);
-            var res2 = new Vector<int>(S.Array * (MR * MS));
+            var res = new Vectorization.Vector<int>(P.Array * MO);
+            var res2 = new Vectorization.Vector<int>(S.Array * (MR * MS));
             var T = res + res2;
             Console.WriteLine("\nT = " + T + "\n");
         }
