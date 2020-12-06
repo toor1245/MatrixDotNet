@@ -45,7 +45,7 @@ namespace MatrixDotNet.Vectorization
                 
                 for (int i = 0; i < mr.Rows; i++)
                 {
-                    for (int k = j; j < n; j++)
+                    for (int k = j; k < n; k++)
                     {
                         mr[i, k] = MathUnsafe<T>.Mul(va[i], vb[k]);
                     }
