@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Vectorization;
 
 namespace Samples.Samples.VectorSamples
 {

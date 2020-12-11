@@ -77,11 +77,11 @@ namespace MatrixDotNet.Extensions.Decompositions
 
             for (int i = 1; i < m; i++)
             {
-                Vector<T> ai = matrix[i];
-                Vector<T> sum = new T[m];
+                Vectorization.Vector<T> ai = matrix[i];
+                Vectorization.Vector<T> sum = new T[m];
                 for (int j = 0; j < i; j++)
                 {
-                    Vector<T> bi = b[j];
+                    Vectorization.Vector<T> bi = b[j];
                     T scalarProduct = ai * bi;
                     T biMul = bi * bi;
                     T ci = MathGeneric<T>.Divide(scalarProduct, biMul);
@@ -118,11 +118,11 @@ namespace MatrixDotNet.Extensions.Decompositions
 
             for (int i = 1; i < n; i++)
             {
-                Vector<T> ai = matrix[i, State.Column];
-                Vector<T> sum = new T[n];
+                Vectorization.Vector<T> ai = matrix[i, State.Column];
+                Vectorization.Vector<T> sum = new T[n];
                 for (int j = 0; j < i; j++)
                 {
-                    Vector<T> bi = b[j, State.Column];
+                    Vectorization.Vector<T> bi = b[j, State.Column];
                     T scalarProduct = ai * bi;
                     T biMul = bi * bi;
                     T ci = MathGeneric<T>.Divide(scalarProduct, biMul);
@@ -148,7 +148,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             Matrix<T> orthogonal = new Matrix<T>(m, n);
             for (int i = 0; i < n; i++)
             {
-                Vector<T> vector = new Vector<T>(matrix[i, State.Column]);
+                var vector = new Vectorization.Vector<T>(matrix[i, State.Column]);
                 T val = vector.GetLengthVec();
                 for (int j = 0; j < m; j++)
                 {
@@ -172,7 +172,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             Matrix<T> orthogonal = new Matrix<T>(m, n);
             for (int i = 0; i < m; i++)
             {
-                Vector<T> vector = new Vector<T>(matrix[i]);
+                var vector = new Vectorization.Vector<T>(matrix[i]);
                 T val = vector.GetLengthVec();
                 for (int j = 0; j < n; j++)
                 {

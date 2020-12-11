@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MatrixDotNet
+namespace MatrixDotNet.Vectorization
 {
     public static partial class VectorExtension
     {
@@ -10,6 +10,7 @@ namespace MatrixDotNet
             var comparer = Comparer<T>.Default;
 
             T min = vector[0];
+
             for (int i = 1; i < vector.Length; i++)
             {
                 if (comparer.Compare(min, vector[i]) > 0)

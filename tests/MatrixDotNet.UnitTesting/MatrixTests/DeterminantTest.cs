@@ -70,27 +70,6 @@ namespace MatrixDotNetTests.MatrixTests
         }
         
         [Fact]
-        public void MinorDeterminant_GetsDeterminantMatrix3x3_AssertMustBeEqual()
-        {
-            // Arrange
-            Matrix<double> matrix = new double[,]
-            {
-                {4, 12, -16},
-                {12, 37, -43},
-                {-16, -43, 98}
-            };
-
-            var expected = 36;
-            
-            // Act
-            var actual = matrix.GetMinorDeterminant();
-            
-            
-            // Assert
-            Assert.Equal(expected,actual);
-        }
-        
-        [Fact]
         public void ShurDeterminant_GetsDeterminantMatrix3x3_AssertMustBeEqual()
         {
             // Arrange
@@ -112,5 +91,25 @@ namespace MatrixDotNetTests.MatrixTests
             Assert.Equal(expected,actual);
         }
         
+        [Fact]
+        public void MinorDeterminant_GetsDeterminantMatrix3x3_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<double> matrix = new double[,]
+            {
+                {4, 12, -16},
+                {12, 37, -43},
+                {-16, -43, 98}
+            };
+
+            var expected = 36;
+
+            // Act
+            var actual = matrix.GetDeterminant();
+
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
     }
 }
