@@ -149,7 +149,7 @@ namespace MatrixDotNet.Extensions.Builder
 
             return matrix;
         }
-        
+
         public static Matrix<float> RandomFloat(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
         {
             Matrix<float> matrix = new Matrix<float>(row, column);

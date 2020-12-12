@@ -28,7 +28,7 @@ namespace MatrixDotNet.Extensions.Core.Simd
             var K = matrixA.Columns;
             var size = Vector256<float>.Count;
             var ptrT = stackalloc float[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-            
+
             fixed (float* ptrA = matrixA.GetArray())
             fixed (float* ptrB = matrixB.GetArray())
             fixed (float* ptrC = matrixC.GetArray())
@@ -41,16 +41,16 @@ namespace MatrixDotNet.Extensions.Core.Simd
                     for (int k = 0; k < K; k++)
                     {
                         float* b = ptrB + k * n;
-                        FillFloatX4(ptrT, 8, span1[i * K + k] );
+                        FillFloatX4(ptrT, 8, span1[i * K + k]);
                         var va = Avx.LoadVector256(ptrT);
                         for (int j = 0; j < n; j += 16)
                         {
                             var vb1 = Avx.LoadVector256(b + j);
                             var vb2 = Avx.LoadVector256(b + j + size);
-                            
+
                             var vc1 = Avx.LoadVector256(c + j);
                             var vc2 = Avx.LoadVector256(c + j + size);
-                            
+
                             Avx.Store(c + j + 0, Fma.MultiplyAdd(va, vb1, vc1));
                             Avx.Store(c + j + size, Fma.MultiplyAdd(va, vb2, vc2));
                         }

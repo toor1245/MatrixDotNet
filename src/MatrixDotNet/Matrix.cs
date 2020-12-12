@@ -79,14 +79,14 @@ namespace MatrixDotNet
                 {
                     throw new MatrixDotNetException("matrix is not square");
                 }
-                
+
                 var comparer = Comparer<T>.Default;
 
                 for (int i = 0; i < Rows; i++)
                 {
                     for (int j = 0; j < Columns; j++)
                     {
-                        if (comparer.Compare(this[j, i],this[i, j]) != 0)
+                        if (comparer.Compare(this[j, i], this[i, j]) != 0)
                         {
                             return false;
                         }
@@ -96,7 +96,7 @@ namespace MatrixDotNet
                 return true;
             }
         }
-        
+
 
         #endregion
 
