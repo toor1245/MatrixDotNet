@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Core.Simd;
 using MatrixDotNet.NotStableFeatures;
 using Xunit;
 
@@ -557,6 +559,26 @@ namespace MatrixDotNetTests.MatrixTests
             Assert.Equal(expected,actual);
         }
         
+        [Theory]
+        [InlineData(16)]
+        [InlineData(32)]
+        [InlineData(48)]
+        [InlineData(64)]
+        [InlineData(128)]
+        public void MatrixMulTest16_MultiplyTwoMatrix_AssertMustBeEqual(int n)
+        {
+            // Arrange
+            Matrix<float> matrixA = BuildMatrix.RandomFloat(n, n, -10, 10);
+            Matrix<float> matrixB = BuildMatrix.RandomFloat(n, n, -10, 10);
+            Matrix<float> expected = matrixA * matrixB;
+
+            // Act
+            Matrix<float> actual = Simd.BlockMultiply(matrixA, matrixB);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
         [Fact]
         public void MatrixMultiplyTest_MultiplyTwoMatrix_AssertMustBeThrowsMatrixDotNetException()
         {
@@ -797,6 +819,60 @@ namespace MatrixDotNetTests.MatrixTests
 
             // Assert
             Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void IsSymmetricTest_AssertMustBeTrue()
+        {
+            // Arrange
+            Matrix<int> matrixA = new[,]
+            {
+                {1, 3, 0},
+                {3, 2, 6},
+                {0, 6, 5},
+            };
+            
+            // Act
+            var actual = matrixA.IsSymmetric;
+            
+
+            // Assert
+            Assert.True(actual);
+        }
+        
+        [Fact]
+        public void IsSymmetricTest_AssertMustBeFalse()
+        {
+            // Arrange
+            Matrix<int> matrixA = new[,]
+            {
+                {1, 3, 0},
+                {3, 2, 6},
+                {0, 4, 3},
+            };
+            
+            // Act
+            var actual = matrixA.IsSymmetric;
+            
+
+            // Assert
+            Assert.False(actual);
+        }
+        
+        [Fact]
+        public void IsSymmetricTest_IsNotSquareMatrix_ThrowsMatrixDotNetException()
+        {
+            // Arrange
+            Matrix<int> matrixA = new[,]
+            {
+                {1, 3, 0},
+                {3, 2, 6},
+                {0, 4, 3},
+                {0, 1, 2},
+            };
+            
+            // Act Assert
+            Assert.Throws<MatrixDotNetException>(() => matrixA.IsSymmetric);
         }
     }
 }
