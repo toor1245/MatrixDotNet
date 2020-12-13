@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Core.Simd;
+using MatrixDotNet.NetCore.Simd;
 using MatrixDotNet.NotStableFeatures;
 using Xunit;
 

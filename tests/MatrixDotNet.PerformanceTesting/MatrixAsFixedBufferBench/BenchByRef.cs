@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 
-namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBuffer
+namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
 {
     [MemoryDiagnoser]
     [RyuJitX64Job]
@@ -13,8 +13,8 @@ namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBuffer
         [GlobalSetup]
         public void Setup()
         {
-            this._struct32B = new Struct32B();
-            this._struct112B = new Struct112B();
+            _struct32B = new Struct32B();
+            _struct112B = new Struct112B();
         }
 
         [Benchmark]

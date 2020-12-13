@@ -1,12 +1,13 @@
-using MatrixDotNet.Exceptions;
+#if NET5_0 || NETCOREAPP3_1
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
+using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.Extensions.Core
+namespace MatrixDotNet.NetCore
 {
     [Serializable]
     [StructLayout(LayoutKind.Explicit)]
@@ -397,3 +398,4 @@ namespace MatrixDotNet.Extensions.Core
         #endregion
     }
 }
+#endif
