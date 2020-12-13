@@ -56,9 +56,3 @@ jobs:
 
       - name: Check MatrixDotNet
         run: dotnet format "src/MatrixDotNet/MatrixDotNet.csproj" --check --verbosity diagnostic 
-
-      - name: Check MatrixDotNet.Math
-        run: dotnet format "src/MatrixDotNet.Math/MatrixDotNet.Math.csproj" --check --verbosity diagnostic 
-
-      - name: Check MatrixDotNet
-        run: dotnet format "src/MatrixDotNet.NetCore/MatrixDotNet.NetCore.csproj" --check --verbosity diagnostic 
