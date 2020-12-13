@@ -14,15 +14,12 @@ namespace MatrixDotNet.NetCore
     public unsafe struct MatrixAsFixedBuffer
     {
         #region .fields
-
         private const short Size = 6_561;
 
         [FieldOffset(5)] internal fixed double _array[Size];
-
         #endregion
 
         #region .properties
-
         [field: FieldOffset(0)] public byte Rows { get; private set; }
 
         [field: FieldOffset(1)] public byte Columns { get; private set; }
@@ -46,11 +43,9 @@ namespace MatrixDotNet.NetCore
                 }
             }
         }
-
         #endregion
 
         #region .ctor
-
         /// <summary>
         ///     Initialize empty matrix.
         /// </summary>
@@ -118,11 +113,9 @@ namespace MatrixDotNet.NetCore
                 for (var i = 0; i < Length; i++) arr[i] = span[i];
             }
         }
-
         #endregion
 
         #region .methods
-
         /// <summary>
         ///     Init data of matrix.
         /// </summary>
@@ -359,11 +352,9 @@ namespace MatrixDotNet.NetCore
 
             return builder.ToString();
         }
-
         #endregion
 
         #region .indexators
-
         /// <summary>
         ///     Gets value by ref.
         /// </summary>
@@ -394,7 +385,6 @@ namespace MatrixDotNet.NetCore
                 }
             }
         }
-
         #endregion
     }
 }
