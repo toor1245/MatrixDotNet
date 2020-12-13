@@ -21,44 +21,49 @@ namespace MatrixDotNet.Extensions.Core.Simd
                 throw new MatrixDotNetException("MatrixA must be square");
             }
 
-            var m = matrixA.Rows;
-            var n = matrixA.Columns;
-            var length = matrixA.Length;
-            var matrixC = new Matrix<float>(m, n);
-            var K = matrixA.Columns;
-            var size = Vector256<float>.Count;
-            var ptrT = stackalloc float[] { 0, 0, 0, 0, 0, 0, 0, 0 };
-
-            fixed (float* ptrA = matrixA.GetArray())
-            fixed (float* ptrB = matrixB.GetArray())
-            fixed (float* ptrC = matrixC.GetArray())
+            if (Fma.IsSupported)
             {
-                var span1 = new Span<float>(ptrA, length);
-                for (int i = 0; i < m; i++)
+                var m = matrixA.Rows;
+                var n = matrixA.Columns;
+                var length = matrixA.Length;
+                var matrixC = new Matrix<float>(m, n);
+                var K = matrixA.Columns;
+                var size = Vector256<float>.Count;
+                var ptrT = stackalloc float[] { 0, 0, 0, 0, 0, 0, 0, 0 };
+
+                fixed (float* ptrA = matrixA.GetArray())
+                fixed (float* ptrB = matrixB.GetArray())
+                fixed (float* ptrC = matrixC.GetArray())
                 {
-                    float* c = ptrC + i * n;
-
-                    for (int k = 0; k < K; k++)
+                    var span1 = new Span<float>(ptrA, length);
+                    for (int i = 0; i < m; i++)
                     {
-                        float* b = ptrB + k * n;
-                        FillFloatX4(ptrT, 8, span1[i * K + k]);
-                        var va = Avx.LoadVector256(ptrT);
-                        for (int j = 0; j < n; j += 16)
+                        float* c = ptrC + i * n;
+
+                        for (int k = 0; k < K; k++)
                         {
-                            var vb1 = Avx.LoadVector256(b + j);
-                            var vb2 = Avx.LoadVector256(b + j + size);
+                            float* b = ptrB + k * n;
+                            FillFloatX4(ptrT, 8, span1[i * K + k]);
+                            var va = Avx.LoadVector256(ptrT);
+                            for (int j = 0; j < n; j += 16)
+                            {
+                                var vb1 = Avx.LoadVector256(b + j);
+                                var vb2 = Avx.LoadVector256(b + j + size);
 
-                            var vc1 = Avx.LoadVector256(c + j);
-                            var vc2 = Avx.LoadVector256(c + j + size);
+                                var vc1 = Avx.LoadVector256(c + j);
+                                var vc2 = Avx.LoadVector256(c + j + size);
 
-                            Avx.Store(c + j + 0, Fma.MultiplyAdd(va, vb1, vc1));
-                            Avx.Store(c + j + size, Fma.MultiplyAdd(va, vb2, vc2));
+                                Avx.Store(c + j + 0, Fma.MultiplyAdd(va, vb1, vc1));
+                                Avx.Store(c + j + size, Fma.MultiplyAdd(va, vb2, vc2));
+                            }
                         }
                     }
                 }
+
+                return matrixC;
             }
 
-            return matrixC;
+            return matrixA * matrixB;
         }
 
         private static unsafe void FillFloatX4(float* p, int count, float value)
