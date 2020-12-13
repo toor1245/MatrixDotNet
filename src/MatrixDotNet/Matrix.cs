@@ -71,7 +71,32 @@ namespace MatrixDotNet
         /// <summary>
         /// Checks for symmetric matrix.
         /// </summary>
-        public bool IsSymmetric => this == this.Transpose();
+        public bool IsSymmetric
+        {
+            get
+            {
+                if (!IsSquare)
+                {
+                    throw new MatrixDotNetException("matrix is not square");
+                }
+
+                var comparer = Comparer<T>.Default;
+
+                for (int i = 0; i < Rows; i++)
+                {
+                    for (int j = 0; j < Columns; j++)
+                    {
+                        if (comparer.Compare(this[j, i], this[i, j]) != 0)
+                        {
+                            return false;
+                        }
+                    }
+                }
+
+                return true;
+            }
+        }
+
 
         #endregion
 

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>net5.0;netcoreapp3.1;netstandard2.1</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
@@ -38,7 +38,7 @@ With all answers see documentation or ask on gitter or github issues</Descriptio
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MatrixDotNet.Math\MatrixDotNet.Math.csproj" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
   </ItemGroup>
 
   <PropertyGroup Condition="'$(OS_WINDOWS)'=='true'">
@@ -49,6 +49,9 @@ With all answers see documentation or ask on gitter or github issues</Descriptio
   </PropertyGroup>
   <PropertyGroup Condition="'$(OS_LINUX)'=='true'">
     <DefineConstants>OS_LINUX</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>true</Optimize>
   </PropertyGroup>
 
 </Project>

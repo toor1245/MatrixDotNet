@@ -1,9 +1,10 @@
+#if NET5_0 || NETCOREAPP3_1
 using System;
 using System.Collections;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 
-namespace MatrixDotNet.Extensions.Core.Simd.Statistics
+namespace MatrixDotNet.NetCore.Simd.Statistics
 {
     public static partial class Simd
     {
@@ -190,3 +191,4 @@ namespace MatrixDotNet.Extensions.Core.Simd.Statistics
         }
     }
 }
+#endif

@@ -1,26 +1,21 @@
-using MatrixDotNet.Exceptions;
+#if NET5_0 || NETCOREAPP3_1
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
+using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.Extensions.Core
+namespace MatrixDotNet.NetCore
 {
     [Serializable]
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct MatrixAsFixedBuffer
     {
-        #region .fields
-
         private const short Size = 6_561;
 
         [FieldOffset(5)] internal fixed double _array[Size];
-
-        #endregion
-
-        #region .properties
 
         [field: FieldOffset(0)] public byte Rows { get; private set; }
 
@@ -45,10 +40,6 @@ namespace MatrixDotNet.Extensions.Core
                 }
             }
         }
-
-        #endregion
-
-        #region .ctor
 
         /// <summary>
         ///     Initialize empty matrix.
@@ -117,10 +108,6 @@ namespace MatrixDotNet.Extensions.Core
                 for (var i = 0; i < Length; i++) arr[i] = span[i];
             }
         }
-
-        #endregion
-
-        #region .methods
 
         /// <summary>
         ///     Init data of matrix.
@@ -359,10 +346,6 @@ namespace MatrixDotNet.Extensions.Core
             return builder.ToString();
         }
 
-        #endregion
-
-        #region .indexators
-
         /// <summary>
         ///     Gets value by ref.
         /// </summary>
@@ -393,7 +376,6 @@ namespace MatrixDotNet.Extensions.Core
                 }
             }
         }
-
-        #endregion
     }
 }
+#endif

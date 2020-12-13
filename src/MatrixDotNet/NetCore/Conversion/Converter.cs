@@ -1,9 +1,10 @@
-using MatrixDotNet.Exceptions;
+#if NET5_0 || NETCOREAPP3_1
 using System;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
+using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
+namespace MatrixDotNet.NetCore.Conversion
 {
     /// <summary>
     ///     Represents conversion operations for matrix with fixed buffer size.
@@ -219,3 +220,4 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
         }
     }
 }
+#endif

@@ -29,6 +29,8 @@ jobs:
 
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '5.0.101'
 
       - name: Create build
         run: dotnet build "src" -c Release --force
