@@ -149,7 +149,7 @@ namespace MatrixDotNet.NetCore
                 throw new MatrixDotNetException("Not Equal");
 
             var matrix = new MatrixAsFixedBuffer(m, n);
-            
+
 #if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
             {
