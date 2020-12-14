@@ -1,11 +1,12 @@
-#if NET5_0 || NETCOREAPP3_1
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Runtime.Intrinsics;
-using System.Runtime.Intrinsics.X86;
 using System.Text;
 using MatrixDotNet.Exceptions;
+#if NET5_0 || NETCOREAPP3_1
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
+#endif
 
 namespace MatrixDotNet.NetCore
 {
@@ -86,7 +87,10 @@ namespace MatrixDotNet.NetCore
                 var span = new Span<double>(ptr, m * n);
                 var arr = Data;
 
-                for (var i = 0; i < Length; i++) arr[i] = span[i];
+                for (var i = 0; i < Length; i++)
+                {
+                    arr[i] = span[i];
+                }
             }
         }
 
@@ -105,7 +109,10 @@ namespace MatrixDotNet.NetCore
                 var span = new Span<double>(ptr, m * n);
                 var arr = Data;
 
-                for (var i = 0; i < Length; i++) arr[i] = span[i];
+                for (var i = 0; i < Length; i++)
+                {
+                    arr[i] = span[i];
+                }
             }
         }
 
@@ -142,7 +149,8 @@ namespace MatrixDotNet.NetCore
                 throw new MatrixDotNetException("Not Equal");
 
             var matrix = new MatrixAsFixedBuffer(m, n);
-
+            
+#if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
             {
                 var length = left.Length;
@@ -168,17 +176,20 @@ namespace MatrixDotNet.NetCore
                 }
             }
             else
+#endif
             {
                 var a1 = left.Data;
                 var a2 = right.Data;
                 var a3 = matrix.Data;
 
                 for (var i = 0; i < m; i++)
+                {
                     for (var j = 0; j < n; j++)
                     {
                         var num = i + m * j;
                         a3[num] = a2[num] + a1[num];
                     }
+                }
             }
 
             return matrix;
@@ -197,10 +208,13 @@ namespace MatrixDotNet.NetCore
             var n = left.Columns;
 
             if (m != right.Rows || n != right.Columns)
+            {
                 throw new MatrixDotNetException("Not Equal");
+            }
 
             var matrix = new MatrixAsFixedBuffer(m, n);
 
+#if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
             {
                 var length = left.Length;
@@ -227,6 +241,7 @@ namespace MatrixDotNet.NetCore
                 }
             }
             else
+#endif
             {
                 var a1 = left.Data;
                 var a2 = right.Data;
@@ -234,11 +249,13 @@ namespace MatrixDotNet.NetCore
 
                 // Adds two matrices.
                 for (var i = 0; i < m; i++)
+                {
                     for (var j = 0; j < n; j++)
                     {
                         var num = i + m * j;
                         a3[num] = a2[num] - a1[num];
                     }
+                }
             }
 
             return matrix;
@@ -256,7 +273,10 @@ namespace MatrixDotNet.NetCore
         /// </exception>
         public static MatrixAsFixedBuffer MulByRef(ref MatrixAsFixedBuffer left, ref MatrixAsFixedBuffer right)
         {
-            if (left.Columns != right.Rows) throw new MatrixDotNetException("");
+            if (left.Columns != right.Rows)
+            {
+                throw new MatrixDotNetException("");
+            }
 
             return MulMatrix(ref left, ref right);
         }
@@ -308,7 +328,10 @@ namespace MatrixDotNet.NetCore
             {
                 var span2 = new Span<double>(ptr, m);
                 var span = new Span<double>(ptr, Length);
-                for (var i = 0; i < m; i++) span2[i] = span[column + Columns * i];
+                for (var i = 0; i < m; i++)
+                {
+                    span2[i] = span[column + Columns * i];
+                }
                 return span2;
             }
         }
@@ -324,7 +347,10 @@ namespace MatrixDotNet.NetCore
             fixed (double* ptr = _array)
             {
                 var span2 = new Span<double>(ptr, Length);
-                for (var i = 0; i < m; i++) span2[column * Columns + i] = data[i];
+                for (var i = 0; i < m; i++)
+                {
+                    span2[column * Columns + i] = data[i];
+                }
             }
         }
 
@@ -337,7 +363,10 @@ namespace MatrixDotNet.NetCore
                 for (var i = 0; i < Rows; i++)
                 {
                     var span = span1.Slice(i * Columns, Columns);
-                    foreach (var t in span) builder.Append(t + " ");
+                    foreach (var t in span)
+                    {
+                        builder.Append(t + " ");
+                    }
 
                     builder.AppendLine();
                 }
@@ -372,10 +401,12 @@ namespace MatrixDotNet.NetCore
                 fixed (double* ptr = _array)
                 {
                     var span = new Span<double>(ptr, Length).Slice(i * Columns, Columns);
-                    for (var j = 0; j < span.Length; j++) span[j] = value[j];
+                    for (var j = 0; j < span.Length; j++)
+                    {
+                        span[j] = value[j];
+                    }
                 }
             }
         }
     }
 }
-#endif

@@ -84,7 +84,7 @@ namespace MatrixDotNet
 
                 for (int i = 0; i < Rows; i++)
                 {
-                    for (int j = 0; j < Columns; j++)
+                    for (int j = 0; j < i; j++)
                     {
                         if (comparer.Compare(this[j, i], this[i, j]) != 0)
                         {

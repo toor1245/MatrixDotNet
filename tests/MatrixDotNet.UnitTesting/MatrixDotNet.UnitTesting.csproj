@@ -27,8 +27,4 @@
       <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="MatrixAsFixedBufferTests" />
-    </ItemGroup>
-
 </Project>
