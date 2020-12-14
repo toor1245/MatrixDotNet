@@ -76,8 +76,7 @@ namespace MatrixDotNet.Vectorization
 
             Vector<T> vc = new Vector<T>(len);
             int i = 0;
-
-#if OS_WINDOWS || OS_LINUX
+            
             int size = System.Numerics.Vector<T>.Count;
             int lastIndexBlock = len - len % size;
 
@@ -88,7 +87,6 @@ namespace MatrixDotNet.Vectorization
                 var vectorC = Vector.Subtract(vectorB, vectorA);
                 vectorC.CopyTo(vc.Array);
             }
-#endif
 
             for (; i < vc.Length; i++)
             {
