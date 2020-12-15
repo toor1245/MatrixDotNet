@@ -21,6 +21,7 @@ jobs:
           - os: windows-latest
           - os: ubuntu-latest
           - os: macos-latest
+        dotNet: [5.x, 3.x]
 
     name: Run tests
     steps:
@@ -30,7 +31,7 @@ jobs:
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v1.7.2
         with:
-          dotnet-version: '5.0.101'
+          dotnet-version: ${{ matrix.dotNet }}
 
       - name: Create build
         run: dotnet build "src" -c Release --force
