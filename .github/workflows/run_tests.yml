@@ -21,7 +21,7 @@ jobs:
           - os: windows-latest
           - os: ubuntu-latest
           - os: macos-latest
-        dotNet: [5.x, 3.x]
+        dotNet: [5.0.x, 3.1.x]
 
     name: Run tests
     steps:
