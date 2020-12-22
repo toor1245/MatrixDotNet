@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Builder.BuildMatrix.html",
-          "hash": "jQfwjSSmuyJriDQf4iaIJw=="
+          "hash": "uf60tlHQ+XBdS98ZCIy4yA=="
         }
       },
       "is_incremental": false,
@@ -106,138 +106,6 @@
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Conversion.html",
           "hash": "eQ+e2NdBZE7e3hnFYZ+U6Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Conversion.Converter.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Conversion.Converter.html",
-          "hash": "a3Sy45gPmAwAKLX2jo1AWQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Conversion.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Conversion.html",
-          "hash": "r2JH360m98N54Dc66Tf6NQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.BubbleSortFixed.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.BubbleSortFixed.html",
-          "hash": "x/2Fs8tIyDTPuu9e0ap5FA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.ISorting.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.ISorting.html",
-          "hash": "CKEwO/dWRZu9rot9zn0u2Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Extensions.Sorting.html",
-          "hash": "34xaGueIMIM2oeyFc7rycg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.MatrixAsFixedBuffer.html",
-          "hash": "YLs58D6niCF9AFBri4VLWw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Simd.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Simd.html",
-          "hash": "tH3TyP752calWZThDXwCoA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Statistics.Simd.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Statistics.Simd.html",
-          "hash": "05WMI1a6s/dqh709APoU4Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Statistics.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Simd.Statistics.html",
-          "hash": "REzVlTPl2JH6maULfBOYeA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.Simd.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.Simd.html",
-          "hash": "qb1ZjJqR+ouagvyL7cSXQA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Core.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Core.html",
-          "hash": "Eti+xMeS02vCqL+FG63+qA=="
         }
       },
       "is_incremental": false,
@@ -669,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.BitwiseGeneric-1.html",
-          "hash": "zCsV3qICKEO4LiqVKyYdVA=="
+          "hash": "p8fPMfLVzEU30lmi5ay2Uw=="
         }
       },
       "is_incremental": false,
@@ -681,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.BitwiseGeneric-3.html",
-          "hash": "76VioZtU4YrOLvExwF4khg=="
+          "hash": "YMLB9Y6bLGic830HpyRABA=="
         }
       },
       "is_incremental": false,
@@ -693,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathExtension.html",
-          "hash": "CF0m0jRXRZezelLlIU0pHg=="
+          "hash": "KD0zBtNybNeVbi7OY5rt0w=="
         }
       },
       "is_incremental": false,
@@ -705,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathGeneric-1.html",
-          "hash": "be10XRgnOVPl1cwZhjIeFQ=="
+          "hash": "71hewVYLx9LxWFMjFQw8aQ=="
         }
       },
       "is_incremental": false,
@@ -717,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathGeneric-3.html",
-          "hash": "8qP/SAky/7O8si1s2/YU6A=="
+          "hash": "0QQ4NraLZ6Ue8mVzYCRb/w=="
         }
       },
       "is_incremental": false,
@@ -729,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathGeneric.html",
-          "hash": "ONcmVBhJZaLb/LWNu2LsNg=="
+          "hash": "GXeorxSGe3PSIcuGkM7Ajg=="
         }
       },
       "is_incremental": false,
@@ -741,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathUnsafe-1.html",
-          "hash": "xnfiFhnnGQFCNnfMdxgoDw=="
+          "hash": "onZ4mZLNU1E9cmsfTXerhA=="
         }
       },
       "is_incremental": false,
@@ -765,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.Enumerator.html",
-          "hash": "uTWkzgr1kVPZbEppz2xa/g=="
+          "hash": "/rpacsIdPh79pQutQdlg0g=="
         }
       },
       "is_incremental": false,
@@ -777,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.html",
-          "hash": "WEm8tVRXEWIwfhuBn8unMQ=="
+          "hash": "ghaAXkGQhP89TRHvcwYpIQ=="
         }
       },
       "is_incremental": false,
@@ -790,6 +658,102 @@
         ".html": {
           "relative_path": "api/MatrixDotNet.MatrixComplex.html",
           "hash": "47jfD7jSfZPUTjx5Ptc78g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NetCore.Conversion.Converter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NetCore.Conversion.Converter.html",
+          "hash": "KDc5YKwAQ2V2g9UBghg91g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NetCore.Conversion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NetCore.Conversion.html",
+          "hash": "PR+YBjjinq4Y3KxiMwjqrA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html",
+          "hash": "AHAq1bLs3ZVTZKK8oe5krQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NetCore.Simd.Simd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NetCore.Simd.Simd.html",
+          "hash": "qdCvLccWsWpLQlxs6TAnmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NetCore.Simd.Statistics.Simd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html",
+          "hash": "3F7AlEKKmP3ZrnA86ywaxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NetCore.Simd.Statistics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NetCore.Simd.Statistics.html",
+          "hash": "zenC5tJH4rii3MVjDAo3Nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NetCore.Simd.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NetCore.Simd.html",
+          "hash": "OpCSypg1UMGJ1ICyWW7ZeQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.NetCore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.NetCore.html",
+          "hash": "tTv+uYhyaBbAMTbYe2HT/A=="
         }
       },
       "is_incremental": false,
@@ -849,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Vectorization.VectorExtension.html",
-          "hash": "9+zz4PpBYkyY5m2tCo2h1Q=="
+          "hash": "JacjeQAmDuaGLAdeEq3zsw=="
         }
       },
       "is_incremental": false,
@@ -897,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "HUzlBnQ74TH5HRFZFq3+6Q=="
+          "hash": "4loFB3lsNoX9Mczcx8u71g=="
         }
       },
       "is_incremental": false,
@@ -957,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/access.html",
-          "hash": "JqggOmBLr0rsA4eSOghRTg=="
+          "hash": "yBhsOwATvg986mu0bNpKCQ=="
         }
       },
       "is_incremental": false,
@@ -1209,7 +1173,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 72,
+          "total_file_count": 69,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
