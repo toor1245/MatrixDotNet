@@ -29,6 +29,8 @@ jobs:
 
       - name: Setup .NET Core @ Latest
         uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '5.0.x'
 
       - name: Create build
         run: dotnet build "src" -c Release --force
@@ -54,9 +56,3 @@ jobs:
 
       - name: Check MatrixDotNet
         run: dotnet format "src/MatrixDotNet/MatrixDotNet.csproj" --check --verbosity diagnostic 
-
-      - name: Check MatrixDotNet.Math
-        run: dotnet format "src/MatrixDotNet.Math/MatrixDotNet.Math.csproj" --check --verbosity diagnostic 
-
-      - name: Check MatrixDotNet
-        run: dotnet format "src/MatrixDotNet.NetCore/MatrixDotNet.NetCore.csproj" --check --verbosity diagnostic 

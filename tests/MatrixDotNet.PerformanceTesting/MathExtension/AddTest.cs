@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Core.Simd;
+using MatrixDotNet.NetCore.Simd;
 
 namespace MatrixDotNet.PerformanceTesting.MathExtension
 {

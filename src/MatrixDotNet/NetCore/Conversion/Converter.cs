@@ -1,14 +1,16 @@
-using MatrixDotNet.Exceptions;
 using System;
+using MatrixDotNet.Exceptions;
+#if NET5_0 || NETCOREAPP3_1
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
+#endif
 
-namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
+namespace MatrixDotNet.NetCore.Conversion
 {
     /// <summary>
     ///     Represents conversion operations for matrix with fixed buffer size.
     /// </summary>
-    public readonly ref struct Converter
+    public static class Converter
     {
         /// <summary>
         ///     Adds row for matrix with fixed buffer size.
@@ -33,11 +35,17 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 var span3 = new Span<double>(arr, n);
                 var matrixAsFixedBuffer = new MatrixAsFixedBuffer((byte) (matrix.Rows + 1), n);
 
-                for (var i = 0; i < index; i++) matrixAsFixedBuffer[i] = matrix[i];
+                for (var i = 0; i < index; i++)
+                {
+                    matrixAsFixedBuffer[i] = matrix[i];
+                }
 
                 matrixAsFixedBuffer[index] = span3;
 
-                for (var i = index + 1; i < matrixAsFixedBuffer.Rows; i++) matrixAsFixedBuffer[i] = matrix[i - 1];
+                for (var i = index + 1; i < matrixAsFixedBuffer.Rows; i++)
+                {
+                    matrixAsFixedBuffer[i] = matrix[i - 1];
+                }
 
                 return matrixAsFixedBuffer;
             }
@@ -66,12 +74,17 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 var span3 = new Span<double>(arr, m);
                 var matrixAsFixedBuffer = new MatrixAsFixedBuffer(m, (byte) (matrix.Columns + 1));
 
-                for (var i = 0; i < index; i++) matrixAsFixedBuffer.SetColumn(i, matrix.GetColumn(i));
+                for (var i = 0; i < index; i++)
+                {
+                    matrixAsFixedBuffer.SetColumn(i, matrix.GetColumn(i));
+                }
 
                 matrixAsFixedBuffer.SetColumn(index, span3);
 
                 for (var i = index + 1; i < matrixAsFixedBuffer.Columns; i++)
+                {
                     matrixAsFixedBuffer.SetColumn(i, matrix.GetColumn(i - 1));
+                }
 
                 return matrixAsFixedBuffer;
             }
@@ -85,6 +98,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
         /// <param name="to">the index of row.</param>
         public static unsafe void SwapRows(ref MatrixAsFixedBuffer matrix, int from, int to)
         {
+#if NETCOREAPP3_1 || NET5_0
             if (Avx.IsSupported)
             {
                 var i = 0;
@@ -113,6 +127,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 }
             }
             else
+#endif
             {
                 fixed (double* ptr1 = matrix._array)
                 {
@@ -171,6 +186,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
         public static unsafe void CopyToAvx(ref MatrixAsFixedBuffer matrix1, int dimension1, int start,
             ref MatrixAsFixedBuffer matrix2, int dimension2, int destinationIndex, int length)
         {
+#if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
             {
                 var i = start;
@@ -190,6 +206,7 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 for (; k < length; i++, k++) matrix2[dimension2, k] = matrix1[dimension1, i];
             }
             else
+#endif
             {
                 CopyTo(ref matrix1, dimension1, start, ref matrix2, dimension2, destinationIndex, length);
             }
@@ -214,7 +231,9 @@ namespace MatrixDotNet.Extensions.Core.Extensions.Conversion
                 var span2 = new Span<double>(ptr2, matrix2.Length);
                 var span1 = new Span<double>(ptr1, matrix1.Length);
                 for (int i = start, k = destinationIndex; k < length; i++, k++)
+                {
                     span2[dimension2 * matrix2.Columns + k] = span1[dimension1 * matrix1.Columns + i];
+                }
             }
         }
     }

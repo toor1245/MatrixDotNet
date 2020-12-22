@@ -1,11 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
 
         <IsPackable>false</IsPackable>
 
         <RootNamespace>MatrixDotNetTests</RootNamespace>
+
+        <LangVersion>9</LangVersion>
+
+        <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
@@ -21,7 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\MatrixDotNet.NetCore\MatrixDotNet.NetCore.csproj" />
       <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
     </ItemGroup>
 

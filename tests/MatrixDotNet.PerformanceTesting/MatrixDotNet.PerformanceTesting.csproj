@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IsPackable>false</IsPackable>
@@ -16,8 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\samples\Samples\Samples.csproj" />
-    <ProjectReference Include="..\..\src\MatrixDotNet.Math\MatrixDotNet.Math.csproj" />
-    <ProjectReference Include="..\..\src\MatrixDotNet.NetCore\MatrixDotNet.NetCore.csproj" />
     <ProjectReference Include="..\..\src\MatrixDotNet\MatrixDotNet.csproj" />
   </ItemGroup>
 

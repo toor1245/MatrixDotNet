@@ -1,9 +1,10 @@
+#if NET5_0 || NETCOREAPP3_1
 using System;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.Extensions.Core.Simd
+namespace MatrixDotNet.NetCore.Simd
 {
     public static partial class Simd
     {
@@ -221,3 +222,4 @@ namespace MatrixDotNet.Extensions.Core.Simd
         }
     }
 }
+#endif

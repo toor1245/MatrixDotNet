@@ -1,26 +1,22 @@
-using MatrixDotNet.Exceptions;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text;
+using MatrixDotNet.Exceptions;
+#if NET5_0 || NETCOREAPP3_1
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-using System.Text;
+#endif
 
-namespace MatrixDotNet.Extensions.Core
+namespace MatrixDotNet.NetCore
 {
     [Serializable]
     [StructLayout(LayoutKind.Explicit)]
     public unsafe struct MatrixAsFixedBuffer
     {
-        #region .fields
-
         private const short Size = 6_561;
 
         [FieldOffset(5)] internal fixed double _array[Size];
-
-        #endregion
-
-        #region .properties
 
         [field: FieldOffset(0)] public byte Rows { get; private set; }
 
@@ -45,10 +41,6 @@ namespace MatrixDotNet.Extensions.Core
                 }
             }
         }
-
-        #endregion
-
-        #region .ctor
 
         /// <summary>
         ///     Initialize empty matrix.
@@ -95,7 +87,10 @@ namespace MatrixDotNet.Extensions.Core
                 var span = new Span<double>(ptr, m * n);
                 var arr = Data;
 
-                for (var i = 0; i < Length; i++) arr[i] = span[i];
+                for (var i = 0; i < Length; i++)
+                {
+                    arr[i] = span[i];
+                }
             }
         }
 
@@ -114,13 +109,12 @@ namespace MatrixDotNet.Extensions.Core
                 var span = new Span<double>(ptr, m * n);
                 var arr = Data;
 
-                for (var i = 0; i < Length; i++) arr[i] = span[i];
+                for (var i = 0; i < Length; i++)
+                {
+                    arr[i] = span[i];
+                }
             }
         }
-
-        #endregion
-
-        #region .methods
 
         /// <summary>
         ///     Init data of matrix.
@@ -156,6 +150,7 @@ namespace MatrixDotNet.Extensions.Core
 
             var matrix = new MatrixAsFixedBuffer(m, n);
 
+#if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
             {
                 var length = left.Length;
@@ -181,17 +176,20 @@ namespace MatrixDotNet.Extensions.Core
                 }
             }
             else
+#endif
             {
                 var a1 = left.Data;
                 var a2 = right.Data;
                 var a3 = matrix.Data;
 
                 for (var i = 0; i < m; i++)
+                {
                     for (var j = 0; j < n; j++)
                     {
                         var num = i + m * j;
                         a3[num] = a2[num] + a1[num];
                     }
+                }
             }
 
             return matrix;
@@ -210,10 +208,13 @@ namespace MatrixDotNet.Extensions.Core
             var n = left.Columns;
 
             if (m != right.Rows || n != right.Columns)
+            {
                 throw new MatrixDotNetException("Not Equal");
+            }
 
             var matrix = new MatrixAsFixedBuffer(m, n);
 
+#if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
             {
                 var length = left.Length;
@@ -240,6 +241,7 @@ namespace MatrixDotNet.Extensions.Core
                 }
             }
             else
+#endif
             {
                 var a1 = left.Data;
                 var a2 = right.Data;
@@ -247,11 +249,13 @@ namespace MatrixDotNet.Extensions.Core
 
                 // Adds two matrices.
                 for (var i = 0; i < m; i++)
+                {
                     for (var j = 0; j < n; j++)
                     {
                         var num = i + m * j;
                         a3[num] = a2[num] - a1[num];
                     }
+                }
             }
 
             return matrix;
@@ -269,7 +273,10 @@ namespace MatrixDotNet.Extensions.Core
         /// </exception>
         public static MatrixAsFixedBuffer MulByRef(ref MatrixAsFixedBuffer left, ref MatrixAsFixedBuffer right)
         {
-            if (left.Columns != right.Rows) throw new MatrixDotNetException("");
+            if (left.Columns != right.Rows)
+            {
+                throw new MatrixDotNetException("columns of left matrix must be equal rows of right matrix");
+            }
 
             return MulMatrix(ref left, ref right);
         }
@@ -321,7 +328,10 @@ namespace MatrixDotNet.Extensions.Core
             {
                 var span2 = new Span<double>(ptr, m);
                 var span = new Span<double>(ptr, Length);
-                for (var i = 0; i < m; i++) span2[i] = span[column + Columns * i];
+                for (var i = 0; i < m; i++)
+                {
+                    span2[i] = span[column + Columns * i];
+                }
                 return span2;
             }
         }
@@ -337,7 +347,10 @@ namespace MatrixDotNet.Extensions.Core
             fixed (double* ptr = _array)
             {
                 var span2 = new Span<double>(ptr, Length);
-                for (var i = 0; i < m; i++) span2[column * Columns + i] = data[i];
+                for (var i = 0; i < m; i++)
+                {
+                    span2[column * Columns + i] = data[i];
+                }
             }
         }
 
@@ -350,7 +363,11 @@ namespace MatrixDotNet.Extensions.Core
                 for (var i = 0; i < Rows; i++)
                 {
                     var span = span1.Slice(i * Columns, Columns);
-                    foreach (var t in span) builder.Append(t + " ");
+                    foreach (var t in span)
+                    {
+                        builder.Append(t);
+                        builder.Append(" ");
+                    }
 
                     builder.AppendLine();
                 }
@@ -358,10 +375,6 @@ namespace MatrixDotNet.Extensions.Core
 
             return builder.ToString();
         }
-
-        #endregion
-
-        #region .indexators
 
         /// <summary>
         ///     Gets value by ref.
@@ -389,11 +402,12 @@ namespace MatrixDotNet.Extensions.Core
                 fixed (double* ptr = _array)
                 {
                     var span = new Span<double>(ptr, Length).Slice(i * Columns, Columns);
-                    for (var j = 0; j < span.Length; j++) span[j] = value[j];
+                    for (var j = 0; j < span.Length; j++)
+                    {
+                        span[j] = value[j];
+                    }
                 }
             }
         }
-
-        #endregion
     }
 }
