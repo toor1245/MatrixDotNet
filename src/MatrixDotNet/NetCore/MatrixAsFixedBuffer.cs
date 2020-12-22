@@ -275,7 +275,7 @@ namespace MatrixDotNet.NetCore
         {
             if (left.Columns != right.Rows)
             {
-                throw new MatrixDotNetException("");
+                throw new MatrixDotNetException("columns of left matrix must be equal rows of right matrix");
             }
 
             return MulMatrix(ref left, ref right);
