@@ -365,7 +365,8 @@ namespace MatrixDotNet.NetCore
                     var span = span1.Slice(i * Columns, Columns);
                     foreach (var t in span)
                     {
-                        builder.Append(t + " ");
+                        builder.Append(t);
+                        builder.Append(" ");
                     }
 
                     builder.AppendLine();
