@@ -86,7 +86,7 @@ namespace MatrixDotNet.Vectorization
                 var vectorA = new System.Numerics.Vector<T>(va.Array, i);
                 var vectorB = new System.Numerics.Vector<T>(vb.Array, i);
                 var vectorC = Vector.Subtract(vectorB, vectorA);
-                vectorC.CopyTo(vc.Array);
+                vectorC.CopyTo(vc.Array, i);
             }
 #endif
 
