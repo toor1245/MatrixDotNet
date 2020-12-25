@@ -27,7 +27,7 @@ namespace MatrixDotNet.Extensions.Performance
 
             a.SplitMatrix(out var a11, out var a12, out var a21, out var a22);
             b.SplitMatrix(out var b11, out var b12, out var b21, out var b22);
-            
+
             var p1 = Task.Run(() => MultiplyStrassen(a11 + a22, b11 + b22));
             var p2 = Task.Run(() => MultiplyStrassen(a21 + a22, b11));
             var p3 = Task.Run(() => MultiplyStrassen(a11, b12 - b22));
