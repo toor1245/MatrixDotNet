@@ -73,10 +73,10 @@ namespace MatrixDotNet.Vectorization
             {
                 throw new MatrixDotNetException("vectors are not equal");
             }
-            
+
             Vector<T> vc = new Vector<T>(len);
             int i = 0;
-            
+
             int size = System.Numerics.Vector<T>.Count;
             int lastIndexBlock = len - len % size;
 
