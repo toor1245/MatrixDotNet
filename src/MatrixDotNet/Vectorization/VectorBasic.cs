@@ -73,11 +73,10 @@ namespace MatrixDotNet.Vectorization
             {
                 throw new MatrixDotNetException("vectors are not equal");
             }
-
+            
             Vector<T> vc = new Vector<T>(len);
             int i = 0;
-
-#if OS_WINDOWS || OS_LINUX
+            
             int size = System.Numerics.Vector<T>.Count;
             int lastIndexBlock = len - len % size;
 
@@ -88,7 +87,6 @@ namespace MatrixDotNet.Vectorization
                 var vectorC = Vector.Subtract(vectorB, vectorA);
                 vectorC.CopyTo(vc.Array, i);
             }
-#endif
 
             for (; i < vc.Length; i++)
             {
