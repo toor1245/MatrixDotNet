@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.NetCore.Simd;
+using MatrixDotNet.Extensions.Performance;
+using MatrixDotNet.Extensions.Performance.Simd;
 using MatrixDotNet.NotStableFeatures;
 using Xunit;
 
@@ -873,6 +875,36 @@ namespace MatrixDotNetTests.MatrixTests
             
             // Act Assert
             Assert.Throws<MatrixDotNetException>(() => matrixA.IsSymmetric);
+        }
+
+        [Fact]
+        public void StrassenTest_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<int> matrixA = BuildMatrix.RandomInt(1024,1024,1, 2);
+            Matrix<int> matrixB = BuildMatrix.RandomInt(1024,1024,1, 2);
+            Matrix<int> expected = matrixA * matrixB;
+
+            // Act
+            var actual = Optimization.MultiplyStrassen(matrixA, matrixB);
+            
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact] 
+        public async Task StrassenParallelTest_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<int> matrixA = BuildMatrix.RandomInt(1024,1024,1, 2);
+            Matrix<int> matrixB = BuildMatrix.RandomInt(1024,1024,1, 2);
+            Matrix<int> expected = matrixA * matrixB;
+
+            // Act
+            var actual = await Optimization.MultiplyStrassenAsync(matrixA, matrixB);
+            
+            // Assert
+            Assert.Equal(expected, actual);
         }
     }
 }

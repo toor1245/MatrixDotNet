@@ -18,12 +18,6 @@ namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
             _matrix2 = BuildMatrix.RandomDouble(Size, Size, 1, 123);
         }
 
-        [Benchmark]
-        public Matrix<double> UnsafeTest()
-        {
-            return Matrix<double>.Plus(_matrix1,_matrix2);
-        }
-        
         [Benchmark(Baseline = true)]
         public Matrix<double> GenericTest()
         {

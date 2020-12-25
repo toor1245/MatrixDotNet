@@ -8,7 +8,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
 
-namespace MatrixDotNet.NetCore
+namespace MatrixDotNet.Extensions.Performance
 {
     [Serializable]
     [StructLayout(LayoutKind.Explicit)]
