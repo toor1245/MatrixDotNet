@@ -1854,204 +1854,644 @@ references:
   isSpec: "True"
   fullName: MatrixDotNet.Extensions.Options.TemplateMarkdown.HasSize
   nameWithType: TemplateMarkdown.HasSize
-- uid: MatrixDotNet.Extensions.Performance.Operations
-  name: MatrixDotNet.Extensions.Performance.Operations
-  href: api/MatrixDotNet.Extensions.Performance.Operations.html
-  commentId: N:MatrixDotNet.Extensions.Performance.Operations
-  fullName: MatrixDotNet.Extensions.Performance.Operations
-  nameWithType: MatrixDotNet.Extensions.Performance.Operations
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization
+- uid: MatrixDotNet.Extensions.Performance
+  name: MatrixDotNet.Extensions.Performance
+  href: api/MatrixDotNet.Extensions.Performance.html
+  commentId: N:MatrixDotNet.Extensions.Performance
+  fullName: MatrixDotNet.Extensions.Performance
+  nameWithType: MatrixDotNet.Extensions.Performance
+- uid: MatrixDotNet.Extensions.Performance.Conversion
+  name: MatrixDotNet.Extensions.Performance.Conversion
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.html
+  commentId: N:MatrixDotNet.Extensions.Performance.Conversion
+  fullName: MatrixDotNet.Extensions.Performance.Conversion
+  nameWithType: MatrixDotNet.Extensions.Performance.Conversion
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter
+  name: Converter
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html
+  commentId: T:MatrixDotNet.Extensions.Performance.Conversion.Converter
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter
+  nameWithType: Converter
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddColumn(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Double[],System.Int32)
+  name: AddColumn(ref MatrixAsFixedBuffer, Double[], Int32)
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_AddColumn_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__System_Double___System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Performance.Conversion.Converter.AddColumn(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Double[],System.Int32)
+  name.vb: AddColumn(ByRef MatrixAsFixedBuffer, Double(), Int32)
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddColumn(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Double[], System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddColumn(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Double(), System.Int32)
+  nameWithType: Converter.AddColumn(ref MatrixAsFixedBuffer, Double[], Int32)
+  nameWithType.vb: Converter.AddColumn(ByRef MatrixAsFixedBuffer, Double(), Int32)
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddColumn*
+  name: AddColumn
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_AddColumn_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Conversion.Converter.AddColumn
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddColumn
+  nameWithType: Converter.AddColumn
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddRow(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Double[],System.Int32)
+  name: AddRow(ref MatrixAsFixedBuffer, Double[], Int32)
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_AddRow_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__System_Double___System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Performance.Conversion.Converter.AddRow(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Double[],System.Int32)
+  name.vb: AddRow(ByRef MatrixAsFixedBuffer, Double(), Int32)
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddRow(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Double[], System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddRow(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Double(), System.Int32)
+  nameWithType: Converter.AddRow(ref MatrixAsFixedBuffer, Double[], Int32)
+  nameWithType.vb: Converter.AddRow(ByRef MatrixAsFixedBuffer, Double(), Int32)
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddRow*
+  name: AddRow
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_AddRow_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Conversion.Converter.AddRow
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.AddRow
+  nameWithType: Converter.AddRow
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyTo(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32,System.Int32)
+  name: CopyTo(ref MatrixAsFixedBuffer, Int32, Int32, ref MatrixAsFixedBuffer, Int32, Int32, Int32)
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_CopyTo_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__System_Int32_System_Int32_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__System_Int32_System_Int32_System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyTo(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32,System.Int32)
+  name.vb: CopyTo(ByRef MatrixAsFixedBuffer, Int32, Int32, ByRef MatrixAsFixedBuffer, Int32, Int32, Int32)
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyTo(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32, ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyTo(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32, ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32, System.Int32)
+  nameWithType: Converter.CopyTo(ref MatrixAsFixedBuffer, Int32, Int32, ref MatrixAsFixedBuffer, Int32, Int32, Int32)
+  nameWithType.vb: Converter.CopyTo(ByRef MatrixAsFixedBuffer, Int32, Int32, ByRef MatrixAsFixedBuffer, Int32, Int32, Int32)
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyTo*
+  name: CopyTo
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_CopyTo_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyTo
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyTo
+  nameWithType: Converter.CopyTo
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyToAvx(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32,System.Int32)
+  name: CopyToAvx(ref MatrixAsFixedBuffer, Int32, Int32, ref MatrixAsFixedBuffer, Int32, Int32, Int32)
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_CopyToAvx_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__System_Int32_System_Int32_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__System_Int32_System_Int32_System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyToAvx(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32,System.Int32)
+  name.vb: CopyToAvx(ByRef MatrixAsFixedBuffer, Int32, Int32, ByRef MatrixAsFixedBuffer, Int32, Int32, Int32)
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyToAvx(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32, ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyToAvx(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32, ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32, System.Int32)
+  nameWithType: Converter.CopyToAvx(ref MatrixAsFixedBuffer, Int32, Int32, ref MatrixAsFixedBuffer, Int32, Int32, Int32)
+  nameWithType.vb: Converter.CopyToAvx(ByRef MatrixAsFixedBuffer, Int32, Int32, ByRef MatrixAsFixedBuffer, Int32, Int32, Int32)
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyToAvx*
+  name: CopyToAvx
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_CopyToAvx_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyToAvx
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.CopyToAvx
+  nameWithType: Converter.CopyToAvx
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapColumns(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32)
+  name: SwapColumns(ref MatrixAsFixedBuffer, Int32, Int32)
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_SwapColumns_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__System_Int32_System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapColumns(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32)
+  name.vb: SwapColumns(ByRef MatrixAsFixedBuffer, Int32, Int32)
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapColumns(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapColumns(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32)
+  nameWithType: Converter.SwapColumns(ref MatrixAsFixedBuffer, Int32, Int32)
+  nameWithType.vb: Converter.SwapColumns(ByRef MatrixAsFixedBuffer, Int32, Int32)
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapColumns*
+  name: SwapColumns
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_SwapColumns_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapColumns
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapColumns
+  nameWithType: Converter.SwapColumns
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapRows(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32)
+  name: SwapRows(ref MatrixAsFixedBuffer, Int32, Int32)
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_SwapRows_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__System_Int32_System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapRows(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,System.Int32,System.Int32)
+  name.vb: SwapRows(ByRef MatrixAsFixedBuffer, Int32, Int32)
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapRows(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapRows(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, System.Int32, System.Int32)
+  nameWithType: Converter.SwapRows(ref MatrixAsFixedBuffer, Int32, Int32)
+  nameWithType.vb: Converter.SwapRows(ByRef MatrixAsFixedBuffer, Int32, Int32)
+- uid: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapRows*
+  name: SwapRows
+  href: api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html#MatrixDotNet_Extensions_Performance_Conversion_Converter_SwapRows_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapRows
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Conversion.Converter.SwapRows
+  nameWithType: Converter.SwapRows
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer
+  name: MatrixAsFixedBuffer
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html
+  commentId: T:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer
+  nameWithType: MatrixAsFixedBuffer
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.#ctor(System.Byte,System.Byte)
+  name: MatrixAsFixedBuffer(Byte, Byte)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__ctor_System_Byte_System_Byte_
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.#ctor(System.Byte,System.Byte)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Byte, System.Byte)
+  nameWithType: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Byte, Byte)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.#ctor(System.Double[],System.Int32,System.Int32)
+  name: MatrixAsFixedBuffer(Double[], Int32, Int32)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__ctor_System_Double___System_Int32_System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.#ctor(System.Double[],System.Int32,System.Int32)
+  name.vb: MatrixAsFixedBuffer(Double(), Int32, Int32)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Double[], System.Int32, System.Int32)
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Double(), System.Int32, System.Int32)
+  nameWithType: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Double[], Int32, Int32)
+  nameWithType.vb: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Double(), Int32, Int32)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.#ctor(System.Double[0:,0:])
+  name: MatrixAsFixedBuffer(Double[,])
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__ctor_System_Double_0__0___
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.#ctor(System.Double[0:,0:])
+  name.vb: MatrixAsFixedBuffer(Double(,))
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Double[,])
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Double(,))
+  nameWithType: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Double[,])
+  nameWithType.vb: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Double(,))
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.#ctor*
+  name: MatrixAsFixedBuffer
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__ctor_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.#ctor
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MatrixAsFixedBuffer
+  nameWithType: MatrixAsFixedBuffer.MatrixAsFixedBuffer
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.AddByRef(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@)
+  name: AddByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_AddByRef_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.AddByRef(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@)
+  name.vb: AddByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.AddByRef(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.AddByRef(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  nameWithType: MatrixAsFixedBuffer.AddByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
+  nameWithType.vb: MatrixAsFixedBuffer.AddByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.AddByRef*
+  name: AddByRef
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_AddByRef_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.AddByRef
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.AddByRef
+  nameWithType: MatrixAsFixedBuffer.AddByRef
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Columns
+  name: Columns
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Columns
+  commentId: P:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Columns
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Columns
+  nameWithType: MatrixAsFixedBuffer.Columns
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Columns*
+  name: Columns
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Columns_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Columns
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Columns
+  nameWithType: MatrixAsFixedBuffer.Columns
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Data
+  name: Data
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Data
+  commentId: P:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Data
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Data
+  nameWithType: MatrixAsFixedBuffer.Data
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Data*
+  name: Data
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Data_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Data
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Data
+  nameWithType: MatrixAsFixedBuffer.Data
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.GetColumn(System.Int32)
+  name: GetColumn(Int32)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_GetColumn_System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.GetColumn(System.Int32)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.GetColumn(System.Int32)
+  nameWithType: MatrixAsFixedBuffer.GetColumn(Int32)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.GetColumn*
+  name: GetColumn
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_GetColumn_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.GetColumn
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.GetColumn
+  nameWithType: MatrixAsFixedBuffer.GetColumn
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsPrime
+  name: IsPrime
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_IsPrime
+  commentId: P:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsPrime
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsPrime
+  nameWithType: MatrixAsFixedBuffer.IsPrime
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsPrime*
+  name: IsPrime
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_IsPrime_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsPrime
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsPrime
+  nameWithType: MatrixAsFixedBuffer.IsPrime
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsSquare
+  name: IsSquare
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_IsSquare
+  commentId: P:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsSquare
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsSquare
+  nameWithType: MatrixAsFixedBuffer.IsSquare
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsSquare*
+  name: IsSquare
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_IsSquare_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsSquare
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.IsSquare
+  nameWithType: MatrixAsFixedBuffer.IsSquare
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item(System.Int32)
+  name: Item[Int32]
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Item_System_Int32_
+  commentId: P:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item[System.Int32]
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item(System.Int32)
+  nameWithType: MatrixAsFixedBuffer.Item[Int32]
+  nameWithType.vb: MatrixAsFixedBuffer.Item(Int32)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item(System.Int32,System.Int32)
+  name: Item[Int32, Int32]
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Item_System_Int32_System_Int32_
+  commentId: P:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item(System.Int32,System.Int32)
+  name.vb: Item(Int32, Int32)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item[System.Int32, System.Int32]
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item(System.Int32, System.Int32)
+  nameWithType: MatrixAsFixedBuffer.Item[Int32, Int32]
+  nameWithType.vb: MatrixAsFixedBuffer.Item(Int32, Int32)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item*
+  name: Item
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Item_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Item
+  nameWithType: MatrixAsFixedBuffer.Item
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Length
+  name: Length
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Length
+  commentId: P:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Length
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Length
+  nameWithType: MatrixAsFixedBuffer.Length
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Length*
+  name: Length
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Length_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Length
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Length
+  nameWithType: MatrixAsFixedBuffer.Length
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MulByRef(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@)
+  name: MulByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_MulByRef_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MulByRef(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@)
+  name.vb: MulByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MulByRef(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MulByRef(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  nameWithType: MatrixAsFixedBuffer.MulByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
+  nameWithType.vb: MatrixAsFixedBuffer.MulByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MulByRef*
+  name: MulByRef
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_MulByRef_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MulByRef
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.MulByRef
+  nameWithType: MatrixAsFixedBuffer.MulByRef
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.op_Implicit(MatrixDotNet.Matrix{System.Double})~MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer
+  name: Implicit(Matrix<Double> to MatrixAsFixedBuffer)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_op_Implicit_MatrixDotNet_Matrix_System_Double___MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.op_Implicit(MatrixDotNet.Matrix{System.Double})~MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer
+  name.vb: Widening(Matrix(Of Double) to MatrixAsFixedBuffer)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Implicit(MatrixDotNet.Matrix<System.Double> to MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Widening(MatrixDotNet.Matrix(Of System.Double) to MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  nameWithType: MatrixAsFixedBuffer.Implicit(Matrix<Double> to MatrixAsFixedBuffer)
+  nameWithType.vb: MatrixAsFixedBuffer.Widening(Matrix(Of Double) to MatrixAsFixedBuffer)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.op_Implicit(System.Double[0:,0:])~MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer
+  name: Implicit(Double[,] to MatrixAsFixedBuffer)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_op_Implicit_System_Double_0__0____MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.op_Implicit(System.Double[0:,0:])~MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer
+  name.vb: Widening(Double(,) to MatrixAsFixedBuffer)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Implicit(System.Double[,] to MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Widening(System.Double(,) to MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  nameWithType: MatrixAsFixedBuffer.Implicit(Double[,] to MatrixAsFixedBuffer)
+  nameWithType.vb: MatrixAsFixedBuffer.Widening(Double(,) to MatrixAsFixedBuffer)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.op_Implicit*
+  name: Implicit
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_op_Implicit_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.op_Implicit
+  isSpec: "True"
+  name.vb: Widening
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Implicit
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Widening
+  nameWithType: MatrixAsFixedBuffer.Implicit
+  nameWithType.vb: MatrixAsFixedBuffer.Widening
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Rows
+  name: Rows
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Rows
+  commentId: P:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Rows
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Rows
+  nameWithType: MatrixAsFixedBuffer.Rows
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Rows*
+  name: Rows
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_Rows_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Rows
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.Rows
+  nameWithType: MatrixAsFixedBuffer.Rows
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SetColumn(System.Int32,System.Span{System.Double})
+  name: SetColumn(Int32, Span<Double>)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_SetColumn_System_Int32_System_Span_System_Double__
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SetColumn(System.Int32,System.Span{System.Double})
+  name.vb: SetColumn(Int32, Span(Of Double))
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SetColumn(System.Int32, System.Span<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SetColumn(System.Int32, System.Span(Of System.Double))
+  nameWithType: MatrixAsFixedBuffer.SetColumn(Int32, Span<Double>)
+  nameWithType.vb: MatrixAsFixedBuffer.SetColumn(Int32, Span(Of Double))
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SetColumn*
+  name: SetColumn
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_SetColumn_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SetColumn
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SetColumn
+  nameWithType: MatrixAsFixedBuffer.SetColumn
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SubByRef(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@)
+  name: SubByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_SubByRef_MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer__
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SubByRef(MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@,MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer@)
+  name.vb: SubByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SubByRef(ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, ref MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  fullName.vb: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SubByRef(ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer, ByRef MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer)
+  nameWithType: MatrixAsFixedBuffer.SubByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
+  nameWithType.vb: MatrixAsFixedBuffer.SubByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SubByRef*
+  name: SubByRef
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_SubByRef_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SubByRef
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.SubByRef
+  nameWithType: MatrixAsFixedBuffer.SubByRef
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.ToString
+  name: ToString()
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_ToString
+  commentId: M:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.ToString
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.ToString()
+  nameWithType: MatrixAsFixedBuffer.ToString()
+- uid: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.ToString*
+  name: ToString
+  href: api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html#MatrixDotNet_Extensions_Performance_MatrixAsFixedBuffer_ToString_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.ToString
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.ToString
+  nameWithType: MatrixAsFixedBuffer.ToString
+- uid: MatrixDotNet.Extensions.Performance.Optimization
   name: Optimization
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html
-  commentId: T:MatrixDotNet.Extensions.Performance.Operations.Optimization
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization
+  href: api/MatrixDotNet.Extensions.Performance.Optimization.html
+  commentId: T:MatrixDotNet.Extensions.Performance.Optimization
+  fullName: MatrixDotNet.Extensions.Performance.Optimization
   nameWithType: Optimization
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name: Add(Matrix<Double>, Matrix<Double>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Add_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name.vb: Add(Matrix(Of Double), Matrix(Of Double))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Optimization.Add(Matrix<Double>, Matrix<Double>)
-  nameWithType.vb: Optimization.Add(Matrix(Of Double), Matrix(Of Double))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name: Add(Matrix<Int32>, Matrix<Int32>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Add_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name.vb: Add(Matrix(Of Int32), Matrix(Of Int32))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Optimization.Add(Matrix<Int32>, Matrix<Int32>)
-  nameWithType.vb: Optimization.Add(Matrix(Of Int32), Matrix(Of Int32))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name: Add(Matrix<Int64>, Matrix<Int64>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Add_MatrixDotNet_Matrix_System_Int64__MatrixDotNet_Matrix_System_Int64__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name.vb: Add(Matrix(Of Int64), Matrix(Of Int64))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix<System.Int64>, MatrixDotNet.Matrix<System.Int64>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix(Of System.Int64), MatrixDotNet.Matrix(Of System.Int64))
-  nameWithType: Optimization.Add(Matrix<Int64>, Matrix<Int64>)
-  nameWithType.vb: Optimization.Add(Matrix(Of Int64), Matrix(Of Int64))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name: Add(Matrix<Single>, Matrix<Single>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Add_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name.vb: Add(Matrix(Of Single), Matrix(Of Single))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Optimization.Add(Matrix<Single>, Matrix<Single>)
-  nameWithType.vb: Optimization.Add(Matrix(Of Single), Matrix(Of Single))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add*
-  name: Add
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Add_
-  commentId: Overload:MatrixDotNet.Extensions.Performance.Operations.Optimization.Add
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Add
-  nameWithType: Optimization.Add
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name: Equals(Matrix<Double>, Matrix<Double>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Equals_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name.vb: Equals(Matrix(Of Double), Matrix(Of Double))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Optimization.Equals(Matrix<Double>, Matrix<Double>)
-  nameWithType.vb: Optimization.Equals(Matrix(Of Double), Matrix(Of Double))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name: Equals(Matrix<Int32>, Matrix<Int32>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Equals_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name.vb: Equals(Matrix(Of Int32), Matrix(Of Int32))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Optimization.Equals(Matrix<Int32>, Matrix<Int32>)
-  nameWithType.vb: Optimization.Equals(Matrix(Of Int32), Matrix(Of Int32))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name: Equals(Matrix<Int64>, Matrix<Int64>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Equals_MatrixDotNet_Matrix_System_Int64__MatrixDotNet_Matrix_System_Int64__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name.vb: Equals(Matrix(Of Int64), Matrix(Of Int64))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix<System.Int64>, MatrixDotNet.Matrix<System.Int64>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix(Of System.Int64), MatrixDotNet.Matrix(Of System.Int64))
-  nameWithType: Optimization.Equals(Matrix<Int64>, Matrix<Int64>)
-  nameWithType.vb: Optimization.Equals(Matrix(Of Int64), Matrix(Of Int64))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name: Equals(Matrix<Single>, Matrix<Single>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Equals_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name.vb: Equals(Matrix(Of Single), Matrix(Of Single))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Optimization.Equals(Matrix<Single>, Matrix<Single>)
-  nameWithType.vb: Optimization.Equals(Matrix(Of Single), Matrix(Of Single))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals*
-  name: Equals
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Equals_
-  commentId: Overload:MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Equals
-  nameWithType: Optimization.Equals
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name: Multiply(Matrix<Double>, Matrix<Double>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Multiply_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name.vb: Multiply(Matrix(Of Double), Matrix(Of Double))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Optimization.Multiply(Matrix<Double>, Matrix<Double>)
-  nameWithType.vb: Optimization.Multiply(Matrix(Of Double), Matrix(Of Double))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name: Multiply(Matrix<Int32>, Matrix<Int32>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Multiply_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name.vb: Multiply(Matrix(Of Int32), Matrix(Of Int32))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Optimization.Multiply(Matrix<Int32>, Matrix<Int32>)
-  nameWithType.vb: Optimization.Multiply(Matrix(Of Int32), Matrix(Of Int32))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply*
-  name: Multiply
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Multiply_
-  commentId: Overload:MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Multiply
-  nameWithType: Optimization.Multiply
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassen(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name: MultiplyStrassen(Matrix<Double>, Matrix<Double>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_MultiplyStrassen_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassen(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name.vb: MultiplyStrassen(Matrix(Of Double), Matrix(Of Double))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassen(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassen(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Optimization.MultiplyStrassen(Matrix<Double>, Matrix<Double>)
-  nameWithType.vb: Optimization.MultiplyStrassen(Matrix(Of Double), Matrix(Of Double))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassen*
+- uid: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassen*
   name: MultiplyStrassen
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_MultiplyStrassen_
-  commentId: Overload:MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassen
+  href: api/MatrixDotNet.Extensions.Performance.Optimization.html#MatrixDotNet_Extensions_Performance_Optimization_MultiplyStrassen_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassen
   isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassen
+  fullName: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassen
   nameWithType: Optimization.MultiplyStrassen
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassenAsync(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name: MultiplyStrassenAsync(Matrix<Int32>, Matrix<Int32>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_MultiplyStrassenAsync_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassenAsync(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name.vb: MultiplyStrassenAsync(Matrix(Of Int32), Matrix(Of Int32))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassenAsync(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassenAsync(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Optimization.MultiplyStrassenAsync(Matrix<Int32>, Matrix<Int32>)
-  nameWithType.vb: Optimization.MultiplyStrassenAsync(Matrix(Of Int32), Matrix(Of Int32))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassenAsync*
+- uid: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassen``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0})
+  name: MultiplyStrassen<T>(Matrix<T>, Matrix<T>)
+  href: api/MatrixDotNet.Extensions.Performance.Optimization.html#MatrixDotNet_Extensions_Performance_Optimization_MultiplyStrassen__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassen``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0})
+  name.vb: MultiplyStrassen(Of T)(Matrix(Of T), Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassen<T>(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassen(Of T)(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
+  nameWithType: Optimization.MultiplyStrassen<T>(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Optimization.MultiplyStrassen(Of T)(Matrix(Of T), Matrix(Of T))
+- uid: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassenAsync*
   name: MultiplyStrassenAsync
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_MultiplyStrassenAsync_
-  commentId: Overload:MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassenAsync
+  href: api/MatrixDotNet.Extensions.Performance.Optimization.html#MatrixDotNet_Extensions_Performance_Optimization_MultiplyStrassenAsync_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassenAsync
   isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.MultiplyStrassenAsync
+  fullName: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassenAsync
   nameWithType: Optimization.MultiplyStrassenAsync
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name: Sub(Matrix<Double>, Matrix<Double>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Sub_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name.vb: Sub(Matrix(Of Double), Matrix(Of Double))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Optimization.Sub(Matrix<Double>, Matrix<Double>)
-  nameWithType.vb: Optimization.Sub(Matrix(Of Double), Matrix(Of Double))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name: Sub(Matrix<Int32>, Matrix<Int32>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Sub_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name.vb: Sub(Matrix(Of Int32), Matrix(Of Int32))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Optimization.Sub(Matrix<Int32>, Matrix<Int32>)
-  nameWithType.vb: Optimization.Sub(Matrix(Of Int32), Matrix(Of Int32))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name: Sub(Matrix<Int64>, Matrix<Int64>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Sub_MatrixDotNet_Matrix_System_Int64__MatrixDotNet_Matrix_System_Int64__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name.vb: Sub(Matrix(Of Int64), Matrix(Of Int64))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix<System.Int64>, MatrixDotNet.Matrix<System.Int64>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix(Of System.Int64), MatrixDotNet.Matrix(Of System.Int64))
-  nameWithType: Optimization.Sub(Matrix<Int64>, Matrix<Int64>)
-  nameWithType.vb: Optimization.Sub(Matrix(Of Int64), Matrix(Of Int64))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name: Sub(Matrix<Single>, Matrix<Single>)
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Sub_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name.vb: Sub(Matrix(Of Single), Matrix(Of Single))
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Optimization.Sub(Matrix<Single>, Matrix<Single>)
-  nameWithType.vb: Optimization.Sub(Matrix(Of Single), Matrix(Of Single))
-- uid: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub*
-  name: Sub
-  href: api/MatrixDotNet.Extensions.Performance.Operations.Optimization.html#MatrixDotNet_Extensions_Performance_Operations_Optimization_Sub_
-  commentId: Overload:MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub
+- uid: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassenAsync``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0})
+  name: MultiplyStrassenAsync<T>(Matrix<T>, Matrix<T>)
+  href: api/MatrixDotNet.Extensions.Performance.Optimization.html#MatrixDotNet_Extensions_Performance_Optimization_MultiplyStrassenAsync__1_MatrixDotNet_Matrix___0__MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassenAsync``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Matrix{``0})
+  name.vb: MultiplyStrassenAsync(Of T)(Matrix(Of T), Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassenAsync<T>(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Optimization.MultiplyStrassenAsync(Of T)(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
+  nameWithType: Optimization.MultiplyStrassenAsync<T>(Matrix<T>, Matrix<T>)
+  nameWithType.vb: Optimization.MultiplyStrassenAsync(Of T)(Matrix(Of T), Matrix(Of T))
+- uid: MatrixDotNet.Extensions.Performance.Simd
+  name: MatrixDotNet.Extensions.Performance.Simd
+  href: api/MatrixDotNet.Extensions.Performance.Simd.html
+  commentId: N:MatrixDotNet.Extensions.Performance.Simd
+  fullName: MatrixDotNet.Extensions.Performance.Simd
+  nameWithType: MatrixDotNet.Extensions.Performance.Simd
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd
+  name: Simd
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html
+  commentId: T:MatrixDotNet.Extensions.Performance.Simd.Simd
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd
+  nameWithType: Simd
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
+  name: Add(Matrix<Double>, Matrix<Double>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Add_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
+  name.vb: Add(Matrix(Of Double), Matrix(Of Double))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
+  nameWithType: Simd.Add(Matrix<Double>, Matrix<Double>)
+  nameWithType.vb: Simd.Add(Matrix(Of Double), Matrix(Of Double))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
+  name: Add(Matrix<Int32>, Matrix<Int32>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Add_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
+  name.vb: Add(Matrix(Of Int32), Matrix(Of Int32))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
+  nameWithType: Simd.Add(Matrix<Int32>, Matrix<Int32>)
+  nameWithType.vb: Simd.Add(Matrix(Of Int32), Matrix(Of Int32))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
+  name: Add(Matrix<Int64>, Matrix<Int64>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Add_MatrixDotNet_Matrix_System_Int64__MatrixDotNet_Matrix_System_Int64__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
+  name.vb: Add(Matrix(Of Int64), Matrix(Of Int64))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix<System.Int64>, MatrixDotNet.Matrix<System.Int64>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix(Of System.Int64), MatrixDotNet.Matrix(Of System.Int64))
+  nameWithType: Simd.Add(Matrix<Int64>, Matrix<Int64>)
+  nameWithType.vb: Simd.Add(Matrix(Of Int64), Matrix(Of Int64))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
+  name: Add(Matrix<Single>, Matrix<Single>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Add_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
+  name.vb: Add(Matrix(Of Single), Matrix(Of Single))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.Add(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
+  nameWithType: Simd.Add(Matrix<Single>, Matrix<Single>)
+  nameWithType.vb: Simd.Add(Matrix(Of Single), Matrix(Of Single))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Add*
+  name: Add
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Add_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Simd.Simd.Add
   isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Performance.Operations.Optimization.Sub
-  nameWithType: Optimization.Sub
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Add
+  nameWithType: Simd.Add
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.BlockMultiply(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
+  name: BlockMultiply(Matrix<Single>, Matrix<Single>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_BlockMultiply_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.BlockMultiply(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
+  name.vb: BlockMultiply(Matrix(Of Single), Matrix(Of Single))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.BlockMultiply(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.BlockMultiply(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
+  nameWithType: Simd.BlockMultiply(Matrix<Single>, Matrix<Single>)
+  nameWithType.vb: Simd.BlockMultiply(Matrix(Of Single), Matrix(Of Single))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.BlockMultiply*
+  name: BlockMultiply
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_BlockMultiply_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Simd.Simd.BlockMultiply
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.BlockMultiply
+  nameWithType: Simd.BlockMultiply
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
+  name: Equals(Matrix<Double>, Matrix<Double>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Equals_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
+  name.vb: Equals(Matrix(Of Double), Matrix(Of Double))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
+  nameWithType: Simd.Equals(Matrix<Double>, Matrix<Double>)
+  nameWithType.vb: Simd.Equals(Matrix(Of Double), Matrix(Of Double))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
+  name: Equals(Matrix<Int32>, Matrix<Int32>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Equals_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
+  name.vb: Equals(Matrix(Of Int32), Matrix(Of Int32))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
+  nameWithType: Simd.Equals(Matrix<Int32>, Matrix<Int32>)
+  nameWithType.vb: Simd.Equals(Matrix(Of Int32), Matrix(Of Int32))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
+  name: Equals(Matrix<Int64>, Matrix<Int64>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Equals_MatrixDotNet_Matrix_System_Int64__MatrixDotNet_Matrix_System_Int64__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
+  name.vb: Equals(Matrix(Of Int64), Matrix(Of Int64))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix<System.Int64>, MatrixDotNet.Matrix<System.Int64>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix(Of System.Int64), MatrixDotNet.Matrix(Of System.Int64))
+  nameWithType: Simd.Equals(Matrix<Int64>, Matrix<Int64>)
+  nameWithType.vb: Simd.Equals(Matrix(Of Int64), Matrix(Of Int64))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
+  name: Equals(Matrix<Single>, Matrix<Single>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Equals_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
+  name.vb: Equals(Matrix(Of Single), Matrix(Of Single))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
+  nameWithType: Simd.Equals(Matrix<Single>, Matrix<Single>)
+  nameWithType.vb: Simd.Equals(Matrix(Of Single), Matrix(Of Single))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals*
+  name: Equals
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_Equals_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Simd.Simd.Equals
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.Equals
+  nameWithType: Simd.Equals
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Double})
+  name: SumAll(Matrix<Double>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_SumAll_MatrixDotNet_Matrix_System_Double__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Double})
+  name.vb: SumAll(Matrix(Of Double))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix(Of System.Double))
+  nameWithType: Simd.SumAll(Matrix<Double>)
+  nameWithType.vb: Simd.SumAll(Matrix(Of Double))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Int32})
+  name: SumAll(Matrix<Int32>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_SumAll_MatrixDotNet_Matrix_System_Int32__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Int32})
+  name.vb: SumAll(Matrix(Of Int32))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix<System.Int32>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix(Of System.Int32))
+  nameWithType: Simd.SumAll(Matrix<Int32>)
+  nameWithType.vb: Simd.SumAll(Matrix(Of Int32))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Single})
+  name: SumAll(Matrix<Single>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_SumAll_MatrixDotNet_Matrix_System_Single__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Single})
+  name.vb: SumAll(Matrix(Of Single))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix<System.Single>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll(MatrixDotNet.Matrix(Of System.Single))
+  nameWithType: Simd.SumAll(Matrix<Single>)
+  nameWithType.vb: Simd.SumAll(Matrix(Of Single))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll*
+  name: SumAll
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Simd_SumAll_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Simd.SumAll
+  nameWithType: Simd.SumAll
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics
+  name: MatrixDotNet.Extensions.Performance.Simd.Statistics
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.html
+  commentId: N:MatrixDotNet.Extensions.Performance.Simd.Statistics
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics
+  nameWithType: MatrixDotNet.Extensions.Performance.Simd.Statistics
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd
+  name: Simd
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html
+  commentId: T:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd
+  nameWithType: Simd
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Double})
+  name: Max(Matrix<Double>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Statistics_Simd_Max_MatrixDotNet_Matrix_System_Double__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Double})
+  name.vb: Max(Matrix(Of Double))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix(Of System.Double))
+  nameWithType: Simd.Max(Matrix<Double>)
+  nameWithType.vb: Simd.Max(Matrix(Of Double))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Int32})
+  name: Max(Matrix<Int32>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Statistics_Simd_Max_MatrixDotNet_Matrix_System_Int32__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Int32})
+  name.vb: Max(Matrix(Of Int32))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix<System.Int32>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix(Of System.Int32))
+  nameWithType: Simd.Max(Matrix<Int32>)
+  nameWithType.vb: Simd.Max(Matrix(Of Int32))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Single})
+  name: Max(Matrix<Single>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Statistics_Simd_Max_MatrixDotNet_Matrix_System_Single__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Single})
+  name.vb: Max(Matrix(Of Single))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix<System.Single>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix(Of System.Single))
+  nameWithType: Simd.Max(Matrix<Single>)
+  nameWithType.vb: Simd.Max(Matrix(Of Single))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max*
+  name: Max
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Statistics_Simd_Max_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Max
+  nameWithType: Simd.Max
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Double})
+  name: Min(Matrix<Double>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Statistics_Simd_Min_MatrixDotNet_Matrix_System_Double__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Double})
+  name.vb: Min(Matrix(Of Double))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix(Of System.Double))
+  nameWithType: Simd.Min(Matrix<Double>)
+  nameWithType.vb: Simd.Min(Matrix(Of Double))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Int32})
+  name: Min(Matrix<Int32>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Statistics_Simd_Min_MatrixDotNet_Matrix_System_Int32__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Int32})
+  name.vb: Min(Matrix(Of Int32))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix<System.Int32>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix(Of System.Int32))
+  nameWithType: Simd.Min(Matrix<Int32>)
+  nameWithType.vb: Simd.Min(Matrix(Of Int32))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Single})
+  name: Min(Matrix<Single>)
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Statistics_Simd_Min_MatrixDotNet_Matrix_System_Single__
+  commentId: M:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Single})
+  name.vb: Min(Matrix(Of Single))
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix<System.Single>)
+  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix(Of System.Single))
+  nameWithType: Simd.Min(Matrix<Single>)
+  nameWithType.vb: Simd.Min(Matrix(Of Single))
+- uid: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min*
+  name: Min
+  href: api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html#MatrixDotNet_Extensions_Performance_Simd_Statistics_Simd_Min_
+  commentId: Overload:MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.Min
+  nameWithType: Simd.Min
 - uid: MatrixDotNet.Extensions.Solver
   name: MatrixDotNet.Extensions.Solver
   href: api/MatrixDotNet.Extensions.Solver.html
@@ -5527,24 +5967,6 @@ references:
   fullName.vb: MatrixDotNet.Matrix(Of T).Subtraction
   nameWithType: Matrix<T>.Subtraction
   nameWithType.vb: Matrix(Of T).Subtraction
-- uid: MatrixDotNet.Matrix`1.Plus(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
-  name: Plus(Matrix<T>, Matrix<T>)
-  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Plus_MatrixDotNet_Matrix__0__MatrixDotNet_Matrix__0__
-  commentId: M:MatrixDotNet.Matrix`1.Plus(MatrixDotNet.Matrix{`0},MatrixDotNet.Matrix{`0})
-  name.vb: Plus(Matrix(Of T), Matrix(Of T))
-  fullName: MatrixDotNet.Matrix<T>.Plus(MatrixDotNet.Matrix<T>, MatrixDotNet.Matrix<T>)
-  fullName.vb: MatrixDotNet.Matrix(Of T).Plus(MatrixDotNet.Matrix(Of T), MatrixDotNet.Matrix(Of T))
-  nameWithType: Matrix<T>.Plus(Matrix<T>, Matrix<T>)
-  nameWithType.vb: Matrix(Of T).Plus(Matrix(Of T), Matrix(Of T))
-- uid: MatrixDotNet.Matrix`1.Plus*
-  name: Plus
-  href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Plus_
-  commentId: Overload:MatrixDotNet.Matrix`1.Plus
-  isSpec: "True"
-  fullName: MatrixDotNet.Matrix<T>.Plus
-  fullName.vb: MatrixDotNet.Matrix(Of T).Plus
-  nameWithType: Matrix<T>.Plus
-  nameWithType.vb: Matrix(Of T).Plus
 - uid: MatrixDotNet.Matrix`1.Rows
   name: Rows
   href: api/MatrixDotNet.Matrix-1.html#MatrixDotNet_Matrix_1_Rows
@@ -5755,606 +6177,6 @@ references:
   isSpec: "True"
   fullName: MatrixDotNet.MatrixComplex.Rows
   nameWithType: MatrixComplex.Rows
-- uid: MatrixDotNet.NetCore
-  name: MatrixDotNet.NetCore
-  href: api/MatrixDotNet.NetCore.html
-  commentId: N:MatrixDotNet.NetCore
-  fullName: MatrixDotNet.NetCore
-  nameWithType: MatrixDotNet.NetCore
-- uid: MatrixDotNet.NetCore.Conversion
-  name: MatrixDotNet.NetCore.Conversion
-  href: api/MatrixDotNet.NetCore.Conversion.html
-  commentId: N:MatrixDotNet.NetCore.Conversion
-  fullName: MatrixDotNet.NetCore.Conversion
-  nameWithType: MatrixDotNet.NetCore.Conversion
-- uid: MatrixDotNet.NetCore.Conversion.Converter
-  name: Converter
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html
-  commentId: T:MatrixDotNet.NetCore.Conversion.Converter
-  fullName: MatrixDotNet.NetCore.Conversion.Converter
-  nameWithType: Converter
-- uid: MatrixDotNet.NetCore.Conversion.Converter.AddColumn(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Double[],System.Int32)
-  name: AddColumn(ref MatrixAsFixedBuffer, Double[], Int32)
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_AddColumn_MatrixDotNet_NetCore_MatrixAsFixedBuffer__System_Double___System_Int32_
-  commentId: M:MatrixDotNet.NetCore.Conversion.Converter.AddColumn(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Double[],System.Int32)
-  name.vb: AddColumn(ByRef MatrixAsFixedBuffer, Double(), Int32)
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.AddColumn(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Double[], System.Int32)
-  fullName.vb: MatrixDotNet.NetCore.Conversion.Converter.AddColumn(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Double(), System.Int32)
-  nameWithType: Converter.AddColumn(ref MatrixAsFixedBuffer, Double[], Int32)
-  nameWithType.vb: Converter.AddColumn(ByRef MatrixAsFixedBuffer, Double(), Int32)
-- uid: MatrixDotNet.NetCore.Conversion.Converter.AddColumn*
-  name: AddColumn
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_AddColumn_
-  commentId: Overload:MatrixDotNet.NetCore.Conversion.Converter.AddColumn
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.AddColumn
-  nameWithType: Converter.AddColumn
-- uid: MatrixDotNet.NetCore.Conversion.Converter.AddRow(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Double[],System.Int32)
-  name: AddRow(ref MatrixAsFixedBuffer, Double[], Int32)
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_AddRow_MatrixDotNet_NetCore_MatrixAsFixedBuffer__System_Double___System_Int32_
-  commentId: M:MatrixDotNet.NetCore.Conversion.Converter.AddRow(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Double[],System.Int32)
-  name.vb: AddRow(ByRef MatrixAsFixedBuffer, Double(), Int32)
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.AddRow(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Double[], System.Int32)
-  fullName.vb: MatrixDotNet.NetCore.Conversion.Converter.AddRow(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Double(), System.Int32)
-  nameWithType: Converter.AddRow(ref MatrixAsFixedBuffer, Double[], Int32)
-  nameWithType.vb: Converter.AddRow(ByRef MatrixAsFixedBuffer, Double(), Int32)
-- uid: MatrixDotNet.NetCore.Conversion.Converter.AddRow*
-  name: AddRow
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_AddRow_
-  commentId: Overload:MatrixDotNet.NetCore.Conversion.Converter.AddRow
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.AddRow
-  nameWithType: Converter.AddRow
-- uid: MatrixDotNet.NetCore.Conversion.Converter.CopyTo(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32,MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32,System.Int32)
-  name: CopyTo(ref MatrixAsFixedBuffer, Int32, Int32, ref MatrixAsFixedBuffer, Int32, Int32, Int32)
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_CopyTo_MatrixDotNet_NetCore_MatrixAsFixedBuffer__System_Int32_System_Int32_MatrixDotNet_NetCore_MatrixAsFixedBuffer__System_Int32_System_Int32_System_Int32_
-  commentId: M:MatrixDotNet.NetCore.Conversion.Converter.CopyTo(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32,MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32,System.Int32)
-  name.vb: CopyTo(ByRef MatrixAsFixedBuffer, Int32, Int32, ByRef MatrixAsFixedBuffer, Int32, Int32, Int32)
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.CopyTo(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32, ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32, System.Int32)
-  fullName.vb: MatrixDotNet.NetCore.Conversion.Converter.CopyTo(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32, ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32, System.Int32)
-  nameWithType: Converter.CopyTo(ref MatrixAsFixedBuffer, Int32, Int32, ref MatrixAsFixedBuffer, Int32, Int32, Int32)
-  nameWithType.vb: Converter.CopyTo(ByRef MatrixAsFixedBuffer, Int32, Int32, ByRef MatrixAsFixedBuffer, Int32, Int32, Int32)
-- uid: MatrixDotNet.NetCore.Conversion.Converter.CopyTo*
-  name: CopyTo
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_CopyTo_
-  commentId: Overload:MatrixDotNet.NetCore.Conversion.Converter.CopyTo
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.CopyTo
-  nameWithType: Converter.CopyTo
-- uid: MatrixDotNet.NetCore.Conversion.Converter.CopyToAvx(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32,MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32,System.Int32)
-  name: CopyToAvx(ref MatrixAsFixedBuffer, Int32, Int32, ref MatrixAsFixedBuffer, Int32, Int32, Int32)
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_CopyToAvx_MatrixDotNet_NetCore_MatrixAsFixedBuffer__System_Int32_System_Int32_MatrixDotNet_NetCore_MatrixAsFixedBuffer__System_Int32_System_Int32_System_Int32_
-  commentId: M:MatrixDotNet.NetCore.Conversion.Converter.CopyToAvx(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32,MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32,System.Int32)
-  name.vb: CopyToAvx(ByRef MatrixAsFixedBuffer, Int32, Int32, ByRef MatrixAsFixedBuffer, Int32, Int32, Int32)
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.CopyToAvx(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32, ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32, System.Int32)
-  fullName.vb: MatrixDotNet.NetCore.Conversion.Converter.CopyToAvx(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32, ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32, System.Int32)
-  nameWithType: Converter.CopyToAvx(ref MatrixAsFixedBuffer, Int32, Int32, ref MatrixAsFixedBuffer, Int32, Int32, Int32)
-  nameWithType.vb: Converter.CopyToAvx(ByRef MatrixAsFixedBuffer, Int32, Int32, ByRef MatrixAsFixedBuffer, Int32, Int32, Int32)
-- uid: MatrixDotNet.NetCore.Conversion.Converter.CopyToAvx*
-  name: CopyToAvx
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_CopyToAvx_
-  commentId: Overload:MatrixDotNet.NetCore.Conversion.Converter.CopyToAvx
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.CopyToAvx
-  nameWithType: Converter.CopyToAvx
-- uid: MatrixDotNet.NetCore.Conversion.Converter.SwapColumns(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32)
-  name: SwapColumns(ref MatrixAsFixedBuffer, Int32, Int32)
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_SwapColumns_MatrixDotNet_NetCore_MatrixAsFixedBuffer__System_Int32_System_Int32_
-  commentId: M:MatrixDotNet.NetCore.Conversion.Converter.SwapColumns(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32)
-  name.vb: SwapColumns(ByRef MatrixAsFixedBuffer, Int32, Int32)
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.SwapColumns(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32)
-  fullName.vb: MatrixDotNet.NetCore.Conversion.Converter.SwapColumns(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32)
-  nameWithType: Converter.SwapColumns(ref MatrixAsFixedBuffer, Int32, Int32)
-  nameWithType.vb: Converter.SwapColumns(ByRef MatrixAsFixedBuffer, Int32, Int32)
-- uid: MatrixDotNet.NetCore.Conversion.Converter.SwapColumns*
-  name: SwapColumns
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_SwapColumns_
-  commentId: Overload:MatrixDotNet.NetCore.Conversion.Converter.SwapColumns
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.SwapColumns
-  nameWithType: Converter.SwapColumns
-- uid: MatrixDotNet.NetCore.Conversion.Converter.SwapRows(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32)
-  name: SwapRows(ref MatrixAsFixedBuffer, Int32, Int32)
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_SwapRows_MatrixDotNet_NetCore_MatrixAsFixedBuffer__System_Int32_System_Int32_
-  commentId: M:MatrixDotNet.NetCore.Conversion.Converter.SwapRows(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,System.Int32,System.Int32)
-  name.vb: SwapRows(ByRef MatrixAsFixedBuffer, Int32, Int32)
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.SwapRows(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32)
-  fullName.vb: MatrixDotNet.NetCore.Conversion.Converter.SwapRows(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, System.Int32, System.Int32)
-  nameWithType: Converter.SwapRows(ref MatrixAsFixedBuffer, Int32, Int32)
-  nameWithType.vb: Converter.SwapRows(ByRef MatrixAsFixedBuffer, Int32, Int32)
-- uid: MatrixDotNet.NetCore.Conversion.Converter.SwapRows*
-  name: SwapRows
-  href: api/MatrixDotNet.NetCore.Conversion.Converter.html#MatrixDotNet_NetCore_Conversion_Converter_SwapRows_
-  commentId: Overload:MatrixDotNet.NetCore.Conversion.Converter.SwapRows
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Conversion.Converter.SwapRows
-  nameWithType: Converter.SwapRows
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer
-  name: MatrixAsFixedBuffer
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html
-  commentId: T:MatrixDotNet.NetCore.MatrixAsFixedBuffer
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer
-  nameWithType: MatrixAsFixedBuffer
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.#ctor(System.Byte,System.Byte)
-  name: MatrixAsFixedBuffer(Byte, Byte)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer__ctor_System_Byte_System_Byte_
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.#ctor(System.Byte,System.Byte)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Byte, System.Byte)
-  nameWithType: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Byte, Byte)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.#ctor(System.Double[],System.Int32,System.Int32)
-  name: MatrixAsFixedBuffer(Double[], Int32, Int32)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer__ctor_System_Double___System_Int32_System_Int32_
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.#ctor(System.Double[],System.Int32,System.Int32)
-  name.vb: MatrixAsFixedBuffer(Double(), Int32, Int32)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Double[], System.Int32, System.Int32)
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Double(), System.Int32, System.Int32)
-  nameWithType: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Double[], Int32, Int32)
-  nameWithType.vb: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Double(), Int32, Int32)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.#ctor(System.Double[0:,0:])
-  name: MatrixAsFixedBuffer(Double[,])
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer__ctor_System_Double_0__0___
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.#ctor(System.Double[0:,0:])
-  name.vb: MatrixAsFixedBuffer(Double(,))
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Double[,])
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MatrixAsFixedBuffer(System.Double(,))
-  nameWithType: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Double[,])
-  nameWithType.vb: MatrixAsFixedBuffer.MatrixAsFixedBuffer(Double(,))
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.#ctor*
-  name: MatrixAsFixedBuffer
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer__ctor_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.#ctor
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MatrixAsFixedBuffer
-  nameWithType: MatrixAsFixedBuffer.MatrixAsFixedBuffer
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.AddByRef(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,MatrixDotNet.NetCore.MatrixAsFixedBuffer@)
-  name: AddByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_AddByRef_MatrixDotNet_NetCore_MatrixAsFixedBuffer__MatrixDotNet_NetCore_MatrixAsFixedBuffer__
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.AddByRef(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,MatrixDotNet.NetCore.MatrixAsFixedBuffer@)
-  name.vb: AddByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.AddByRef(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, ref MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.AddByRef(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  nameWithType: MatrixAsFixedBuffer.AddByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
-  nameWithType.vb: MatrixAsFixedBuffer.AddByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.AddByRef*
-  name: AddByRef
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_AddByRef_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.AddByRef
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.AddByRef
-  nameWithType: MatrixAsFixedBuffer.AddByRef
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Columns
-  name: Columns
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Columns
-  commentId: P:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Columns
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Columns
-  nameWithType: MatrixAsFixedBuffer.Columns
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Columns*
-  name: Columns
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Columns_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Columns
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Columns
-  nameWithType: MatrixAsFixedBuffer.Columns
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Data
-  name: Data
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Data
-  commentId: P:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Data
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Data
-  nameWithType: MatrixAsFixedBuffer.Data
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Data*
-  name: Data
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Data_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Data
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Data
-  nameWithType: MatrixAsFixedBuffer.Data
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.GetColumn(System.Int32)
-  name: GetColumn(Int32)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_GetColumn_System_Int32_
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.GetColumn(System.Int32)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.GetColumn(System.Int32)
-  nameWithType: MatrixAsFixedBuffer.GetColumn(Int32)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.GetColumn*
-  name: GetColumn
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_GetColumn_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.GetColumn
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.GetColumn
-  nameWithType: MatrixAsFixedBuffer.GetColumn
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsPrime
-  name: IsPrime
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_IsPrime
-  commentId: P:MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsPrime
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsPrime
-  nameWithType: MatrixAsFixedBuffer.IsPrime
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsPrime*
-  name: IsPrime
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_IsPrime_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsPrime
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsPrime
-  nameWithType: MatrixAsFixedBuffer.IsPrime
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsSquare
-  name: IsSquare
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_IsSquare
-  commentId: P:MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsSquare
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsSquare
-  nameWithType: MatrixAsFixedBuffer.IsSquare
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsSquare*
-  name: IsSquare
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_IsSquare_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsSquare
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.IsSquare
-  nameWithType: MatrixAsFixedBuffer.IsSquare
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item(System.Int32)
-  name: Item[Int32]
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Item_System_Int32_
-  commentId: P:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item(System.Int32)
-  name.vb: Item(Int32)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item[System.Int32]
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item(System.Int32)
-  nameWithType: MatrixAsFixedBuffer.Item[Int32]
-  nameWithType.vb: MatrixAsFixedBuffer.Item(Int32)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item(System.Int32,System.Int32)
-  name: Item[Int32, Int32]
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Item_System_Int32_System_Int32_
-  commentId: P:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item(System.Int32,System.Int32)
-  name.vb: Item(Int32, Int32)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item[System.Int32, System.Int32]
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item(System.Int32, System.Int32)
-  nameWithType: MatrixAsFixedBuffer.Item[Int32, Int32]
-  nameWithType.vb: MatrixAsFixedBuffer.Item(Int32, Int32)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item*
-  name: Item
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Item_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Item
-  nameWithType: MatrixAsFixedBuffer.Item
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Length
-  name: Length
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Length
-  commentId: P:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Length
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Length
-  nameWithType: MatrixAsFixedBuffer.Length
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Length*
-  name: Length
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Length_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Length
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Length
-  nameWithType: MatrixAsFixedBuffer.Length
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MulByRef(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,MatrixDotNet.NetCore.MatrixAsFixedBuffer@)
-  name: MulByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_MulByRef_MatrixDotNet_NetCore_MatrixAsFixedBuffer__MatrixDotNet_NetCore_MatrixAsFixedBuffer__
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.MulByRef(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,MatrixDotNet.NetCore.MatrixAsFixedBuffer@)
-  name.vb: MulByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MulByRef(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, ref MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MulByRef(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  nameWithType: MatrixAsFixedBuffer.MulByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
-  nameWithType.vb: MatrixAsFixedBuffer.MulByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MulByRef*
-  name: MulByRef
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_MulByRef_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.MulByRef
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.MulByRef
-  nameWithType: MatrixAsFixedBuffer.MulByRef
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.op_Implicit(MatrixDotNet.Matrix{System.Double})~MatrixDotNet.NetCore.MatrixAsFixedBuffer
-  name: Implicit(Matrix<Double> to MatrixAsFixedBuffer)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_op_Implicit_MatrixDotNet_Matrix_System_Double___MatrixDotNet_NetCore_MatrixAsFixedBuffer
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.op_Implicit(MatrixDotNet.Matrix{System.Double})~MatrixDotNet.NetCore.MatrixAsFixedBuffer
-  name.vb: Widening(Matrix(Of Double) to MatrixAsFixedBuffer)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Implicit(MatrixDotNet.Matrix<System.Double> to MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Widening(MatrixDotNet.Matrix(Of System.Double) to MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  nameWithType: MatrixAsFixedBuffer.Implicit(Matrix<Double> to MatrixAsFixedBuffer)
-  nameWithType.vb: MatrixAsFixedBuffer.Widening(Matrix(Of Double) to MatrixAsFixedBuffer)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.op_Implicit(System.Double[0:,0:])~MatrixDotNet.NetCore.MatrixAsFixedBuffer
-  name: Implicit(Double[,] to MatrixAsFixedBuffer)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_op_Implicit_System_Double_0__0____MatrixDotNet_NetCore_MatrixAsFixedBuffer
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.op_Implicit(System.Double[0:,0:])~MatrixDotNet.NetCore.MatrixAsFixedBuffer
-  name.vb: Widening(Double(,) to MatrixAsFixedBuffer)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Implicit(System.Double[,] to MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Widening(System.Double(,) to MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  nameWithType: MatrixAsFixedBuffer.Implicit(Double[,] to MatrixAsFixedBuffer)
-  nameWithType.vb: MatrixAsFixedBuffer.Widening(Double(,) to MatrixAsFixedBuffer)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.op_Implicit*
-  name: Implicit
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_op_Implicit_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.op_Implicit
-  isSpec: "True"
-  name.vb: Widening
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Implicit
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Widening
-  nameWithType: MatrixAsFixedBuffer.Implicit
-  nameWithType.vb: MatrixAsFixedBuffer.Widening
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Rows
-  name: Rows
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Rows
-  commentId: P:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Rows
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Rows
-  nameWithType: MatrixAsFixedBuffer.Rows
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Rows*
-  name: Rows
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_Rows_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.Rows
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.Rows
-  nameWithType: MatrixAsFixedBuffer.Rows
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SetColumn(System.Int32,System.Span{System.Double})
-  name: SetColumn(Int32, Span<Double>)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_SetColumn_System_Int32_System_Span_System_Double__
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.SetColumn(System.Int32,System.Span{System.Double})
-  name.vb: SetColumn(Int32, Span(Of Double))
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SetColumn(System.Int32, System.Span<System.Double>)
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SetColumn(System.Int32, System.Span(Of System.Double))
-  nameWithType: MatrixAsFixedBuffer.SetColumn(Int32, Span<Double>)
-  nameWithType.vb: MatrixAsFixedBuffer.SetColumn(Int32, Span(Of Double))
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SetColumn*
-  name: SetColumn
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_SetColumn_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.SetColumn
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SetColumn
-  nameWithType: MatrixAsFixedBuffer.SetColumn
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SubByRef(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,MatrixDotNet.NetCore.MatrixAsFixedBuffer@)
-  name: SubByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_SubByRef_MatrixDotNet_NetCore_MatrixAsFixedBuffer__MatrixDotNet_NetCore_MatrixAsFixedBuffer__
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.SubByRef(MatrixDotNet.NetCore.MatrixAsFixedBuffer@,MatrixDotNet.NetCore.MatrixAsFixedBuffer@)
-  name.vb: SubByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SubByRef(ref MatrixDotNet.NetCore.MatrixAsFixedBuffer, ref MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  fullName.vb: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SubByRef(ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer, ByRef MatrixDotNet.NetCore.MatrixAsFixedBuffer)
-  nameWithType: MatrixAsFixedBuffer.SubByRef(ref MatrixAsFixedBuffer, ref MatrixAsFixedBuffer)
-  nameWithType.vb: MatrixAsFixedBuffer.SubByRef(ByRef MatrixAsFixedBuffer, ByRef MatrixAsFixedBuffer)
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SubByRef*
-  name: SubByRef
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_SubByRef_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.SubByRef
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.SubByRef
-  nameWithType: MatrixAsFixedBuffer.SubByRef
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.ToString
-  name: ToString()
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_ToString
-  commentId: M:MatrixDotNet.NetCore.MatrixAsFixedBuffer.ToString
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.ToString()
-  nameWithType: MatrixAsFixedBuffer.ToString()
-- uid: MatrixDotNet.NetCore.MatrixAsFixedBuffer.ToString*
-  name: ToString
-  href: api/MatrixDotNet.NetCore.MatrixAsFixedBuffer.html#MatrixDotNet_NetCore_MatrixAsFixedBuffer_ToString_
-  commentId: Overload:MatrixDotNet.NetCore.MatrixAsFixedBuffer.ToString
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.MatrixAsFixedBuffer.ToString
-  nameWithType: MatrixAsFixedBuffer.ToString
-- uid: MatrixDotNet.NetCore.Simd
-  name: MatrixDotNet.NetCore.Simd
-  href: api/MatrixDotNet.NetCore.Simd.html
-  commentId: N:MatrixDotNet.NetCore.Simd
-  fullName: MatrixDotNet.NetCore.Simd
-  nameWithType: MatrixDotNet.NetCore.Simd
-- uid: MatrixDotNet.NetCore.Simd.Simd
-  name: Simd
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html
-  commentId: T:MatrixDotNet.NetCore.Simd.Simd
-  fullName: MatrixDotNet.NetCore.Simd.Simd
-  nameWithType: Simd
-- uid: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name: Add(Matrix<Double>, Matrix<Double>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Add_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name.vb: Add(Matrix(Of Double), Matrix(Of Double))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Simd.Add(Matrix<Double>, Matrix<Double>)
-  nameWithType.vb: Simd.Add(Matrix(Of Double), Matrix(Of Double))
-- uid: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name: Add(Matrix<Int32>, Matrix<Int32>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Add_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name.vb: Add(Matrix(Of Int32), Matrix(Of Int32))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Simd.Add(Matrix<Int32>, Matrix<Int32>)
-  nameWithType.vb: Simd.Add(Matrix(Of Int32), Matrix(Of Int32))
-- uid: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name: Add(Matrix<Int64>, Matrix<Int64>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Add_MatrixDotNet_Matrix_System_Int64__MatrixDotNet_Matrix_System_Int64__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name.vb: Add(Matrix(Of Int64), Matrix(Of Int64))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix<System.Int64>, MatrixDotNet.Matrix<System.Int64>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix(Of System.Int64), MatrixDotNet.Matrix(Of System.Int64))
-  nameWithType: Simd.Add(Matrix<Int64>, Matrix<Int64>)
-  nameWithType.vb: Simd.Add(Matrix(Of Int64), Matrix(Of Int64))
-- uid: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name: Add(Matrix<Single>, Matrix<Single>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Add_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name.vb: Add(Matrix(Of Single), Matrix(Of Single))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.Add(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Simd.Add(Matrix<Single>, Matrix<Single>)
-  nameWithType.vb: Simd.Add(Matrix(Of Single), Matrix(Of Single))
-- uid: MatrixDotNet.NetCore.Simd.Simd.Add*
-  name: Add
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Add_
-  commentId: Overload:MatrixDotNet.NetCore.Simd.Simd.Add
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Add
-  nameWithType: Simd.Add
-- uid: MatrixDotNet.NetCore.Simd.Simd.BlockMultiply(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name: BlockMultiply(Matrix<Single>, Matrix<Single>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_BlockMultiply_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.BlockMultiply(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name.vb: BlockMultiply(Matrix(Of Single), Matrix(Of Single))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.BlockMultiply(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.BlockMultiply(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Simd.BlockMultiply(Matrix<Single>, Matrix<Single>)
-  nameWithType.vb: Simd.BlockMultiply(Matrix(Of Single), Matrix(Of Single))
-- uid: MatrixDotNet.NetCore.Simd.Simd.BlockMultiply*
-  name: BlockMultiply
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_BlockMultiply_
-  commentId: Overload:MatrixDotNet.NetCore.Simd.Simd.BlockMultiply
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Simd.Simd.BlockMultiply
-  nameWithType: Simd.BlockMultiply
-- uid: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name: Equals(Matrix<Double>, Matrix<Double>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Equals_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double})
-  name.vb: Equals(Matrix(Of Double), Matrix(Of Double))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix<System.Double>, MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix(Of System.Double), MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Simd.Equals(Matrix<Double>, Matrix<Double>)
-  nameWithType.vb: Simd.Equals(Matrix(Of Double), Matrix(Of Double))
-- uid: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name: Equals(Matrix<Int32>, Matrix<Int32>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Equals_MatrixDotNet_Matrix_System_Int32__MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Int32},MatrixDotNet.Matrix{System.Int32})
-  name.vb: Equals(Matrix(Of Int32), Matrix(Of Int32))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix<System.Int32>, MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix(Of System.Int32), MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Simd.Equals(Matrix<Int32>, Matrix<Int32>)
-  nameWithType.vb: Simd.Equals(Matrix(Of Int32), Matrix(Of Int32))
-- uid: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name: Equals(Matrix<Int64>, Matrix<Int64>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Equals_MatrixDotNet_Matrix_System_Int64__MatrixDotNet_Matrix_System_Int64__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Int64},MatrixDotNet.Matrix{System.Int64})
-  name.vb: Equals(Matrix(Of Int64), Matrix(Of Int64))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix<System.Int64>, MatrixDotNet.Matrix<System.Int64>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix(Of System.Int64), MatrixDotNet.Matrix(Of System.Int64))
-  nameWithType: Simd.Equals(Matrix<Int64>, Matrix<Int64>)
-  nameWithType.vb: Simd.Equals(Matrix(Of Int64), Matrix(Of Int64))
-- uid: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name: Equals(Matrix<Single>, Matrix<Single>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Equals_MatrixDotNet_Matrix_System_Single__MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix{System.Single},MatrixDotNet.Matrix{System.Single})
-  name.vb: Equals(Matrix(Of Single), Matrix(Of Single))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix<System.Single>, MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.Equals(MatrixDotNet.Matrix(Of System.Single), MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Simd.Equals(Matrix<Single>, Matrix<Single>)
-  nameWithType.vb: Simd.Equals(Matrix(Of Single), Matrix(Of Single))
-- uid: MatrixDotNet.NetCore.Simd.Simd.Equals*
-  name: Equals
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_Equals_
-  commentId: Overload:MatrixDotNet.NetCore.Simd.Simd.Equals
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Simd.Simd.Equals
-  nameWithType: Simd.Equals
-- uid: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Double})
-  name: SumAll(Matrix<Double>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_SumAll_MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Double})
-  name.vb: SumAll(Matrix(Of Double))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Simd.SumAll(Matrix<Double>)
-  nameWithType.vb: Simd.SumAll(Matrix(Of Double))
-- uid: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Int32})
-  name: SumAll(Matrix<Int32>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_SumAll_MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Int32})
-  name.vb: SumAll(Matrix(Of Int32))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Simd.SumAll(Matrix<Int32>)
-  nameWithType.vb: Simd.SumAll(Matrix(Of Int32))
-- uid: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Single})
-  name: SumAll(Matrix<Single>)
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_SumAll_MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix{System.Single})
-  name.vb: SumAll(Matrix(Of Single))
-  fullName: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Simd.SumAll(MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Simd.SumAll(Matrix<Single>)
-  nameWithType.vb: Simd.SumAll(Matrix(Of Single))
-- uid: MatrixDotNet.NetCore.Simd.Simd.SumAll*
-  name: SumAll
-  href: api/MatrixDotNet.NetCore.Simd.Simd.html#MatrixDotNet_NetCore_Simd_Simd_SumAll_
-  commentId: Overload:MatrixDotNet.NetCore.Simd.Simd.SumAll
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Simd.Simd.SumAll
-  nameWithType: Simd.SumAll
-- uid: MatrixDotNet.NetCore.Simd.Statistics
-  name: MatrixDotNet.NetCore.Simd.Statistics
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.html
-  commentId: N:MatrixDotNet.NetCore.Simd.Statistics
-  fullName: MatrixDotNet.NetCore.Simd.Statistics
-  nameWithType: MatrixDotNet.NetCore.Simd.Statistics
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd
-  name: Simd
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html
-  commentId: T:MatrixDotNet.NetCore.Simd.Statistics.Simd
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd
-  nameWithType: Simd
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Double})
-  name: Max(Matrix<Double>)
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html#MatrixDotNet_NetCore_Simd_Statistics_Simd_Max_MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Double})
-  name.vb: Max(Matrix(Of Double))
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Simd.Max(Matrix<Double>)
-  nameWithType.vb: Simd.Max(Matrix(Of Double))
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Int32})
-  name: Max(Matrix<Int32>)
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html#MatrixDotNet_NetCore_Simd_Statistics_Simd_Max_MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Int32})
-  name.vb: Max(Matrix(Of Int32))
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Simd.Max(Matrix<Int32>)
-  nameWithType.vb: Simd.Max(Matrix(Of Int32))
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Single})
-  name: Max(Matrix<Single>)
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html#MatrixDotNet_NetCore_Simd_Statistics_Simd_Max_MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix{System.Single})
-  name.vb: Max(Matrix(Of Single))
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max(MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Simd.Max(Matrix<Single>)
-  nameWithType.vb: Simd.Max(Matrix(Of Single))
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max*
-  name: Max
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html#MatrixDotNet_NetCore_Simd_Statistics_Simd_Max_
-  commentId: Overload:MatrixDotNet.NetCore.Simd.Statistics.Simd.Max
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd.Max
-  nameWithType: Simd.Max
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Double})
-  name: Min(Matrix<Double>)
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html#MatrixDotNet_NetCore_Simd_Statistics_Simd_Min_MatrixDotNet_Matrix_System_Double__
-  commentId: M:MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Double})
-  name.vb: Min(Matrix(Of Double))
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Simd.Min(Matrix<Double>)
-  nameWithType.vb: Simd.Min(Matrix(Of Double))
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Int32})
-  name: Min(Matrix<Int32>)
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html#MatrixDotNet_NetCore_Simd_Statistics_Simd_Min_MatrixDotNet_Matrix_System_Int32__
-  commentId: M:MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Int32})
-  name.vb: Min(Matrix(Of Int32))
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix<System.Int32>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix(Of System.Int32))
-  nameWithType: Simd.Min(Matrix<Int32>)
-  nameWithType.vb: Simd.Min(Matrix(Of Int32))
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Single})
-  name: Min(Matrix<Single>)
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html#MatrixDotNet_NetCore_Simd_Statistics_Simd_Min_MatrixDotNet_Matrix_System_Single__
-  commentId: M:MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix{System.Single})
-  name.vb: Min(Matrix(Of Single))
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix<System.Single>)
-  fullName.vb: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min(MatrixDotNet.Matrix(Of System.Single))
-  nameWithType: Simd.Min(Matrix<Single>)
-  nameWithType.vb: Simd.Min(Matrix(Of Single))
-- uid: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min*
-  name: Min
-  href: api/MatrixDotNet.NetCore.Simd.Statistics.Simd.html#MatrixDotNet_NetCore_Simd_Statistics_Simd_Min_
-  commentId: Overload:MatrixDotNet.NetCore.Simd.Statistics.Simd.Min
-  isSpec: "True"
-  fullName: MatrixDotNet.NetCore.Simd.Statistics.Simd.Min
-  nameWithType: Simd.Min
 - uid: MatrixDotNet.NotStableFeatures
   name: MatrixDotNet.NotStableFeatures
   href: api/MatrixDotNet.NotStableFeatures.html
