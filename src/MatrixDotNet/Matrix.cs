@@ -311,7 +311,7 @@ namespace MatrixDotNet
                 Span<T> span3 = new Span<T>(pointer3, length);
                 for (int i = 0; i < length; i++)
                 {
-                    span3[i] = MathUnsafe<T>.Sub(span2[i], span1[i]);
+                    span3[i] = MathUnsafe<T>.Sub(span1[i], span2[i]);
                 }
             }
             return matrix;
