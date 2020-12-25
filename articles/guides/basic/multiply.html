@@ -142,10 +142,47 @@ Matrix&lt;float&gt; b = new Matrix&lt;float&gt;(32, 32);
 Matrix&lt;float&gt; c = Optimization.BlockMultiply(a, b);
 </code></pre>
 <h3 id="benchmark-for-comparing-multiplication-of-matrix">Benchmark for comparing multiplication of matrix</h3>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>It looks like the sample you are looking for does not exist.</p>
-</div>
+<pre><code class="lang-csharp" name="Run">using System.Threading.Tasks;
+using BenchmarkDotNet.Attributes;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Performance;
+
+namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
+{
+    public class MulTest : PerformanceTest
+    {
+        [Params(1024)]
+        public int Size;
+        private Matrix&lt;float&gt; _matrix1;
+        private Matrix&lt;float&gt; _matrix2;
+
+        [GlobalSetup]
+        public void Setup()
+        {
+            _matrix1 = BuildMatrix.RandomFloat(Size, Size, 0, 100);
+            _matrix2 = BuildMatrix.RandomFloat(Size, Size, 0, 100);
+        }
+        
+        [Benchmark]
+        public async ValueTask&lt;Matrix&lt;float&gt;&gt; StrassenParallel()
+        {
+            return await Optimization.MultiplyStrassenAsync(_matrix1, _matrix2);
+        }
+
+        [Benchmark]
+        public Matrix&lt;float&gt; Strassen()
+        {
+            return Optimization.MultiplyStrassen(_matrix1, _matrix2);
+        }
+        
+        [Benchmark(Baseline = true)]
+        public Matrix&lt;float&gt; Default()
+        {
+            return _matrix1 * _matrix2;
+        }
+    }
+}
+</code></pre>
 <pre><code class="lang-ini">BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1110 (1909/November2018Update/19H2)
 Intel Core i7-9700 CPU 3.00GHz, 1 CPU, 8 logical and 8 physical cores
 .NET Core SDK=5.0.100
