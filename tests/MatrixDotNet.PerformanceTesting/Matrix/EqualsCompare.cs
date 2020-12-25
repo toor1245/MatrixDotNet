@@ -1,7 +1,6 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Performance.Operations;
-using MatrixDotNet.NetCore.Simd;
+using MatrixDotNet.Extensions.Performance.Simd;
 
 namespace MatrixDotNet.PerformanceTesting.Matrix
 {
@@ -21,7 +20,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
         [Benchmark]
         public bool EqualsUnsafe()
         {
-            return Optimization.Equals(_matrix1,_matrix2);
+            return Equals(_matrix1,_matrix2);
         }
         
         [Benchmark]

@@ -1,7 +1,7 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Conversion;
-using MatrixDotNet.NetCore;
-using MatrixDotNet.NetCore.Conversion;
+using MatrixDotNet.Extensions.Performance;
+using MatrixDotNet.Extensions.Performance.Conversion;
 
 namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
 {

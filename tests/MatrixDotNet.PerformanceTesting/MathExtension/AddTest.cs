@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.NetCore.Simd;
+using MatrixDotNet.Extensions.Performance.Simd;
 
 namespace MatrixDotNet.PerformanceTesting.MathExtension
 {
@@ -18,9 +18,9 @@ namespace MatrixDotNet.PerformanceTesting.MathExtension
         }
 
         [Benchmark]
-        public Matrix<double> AddUnsafe()
+        public Matrix<double> AddOptimizationUnsafe()
         {
-            return Matrix<double>.Plus(_matrix1,_matrix2);
+            return _matrix1 + _matrix2;
         }
         
         [Benchmark]

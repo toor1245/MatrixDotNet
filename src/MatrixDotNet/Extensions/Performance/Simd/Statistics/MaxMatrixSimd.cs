@@ -4,7 +4,7 @@ using System.Collections;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 
-namespace MatrixDotNet.NetCore.Simd.Statistics
+namespace MatrixDotNet.Extensions.Performance.Simd.Statistics
 {
     public static partial class Simd
     {

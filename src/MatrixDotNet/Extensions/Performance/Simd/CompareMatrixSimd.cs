@@ -4,7 +4,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Exceptions;
 
-namespace MatrixDotNet.NetCore.Simd
+namespace MatrixDotNet.Extensions.Performance.Simd
 {
     public static partial class Simd
     {

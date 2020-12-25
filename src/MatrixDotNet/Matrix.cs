@@ -250,50 +250,35 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException">
         /// Length of two matrix not equal.
         /// </exception>
-        public static Matrix<T> operator +(Matrix<T> left, Matrix<T> right)
+        public static unsafe Matrix<T> operator +(Matrix<T> left, Matrix<T> right)
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
-                throw new MatrixDotNetException(
-                    $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
+                throw new MatrixDotNetException($"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
 
-            var addFunc = MathGeneric<T>.GetAddFunc();
+            int m = left.Rows;
+            int n = right.Columns;
+            int length = left.Length;
 
-            Matrix<T> matrix = new Matrix<T>(left.Rows, right.Columns);
+            Matrix<T> matrix = new Matrix<T>(m, n);
 
-            for (int i = 0; i < left.Rows; i++)
+            fixed (T* pointer1 = left.GetArray())
+            fixed (T* pointer2 = right.GetArray())
+            fixed (T* pointer3 = matrix.GetArray())
             {
-                for (int j = 0; j < left.Columns; j++)
+                Span<T> span1 = new Span<T>(pointer1, length);
+                Span<T> span2 = new Span<T>(pointer2, length);
+                Span<T> span3 = new Span<T>(pointer3, length);
+                
+                for (int i = 0; i < length; i++)
                 {
-                    matrix[i, j] = addFunc(left[i, j], right[i, j]);
+                    span3[i] = MathUnsafe<T>.Add(span2[i], span1[i]);
                 }
             }
-
             return matrix;
         }
-
-        public static Matrix<T> Plus(Matrix<T> left, Matrix<T> right)
-        {
-            if (left.Rows != right.Rows || left.Columns != right.Columns)
-            {
-                throw new MatrixDotNetException(
-                    $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
-            }
-
-            Matrix<T> matrix = new Matrix<T>(left.Rows, right.Columns);
-
-            for (int i = 0; i < left.Rows; i++)
-            {
-                for (int j = 0; j < left.Columns; j++)
-                {
-                    matrix[i, j] = MathUnsafe<T>.Add(left[i, j], right[i, j]);
-                }
-            }
-
-            return matrix;
-        }
-
+        
         /// <summary>
         /// Subtract operation of two matrix.
         /// </summary>
@@ -303,7 +288,7 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException">
         /// Length of two matrix not equal.
         /// </exception>
-        public static Matrix<T> operator -(Matrix<T> left, Matrix<T> right)
+        public static unsafe Matrix<T> operator -(Matrix<T> left, Matrix<T> right)
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
@@ -311,18 +296,24 @@ namespace MatrixDotNet
                     $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
 
-            var subFunc = MathGeneric<T, T, T>.GetSubFunc();
+            int m = left.Rows;
+            int n = right.Columns;
+            int length = left.Length;
 
-            Matrix<T> matrix = new Matrix<T>(left.Rows, right.Columns);
+            Matrix<T> matrix = new Matrix<T>(m, n);
 
-            for (int i = 0; i < left.Rows; i++)
+            fixed (T* pointer1 = left.GetArray())
+            fixed (T* pointer2 = right.GetArray())
+            fixed (T* pointer3 = matrix.GetArray())
             {
-                for (int j = 0; j < left.Columns; j++)
+                Span<T> span1 = new Span<T>(pointer1, length);
+                Span<T> span2 = new Span<T>(pointer2, length);
+                Span<T> span3 = new Span<T>(pointer3, length);
+                for (int i = 0; i < length; i++)
                 {
-                    matrix[i, j] = subFunc(left[i, j], right[i, j]);
+                    span3[i] = MathUnsafe<T>.Sub(span2[i], span1[i]);
                 }
             }
-
             return matrix;
         }
 
@@ -333,7 +324,7 @@ namespace MatrixDotNet
         /// <param name="right"></param>
         /// <returns></returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static Matrix<T> operator *(Matrix<T> left, Matrix<T> right)
+        public static unsafe Matrix<T> operator *(Matrix<T> left, Matrix<T> right)
         {
             if (left.Columns != right.Rows)
             {
@@ -341,19 +332,31 @@ namespace MatrixDotNet
                     $"matrix {nameof(left)} columns length must be equal matrix {nameof(right)} rows length");
             }
 
-            var addFunc = MathGeneric<T, T, T>.GetAddFunc();
-            var multiplyFunc = MathGeneric<T, T, T>.GetMultiplyFunc();
+            int m = left.Rows;
+            int n = right.Columns;
+            int K = left.Columns;
+            int len1 = left.Length;
 
-            Matrix<T> matrix = new Matrix<T>(left.Rows, right.Columns);
+            Matrix<T> matrix = new Matrix<T>(m, n);
 
-            for (int i = 0; i < left.Rows; i++)
+            fixed (T* pointer1 = left.GetArray())
+            fixed (T* pointer2 = right.GetArray())
+            fixed (T* pointer3 = matrix.GetArray())
             {
-                for (int j = 0; j < right.Columns; j++)
+                Span<T> span1 = new Span<T>(pointer1, len1);
+
+                for (int i = 0; i < m; i++)
                 {
-                    for (int k = 0; k < left.Columns; k++)
+                    T* c = pointer3 + i * n;
+
+                    for (int k = 0; k < K; k++)
                     {
-                        // matrix[i,j] = matrix[i,j] + left[i,k] * right[k,j]; 
-                        matrix[i, j] = addFunc(matrix[i, j], multiplyFunc(left[i, k], right[k, j]));
+                        T* b = pointer2 + k * n;
+                        T a = span1[i * K + k];
+                        for (int j = 0; j < n; j++)
+                        {
+                            c[j] = MathUnsafe<T>.Add(c[j], MathUnsafe<T>.Mul(a, b[j]));
+                        }
                     }
                 }
             }
