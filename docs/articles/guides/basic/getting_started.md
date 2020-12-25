@@ -7,7 +7,7 @@ In this Basic section of Guides we will cover all general operations with matrix
 Create new console application and install the [MatrixDotNet](https://www.nuget.org/packages/MatrixDotNet/) NuGet package. We support:
 
 * Projects: classic and modern with PackageReferences
-* Runtimes: .NETStandard 2.1
+* Runtimes: .NETStandard 2.1 .NET Core 3.1+ 
 * OS: Windows, Linux, MacOS
 * Languages: C#
 

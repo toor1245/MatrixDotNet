@@ -7,7 +7,7 @@ namespace MatrixDotNet.Extensions.Decompositions
 {
     public static partial class Decomposition
     {
-        public static void ShurDecomposition(this Matrix<double> matrix,
+        public static void SchurDecomposition(this Matrix<double> matrix,
             out Matrix<double> orthogonal,
             out Matrix<double> upper,
             out Matrix<double> ortTranspose)

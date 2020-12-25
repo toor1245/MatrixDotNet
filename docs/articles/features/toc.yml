@@ -1,8 +1,2 @@
-- name: MatrixDotNet
-  href: main/toc.yml
-  
-- name: MatrixDotNet.Math
-  href: math/toc.yml
-  
-- name: MatrixDotNet.Core
-  href: core/toc.yml
+- name: Absorption
+  href: absorption.md

@@ -4,7 +4,7 @@ Conversion of matrix consist in `MatrixDotNet.Extensions.Conversion` which conta
 ### How change size of Matrix?
 
 ##### Lets consider the following sample.
-In this sample i`ll demonstrate how you can add column or row in any position of matrix and reduce them.
+In this sample demonstrates how you can add column or row in any position of matrix and reduce them.
 
 ```c#
 using System;
@@ -107,38 +107,5 @@ Number of columns: 6
   2727  |  167  |  464  |  2727  |  167  |  464  |
   2758  |  198  |  495  |  2758  |  198  |  495  |
 ```
-
-### How to cast matrix to two-dimensional array?
-
-```c#
-using System;
-using MatrixDotNet;
-using MatrixDotNet.Extensions;
-using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Conversion;
-
-namespace Sample {
-
-    public class ConverterSample()
-    {
-        public static void CastRun()
-        {
-            // Build matrix.
-            Matrix<int> matrixA = BuildMatrix.Build(3,3,
-                (x, y) => x + y * y,
-                new[] { 43, 23, 54 },
-                new[] { 52, 12, 21 });
-            
-            // If you want cast Matrix to two-dimensional
-            // array use method ToPrimitive.
-            int[,] array = matrixA.ToPrimitive();
-            
-            // Converts two-dimensional array to Matrix.
-            var matrixB = array.ToMatrix();
-        }
-    }
-}
-``` 
-As you can see for convert matrix to two-dimensional array you can easily use method `ToPrimitive`.
-
-##### If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
+> [!NOTE]
+> If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
