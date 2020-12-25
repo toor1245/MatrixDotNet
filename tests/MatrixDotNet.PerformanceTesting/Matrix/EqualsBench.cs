@@ -1,5 +1,3 @@
-using System;
-using System.Linq;
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.NotStableFeatures;

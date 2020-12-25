@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.NetCore.Simd;
+using MatrixDotNet.Extensions.Performance.Simd;
 
 namespace MatrixDotNet.PerformanceTesting.MathExtension
 {
@@ -15,12 +15,6 @@ namespace MatrixDotNet.PerformanceTesting.MathExtension
         {
             _matrix1 = BuildMatrix.RandomDouble(128, 128, 1, 123);
             _matrix2 = BuildMatrix.RandomDouble(128, 128, 1, 123);
-        }
-
-        [Benchmark]
-        public Matrix<double> AddUnsafe()
-        {
-            return Matrix<double>.Plus(_matrix1,_matrix2);
         }
         
         [Benchmark]

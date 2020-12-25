@@ -1,7 +1,7 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.NetCore.Simd;
+using MatrixDotNet.Extensions.Performance.Simd;
 
 namespace MatrixDotNet.PerformanceTesting.Matrix
 {

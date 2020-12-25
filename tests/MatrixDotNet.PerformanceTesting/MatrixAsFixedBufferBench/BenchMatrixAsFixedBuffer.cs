@@ -1,6 +1,5 @@
 using BenchmarkDotNet.Attributes;
-using MatrixDotNet.Extensions.Performance.Operations;
-using MatrixDotNet.NetCore;
+using MatrixDotNet.Extensions.Performance;
 
 namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
 {
@@ -21,16 +20,10 @@ namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
             _matrix = new Matrix<double>(80,80,5);
         }
         
-        // [Benchmark]
+        [Benchmark]
         public Matrix<double> AddDefault()
         {
             return _matrix + _matrix;
-        }
-
-        // [Benchmark]
-        public Matrix<double> AddUnsafe()
-        {
-            return Optimization.Add(_matrix, _matrix);
         }
         
 
