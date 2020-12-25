@@ -25,7 +25,8 @@ Matrix<int> b = new Matrix<int>(35, 35);
 Matrix<int> c = Optimization.Multiply(a, b);
 ```
 
-> [!NOTE] For now supported int and double data type. 
+> [!NOTE] 
+> For now supported int and double data type. 
 
 ### Strassen's multiplication
 In linear algebra, the Strassen algorithm, named after Volker Strassen, 
@@ -46,7 +47,8 @@ Matrix<int> b = new Matrix<int>(1024, 1024);
 Matrix<int> c = Optimization.MultiplyStrassen(a, b);
 ```
 
-> [!NOTE] for more information about Strassen's multiplication you can move to [Strassen algorithm](https://en.wikipedia.org/wiki/Strassen_algorithm)
+> [!NOTE] 
+> for more information about Strassen's multiplication you can move to [Strassen algorithm](https://en.wikipedia.org/wiki/Strassen_algorithm)
 
 ### BlockX16 multiplication
 It is multiplication works with simd and significant faster than all multiplication above, however it can be used only when matrix is square and have 
