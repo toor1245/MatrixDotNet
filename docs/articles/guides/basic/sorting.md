@@ -2,7 +2,7 @@
 
 #### Lets consider how in MatrixDotNet can sort matrix.
 
-Sorting of matrix consist in `MatrixDotNet.Extensions.Sorting`. Also we will use `MatrixDotNet.Extensions.Builder` which contains static class `BuildMatrix` for 
+Sorting of matrix consist in `MatrixDotNet.Extensions.Sorting`. Also we will use `MatrixDotNet.Extensions.Builder` which contains static class `BuildMatrix`
 to simplify matrix creation.
 
 ```c#
