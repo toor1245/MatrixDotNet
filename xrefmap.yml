@@ -916,22 +916,22 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Decompositions.Decomposition.QrDecomposition(Of T)(MatrixDotNet.Matrix(Of T), ByRef MatrixDotNet.Matrix(Of T), ByRef MatrixDotNet.Matrix(Of T))
   nameWithType: Decomposition.QrDecomposition<T>(Matrix<T>, out Matrix<T>, out Matrix<T>)
   nameWithType.vb: Decomposition.QrDecomposition(Of T)(Matrix(Of T), ByRef Matrix(Of T), ByRef Matrix(Of T))
-- uid: MatrixDotNet.Extensions.Decompositions.Decomposition.ShurDecomposition(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double}@,MatrixDotNet.Matrix{System.Double}@,MatrixDotNet.Matrix{System.Double}@)
-  name: ShurDecomposition(Matrix<Double>, out Matrix<Double>, out Matrix<Double>, out Matrix<Double>)
-  href: api/MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_ShurDecomposition_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double___MatrixDotNet_Matrix_System_Double___MatrixDotNet_Matrix_System_Double___
-  commentId: M:MatrixDotNet.Extensions.Decompositions.Decomposition.ShurDecomposition(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double}@,MatrixDotNet.Matrix{System.Double}@,MatrixDotNet.Matrix{System.Double}@)
-  name.vb: ShurDecomposition(Matrix(Of Double), ByRef Matrix(Of Double), ByRef Matrix(Of Double), ByRef Matrix(Of Double))
-  fullName: MatrixDotNet.Extensions.Decompositions.Decomposition.ShurDecomposition(MatrixDotNet.Matrix<System.Double>, out MatrixDotNet.Matrix<System.Double>, out MatrixDotNet.Matrix<System.Double>, out MatrixDotNet.Matrix<System.Double>)
-  fullName.vb: MatrixDotNet.Extensions.Decompositions.Decomposition.ShurDecomposition(MatrixDotNet.Matrix(Of System.Double), ByRef MatrixDotNet.Matrix(Of System.Double), ByRef MatrixDotNet.Matrix(Of System.Double), ByRef MatrixDotNet.Matrix(Of System.Double))
-  nameWithType: Decomposition.ShurDecomposition(Matrix<Double>, out Matrix<Double>, out Matrix<Double>, out Matrix<Double>)
-  nameWithType.vb: Decomposition.ShurDecomposition(Matrix(Of Double), ByRef Matrix(Of Double), ByRef Matrix(Of Double), ByRef Matrix(Of Double))
-- uid: MatrixDotNet.Extensions.Decompositions.Decomposition.ShurDecomposition*
-  name: ShurDecomposition
-  href: api/MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_ShurDecomposition_
-  commentId: Overload:MatrixDotNet.Extensions.Decompositions.Decomposition.ShurDecomposition
+- uid: MatrixDotNet.Extensions.Decompositions.Decomposition.SchurDecomposition(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double}@,MatrixDotNet.Matrix{System.Double}@,MatrixDotNet.Matrix{System.Double}@)
+  name: SchurDecomposition(Matrix<Double>, out Matrix<Double>, out Matrix<Double>, out Matrix<Double>)
+  href: api/MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_SchurDecomposition_MatrixDotNet_Matrix_System_Double__MatrixDotNet_Matrix_System_Double___MatrixDotNet_Matrix_System_Double___MatrixDotNet_Matrix_System_Double___
+  commentId: M:MatrixDotNet.Extensions.Decompositions.Decomposition.SchurDecomposition(MatrixDotNet.Matrix{System.Double},MatrixDotNet.Matrix{System.Double}@,MatrixDotNet.Matrix{System.Double}@,MatrixDotNet.Matrix{System.Double}@)
+  name.vb: SchurDecomposition(Matrix(Of Double), ByRef Matrix(Of Double), ByRef Matrix(Of Double), ByRef Matrix(Of Double))
+  fullName: MatrixDotNet.Extensions.Decompositions.Decomposition.SchurDecomposition(MatrixDotNet.Matrix<System.Double>, out MatrixDotNet.Matrix<System.Double>, out MatrixDotNet.Matrix<System.Double>, out MatrixDotNet.Matrix<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Decompositions.Decomposition.SchurDecomposition(MatrixDotNet.Matrix(Of System.Double), ByRef MatrixDotNet.Matrix(Of System.Double), ByRef MatrixDotNet.Matrix(Of System.Double), ByRef MatrixDotNet.Matrix(Of System.Double))
+  nameWithType: Decomposition.SchurDecomposition(Matrix<Double>, out Matrix<Double>, out Matrix<Double>, out Matrix<Double>)
+  nameWithType.vb: Decomposition.SchurDecomposition(Matrix(Of Double), ByRef Matrix(Of Double), ByRef Matrix(Of Double), ByRef Matrix(Of Double))
+- uid: MatrixDotNet.Extensions.Decompositions.Decomposition.SchurDecomposition*
+  name: SchurDecomposition
+  href: api/MatrixDotNet.Extensions.Decompositions.Decomposition.html#MatrixDotNet_Extensions_Decompositions_Decomposition_SchurDecomposition_
+  commentId: Overload:MatrixDotNet.Extensions.Decompositions.Decomposition.SchurDecomposition
   isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Decompositions.Decomposition.ShurDecomposition
-  nameWithType: Decomposition.ShurDecomposition
+  fullName: MatrixDotNet.Extensions.Decompositions.Decomposition.SchurDecomposition
+  nameWithType: Decomposition.SchurDecomposition
 - uid: MatrixDotNet.Extensions.Determinants
   name: MatrixDotNet.Extensions.Determinants
   href: api/MatrixDotNet.Extensions.Determinants.html

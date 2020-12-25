@@ -99,10 +99,8 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="sorting-overview">Sorting overview.</h1>
 
-<h3 id="bubble-sort-in-matrixdotnet">Bubble sort in MatrixDotNet</h3>
-<p>Bubble sort is a simple algorithm of sorting, which effective on small size array. Difficult algorithm - O(n<sup>2</sup>)</p>
 <h4 id="lets-consider-how-in-matrixdotnet-can-sort-matrix">Lets consider how in MatrixDotNet can sort matrix.</h4>
-<p>Sorting of matrix consist in <code>MatrixDotNet.Extensions.Sorting</code>. Also we will use <code>MatrixDotNet.Extensions.Builder</code> which contain static class <code>BuildMatrix</code> for
+<p>Sorting of matrix consist in <code>MatrixDotNet.Extensions.Sorting</code>. Also we will use <code>MatrixDotNet.Extensions.Builder</code> which contains static class <code>BuildMatrix</code>
 to simplify matrix creation.</p>
 <pre><code class="lang-c#">using System;
 using MatrixDotNet;
@@ -116,7 +114,6 @@ namespace Sample
     {
         public static void Run()
         {
-            // Build Matrix available from version 0.0.3+.
             Matrix&lt;int&gt; matrixA = BuildMatrix.Build(5, 5, 
                 (x,y) =&gt; x * x + y,
                 new[] { -1, -232, 3, 4, 5 },
@@ -127,37 +124,23 @@ namespace Sample
             matrixA.Pretty();
             
             // 1. Sorts whole matrix. 
-            matrixA.BubbleSort();
+            matrixA.Sort();
             Console.WriteLine(&quot;Bubble sort MatrixA&quot;);
             matrixA.Pretty();
-            
             
             // Builds Identity matrix.
             Matrix&lt;int&gt; matrixE = BuildMatrix.CreateIdentityMatrix&lt;int&gt;(4,4);
             
-            
             // 2. Sorts all rows of matrix.
-            matrixE.BubbleSortByRows();
+            matrixE.SortByRows();
             Console.WriteLine(&quot;Sorts matrixE by rows:&quot;);
             matrixE.Pretty();
             
             
             // 3. Sorts all columns of matrix.
-            matrixE.BubbleSortByColumn();
+            matrixE.SortByColumns();
             Console.WriteLine(&quot;Sorts matrixE by columns:&quot;);
             matrixE.Pretty();
-            
-            
-            // 3. Sorts main diagonal of matrix.
-            matrixA.BubbleSortMainDiagonal();
-            Console.WriteLine(&quot;Sorts main diagonal of matrixA:&quot;);
-            matrixA.Pretty();
-            
-            
-            // 4. Sorts minor diagonal of matrix.
-            matrixA.BubbleSortMinorDiagonal();
-            Console.WriteLine(&quot;Sorts minor diagonal of matrixA:&quot;);
-            matrixA.Pretty();
         }
     }
 }
@@ -204,34 +187,11 @@ Number of columns: 4
   0  |  0  |  0  |  1  |
   0  |  0  |  0  |  1  |
   0  |  0  |  0  |  1  |
-
-Sorts main diagonal of matrixA:
-
-Number of rows: 5
-Number of columns: 5
-
-  -8     |  -5     |  -4     |  0      |  3      |
-  4      |  7      |  10     |  11     |  13     |
-  16     |  19     |  20     |  21     |  28     |
-  37     |  133    |  141    |  148    |  157    |
-  53815  |  53818  |  53819  |  53836  |  53956  |
-
-Sorts minor diagonal of matrixA:
-
-Number of rows: 5
-Number of columns: 5
-
-  -8     |  -5     |  -4     |  0      |  3      |
-  4      |  7      |  10     |  11     |  13     |
-  16     |  19     |  20     |  21     |  28     |
-  37     |  133    |  141    |  148    |  157    |
-  53815  |  53818  |  53819  |  53836  |  53956  |
 </code></pre>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Now at the moment from version 0.0.3 <code>MatrixDotNet</code> only support bubble sort.</p>
+<p>If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</p>
 </div>
-<h5 id="if-you-didnt-find-answer-for-your-question-on-this-page-ask-it-on-gitter">If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</h5>
 </article>
           </div>
           

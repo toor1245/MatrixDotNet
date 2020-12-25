@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Overview | MatrixDotNet </title>
+    <title>Vector overview | MatrixDotNet </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Overview | MatrixDotNet ">
+    <meta name="title" content="Vector overview | MatrixDotNet ">
     <meta name="generator" content="docfx 2.56.6.0">
     
     <meta property="docfx:navrel" content="../../../toc.html">
@@ -97,8 +97,134 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="overview">Overview</h1>
+<h1 id="vector-overview">Vector overview</h1>
 
+<p>Vector is just serial data which have many math operations under primitive array.</p>
+<p>Let's consider the following sample which demonstrates how to create vector.</p>
+<pre><code class="lang-csharp" name="VectorSimpleOperationsDocs.cs">using System.Text;
+using MatrixDotNet;
+using MatrixDotNet.Vectorization;
+
+namespace Samples.logs.CreateVectorSample
+{
+    public class CreateVectorSampleDocs
+    {
+
+        // Below you can see all ways how to create vector in explicit and implicit form
+        public static void Run()
+        {
+
+            // basic approach for create matrix just pass length of vector
+            Vector&lt;int&gt; va = new Vector&lt;int&gt;(5);
+
+            // init vector with fill values.
+            Vector&lt;int&gt; vb = new Vector&lt;int&gt;(5, 5);
+
+            // third way is implicit assign array.
+            Vector&lt;int&gt; vc = new[] { 1, 2, 3, 4, 5 };
+        }
+    }
+}
+
+</code></pre>
+<blockquote>
+<p><a href="https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/VectorSamples/CreateVectorSample.cs">SimpleOperations.cs</a></p>
+</blockquote>
+<h5 id="output">Output</h5>
+<pre><code class="lang-csharp" name="Run">&lt;0,0,0,0,0&gt;
+
+&lt;5,5,5,5,5&gt;
+
+&lt;1,2,3,4,5&gt;
+
+
+</code></pre><h4 id="routine-operations-with-vector">Routine operations with <code>Vector</code></h4>
+<p>So let's consider <code>Vector</code> operations as well as in <code>Matrix</code></p>
+<pre><code class="lang-csharp" name="VectorSimpleOperationsDocs.cs">using System.Text;
+using MatrixDotNet;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Vectorization;
+
+namespace Samples.logs.VectorSimpleOperations
+{
+    public class VectorSimpleOperationsDocs
+    {
+
+        // Below you can see all ways how to execute routine operations with vector.
+        public static void Run()
+        {
+
+            // init vector va with fill three value.
+            Vector&lt;int&gt; va = new Vector&lt;int&gt;(5,3);
+
+            // init vector vb.
+            Vector&lt;int&gt; vb = new[] { 1, 2, 3, 4, 5 };
+
+            // add of two vectors.
+            var vc = vb + va;
+
+            // multiply vectors on constant.
+            var vk = 5 * vc;
+
+            // subtract of two vectors.
+            var vd = vk - vc;
+
+            // subtract of two vectors.
+            var ve = vd - vk;
+
+            // multiply vectors on constant.
+            var vg = ve * vc;
+
+            // multiply vector on matrix and vice versa
+            Matrix&lt;int&gt; ma = BuildMatrix.RandomInt(5, 5, -10, 10);
+            var vq = ma * ve;
+            var vt = ve * ma;
+        }
+    }
+}
+
+</code></pre>
+<blockquote>
+<p><a href="https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/VectorSamples/VectorSimpleOperations.cs">SimpleOperations.cs</a></p>
+</blockquote>
+<h5 id="output-1">Output</h5>
+<pre><code class="lang-csharp" name="Run">&lt;0,0,0,0,0&gt;
+
+&lt;5,5,5,5,5&gt;
+
+&lt;1,2,3,4,5&gt;
+
+
+</code></pre><h3 id="tensor-product">Tensor product</h3>
+<p>In mathematics, the tensor product V xor W of two vector spaces V and W is a vector space, endowed with a bilinear map from the Cartesian product.</p>
+<p><code>TensorProduct</code> method computes the Tensor product, which located in <code>VectorExtension</code></p>
+<pre><code class="lang-c#">Vector&lt;int&gt; a = new int[] { 1, 2, 3 };
+Vector&lt;int&gt; b = new int[] { 2, 3, 4 };
+VectorExtension.TensorProduct(a, b);
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p><a href="https://en.wikipedia.org/wiki/Tensor_product#Evaluation_map_and_tensor_contraction">Tensor Product</a></p>
+</div>
+<h3 id="distance-coordinate-of-vector-between-of-two-points">Distance coordinate of vector between of two points</h3>
+<p>for calculating coordinate of vector between of two points uses method <code>VectorExtension.GetDistancePoint</code></p>
+<pre><code class="lang-c#">Vector&lt;int&gt; a = new int[] { 1, 2, 3 };
+Vector&lt;int&gt; b = new int[] { 2, 3, 4 };
+VectorExtension.GetDistancePoint(a, b);
+</code></pre>
+<p>for calculating direct of vector intended method <code>GetDirectCos</code>:</p>
+<pre><code class="lang-c#">Vector&lt;int&gt; a = new int[] { 1, 2, 3 };
+VectorExtension.GetDirectCos(a);
+</code></pre>
+<p>and by coordinates</p>
+<pre><code class="lang-c#">Vector&lt;int&gt; a = new int[] { 1, 2, 3 };
+Vector&lt;int&gt; b = new int[] { 2, 3, 4 };
+VectorExtension.GetDirectCos(a);
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</p>
+</div>
 </article>
           </div>
           
@@ -107,7 +233,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/determinant/getting_started.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/basic/vector.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

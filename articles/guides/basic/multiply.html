@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title> | MatrixDotNet </title>
+    <title>Multiplication of matrices overview | MatrixDotNet </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content=" | MatrixDotNet ">
+    <meta name="title" content="Multiplication of matrices overview | MatrixDotNet ">
     <meta name="generator" content="docfx 2.56.6.0">
     
     <meta property="docfx:navrel" content="../../../toc.html">
@@ -97,7 +97,116 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
+<h1 id="multiplication-of-matrices-overview">Multiplication of matrices overview</h1>
 
+<p>In this section we consider ways multiplication of matrix and measure it on performance and will make conclusion.</p>
+<p>MatrixDotNet have ways multiplications:</p>
+<ul>
+<li>Default multiplication</li>
+<li>Strassen multiplication</li>
+<li>BlockX16 multiplication</li>
+</ul>
+<h3 id="multiplication-with-happen-overload-operator">Multiplication with happen overload operator</h3>
+<p>For default multiplication need just to use overload operator <code>*</code></p>
+<pre><code class="lang-c#">Matrix&lt;int&gt; a = new Matrix&lt;int&gt;(5, 5);
+Matrix&lt;int&gt; b = new Matrix&lt;int&gt;(5, 5);
+Matrix&lt;int&gt; c = a * b;
+</code></pre>
+<p>It is the better way to use multiplication for readable.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For now supported int and double data type.</p>
+</div>
+<h3 id="strassens-multiplication">Strassen's multiplication</h3>
+<p>In linear algebra, the Strassen algorithm, named after Volker Strassen,
+is an algorithm for matrix multiplication.
+It is faster than the standard matrix multiplication algorithm and is useful in practice for large matrices,
+but would be slower than the fastest known algorithms for extremely large matrices.</p>
+<p>Asymptotic complexity:</p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/511e64be8e75258905f4b3c61d73de72080e643c" alt=""></p>
+<p>If you have matrix with big size and matrix is square and prime (n / 2), you can use method <code>MultiplyStrassen</code>
+which located in <code>MatrixDotNet.Extensions.Performance.Operations</code></p>
+<pre><code class="lang-c#">Matrix&lt;int&gt; a = new Matrix&lt;int&gt;(1024, 1024);
+Matrix&lt;int&gt; b = new Matrix&lt;int&gt;(1024, 1024);
+Matrix&lt;int&gt; c = Optimization.MultiplyStrassen(a, b);
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>for more information about Strassen's multiplication you can move to <a href="https://en.wikipedia.org/wiki/Strassen_algorithm">Strassen algorithm</a></p>
+</div>
+<h3 id="blockx16-multiplication">BlockX16 multiplication</h3>
+<p>It is multiplication works with simd and significant faster than all multiplication above, however it can be used only when matrix is square and have
+size of matrix multiply of 16. So for using blockX16 mul intended method 'Simd.BlockMultiply'</p>
+<pre><code class="lang-c#">Matrix&lt;float&gt; a = new Matrix&lt;float&gt;(32, 32);
+Matrix&lt;float&gt; b = new Matrix&lt;float&gt;(32, 32);
+Matrix&lt;float&gt; c = Optimization.BlockMultiply(a, b);
+</code></pre>
+<h3 id="benchmark-for-comparing-multiplication-of-matrix">Benchmark for comparing multiplication of matrix</h3>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>It looks like the sample you are looking for does not exist.</p>
+</div>
+<pre><code class="lang-ini">BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1110 (1909/November2018Update/19H2)
+Intel Core i7-9700 CPU 3.00GHz, 1 CPU, 8 logical and 8 physical cores
+.NET Core SDK=5.0.100
+[Host]     : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+DefaultJob : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Size</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Ratio</th>
+<th style="text-align: right;">RatioSD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StrassenParallel</td>
+<td>1024</td>
+<td style="text-align: right;">106.3 ms</td>
+<td style="text-align: right;">2.07 ms</td>
+<td style="text-align: right;">1.93 ms</td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.01</td>
+</tr>
+<tr>
+<td>Strassen</td>
+<td>1024</td>
+<td style="text-align: right;">447.4 ms</td>
+<td style="text-align: right;">3.85 ms</td>
+<td style="text-align: right;">3.60 ms</td>
+<td style="text-align: right;">0.84</td>
+<td style="text-align: right;">0.02</td>
+</tr>
+<tr>
+<td>BlockMultiply</td>
+<td>1024</td>
+<td style="text-align: right;">118.2 ms</td>
+<td style="text-align: right;">2.27 ms</td>
+<td style="text-align: right;">2.61 ms</td>
+<td style="text-align: right;">0.22</td>
+<td style="text-align: right;">0.01</td>
+</tr>
+<tr>
+<td>Default</td>
+<td>1024</td>
+<td style="text-align: right;">535.9 ms</td>
+<td style="text-align: right;">10.61 ms</td>
+<td style="text-align: right;">10.89 ms</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</p>
+</div>
 </article>
           </div>
           
@@ -106,7 +215,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/criteries/getting_started.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/basic/multiply.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

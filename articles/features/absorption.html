@@ -10,18 +10,18 @@
     <meta name="title" content="Summation Kahan and Klein overview. | MatrixDotNet ">
     <meta name="generator" content="docfx 2.56.6.0">
     
-    <meta property="docfx:navrel" content="../../../toc.html">
-    <meta property="docfx:tocrel" content="../../toc.html">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
   
-    <link rel="shortcut icon" href="../../../images/logo/matrix.ico">
+    <link rel="shortcut icon" href="../../images/logo/matrix.ico">
     
-    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../../styles/docfx.css">
-    <link rel="stylesheet" href="../../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
     
-    <link id="hljs-stylesheet" rel="stylesheet" href="../../../styles/hljs/vs-dark.css">
+    <link id="hljs-stylesheet" rel="stylesheet" href="../../styles/hljs/vs-dark.css">
     
-    <script type="text/javascript" src="../../../styles/theme.js"></script>
+    <script type="text/javascript" src="../../styles/theme.js"></script>
     <script>
       if(window.localStorage.getItem("theme") === "light") {
         setLightTheme();
@@ -33,7 +33,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   
     
-    <meta property="docfx:rel" content="../../../">
+    <meta property="docfx:rel" content="../../">
     
   </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
@@ -49,8 +49,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../../../index.html">
-                <img id="logo" class="svg" src="../../../images/logo/matrix.svg" alt="">
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/logo/matrix.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -167,78 +167,18 @@ IEEE 754 notation:</p>
 <li>a<sup>x + y</sup> ≠ a<sup>x</sup> * a<sup>y</sup></li>
 </ul>
 <h5 id="lets-consider-the-following-sample">Lets consider the following sample:</h5>
-<pre><code class="lang-csharp" name="AbsorptionSample.cs">using System;
-using System.Text;
-using MatrixDotNet;
-using MatrixDotNet.Extensions;
-
-namespace Samples.logs.AbsorptionSample
-{
-    public class AbsorptionSampleDocs
-    {
-        public static void Run()
-        {
-
-            // initialize Matrix.
-            Matrix&lt;double&gt; matrix64Klein = new double[5, 5];
-            Matrix&lt;double&gt; matrix64Kahan = new double[5, 5];
-            Matrix&lt;decimal&gt; matrix128 = new decimal[5, 5];
-
-            // assign max value for demonstration absorption.
-            matrix64Kahan[0, 0] = Math.Pow(10,16);
-            matrix64Klein[0, 0] = Math.Pow(10,16);
-            matrix128[0, 0] = (decimal) Math.Pow(10,28);
-
-            // make error
-            for (int i = 0; i &lt; matrix64Klein.Rows; i++)
-            {
-                for (int j = 1; j &lt; matrix64Klein.Columns; j++)
-                {
-                    matrix64Kahan[i, j] = 1;
-                    matrix64Klein[i, j] = 0.1;
-                    matrix128[i, j] = 0.1m;
-                }
-            }
-
-            // compare algorithms of summation first case
-            double defaultSum0 = matrix64Kahan.Sum();
-            double kahanSum0 = matrix64Kahan.GetKahanSum();
-            double kleinSum0 = matrix64Kahan.GetKleinSum();
-
-            // compare algorithms of summation second case
-            double defaultSum1 = matrix64Klein.Sum();
-            double kahanSum1 = matrix64Klein.GetKahanSum();
-            double kleinSum1 = matrix64Klein.GetKleinSum();
-
-            // compare algorithms of summation third case
-            decimal defaultSum2 = matrix128.Sum();
-            decimal kahanSum2 = matrix128.GetKahanSum();
-            decimal kleinSum2 = matrix128.GetKleinSum();
-        }
-    }
-}
-
-</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>It looks like the sample you are looking for does not exist.</p>
+</div>
 <p>As you can see we have three matrix with 64 and 128 bit, so next step assign max values for this matrices for demonstration hit in absorption.
 For invoke Klein's or Kahan's algorithm must invoke method <code>GetKahanSum()</code> and <code>GetKleinSum()</code><br>
 Klein's algorithm have the most accuracy summation of matrix than Kahan's, however if values not big you can use Kahan's algorithm.</p>
 <h4 id="output">Output</h4>
-<pre><code class="lang-csharp" name="AbsorptionSample.cs">        64 bit
-Default sum: 10,000,000,000,000,000.00
-Kahan sum:   10,000,000,000,000,020.00
-Klein sum:   10,000,000,000,000,020.00
-
-        64 bit
-Default sum: 10,000,000,000,000,000.00
-Kahan sum:   10,000,000,000,000,000.00
-Klein sum:   10,000,000,000,000,002.00
-
-        128 bit
-Default sum: 10,000,000,000,000,000,000,000,000,000.00
-Default sum: 10,000,000,000,000,000,000,000,000,000.00
-Klein sum:   10,000,000,000,000,000,000,000,000,002.00
-
-</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>It looks like the sample you are looking for does not exist.</p>
+</div>
 <p>Thus, the default sum counts incorrectly, the runtime rounds it because the floating type precision is not enough to handle digit numbers.
 Klein calculates with less error, but at the same time it works slower than Kahan.</p>
 <div class="NOTE">
@@ -253,7 +193,7 @@ Klein calculates with less error, but at the same time it works slower than Kaha
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/features/main/absorption.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/features/absorption.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -280,9 +220,9 @@ Klein calculates with less error, but at the same time it works slower than Kaha
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </body>
 </html>

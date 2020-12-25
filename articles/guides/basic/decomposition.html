@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Decomposition overview | MatrixDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Decomposition overview | MatrixDotNet ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+  
+    <link rel="shortcut icon" href="../../../images/logo/matrix.ico">
+    
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    
+    <link id="hljs-stylesheet" rel="stylesheet" href="../../../styles/hljs/vs-dark.css">
+    
+    <script type="text/javascript" src="../../../styles/theme.js"></script>
+    <script>
+      if(window.localStorage.getItem("theme") === "light") {
+        setLightTheme();
+      }
+      else setDarkTheme();
+      document.addEventListener('DOMContentLoaded', setIcons, false);
+    </script>
+  
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo/matrix.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <div class="navbar-right">
+                <div class="navbar-buttons">
+                  <a onclick="changeColorTheme();"><i id="lightbulb" class="far fa-lightbulb"></i></a>
+                </div>
+                <form class="navbar-form" role="search" id="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="fas fa-spinner index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="decomposition-overview">Decomposition overview</h1>
+
+<p>In many applications, it is useful to decompose a matrix using other representations.
+All decompositions available in namespace <code>MatrixDotNet.Extensions.Decomposition</code>.
+So lets consider decompositions which supported by MatrixDotNet.</p>
+<h3 id="lu-decomposition">LU decomposition</h3>
+<p>The LU decomposition finds a representation for the square matrix A as:</p>
+<h5> A = LU</h5>
+<ul>
+<li>where L is lower-triangular matrix <code>n x n</code></li>
+<li>where U is upper-triangular matrix <code>n x n</code></li>
+</ul>
+<p>for example lets take matrix size <code>3 x 3</code></p>
+<p><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d536704df4f1374607bef1519ce452a28ea4a03a" alt="example"></p>
+<p>Without a proper ordering or permutations in the matrix, the factorization may fail to materialize. For example, it is easy to verify (by expanding the matrix multiplication) that a<sub>11</sub> = l<sub>11</sub> * u<sub>11</sub>
+If a<sub>11</sub> = 0, then at least one of  l<sub>11</sub> and u<sub>11</sub>  has to be zero, which implies that either <code>L</code> or <code>U</code> is singular.  This is impossible if A is nonsingular (invertible). This is a procedural problem. It can be removed by simply reordering the rows of <code>A</code> so that the first element of the permuted matrix is nonzero.
+The same problem in subsequent factorization steps can be removed the same way.</p>
+<p>Lets see LU factorization in <code>MatrixDotNet</code></p>
+<pre><code class="lang-c#">public class LUSample
+{
+    public static void Run()
+    {
+        // initialize matrix with random values.
+        Matrix&lt;double&gt; matrix = BuildMatrix.Random(5, 5, -10, 10);
+        
+        // display matrix.
+        matrix.Pretty();
+        
+        // LU decomposition.
+        matrix.GetLowerUpper(out var lower,out var upper);
+        
+        // display lower-triangular matrix.
+        Console.WriteLine(&quot;lower-triangular matrix&quot;);
+        lower.Pretty();
+        
+        // display upper-triangular matrix.
+        Console.WriteLine(&quot;upper-triangular matrix&quot;);
+        upper.Pretty();
+        
+        // A = LU
+        Console.WriteLine(&quot;A = LU&quot;);
+        Console.WriteLine(lower * upper);
+    }
+}
+</code></pre>
+<h6 id="output">Output</h6>
+<pre><code class="lang-ini">
+Number of rows: 5
+Number of columns: 5
+
+
+  -8,00  |  9,00   |  -3,00  |  2,00   |  6,00   |
+  7,00   |  -6,00  |  -5,00  |  -9,00  |  6,00   |
+  5,00   |  4,00   |  6,00   |  -1,00  |  -9,00  |
+  -4,00  |  3,00   |  -8,00  |  -9,00  |  5,00   |
+  6,00   |  0,00   |  3,00   |  3,00   |  8,00   |
+
+lower-triangular matrix
+Number of rows: 5
+Number of columns: 5
+
+
+  1,00   |  0,00   |  0,00   |  0,00   |  0,00  |
+  -0,88  |  1,00   |  0,00   |  0,00   |  0,00  |
+  -0,62  |  5,13   |  1,00   |  0,00   |  0,00  |
+  0,50   |  -0,80  |  -0,29  |  1,00   |  0,00  |
+  -0,75  |  3,60   |  0,65   |  -1,26  |  1,00  |
+
+upper-triangular matrix
+Number of rows: 5
+Number of columns: 5
+
+
+  -8,00  |  9,00  |  -3,00  |  2,00   |  6,00    |
+  0,00   |  1,88  |  -7,62  |  -7,25  |  11,25   |
+  0,00   |  0,00  |  43,27  |  37,47  |  -63,00  |
+  0,00   |  0,00  |  0,00   |  -4,89  |  -7,35   |
+  0,00   |  0,00  |  0,00   |  0,00   |  3,77    |
+
+A = LU
+
+  -8,00  |  9,00   |  -3,00  |  2,00   |  6,00   |
+  7,00   |  -6,00  |  -5,00  |  -9,00  |  6,00   |
+  5,00   |  4,00   |  6,00   |  -1,00  |  -9,00  |
+  -4,00  |  3,00   |  -8,00  |  -9,00  |  5,00   |
+  6,00   |  0,00   |  3,00   |  3,00   |  8,00   |
+
+</code></pre>
+<h3 id="lup-decomposition">LUP decomposition</h3>
+<p>It turns out that a proper permutation in rows (or columns) is sufficient for LU factorization. LU factorization with partial pivoting (LUP) refers often to LU factorization with row permutations only:</p>
+<h5>PA = LU</h5>
+<p>where L and U are again lower and upper triangular matrices, and P is a permutation matrix, which, when left-multiplied to A, reorders the rows of A. It turns out that all square matrices can be factorized in this form, and the factorization is numerically stable in practice.This makes LUP decomposition a useful technique in practice.</p>
+<pre><code class="lang-c#">public class LUPSample
+{
+    public static void Run()
+    {
+        // initialize matrix with random values.
+        Matrix&lt;double&gt; matrix = BuildMatrix.Random(3, 3, -10, 10);
+        
+        // display matrix.
+        matrix.Pretty();
+        
+        // LU decomposition.
+        matrix.GetLowerUpperPermutation(out var lower,out var upper,out var perm);
+        
+        // Gets permutation matrix and C = L + U - E.
+        matrix.GetLowerUpperPermutation(out var matrixC,out var matrixP);
+        
+        // display lower-triangular matrix.
+        Console.WriteLine(&quot;lower-triangular matrix&quot;);
+        lower.Pretty();
+        
+        // display upper-triangular matrix.
+        Console.WriteLine(&quot;upper-triangular matrix&quot;);
+        upper.Pretty();
+        
+        // display permutation matrix.
+        Console.WriteLine(&quot;permutation matrix&quot;);
+        perm.Pretty();
+        
+        // display matrix C
+        Console.WriteLine(&quot;matrix C = L + U - E&quot;);
+        matrixC.Pretty();
+    }
+}
+
+</code></pre>
+<h6 id="output-1">Output</h6>
+<pre><code class="lang-ini">Number of rows: 3
+Number of columns: 3
+
+  -8,00  |  -6,00  |  -1,00  |
+  5,00   |  6,00   |  6,00   |
+  -1,00  |  -2,00  |  -5,00  |
+
+lower-triangular matrix
+Number of rows: 3
+Number of columns: 3
+
+  1,00   |  0,00   |  0,00  |
+  -0,62  |  1,00   |  0,00  |
+  0,12   |  -1,80  |  1,00  |
+
+upper-triangular matrix
+Number of rows: 3
+Number of columns: 3
+
+  -8,00  |  -6,00  |  -1,00  |
+  0,00   |  -1,25  |  -4,88  |
+  0,00   |  0,00   |  -3,40  |
+
+permutation matrix
+Number of rows: 3
+Number of columns: 3
+
+  1,00  |  0,00  |  0,00  |
+  0,00  |  0,00  |  1,00  |
+  0,00  |  1,00  |  0,00  |
+
+matrix C = L + U - E
+Number of rows: 3
+Number of columns: 3
+
+
+  -8,00  |  -6,00  |  -1,00  |
+  5,00   |  6,00   |  6,00   |
+  -1,00  |  -0,33  |  -3,00  |
+</code></pre>
+<h3 id="cholesky-decomposition">Cholesky decomposition</h3>
+<p>Cholesky decomposition is a special case of LU decomposition applicable to Hermitian positive definite matrices. When
+A = A<sup>H</sup> and x<sup>H</sup>Ax &gt;= 0 for all x, then decompositions of A can be found:</p>
+<p>A = U<sup>H</sup> U</p>
+<p>A = L L<sup>H</sup></p>
+<p>where L is lower triangular and U is upper triangular.
+<code>GetCholesky</code> method computes the Cholesky factorization.</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; a = new Matrix&lt;double&gt;(8, 8);
+a.GetCholesky(out var lower, out var transpose);
+</code></pre>
+<p>Or</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; a = new Matrix&lt;double&gt;(8, 8);
+Decomposition.GetCholesky(a, out var lower, out var transpose);
+</code></pre>
+<h3 id="qr-decomposition">QR decomposition</h3>
+<p>The QR decomposition (sometimes called a polar decomposition) works for any M x N array and finds M x M unitary(orthogonal) matrix
+Q and M x N upper-trapezoidal matrix R</p>
+<p>A = QR
+Notice that if the QR of  is known, then the SVD decomposition can be found.</p>
+<p>A = QR = SVD<sup>H</sup></p>
+<p><code>QrDecomposition</code> method computes the QR factorization.</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; a = new Matrix&lt;double&gt;(8, 8);
+a.QrDecomposition(out var q, out var r);
+</code></pre>
+<p>Or</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; a = new Matrix&lt;double&gt;(8, 8);
+Decomposition.QrDecomposition(a, out var q, out var r);
+</code></pre>
+<h3 id="lq-decomposition">LQ decomposition</h3>
+<p>By analog QR you can find LQ factorization:</p>
+<p>A = LQ</p>
+<p><code>LqDecomposition</code> method computes the LQ factorization.</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; a = new Matrix&lt;double&gt;(8, 8);
+a.LqDecomposition(out var l, out var q);
+</code></pre>
+<p>Or</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; a = new Matrix&lt;double&gt;(8, 8);
+Decomposition.LqDecomposition(a, out var l, out var q);
+</code></pre>
+<h3 id="schur-decomposition">Schur Decomposition</h3>
+<p>For a square N x N matrix A, the Schur decomposition finds matrices T and Z:</p>
+<p>A = ZTZ<sup>H<sup><p>
+<p>where Z is a unitary(orthogonal) matrix and T is either upper triangular or quasi upper triangular,
+depending on whether or not a real Schur form or complex Schur form is requested. For a real Schur form both T and Z
+are real-valued when A is real-valued.</p>
+<p><code>SchurDecomposition</code> method computes the Schur factorization.</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; a = new Matrix&lt;double&gt;(8, 8);
+a.SchurDecomposition(out var ort, out var upper, ortTranspose);
+</code></pre>
+<p>Or</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; a = new Matrix&lt;double&gt;(8, 8);
+Decomposition.LqDecomposition(a, out var ort, out var upper, ortTranspose);
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</p>
+</div>
+</sup></sup></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/basic/decomposition.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2020 MatrixDotNet
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>
