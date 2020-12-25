@@ -1,17 +1,5 @@
 - name: Basic
   href: basic/toc.yml
-  
-- name: Criteries
-  href: criteries/toc.yml
-  
-- name: Decomposition
-  href: decomposition/toc.yml
-  
-- name: Determinant
-  href: determinant/toc.yml
-
-- name: Solve
-  href: solve/toc.yml
 
 - name: Statistics
   href: statistics/toc.yml
