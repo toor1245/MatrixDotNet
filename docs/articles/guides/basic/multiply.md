@@ -64,19 +64,20 @@ Matrix<float> c = Optimization.BlockMultiply(a, b);
 
 [!code-csharp[Run](../../../../tests/MatrixDotNet.PerformanceTesting/Matrix/MathOperations/MultTest.cs)]
 
+```ini
 BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1110 (1909/November2018Update/19H2)
 Intel Core i7-9700 CPU 3.00GHz, 1 CPU, 8 logical and 8 physical cores
 .NET Core SDK=5.0.100
 [Host]     : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
 DefaultJob : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+```
 
-|              Method | Size |      Mean |     Error |    StdDev |   Gen 0 |   Gen 1 |   Gen 2 | Allocated |
-|-------------------- |----- |----------:|----------:|----------:|--------:|--------:|--------:|----------:|
-|             Default |  512 | 728.33 ms | 14.198 ms | 25.961 ms |       - |       - |       - |      2 MB |
-| OptimizationDefault |  512 |  78.19 ms |  1.447 ms |  1.981 ms |       - |       - |       - |      2 MB |
-|            Strassen |  512 |  75.71 ms |  0.760 ms |  0.674 ms |       - |       - |       - |      2 MB |
-|            BlockX16 |  512 |  12.22 ms |  0.158 ms |  0.148 ms | 78.1250 | 78.1250 | 78.1250 |      1 MB |
-
+|           Method | Size |     Mean |    Error |   StdDev | Ratio | RatioSD |
+|----------------- |----- |---------:|---------:|---------:|------:|--------:|
+| StrassenParallel | 1024 | 106.3 ms |  2.07 ms |  1.93 ms |  0.20 |    0.01 |
+|         Strassen | 1024 | 447.4 ms |  3.85 ms |  3.60 ms |  0.84 |    0.02 |
+|    BlockMultiply | 1024 | 118.2 ms |  2.27 ms |  2.61 ms |  0.22 |    0.01 |
+|          Default | 1024 | 535.9 ms | 10.61 ms | 10.89 ms |  1.00 |    0.00 |
 > [!NOTE]
 > If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).
  
