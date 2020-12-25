@@ -16,12 +16,6 @@ namespace MatrixDotNet.PerformanceTesting.MathExtension
             _matrix1 = BuildMatrix.RandomDouble(128, 128, 1, 123);
             _matrix2 = BuildMatrix.RandomDouble(128, 128, 1, 123);
         }
-
-        [Benchmark]
-        public Matrix<double> AddOptimizationUnsafe()
-        {
-            return _matrix1 + _matrix2;
-        }
         
         [Benchmark]
         public Matrix<double> AddSimd()
