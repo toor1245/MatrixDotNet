@@ -16,15 +16,6 @@ Matrix<int> c = a * b;
 ```
 It is the better way to use multiplication for readable.
 
-### Multiplication optimize
-Also in MatrixDotNet exists optimize multiplication which significant faster and soon will be move to overload operator
-
-```c#
-Matrix<int> a = new Matrix<int>(35, 35);
-Matrix<int> b = new Matrix<int>(35, 35);
-Matrix<int> c = Optimization.Multiply(a, b);
-```
-
 > [!NOTE] 
 > For now supported int and double data type. 
 
