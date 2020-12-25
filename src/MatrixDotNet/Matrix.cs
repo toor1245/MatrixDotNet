@@ -270,7 +270,7 @@ namespace MatrixDotNet
                 Span<T> span1 = new Span<T>(pointer1, length);
                 Span<T> span2 = new Span<T>(pointer2, length);
                 Span<T> span3 = new Span<T>(pointer3, length);
-                
+
                 for (int i = 0; i < length; i++)
                 {
                     span3[i] = MathUnsafe<T>.Add(span2[i], span1[i]);
@@ -278,7 +278,7 @@ namespace MatrixDotNet
             }
             return matrix;
         }
-        
+
         /// <summary>
         /// Subtract operation of two matrix.
         /// </summary>
