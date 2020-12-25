@@ -41,7 +41,7 @@ Many arithmetic rules don’t work with float and double in general:
     
 ##### Lets consider the following sample:
 
-[!code-csharp[AbsorptionSample.cs](../../../../samples/Samples/logs/AbsorptionSample/AbsorptionSampleDocs.cs)]
+[!code-csharp[AbsorptionSample.cs](../../../samples/Samples/logs/AbsorptionSample/AbsorptionSampleDocs.cs)]
 
 As you can see we have three matrix with 64 and 128 bit, so next step assign max values for this matrices for demonstration hit in absorption.
 For invoke Klein's or Kahan's algorithm must invoke method `GetKahanSum()` and `GetKleinSum()`  
@@ -49,7 +49,7 @@ Klein's algorithm have the most accuracy summation of matrix than Kahan's, howev
 
 #### Output
 
-[!code-csharp[AbsorptionSample.cs](../../../../samples/Samples/logs/AbsorptionSample/Run.txt)]
+[!code-csharp[AbsorptionSample.cs](../../../samples/Samples/logs/AbsorptionSample/Run.txt)]
 
 Thus, the default sum counts incorrectly, the runtime rounds it because the floating type precision is not enough to handle digit numbers.
 Klein calculates with less error, but at the same time it works slower than Kahan.

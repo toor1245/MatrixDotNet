@@ -1,6 +1,6 @@
 #### Solving a linear system overview
 
-##### Kramer solve
+### Kramer solve
 Cramer's rule is an explicit formula for the solution of a system of linear equations with as many equations as unknowns,
 valid whenever the system has a unique solution. It expresses the solution in terms of the determinants of the (square) coefficient matrix and
 of matrices obtained from it by replacing one column by the column vector of right-hand-sides of the equations.
@@ -39,7 +39,7 @@ x1: -0,6637806637806638
 x2: -3,3997113997114
 ```
 
-#### Gauss solve
+### Gauss solve
 Gaussian elimination, also known as row reduction, is an algorithm in linear algebra for solving a system of linear equations.
 It is usually understood as a sequence of operations performed on the corresponding matrix of coefficients.
 This method can also be used to find the rank of a matrix, to calculate the determinant of a matrix, and to calculate the inverse of an invertible square matrix.
