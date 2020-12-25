@@ -1,7 +1,7 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Builder;
 
-namespace MatrixDotNet.PerformanceTesting.MatrixMathOperations
+namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
 {
     public class SumTest : PerformanceTest
     {

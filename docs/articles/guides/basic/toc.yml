@@ -9,3 +9,12 @@
 
 - name: Sorting
   href: sorting.md
+  
+- name: Multiplication of matrices
+  href: multiply.md
+  
+- name: Decomposition
+  href: decompostion.md
+
+- name: Solving a linear system
+  href: solver.md
