@@ -1,4 +1,4 @@
-name: Update docfx documentation
+name: Validate documentation
 
 on:
   pull_request:
@@ -6,7 +6,6 @@ on:
       - 'docs/**'
     branches:
       - master
-    types: [closed]
   workflow_dispatch:
 
 env:
@@ -16,10 +15,10 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
 
 jobs:
-  build:
-    name: Update documentation
+  test:
     runs-on: windows-latest
-    
+
+    name: Building documentation
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -41,9 +40,3 @@ jobs:
 
       - name: Build documentation
         run: docfx-bin/docfx.exe docs/docfx.json
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/_site
