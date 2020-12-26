@@ -2,6 +2,10 @@
 using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
+#if NET5_0 || NETCOREAPP3_1
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
+#endif
 
 
 namespace MatrixDotNet.Extensions.Conversion
@@ -9,7 +13,7 @@ namespace MatrixDotNet.Extensions.Conversion
     /// <summary>
     /// Represents converter which can change matrix.
     /// </summary>
-    public static partial class MatrixConverter
+    public static unsafe partial class MatrixConverter
     {
         /// <summary>
         /// Joins two matrix, matrix A rows must be equals matrix B rows.
@@ -208,11 +212,19 @@ namespace MatrixDotNet.Extensions.Conversion
                     $"matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
 
             for (var i = 0; i < matrix.Rows; i++)
+            {
                 for (var j = 0; j < matrix.Columns; j++)
+                {
                     if (i == j)
+                    {
                         matrix[i, j] = MathGeneric<T>.Increment(default);
+                    }
                     else
+                    {
                         matrix[i, j] = default;
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -353,6 +365,138 @@ namespace MatrixDotNet.Extensions.Conversion
             }
 
             return a;
+        }
+        
+        /// <summary>
+        /// Reverse matrix
+        /// </summary>
+        /// <param name="array"></param>
+        public static void Reverse(int[] array)
+        {
+            int len = array.Length;
+            if (len < 2)
+            {
+                return;
+            }
+#if NET5_0 || NETCOREAPP3_1
+            int i = 0;
+            if (Avx2.IsSupported)
+            {
+                int size = Vector256<int>.Count;
+                if (len < size << 2)
+                {
+                    Array.Reverse(array, 0, array.Length);
+                    return;
+                }
+                
+                int lastIndexBlock = len - len % size;
+                
+                fixed (int* ptr = &array[0])
+                {
+                    for (; i < lastIndexBlock / 2; i += size)
+                    {
+                        var leftPtr = ptr + i;
+                        var rightPtr = ptr + len - size - i;
+                        var vl = Avx.LoadVector256(leftPtr);
+                        var vr = Avx.LoadVector256(rightPtr);
+                        var va = Avx2.Shuffle(vr, 0x1b);
+                        var vb = Avx2.Shuffle(vl, 0x1b);
+                        Avx.Store(leftPtr, Avx2.Permute2x128(va,va, 0x67));
+                        Avx.Store(rightPtr, Avx2.Permute2x128(vb,vb, 0x67));
+                    }
+                    
+                    if(i < len)
+                    {
+                        Array.Reverse(array, i, len - lastIndexBlock);
+                    }
+                }
+            }
+            else if (Sse2.IsSupported)
+            {
+                int size = Vector128<int>.Count;
+                if (len < size << 1)
+                {
+                    Array.Reverse(array, 0, array.Length);
+                    return;
+                }
+                
+                int lastIndexBlock = len - len % size;
+                
+                fixed (int* ptr = &array[0])
+                {
+                    for (; i < lastIndexBlock / 2; i += size)
+                    {
+                        var leftPtr = ptr + i;
+                        var rightPtr = ptr + len - size - i;
+
+                        var vl = Sse2.LoadVector128(leftPtr);
+                        var vr = Sse2.LoadVector128(rightPtr);
+
+                        Sse2.Store(rightPtr, Sse2.Shuffle(vl, 0x1b));
+                        Sse2.Store(leftPtr, Sse2.Shuffle(vr, 0x1b));
+                    }
+                }
+                
+                if (i < len)
+                {
+                    Array.Reverse(array, i, len - lastIndexBlock);
+                }
+            }
+            else
+#endif
+            {
+                Array.Reverse(array);
+            }
+        }
+        
+        /// <summary>
+        /// Reverse matrix
+        /// </summary>
+        /// <param name="array"></param>
+        public static void Reverse(float[] array)
+        {
+            int len = array.Length;
+            if (len < 2)
+            {
+                return;
+            }
+
+#if NET5_0 || NETCOREAPP3_1
+            int i = 0;
+            if (Avx.IsSupported)
+            {
+                int size = Vector256<float>.Count;
+                if (len < size << 2)
+                {
+                    Array.Reverse(array, 0, array.Length);
+                }
+                
+                int lastIndexBlock = len - len % size;
+                
+                fixed (float* ptr = &array[0])
+                {
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        var leftPtr1 = ptr + i;
+                        var rightPtr = ptr + len - size - i;
+
+                        var vl = Avx.LoadVector256(leftPtr1);
+                        var vr = Avx.LoadVector256(rightPtr);
+
+                        Avx.Store(rightPtr, Avx.Permute(vl, 0x1b));
+                        Avx.Store(leftPtr1, Avx.Permute(vr, 0x1b));
+                    }
+                    if (lastIndexBlock * size != len)
+                    {
+                        Array.Reverse(array, lastIndexBlock * size, len - lastIndexBlock * size * 2);
+                    }
+                }
+            }
+            else
+#endif
+            {
+                Array.Reverse(array);
+            }
         }
     }
 }

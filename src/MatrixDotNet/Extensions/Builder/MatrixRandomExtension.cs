@@ -97,14 +97,7 @@ namespace MatrixDotNet.Extensions.Builder
 
             return matrix;
         }
-
-        [Obsolete("bool shit = true;", true)]
-        public static Matrix<T> Random<T>(int row, int column, int startRandom, int endRandom)
-            where T : unmanaged
-        {
-            return new Matrix<T>(row, column);
-        }
-
+        
         public static Matrix<int> RandomInt(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
         {
             Matrix<int> matrix = new Matrix<int>(row, column);

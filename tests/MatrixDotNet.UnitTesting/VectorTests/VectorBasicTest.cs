@@ -1,4 +1,7 @@
-﻿using MatrixDotNet.Exceptions;
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Performance;
 using MatrixDotNet.Vectorization;
 using Xunit;
 
