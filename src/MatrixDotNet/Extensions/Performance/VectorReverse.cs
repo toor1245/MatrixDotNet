@@ -4,6 +4,6 @@ namespace MatrixDotNet.Extensions.Performance
 {
     public static partial class Optimization
     {
-        
+
     }
 }

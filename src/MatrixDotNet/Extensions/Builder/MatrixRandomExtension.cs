@@ -97,7 +97,15 @@ namespace MatrixDotNet.Extensions.Builder
 
             return matrix;
         }
-        
+
+        /// <summary>
+        /// Generates random matrix.
+        /// </summary>
+        /// <param name="row">number of rows</param>
+        /// <param name="column">number of columns</param>
+        /// <param name="startRandom">start value</param>
+        /// <param name="endRandom">end value</param>
+        /// <returns>Random matrix</returns>
         public static Matrix<int> RandomInt(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
         {
             Matrix<int> matrix = new Matrix<int>(row, column);
@@ -113,6 +121,14 @@ namespace MatrixDotNet.Extensions.Builder
             return matrix;
         }
 
+        /// <summary>
+        /// Generates random matrix.
+        /// </summary>
+        /// <param name="row">number of rows</param>
+        /// <param name="column">number of columns</param>
+        /// <param name="startRandom">start value</param>
+        /// <param name="endRandom">end value</param>
+        /// <returns>Random matrix</returns>
         public static Matrix<byte> RandomByte(int row, int column, byte startRandom = byte.MinValue, byte endRandom = byte.MaxValue)
         {
             Matrix<byte> matrix = new Matrix<byte>(row, column);
@@ -128,6 +144,37 @@ namespace MatrixDotNet.Extensions.Builder
             return matrix;
         }
 
+        /// <summary>
+        /// Generates random matrix.
+        /// </summary>
+        /// <param name="row">number of rows</param>
+        /// <param name="column">number of columns</param>
+        /// <param name="startRandom">start value</param>
+        /// <param name="endRandom">end value</param>
+        /// <returns>Random matrix</returns>
+        public static Matrix<sbyte> RandomSByte(int row, int column, sbyte startRandom = sbyte.MinValue, sbyte endRandom = sbyte.MaxValue)
+        {
+            Matrix<sbyte> matrix = new Matrix<sbyte>(row, column);
+            Random random = new Random();
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    matrix[i, j] = (sbyte) random.Next(startRandom, endRandom);
+                }
+            }
+
+            return matrix;
+        }
+
+        /// <summary>
+        /// Generates random matrix.
+        /// </summary>
+        /// <param name="row">number of rows</param>
+        /// <param name="column">number of columns</param>
+        /// <param name="startRandom">start value</param>
+        /// <param name="endRandom">end value</param>
+        /// <returns>Random matrix</returns>
         public static Matrix<double> RandomDouble(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
         {
             Matrix<double> matrix = new Matrix<double>(row, column);
@@ -143,6 +190,14 @@ namespace MatrixDotNet.Extensions.Builder
             return matrix;
         }
 
+        /// <summary>
+        /// Generates random matrix.
+        /// </summary>
+        /// <param name="row">number of rows</param>
+        /// <param name="column">number of columns</param>
+        /// <param name="startRandom">start value</param>
+        /// <param name="endRandom">end value</param>
+        /// <returns>Random matrix</returns>
         public static Matrix<float> RandomFloat(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
         {
             Matrix<float> matrix = new Matrix<float>(row, column);

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
@@ -950,7 +951,11 @@ namespace MatrixDotNetTests.MatrixTests
         [InlineData(5, 4)]
         [InlineData(8, 7)]
         [InlineData(4, 9)]
-        public void ReverseTest1_AssertMustBeEqual(int m, int n)
+        [InlineData(15, 34)]
+        [InlineData(16, 34)]
+        [InlineData(7, 103)]
+        [InlineData(9, 8)]
+        public void ReverseInt32Test_AssertMustBeEqual(int m, int n)
         {
             // Arrange
             Matrix<int> matrixA = new Matrix<int>(m, n);
@@ -975,12 +980,26 @@ namespace MatrixDotNetTests.MatrixTests
             Assert.Equal(expected, matrixA);
         }
         
-        [Fact] 
-        public void ReverseTest2_AssertMustBeEqual()
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        public void ReverseSingleTest_AssertMustBeEqual(int m, int n)
         {
             // Arrange
-            Matrix<int> matrixA = new Matrix<int>(2, 2);
-            Matrix<int> expected = new Matrix<int>(2, 2);
+            Matrix<float> matrixA = new Matrix<float>(m, n);
+            Matrix<float> expected = new Matrix<float>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
             
@@ -992,6 +1011,309 @@ namespace MatrixDotNetTests.MatrixTests
             for (int i = 0; i < arr2.Length; i++)
             {
                 arr2[i] = arr2.Length - i - 1;
+            }
+
+            // Act
+            MatrixConverter.Reverse(matrixA.GetArray());
+
+            // Assert
+            Assert.Equal(expected, matrixA);
+        }
+        
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        public void ReverseDoubleTest_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<double> matrixA = new Matrix<double>(m, n);
+            Matrix<double> expected = new Matrix<double>(m, n);
+            var arr1 = matrixA.GetArray();
+            var arr2 = expected.GetArray();
+            
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = i;
+            }
+            
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = arr2.Length - i - 1;
+            }
+
+            // Act
+            MatrixConverter.Reverse(matrixA.GetArray());
+
+            // Assert
+            Assert.Equal(expected, matrixA);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        public void ReverseByteTest_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<byte> matrixA = new Matrix<byte>(m, n);
+            Matrix<byte> expected = new Matrix<byte>(m, n);
+            var arr1 = matrixA.GetArray();
+            var arr2 = expected.GetArray();
+            
+            for (byte i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = i;
+            }
+            
+            for (byte i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = (byte) (arr2.Length - i - 1);
+            }
+
+            // Act
+            MatrixConverter.Reverse(matrixA.GetArray());
+
+            // Assert
+            Assert.Equal(expected, matrixA);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        public void ReverseByteTest_CheckMask_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<byte> actual = BuildMatrix.RandomByte(m, n);
+            Matrix<byte> matrixB = (Matrix<byte>) actual.Clone();
+            var expected = matrixB.GetArray().Reverse();
+            
+            // Act
+            MatrixConverter.Reverse(actual.GetArray());
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        [InlineData(7, 103)]
+        [InlineData(2, 103)]
+        public void ReverseInt64Test_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<long> matrixA = new Matrix<long>(m, n);
+            Matrix<long> expected = new Matrix<long>(m, n);
+            var arr1 = matrixA.GetArray();
+            var arr2 = expected.GetArray();
+            
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = i;
+            }
+            
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = arr2.Length - i - 1;
+            }
+
+            // Act
+            MatrixConverter.Reverse(matrixA.GetArray());
+
+            // Assert
+            Assert.Equal(expected, matrixA);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        public void ReverseSByteTest_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<sbyte> matrixA = new Matrix<sbyte>(m, n);
+            Matrix<sbyte> expected = new Matrix<sbyte>(m, n);
+            var arr1 = matrixA.GetArray();
+            var arr2 = expected.GetArray();
+            
+            for (byte i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = (sbyte) i;
+            }
+            
+            for (byte i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = (sbyte) (arr2.Length - i - 1);
+            }
+
+            // Act
+            MatrixConverter.Reverse(matrixA.GetArray());
+
+            // Assert
+            Assert.Equal(expected, matrixA);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        public void ReverseSByteTest_CheckMask_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<sbyte> actual = BuildMatrix.RandomSByte(m, n);
+            Matrix<sbyte> matrixB = (Matrix<sbyte>) actual.Clone();
+            var expected = matrixB.GetArray().Reverse();
+            
+            // Act
+            MatrixConverter.Reverse(actual.GetArray());
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 34)]
+        [InlineData(16, 34)]
+        [InlineData(7, 103)]
+        [InlineData(9, 8)]
+        public void ReverseUInt32Test_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<uint> matrixA = new Matrix<uint>(m, n);
+            Matrix<uint> expected = new Matrix<uint>(m, n);
+            var arr1 = matrixA.GetArray();
+            var arr2 = expected.GetArray();
+            
+            for (uint i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = i;
+            }
+            
+            for (uint i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = (uint) (arr2.Length - i - 1);
+            }
+            
+            // Act
+            MatrixConverter.Reverse(matrixA.GetArray());
+
+            // Assert
+            Assert.Equal(expected, matrixA);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        [InlineData(7, 103)]
+        [InlineData(2, 103)]
+        public void ReverseUInt64Test_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<ulong> matrixA = new Matrix<ulong>(m, n);
+            Matrix<ulong> expected = new Matrix<ulong>(m, n);
+            var arr1 = matrixA.GetArray();
+            var arr2 = expected.GetArray();
+            
+            for (uint i = 0; i < arr1.Length; i++)
+            {
+                arr1[i] = i;
+            }
+            
+            for (uint i = 0; i < arr2.Length; i++)
+            {
+                arr2[i] = (ulong) (arr2.Length - i - 1);
             }
 
             // Act
