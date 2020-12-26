@@ -961,5 +961,77 @@ namespace MatrixDotNet.Extensions.Conversion
                 Array.Reverse(array);
             }
         }
+
+        /// <summary>
+        /// Reverse matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static void Reverse(Matrix<int> matrix)
+        {
+            Reverse(matrix.GetArray());
+        }
+
+        /// <summary>
+        /// Reverse matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static void Reverse(Matrix<uint> matrix)
+        {
+            Reverse(matrix.GetArray());
+        }
+
+        /// <summary>
+        /// Reverse matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static void Reverse(Matrix<long> matrix)
+        {
+            Reverse(matrix.GetArray());
+        }
+
+        /// <summary>
+        /// Reverse matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static void Reverse(Matrix<ulong> matrix)
+        {
+            Reverse(matrix.GetArray());
+        }
+
+        /// <summary>
+        /// Reverse matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static void Reverse(Matrix<float> matrix)
+        {
+            Reverse(matrix.GetArray());
+        }
+
+        /// <summary>
+        /// Reverse matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static void Reverse(Matrix<double> matrix)
+        {
+            Reverse(matrix.GetArray());
+        }
+
+        /// <summary>
+        /// Reverse matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static void Reverse(Matrix<byte> matrix)
+        {
+            Reverse(matrix.GetArray());
+        }
+
+        /// <summary>
+        /// Reverse matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static void Reverse(Matrix<sbyte> matrix)
+        {
+            Reverse(matrix.GetArray());
+        }
     }
 }
