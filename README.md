@@ -17,9 +17,7 @@
   <span> · </span>
   <a href="https://toor1245.github.io/MatrixDotNet/articles/intro.html">Getting started</a>
   <span> · </span>
-  <a href="https://toor1245.github.io/MatrixDotNet/articles/guides/absorption.html">Documentation</a>
-  <span> · </span>
-  <a href="https://toor1245.github.io/MatrixDotNet/articles/features/getting_started.html">Optimization</a>
+  <a href="https://toor1245.github.io/MatrixDotNet/index.html">Documentation</a>
   <span> · </span>
   <a href="https://toor1245.github.io/MatrixDotNet/api/index.html">API Reference</a>
 </h3> 
