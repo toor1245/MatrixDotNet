@@ -3,6 +3,7 @@ name: Build and Release
 on:
   release:
     types: [released]
+  workflow_dispatch:
 
 env:
   # Stop wasting time caching packages
@@ -26,8 +27,7 @@ jobs:
  
       - name: Build solution and generate NuGet package
         run: |  
-          cd src
-          dotnet build -c Release --force -o out
+          dotnet build "src" -c Release --force -o src/out
         
       - name: Push generated packages to Nuget
         run: |  
