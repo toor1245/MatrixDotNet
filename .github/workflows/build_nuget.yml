@@ -3,6 +3,7 @@ name: Build and Release
 on:
   release:
     types: [released]
+  workflow_dispatch:
 
 env:
   # Stop wasting time caching packages
