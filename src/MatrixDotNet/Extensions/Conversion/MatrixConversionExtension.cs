@@ -538,49 +538,7 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="array"></param>
         public static void Reverse(ulong[] array)
         {
-            int len = array.Length;
-            if (len < 2)
-            {
-                return;
-            }
-
-#if NET5_0 || NETCOREAPP3_1
-            int i = 0;
-            if (Avx.IsSupported)
-            {
-                int size = Vector256<ulong>.Count;
-                if (len < size << 1)
-                {
-                    Array.Reverse(array, 0, array.Length);
-                    return;
-                }
-
-                int lastIndexBlock = len - len % size;
-
-                fixed (ulong* ptr = array)
-                {
-                    for (; i < lastIndexBlock >> 1; i += size)
-                    {
-                        var leftPtr = ptr + i;
-                        var rightPtr = ptr + len - size - i;
-                        var vl = Avx.LoadVector256(leftPtr);
-                        var vr = Avx.LoadVector256(rightPtr);
-                        vr = Vector256.Create(vr.GetElement(3), vr.GetElement(2), vr.GetElement(1), vr.GetElement(0));
-                        vl = Vector256.Create(vl.GetElement(3), vl.GetElement(2), vl.GetElement(1), vl.GetElement(0));
-                        Avx.Store(leftPtr, vr);
-                        Avx.Store(rightPtr, vl);
-                    }
-                    if (i << 2 < len)
-                    {
-                        Array.Reverse(array, i, len - lastIndexBlock);
-                    }
-                }
-            }
-            else
-#endif
-            {
-                Array.Reverse(array);
-            }
+            Array.Reverse(array);
         }
 
         /// <summary>
@@ -589,49 +547,7 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="array"></param>
         public static void Reverse(long[] array)
         {
-            int len = array.Length;
-            if (len < 2)
-            {
-                return;
-            }
-
-#if NET5_0 || NETCOREAPP3_1
-            int i = 0;
-            if (Avx.IsSupported)
-            {
-                int size = Vector256<long>.Count;
-                if (len < size << 1)
-                {
-                    Array.Reverse(array, 0, array.Length);
-                    return;
-                }
-
-                int lastIndexBlock = len - len % size;
-
-                fixed (long* ptr = array)
-                {
-                    for (; i < lastIndexBlock >> 1; i += size)
-                    {
-                        var leftPtr = ptr + i;
-                        var rightPtr = ptr + len - size - i;
-                        var vl = Avx.LoadVector256(leftPtr);
-                        var vr = Avx.LoadVector256(rightPtr);
-                        vr = Vector256.Create(vr.GetElement(3), vr.GetElement(2), vr.GetElement(1), vr.GetElement(0));
-                        vl = Vector256.Create(vl.GetElement(3), vl.GetElement(2), vl.GetElement(1), vl.GetElement(0));
-                        Avx.Store(leftPtr, vr);
-                        Avx.Store(rightPtr, vl);
-                    }
-                    if (i << 2 < len)
-                    {
-                        Array.Reverse(array, i, len - lastIndexBlock);
-                    }
-                }
-            }
-            else
-#endif
-            {
-                Array.Reverse(array);
-            }
+            Array.Reverse(array);
         }
 
         /// <summary>
