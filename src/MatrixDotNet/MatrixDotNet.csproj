@@ -24,6 +24,7 @@ With all answers see documentation or ask on gitter or github issues</Descriptio
     <OS_WINDOWS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</OS_WINDOWS>
     <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</OS_MAC>
     <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
+    <PackageVersion>0.0.7.1</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
