@@ -8,8 +8,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "..\samples\Sampl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixDotNet.UnitTesting", "..\tests\MatrixDotNet.UnitTesting\MatrixDotNet.UnitTesting.csproj", "{1C826C91-532D-488E-9127-A1DFB6F2EEFD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixDotNet.FunctionalTesting", "..\tests\MatrixDotNet.FunctionalTesting\MatrixDotNet.FunctionalTesting.csproj", "{56B1DF68-F0D1-4386-97F9-14DE96631431}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixDotNet.PerformanceTesting", "..\tests\MatrixDotNet.PerformanceTesting\MatrixDotNet.PerformanceTesting.csproj", "{8E4D7E19-86D5-4670-856D-E585ECAF6D62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MatrixDotNet.Tests", "MatrixDotNet.Tests", "{7EF7AD85-1F15-4F59-A941-7D25D6F450B4}"
@@ -37,10 +35,6 @@ Global
 		{1C826C91-532D-488E-9127-A1DFB6F2EEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C826C91-532D-488E-9127-A1DFB6F2EEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C826C91-532D-488E-9127-A1DFB6F2EEFD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{56B1DF68-F0D1-4386-97F9-14DE96631431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{56B1DF68-F0D1-4386-97F9-14DE96631431}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{56B1DF68-F0D1-4386-97F9-14DE96631431}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{56B1DF68-F0D1-4386-97F9-14DE96631431}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8E4D7E19-86D5-4670-856D-E585ECAF6D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8E4D7E19-86D5-4670-856D-E585ECAF6D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E4D7E19-86D5-4670-856D-E585ECAF6D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,7 +45,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1C826C91-532D-488E-9127-A1DFB6F2EEFD} = {7EF7AD85-1F15-4F59-A941-7D25D6F450B4}
-		{56B1DF68-F0D1-4386-97F9-14DE96631431} = {7EF7AD85-1F15-4F59-A941-7D25D6F450B4}
 		{8E4D7E19-86D5-4670-856D-E585ECAF6D62} = {7EF7AD85-1F15-4F59-A941-7D25D6F450B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
