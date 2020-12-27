@@ -27,7 +27,7 @@ jobs:
       - name: Build solution and generate NuGet package
         run: |  
           cd src
-          dotnet build -c Release -o out
+          dotnet build -c Release --force -o out
         
       - name: Push generated packages to Nuget
         run: |  
