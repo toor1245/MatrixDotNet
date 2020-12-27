@@ -38,9 +38,6 @@ jobs:
       - name: Run Unit Tests
         run: dotnet test "tests/MatrixDotNet.UnitTesting" -c Release
 
-      - name: Run Functional Tests
-        run: dotnet test "tests/MatrixDotNet.FunctionalTesting" -c Release
-
   lint:
     runs-on: ubuntu-latest
     name: Code Convention Check
