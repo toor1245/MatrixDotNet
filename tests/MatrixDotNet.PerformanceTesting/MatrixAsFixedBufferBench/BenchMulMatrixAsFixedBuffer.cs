@@ -3,7 +3,8 @@ using MatrixDotNet.Extensions.Performance;
 
 namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
 {
-    public class BenchAddFixedMatrixVsUnsafe : PerformanceTest
+    [MemoryDiagnoser]
+    public class BenchMulMatrixAsFixedBuffer : PerformanceTest
     {
         private MatrixAsFixedBuffer _buffer;
         private Matrix<double> _matrix;
@@ -18,17 +19,17 @@ namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
             }
             _matrix = new Matrix<double>(80,80,5);
         }
-
+        
         [Benchmark]
-        public MatrixAsFixedBuffer AddFixed()
+        public Matrix<double> MulMatrix()
         {
-            return MatrixAsFixedBuffer.AddByRef(ref _buffer, ref _buffer);
+            return _matrix * _matrix;
         }
-
+        
         [Benchmark]
-        public Matrix<double> AddUnsafe()
+        public MatrixAsFixedBuffer MulByRefMatrixAsFixedBuffer()
         {
-            return _matrix + _matrix;
+            return MatrixAsFixedBuffer.MulByRef(ref _buffer, ref _buffer);
         }
     }
 }
