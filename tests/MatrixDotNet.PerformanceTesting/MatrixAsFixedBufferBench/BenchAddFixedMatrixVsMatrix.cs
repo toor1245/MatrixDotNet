@@ -4,7 +4,7 @@ using MatrixDotNet.Extensions.Performance;
 namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
 {
     [MemoryDiagnoser]
-    public class BenchMatrixAsFixedBuffer : PerformanceTest
+    public class BenchAddFixedMatrixVsMatrix : PerformanceTest
     {
         private MatrixAsFixedBuffer _buffer;
         private Matrix<double> _matrix;
@@ -19,18 +19,17 @@ namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
             }
             _matrix = new Matrix<double>(80,80,5);
         }
-        
-        [Benchmark]
-        public Matrix<double> AddDefault()
-        {
-            return _matrix + _matrix;
-        }
-        
 
         [Benchmark]
-        public MatrixAsFixedBuffer AddByRefTest()
+        public MatrixAsFixedBuffer AddMatrixAsFixedBuffer()
         {
             return MatrixAsFixedBuffer.AddByRef(ref _buffer, ref _buffer);
+        }
+
+        [Benchmark]
+        public Matrix<double> AddMatrix()
+        {
+            return _matrix + _matrix;
         }
     }
 }

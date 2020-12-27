@@ -18,3 +18,9 @@
 
 - name: Solving a linear system
   href: solver.md
+
+- name: Vector
+  href: vector.md
+
+- name: Matrix as fixed buffer
+  href: matrix_as_fixed_buffer.md

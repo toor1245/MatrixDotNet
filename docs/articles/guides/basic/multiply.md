@@ -53,7 +53,7 @@ Matrix<float> c = Optimization.BlockMultiply(a, b);
 
 ### Benchmark for comparing multiplication of matrix
 
-[!code-csharp[Run](../../../../tests/MatrixDotNet.PerformanceTesting/Matrix/MathOperations/MulTest.cs)]
+[!code-csharp[Run](../../../../tests/MatrixDotNet.PerformanceTesting/Matrix/MathOperations/BenchMul.cs)]
 
 ```ini
 BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1110 (1909/November2018Update/19H2)
