@@ -217,22 +217,6 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.GetMinorMatrix(Of T)(MatrixDotNet.Matrix(Of T), System.Int32, System.Int32)
   nameWithType: BuildMatrix.GetMinorMatrix<T>(Matrix<T>, Int32, Int32)
   nameWithType.vb: BuildMatrix.GetMinorMatrix(Of T)(Matrix(Of T), Int32, Int32)
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.Random*
-  name: Random
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_Random_
-  commentId: Overload:MatrixDotNet.Extensions.Builder.BuildMatrix.Random
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Random
-  nameWithType: BuildMatrix.Random
-- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.Random``1(System.Int32,System.Int32,System.Int32,System.Int32)
-  name: Random<T>(Int32, Int32, Int32, Int32)
-  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_Random__1_System_Int32_System_Int32_System_Int32_System_Int32_
-  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.Random``1(System.Int32,System.Int32,System.Int32,System.Int32)
-  name.vb: Random(Of T)(Int32, Int32, Int32, Int32)
-  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.Random<T>(System.Int32, System.Int32, System.Int32, System.Int32)
-  fullName.vb: MatrixDotNet.Extensions.Builder.BuildMatrix.Random(Of T)(System.Int32, System.Int32, System.Int32, System.Int32)
-  nameWithType: BuildMatrix.Random<T>(Int32, Int32, Int32, Int32)
-  nameWithType.vb: BuildMatrix.Random(Of T)(Int32, Int32, Int32, Int32)
 - uid: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomByte(System.Int32,System.Int32,System.Byte,System.Byte)
   name: RandomByte(Int32, Int32, Byte, Byte)
   href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_RandomByte_System_Int32_System_Int32_System_Byte_System_Byte_
@@ -285,6 +269,32 @@ references:
   isSpec: "True"
   fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomInt
   nameWithType: BuildMatrix.RandomInt
+- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomLong(System.Int32,System.Int32,System.Int32,System.Int32)
+  name: RandomLong(Int32, Int32, Int32, Int32)
+  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_RandomLong_System_Int32_System_Int32_System_Int32_System_Int32_
+  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.RandomLong(System.Int32,System.Int32,System.Int32,System.Int32)
+  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomLong(System.Int32, System.Int32, System.Int32, System.Int32)
+  nameWithType: BuildMatrix.RandomLong(Int32, Int32, Int32, Int32)
+- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomLong*
+  name: RandomLong
+  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_RandomLong_
+  commentId: Overload:MatrixDotNet.Extensions.Builder.BuildMatrix.RandomLong
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomLong
+  nameWithType: BuildMatrix.RandomLong
+- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomSByte(System.Int32,System.Int32,System.SByte,System.SByte)
+  name: RandomSByte(Int32, Int32, SByte, SByte)
+  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_RandomSByte_System_Int32_System_Int32_System_SByte_System_SByte_
+  commentId: M:MatrixDotNet.Extensions.Builder.BuildMatrix.RandomSByte(System.Int32,System.Int32,System.SByte,System.SByte)
+  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomSByte(System.Int32, System.Int32, System.SByte, System.SByte)
+  nameWithType: BuildMatrix.RandomSByte(Int32, Int32, SByte, SByte)
+- uid: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomSByte*
+  name: RandomSByte
+  href: api/MatrixDotNet.Extensions.Builder.BuildMatrix.html#MatrixDotNet_Extensions_Builder_BuildMatrix_RandomSByte_
+  commentId: Overload:MatrixDotNet.Extensions.Builder.BuildMatrix.RandomSByte
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Builder.BuildMatrix.RandomSByte
+  nameWithType: BuildMatrix.RandomSByte
 - uid: MatrixDotNet.Extensions.Complement
   name: MatrixDotNet.Extensions.Complement
   href: api/MatrixDotNet.Extensions.Complement.html
@@ -391,22 +401,6 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.AddRow(Of T)(MatrixDotNet.Matrix(Of T), T(), System.Int32)
   nameWithType: MatrixConverter.AddRow<T>(Matrix<T>, T[], Int32)
   nameWithType.vb: MatrixConverter.AddRow(Of T)(Matrix(Of T), T(), Int32)
-- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone*
-  name: Clone
-  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Clone_
-  commentId: Overload:MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone
-  isSpec: "True"
-  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone
-  nameWithType: MatrixConverter.Clone
-- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone``1(MatrixDotNet.Matrix{``0})
-  name: Clone<T>(Matrix<T>)
-  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Clone__1_MatrixDotNet_Matrix___0__
-  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone``1(MatrixDotNet.Matrix{``0})
-  name.vb: Clone(Of T)(Matrix(Of T))
-  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone<T>(MatrixDotNet.Matrix<T>)
-  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Clone(Of T)(MatrixDotNet.Matrix(Of T))
-  nameWithType: MatrixConverter.Clone<T>(Matrix<T>)
-  nameWithType.vb: MatrixConverter.Clone(Of T)(Matrix(Of T))
 - uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.CollectMatrix*
   name: CollectMatrix
   href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_CollectMatrix_
@@ -496,6 +490,157 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.ReduceRow(Of T)(MatrixDotNet.Matrix(Of T), System.UInt32)
   nameWithType: MatrixConverter.ReduceRow<T>(Matrix<T>, UInt32)
   nameWithType.vb: MatrixConverter.ReduceRow(Of T)(Matrix(Of T), UInt32)
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Byte})
+  name: Reverse(Matrix<Byte>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_MatrixDotNet_Matrix_System_Byte__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Byte})
+  name.vb: Reverse(Matrix(Of Byte))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix<System.Byte>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix(Of System.Byte))
+  nameWithType: MatrixConverter.Reverse(Matrix<Byte>)
+  nameWithType.vb: MatrixConverter.Reverse(Matrix(Of Byte))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Double})
+  name: Reverse(Matrix<Double>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_MatrixDotNet_Matrix_System_Double__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Double})
+  name.vb: Reverse(Matrix(Of Double))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix<System.Double>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix(Of System.Double))
+  nameWithType: MatrixConverter.Reverse(Matrix<Double>)
+  nameWithType.vb: MatrixConverter.Reverse(Matrix(Of Double))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Int32})
+  name: Reverse(Matrix<Int32>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_MatrixDotNet_Matrix_System_Int32__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Int32})
+  name.vb: Reverse(Matrix(Of Int32))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix<System.Int32>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix(Of System.Int32))
+  nameWithType: MatrixConverter.Reverse(Matrix<Int32>)
+  nameWithType.vb: MatrixConverter.Reverse(Matrix(Of Int32))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Int64})
+  name: Reverse(Matrix<Int64>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_MatrixDotNet_Matrix_System_Int64__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Int64})
+  name.vb: Reverse(Matrix(Of Int64))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix<System.Int64>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix(Of System.Int64))
+  nameWithType: MatrixConverter.Reverse(Matrix<Int64>)
+  nameWithType.vb: MatrixConverter.Reverse(Matrix(Of Int64))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.SByte})
+  name: Reverse(Matrix<SByte>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_MatrixDotNet_Matrix_System_SByte__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.SByte})
+  name.vb: Reverse(Matrix(Of SByte))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix<System.SByte>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix(Of System.SByte))
+  nameWithType: MatrixConverter.Reverse(Matrix<SByte>)
+  nameWithType.vb: MatrixConverter.Reverse(Matrix(Of SByte))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Single})
+  name: Reverse(Matrix<Single>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_MatrixDotNet_Matrix_System_Single__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.Single})
+  name.vb: Reverse(Matrix(Of Single))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix<System.Single>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix(Of System.Single))
+  nameWithType: MatrixConverter.Reverse(Matrix<Single>)
+  nameWithType.vb: MatrixConverter.Reverse(Matrix(Of Single))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.UInt32})
+  name: Reverse(Matrix<UInt32>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_MatrixDotNet_Matrix_System_UInt32__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.UInt32})
+  name.vb: Reverse(Matrix(Of UInt32))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix<System.UInt32>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix(Of System.UInt32))
+  nameWithType: MatrixConverter.Reverse(Matrix<UInt32>)
+  nameWithType.vb: MatrixConverter.Reverse(Matrix(Of UInt32))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.UInt64})
+  name: Reverse(Matrix<UInt64>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_MatrixDotNet_Matrix_System_UInt64__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix{System.UInt64})
+  name.vb: Reverse(Matrix(Of UInt64))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix<System.UInt64>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(MatrixDotNet.Matrix(Of System.UInt64))
+  nameWithType: MatrixConverter.Reverse(Matrix<UInt64>)
+  nameWithType.vb: MatrixConverter.Reverse(Matrix(Of UInt64))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Byte[])
+  name: Reverse(Byte[])
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_System_Byte___
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Byte[])
+  name.vb: Reverse(Byte())
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Byte[])
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Byte())
+  nameWithType: MatrixConverter.Reverse(Byte[])
+  nameWithType.vb: MatrixConverter.Reverse(Byte())
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Double[])
+  name: Reverse(Double[])
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_System_Double___
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Double[])
+  name.vb: Reverse(Double())
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Double[])
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Double())
+  nameWithType: MatrixConverter.Reverse(Double[])
+  nameWithType.vb: MatrixConverter.Reverse(Double())
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Int32[])
+  name: Reverse(Int32[])
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_System_Int32___
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Int32[])
+  name.vb: Reverse(Int32())
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Int32[])
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Int32())
+  nameWithType: MatrixConverter.Reverse(Int32[])
+  nameWithType.vb: MatrixConverter.Reverse(Int32())
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Int64[])
+  name: Reverse(Int64[])
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_System_Int64___
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Int64[])
+  name.vb: Reverse(Int64())
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Int64[])
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Int64())
+  nameWithType: MatrixConverter.Reverse(Int64[])
+  nameWithType.vb: MatrixConverter.Reverse(Int64())
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.SByte[])
+  name: Reverse(SByte[])
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_System_SByte___
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.SByte[])
+  name.vb: Reverse(SByte())
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.SByte[])
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.SByte())
+  nameWithType: MatrixConverter.Reverse(SByte[])
+  nameWithType.vb: MatrixConverter.Reverse(SByte())
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Single[])
+  name: Reverse(Single[])
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_System_Single___
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Single[])
+  name.vb: Reverse(Single())
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Single[])
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.Single())
+  nameWithType: MatrixConverter.Reverse(Single[])
+  nameWithType.vb: MatrixConverter.Reverse(Single())
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.UInt32[])
+  name: Reverse(UInt32[])
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_System_UInt32___
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.UInt32[])
+  name.vb: Reverse(UInt32())
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.UInt32[])
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.UInt32())
+  nameWithType: MatrixConverter.Reverse(UInt32[])
+  nameWithType.vb: MatrixConverter.Reverse(UInt32())
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.UInt64[])
+  name: Reverse(UInt64[])
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_System_UInt64___
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.UInt64[])
+  name.vb: Reverse(UInt64())
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.UInt64[])
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse(System.UInt64())
+  nameWithType: MatrixConverter.Reverse(UInt64[])
+  nameWithType.vb: MatrixConverter.Reverse(UInt64())
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse*
+  name: Reverse
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_Reverse_
+  commentId: Overload:MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.Reverse
+  nameWithType: MatrixConverter.Reverse
 - uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.SplitMatrix*
   name: SplitMatrix
   href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_SplitMatrix_
@@ -6650,6 +6795,85 @@ references:
   fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Min(Of T)(MatrixDotNet.Vectorization.Vector(Of T))
   nameWithType: VectorExtension.Min<T>(Vector<T>)
   nameWithType.vb: VectorExtension.Min(Of T)(Vector(Of T))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Byte})
+  name: Reverse(Vector<Byte>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_MatrixDotNet_Vectorization_Vector_System_Byte__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Byte})
+  name.vb: Reverse(Vector(Of Byte))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector<System.Byte>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector(Of System.Byte))
+  nameWithType: VectorExtension.Reverse(Vector<Byte>)
+  nameWithType.vb: VectorExtension.Reverse(Vector(Of Byte))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Double})
+  name: Reverse(Vector<Double>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_MatrixDotNet_Vectorization_Vector_System_Double__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Double})
+  name.vb: Reverse(Vector(Of Double))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector<System.Double>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector(Of System.Double))
+  nameWithType: VectorExtension.Reverse(Vector<Double>)
+  nameWithType.vb: VectorExtension.Reverse(Vector(Of Double))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Int32})
+  name: Reverse(Vector<Int32>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_MatrixDotNet_Vectorization_Vector_System_Int32__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Int32})
+  name.vb: Reverse(Vector(Of Int32))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector<System.Int32>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector(Of System.Int32))
+  nameWithType: VectorExtension.Reverse(Vector<Int32>)
+  nameWithType.vb: VectorExtension.Reverse(Vector(Of Int32))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Int64})
+  name: Reverse(Vector<Int64>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_MatrixDotNet_Vectorization_Vector_System_Int64__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Int64})
+  name.vb: Reverse(Vector(Of Int64))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector<System.Int64>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector(Of System.Int64))
+  nameWithType: VectorExtension.Reverse(Vector<Int64>)
+  nameWithType.vb: VectorExtension.Reverse(Vector(Of Int64))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.SByte})
+  name: Reverse(Vector<SByte>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_MatrixDotNet_Vectorization_Vector_System_SByte__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.SByte})
+  name.vb: Reverse(Vector(Of SByte))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector<System.SByte>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector(Of System.SByte))
+  nameWithType: VectorExtension.Reverse(Vector<SByte>)
+  nameWithType.vb: VectorExtension.Reverse(Vector(Of SByte))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Single})
+  name: Reverse(Vector<Single>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_MatrixDotNet_Vectorization_Vector_System_Single__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.Single})
+  name.vb: Reverse(Vector(Of Single))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector<System.Single>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector(Of System.Single))
+  nameWithType: VectorExtension.Reverse(Vector<Single>)
+  nameWithType.vb: VectorExtension.Reverse(Vector(Of Single))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.UInt32})
+  name: Reverse(Vector<UInt32>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_MatrixDotNet_Vectorization_Vector_System_UInt32__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.UInt32})
+  name.vb: Reverse(Vector(Of UInt32))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector<System.UInt32>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector(Of System.UInt32))
+  nameWithType: VectorExtension.Reverse(Vector<UInt32>)
+  nameWithType.vb: VectorExtension.Reverse(Vector(Of UInt32))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.UInt64})
+  name: Reverse(Vector<UInt64>)
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_MatrixDotNet_Vectorization_Vector_System_UInt64__
+  commentId: M:MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector{System.UInt64})
+  name.vb: Reverse(Vector(Of UInt64))
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector<System.UInt64>)
+  fullName.vb: MatrixDotNet.Vectorization.VectorExtension.Reverse(MatrixDotNet.Vectorization.Vector(Of System.UInt64))
+  nameWithType: VectorExtension.Reverse(Vector<UInt64>)
+  nameWithType.vb: VectorExtension.Reverse(Vector(Of UInt64))
+- uid: MatrixDotNet.Vectorization.VectorExtension.Reverse*
+  name: Reverse
+  href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Reverse_
+  commentId: Overload:MatrixDotNet.Vectorization.VectorExtension.Reverse
+  isSpec: "True"
+  fullName: MatrixDotNet.Vectorization.VectorExtension.Reverse
+  nameWithType: VectorExtension.Reverse
 - uid: MatrixDotNet.Vectorization.VectorExtension.Sort*
   name: Sort
   href: api/MatrixDotNet.Vectorization.VectorExtension.html#MatrixDotNet_Vectorization_VectorExtension_Sort_

@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Builder.BuildMatrix.html",
-          "hash": "uf60tlHQ+XBdS98ZCIy4yA=="
+          "hash": "fvd/vPy0jqEejpx7uyyaRg=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html",
-          "hash": "QtNwVzQsYDBHXQ15Y2GNig=="
+          "hash": "UoM6kprR/xezef++fAz3dg=="
         }
       },
       "is_incremental": false,
@@ -729,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.html",
-          "hash": "d2HGZaDu4Dstm8mozYMNnQ=="
+          "hash": "v3jlqobFNOzSy8hjdaojoA=="
         }
       },
       "is_incremental": false,
@@ -801,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Vectorization.VectorExtension.html",
-          "hash": "Iw9pfnpVU7ZZ156zF6Tv9w=="
+          "hash": "L1SEs7j+LAz2OnjqSmqKIw=="
         }
       },
       "is_incremental": false,
@@ -873,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/access.html",
-          "hash": "1jrXPIp8j/c/4d0am8qoXw=="
+          "hash": "elgElrbDKbKc3KAiG2pKDw=="
         }
       },
       "is_incremental": false,
@@ -917,11 +917,23 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "articles/guides/basic/matrix_as_fixed_buffer.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/guides/basic/matrix_as_fixed_buffer.html",
+          "hash": "88U22tOROEeWMs6/na6ULA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "articles/guides/basic/multiply.md",
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/multiply.html",
-          "hash": "falGn8hUz1Ro05RYwKg7Dg=="
+          "hash": "0Dw/1HVSY58wN/Ytnjprkg=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +1017,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "4q823yJJrd2PTBmfB1ggbQ=="
+          "hash": "KUjkYNFWz2bZ7Ni/SzRBVg=="
         }
       },
       "is_incremental": false,
@@ -1119,7 +1131,7 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 14,
+          "total_file_count": 15,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {

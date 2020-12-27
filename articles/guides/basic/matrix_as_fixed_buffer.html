@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MatrixAsFixedBuffer Overview | MatrixDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="MatrixAsFixedBuffer Overview | MatrixDotNet ">
+    <meta name="generator" content="docfx 2.56.6.0">
+    
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+  
+    <link rel="shortcut icon" href="../../../images/logo/matrix.ico">
+    
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    
+    <link id="hljs-stylesheet" rel="stylesheet" href="../../../styles/hljs/vs-dark.css">
+    
+    <script type="text/javascript" src="../../../styles/theme.js"></script>
+    <script>
+      if(window.localStorage.getItem("theme") === "light") {
+        setLightTheme();
+      }
+      else setDarkTheme();
+      document.addEventListener('DOMContentLoaded', setIcons, false);
+    </script>
+  
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo/matrix.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <div class="navbar-right">
+                <div class="navbar-buttons">
+                  <a onclick="changeColorTheme();"><i id="lightbulb" class="far fa-lightbulb"></i></a>
+                </div>
+                <form class="navbar-form" role="search" id="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="fas fa-spinner index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="matrixasfixedbuffer-overview">MatrixAsFixedBuffer Overview</h1>
+
+<p><code>MatrixAsFixedBuffer</code> is a struct which intended for prevent memory allocation in difference of <code>Matrix&lt;T&gt;</code>.</p>
+<p><code>MatrixAsFixedBuffer</code> works same like <code>Matrix&lt;T&gt;</code> but max length of fixed buffer 6 561, thus you can create
+maximum size of matrix <code>80 x 80</code> and supports only <code>double</code> data type.</p>
+<blockquote>
+<p>Located in <code>MatrixDotNet.Extensions.Performance</code></p>
+</blockquote>
+<h3 id="initialize-of-matrix-as-fixed-buffer">Initialize of matrix as fixed buffer</h3>
+<p>First way for initialize of matrix is just assign number of rows and columns.</p>
+<pre><code class="lang-c#">MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(5, 5);
+</code></pre>
+<p>Where rows and columns are <code>byte</code> data type for aligned struct.</p>
+<p>next way is pass two-dimensional array <code>double[,]</code>.</p>
+<pre><code class="lang-c#">double[,] matrix = new double[5, 5];
+MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(matrix);
+</code></pre>
+<p>you even can pass <code>Matrix&lt;T&gt;</code> in implicit or explicit way.</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; matrix = new Matrix&lt;int&gt;(5, 5);
+MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(matrix);
+</code></pre>
+<p>Or</p>
+<pre><code class="lang-c#">Matrix&lt;double&gt; matrix = new Matrix&lt;int&gt;(5, 5);
+MatrixAsFixedBuffer ma = matrix;
+</code></pre>
+<h3 id="access-to-buffer">Access to buffer</h3>
+<p>In <code>MatrixAsFixedBuffer</code> not ways for access ot fixed buffer,
+however you can works with property <code>Data</code> which returns <code>Span&lt;double&gt;</code></p>
+<pre><code class="lang-c#">MatrixAsFixedBuffer matrix = new MatrixAsFixedBuffer(5, 5);
+var span = ma.Data;
+</code></pre>
+<p>Provides a lot of functionality for working with a buffer and it will be even faster than <code>Matrix&lt;T&gt;</code>.</p>
+<p>So, if you want to obtain row of matrix you need to use same like in <code>Matrix&lt;T&gt;</code> overload of index.</p>
+<pre><code class="lang-c#">MatrixAsFixedBuffer matrix = new MatrixAsFixedBuffer(5, 5);
+matrix[0] = { 1, 2, 3, 4, 5};
+matrix[1, 1] = 10;
+</code></pre>
+<h3 id="basic-operations">Basic operations</h3>
+<p>Basic operations same like <code>Matrix&lt;T&gt;</code> too,
+but passing parameters works through <code>ref</code> it is intended for performance.</p>
+<pre><code class="lang-csharp" name="BenchByRef.cs">using System.Runtime.CompilerServices;
+using BenchmarkDotNet.Attributes;
+
+namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
+{
+    [MemoryDiagnoser]
+    [RyuJitX64Job]
+    public class BenchByRef : PerformanceTest
+    {
+        private Struct32B _struct32B;
+        private Struct112B _struct112B;
+
+        [GlobalSetup]
+        public void Setup()
+        {
+            _struct32B = new Struct32B();
+            _struct112B = new Struct112B();
+        }
+
+        [Benchmark]
+        public long Struct32BAccess()
+        {
+            long res = 0;
+            for (int i = 0; i &lt; 100; i++)
+            {
+                res += Helper1(_struct32B);
+            }
+
+            return res;
+        }
+
+        [Benchmark]
+        public long Struct32BAccessByRef()
+        {
+            long res = 0;
+            for (int i = 0; i &lt; 100; i++)
+            {
+                res += Helper2(ref _struct32B);
+            }
+
+            return res;
+        }
+
+        [Benchmark]
+        public long Struct112BAccess()
+        {
+            long res = 0;
+            for (int i = 0; i &lt; 100; i++)
+            {
+                res += Helper3(_struct112B);
+            }
+
+            return res;
+        }
+
+        [Benchmark]
+        public long Struct112BAccessByRef()
+        {
+            long res = 0;
+            for (int i = 0; i &lt; 100; i++)
+            {
+                res += Helper4(ref _struct112B);
+            }
+
+            return res;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public int Helper1(Struct32B data)
+        {
+            return data.Value1;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public int Helper2(ref Struct32B data)
+        {
+            return data.Value1;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public long Helper3(Struct112B data)
+        {
+            return data.Value1;
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        public long Helper4(ref Struct112B data)
+        {
+            return data.Value1;
+        }
+
+        public struct Struct32B
+        {
+            public int Value1;
+            public int Value2;
+            public int Value3;
+            public int Value4;
+            public int Value5;
+        }
+
+
+        public struct Struct112B
+        {
+            public long Value1;
+            public long Value2;
+            public long Value3;
+            public long Value4;
+            public long Value5;
+            public long Value6;
+            public long Value7;
+            public long Value8;
+            public long Value9;
+            public long Value10;
+            public long Value11;
+            public long Value12;
+            public long Value13;
+            public long Value14;
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-ini">BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1110 (1909/November2018Update/19H2)
+Intel Core i7-9700 CPU 3.00GHz, 1 CPU, 8 logical and 8 physical cores
+.NET Core SDK=5.0.100
+[Host]    : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+RyuJitX64 : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+
+Job=RyuJitX64  Jit=RyuJit  Platform=X64
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Gen 0</th>
+<th style="text-align: right;">Gen 1</th>
+<th style="text-align: right;">Gen 2</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Struct32BAccess</td>
+<td style="text-align: right;">240.2 ns</td>
+<td style="text-align: right;">2.82 ns</td>
+<td style="text-align: right;">2.36 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Struct32BAccessByRef</td>
+<td style="text-align: right;">211.2 ns</td>
+<td style="text-align: right;">0.92 ns</td>
+<td style="text-align: right;">0.82 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Struct112BAccess</td>
+<td style="text-align: right;">703.1 ns</td>
+<td style="text-align: right;">6.01 ns</td>
+<td style="text-align: right;">5.62 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>Struct112BAccessByRef</td>
+<td style="text-align: right;">240.5 ns</td>
+<td style="text-align: right;">4.73 ns</td>
+<td style="text-align: right;">4.86 ns</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+</tbody>
+</table>
+<p>Let's consider the following samples and make benchmarks.</p>
+<p><code>MatrixAsFixedBuffer.MulByRef</code> is used for multiplication of two matrices.</p>
+<pre><code class="lang-c#">MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(5, 5);
+MatrixAsFixedBuffer mb = new MatrixAsFixedBuffer(5, 5);
+MatrixAsFixedBuffer mc = MatrixAsFixedBuffer.MulByRef(ma, mb);
+</code></pre>
+<p><code>MatrixAsFixedBuffer.AddByRef</code> is used for add of two matrices.</p>
+<pre><code class="lang-c#">MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(5, 5);
+MatrixAsFixedBuffer mb = new MatrixAsFixedBuffer(5, 5);
+MatrixAsFixedBuffer mc = MatrixAsFixedBuffer.AddByRef(ma, mb);
+</code></pre>
+<pre><code class="lang-csharp" name="BenchAddFixedMatrixVsMatrix.cs">using BenchmarkDotNet.Attributes;
+using MatrixDotNet.Extensions.Performance;
+
+namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
+{
+    [MemoryDiagnoser]
+    public class BenchAddFixedMatrixVsMatrix : PerformanceTest
+    {
+        private MatrixAsFixedBuffer _buffer;
+        private Matrix&lt;double&gt; _matrix;
+        
+        [GlobalSetup]
+        public void Setup()
+        {
+            _buffer = new MatrixAsFixedBuffer(80,80);
+            for (int i = 0; i &lt; _buffer.Length; i++)
+            {
+                _buffer.Data[i] = 5;
+            }
+            _matrix = new Matrix&lt;double&gt;(80,80,5);
+        }
+
+        [Benchmark]
+        public MatrixAsFixedBuffer AddMatrixAsFixedBuffer()
+        {
+            return MatrixAsFixedBuffer.AddByRef(ref _buffer, ref _buffer);
+        }
+
+        [Benchmark]
+        public Matrix&lt;double&gt; AddMatrix()
+        {
+            return _matrix + _matrix;
+        }
+    }
+}
+</code></pre>
+<pre><code class="lang-ini">BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1110 (1909/November2018Update/19H2)
+Intel Core i7-9700 CPU 3.00GHz, 1 CPU, 8 logical and 8 physical cores
+.NET Core SDK=5.0.100
+[Host]     : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+DefaultJob : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 RyuJIT
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Gen 0</th>
+<th style="text-align: right;">Gen 1</th>
+<th style="text-align: right;">Gen 2</th>
+<th style="text-align: right;">Allocated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AddMatrixAsFixedBuffer</td>
+<td style="text-align: right;">4.332 us</td>
+<td style="text-align: right;">0.0851 us</td>
+<td style="text-align: right;">0.1247 us</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">-</td>
+</tr>
+<tr>
+<td>AddMatrix</td>
+<td style="text-align: right;">4.543 us</td>
+<td style="text-align: right;">0.0901 us</td>
+<td style="text-align: right;">0.1800 us</td>
+<td style="text-align: right;">8.1253</td>
+<td style="text-align: right;">2.0294</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;">51256 B</td>
+</tr>
+</tbody>
+</table>
+<p>As you can see difference only in memory allocation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/basic/matrix_as_fixed_buffer.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2020 MatrixDotNet
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </body>
+</html>
