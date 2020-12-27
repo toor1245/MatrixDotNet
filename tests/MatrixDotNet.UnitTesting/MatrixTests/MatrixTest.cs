@@ -7,10 +7,12 @@ using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Extensions.Performance;
-using MatrixDotNet.Extensions.Performance.Conversion;
-using MatrixDotNet.Extensions.Performance.Simd;
 using MatrixDotNet.NotStableFeatures;
 using Xunit;
+
+#if NETCOREAPP3_1 || NET5_0
+using MatrixDotNet.Extensions.Performance.Simd;
+#endif
 
 namespace MatrixDotNetTests.MatrixTests
 {
@@ -563,7 +565,8 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected,actual);
         }
-        
+
+#if NETCOREAPP3_1 || NET5_0
         [Theory]
         [InlineData(16)]
         [InlineData(32)]
@@ -583,6 +586,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, actual);
         }
+#endif
         
         [Fact]
         public void MatrixMultiplyTest_MultiplyTwoMatrix_AssertMustBeThrowsMatrixDotNetException()
