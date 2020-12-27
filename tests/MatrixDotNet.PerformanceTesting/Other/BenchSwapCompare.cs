@@ -1,12 +1,10 @@
 using BenchmarkDotNet.Attributes;
-
-using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 
-namespace Samples.Samples
+namespace MatrixDotNet.PerformanceTesting.Other
 {
-    public class SwapCompare
+    public class BenchSwapCompare
     {
         private Matrix<int> _matrix1;
 

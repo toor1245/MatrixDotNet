@@ -4,8 +4,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace MatrixDotNet.PerformanceTesting.Other
 {
-    [RyuJitX64Job]
-    public class CountBench : PerformanceTest
+    public class BenchCountEqualBench : PerformanceTest
     {
         private List<int> arr;
         private int[] arr2;
@@ -14,55 +13,56 @@ namespace MatrixDotNet.PerformanceTesting.Other
         public void Setup()
         {
             arr = new List<int>();
-            arr2 = new int[10001];
+            arr2 = new int[15];
+            arr.Add(1024);
+            arr.Add(1024);
             for (int i = 0; i < arr2.Length ; i++)
             {
-                arr.Add(i);
-                arr2[i] = i;
+                if ((i & 0b1) == 0)
+                {
+                    arr.Add(1024);
+                }
+                else
+                {
+                    arr.Add(i);
+                }
+                
             }
         }
 
         [Benchmark]
         public int CountLinq()
         {
-            return arr.Count(x => x >= 1024);
+            int find = 1024;
+            return arr.Count(x => x == find);
         }
 
         [Benchmark]
-        public int CountBitHacks()
+        public int CountEqualBitHacks()
         {
             int count = 0;
+            int find = 1024;
             for (int i = 0; i < arr.Count; i++)
             {
-                int element = (arr2[i] - 30) >> 31;
-                count += ~element & arr2[i];
+                count = ((((arr[i] & find) - find) >> 31) ^ i) & i;
             }
             return count;
         }
         
         [Benchmark]
-        public int CountForeachBitHacks()
+        public int CountEqualFor()
         {
             int count = 0;
-
-            foreach (var i in arr)
+            int find = 1024;
+            for (int i = 0; i < arr.Count; i++)
             {
-                int element = (i - 1024) >> 31;
-                count += ~element & 1;
+                if (arr[i] == find)
+                {
+                    count = i;
+                }
             }
-
             return count;
         }
         
-        [Benchmark]
-        public int CountBitHacksShift()
-        {
-            int count = 0;
-            for (int i = 0; i < arr.Count; i++)
-            {
-                count += arr[i] >> 7;
-            }
-            return count;
-        }
     }
 }

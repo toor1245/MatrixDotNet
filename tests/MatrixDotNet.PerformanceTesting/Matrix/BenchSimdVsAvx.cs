@@ -6,7 +6,7 @@ using MatrixDotNet.Extensions.Performance.Simd;
 namespace MatrixDotNet.PerformanceTesting.Matrix
 {
     [RyuJitX64Job]
-    public class SimdVsAvx : PerformanceTest
+    public class BenchSimdVsAvx : PerformanceTest
     {
         private Matrix<int> _matrix;
 

@@ -5,7 +5,7 @@ using MatrixDotNet.Extensions.Performance.Simd;
 namespace MatrixDotNet.PerformanceTesting.Matrix
 {
     [RyuJitX64Job]
-    public class EqualsCompare : PerformanceTest
+    public class BenchEqualsCompare : PerformanceTest
     {
         private Matrix<int> _matrix1;
         private Matrix<int> _matrix2;

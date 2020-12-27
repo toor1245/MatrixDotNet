@@ -5,7 +5,7 @@ using MatrixDotNet.Extensions.Performance.Simd;
 namespace MatrixDotNet.PerformanceTesting.MathExtension
 {
     [RyuJitX64Job]
-    public class AddTest : PerformanceTest
+    public class BenchAdd : PerformanceTest
     {
         private Matrix<double> _matrix1;
         private Matrix<double> _matrix2;

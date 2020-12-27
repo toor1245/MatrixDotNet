@@ -3,7 +3,7 @@ using MatrixDotNet.Extensions.Builder;
 
 namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
 {
-    public class SumTest : PerformanceTest
+    public class BenchSum : PerformanceTest
     {
         [Params(128, 256)]
         public int Size;
