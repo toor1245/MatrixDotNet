@@ -4,7 +4,7 @@ using MatrixDotNet.NotStableFeatures;
 
 namespace MatrixDotNet.PerformanceTesting.Matrix
 {
-    public class EqualsBench : PerformanceTest
+    public class BenchEquals : PerformanceTest
     {
         private Matrix<byte> _matrix;
         private Matrix<byte> _matrix2;

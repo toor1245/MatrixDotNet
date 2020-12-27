@@ -5,7 +5,7 @@ using MatrixDotNet.Extensions.Builder;
 namespace MatrixDotNet.PerformanceTesting.MathExtension
 {
     [MemoryDiagnoser]
-    public class PowTest : PerformanceTest
+    public class BenchPow : PerformanceTest
     {
         private Matrix<int> _matrix;
         

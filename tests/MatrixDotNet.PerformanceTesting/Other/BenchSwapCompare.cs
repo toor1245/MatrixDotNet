@@ -4,7 +4,7 @@ using MatrixDotNet.Extensions.Conversion;
 
 namespace MatrixDotNet.PerformanceTesting.Other
 {
-    public class SwapCompare
+    public class BenchSwapCompare
     {
         private Matrix<int> _matrix1;
 

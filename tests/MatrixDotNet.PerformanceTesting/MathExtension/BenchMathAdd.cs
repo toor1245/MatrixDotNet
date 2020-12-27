@@ -4,7 +4,7 @@ using MatrixDotNet.Math;
 namespace MatrixDotNet.PerformanceTesting.MathExtension
 {
     [MemoryDiagnoser]
-    public class BenchAddTest : PerformanceTest
+    public class BenchMathAdd : PerformanceTest
     {
         [Params(4096)]
         public int A;

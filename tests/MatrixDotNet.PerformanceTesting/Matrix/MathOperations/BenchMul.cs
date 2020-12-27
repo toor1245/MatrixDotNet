@@ -5,7 +5,7 @@ using MatrixDotNet.Extensions.Performance;
 
 namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
 {
-    public class MulTest : PerformanceTest
+    public class BenchMul : PerformanceTest
     {
         [Params(1024)]
         public int Size;

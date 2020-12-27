@@ -5,7 +5,7 @@ using MatrixDotNet.Extensions.Performance.Simd.Statistics;
 
 namespace MatrixDotNet.PerformanceTesting.Matrix
 {
-    public class VpMinBench : PerformanceTest
+    public class BenchVpMinBench : PerformanceTest
     {
         const int N = 1023;
         public Matrix<double> MatrixAvxX64 = new Matrix<double>(N,N);

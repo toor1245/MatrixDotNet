@@ -5,7 +5,7 @@ using System.Runtime.Intrinsics.X86;
 
 namespace MatrixDotNet.PerformanceTesting.Other
 {
-    public class VmaskmovBench : PerformanceTest
+    public class BenchVMaskMov : PerformanceTest
     {
         public const int N = 10001;
         public double[] A = new double[N];
