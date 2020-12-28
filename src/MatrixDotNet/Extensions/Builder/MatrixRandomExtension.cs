@@ -134,7 +134,7 @@ namespace MatrixDotNet.Extensions.Builder
             Matrix<int> matrix = new Matrix<int>(row, column);
             Random random = new Random();
             for (int i = 0; i < matrix._Matrix.Length; i++)
-            { 
+            {
                 matrix._Matrix[i] = random.Next(startRandom, endRandom);
             }
 
@@ -154,7 +154,7 @@ namespace MatrixDotNet.Extensions.Builder
             Matrix<long> matrix = new Matrix<long>(row, column);
             Random random = new Random();
             for (int i = 0; i < matrix._Matrix.Length; i++)
-            { 
+            {
                 matrix._Matrix[i] = random.Next(startRandom, endRandom);
             }
 
@@ -173,9 +173,9 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<byte> matrix = new Matrix<byte>(row, column);
             Random random = new Random();
-            
+
             for (int i = 0; i < matrix._Matrix.Length; i++)
-            { 
+            {
                 matrix._Matrix[i] = (byte) random.Next(startRandom, endRandom);
             }
 
@@ -196,7 +196,7 @@ namespace MatrixDotNet.Extensions.Builder
             Random random = new Random();
 
             for (int i = 0; i < matrix._Matrix.Length; i++)
-            { 
+            {
                 matrix._Matrix[i] = (sbyte) random.Next(startRandom, endRandom);
             }
 
@@ -215,9 +215,9 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<double> matrix = new Matrix<double>(row, column);
             Random random = new Random();
-            
+
             for (int i = 0; i < matrix._Matrix.Length; i++)
-            { 
+            {
                 matrix._Matrix[i] = random.Next(startRandom, endRandom);
             }
 
@@ -236,9 +236,9 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<float> matrix = new Matrix<float>(row, column);
             Random random = new Random();
-            
+
             for (int i = 0; i < matrix._Matrix.Length; i++)
-            { 
+            {
                 matrix._Matrix[i] = random.Next(startRandom, endRandom);
             }
 
