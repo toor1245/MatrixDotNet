@@ -520,7 +520,7 @@ namespace MatrixDotNet
                 ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
                 for (; i < matrix.Length; i++)
                 {
-                    negValue = (sbyte) -negValue;
+                    negValue = (short) -negValue;
                     negValue = ref Unsafe.Add(ref negValue, 1);
                 }
                 return negate;
@@ -646,7 +646,7 @@ namespace MatrixDotNet
                 ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
                 for (; i < matrix.Length; i++)
                 {
-                    negValue = (sbyte) -negValue;
+                    negValue = -negValue;
                     negValue = ref Unsafe.Add(ref negValue, 1);
                 }
                 return negate;
