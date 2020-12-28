@@ -15,7 +15,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<long>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx2.CompareEqual(Vector256<long>.Zero, Vector256<long>.Zero);
+                return Vector256.Create(0xFFFFFFFF).AsInt64();
 #endif
             }
         }
@@ -28,7 +28,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<ulong>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx2.CompareEqual(Vector256<ulong>.Zero, Vector256<ulong>.Zero);
+                return Vector256.Create(0xFFFFFFFF).AsUInt64();
 #endif
             }
         }
@@ -41,7 +41,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<int>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx2.CompareEqual(Vector256<int>.Zero, Vector256<int>.Zero);
+                return Vector256.Create(0xFFFFFFFF).AsInt32();
 #endif
             }
         }
@@ -54,7 +54,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<uint>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx2.CompareEqual(Vector256<uint>.Zero, Vector256<uint>.Zero);
+                return Vector256.Create(0xFFFFFFFF).AsUInt32();
 #endif
             }
         }
@@ -67,7 +67,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<short>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx2.CompareEqual(Vector256<short>.Zero, Vector256<short>.Zero);
+                return Vector256.Create(0xFFFFFFFF).AsInt16();
 #endif
             }
         }
@@ -80,7 +80,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<ushort>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx2.CompareEqual(Vector256<ushort>.Zero, Vector256<ushort>.Zero);
+                return Vector256.Create(0xFFFFFFFF).AsUInt16();
 #endif
             }
         }
@@ -93,7 +93,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<byte>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx2.CompareEqual(Vector256<byte>.Zero, Vector256<byte>.Zero);
+                return Vector256.Create(0xFFFFFFFF).AsByte();
 #endif
             }
         }
@@ -106,7 +106,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<sbyte>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx2.CompareEqual(Vector256<sbyte>.Zero, Vector256<sbyte>.Zero);
+                return Vector256.Create(0xFFFFFFFF).AsSByte();
 #endif
             }
         }
@@ -119,8 +119,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<float>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx.Compare(Vector256<float>.Zero, Vector256<float>.Zero,
-                    FloatComparisonMode.OrderedNonSignaling);
+                return Vector256.Create(0xFFFFFFFF).AsSingle();
 #endif
             }
         }
@@ -133,8 +132,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector256<double>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx.Compare(Vector256<double>.Zero, Vector256<double>.Zero,
-                    FloatComparisonMode.OrderedNonSignaling);
+                return Vector256.Create(0xFFFFFFFF).AsDouble();
 #endif
             }
         }
@@ -147,7 +145,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<long>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Sse41.CompareEqual(Vector128<long>.Zero, Vector128<long>.Zero);
+                return Vector128.Create(0xFFFFFFFF).AsInt64();
 #endif
             }
         }
@@ -160,7 +158,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<ulong>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Sse41.CompareEqual(Vector128<ulong>.Zero, Vector128<ulong>.Zero);
+                return Vector128.Create(0xFFFFFFFF).AsUInt64();
 #endif
             }
         }
@@ -173,7 +171,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<int>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Sse2.CompareEqual(Vector128<int>.Zero, Vector128<int>.Zero);
+                return Vector128.Create(0xFFFFFFFF).AsInt32();
 #endif
             }
         }
@@ -186,7 +184,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<uint>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Sse2.CompareEqual(Vector128<uint>.Zero, Vector128<uint>.Zero);
+                return Vector128.Create(0xFFFFFFFF).AsUInt32();
 #endif
             }
         }
@@ -199,7 +197,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<short>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Sse2.CompareEqual(Vector128<short>.Zero, Vector128<short>.Zero);
+                return Vector128.Create(0xFFFFFFFF).AsInt16();
 #endif
             }
         }
@@ -212,7 +210,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<ushort>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Sse2.CompareEqual(Vector128<ushort>.Zero, Vector128<ushort>.Zero);
+                return Vector128.Create(0xFFFFFFFF).AsUInt16();
 #endif
             }
         }
@@ -225,7 +223,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<byte>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Sse2.CompareEqual(Vector128<byte>.Zero, Vector128<byte>.Zero);
+                return Vector128.Create(0xFFFFFFFF).AsByte();
 #endif
             }
         }
@@ -238,7 +236,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<sbyte>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Sse2.CompareEqual(Vector128<sbyte>.Zero, Vector128<sbyte>.Zero);
+                return Vector128.Create(0xFFFFFFFF).AsSByte();
 #endif
             }
         }
@@ -251,8 +249,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<float>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx.Compare(Vector128<float>.Zero, Vector128<float>.Zero,
-                    FloatComparisonMode.OrderedNonSignaling);
+                return Vector128.Create(0xFFFFFFFF).AsSingle();
 #endif
             }
         }
@@ -265,8 +262,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #if NET5_0
                 return Vector128<double>.AllBitsSet;
 #elif NETCOREAPP3_1
-                return Avx.Compare(Vector128<double>.Zero, Vector128<double>.Zero,
-                    FloatComparisonMode.OrderedNonSignaling);
+                return Vector128.Create(0xFFFFFFFF).AsDouble();
 #endif
             }
         }
