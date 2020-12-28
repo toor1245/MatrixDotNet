@@ -443,5 +443,48 @@ namespace MatrixDotNet.Math
 
             throw new NotSupportedException();
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static T Negate(T arg)
+        {
+            if (typeof(T) == typeof(int))
+            {
+                var negate = -Unsafe.As<T, int>(ref arg);
+                return Unsafe.As<int, T>(ref negate);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                var negate = -Unsafe.As<T, double>(ref arg);
+                return Unsafe.As<double, T>(ref negate);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                var negate = -Unsafe.As<T, float>(ref arg);
+                return Unsafe.As<float, T>(ref negate);
+            }
+
+            if (typeof(T) == typeof(decimal))
+            {
+                var negate = -Unsafe.As<T, decimal>(ref arg);
+                return Unsafe.As<decimal, T>(ref negate);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                var negate = -Unsafe.As<T, long>(ref arg);
+                return Unsafe.As<long, T>(ref negate);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                short negate = (short) -Unsafe.As<T, short>(ref arg);
+                return Unsafe.As<short, T>(ref negate);
+            }
+
+
+            throw new NotSupportedException();
+        }
     }
 }

@@ -198,6 +198,29 @@ namespace MatrixDotNet.Extensions.Builder
         /// <param name="startRandom">start value</param>
         /// <param name="endRandom">end value</param>
         /// <returns>Random matrix</returns>
+        public static Matrix<short> RandomShort(int row, int column, short startRandom = short.MinValue, short endRandom = short.MaxValue)
+        {
+            Matrix<short> matrix = new Matrix<short>(row, column);
+            Random random = new Random();
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    matrix[i, j] = (short) random.Next(startRandom, endRandom);
+                }
+            }
+
+            return matrix;
+        }
+
+        /// <summary>
+        /// Generates random matrix.
+        /// </summary>
+        /// <param name="row">number of rows</param>
+        /// <param name="column">number of columns</param>
+        /// <param name="startRandom">start value</param>
+        /// <param name="endRandom">end value</param>
+        /// <returns>Random matrix</returns>
         public static Matrix<double> RandomDouble(int row, int column, int startRandom = int.MinValue, int endRandom = int.MaxValue)
         {
             Matrix<double> matrix = new Matrix<double>(row, column);

@@ -1326,5 +1326,97 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, matrixA);
         }
+
+#if NET5_0 || NETCOREAPP3_1
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        [InlineData(7, 103)]
+        [InlineData(2, 103)]
+        public void NegateMatrixTest_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<int> matrixA = new Matrix<int>(m, n, 1);
+            Matrix<int> expected = new Matrix<int>(m, n, -1);
+
+            // Act
+            var actual = Matrix<int>.Negate(matrixA);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        [InlineData(7, 14)]
+        [InlineData(2, 32)]
+        public void NegateMatrixSByteTest_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<sbyte> matrixA = new Matrix<sbyte>(m, n, 1);
+            Matrix<sbyte> expected = new Matrix<sbyte>(m, n, -1);
+
+            // Act
+            var actual = Matrix<sbyte>.Negate(matrixA);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData(1, 1)]
+        [InlineData(2, 1)]
+        [InlineData(5, 5)]
+        [InlineData(1, 2)]
+        [InlineData(2, 2)]
+        [InlineData(3, 3)]
+        [InlineData(4, 5)]
+        [InlineData(5, 4)]
+        [InlineData(8, 7)]
+        [InlineData(4, 9)]
+        [InlineData(15, 10)]
+        [InlineData(16, 4)]
+        [InlineData(7, 11)]
+        [InlineData(9, 8)]
+        [InlineData(7, 14)]
+        [InlineData(2, 32)]
+        public void NegateMatrixShortTest_AssertMustBeEqual(int m, int n)
+        {
+            // Arrange
+            Matrix<short> matrixA = new Matrix<short>(m, n, 1);
+            Matrix<short> expected = new Matrix<short>(m, n, -1);
+
+            // Act
+            var actual = Matrix<short>.Negate(matrixA);
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+#endif
     }
 }
