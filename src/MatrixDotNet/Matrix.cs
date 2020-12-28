@@ -478,7 +478,7 @@ namespace MatrixDotNet
                 int len = matrix.Length;
                 int lastIndexBlock = len - len % size;
                 int i = 0;
-                var setOne = IntrinsicsHandler.SetAllBits256Int16;
+                var setOne = IntrinsicsHandler<short>.SetAllBits256;
                 Span<short> negateSpan = negate._Matrix;
                 Span<short> matrixSpan = matrix._Matrix;
                 fixed (short* ptr1 = negateSpan)
@@ -505,7 +505,7 @@ namespace MatrixDotNet
                 int len = matrix.Length;
                 int lastIndexBlock = len - len % size;
                 int i = 0;
-                var setOne = IntrinsicsHandler.SetAllBits128Int16;
+                var setOne = IntrinsicsHandler<short>.SetAllBits128;
                 Span<short> negateSpan = negate._Matrix;
                 Span<short> matrixSpan = matrix._Matrix;
                 fixed (short* ptr1 = negateSpan)
@@ -541,7 +541,7 @@ namespace MatrixDotNet
                 int len = matrix.Length;
                 int lastIndexBlock = len - len % size;
                 int i = 0;
-                var setOne = IntrinsicsHandler.SetAllBits256SByte;
+                var setOne = IntrinsicsHandler<sbyte>.SetAllBits256;
                 Span<sbyte> negateSpan = negate._Matrix;
                 Span<sbyte> matrixSpan = matrix._Matrix;
                 fixed (sbyte* ptr1 = negateSpan)
@@ -568,7 +568,7 @@ namespace MatrixDotNet
                 int len = matrix.Length;
                 int lastIndexBlock = len - len % size;
                 int i = 0;
-                var setOne = IntrinsicsHandler.SetAllBits128SByte;
+                var setOne = IntrinsicsHandler<sbyte>.SetAllBits128;
                 Span<sbyte> negateSpan = negate._Matrix;
                 Span<sbyte> matrixSpan = matrix._Matrix;
                 fixed (sbyte* ptr1 = negateSpan)
@@ -605,7 +605,7 @@ namespace MatrixDotNet
                 int len = matrix.Length;
                 int lastIndexBlock = len - len % size;
                 int i = 0;
-                var setOne = IntrinsicsHandler.SetAllBits256Int32;
+                var setOne = IntrinsicsHandler<int>.SetAllBits256;
                 Span<int> negateSpan = negate._Matrix;
                 fixed (int* ptr1 = negateSpan)
                 fixed (int* ptr2 = matrix._Matrix)
@@ -632,7 +632,7 @@ namespace MatrixDotNet
                 int len = matrix.Length;
                 int lastIndexBlock = len - len % size;
                 int i = 0;
-                var setOne = IntrinsicsHandler.SetAllBits128Int32;
+                var setOne = IntrinsicsHandler<int>.SetAllBits128;
                 Span<int> negateSpan = negate._Matrix;
                 fixed (int* ptr1 = negateSpan)
                 fixed (int* ptr2 = matrix._Matrix)
