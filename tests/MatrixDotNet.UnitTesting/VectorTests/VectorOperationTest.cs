@@ -1,5 +1,4 @@
-﻿using System;
-using MatrixDotNet;
+﻿using MatrixDotNet;
 using MatrixDotNet.Vectorization;
 using Xunit;
 

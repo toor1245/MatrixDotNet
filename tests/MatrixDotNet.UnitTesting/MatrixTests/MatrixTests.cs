@@ -1,11 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
-using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Performance;
-using MatrixDotNet.Extensions.Performance.Simd;
 using MatrixDotNet.NotStableFeatures;
 using Xunit;
 
