@@ -5,7 +5,7 @@ using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests.StatisticsTests
 {
-    public class BitMatrixExtensionTest
+    public class BitTests
     {
         #region maximum tests
         

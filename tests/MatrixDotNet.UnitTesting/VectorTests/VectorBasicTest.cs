@@ -6,6 +6,8 @@ namespace MatrixDotNetTests.VectorTests
 {
     public class VectorBasicTest
     {
+        #region Ctor
+        
         [Fact]
         public void CtorTest_ChecksLengthOfVectorAfterInit_AssertMustBeEqual()
         {
@@ -20,6 +22,10 @@ namespace MatrixDotNetTests.VectorTests
             Assert.Equal(expected, actual.Length);
             Assert.Equal(expected, actual2.Length);
         }
+        
+        #endregion
+
+        #region Equals
         
         [Fact]
         public void EqualsTest_ChecksTwoVectorsByReference_AssertMustBeEqual()
@@ -81,6 +87,10 @@ namespace MatrixDotNetTests.VectorTests
             Assert.Equal(expected, actual);
         }
         
+        #endregion
+
+        #region GetDistancePoint
+        
         [Fact]
         public void GetDistancePointVectorTest_AssertMustBeEqual()
         {
@@ -122,6 +132,10 @@ namespace MatrixDotNetTests.VectorTests
             Assert.Throws<MatrixDotNetException>(() => VectorExtension.GetDistancePoint(v1, v2));
         }
         
+        #endregion
+        
+        #region GetDirectCos
+        
         [Fact]
         public void GetDirectCosTest_AssertMustBeEqual()
         {
@@ -150,5 +164,7 @@ namespace MatrixDotNetTests.VectorTests
             // Assert
             Assert.Equal(expected, actual);
         }
+        
+        #endregion
     }
 }

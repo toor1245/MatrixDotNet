@@ -4,7 +4,7 @@ using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests
 {
-    public class MatrixBuilder
+    public class BuilderTests
     {
         [Fact]
         public void BuildTest_CreateMatrixByExpressionXMulXPlusY_AssertMustBeEqual()

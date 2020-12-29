@@ -7,6 +7,8 @@ namespace MatrixDotNetTests.VectorTests
 {
     public class VectorOperationTest
     {
+        #region DotProduct
+        
         [Fact]
         public void DotProductTest_MulTwoVector_AssertMustBeEqual()
         {
@@ -36,7 +38,11 @@ namespace MatrixDotNetTests.VectorTests
             // Assert
             Assert.Equal(expected, actual);
         }
+        
+        #endregion
 
+        #region Mul Vector on constant
+        
         [Fact]
         public void MulTest_MulVectorOnConstant_AssertMustBeEqual()
         {
@@ -53,7 +59,11 @@ namespace MatrixDotNetTests.VectorTests
             Assert.Equal(expected, actual1);
             Assert.Equal(expected, actual2);
         }
+        
+        #endregion
 
+        #region Subtract
+        
         [Theory]
         [InlineData(2, 1, 1)]
         [InlineData(1, 2, -1)]
@@ -70,7 +80,11 @@ namespace MatrixDotNetTests.VectorTests
             // Assert
             Assert.Equal(expected, actual1);
         }
+        
+        #endregion
 
+        #region Addition
+        
         [Theory]
         [InlineData(2, 1, 3)]
         [InlineData(1, 4, 5)]
@@ -87,7 +101,11 @@ namespace MatrixDotNetTests.VectorTests
             // Assert
             Assert.Equal(expected, actual1);
         }
+        
+        #endregion
 
+        #region TensorProduct
+        
         [Fact]
         public void TensorProductTest_AssertMustBeEqual()
         {
@@ -109,5 +127,7 @@ namespace MatrixDotNetTests.VectorTests
             // Assert
             Assert.Equal(expected, actual);
         }
+        
+        #endregion
     }
 }

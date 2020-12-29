@@ -4,7 +4,7 @@ using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests
 {
-    public class MatrixSortExtension
+    public class SortTests
     {
         [Fact]
         public void SortMatrix()
