@@ -28,9 +28,7 @@ MatrixDotNet is a powerful .NET library for calculate matrix. You can install Ma
 * Have many algorithms such sections as: factorizations, solving a linear system, conversion matrix, statistics
 * Have algorithms which enhance precision
 * You can write your matrix to markdown or html and open them with happen .dat file
- 
-> See [MatrixDotNet.Extensions.Core](https://toor1245.github.io/MatrixDotNet/articles/features/getting_started.html) documentation.
- 
+
 ### Have many algorithms such sections as: factorization, solver, conversion matrix, statistics
 Lets consider several algorithms on each section.
 
