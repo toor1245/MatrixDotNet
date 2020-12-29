@@ -4,7 +4,7 @@ using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests
 {
-    public class DeterminantTest
+    public class DeterminantTests
     {
         [Fact]
         public void CholeskyDeterminant_GetsDeterminantMatrix3x3_AssertMustBeEqual()

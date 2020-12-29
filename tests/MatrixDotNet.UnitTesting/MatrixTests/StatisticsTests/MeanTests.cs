@@ -4,7 +4,7 @@ using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests.StatisticsTests
 {
-    public class MatrixMeanTest
+    public class MeanTests
     {
         [Fact]
         public void MeanTest_GetsMeanWholeMatrix3x3_AssertMustBeEqual()

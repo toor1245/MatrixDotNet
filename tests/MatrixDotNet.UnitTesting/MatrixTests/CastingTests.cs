@@ -5,7 +5,7 @@ using System;
 namespace MatrixDotNetTests.MatrixTests
 {
     [TestFixture]
-    class CastingTests
+    public class CastingTests
     {
         [Test]
         public void FromJaggedArray_HappyPath()

@@ -1,13 +1,18 @@
 ﻿using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
-using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Math;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
+#if NET5_0 || NETCOREAPP3_1
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
+using MatrixDotNet.Extensions.Performance.Simd.Handler;
+#endif
 
 namespace MatrixDotNet
 {
@@ -221,6 +226,24 @@ namespace MatrixDotNet
             Rows = row;
             Columns = col;
             _Matrix = new T[row * col];
+        }
+
+        /// <summary>
+        /// Creates matrix.
+        /// </summary>
+        /// <param name="array">array</param>
+        /// <param name="row">row</param>
+        /// <param name="col">col</param>
+        internal unsafe Matrix(T[] array, int row, int col)
+        {
+            Rows = row;
+            Columns = col;
+            _Matrix = new T[row * col];
+            fixed (T* ptr1 = _Matrix)
+            fixed (T* ptr2 = array)
+            {
+                Unsafe.CopyBlock(ptr1, ptr2, (uint) (sizeof(T) * Length));
+            }
         }
 
         /// <summary>
@@ -441,6 +464,215 @@ namespace MatrixDotNet
             return result;
         }
 
+#if NET5_0 || NETCOREAPP3_1
+        /// <summary>
+        /// Negate matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static unsafe Matrix<short> Negate(Matrix<short> matrix)
+        {
+            if (Avx2.IsSupported)
+            {
+                var negate = new Matrix<short>(matrix._Matrix, matrix.Rows, matrix.Columns);
+                int size = Vector256<short>.Count;
+                int len = matrix.Length;
+                int lastIndexBlock = len - len % size;
+                int i = 0;
+                var setOne = IntrinsicsHandler<short>.SetAllBits256;
+                Span<short> negateSpan = negate._Matrix;
+                Span<short> matrixSpan = matrix._Matrix;
+                fixed (short* ptr1 = negateSpan)
+                fixed (short* ptr2 = matrixSpan)
+                {
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        Avx.Store(ptr1 + i, Avx2.Sign(Avx.LoadVector256(ptr2 + i), setOne));
+                    }
+                }
+
+                ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
+                for (; i < matrix.Length; i++)
+                {
+                    negValue = MathUnsafe<short>.Negate(negValue);
+                    negValue = ref Unsafe.Add(ref negValue, 1);
+                }
+                return negate;
+            }
+            else if (Ssse3.IsSupported)
+            {
+                var negate = new Matrix<short>(matrix._Matrix, matrix.Rows, matrix.Columns);
+                int size = Vector128<short>.Count;
+                int len = matrix.Length;
+                int lastIndexBlock = len - len % size;
+                int i = 0;
+                var setOne = IntrinsicsHandler<short>.SetAllBits128;
+                Span<short> negateSpan = negate._Matrix;
+                Span<short> matrixSpan = matrix._Matrix;
+                fixed (short* ptr1 = negateSpan)
+                fixed (short* ptr2 = matrixSpan)
+                {
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        Sse2.Store(ptr1 + i, Ssse3.Sign(Sse2.LoadVector128(ptr2 + i), setOne));
+                    }
+                }
+
+                ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
+                for (; i < matrix.Length; i++)
+                {
+                    negValue = (short) -negValue;
+                    negValue = ref Unsafe.Add(ref negValue, 1);
+                }
+                return negate;
+            }
+            return -matrix;
+        }
+
+        /// <summary>
+        /// Negate matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static unsafe Matrix<sbyte> Negate(Matrix<sbyte> matrix)
+        {
+            if (Avx2.IsSupported)
+            {
+                var negate = new Matrix<sbyte>(matrix._Matrix, matrix.Rows, matrix.Columns);
+                int size = Vector256<sbyte>.Count;
+                int len = matrix.Length;
+                int lastIndexBlock = len - len % size;
+                int i = 0;
+                var setOne = IntrinsicsHandler<sbyte>.SetAllBits256;
+                Span<sbyte> negateSpan = negate._Matrix;
+                Span<sbyte> matrixSpan = matrix._Matrix;
+                fixed (sbyte* ptr1 = negateSpan)
+                fixed (sbyte* ptr2 = matrixSpan)
+                {
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        Avx.Store(ptr1 + i, Avx2.Sign(Avx.LoadVector256(ptr2 + i), setOne));
+                    }
+                }
+
+                ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
+                for (; i < matrix.Length; i++)
+                {
+                    negValue = (sbyte) -negValue;
+                    negValue = ref Unsafe.Add(ref negValue, 1);
+                }
+                return negate;
+            }
+            else if (Ssse3.IsSupported)
+            {
+                var negate = new Matrix<sbyte>(matrix._Matrix, matrix.Rows, matrix.Columns);
+                int size = Vector128<sbyte>.Count;
+                int len = matrix.Length;
+                int lastIndexBlock = len - len % size;
+                int i = 0;
+                var setOne = IntrinsicsHandler<sbyte>.SetAllBits128;
+                Span<sbyte> negateSpan = negate._Matrix;
+                Span<sbyte> matrixSpan = matrix._Matrix;
+                fixed (sbyte* ptr1 = negateSpan)
+                fixed (sbyte* ptr2 = matrixSpan)
+                {
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        Sse2.Store(ptr1 + i, Ssse3.Sign(Sse2.LoadVector128(ptr2 + i), setOne));
+                    }
+                }
+
+                ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
+                for (; i < matrix.Length; i++)
+                {
+                    negValue = (sbyte) -negValue;
+                    negValue = ref Unsafe.Add(ref negValue, 1);
+                }
+
+                return negate;
+            }
+            return -matrix;
+        }
+
+        /// <summary>
+        /// Negate matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        public static unsafe Matrix<int> Negate(Matrix<int> matrix)
+        {
+            if (Avx2.IsSupported)
+            {
+                var negate = new Matrix<int>(matrix._Matrix, matrix.Rows, matrix.Columns);
+                int size = Vector256<int>.Count;
+                int len = matrix.Length;
+                int lastIndexBlock = len - len % size;
+                int i = 0;
+                var setOne = IntrinsicsHandler<int>.SetAllBits256;
+                Span<int> negateSpan = negate._Matrix;
+                fixed (int* ptr1 = negateSpan)
+                fixed (int* ptr2 = matrix._Matrix)
+                {
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        Avx.Store(ptr1 + i, Avx2.Sign(Avx.LoadVector256(ptr2 + i), setOne));
+                    }
+                }
+
+                ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
+                for (; i < matrix.Length; i++)
+                {
+                    negValue = -negValue;
+                    negValue = ref Unsafe.Add(ref negValue, 1);
+                }
+
+                return negate;
+            }
+            else if (Ssse3.IsSupported)
+            {
+                var negate = new Matrix<int>(matrix._Matrix, matrix.Rows, matrix.Columns);
+                int size = Vector128<int>.Count;
+                int len = matrix.Length;
+                int lastIndexBlock = len - len % size;
+                int i = 0;
+                var setOne = IntrinsicsHandler<int>.SetAllBits128;
+                Span<int> negateSpan = negate._Matrix;
+                fixed (int* ptr1 = negateSpan)
+                fixed (int* ptr2 = matrix._Matrix)
+                {
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        Sse2.Store(ptr1 + i, Ssse3.Sign(Sse2.LoadVector128(ptr2 + i), setOne));
+                    }
+                }
+
+                ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
+                for (; i < matrix.Length; i++)
+                {
+                    negValue = -negValue;
+                    negValue = ref Unsafe.Add(ref negValue, 1);
+                }
+                return negate;
+            }
+            return -matrix;
+        }
+#endif
+
+        /// <summary>
+        /// Returns negate matrix.
+        /// </summary>
+        /// <param name="matrix">matrix</param>
+        /// <returns>Negate matrix</returns>
+        public static Matrix<T> operator -(Matrix<T> matrix)
+        {
+            var negate = new Matrix<T>(matrix._Matrix, matrix.Rows, matrix.Columns);
+            Span<T> negateSpan = negate._Matrix;
+            ref T negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), 0);
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                negValue = MathUnsafe<T>.Negate(negValue);
+                negValue = ref Unsafe.Add(ref negValue, 1);
+            }
+
+            return negate;
+        }
 
         /// <summary>
         /// Returns vector sum of each multiply element of row.

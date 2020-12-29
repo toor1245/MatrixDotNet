@@ -5,7 +5,7 @@ using Xunit;
 
 namespace MatrixDotNetTests.MatrixTests.StatisticsTests
 {
-    public class MatrixSumExtension
+    public class SumTests
     {
         #region Sum
 
