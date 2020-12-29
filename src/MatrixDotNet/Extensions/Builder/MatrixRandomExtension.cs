@@ -1,6 +1,5 @@
-using System;
 using MatrixDotNet.Exceptions;
-
+using System;
 
 namespace MatrixDotNet.Extensions.Builder
 {
@@ -37,7 +36,6 @@ namespace MatrixDotNet.Extensions.Builder
             return matrix;
         }
 
-
         /// <summary>
         /// Builds matrix by expression;
         /// </summary>
@@ -50,7 +48,8 @@ namespace MatrixDotNet.Extensions.Builder
         /// <exception cref="MatrixDotNetException">
         /// throws exception if arg1 length not equal Max(row,column).
         /// </exception>
-        public static Matrix<T> Build<T>(int row, int column, Func<T, T> expression, T[] arg1) where T : unmanaged
+        public static Matrix<T> Build<T>(int row, int column, Func<T, T> expression, T[] arg1)
+            where T : unmanaged
         {
             int max = column & ((row - column) >> 31) | row & (~(row - column) >> 31);
             if (arg1.Length != max)
@@ -80,7 +79,8 @@ namespace MatrixDotNet.Extensions.Builder
         /// <exception cref="MatrixDotNetException">
         /// throws exception if arg1 length not equal Max(row,column).
         /// </exception>
-        public static Matrix<T> Build<T>(int row, int column, Func<T, T, T> expression, T[] arg1) where T : unmanaged
+        public static Matrix<T> Build<T>(int row, int column, Func<T, T, T> expression, T[] arg1)
+            where T : unmanaged
         {
             int max = column & ((row - column) >> 31) | row & (~(row - column) >> 31);
             if (arg1.Length != max)
@@ -99,6 +99,29 @@ namespace MatrixDotNet.Extensions.Builder
         }
 
         /// <summary>
+        /// Build random matrix.
+        /// </summary>
+        /// <typeparam name="T">unmanaged type</typeparam>
+        /// <param name="row">row length of matrix</param>
+        /// <param name="column">column length of matrix</param>
+        /// <returns>Random matrix</returns>
+        public static unsafe Matrix<T> BuildRandom<T>(int row, int column)
+            where T : unmanaged
+        {
+            Matrix<T> matrix = new Matrix<T>(row, column);
+            Random random = new Random();
+
+            fixed (T* p = matrix._Matrix)
+            {
+                byte* a = (byte*) p;
+                Span<byte> s = new Span<byte>(a, matrix._Matrix.Length * sizeof(T));
+                random.NextBytes(s);
+            }
+
+            return matrix;
+        }
+
+        /// <summary>
         /// Generates random matrix.
         /// </summary>
         /// <param name="row">number of rows</param>
@@ -110,12 +133,9 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<int> matrix = new Matrix<int>(row, column);
             Random random = new Random();
-            for (int i = 0; i < row; i++)
+            for (int i = 0; i < matrix._Matrix.Length; i++)
             {
-                for (int j = 0; j < column; j++)
-                {
-                    matrix[i, j] = random.Next(startRandom, endRandom);
-                }
+                matrix._Matrix[i] = random.Next(startRandom, endRandom);
             }
 
             return matrix;
@@ -133,12 +153,9 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<long> matrix = new Matrix<long>(row, column);
             Random random = new Random();
-            for (int i = 0; i < row; i++)
+            for (int i = 0; i < matrix._Matrix.Length; i++)
             {
-                for (int j = 0; j < column; j++)
-                {
-                    matrix[i, j] = random.Next(startRandom, endRandom);
-                }
+                matrix._Matrix[i] = random.Next(startRandom, endRandom);
             }
 
             return matrix;
@@ -156,12 +173,10 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<byte> matrix = new Matrix<byte>(row, column);
             Random random = new Random();
-            for (int i = 0; i < row; i++)
+
+            for (int i = 0; i < matrix._Matrix.Length; i++)
             {
-                for (int j = 0; j < column; j++)
-                {
-                    matrix[i, j] = (byte) random.Next(startRandom, endRandom);
-                }
+                matrix._Matrix[i] = (byte) random.Next(startRandom, endRandom);
             }
 
             return matrix;
@@ -179,12 +194,10 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<sbyte> matrix = new Matrix<sbyte>(row, column);
             Random random = new Random();
-            for (int i = 0; i < row; i++)
+
+            for (int i = 0; i < matrix._Matrix.Length; i++)
             {
-                for (int j = 0; j < column; j++)
-                {
-                    matrix[i, j] = (sbyte) random.Next(startRandom, endRandom);
-                }
+                matrix._Matrix[i] = (sbyte) random.Next(startRandom, endRandom);
             }
 
             return matrix;
@@ -225,12 +238,10 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<double> matrix = new Matrix<double>(row, column);
             Random random = new Random();
-            for (int i = 0; i < row; i++)
+
+            for (int i = 0; i < matrix._Matrix.Length; i++)
             {
-                for (int j = 0; j < column; j++)
-                {
-                    matrix[i, j] = random.Next(startRandom, endRandom);
-                }
+                matrix._Matrix[i] = random.Next(startRandom, endRandom);
             }
 
             return matrix;
@@ -248,12 +259,10 @@ namespace MatrixDotNet.Extensions.Builder
         {
             Matrix<float> matrix = new Matrix<float>(row, column);
             Random random = new Random();
-            for (int i = 0; i < row; i++)
+
+            for (int i = 0; i < matrix._Matrix.Length; i++)
             {
-                for (int j = 0; j < column; j++)
-                {
-                    matrix[i, j] = random.Next(startRandom, endRandom);
-                }
+                matrix._Matrix[i] = random.Next(startRandom, endRandom);
             }
 
             return matrix;
