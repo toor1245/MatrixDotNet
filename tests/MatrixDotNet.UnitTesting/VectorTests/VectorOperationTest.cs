@@ -128,5 +128,43 @@ namespace MatrixDotNetTests.VectorTests
         }
         
         #endregion
+
+        #region Sum
+
+        [Fact]
+        public void SumTest_AssertMustBeEqual()
+        {
+            // Arrange
+            Vector<byte> matrixA = new byte[]
+            {
+                1, 5, 8, 4, 5, 10
+            };
+            
+            byte expected = 33;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void SumSimdTest_AssertMustBeEqual()
+        {
+            // Arrange
+            Vector<int> matrixA = new Vector<int>(10, 1);
+
+            int expected = 10;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        #endregion
     }
 }

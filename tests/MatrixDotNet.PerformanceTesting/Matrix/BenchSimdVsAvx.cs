@@ -25,7 +25,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
         [Benchmark]
         public int SumSimd()
         {
-            return _matrix.SumAll();
+            return _matrix.Sum();
         }
     }
 }
