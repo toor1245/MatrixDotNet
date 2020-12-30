@@ -30,13 +30,7 @@ namespace MatrixDotNet.Math
 
         private static readonly ConcurrentDictionary<Type, Delegate> SqrtFuncCache =
             new ConcurrentDictionary<Type, Delegate>();
-
-        [Obsolete("bool shit = true;", true)]
-        public static T Random<T>(int start, int end)
-        {
-            return default;
-        }
-
+        
         #region Add
 
         public static Func<T1, T2, TR> GetAddFunc<T1, T2, TR>()
