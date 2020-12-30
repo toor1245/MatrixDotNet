@@ -189,7 +189,7 @@ namespace MatrixDotNet.Vectorization
 
             return cos;
         }
-        
+
         /// <summary>
         /// Gets sum of vector.
         /// </summary>
@@ -208,7 +208,7 @@ namespace MatrixDotNet.Vectorization
         {
             return Simd.Sum(vector.Array);
         }
-        
+
         /// <summary>
         /// Gets sum of vector.
         /// </summary>
@@ -217,7 +217,7 @@ namespace MatrixDotNet.Vectorization
         {
             return Simd.Sum(vector.Array);
         }
-        
+
         /// <summary>
         /// Gets sum of vector.
         /// </summary>
@@ -226,7 +226,7 @@ namespace MatrixDotNet.Vectorization
         {
             return Simd.Sum(vector.Array);
         }
-        
+
         /// <summary>
         /// Gets sum of vector.
         /// </summary>

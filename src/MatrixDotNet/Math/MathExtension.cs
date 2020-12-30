@@ -30,7 +30,7 @@ namespace MatrixDotNet.Math
 
         private static readonly ConcurrentDictionary<Type, Delegate> SqrtFuncCache =
             new ConcurrentDictionary<Type, Delegate>();
-        
+
         #region Add
 
         public static Func<T1, T2, TR> GetAddFunc<T1, T2, TR>()

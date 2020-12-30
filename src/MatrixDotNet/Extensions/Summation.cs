@@ -32,7 +32,7 @@ namespace MatrixDotNet.Extensions
         {
             return Simd.Sum(matrix._Matrix);
         }
-        
+
         /// <summary>
         /// Summation matrix. 
         /// </summary>
@@ -42,7 +42,7 @@ namespace MatrixDotNet.Extensions
         {
             return Simd.Sum(matrix._Matrix);
         }
-        
+
         /// <summary>
         /// Summation matrix. 
         /// </summary>
@@ -52,7 +52,7 @@ namespace MatrixDotNet.Extensions
         {
             return Simd.Sum(matrix._Matrix);
         }
-        
+
         /// <summary>
         /// Summation matrix. 
         /// </summary>
@@ -83,7 +83,7 @@ namespace MatrixDotNet.Extensions
 
             return sum;
         }
-        
+
         /// <summary>
         /// Gets sum by row of matrix.
         /// </summary>
@@ -96,7 +96,7 @@ namespace MatrixDotNet.Extensions
         {
             return Simd.Sum(matrix[dimension]);
         }
-        
+
         /// <summary>
         /// Gets sum by row of matrix.
         /// </summary>
@@ -109,7 +109,7 @@ namespace MatrixDotNet.Extensions
         {
             return Simd.Sum(matrix[dimension]);
         }
-        
+
         /// <summary>
         /// Gets sum by row of matrix.
         /// </summary>
@@ -122,7 +122,7 @@ namespace MatrixDotNet.Extensions
         {
             return Simd.Sum(matrix[dimension]);
         }
-        
+
         /// <summary>
         /// Gets sum by row of matrix.
         /// </summary>

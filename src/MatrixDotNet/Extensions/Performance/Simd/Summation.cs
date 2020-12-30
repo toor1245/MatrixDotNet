@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+using MatrixDotNet.Extensions.Performance.Simd.Handler;
 using MatrixDotNet.Math;
 #if NET5_0 || NETCOREAPP3_1
 using System.Runtime.Intrinsics;
@@ -15,15 +17,15 @@ namespace MatrixDotNet.Extensions.Performance.Simd
         internal static int Sum(int[] array)
         {
             int length = array.Length;
-            
+
             if (length < 1)
             {
                 return 0;
             }
-            
+
             int i = 0;
             int result = 0;
-            
+
             fixed (int* pSource = array)
             {
 #if NET5_0 || NETCOREAPP3_1
@@ -35,24 +37,21 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     {
                         return SumFast(pSource, length);
                     }
-                    
+
                     size = Vector256<int>.Count;
                     lastIndexBlock = length - length % size;
                     var sum = Vector256<int>.Zero;
-                    
+
                     for (; i < lastIndexBlock; i += size)
                     {
                         var current = Avx.LoadVector256(pSource + i);
                         sum = Avx2.Add(current, sum);
                     }
-                    
-                    var t1 = Avx2.HorizontalAdd(sum, sum);
-                    var t2 = Avx2.HorizontalAdd(t1, t1);
-                    var t3 = Avx2.ExtractVector128(t2, 1);
-                    var t4 = Sse2.Add(t2.GetLower(), t3);
-                    result = t4.ToScalar();
-                    
-                    for (; i < length; i++)
+
+                    result += sum.GetElement(0) + sum.GetElement(1) + sum.GetElement(2) + sum.GetElement(3) +
+                              sum.GetElement(4) + sum.GetElement(5) + sum.GetElement(6) + sum.GetElement(7);
+
+                    if (i < length)
                     {
                         result += SumFast(pSource + i, length - i);
                     }
@@ -60,12 +59,12 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     return result;
 
                 }
-                
+
                 if (length < 4)
                 {
                     return SumFast(pSource, length);
                 }
-                
+
                 var vresult = Vector128<int>.Zero;
                 size = Vector128<int>.Count;
                 lastIndexBlock = length - length % size;
@@ -93,12 +92,12 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 {
                     result += pSource[i];
                 }
-                
+
                 return result;
             }
-            
+
         }
-        
+
         /// <summary>
         /// Gets sum of array
         /// </summary>
@@ -106,15 +105,15 @@ namespace MatrixDotNet.Extensions.Performance.Simd
         internal static float Sum(float[] array)
         {
             int length = array.Length;
-            
+
             if (length < 1)
             {
                 return 0;
             }
-            
+
             int i = 0;
             float result = 0;
-            
+
             fixed (float* pSource = array)
             {
 #if NET5_0 || NETCOREAPP3_1
@@ -126,24 +125,21 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     {
                         return SumFast(pSource, length);
                     }
-                    
+
                     size = Vector256<float>.Count;
                     lastIndexBlock = length - length % size;
                     var sum = Vector256<float>.Zero;
-                    
+
                     for (; i < lastIndexBlock; i += size)
                     {
                         var current = Avx.LoadVector256(pSource + i);
                         sum = Avx.Add(current, sum);
                     }
-                    
-                    var t1 = Avx.HorizontalAdd(sum, sum);
-                    var t2 = Avx.HorizontalAdd(t1, t1);
-                    var t3 = Avx.ExtractVector128(t2, 1);
-                    var t4 = Sse.Add(t2.GetLower(), t3);
-                    result = t4.ToScalar();
-                    
-                    for (; i < length; i++)
+
+                    result += sum.GetElement(0) + sum.GetElement(1) + sum.GetElement(2) + sum.GetElement(3) +
+                              sum.GetElement(4) + sum.GetElement(5) + sum.GetElement(6) + sum.GetElement(7);
+
+                    if (i < length)
                     {
                         result += SumFast(pSource + i, length - i);
                     }
@@ -166,7 +162,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                         vresult = Sse.Add(vresult, Sse.LoadVector128(pSource + i));
                         i += 4;
                     }
-                    
+
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
 
@@ -177,28 +173,28 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 {
                     result += pSource[i];
                 }
-                
+
                 return result;
             }
-            
+
         }
-         
+
         /// <summary>
         /// Gets sum of array
         /// </summary>
         /// <returns></returns>
-        internal static int Sum(short[] array)
+        internal static short Sum(short[] array)
         {
             int length = array.Length;
-            
+
             if (length < 1)
             {
                 return 0;
             }
-            
+
             int i = 0;
             int result = 0;
-            
+
             fixed (short* pSource = array)
             {
 #if NET5_0 || NETCOREAPP3_1
@@ -210,29 +206,29 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     {
                         return SumFast(pSource, length);
                     }
-                    
+
                     size = Vector256<short>.Count;
                     lastIndexBlock = length - length % size;
                     var sum = Vector256<short>.Zero;
-                    
+
                     for (; i < lastIndexBlock; i += size)
                     {
                         var current = Avx.LoadVector256(pSource + i);
                         sum = Avx2.Add(current, sum);
                     }
-                    
-                    var t1 = Avx2.HorizontalAdd(sum, sum);
-                    var t2 = Avx2.HorizontalAdd(t1, t1);
-                    var t3 = Avx2.ExtractVector128(t2, 1);
-                    var t4 = Sse2.Add(t2.GetLower(), t3);
-                    result = t4.ToScalar();
-                    
-                    for (; i < length; i++)
+
+                    result += sum.GetElement(0) + sum.GetElement(1) + sum.GetElement(2) + sum.GetElement(3) +
+                              sum.GetElement(4) + sum.GetElement(5) + sum.GetElement(6) + sum.GetElement(7) +
+                              sum.GetElement(8) + sum.GetElement(9) + sum.GetElement(10) + sum.GetElement(11) +
+                              sum.GetElement(12) + sum.GetElement(13) + sum.GetElement(14) + sum.GetElement(15);
+
+
+                    if (i < length)
                     {
                         result += SumFast(pSource + i, length - i);
                     }
 
-                    return result;
+                    return (short) result;
 
                 }
 
@@ -252,7 +248,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                         vresult = Sse2.Add(vresult, Sse2.LoadVector128(pSource + i));
                         i += 4;
                     }
-                    
+
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
 
@@ -263,12 +259,12 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 {
                     result += pSource[i];
                 }
-                
-                return result;
+
+                return (short) result;
             }
-            
+
         }
-        
+
         /// <summary>
         /// Gets sum of array
         /// </summary>
@@ -276,15 +272,15 @@ namespace MatrixDotNet.Extensions.Performance.Simd
         internal static double Sum(double[] array)
         {
             int length = array.Length;
-            
+
             if (length < 1)
             {
                 return 0;
             }
-            
+
             int i = 0;
             double result = 0;
-            
+
             fixed (double* pSource = array)
             {
 #if NET5_0 || NETCOREAPP3_1
@@ -296,24 +292,20 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     {
                         return SumFast(pSource, length);
                     }
-                    
+
                     size = Vector256<double>.Count;
                     lastIndexBlock = length - length % size;
                     var sum = Vector256<double>.Zero;
-                    
+
                     for (; i < lastIndexBlock; i += size)
                     {
                         var current = Avx.LoadVector256(pSource + i);
                         sum = Avx.Add(current, sum);
                     }
-                    
-                    var t1 = Avx.HorizontalAdd(sum, sum);
-                    var t2 = Avx.HorizontalAdd(t1, t1);
-                    var t3 = Avx.ExtractVector128(t2, 1);
-                    var t4 = Sse2.Add(t2.GetLower(), t3);
-                    result = t4.ToScalar();
-                    
-                    for (; i < length; i++)
+
+                    result += sum.GetElement(0) + sum.GetElement(1) + sum.GetElement(2) + sum.GetElement(3);
+
+                    if (i < length)
                     {
                         result += SumFast(pSource + i, length - i);
                     }
@@ -335,7 +327,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                         vresult = Sse2.Add(vresult, Sse2.LoadVector128(pSource + i));
                         i += 4;
                     }
-                    
+
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
 
@@ -346,19 +338,33 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 {
                     result += pSource[i];
                 }
-                
+
                 return result;
             }
-            
+
         }
 
-        private static T SumFast<T>(T* array, int count)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static T SumFast<T>(T* array, int count)
             where T : unmanaged
         {
             T sum = default;
             for (int i = 0; i < count; i++)
             {
                 sum = MathUnsafe<T>.Add(sum, *(array + i));
+            }
+            return sum;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static T SumFast<T>(T[] array, int count)
+            where T : unmanaged
+        {
+            var ptr = UnsafeHandler.GetReference(array);
+            T sum = default;
+            for (int i = 0; i < count; i++)
+            {
+                sum = MathUnsafe<T>.Add(sum, *(ptr + i));
             }
             return sum;
         }
