@@ -251,6 +251,8 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
+                    vresult = Ssse3.HorizontalAdd(vresult, vresult);
+                    vresult = Ssse3.HorizontalAdd(vresult, vresult);
 
                     result = vresult.ToScalar();
                 }
