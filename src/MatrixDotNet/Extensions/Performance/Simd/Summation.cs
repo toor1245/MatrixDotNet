@@ -160,7 +160,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     }
 
                     var vresult = Vector128<float>.Zero;
-                    size = Vector128<short>.Count;
+                    size = Vector128<float>.Count;
                     lastIndexBlock = length - length % size;
 
                     while (i < lastIndexBlock)
