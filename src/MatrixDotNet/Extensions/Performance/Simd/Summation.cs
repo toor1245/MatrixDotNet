@@ -87,6 +87,12 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 }
 
                 result = vresult.ToScalar();
+                if (i < length)
+                {
+                    result += SumFast(pSource + i, length - i);
+                }
+
+                return result;
 #endif
                 for (; i < length; i++)
                 {
@@ -165,8 +171,14 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
-
                     result = vresult.ToScalar();
+
+                    if (i < length)
+                    {
+                        result += SumFast(pSource + i, length - i);
+                    }
+
+                    return result;
                 }
 #endif
                 for (; i < length; i++)
@@ -258,6 +270,8 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     {
                         result += SumFast(pSource + i, length - i);
                     }
+
+                    return (short) result;
                 }
 #endif
                 for (; i < length; i++)
@@ -335,8 +349,14 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     }
 
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
-
                     result = vresult.ToScalar();
+
+                    if (i < length)
+                    {
+                        result += SumFast(pSource + i, length - i);
+                    }
+
+                    return result;
                 }
 #endif
                 for (; i < length; i++)
