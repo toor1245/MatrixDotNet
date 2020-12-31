@@ -243,7 +243,6 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     return (short) result;
 
                 }
-
                 if (Ssse3.IsSupported)
                 {
                     if (length < 8)
@@ -273,10 +272,13 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
                     return (short) result;
                 }
+                else
 #endif
-                for (; i < length; i++)
                 {
-                    result += pSource[i];
+                    for (; i < length; i++)
+                    {
+                        result += pSource[i];
+                    }
                 }
 
                 return (short) result;
