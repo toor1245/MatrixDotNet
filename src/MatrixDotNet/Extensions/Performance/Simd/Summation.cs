@@ -160,7 +160,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     while (i < lastIndexBlock)
                     {
                         vresult = Sse.Add(vresult, Sse.LoadVector128(pSource + i));
-                        i += 4;
+                        i += size;
                     }
 
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
@@ -202,7 +202,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 int lastIndexBlock;
                 if (Avx2.IsSupported)
                 {
-                    if (length < 8)
+                    if (length < 16)
                     {
                         return SumFast(pSource, length);
                     }
@@ -234,7 +234,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
                 if (Ssse3.IsSupported)
                 {
-                    if (length < 4)
+                    if (length < 8)
                     {
                         return SumFast(pSource, length);
                     }
@@ -246,7 +246,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     while (i < lastIndexBlock)
                     {
                         vresult = Sse2.Add(vresult, Sse2.LoadVector128(pSource + i));
-                        i += 4;
+                        i += size;
                     }
 
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
@@ -288,7 +288,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 int lastIndexBlock;
                 if (Avx2.IsSupported)
                 {
-                    if (length < 8)
+                    if (length < 4)
                     {
                         return SumFast(pSource, length);
                     }
@@ -312,11 +312,12 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
                     return result;
                 }
+                
                 if (Sse3.IsSupported)
                 {
-                    if (length < 4)
+                    if (length < 2)
                     {
-                        return SumFast(pSource, length);
+                        return *(pSource + 0);
                     }
                     var vresult = Vector128<double>.Zero;
                     size = Vector128<double>.Count;
@@ -325,10 +326,9 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     while (i < lastIndexBlock)
                     {
                         vresult = Sse2.Add(vresult, Sse2.LoadVector128(pSource + i));
-                        i += 4;
+                        i += size;
                     }
 
-                    vresult = Sse3.HorizontalAdd(vresult, vresult);
                     vresult = Sse3.HorizontalAdd(vresult, vresult);
 
                     result = vresult.ToScalar();

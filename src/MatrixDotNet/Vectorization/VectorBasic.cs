@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Performance.Simd;
 using MatrixDotNet.Math;
