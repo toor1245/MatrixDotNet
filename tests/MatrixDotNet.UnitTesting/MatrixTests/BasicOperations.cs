@@ -1,3 +1,6 @@
+using System.Runtime.CompilerServices;
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
 using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
@@ -5,13 +8,21 @@ using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Performance;
 using MatrixDotNet.Extensions.Performance.Simd;
+using MatrixDotNet.Math;
 using MatrixDotNet.Vectorization;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace MatrixDotNetTests.MatrixTests
 {
     public class BasicOperations
     {
+        private ITestOutputHelper output;
+        public BasicOperations(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
+        
         #region Multiply
         
         [Fact]
@@ -577,11 +588,63 @@ namespace MatrixDotNetTests.MatrixTests
             short expected = 99;
 
             // Act
-            var actual = matrixA.Sum();
+            var actual = Test(matrixA.GetArray());
             
             
             // Assert
             Assert.Equal(expected, actual);
+        }
+        
+        private unsafe short Test(short[] array)
+        {
+            int length = array.Length;
+            short result = 0;
+            int i = 0;
+            fixed (short* pSource = array)
+            {
+                if (length < 8)
+                {
+                    return SumFast(pSource, length);
+                }
+
+                var vresult = Vector128<short>.Zero;
+                int size = Vector128<short>.Count;
+                int lastIndexBlock = length - length % size;
+
+                while (i < lastIndexBlock)
+                {
+                    vresult = Sse2.Add(vresult, Sse2.LoadVector128(pSource + i));
+                    i += size;
+                }
+                
+                output.WriteLine("Before Horizontal Add: " + vresult);
+
+                vresult = Ssse3.HorizontalAdd(vresult, vresult);
+                vresult = Ssse3.HorizontalAdd(vresult, vresult);
+                vresult = Ssse3.HorizontalAdd(vresult, vresult);
+                output.WriteLine("After Horizontal Add: " + vresult);
+                result = vresult.ToScalar();
+
+                if (i < length)
+                {
+                    result += SumFast(pSource + i, length - i);
+                }
+                output.WriteLine("After Cycle " + result);
+            }
+
+            return result;
+        }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static unsafe T SumFast<T>(T* array, int count)
+            where T : unmanaged
+        {
+            T sum = default;
+            for (int i = 0; i < count; i++)
+            {
+                sum = MathUnsafe<T>.Add(sum, *(array + i));
+            }
+            return sum;
         }
         
         #endregion
