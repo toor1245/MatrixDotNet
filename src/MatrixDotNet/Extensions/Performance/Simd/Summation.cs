@@ -252,9 +252,12 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
                     vresult = Ssse3.HorizontalAdd(vresult, vresult);
-                    vresult = Ssse3.HorizontalAdd(vresult, vresult);
 
                     result = vresult.ToScalar();
+                    if (i < length)
+                    {
+                        result += SumFast(pSource + i, length - i);
+                    }
                 }
 #endif
                 for (; i < length; i++)
