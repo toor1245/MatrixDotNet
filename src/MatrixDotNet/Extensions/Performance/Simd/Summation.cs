@@ -312,7 +312,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
                     return result;
                 }
-                
+
                 if (Sse3.IsSupported)
                 {
                     if (length < 2)
