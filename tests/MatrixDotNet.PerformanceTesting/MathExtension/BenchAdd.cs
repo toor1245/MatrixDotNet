@@ -17,13 +17,6 @@ namespace MatrixDotNet.PerformanceTesting.MathExtension
             _matrix2 = BuildMatrix.RandomDouble(128, 128, 1, 123);
         }
         
-        [Benchmark]
-        public Matrix<double> AddSimd()
-        {
-            return Simd.Add(_matrix1,_matrix2);
-        }
-
-        [Benchmark(Baseline = true)]
         public Matrix<double> AddGeneric()
         {
             return _matrix1 + _matrix2;
