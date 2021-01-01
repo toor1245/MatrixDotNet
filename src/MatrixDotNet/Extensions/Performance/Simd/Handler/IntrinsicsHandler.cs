@@ -9,7 +9,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
     public static class IntrinsicsHandler<T> where T : unmanaged
     {
         #region Vector256
-        
+
         /// <summary>
         /// Gets a new Vector256<T/> with all bits set to 1.
         /// </summary>
@@ -25,7 +25,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #endif
             }
         }
-        
+
         /// <summary>__m256X _mm256_add_epiX (__m256X a, __m256X b)</summary>
         /// <remarks>VPADDB ymm, ymm, ymm/m256</remarks>
         /// <remarks>Supports: AVX(float, double), AVX2</remarks>
@@ -72,10 +72,10 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Avx.Add(va.As<T, double>(), vb.As<T, double>()).As<double, T>();
             }
-            
+
             throw new NotSupportedException();
         }
-        
+
         /// <summary>__m256i _mm256_sub_epi8 (__m256i a, __m256i b)</summary>
         /// <remarks>VPSUBB ymm, ymm, ymm/m256</remarks>
         /// <remarks>Supports: AVX(float, double), AVX2</remarks>
@@ -122,10 +122,10 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Avx.Subtract(va.As<T, double>(), vb.As<T, double>()).As<double, T>();
             }
-            
+
             throw new NotSupportedException();
         }
-        
+
         /// <summary>
         /// __m256i _mm256_loadu_si256 (__m256i const * mem_addr)
         /// </summary>
@@ -174,10 +174,10 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Avx.LoadVector256((double*) address).As<double, T>();
             }
-            
+
             throw new NotSupportedException();
         }
-        
+
         /// <summary>
         /// void _mm256_storeu_si256 (__m256i * mem_addr, __m256i a)
         /// </summary>
@@ -227,8 +227,8 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
                 Avx.Store((double*) address, vector256.As<T, double>());
             }
             else
-            { 
-                throw new NotSupportedException();   
+            {
+                throw new NotSupportedException();
             }
         }
 
@@ -278,7 +278,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Vector256.Create(Unsafe.As<T, double>(ref value)).As<double, T>();
             }
-            
+
             throw new NotSupportedException();
         }
 
@@ -293,7 +293,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Fma.MultiplyAdd(a.As<T, double>(), b.As<T, double>(), c.As<T, double>()).As<double, T>();
             }
-            
+
             throw new NotSupportedException();
         }
 
@@ -308,7 +308,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
         #endregion
 
         #region Vector128
-        
+
         /// <summary>_m128i _mm_sub_epiX (__m128i a, __m128i b)</summary>
         /// <remarks>PSUBW xmm, xmm/m128</remarks>
         /// <remarks>Supports: SSE2</remarks>
@@ -347,10 +347,10 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Sse2.Subtract(va.As<T, ulong>(), vb.As<T, ulong>()).As<ulong, T>();
             }
-            
+
             throw new NotSupportedException();
         }
-        
+
         /// <summary>__m128X _mm_add_epiX (__m128X a, __m128X b)</summary>
         /// <remarks>PADDB xmm, xmm/m128</remarks>
         /// <remarks>Supports: SSE2</remarks>
@@ -389,10 +389,10 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Sse2.Add(va.As<T, ulong>(), vb.As<T, ulong>()).As<ulong, T>();
             }
-            
+
             throw new NotSupportedException();
         }
-        
+
         /// <summary>
         /// __m128i _mm_loadu_si128 (__m128i const* mem_address)
         /// </summary>
@@ -441,10 +441,10 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Sse2.LoadVector128((double*) address).As<double, T>();
             }
-            
+
             throw new NotSupportedException();
         }
-        
+
         /// <summary>
         /// void _mm256_storeu_si256 (__m256i * mem_addr, __m256i a)
         /// </summary>
@@ -494,11 +494,11 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
                 Sse2.Store((double*) address, vector256.As<T, double>());
             }
             else
-            { 
+            {
                 throw new NotSupportedException();
             }
         }
-        
+
         /// <summary>
         /// Gets a new Vector128<T/> with all bits set to 1.
         /// </summary>
@@ -514,7 +514,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 #endif
             }
         }
-        
+
         /// <summary>
         /// Creates a new Vector128<T/> instance with all elements initialized to the specified value.
         /// </summary>
@@ -561,10 +561,10 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Vector128.Create(Unsafe.As<T, double>(ref value)).As<double, T>();
             }
-            
+
             throw new NotSupportedException();
-        } 
-        
+        }
+
         #endregion
     }
 }

@@ -101,7 +101,7 @@ namespace MatrixDotNet
                 return true;
             }
         }
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal bool IsMultiplyBlock(Matrix<T> right)
         {
@@ -290,7 +290,7 @@ namespace MatrixDotNet
             int length = left.Length;
 
             Matrix<T> matrix = new Matrix<T>(m, n);
-            
+
             fixed (T* ptr1 = left.GetArray())
             fixed (T* ptr2 = right.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
@@ -299,7 +299,7 @@ namespace MatrixDotNet
                 Span<T> span2 = new Span<T>(ptr2, length);
                 Span<T> span3 = new Span<T>(ptr3, length);
                 int i = 0;
-                
+
 #if NET5_0 || NETCOREAPP3_1
                 if (Avx2.IsSupported && typeof(T) != typeof(decimal))
                 {
@@ -353,7 +353,7 @@ namespace MatrixDotNet
             int length = left.Length;
 
             Matrix<T> matrix = new Matrix<T>(m, n);
-            
+
             fixed (T* ptr1 = left.GetArray())
             fixed (T* ptr2 = right.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
@@ -362,7 +362,7 @@ namespace MatrixDotNet
                 Span<T> span2 = new Span<T>(ptr2, length);
                 Span<T> span3 = new Span<T>(ptr3, length);
                 int i = 0;
-                
+
 #if NET5_0 || NETCOREAPP3_1
                 if (Avx2.IsSupported && typeof(T) != typeof(decimal))
                 {
@@ -409,7 +409,7 @@ namespace MatrixDotNet
                 throw new MatrixDotNetException(
                     $"matrix {nameof(left)} columns length must be equal matrix {nameof(right)} rows length");
             }
-            
+
             var m = left.Rows;
             var n = right.Columns;
             var l = left.Columns;
@@ -421,7 +421,7 @@ namespace MatrixDotNet
             fixed (T* ptrC = matrixC.GetArray())
             {
                 var span1 = new Span<T>(ptrA, length);
-                
+
 #if NET5_0 || NETCOREAPP3_1
                 if (Fma.IsSupported && IntrinsicsHandler<T>.IsSupportedMultiplyAdd && left.IsMultiplyBlock(right))
                 {
