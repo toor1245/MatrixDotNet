@@ -423,7 +423,7 @@ namespace MatrixDotNet
                 var span1 = new Span<T>(ptrA, length);
 
 #if NET5_0 || NETCOREAPP3_1
-                if (Fma.IsSupported && IntrinsicsHandler<T>.IsSupportedMultiplyAdd && left.IsMultiplyBlock(right))
+                if (Fma.IsSupported && IntrinsicsHandler<T>.IsSupportedMultiplyAddVector256 && left.IsMultiplyBlock(right))
                 {
                     var size = Vector256<T>.Count;
                     for (int i = 0; i < m; i++)
@@ -442,9 +442,9 @@ namespace MatrixDotNet
                                 var vc2 = IntrinsicsHandler<T>.LoadVector256(c + j + size);
 
                                 IntrinsicsHandler<T>.StoreVector256(c + j + 0,
-                                    IntrinsicsHandler<T>.MultiplyAdd(va, vb1, vc1));
+                                    IntrinsicsHandler<T>.MultiplyAddVector256(va, vb1, vc1));
                                 IntrinsicsHandler<T>.StoreVector256(c + j + size,
-                                    IntrinsicsHandler<T>.MultiplyAdd(va, vb2, vc2));
+                                    IntrinsicsHandler<T>.MultiplyAddVector256(va, vb2, vc2));
                             }
                         }
                     }

@@ -282,9 +282,28 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             throw new NotSupportedException();
         }
 
+        /// <summary>__m256 _mm256_fmadd_ps (__m256 a, __m256 b, __m256 c)</summary>
+        /// <remarks>VFMADDPS ymm, ymm, ymm/m256</remarks>
+        /// <remarks>Supports: AVX2</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal static Vector256<T> MultiplyAdd(Vector256<T> a, Vector256<T> b, Vector256<T> c)
+        internal static Vector256<T> MultiplyAddVector256(Vector256<T> a, Vector256<T> b, Vector256<T> c)
         {
+            if (typeof(T) == typeof(int))
+            {
+                var va = a.As<T, int>();
+                var vb = b.As<T, int>();
+                var vl = Avx2.MultiplyLow(va, vb);
+                var vh = Sse41.MultiplyLow(va.GetUpper(), vb.GetUpper());
+                return Avx2.Add(Vector256.Create(vl.GetLower(), vh), c.As<T, int>()).As<int, T>();
+            }
+            if (typeof(T) == typeof(uint))
+            {
+                var va = a.As<T, uint>();
+                var vb = b.As<T, uint>();
+                var vl = Avx2.MultiplyLow(va, vb);
+                var vh = Sse41.MultiplyLow(va.GetUpper(), vb.GetUpper());
+                return Avx2.Add(Vector256.Create(vl.GetLower(), vh), c.As<T, uint>()).As<uint, T>();
+            }
             if (typeof(T) == typeof(float))
             {
                 return Fma.MultiplyAdd(a.As<T, float>(), b.As<T, float>(), c.As<T, float>()).As<float, T>();
@@ -297,10 +316,12 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             throw new NotSupportedException();
         }
 
-        internal static bool IsSupportedMultiplyAdd
+        internal static bool IsSupportedMultiplyAddVector256
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get =>
+                typeof(T) == typeof(int) ||
+                typeof(T) == typeof(uint) ||
                 typeof(T) == typeof(float) ||
                 typeof(T) == typeof(double);
         }
@@ -563,6 +584,34 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             }
 
             throw new NotSupportedException();
+        }
+        
+        /// <summary>
+        /// __m128 _mm_fmadd_ps (__m128 a, __m128 b, __m128 c)
+        /// </summary>
+        /// <remarks> VFMADDPS xmm, xmm, xmm/m128 </remarks>
+        /// <remarks> Supports: FMA, AVX</remarks>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static Vector128<T> MultiplyAddVector128(Vector128<T> a, Vector128<T> b, Vector128<T> c)
+        {
+            if (typeof(T) == typeof(float))
+            {
+                return Fma.MultiplyAdd(a.As<T, float>(), b.As<T, float>(), c.As<T, float>()).As<float, T>();
+            }
+            if (typeof(T) == typeof(double))
+            {
+                return Fma.MultiplyAdd(a.As<T, double>(), b.As<T, double>(), c.As<T, double>()).As<double, T>();
+            }
+            
+            throw new NotSupportedException();
+        }
+
+        internal static bool IsSupportedMultiplyAddVector128
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get =>
+                typeof(T) == typeof(float) ||
+                typeof(T) == typeof(double);
         }
 
         #endregion

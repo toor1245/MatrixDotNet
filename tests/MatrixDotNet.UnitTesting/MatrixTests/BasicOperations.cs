@@ -119,6 +119,50 @@ namespace MatrixDotNetTests.MatrixTests
         [InlineData(96)]
         [InlineData(128)]
         [InlineData(144)]
+        public void MatrixMultiplySimdInt32Test_MultiplyTwoMatrix_AssertMustBeEqual(int size)
+        {
+            // Arrange
+            Matrix<int> matrixA = new Matrix<int>(size, size, 1);
+            Matrix<int> expected = new Matrix<int>(size, size, size);
+
+            // Act
+            Matrix<int> actual = matrixA * matrixA;
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData(16)]
+        [InlineData(32)]
+        [InlineData(48)]
+        [InlineData(64)]
+        [InlineData(80)]
+        [InlineData(96)]
+        [InlineData(128)]
+        [InlineData(144)]
+        public void MatrixMultiplySimdUInt32Test_MultiplyTwoMatrix_AssertMustBeEqual(int size)
+        {
+            // Arrange
+            var matrixA = new Matrix<uint>(size, size, 1);
+            var expected = new Matrix<uint>(size, size, (uint) size);
+
+            // Act
+            var actual = matrixA * matrixA;
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData(16)]
+        [InlineData(32)]
+        [InlineData(48)]
+        [InlineData(64)]
+        [InlineData(80)]
+        [InlineData(96)]
+        [InlineData(128)]
+        [InlineData(144)]
         public void MatrixMultiplySimdTest_MultiplyTwoMatrix_AssertMustBeEqual(int size)
         {
             // Arrange
