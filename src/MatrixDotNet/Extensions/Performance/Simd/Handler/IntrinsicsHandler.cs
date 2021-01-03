@@ -28,6 +28,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 
         /// <summary>__m256X _mm256_add_epiX (__m256X a, __m256X b)</summary>
         /// <remarks>VPADDB ymm, ymm, ymm/m256</remarks>
+        /// <remarks>Description: Add packed 8-bit integers in a and b, and store the results in dst.</remarks>
         /// <remarks>Supports: AVX(float, double), AVX2</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector256<T> AddVector256(Vector256<T> va, Vector256<T> vb)
@@ -78,6 +79,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 
         /// <summary>__m256i _mm256_sub_epi8 (__m256i a, __m256i b)</summary>
         /// <remarks>VPSUBB ymm, ymm, ymm/m256</remarks>
+        /// <remarks>Description: Subtract packed 8-bit integers in b from packed 8-bit integers in a, and store the results in dst.</remarks>
         /// <remarks>Supports: AVX(float, double), AVX2</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector256<T> SubtractVector256(Vector256<T> va, Vector256<T> vb)
@@ -126,10 +128,9 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             throw new NotSupportedException();
         }
 
-        /// <summary>
-        /// __m256i _mm256_loadu_si256 (__m256i const * mem_addr)
-        /// </summary>
+        /// <summary>__m256i _mm256_loadu_si256 (__m256i const * mem_addr)</summary>
         /// <remarks>VMOVDQU ymm, m256</remarks>
+        /// <remarks>Description: Load 256-bits of integer data from memory into dst. mem_addr does not need to be aligned on any particular boundary.</remarks>
         /// <remarks>Supports: AVX</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static unsafe Vector256<T> LoadVector256(T* address)
@@ -178,10 +179,9 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             throw new NotSupportedException();
         }
 
-        /// <summary>
-        /// void _mm256_storeu_si256 (__m256i * mem_addr, __m256i a)
-        /// </summary>
+        /// <summary>void _mm256_storeu_si256 (__m256i * mem_addr, __m256i a)</summary>
         /// <remarks>MOVDQU m256, ymm</remarks>
+        /// <remarks>Description: Store 256-bits of integer data from a into memory. mem_addr does not need to be aligned on any particular boundary.</remarks>
         /// <remarks>Supports: AVX</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static unsafe void StoreVector256(T* address, Vector256<T> vector256)
@@ -284,6 +284,10 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 
         /// <summary>__m256 _mm256_fmadd_ps (__m256 a, __m256 b, __m256 c)</summary>
         /// <remarks>VFMADDPS ymm, ymm, ymm/m256</remarks>
+        /// <remarks>
+        /// Description: Multiply packed double-precision (64-bit) floating-point elements in a and b,
+        /// add the intermediate result to packed elements in c, and store the results in dst.
+        /// </remarks>
         /// <remarks>Supports: AVX2</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector256<T> MultiplyAddVector256(Vector256<T> a, Vector256<T> b, Vector256<T> c)
@@ -332,6 +336,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 
         /// <summary>_m128i _mm_sub_epiX (__m128i a, __m128i b)</summary>
         /// <remarks>PSUBW xmm, xmm/m128</remarks>
+        /// <remarks>Description: Subtract packed X-bit integers in b from packed X-bit integers in a, and store the results in dst.</remarks>
         /// <remarks>Supports: SSE2</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector128<T> SubtractVector128(Vector128<T> va, Vector128<T> vb)
@@ -374,6 +379,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 
         /// <summary>__m128X _mm_add_epiX (__m128X a, __m128X b)</summary>
         /// <remarks>PADDB xmm, xmm/m128</remarks>
+        /// <remarks>Description: Addition packed X-bit integers in b from packed X-bit integers in a, and store the results in dst.</remarks>
         /// <remarks>Supports: SSE2</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector128<T> AddVector128(Vector128<T> va, Vector128<T> vb)
@@ -418,6 +424,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
         /// __m128i _mm_loadu_si128 (__m128i const* mem_address)
         /// </summary>
         /// <remarks>MOVDQU xmm, m12</remarks>
+        /// <remarks>Description: Load 128-bits of integer data from memory into dst. mem_addr does not need to be aligned on any particular boundary.</remarks>
         /// <remarks>Supports: SSE(float), SSE2</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static unsafe Vector128<T> LoadVector128(T* address)
@@ -467,9 +474,13 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
         }
 
         /// <summary>
-        /// void _mm256_storeu_si256 (__m256i * mem_addr, __m256i a)
+        /// void _mm_storeu_si128 (__m128i* mem_addr, __m128i a)
         /// </summary>
-        /// <remarks>MOVDQU m256, ymm</remarks>
+        /// <remarks>MOVDQU m128, xmm</remarks>
+        /// <remarks>
+        /// Description: Store 128-bits of integer data from a into memory.
+        /// mem_addr does not need to be aligned on any particular boundary.
+        /// </remarks>
         /// <remarks>Supports: SSE(float), SSE2</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static unsafe void StoreVector128(T* address, Vector128<T> vector256)
@@ -585,11 +596,13 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 
             throw new NotSupportedException();
         }
-        
-        /// <summary>
-        /// __m128 _mm_fmadd_ps (__m128 a, __m128 b, __m128 c)
-        /// </summary>
-        /// <remarks> VFMADDPS xmm, xmm, xmm/m128 </remarks>
+
+        /// <summary>__m128 _mm_fmadd_ps (__m128 a, __m128 b, __m128 c)</summary>
+        /// <remarks>VFMADDPS xmm, xmm, xmm/m128 </remarks>
+        /// <remarks>
+        /// Description: Multiply packed single-precision (32-bit) floating-point elements in a and b,
+        /// add the intermediate result to packed elements in c, and store the results in dst.
+        /// </remarks>
         /// <remarks> Supports: FMA, AVX</remarks>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static Vector128<T> MultiplyAddVector128(Vector128<T> a, Vector128<T> b, Vector128<T> c)
@@ -602,7 +615,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Fma.MultiplyAdd(a.As<T, double>(), b.As<T, double>(), c.As<T, double>()).As<double, T>();
             }
-            
+
             throw new NotSupportedException();
         }
 
