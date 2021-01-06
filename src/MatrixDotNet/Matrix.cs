@@ -102,6 +102,11 @@ namespace MatrixDotNet
             }
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal bool HasMultiplyBlock(Matrix<T> right)
+        {
+            return Columns == right.Rows && Columns >= 0b1000 && ((Columns & 0b100) == 0 || Columns == 0b1000);
+        }
 
         #endregion
 
@@ -286,15 +291,40 @@ namespace MatrixDotNet
 
             Matrix<T> matrix = new Matrix<T>(m, n);
 
-            fixed (T* pointer1 = left.GetArray())
-            fixed (T* pointer2 = right.GetArray())
-            fixed (T* pointer3 = matrix.GetArray())
+            fixed (T* ptr1 = left.GetArray())
+            fixed (T* ptr2 = right.GetArray())
+            fixed (T* ptr3 = matrix.GetArray())
             {
-                Span<T> span1 = new Span<T>(pointer1, length);
-                Span<T> span2 = new Span<T>(pointer2, length);
-                Span<T> span3 = new Span<T>(pointer3, length);
+                Span<T> span1 = new Span<T>(ptr1, length);
+                Span<T> span2 = new Span<T>(ptr2, length);
+                Span<T> span3 = new Span<T>(ptr3, length);
+                int i = 0;
 
-                for (int i = 0; i < length; i++)
+#if NET5_0 || NETCOREAPP3_1
+                if (Avx2.IsSupported && typeof(T) != typeof(decimal))
+                {
+                    int size = Vector256<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        var va = IntrinsicsHandler<T>.LoadVector256(ptr1 + i);
+                        var vb = IntrinsicsHandler<T>.LoadVector256(ptr2 + i);
+                        IntrinsicsHandler<T>.StoreVector256(ptr3 + i, IntrinsicsHandler<T>.AddVector256(va, vb));
+                    }
+                }
+                else if (Sse2.IsSupported && typeof(T) != typeof(decimal))
+                {
+                    int size = Vector128<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        var va = IntrinsicsHandler<T>.LoadVector128(ptr1 + i);
+                        var vb = IntrinsicsHandler<T>.LoadVector128(ptr2 + i);
+                        IntrinsicsHandler<T>.StoreVector128(ptr3 + i, IntrinsicsHandler<T>.AddVector128(va, vb));
+                    }
+                }
+#endif
+                for (; i < length; i++)
                 {
                     span3[i] = MathUnsafe<T>.Add(span2[i], span1[i]);
                 }
@@ -315,8 +345,7 @@ namespace MatrixDotNet
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
-                throw new MatrixDotNetException(
-                    $"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
+                throw new MatrixDotNetException($"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
             }
 
             int m = left.Rows;
@@ -325,14 +354,40 @@ namespace MatrixDotNet
 
             Matrix<T> matrix = new Matrix<T>(m, n);
 
-            fixed (T* pointer1 = left.GetArray())
-            fixed (T* pointer2 = right.GetArray())
-            fixed (T* pointer3 = matrix.GetArray())
+            fixed (T* ptr1 = left.GetArray())
+            fixed (T* ptr2 = right.GetArray())
+            fixed (T* ptr3 = matrix.GetArray())
             {
-                Span<T> span1 = new Span<T>(pointer1, length);
-                Span<T> span2 = new Span<T>(pointer2, length);
-                Span<T> span3 = new Span<T>(pointer3, length);
-                for (int i = 0; i < length; i++)
+                Span<T> span1 = new Span<T>(ptr1, length);
+                Span<T> span2 = new Span<T>(ptr2, length);
+                Span<T> span3 = new Span<T>(ptr3, length);
+                int i = 0;
+
+#if NET5_0 || NETCOREAPP3_1
+                if (Avx2.IsSupported && typeof(T) != typeof(decimal))
+                {
+                    int size = Vector256<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        var va = IntrinsicsHandler<T>.LoadVector256(ptr1 + i);
+                        var vb = IntrinsicsHandler<T>.LoadVector256(ptr2 + i);
+                        IntrinsicsHandler<T>.StoreVector256(ptr3 + i, IntrinsicsHandler<T>.SubtractVector256(va, vb));
+                    }
+                }
+                else if (Sse2.IsSupported && typeof(T) != typeof(decimal))
+                {
+                    int size = Vector128<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        var va = IntrinsicsHandler<T>.LoadVector128(ptr1 + i);
+                        var vb = IntrinsicsHandler<T>.LoadVector128(ptr2 + i);
+                        IntrinsicsHandler<T>.StoreVector128(ptr3 + i, IntrinsicsHandler<T>.SubtractVector128(va, vb));
+                    }
+                }
+#endif
+                for (; i < length; i++)
                 {
                     span3[i] = MathUnsafe<T>.Sub(span1[i], span2[i]);
                 }
@@ -355,36 +410,64 @@ namespace MatrixDotNet
                     $"matrix {nameof(left)} columns length must be equal matrix {nameof(right)} rows length");
             }
 
-            int m = left.Rows;
-            int n = right.Columns;
-            int K = left.Columns;
-            int len1 = left.Length;
+            var m = left.Rows;
+            var n = right.Columns;
+            var l = left.Columns;
+            var length = m * n;
+            var matrixC = new Matrix<T>(m, n);
 
-            Matrix<T> matrix = new Matrix<T>(m, n);
-
-            fixed (T* pointer1 = left.GetArray())
-            fixed (T* pointer2 = right.GetArray())
-            fixed (T* pointer3 = matrix.GetArray())
+            fixed (T* ptrA = left.GetArray())
+            fixed (T* ptrB = right.GetArray())
+            fixed (T* ptrC = matrixC.GetArray())
             {
-                Span<T> span1 = new Span<T>(pointer1, len1);
+                var span1 = new Span<T>(ptrA, length);
 
-                for (int i = 0; i < m; i++)
+#if NET5_0 || NETCOREAPP3_1
+                if (Fma.IsSupported && IntrinsicsHandler<T>.IsSupportedMultiplyAddVector256 && left.HasMultiplyBlock(right))
                 {
-                    T* c = pointer3 + i * n;
-
-                    for (int k = 0; k < K; k++)
+                    var size = Vector256<T>.Count;
+                    for (int i = 0; i < m; i++)
                     {
-                        T* b = pointer2 + k * n;
-                        T a = span1[i * K + k];
-                        for (int j = 0; j < n; j++)
+                        var c = ptrC + i * n;
+                        for (int k = 0; k < l; k++)
                         {
-                            c[j] = MathUnsafe<T>.Add(c[j], MathUnsafe<T>.Mul(a, b[j]));
+                            var b = ptrB + k * n;
+                            var va = IntrinsicsHandler<T>.CreateVector256(span1[i * l + k]);
+                            for (int j = 0; j < n; j += size << 1)
+                            {
+                                var vb1 = IntrinsicsHandler<T>.LoadVector256(b + j);
+                                var vb2 = IntrinsicsHandler<T>.LoadVector256(b + j + size);
+
+                                var vc1 = IntrinsicsHandler<T>.LoadVector256(c + j);
+                                var vc2 = IntrinsicsHandler<T>.LoadVector256(c + j + size);
+
+                                IntrinsicsHandler<T>.StoreVector256(c + j + 0,
+                                    IntrinsicsHandler<T>.MultiplyAddVector256(va, vb1, vc1));
+                                IntrinsicsHandler<T>.StoreVector256(c + j + size,
+                                    IntrinsicsHandler<T>.MultiplyAddVector256(va, vb2, vc2));
+                            }
+                        }
+                    }
+                }
+                else
+#endif
+                {
+                    for (int i = 0; i < m; i++)
+                    {
+                        var c = ptrC + i * n;
+                        for (int k = 0; k < l; k++)
+                        {
+                            var b = ptrB + k * n;
+                            var a = span1[i * l + k];
+                            for (int j = 0; j < n; j++)
+                            {
+                                c[j] = MathUnsafe<T>.Add(c[j], MathUnsafe<T>.Mul(a, b[j]));
+                            }
                         }
                     }
                 }
             }
-
-            return matrix;
+            return matrixC;
         }
 
         /// <summary>
