@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
@@ -17,30 +18,74 @@ namespace MatrixDotNetTests.MatrixTests
         public void MatrixMultiplyTest_MultiplyTwoMatrix_AssertMustBeEqual()
         {
             // Arrange
-            Matrix<int> matrixA = new[,]
+            Matrix<float> matrixA = new float[,]
             {
                 {1, 5, 8},
                 {3, 5, 6},
             };
 
-            Matrix<int> matrixB = new[,]
+            Matrix<float> matrixB = new float[,]
             {
                 {1, 2, 4},
                 {3, 4, 6},
                 {4, 8, 9},
             };
             
-            Matrix<int> expected = new [,]
+            Matrix<float> expected = new float[,]
             {
                 {48,86,106},
                 {42,74,96}
             };
             
             // Act
-            Matrix<int> actual = matrixA * matrixB;
+            Matrix<float> actual = matrixA * matrixB;
 
             // Assert
             Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void MatrixMultiplyDoubleTest_MultiplyTwoMatrix_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<double> matrixA = new double[,]
+            {
+                {1, 5, 8},
+                {3, 5, 6},
+            };
+
+            Matrix<double> matrixB = new double[,]
+            {
+                {1, 2, 4},
+                {3, 4, 6},
+                {4, 8, 9},
+            };
+            
+            Matrix<double> expected = new double[,]
+            {
+                {48,86,106},
+                {42,74,96}
+            };
+            
+            // Act
+            Matrix<double> actual = matrixA * matrixB;
+
+            // Assert
+            Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void MatrixMultiplySimdDoubleTest_MultiplyTwoMatrix_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<double> matrixA = new Matrix<double>(16, 16, 1);
+            Matrix<double> expected = new Matrix<double>(16, 16, 16);
+
+            // Act
+            Matrix<double> actual = matrixA * matrixA;
+
+            // Assert
+            Assert.Equal(expected, actual);
         }
         
         [Theory]
@@ -48,21 +93,89 @@ namespace MatrixDotNetTests.MatrixTests
         [InlineData(32)]
         [InlineData(48)]
         [InlineData(64)]
+        [InlineData(80)]
+        [InlineData(96)]
         [InlineData(128)]
-        public void MatrixMulTest16_MultiplyTwoMatrix_AssertMustBeEqual(int n)
+        [InlineData(144)]
+        public void MatrixMultiplyIntegerSimdTest_MultiplyTwoMatrix_AssertMustBeEqual(int size)
         {
             // Arrange
-            Matrix<float> matrixA = BuildMatrix.RandomFloat(n, n, -10, 10);
-            Matrix<float> matrixB = BuildMatrix.RandomFloat(n, n, -10, 10);
-            Matrix<float> expected = matrixA * matrixB;
+            Matrix<int> matrixA = new Matrix<int>(size, size, 1);
+            Matrix<int> expected = new Matrix<int>(size, size, size);
 
             // Act
-            Matrix<float> actual = Simd.BlockMultiply(matrixA, matrixB);
+            Matrix<int> actual = matrixA * matrixA;
 
             // Assert
             Assert.Equal(expected, actual);
         }
+        
+        [Theory]
+        [InlineData(16)]
+        [InlineData(32)]
+        [InlineData(48)]
+        [InlineData(64)]
+        [InlineData(80)]
+        [InlineData(96)]
+        [InlineData(128)]
+        [InlineData(144)]
+        public void MatrixMultiplySimdInt32Test_MultiplyTwoMatrix_AssertMustBeEqual(int size)
+        {
+            // Arrange
+            Matrix<int> matrixA = new Matrix<int>(size, size, 1);
+            Matrix<int> expected = new Matrix<int>(size, size, size);
 
+            // Act
+            Matrix<int> actual = matrixA * matrixA;
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData(16)]
+        [InlineData(32)]
+        [InlineData(48)]
+        [InlineData(64)]
+        [InlineData(80)]
+        [InlineData(96)]
+        [InlineData(128)]
+        [InlineData(144)]
+        public void MatrixMultiplySimdUInt32Test_MultiplyTwoMatrix_AssertMustBeEqual(int size)
+        {
+            // Arrange
+            var matrixA = new Matrix<uint>(size, size, 1);
+            var expected = new Matrix<uint>(size, size, (uint) size);
+
+            // Act
+            var actual = matrixA * matrixA;
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Theory]
+        [InlineData(16)]
+        [InlineData(32)]
+        [InlineData(48)]
+        [InlineData(64)]
+        [InlineData(80)]
+        [InlineData(96)]
+        [InlineData(128)]
+        [InlineData(144)]
+        public void MatrixMultiplySimdTest_MultiplyTwoMatrix_AssertMustBeEqual(int size)
+        {
+            // Arrange
+            Matrix<float> matrixA = new Matrix<float>(size, size, 1);
+            Matrix<float> expected = new Matrix<float>(size, size, size);
+
+            // Act
+            Matrix<float> actual = matrixA * matrixA;
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
         [Fact]
         public void MatrixMultiplyTest_MultiplyTwoMatrix_AssertMustBeThrowsMatrixDotNetException()
         {
@@ -264,6 +377,38 @@ namespace MatrixDotNetTests.MatrixTests
         public void AddOpMatrixTest_SumTwoMatrix_AssertMustBeEqual()
         {
             // Arrange
+            Matrix<decimal> matrixA = new Decimal[,]
+            {
+                {1, 5, 8},
+                {3, 5, 6},
+                {4, 8, 9},
+            };
+
+            Matrix<decimal> matrixB = new decimal[,]
+            {
+                {1, 2, 4},
+                {3, 4, 6},
+                {4, 8, 9},
+            };
+            
+            Matrix<decimal> expected = new decimal[,]
+            {
+                { 2, 7, 12 },
+                { 6, 9, 12 },
+                { 8, 16,18 }
+            };
+            
+            // Act
+            var actual = matrixA + matrixB;
+            
+            // Assert
+            Assert.Equal(expected,actual);
+        }
+        
+        [Fact]
+        public void AddOpMatrixSimdTest_SumTwoMatrix_AssertMustBeEqual()
+        {
+            // Arrange
             Matrix<int> matrixA = new[,]
             {
                 {1, 5, 8},
@@ -278,7 +423,7 @@ namespace MatrixDotNetTests.MatrixTests
                 {4, 8, 9},
             };
             
-            Matrix<int> expected = new [,]
+            Matrix<int> expected = new[,]
             {
                 { 2, 7, 12 },
                 { 6, 9, 12 },
@@ -295,6 +440,38 @@ namespace MatrixDotNetTests.MatrixTests
         #endregion
 
         #region Subtract
+        
+        [Fact]
+        public void SubtractOpMatrixTest_SubTwoMatrices_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<decimal> matrixA = new decimal[,]
+            {
+                {1, 5, 8},
+                {3, 5, 6},
+                {4, 8, 9},
+            };
+
+            Matrix<decimal> matrixB = new decimal[,]
+            {
+                {1, 2, 4},
+                {3, 4, 6},
+                {4, 8, 9},
+            };
+            
+            Matrix<decimal> expected = new decimal[,]
+            {
+                { 0, 3, 4 },
+                { 0, 1, 0 },
+                { 0, 0, 0 }
+            };
+            
+            // Act
+            var actual = matrixA - matrixB;
+            
+            // Assert
+            Assert.Equal(expected,actual);
+        }
         
         [Fact]
         public void SubtractOpMatrixTest_SumTwoMatrix_AssertMustBeEqual()
