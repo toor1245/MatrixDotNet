@@ -9,13 +9,13 @@ namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
     [RyuJitX64Job]
     public class BenchSwapRowsFixedVsUnsafeVsDefault : PerformanceTest
     {
-        private MatrixAsFixedBuffer _buffer;
+        private FixedBuffer _buffer;
         private Matrix<double> _matrix;
         
         [GlobalSetup]
         public void Setup()
         {
-            _buffer = new MatrixAsFixedBuffer(80,80);
+            _buffer = new FixedBuffer(80,80);
             for (int i = 0; i < _buffer.Length; i++)
             {
                 _buffer.Data[i] = 5;
@@ -32,7 +32,7 @@ namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
         
 
         [Benchmark]
-        public MatrixAsFixedBuffer AddByRefTest()
+        public FixedBuffer AddByRefTest()
         {
             double[] row = new double[80];
             return Converter.AddRow(ref _buffer,row,6);

@@ -20,46 +20,6 @@ namespace MatrixDotNet.Extensions
         public static T Sum<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            return Simd.SumFast(matrix._Matrix, matrix.Length);
-        }
-
-        /// <summary>
-        /// Summation matrix. 
-        /// </summary>
-        /// <param name="matrix">the matrix</param>
-        /// <returns>Sum whole of matrix</returns>
-        public static int Sum(this Matrix<int> matrix)
-        {
-            return Simd.Sum(matrix._Matrix);
-        }
-
-        /// <summary>
-        /// Summation matrix. 
-        /// </summary>
-        /// <param name="matrix">the matrix</param>
-        /// <returns>Sum whole of matrix</returns>
-        public static short Sum(this Matrix<short> matrix)
-        {
-            return Simd.Sum(matrix._Matrix);
-        }
-
-        /// <summary>
-        /// Summation matrix. 
-        /// </summary>
-        /// <param name="matrix">the matrix</param>
-        /// <returns>Sum whole of matrix</returns>
-        public static float Sum(this Matrix<float> matrix)
-        {
-            return Simd.Sum(matrix._Matrix);
-        }
-
-        /// <summary>
-        /// Summation matrix. 
-        /// </summary>
-        /// <param name="matrix">the matrix</param>
-        /// <returns>Sum whole of matrix</returns>
-        public static double Sum(this Matrix<double> matrix)
-        {
             return Simd.Sum(matrix._Matrix);
         }
 
@@ -73,65 +33,6 @@ namespace MatrixDotNet.Extensions
         /// <exception cref="NullReferenceException"></exception>
         public static T SumByRow<T>(this Matrix<T> matrix, int dimension)
             where T : unmanaged
-        {
-            T sum = default;
-
-            for (int i = 0; i < matrix.Columns; i++)
-            {
-                sum = MathUnsafe<T>.Add(sum, matrix[dimension, i]);
-            }
-
-            return sum;
-        }
-
-        /// <summary>
-        /// Gets sum by row of matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <param name="dimension">row index.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <returns>Sum row by index</returns>
-        /// <exception cref="NullReferenceException"></exception>
-        public static int SumByRow(this Matrix<int> matrix, int dimension)
-        {
-            return Simd.Sum(matrix[dimension]);
-        }
-
-        /// <summary>
-        /// Gets sum by row of matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <param name="dimension">row index.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <returns>Sum row by index</returns>
-        /// <exception cref="NullReferenceException"></exception>
-        public static short SumByRow(this Matrix<short> matrix, int dimension)
-        {
-            return Simd.Sum(matrix[dimension]);
-        }
-
-        /// <summary>
-        /// Gets sum by row of matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <param name="dimension">row index.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <returns>Sum row by index</returns>
-        /// <exception cref="NullReferenceException"></exception>
-        public static double SumByRow(this Matrix<double> matrix, int dimension)
-        {
-            return Simd.Sum(matrix[dimension]);
-        }
-
-        /// <summary>
-        /// Gets sum by row of matrix.
-        /// </summary>
-        /// <param name="matrix">the matrix.</param>
-        /// <param name="dimension">row index.</param>
-        /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <returns>Sum row by index</returns>
-        /// <exception cref="NullReferenceException"></exception>
-        public static float SumByRow(this Matrix<float> matrix, int dimension)
         {
             return Simd.Sum(matrix[dimension]);
         }
@@ -169,16 +70,9 @@ namespace MatrixDotNet.Extensions
         {
             var array = new T[matrix.Rows];
 
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
-                T sum = default;
-
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    sum = MathUnsafe<T>.Add(sum, matrix[i, j]); // sum = sum + matrix[i,j];
-                }
-
-                array[i] = sum;
+                array[i] = Simd.Sum(matrix[i]);
             }
 
             return array;
@@ -194,9 +88,6 @@ namespace MatrixDotNet.Extensions
         public static T[] SumByColumns<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             var array = new T[matrix.Columns];
 
             for (int i = 0; i < matrix.Columns; i++)
@@ -225,9 +116,6 @@ namespace MatrixDotNet.Extensions
         public static T SumByDiagonal<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T sum = default;
 
             for (int i = 0; i < matrix.Rows; i++)

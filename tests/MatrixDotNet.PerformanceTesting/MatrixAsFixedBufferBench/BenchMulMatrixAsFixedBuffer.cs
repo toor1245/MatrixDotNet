@@ -6,13 +6,13 @@ namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
     [MemoryDiagnoser]
     public class BenchMulMatrixAsFixedBuffer : PerformanceTest
     {
-        private MatrixAsFixedBuffer _buffer;
+        private FixedBuffer _buffer;
         private Matrix<double> _matrix;
         
         [GlobalSetup]
         public void Setup()
         {
-            _buffer = new MatrixAsFixedBuffer(80,80);
+            _buffer = new FixedBuffer(80,80);
             for (int i = 0; i < _buffer.Length; i++)
             {
                 _buffer.Data[i] = 5;
@@ -27,9 +27,9 @@ namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
         }
         
         [Benchmark]
-        public MatrixAsFixedBuffer MulByRefMatrixAsFixedBuffer()
+        public FixedBuffer MulByRefMatrixAsFixedBuffer()
         {
-            return MatrixAsFixedBuffer.MulByRef(ref _buffer, ref _buffer);
+            return FixedBuffer.MulByRef(ref _buffer, ref _buffer);
         }
     }
 }

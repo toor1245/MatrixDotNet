@@ -196,7 +196,7 @@ namespace MatrixDotNet.Vectorization
         public static T Sum<T>(this Vector<T> vector)
             where T : unmanaged
         {
-            return Simd.SumFast(vector.Array, vector.Length);
+            return Simd.Sum(vector.Array, vector.Length);
         }
 
         /// <summary>

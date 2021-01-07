@@ -20,7 +20,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         /// <param name="index">the row index</param>
         /// <returns>Matrix with new row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static unsafe MatrixAsFixedBuffer AddRow(ref MatrixAsFixedBuffer matrix, double[] data, int index)
+        public static unsafe FixedBuffer AddRow(ref FixedBuffer matrix, double[] data, int index)
         {
             if (matrix.Columns != data.Length)
             {
@@ -33,7 +33,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
             {
                 var n = matrix.Columns;
                 var span3 = new Span<double>(arr, n);
-                var matrixAsFixedBuffer = new MatrixAsFixedBuffer((byte) (matrix.Rows + 1), n);
+                var matrixAsFixedBuffer = new FixedBuffer((byte) (matrix.Rows + 1), n);
 
                 for (var i = 0; i < index; i++)
                 {
@@ -59,7 +59,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         /// <param name="index">the column index.</param>
         /// <returns>Matrix with new column.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static unsafe MatrixAsFixedBuffer AddColumn(ref MatrixAsFixedBuffer matrix, double[] data, int index)
+        public static unsafe FixedBuffer AddColumn(ref FixedBuffer matrix, double[] data, int index)
         {
             if (matrix.Rows != data.Length)
             {
@@ -72,7 +72,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
             {
                 var m = matrix.Rows;
                 var span3 = new Span<double>(arr, m);
-                var matrixAsFixedBuffer = new MatrixAsFixedBuffer(m, (byte) (matrix.Columns + 1));
+                var matrixAsFixedBuffer = new FixedBuffer(m, (byte) (matrix.Columns + 1));
 
                 for (var i = 0; i < index; i++)
                 {
@@ -96,7 +96,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         /// <param name="matrix">the matrix with fixed buffer</param>
         /// <param name="from">the index of row.</param>
         /// <param name="to">the index of row.</param>
-        public static unsafe void SwapRows(ref MatrixAsFixedBuffer matrix, int from, int to)
+        public static unsafe void SwapRows(ref FixedBuffer matrix, int from, int to)
         {
 #if NETCOREAPP3_1 || NET5_0
             if (Avx.IsSupported)
@@ -157,7 +157,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         /// <param name="matrix">the matrix with fixed buffer</param>
         /// <param name="from">the index of column.</param>
         /// <param name="to">the index of column.</param>
-        public static void SwapColumns(ref MatrixAsFixedBuffer matrix, int from, int to)
+        public static void SwapColumns(ref FixedBuffer matrix, int from, int to)
         {
             int m = matrix.Rows;
             var i = 0;
@@ -183,8 +183,8 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         /// <param name="dimension2">row index of matrix2</param>
         /// <param name="destinationIndex">start index by row of matrix2</param>
         /// <param name="length">the length of copy data</param>
-        public static unsafe void CopyToAvx(ref MatrixAsFixedBuffer matrix1, int dimension1, int start,
-            ref MatrixAsFixedBuffer matrix2, int dimension2, int destinationIndex, int length)
+        public static unsafe void CopyToAvx(ref FixedBuffer matrix1, int dimension1, int start,
+            ref FixedBuffer matrix2, int dimension2, int destinationIndex, int length)
         {
 #if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
@@ -222,8 +222,8 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         /// <param name="dimension2">row index of matrix2</param>
         /// <param name="destinationIndex">start index by row of matrix2</param>
         /// <param name="length">the length of copy data</param>
-        public static unsafe void CopyTo(ref MatrixAsFixedBuffer matrix1, int dimension1, int start,
-            ref MatrixAsFixedBuffer matrix2, int dimension2, int destinationIndex, int length)
+        public static unsafe void CopyTo(ref FixedBuffer matrix1, int dimension1, int start,
+            ref FixedBuffer matrix2, int dimension2, int destinationIndex, int length)
         {
             fixed (double* ptr2 = matrix2._array)
             fixed (double* ptr1 = matrix1._array)
