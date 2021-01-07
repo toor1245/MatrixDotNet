@@ -5,7 +5,6 @@ using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Performance;
-using MatrixDotNet.Extensions.Performance.Simd;
 using MatrixDotNet.Vectorization;
 using Xunit;
 

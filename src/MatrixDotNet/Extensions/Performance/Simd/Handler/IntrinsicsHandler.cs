@@ -445,6 +445,14 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Sse2.Add(va.As<T, ulong>(), vb.As<T, ulong>()).As<ulong, T>();
             }
+            if (typeof(T) == typeof(float))
+            {
+                return Sse.Add(va.As<T, float>(), vb.As<T, float>()).As<float, T>();
+            }
+            if (typeof(T) == typeof(double))
+            {
+                return Sse2.Add(va.As<T, double>(), vb.As<T, double>()).As<double, T>();
+            }
 
             throw new NotSupportedException();
         }

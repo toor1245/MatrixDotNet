@@ -6,7 +6,7 @@ using MatrixDotNet.Extensions.Performance.Simd;
 namespace MatrixDotNet.PerformanceTesting.Matrix
 {
     [RyuJitX64Job]
-    public class BenchSimdVsAvx : PerformanceTest
+    public class BenchSum : PerformanceTest
     {
         private Matrix<int> _matrix;
 
@@ -17,13 +17,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
         }
 
         [Benchmark]
-        public int SumDefault()
-        {
-            return _matrix.Sum();
-        }
-
-        [Benchmark]
-        public int SumSimd()
+        public int Sum()
         {
             return _matrix.Sum();
         }
