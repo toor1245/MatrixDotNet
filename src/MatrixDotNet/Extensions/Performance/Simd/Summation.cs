@@ -66,14 +66,11 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
                     result = IntrinsicsHandler<T>.SumVector128(vresult);
                 }
-                if (i < length)
-                {
-                    result = MathUnsafe<T>.Add(result, Sum(ptr + i, length - i));
-                }
-
-                return result;
 #endif
-                result = MathUnsafe<T>.Add(result, Sum(ptr, length));
+                for (; i < length; i++)
+                {
+                    result = MathUnsafe<T>.Add(result, *(ptr + i));
+                }
             }
             return result;
         }
