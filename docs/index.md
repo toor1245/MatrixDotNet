@@ -15,24 +15,18 @@
   <span> · </span>
   <a href="https://toor1245.github.io/MatrixDotNet/articles/intro.html">Getting started</a>
   <span> · </span>
-  <a href="https://toor1245.github.io/MatrixDotNet/articles/guides/absorption.html">Documentation</a>
-  <span> · </span>
-  <a href="https://toor1245.github.io/MatrixDotNet/articles/features/getting_started.html">Optimization</a>
+  <a href="https://toor1245.github.io/MatrixDotNet/articles/guides/basic/getting_started.html">Documentation</a>
   <span> · </span>
   <a href="https://toor1245.github.io/MatrixDotNet/api/index.html">API Reference</a>
 </h3> 
 
 MatrixDotNet is a powerful .NET library for calculate matrix. You can install MatrixDotNet via [NuGet package](https://www.nuget.org/packages/MatrixDotNet/).
 
-
-
 ## Features
 * Have many algorithms such sections as: factorizations, solving a linear system, conversion matrix, statistics
 * Have algorithms which enhance precision
 * You can write your matrix to markdown or html and open them with happen .dat file
-* [MatrixDotNet.Extensions.Core](https://www.nuget.org/packages/MatrixDotNet.Extensions.Core/) for .NET Core which intended for significant speed calculations on big size matrices, due to SIMD(AVX2,Sse2), unsafe and parallel programming. 
- 
-> See [MatrixDotNet.Extensions.Core](https://toor1245.github.io/MatrixDotNet/articles/features/getting_started.html) documentation.
+* Significant speed calculations in .NET Core 3.1+ due to SIMD.
  
 ### Have many algorithms such sections as: factorization, solver, conversion matrix, statistics
 Lets consider several algorithms on each section.
