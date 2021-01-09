@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Exceptions.MatrixDotNetException.html",
-          "hash": "mKrk62tylqveEv6hSp91tQ=="
+          "hash": "NkBKoH9eXJKX4oDcPO8ywg=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Exceptions.html",
-          "hash": "92hSuiCVW4V+oW3a8LKngw=="
+          "hash": "lpmVaTws+sJgocQmXYuyBg=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Builder.BuildMatrix.html",
-          "hash": "fvd/vPy0jqEejpx7uyyaRg=="
+          "hash": "4GAaUkj7VLMXR9BiOWVlLg=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Builder.html",
-          "hash": "GPKGtvJgZIOWX30GuGOuwQ=="
+          "hash": "N5Fz2FC/AIl5jezJxhkyzg=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Complement.MatrixExtension.html",
-          "hash": "a1+4xgQagH0BZFQWzqZlaQ=="
+          "hash": "WQMQPc0wLGjUvxbqtKQDNA=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Complement.html",
-          "hash": "UrTRpn3O7zV3FpcqosWZyw=="
+          "hash": "HrxZTCFj2jJJSKZTDtqMLQ=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html",
-          "hash": "UoM6kprR/xezef++fAz3dg=="
+          "hash": "S5RRZWZ8iqGpHunq658Wbg=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Conversion.html",
-          "hash": "eQ+e2NdBZE7e3hnFYZ+U6Q=="
+          "hash": "1lci2+NjGH6rYw6h8M6kww=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Criteries.Criterion.html",
-          "hash": "jucLXBDN9SUQwhi4zRJp9A=="
+          "hash": "gofeOI8dqBlBbabnhGf4VA=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Criteries.DefiniteType.html",
-          "hash": "23LzrQTLgHG+cjTRuZ2nSA=="
+          "hash": "pzwGVmNi8PN3qHk24u0ccg=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Criteries.html",
-          "hash": "lztMyBi6Bm3whNr5/f44ww=="
+          "hash": "UuwnPf/gel04vQuhIHkZvg=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Decompositions.Decomposition.html",
-          "hash": "Rqms9CEjwzEkxNCjpQmcAg=="
+          "hash": "dvE35c8r0DV9M/LpW2qc7g=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Decompositions.html",
-          "hash": "ydmJsfbNzv6kCYVKlySq2Q=="
+          "hash": "UeRIch5Cwd7RKpfbcwFU8A=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Determinants.Determinant.html",
-          "hash": "SDEbbXS5j4Cuovz6hLim9g=="
+          "hash": "UXf52oyTvqozoN62e3RhcQ=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Determinants.html",
-          "hash": "d5YdhGXSjt0QqGnaOBqIzw=="
+          "hash": "5bCKMCGtgEfLzj90xbE/aQ=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Inverse.MatrixExtension.html",
-          "hash": "2D0R1sqIM1RhDn7W04UWTw=="
+          "hash": "I5lpEOOPRRCxPSQYjg+xTQ=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Inverse.html",
-          "hash": "SVUgPMZUGSnnAXlSL/nS+Q=="
+          "hash": "buFfGntTbiJQEm0pMm/JhQ=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.MatrixExtension.html",
-          "hash": "JLyejuCjdEM9eeLRnVUTKQ=="
+          "hash": "7jl/MzOtoVJ+Tjz/drCUoQ=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Options.Template.html",
-          "hash": "M8xgsNthvwgfsCHicW1iWQ=="
+          "hash": "P7PKoiwovfwpO7YZ3cnvDw=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Options.TemplateHtml.html",
-          "hash": "ZCpc5P3e26eUF2vjpwAP5Q=="
+          "hash": "B3F4kJNgWrZ9mUeQgwpM4w=="
         }
       },
       "is_incremental": false,
@@ -261,7 +261,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Options.TemplateMarkdown.html",
-          "hash": "qD6nRyiPpJTrPNOs3YX69g=="
+          "hash": "sKSeoZ8JzScyYvG4pZ9yEg=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Options.html",
-          "hash": "vM3AmIrSs9mls/dk006j5g=="
+          "hash": "vAqyxcwP2qYnpM4Qba5G1g=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Performance.Conversion.Converter.html",
-          "hash": "xKRAwdQT8tiTS7vHTbmCVg=="
+          "hash": "cwelubaVsiADf40yFzFCFw=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Performance.Conversion.html",
-          "hash": "IifqMy5MgS9hlroTIq2JAA=="
+          "hash": "9UV5oV1/a+WJvaxadniM7A=="
         }
       },
       "is_incremental": false,
@@ -305,11 +305,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.yml",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Performance.MatrixOnStack.yml",
       "output": {
         ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Performance.MatrixAsFixedBuffer.html",
-          "hash": "taFv9++YlyDKoQQhxYojgw=="
+          "relative_path": "api/MatrixDotNet.Extensions.Performance.MatrixOnStack.html",
+          "hash": "TfdXsXkyCuIazk2E7p65mQ=="
         }
       },
       "is_incremental": false,
@@ -321,7 +321,31 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Performance.Optimization.html",
-          "hash": "uZ3ZnCZ+FjA5rG5J/fckvg=="
+          "hash": "OXFCCpdQCPZTb/2TRMrqFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler-1.html",
+          "hash": "uMDw/F5zG9pIp7slu0DU5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Handler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Handler.html",
+          "hash": "wcGKofsc3f5lIRIHWgHPwA=="
         }
       },
       "is_incremental": false,
@@ -333,7 +357,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Simd.html",
-          "hash": "HHEUcIjPMoWzuDH/eTS5ZA=="
+          "hash": "JSJVxLNhC/TK4bBz3ny5TA=="
         }
       },
       "is_incremental": false,
@@ -345,7 +369,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Statistics.Simd.html",
-          "hash": "bGg4YWq3rHyO0G6g0sHG6g=="
+          "hash": "vExL+HKnzetwXTZNCLZuhw=="
         }
       },
       "is_incremental": false,
@@ -357,7 +381,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Statistics.html",
-          "hash": "ZDZ2ye5TBIkNOi2JxcP1JA=="
+          "hash": "MKIOQ42030CVe4zxbAlDpg=="
         }
       },
       "is_incremental": false,
@@ -369,7 +393,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.html",
-          "hash": "CJQDFmQ5M0Uxcbp2w/t0Ow=="
+          "hash": "jLX/qyVkR1PSker9SH/ZLg=="
         }
       },
       "is_incremental": false,
@@ -381,7 +405,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Performance.html",
-          "hash": "pXsiutVlhg9JKaZ46IvGzQ=="
+          "hash": "TpTrEo9OqLoIGacg+qQXTA=="
         }
       },
       "is_incremental": false,
@@ -393,7 +417,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Solver.Solve.html",
-          "hash": "+lRssfY71LMHIUOhbLtfIw=="
+          "hash": "PJ4wpoNBjmVzbaPYNVQoDA=="
         }
       },
       "is_incremental": false,
@@ -405,7 +429,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Solver.html",
-          "hash": "ElwVY9zs9CCuwBxVacgQ3A=="
+          "hash": "do6F+DutTF/r5AS/ySGHYg=="
         }
       },
       "is_incremental": false,
@@ -417,7 +441,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Sorting.MatrixSortExtension.html",
-          "hash": "O9gt+Depp7YwxOI8FpAFNA=="
+          "hash": "A38Y58HCPk6CyM2g8FVFTQ=="
         }
       },
       "is_incremental": false,
@@ -429,7 +453,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Sorting.html",
-          "hash": "hwdFmu0n7P11WgLPwT1ucA=="
+          "hash": "UbzK1ZOn1lyvEYPYePVI9w=="
         }
       },
       "is_incremental": false,
@@ -441,7 +465,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.EmpiricalSample.html",
-          "hash": "nL893PW0Z4Her7Rh3SdloA=="
+          "hash": "RUv+NqPM3eaHAe5oeDZmrA=="
         }
       },
       "is_incremental": false,
@@ -453,7 +477,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.Intervals-1.html",
-          "hash": "ax7t2pC5QwAh+MXetny/OQ=="
+          "hash": "3uUT89m9Jb1cfPA77vJwvA=="
         }
       },
       "is_incremental": false,
@@ -465,7 +489,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.MatrixExtension.html",
-          "hash": "5qrHVaPoz0kvPGQAzc98Eg=="
+          "hash": "T9FuRauAAzax4rRvfjAupg=="
         }
       },
       "is_incremental": false,
@@ -477,7 +501,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.ConfigIntervals-1.html",
-          "hash": "MbJd5mVgELnPlv0fSYXBQQ=="
+          "hash": "PCR9J/KRcZErXnqzI2L1zQ=="
         }
       },
       "is_incremental": false,
@@ -489,7 +513,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.ConfigVariations-1.html",
-          "hash": "s2KzfDC357fR+1iiRkt1fg=="
+          "hash": "A3zBZ3X2stANwqrGv3E+AQ=="
         }
       },
       "is_incremental": false,
@@ -501,7 +525,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.IConfig-1.html",
-          "hash": "389a1vZbLsnQbkAKOaKzDw=="
+          "hash": "jzne64ckN3tGk7MPDK0XnQ=="
         }
       },
       "is_incremental": false,
@@ -513,7 +537,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.Setup-1.html",
-          "hash": "3D4CtYxGWa3mHpfUZi8Ldg=="
+          "hash": "rXXin9gqf+LLWBL4fkCaQw=="
         }
       },
       "is_incremental": false,
@@ -525,7 +549,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.SetupIntervals-1.html",
-          "hash": "nbYZKWryV4zGjkT1aMNjpA=="
+          "hash": "Ow+ksauFHF+HcF8IX25+GQ=="
         }
       },
       "is_incremental": false,
@@ -537,7 +561,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.SetupVariations-1.html",
-          "hash": "NrXL8Qwxbb33sxjpLSAjsw=="
+          "hash": "Nprb0QFv6GVMJgI4rL74rg=="
         }
       },
       "is_incremental": false,
@@ -549,7 +573,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.TableIntervals.html",
-          "hash": "jVzYVFq5QHIteTlUb4kFCQ=="
+          "hash": "/kaQomsMEFOZc81UF+2oPw=="
         }
       },
       "is_incremental": false,
@@ -561,7 +585,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.TableVariations.html",
-          "hash": "rNYGJr9LGI6jvaLDVhpVLA=="
+          "hash": "/rKEPvc0lpv1A8myDid54Q=="
         }
       },
       "is_incremental": false,
@@ -573,7 +597,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.TableSetup.html",
-          "hash": "uViibyI07SQqCIx2WZu0Mg=="
+          "hash": "h7tg63o0yVQmviPXGIL1Gw=="
         }
       },
       "is_incremental": false,
@@ -585,7 +609,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.Variations-1.html",
-          "hash": "WtTIX5uryxROtC4VDv6BAw=="
+          "hash": "VlxRslclWL6kGhqhIMp/4g=="
         }
       },
       "is_incremental": false,
@@ -597,7 +621,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.Statistics.html",
-          "hash": "KKoKKPLYbGyho53thGweLg=="
+          "hash": "DP3WZQChuSvuOEB57/xucA=="
         }
       },
       "is_incremental": false,
@@ -609,7 +633,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Extensions.html",
-          "hash": "/rpjK1uWmi+/kLEYbdTWpw=="
+          "hash": "2r3S5Xou9QN0mJhXhUEXKA=="
         }
       },
       "is_incremental": false,
@@ -621,7 +645,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.BitwiseGeneric-1.html",
-          "hash": "p8fPMfLVzEU30lmi5ay2Uw=="
+          "hash": "ZtaU1m/brAchB6S/vHldfg=="
         }
       },
       "is_incremental": false,
@@ -633,19 +657,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.BitwiseGeneric-3.html",
-          "hash": "YMLB9Y6bLGic830HpyRABA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Math.MathExtension.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Math.MathExtension.html",
-          "hash": "KD0zBtNybNeVbi7OY5rt0w=="
+          "hash": "67as/r6hFiK+N19l8TZnRg=="
         }
       },
       "is_incremental": false,
@@ -657,7 +669,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathGeneric-1.html",
-          "hash": "71hewVYLx9LxWFMjFQw8aQ=="
+          "hash": "6E3uiUwLjtlhwVwX5lUHXQ=="
         }
       },
       "is_incremental": false,
@@ -669,7 +681,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathGeneric-3.html",
-          "hash": "0QQ4NraLZ6Ue8mVzYCRb/w=="
+          "hash": "ic9Rphv+Lob0WPALOUaIsg=="
         }
       },
       "is_incremental": false,
@@ -681,7 +693,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathGeneric.html",
-          "hash": "GXeorxSGe3PSIcuGkM7Ajg=="
+          "hash": "FVrI70mbTfEVxL8N58VaSg=="
         }
       },
       "is_incremental": false,
@@ -693,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.MathUnsafe-1.html",
-          "hash": "onZ4mZLNU1E9cmsfTXerhA=="
+          "hash": "LXftzHM85F39WW/dUZYGig=="
         }
       },
       "is_incremental": false,
@@ -705,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Math.html",
-          "hash": "Ws2OaU2wnC5aRpG7LH/GwQ=="
+          "hash": "WK/sKrEHt77zDVFeK9UmpA=="
         }
       },
       "is_incremental": false,
@@ -717,7 +729,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.Enumerator.html",
-          "hash": "E/dqPO+PhWpSflw9EEwNrw=="
+          "hash": "7VcBp9hCbgBW/FrFA6mPhQ=="
         }
       },
       "is_incremental": false,
@@ -729,7 +741,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.html",
-          "hash": "v3jlqobFNOzSy8hjdaojoA=="
+          "hash": "XCYO2P9O7LR6G/TQnrpHCA=="
         }
       },
       "is_incremental": false,
@@ -741,31 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.MatrixComplex.html",
-          "hash": "47jfD7jSfZPUTjx5Ptc78g=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.NotStableFeatures.UnsafeEqualsUnrolled.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.NotStableFeatures.UnsafeEqualsUnrolled.html",
-          "hash": "BTOez4qErxtZvZrR2DdwVQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.NotStableFeatures.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.NotStableFeatures.html",
-          "hash": "8iklwRb3PoItsK4hEZTecA=="
+          "hash": "0fjndK2tOKc7kPRv0sstcA=="
         }
       },
       "is_incremental": false,
@@ -777,7 +765,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.State.html",
-          "hash": "faBxMuoeLsWlDNJ6SP54OA=="
+          "hash": "/4HmGrzksEY9YmoL8OL4oQ=="
         }
       },
       "is_incremental": false,
@@ -789,7 +777,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Vectorization.Vector-1.html",
-          "hash": "fDRQTGMtINffOrsf/7hWJQ=="
+          "hash": "u8bqcjq79sHviRRuQokyTg=="
         }
       },
       "is_incremental": false,
@@ -801,7 +789,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Vectorization.VectorExtension.html",
-          "hash": "L1SEs7j+LAz2OnjqSmqKIw=="
+          "hash": "5xwQNKWlhl5eYTNkUjFUzQ=="
         }
       },
       "is_incremental": false,
@@ -813,7 +801,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Vectorization.html",
-          "hash": "vg49MwPt+DUwxvEcVmd3eg=="
+          "hash": "btNLQXyZkxtBIw6BF43Lyg=="
         }
       },
       "is_incremental": false,
@@ -825,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.html",
-          "hash": "MajCE7WN8yE8wzn6zEckqQ=="
+          "hash": "kb5WuOnAWh35YRY6TsD4bg=="
         }
       },
       "is_incremental": false,
@@ -837,7 +825,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "nBoD73YHLyQyTojXt400XA=="
+          "hash": "s59w5VRisTIp0QHcQXXaPw=="
         }
       },
       "is_incremental": false,
@@ -849,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "8X9xzz8LO/a+286mo5fp4g=="
+          "hash": "zV3ILwCBSOsQnMGWC6iv8w=="
         }
       },
       "is_incremental": false,
@@ -861,7 +849,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/features/absorption.html",
-          "hash": "DNzpVkAu9FRbUFJkV/LVSA=="
+          "hash": "NEhS6QRxYB+huq1jbeOa1w=="
         }
       },
       "is_incremental": false,
@@ -873,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/access.html",
-          "hash": "elgElrbDKbKc3KAiG2pKDw=="
+          "hash": "RkXn/RJTcqSgh4gdbesfEg=="
         }
       },
       "is_incremental": false,
@@ -885,7 +873,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/conversion.html",
-          "hash": "y+yJHiTfnv7AEQj00sVW2w=="
+          "hash": "CrFws4Ef+86dHvIdhr0AbQ=="
         }
       },
       "is_incremental": false,
@@ -897,7 +885,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/decomposition.html",
-          "hash": "xxgz7DIjOOVBQt7i8RHk1A=="
+          "hash": "X3kz60DcLPzEQkuSXK9v0w=="
         }
       },
       "is_incremental": false,
@@ -909,7 +897,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/getting_started.html",
-          "hash": "tFw1b4bn/LX6Vg/ndnc2ZA=="
+          "hash": "AiDcOofuNnYq+DYyvS4sBw=="
         }
       },
       "is_incremental": false,
@@ -917,11 +905,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/guides/basic/matrix_as_fixed_buffer.md",
+      "source_relative_path": "articles/guides/basic/matrix_on_stack.md",
       "output": {
         ".html": {
-          "relative_path": "articles/guides/basic/matrix_as_fixed_buffer.html",
-          "hash": "88U22tOROEeWMs6/na6ULA=="
+          "relative_path": "articles/guides/basic/matrix_on_stack.html",
+          "hash": "+xCOPtyA8jTr2KMn3MOtTg=="
         }
       },
       "is_incremental": false,
@@ -933,7 +921,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/multiply.html",
-          "hash": "0Dw/1HVSY58wN/Ytnjprkg=="
+          "hash": "fb8rbeorXSNeQyi4J8VbRw=="
         }
       },
       "is_incremental": false,
@@ -945,7 +933,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/solver.html",
-          "hash": "pFIC+SSu+hFcSIA1vGtPDg=="
+          "hash": "3cXXpDmjfI+N97+bt8ZwLg=="
         }
       },
       "is_incremental": false,
@@ -957,7 +945,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/sorting.html",
-          "hash": "eWcfnpJFpwxD70OBaG/Cpg=="
+          "hash": "HPFJGhQ5Ae3PR5l8xKvd3g=="
         }
       },
       "is_incremental": false,
@@ -969,7 +957,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/vector.html",
-          "hash": "SSoFm7eScf8rzjSMD14cHg=="
+          "hash": "vVR9BFJ7EE+T0uL9PlX53w=="
         }
       },
       "is_incremental": false,
@@ -981,7 +969,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/statistics/getting_started.html",
-          "hash": "noqUl8cxm+0QQWiGhwS3oQ=="
+          "hash": "CjmoD6xxHNBqaE4pHYe2/w=="
         }
       },
       "is_incremental": false,
@@ -993,7 +981,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "kwU9BeAFXU567xlETmv85A=="
+          "hash": "qPn9mFbmT99coIXR9MEPDQ=="
         }
       },
       "is_incremental": false,
@@ -1005,7 +993,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/license.html",
-          "hash": "yq3tDbncJ3W8E3rk+mEJHg=="
+          "hash": "RLF89a7/ITPsnEJNWieAjw=="
         }
       },
       "is_incremental": false,
@@ -1017,7 +1005,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "KUjkYNFWz2bZ7Ni/SzRBVg=="
+          "hash": "OjnoAdktOQG2da14/w1F7w=="
         }
       },
       "is_incremental": false,
@@ -1095,7 +1083,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "8NLQqR1JuECu1+L+d/vn2w=="
+          "hash": "Xzx3XDRvscFE0bl5q4KpBQ=="
         }
       },
       "is_incremental": false,
@@ -1137,7 +1125,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 68,
+          "total_file_count": 67,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

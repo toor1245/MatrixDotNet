@@ -151,32 +151,32 @@ namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
 {
     public class BenchMul : PerformanceTest
     {
-        [Params(1024)]
+        [Params(256)]
         public int Size;
-        private Matrix&lt;float&gt; _matrix1;
-        private Matrix&lt;float&gt; _matrix2;
+        private Matrix&lt;byte&gt; _matrix1;
+        private Matrix&lt;byte&gt; _matrix2;
 
         [GlobalSetup]
         public void Setup()
         {
-            _matrix1 = BuildMatrix.RandomFloat(Size, Size, 0, 100);
-            _matrix2 = BuildMatrix.RandomFloat(Size, Size, 0, 100);
+            _matrix1 = BuildMatrix.RandomByte(Size, Size, 0, 100);
+            _matrix2 = BuildMatrix.RandomByte(Size, Size, 0, 100);
         }
         
         [Benchmark]
-        public async ValueTask&lt;Matrix&lt;float&gt;&gt; StrassenParallel()
+        public async ValueTask&lt;Matrix&lt;byte&gt;&gt; StrassenParallel()
         {
             return await Optimization.MultiplyStrassenAsync(_matrix1, _matrix2);
         }
 
         [Benchmark]
-        public Matrix&lt;float&gt; Strassen()
+        public Matrix&lt;byte&gt; Strassen()
         {
             return Optimization.MultiplyStrassen(_matrix1, _matrix2);
         }
         
-        [Benchmark(Baseline = true)]
-        public Matrix&lt;float&gt; Default()
+        [Benchmark]
+        public Matrix&lt;byte&gt; Default()
         {
             return _matrix1 * _matrix2;
         }
@@ -272,7 +272,7 @@ DefaultJob : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 Ry
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright &copy; 2020 MatrixDotNet
+            Copyright &copy; 2020-2021 MatrixDotNet
             
           </div>
         </div>
