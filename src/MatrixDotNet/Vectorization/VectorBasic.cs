@@ -2,6 +2,7 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Performance.Simd;
 using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Vectorization
@@ -186,6 +187,52 @@ namespace MatrixDotNet.Vectorization
             }
 
             return cos;
+        }
+
+        /// <summary>
+        /// Gets sum of vector.
+        /// </summary>
+        /// <param name="vector">vector</param>
+        public static T Sum<T>(this Vector<T> vector)
+            where T : unmanaged
+        {
+            return Simd.Sum(vector.Array, vector.Length);
+        }
+
+        /// <summary>
+        /// Gets sum of vector.
+        /// </summary>
+        /// <param name="vector">vector</param>
+        public static int Sum(this Vector<int> vector)
+        {
+            return Simd.Sum(vector.Array);
+        }
+
+        /// <summary>
+        /// Gets sum of vector.
+        /// </summary>
+        /// <param name="vector">vector</param>
+        public static short Sum(this Vector<short> vector)
+        {
+            return Simd.Sum(vector.Array);
+        }
+
+        /// <summary>
+        /// Gets sum of vector.
+        /// </summary>
+        /// <param name="vector">vector</param>
+        public static float Sum(this Vector<float> vector)
+        {
+            return Simd.Sum(vector.Array);
+        }
+
+        /// <summary>
+        /// Gets sum of vector.
+        /// </summary>
+        /// <param name="vector">vector</param>
+        public static double Sum(this Vector<double> vector)
+        {
+            return Simd.Sum(vector.Array);
         }
     }
 }

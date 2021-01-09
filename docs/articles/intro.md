@@ -6,12 +6,6 @@ Create new console application and install the [MatrixDotNet](https://www.nuget.
 * Projects: classic and modern with PackageReferences
 * Runtimes: .NETStandard 2.1, NET Core 3.1+
 * OS: Windows, Linux, MacOS
-* Languages: C#
-
-MatrixDotNet contains three main structures: 
-* <a href = "#Matrix">Matrix<T></a>
-* <a href = "#Vector">Vector<T></a>
-* <a href = "#MatrixComplex">MatrixComplex</a>
 
 ### Matrix
 

@@ -132,7 +132,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
         
         
         [Fact]
-        public void SumDoubleTest_SumAllElementsMatrix_AssertMustBeEqual()
+        public void SumDoubleTest_SumAllElementsMatrix_AssertMustBeNotEqual()
         {
             // Arrange
             Matrix<double> matrix = new double[10, 10];
@@ -151,11 +151,11 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
             var actual = matrix.Sum();
             
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.NotEqual(expected, actual);
         }
         
         [Fact]
-        public void SumFloatKahanKlainTest_SumAllElementsMatrix_AssertMustBeEqual()
+        public void SumFloatKahanKlainTest_SumAllElementsMatrix_AssertMustBeNotEqual()
         {
             // Arrange
             Matrix<float> matrix = new float[100, 100];
@@ -175,7 +175,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
             float actual3 = matrix.GetKleinSum();
             
             // Assert
-            Assert.Equal(actual,actual2);
+            Assert.NotEqual(actual,actual2);
             Assert.NotEqual(actual,actual3);
         }
         #endregion
@@ -183,7 +183,7 @@ namespace MatrixDotNetTests.MatrixTests.StatisticsTests
         #region Klain
         
         [Fact]
-        public void SumFloatKahanGetKlainTest_SumAllElementsMatrix_AssertMustBeEqual()
+        public void SumFloatKahanGetKlainTest_SumAllElementsMatrix_AssertMustBeNotEqual()
         {
             // Arrange
             Matrix<float> matrix = new Matrix<float>(100,100,1);
