@@ -82,3 +82,6 @@ x0: 12,393939393939394
 x1: -0,6637806637806638
 x2: -3,3997113997114
 ```
+
+> [!NOTE]
+> If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).

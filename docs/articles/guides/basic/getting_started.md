@@ -39,3 +39,6 @@ As you can see thanks overload operators, it's possible write less code and beco
 ##### Output
 
 [!code-csharp[Run](../../../../samples/Samples/logs/SimpleOperations/Run.txt)]
+
+> [!NOTE]
+> If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).

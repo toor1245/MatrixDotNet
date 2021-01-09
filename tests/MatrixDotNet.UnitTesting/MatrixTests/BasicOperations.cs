@@ -2,9 +2,9 @@ using System;
 using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Performance;
-using MatrixDotNet.Extensions.Performance.Simd;
 using MatrixDotNet.Vectorization;
 using Xunit;
 
@@ -578,6 +578,162 @@ namespace MatrixDotNetTests.MatrixTests
 
             // Assert
             Assert.Equal(expected,actual);
+        }
+        
+        #endregion
+
+        #region Sum
+
+        [Fact]
+        public void SumTest_CheckDouble_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<double> matrixA = new double[,]
+            {
+                {1, 5, 8},
+                {4, 5, 10},
+            };
+            
+            double expected = 33;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void SumTest_CheckDoubleWith_Simd_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<double> matrixA = new double[,]
+            {
+                {1, 5, 8},
+                {4, 5, 10},
+                {1, 5, 8},
+                {4, 5, 10},
+                {1, 5, 8},
+                {4, 5, 10},
+            };
+            
+            double expected = 99;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+            
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void SumTest_CheckFloat_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<float> matrixA = new float[,]
+            {
+                {1, 5, 8},
+                {4, 5, 10},
+            };
+            
+            float expected = 33;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void SumTest_CheckFloatWith_Simd_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<float> matrixA = new float[,]
+            {
+                {1, 5, 8},
+                {4, 5, 10},
+                {1, 5, 8},
+                {4, 5, 10},
+                {1, 5, 8},
+                {4, 5, 10},
+            };
+            
+            float expected = 99;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+            
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void SumTest_CheckInt_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<int> matrixA = new[,]
+            {
+                {1, 5, 8},
+                {4, 5, 10},
+            };
+            
+            int expected = 33;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void SumTest_CheckIntWith_Simd_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<int> matrixA = new[,]
+            {
+                {1, 5, 8},
+                {4, 5, 10},
+                {1, 5, 8},
+                {4, 5, 10},
+                {1, 5, 8},
+                {4, 5, 10},
+            };
+            
+            int expected = 99;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+            
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        [Fact]
+        public void SumTest_CheckShort_AssertMustBeEqual()
+        {
+            // Arrange
+            Matrix<short> matrixA = new short[,]
+            {
+                {1, 5, 8},
+                {4, 5, 10},
+            };
+            
+            short expected = 33;
+
+            // Act
+            var actual = matrixA.Sum();
+            
+
+            // Assert
+            Assert.Equal(expected, actual);
         }
         
         #endregion

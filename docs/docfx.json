@@ -64,7 +64,7 @@
     "globalMetadata" :
     {
       "_appTitle" : "MatrixDotNet",
-      "_appFooter" : "Copyright &copy; 2020 MatrixDotNet",
+      "_appFooter" : "Copyright &copy; 2020-2021 MatrixDotNet",
       "_appLogoPath" : "images/logo/matrix.svg",
       "_appFaviconPath": "images/logo/matrix.ico",
       "_enableSearch": true

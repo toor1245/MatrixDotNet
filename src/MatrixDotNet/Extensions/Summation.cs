@@ -2,12 +2,13 @@ using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
 using System;
 using System.Collections.Generic;
+using MatrixDotNet.Extensions.Performance.Simd;
 
 namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-        #region Sum T
+        #region Sum
 
         /// <summary>
         /// Summation matrix. 
@@ -19,16 +20,7 @@ namespace MatrixDotNet.Extensions
         public static T Sum<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            T sum = default;
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    sum = MathUnsafe<T>.Add(sum, matrix[i, j]);
-                }
-            }
-
-            return sum;
+            return Simd.Sum(matrix._Matrix);
         }
 
         /// <summary>
@@ -42,14 +34,7 @@ namespace MatrixDotNet.Extensions
         public static T SumByRow<T>(this Matrix<T> matrix, int dimension)
             where T : unmanaged
         {
-            T sum = default;
-
-            for (int i = 0; i < matrix.Columns; i++)
-            {
-                sum = MathUnsafe<T>.Add(sum, matrix[dimension, i]);
-            }
-
-            return sum;
+            return Simd.Sum(matrix[dimension]);
         }
 
         /// <summary>
@@ -83,21 +68,11 @@ namespace MatrixDotNet.Extensions
         public static T[] SumByRows<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             var array = new T[matrix.Rows];
 
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
-                T sum = default;
-
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    sum = MathUnsafe<T>.Add(sum, matrix[i, j]); // sum = sum + matrix[i,j];
-                }
-
-                array[i] = sum;
+                array[i] = Simd.Sum(matrix[i]);
             }
 
             return array;
@@ -113,9 +88,6 @@ namespace MatrixDotNet.Extensions
         public static T[] SumByColumns<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             var array = new T[matrix.Columns];
 
             for (int i = 0; i < matrix.Columns; i++)
@@ -144,9 +116,6 @@ namespace MatrixDotNet.Extensions
         public static T SumByDiagonal<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             T sum = default;
 
             for (int i = 0; i < matrix.Rows; i++)

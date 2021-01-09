@@ -3,6 +3,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 {
@@ -24,6 +25,34 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
                 return Vector256.Create(0xFFFFFFFF).As<uint, T>();
 #endif
             }
+        }
+
+        /// <summary>
+        /// Gets sum of Vector256
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static T SumVector(Vector256<T> a)
+        {
+            var sum = default(T);
+            for (var i = 0; i < Vector256<T>.Count; i++)
+            {
+                sum = MathUnsafe<T>.Add(sum, a.GetElement(i));
+            }
+            return sum;
+        }
+
+        /// <summary>
+        /// Gets sum of Vector128
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static T SumVector(Vector128<T> a)
+        {
+            var sum = default(T);
+            for (var i = 0; i < Vector128<T>.Count; i++)
+            {
+                sum = MathUnsafe<T>.Add(sum, a.GetElement(i));
+            }
+            return sum;
         }
 
         /// <summary>__m256X _mm256_add_epiX (__m256X a, __m256X b)</summary>
@@ -416,6 +445,14 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             {
                 return Sse2.Add(va.As<T, ulong>(), vb.As<T, ulong>()).As<ulong, T>();
             }
+            if (typeof(T) == typeof(float))
+            {
+                return Sse.Add(va.As<T, float>(), vb.As<T, float>()).As<float, T>();
+            }
+            if (typeof(T) == typeof(double))
+            {
+                return Sse2.Add(va.As<T, double>(), vb.As<T, double>()).As<double, T>();
+            }
 
             throw new NotSupportedException();
         }
@@ -592,6 +629,68 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             if (typeof(T) == typeof(double))
             {
                 return Vector128.Create(Unsafe.As<T, double>(ref value)).As<double, T>();
+            }
+
+            throw new NotSupportedException();
+        }
+
+        /// <summary>Gets sum by GetElement or __m128i _mm_hadd_epi16 (__m128i a, __m128i b)</summary>
+        /// <remarks>PHADDW xmm, xmm/m128</remarks>
+        /// <remarks>Supports: Ssse3(int, short), Sse3(float, double)</remarks>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static T SumVector128(Vector128<T> va)
+        {
+            if (typeof(T) == typeof(sbyte))
+            {
+                return SumVector(va);
+            }
+            if (typeof(T) == typeof(byte))
+            {
+                return SumVector(va);
+            }
+            if (typeof(T) == typeof(short))
+            {
+                var sum = va.As<T, short>();
+                sum = Ssse3.HorizontalAdd(sum, sum);
+                sum = Ssse3.HorizontalAdd(sum, sum);
+                sum = Ssse3.HorizontalAdd(sum, sum);
+                return sum.As<short, T>().ToScalar();
+            }
+            if (typeof(T) == typeof(ushort))
+            {
+                return SumVector(va);
+            }
+            if (typeof(T) == typeof(int))
+            {
+                var sum = va.As<T, int>();
+                sum = Ssse3.HorizontalAdd(sum, sum);
+                sum = Ssse3.HorizontalAdd(sum, sum);
+                return sum.As<int, T>().ToScalar();
+            }
+            if (typeof(T) == typeof(uint))
+            {
+                return SumVector(va);
+            }
+            if (typeof(T) == typeof(long))
+            {
+                return SumVector(va);
+            }
+            if (typeof(T) == typeof(ulong))
+            {
+                return SumVector(va);
+            }
+            if (typeof(T) == typeof(float))
+            {
+                var sum = va.As<T, float>();
+                sum = Sse3.HorizontalAdd(sum, sum);
+                sum = Sse3.HorizontalAdd(sum, sum);
+                return sum.As<float, T>().ToScalar();
+            }
+            if (typeof(T) == typeof(double))
+            {
+                var sum = va.As<T, double>();
+                sum = Sse3.HorizontalAdd(sum, sum);
+                return sum.As<double, T>().ToScalar();
             }
 
             throw new NotSupportedException();
