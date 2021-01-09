@@ -1,8 +1,8 @@
 # MatrixAsFixedBuffer Overview
 
-`MatrixAsFixedBuffer` is a struct which intended for prevent memory allocation in difference of `Matrix<T>`.
+`MatrixOnStack` is a struct which intended for prevent memory allocation in difference of `Matrix<T>`.
 
-`MatrixAsFixedBuffer` works same like `Matrix<T>` but max length of fixed buffer 6 561, thus you can create
+`MatrixOnStack` works same like `Matrix<T>` but max length of fixed buffer 6 561, thus you can create
 maximum size of matrix `80 x 80` and supports only `double` data type.
 
 > Located in `MatrixDotNet.Extensions.Performance`
@@ -11,7 +11,7 @@ maximum size of matrix `80 x 80` and supports only `double` data type.
 First way for initialize of matrix is just assign number of rows and columns.
 
 ```c#
-MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(5, 5);
+MatrixOnStack ma = new MatrixOnStack(5, 5);
 ```
 Where rows and columns are `byte` data type for aligned struct.
 
@@ -19,19 +19,19 @@ next way is pass two-dimensional array `double[,]`.
 
 ```c#
 double[,] matrix = new double[5, 5];
-MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(matrix);
+MatrixOnStack ma = new MatrixOnStack(matrix);
 ```
 
 you even can pass `Matrix<T>` in implicit or explicit way.
 ```c#
 Matrix<double> matrix = new Matrix<int>(5, 5);
-MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(matrix);
+MatrixOnStack ma = new MatrixOnStack(matrix);
 ```
 
 Or 
 ```c#
 Matrix<double> matrix = new Matrix<int>(5, 5);
-MatrixAsFixedBuffer ma = matrix;
+MatrixOnStack ma = matrix;
 ```
 
 ### Access to buffer
@@ -40,14 +40,14 @@ In `MatrixAsFixedBuffer` not ways for access ot fixed buffer,
 however you can works with property `Data` which returns `Span<double>`
 
 ```c#
-MatrixAsFixedBuffer matrix = new MatrixAsFixedBuffer(5, 5);
+MatrixOnStack matrix = new MatrixOnStack(5, 5);
 var span = ma.Data;
 ```
 Provides a lot of functionality for working with a buffer and it will be even faster than `Matrix<T>`.
 
 So, if you want to obtain row of matrix you need to use same like in `Matrix<T>` overload of index.
 ```c#
-MatrixAsFixedBuffer matrix = new MatrixAsFixedBuffer(5, 5);
+MatrixOnStack matrix = new MatrixOnStack(5, 5);
 matrix[0] = { 1, 2, 3, 4, 5};
 matrix[1, 1] = 10;
 ```
@@ -56,7 +56,7 @@ matrix[1, 1] = 10;
 Basic operations same like `Matrix<T>` too, 
 but passing parameters works through `ref` it is intended for performance.
 
-[!code-csharp[BenchByRef.cs](../../../../tests/MatrixDotNet.PerformanceTesting/MatrixAsFixedBufferBench/BenchByRef.cs)]
+[!code-csharp[BenchByRef.cs](../../../../tests/MatrixDotNet.PerformanceTesting/MatrixOnStackBenchmarks/BenchByRef.cs)]
 
 ```ini 
 BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1110 (1909/November2018Update/19H2)
@@ -77,20 +77,20 @@ Job=RyuJitX64  Jit=RyuJit  Platform=X64
 
 Let's consider the following samples and make benchmarks.
 
-`MatrixAsFixedBuffer.MulByRef` is used for multiplication of two matrices.
+`MatrixOnStack.MulByRef` is used for multiplication of two matrices.
 ```c#
-MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(5, 5);
-MatrixAsFixedBuffer mb = new MatrixAsFixedBuffer(5, 5);
-MatrixAsFixedBuffer mc = MatrixAsFixedBuffer.MulByRef(ma, mb);
+MatrixOnStack ma = new MatrixOnStack(5, 5);
+MatrixOnStack mb = new MatrixOnStack(5, 5);
+MatrixOnStack mc = MatrixOnStack.MulByRef(ma, mb);
 ```
 
-`MatrixAsFixedBuffer.AddByRef` is used for add of two matrices.
+`MatrixOnStack.AddByRef` is used for add of two matrices.
 ```c#
-MatrixAsFixedBuffer ma = new MatrixAsFixedBuffer(5, 5);
-MatrixAsFixedBuffer mb = new MatrixAsFixedBuffer(5, 5);
-MatrixAsFixedBuffer mc = MatrixAsFixedBuffer.AddByRef(ma, mb);
+MatrixOnStack ma = new MatrixOnStack(5, 5);
+MatrixOnStack mb = new MatrixOnStack(5, 5);
+MatrixOnStack mc = MatrixOnStack.AddByRef(ma, mb);
 ```
-[!code-csharp[BenchAddFixedMatrixVsMatrix.cs](../../../../tests/MatrixDotNet.PerformanceTesting/MatrixAsFixedBufferBench/BenchAddFixedMatrixVsMatrix.cs)]
+[!code-csharp[BenchAddMatrixOnStack.cs](../../../../tests/MatrixDotNet.PerformanceTesting/MatrixOnStackBenchmarks/BenchAddMatrixonStackVsMatrix.cs)]
 
 ```ini
 BenchmarkDotNet=v0.12.1, OS=Windows 10.0.18363.1110 (1909/November2018Update/19H2)
@@ -102,7 +102,7 @@ DefaultJob : .NET Core 5.0.0 (CoreCLR 5.0.20.51904, CoreFX 5.0.20.51904), X64 Ry
 
 |                 Method |     Mean |     Error |    StdDev |  Gen 0 |  Gen 1 | Gen 2 | Allocated |
 |----------------------- |---------:|----------:|----------:|-------:|-------:|------:|----------:|
-| AddMatrixAsFixedBuffer | 4.332 us | 0.0851 us | 0.1247 us |      - |      - |     - |         - |
+|       AddMatrixOnStack | 4.332 us | 0.0851 us | 0.1247 us |      - |      - |     - |         - |
 |              AddMatrix | 4.543 us | 0.0901 us | 0.1800 us | 8.1253 | 2.0294 |     - |   51256 B |
 
 As you can see difference only in memory allocation.

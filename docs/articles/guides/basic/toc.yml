@@ -22,5 +22,5 @@
 - name: Vector
   href: vector.md
 
-- name: Matrix as fixed buffer
-  href: matrix_as_fixed_buffer.md
+- name: Matrix on stack
+  href: matrix_on_stack.md

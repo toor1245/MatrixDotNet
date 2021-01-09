@@ -1,6 +1,5 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.NotStableFeatures;
 
 namespace MatrixDotNet.PerformanceTesting.Matrix
 {
@@ -20,12 +19,6 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
         public bool EqualsDefault()
         {
             return _matrix.Equals(_matrix2);
-        }
-
-        [Benchmark]
-        public bool EqualsMemcpy()
-        {
-            return UnsafeEqualsUnrolled.EqualBytesLongUnrolled(_matrix.GetArray(), _matrix2.GetArray());
         }
     }
 }

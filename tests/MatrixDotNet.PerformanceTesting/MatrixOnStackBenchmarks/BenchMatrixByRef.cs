@@ -1,6 +1,6 @@
 using BenchmarkDotNet.Attributes;
 
-namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
+namespace MatrixDotNet.PerformanceTesting.MatrixOnStackBenchmarks
 {
     // equally
     [MemoryDiagnoser]

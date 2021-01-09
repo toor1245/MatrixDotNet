@@ -12,7 +12,7 @@ namespace MatrixDotNet.Extensions.Performance
 {
     [Serializable]
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe struct FixedBuffer
+    public unsafe struct MatrixOnStack
     {
         private const short Size = 6_561;
 
@@ -47,7 +47,7 @@ namespace MatrixDotNet.Extensions.Performance
         /// </summary>
         /// <param name="rows"></param>
         /// <param name="columns"></param>
-        public FixedBuffer(byte rows, byte columns) : this()
+        public MatrixOnStack(byte rows, byte columns) : this()
         {
             Initialize(rows, columns);
         }
@@ -57,9 +57,9 @@ namespace MatrixDotNet.Extensions.Performance
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <returns>init matrix as fixed buffer</returns>
-        public static implicit operator FixedBuffer(double[,] matrix)
+        public static implicit operator MatrixOnStack(double[,] matrix)
         {
-            return new FixedBuffer(matrix);
+            return new MatrixOnStack(matrix);
         }
 
         /// <summary>
@@ -67,16 +67,16 @@ namespace MatrixDotNet.Extensions.Performance
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <returns>init matrix as fixed buffer</returns>
-        public static implicit operator FixedBuffer(Matrix<double> matrix)
+        public static implicit operator MatrixOnStack(Matrix<double> matrix)
         {
-            return new FixedBuffer(matrix.GetArray(), matrix.Rows, matrix.Columns);
+            return new MatrixOnStack(matrix.GetArray(), matrix.Rows, matrix.Columns);
         }
 
         /// <summary>
         ///     Initialize matrix.
         /// </summary>
         /// <param name="matrix">the matrix</param>
-        public FixedBuffer(double[,] matrix) : this()
+        public MatrixOnStack(double[,] matrix) : this()
         {
             var m = matrix.GetLength(0);
             var n = matrix.GetLength(1);
@@ -100,7 +100,7 @@ namespace MatrixDotNet.Extensions.Performance
         /// <param name="matrix">the matrix</param>
         /// <param name="m">number of rows of the matrix</param>
         /// <param name="n">number of columns of the matrix</param>
-        public FixedBuffer(double[] matrix, int m, int n) : this()
+        public MatrixOnStack(double[] matrix, int m, int n) : this()
         {
             Initialize((byte) m, (byte) n);
 
@@ -140,7 +140,7 @@ namespace MatrixDotNet.Extensions.Performance
         /// <param name="right">the right matrix.</param>
         /// <returns></returns>
         /// <exception cref="MatrixDotNetException">matrices are not equal</exception>
-        public static FixedBuffer AddByRef(ref FixedBuffer left, ref FixedBuffer right)
+        public static MatrixOnStack AddByRef(ref MatrixOnStack left, ref MatrixOnStack right)
         {
             var m = left.Rows;
             var n = left.Columns;
@@ -148,7 +148,7 @@ namespace MatrixDotNet.Extensions.Performance
             if (m != right.Rows || n != right.Columns)
                 throw new MatrixDotNetException("Not Equal");
 
-            var matrix = new FixedBuffer(m, n);
+            var matrix = new MatrixOnStack(m, n);
 
 #if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
@@ -202,7 +202,7 @@ namespace MatrixDotNet.Extensions.Performance
         /// <param name="right">the matrix with fixed buffer.</param>
         /// <returns>new matrix from subtract two matrices. </returns>
         /// <exception cref="MatrixDotNetException">matrices not equal by size.</exception>
-        public static FixedBuffer SubByRef(ref FixedBuffer left, ref FixedBuffer right)
+        public static MatrixOnStack SubByRef(ref MatrixOnStack left, ref MatrixOnStack right)
         {
             var m = left.Rows;
             var n = left.Columns;
@@ -212,7 +212,7 @@ namespace MatrixDotNet.Extensions.Performance
                 throw new MatrixDotNetException("Not Equal");
             }
 
-            var matrix = new FixedBuffer(m, n);
+            var matrix = new MatrixOnStack(m, n);
 
 #if NET5_0 || NETCOREAPP3_1
             if (Avx2.IsSupported)
@@ -271,7 +271,7 @@ namespace MatrixDotNet.Extensions.Performance
         /// <exception cref="MatrixDotNetException">
         ///     throws exception if length columns of left matrix not equal length rows of right matrix
         /// </exception>
-        public static FixedBuffer MulByRef(ref FixedBuffer left, ref FixedBuffer right)
+        public static MatrixOnStack MulByRef(ref MatrixOnStack left, ref MatrixOnStack right)
         {
             if (left.Columns != right.Rows)
             {
@@ -287,13 +287,13 @@ namespace MatrixDotNet.Extensions.Performance
         /// <param name="left">the left matrix</param>
         /// <param name="right">the right matrix.</param>
         /// <returns></returns>
-        private static FixedBuffer MulMatrix(ref FixedBuffer left, ref FixedBuffer right)
+        private static MatrixOnStack MulMatrix(ref MatrixOnStack left, ref MatrixOnStack right)
         {
             var m = left.Rows;
             var n = right.Columns;
             var K = left.Columns;
             var len1 = left.Length;
-            var matrix = new FixedBuffer(m, n);
+            var matrix = new MatrixOnStack(m, n);
             fixed (double* pointer1 = left._array)
             fixed (double* pointer2 = right._array)
             fixed (double* pointer3 = matrix.Data)

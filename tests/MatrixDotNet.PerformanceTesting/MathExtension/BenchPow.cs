@@ -9,7 +9,7 @@ namespace MatrixDotNet.PerformanceTesting.MathExtension
     {
         private Matrix<int> _matrix;
         
-        [Params(100)]
+        [Params(512)]
         public int Size;
 
         [Params(10)]

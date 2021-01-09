@@ -1,35 +1,35 @@
 using BenchmarkDotNet.Attributes;
 using MatrixDotNet.Extensions.Performance;
 
-namespace MatrixDotNet.PerformanceTesting.MatrixAsFixedBufferBench
+namespace MatrixDotNet.PerformanceTesting.MatrixOnStackBenchmarks
 {
     [MemoryDiagnoser]
-    public class BenchMulMatrixAsFixedBuffer : PerformanceTest
+    public class BenchAddFixedMatrixVsMatrix : PerformanceTest
     {
-        private FixedBuffer _buffer;
+        private MatrixOnStack _buffer;
         private Matrix<double> _matrix;
         
         [GlobalSetup]
         public void Setup()
         {
-            _buffer = new FixedBuffer(80,80);
+            _buffer = new MatrixOnStack(80,80);
             for (int i = 0; i < _buffer.Length; i++)
             {
                 _buffer.Data[i] = 5;
             }
             _matrix = new Matrix<double>(80,80,5);
         }
-        
+
         [Benchmark]
-        public Matrix<double> MulMatrix()
+        public MatrixOnStack AddMatrixAsFixedBuffer()
         {
-            return _matrix * _matrix;
+            return MatrixOnStack.AddByRef(ref _buffer, ref _buffer);
         }
-        
+
         [Benchmark]
-        public FixedBuffer MulByRefMatrixAsFixedBuffer()
+        public Matrix<double> AddMatrix()
         {
-            return FixedBuffer.MulByRef(ref _buffer, ref _buffer);
+            return _matrix + _matrix;
         }
     }
 }
