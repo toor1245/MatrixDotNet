@@ -1,4 +1,4 @@
-# MatrixAsFixedBuffer Overview
+# MatrixOnStack Overview
 
 `MatrixOnStack` is a struct which intended for prevent memory allocation in difference of `Matrix<T>`.
 
