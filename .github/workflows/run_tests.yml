@@ -43,6 +43,21 @@ jobs:
       - name: Run Unit Tests
         run: dotnet test "tests/MatrixDotNet.UnitTesting" -c Release
 
+  lint:
+    runs-on: ubuntu-latest
+    name: Code Convention Check
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1.7.2
+
+      - name: Setup dotnet-format tool
+        run: dotnet tool install --global dotnet-format --version 4.1.131201
+
+      - name: Check MatrixDotNet
+        run: dotnet format "src/MatrixDotNet/MatrixDotNet.csproj" --check --verbosity diagnostic 
   platforms:
     runs-on: windows-latest
     name: SDE tests
@@ -70,20 +85,3 @@ jobs:
 
       - name: Test
         run: "./sde-external-8.59.0-2020-10-05-win/sde.exe" -skx -- dotnet test "tests/MatrixDotNet.UnitTesting/MatrixDotNet.UnitTesting.csproj" -c Release
-        shell: powershell
-
-  lint:
-    runs-on: ubuntu-latest
-    name: Code Convention Check
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Setup .NET Core @ Latest
-        uses: actions/setup-dotnet@v1.7.2
-
-      - name: Setup dotnet-format tool
-        run: dotnet tool install --global dotnet-format --version 4.1.131201
-
-      - name: Check MatrixDotNet
-        run: dotnet format "src/MatrixDotNet/MatrixDotNet.csproj" --check --verbosity diagnostic 
