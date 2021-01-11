@@ -14,6 +14,36 @@ env:
 
 jobs:
   test:
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      matrix:
+        config:
+          - os: windows-latest
+          - os: ubuntu-latest
+          - os: macos-latest
+
+    name: Run tests
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core 3.1 @ Latest
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '3.1.x'
+
+      - name: Setup .NET 5.0 @ Latest
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: '5.0.x'
+
+      - name: Create build
+        run: dotnet build "src" -c Release --force
+
+      - name: Run Unit Tests
+        run: dotnet test "tests/MatrixDotNet.UnitTesting" -c Release
+
+  platforms:
     runs-on: windows-latest
     name: SDE tests
     steps:
@@ -38,5 +68,21 @@ jobs:
           Expand-7Zip "./sde.tar" "./"
         shell: powershell
 
-      - name: AAAAA
+      - name: Run emulating Intel(R) Skylake server CPU (-skx)
         run: sde-external-8.59.0-2020-10-05-win/sde.exe -skx -- dotnet test "tests/MatrixDotNet.UnitTesting/MatrixDotNet.UnitTesting.csproj" -c Release
+
+  lint:
+    runs-on: ubuntu-latest
+    name: Code Convention Check
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1.7.2
+
+      - name: Setup dotnet-format tool
+        run: dotnet tool install --global dotnet-format --version 4.1.131201
+
+      - name: Check MatrixDotNet
+        run: dotnet format "src/MatrixDotNet/MatrixDotNet.csproj" --check --verbosity diagnostic 
