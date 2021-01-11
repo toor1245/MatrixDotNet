@@ -68,7 +68,7 @@ jobs:
           Expand-7Zip "./sde.tar" "./"
         shell: powershell
 
-      -name: Run emulating Intel(R) Skylake server CPU (-skx)
+      - name: Run emulating Intel(R) Skylake server CPU (-skx)
         run: "./sde-external-8.59.0-2020-10-05-win/sde" -skx -- dotnet test "tests/MatrixDotNet.UnitTesting/MatrixDotNet.UnitTesting.csproj" -c Release
 
   lint:
