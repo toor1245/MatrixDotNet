@@ -70,6 +70,7 @@ jobs:
 
       - name: Test
         run: "./sde-external-8.59.0-2020-10-05-win/sde.exe" -skx -- dotnet test "tests/MatrixDotNet.UnitTesting/MatrixDotNet.UnitTesting.csproj" -c Release
+        shell: powershell
 
   lint:
     runs-on: ubuntu-latest
