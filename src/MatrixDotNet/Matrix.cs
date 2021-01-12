@@ -257,12 +257,57 @@ namespace MatrixDotNet
         /// <param name="row">row</param>
         /// <param name="col">col</param>
         /// <param name="value">constant</param>
-        public Matrix(int row, int col, T value)
+        public unsafe Matrix(int row, int col, T value)
         {
             Rows = row;
             Columns = col;
             _Matrix = new T[row * col];
-            Array.Fill(_Matrix, value);
+
+#if NET5_0 || NETCOREAPP3_1
+
+            if (Avx.IsSupported)
+            {
+                var vector = IntrinsicsHandler<T>.CreateVector256(value);
+                int i = 0;
+                int length = _Matrix.Length;
+                fixed (T* ptr = _Matrix)
+                {
+                    int size = Vector256<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
+                    }
+                }
+                for (; i < length; i++)
+                {
+                    _Matrix[i] = value;
+                }
+            }
+            else if (Sse.IsSupported)
+            {
+                var vector = IntrinsicsHandler<T>.CreateVector128(value);
+                int i = 0;
+                int length = _Matrix.Length;
+                fixed (T* ptr = _Matrix)
+                {
+                    int size = Vector128<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
+                    }
+                }
+                for (; i < length; i++)
+                {
+                    _Matrix[i] = value;
+                }
+            }
+            else
+#endif
+            {
+                Array.Fill(_Matrix, value);
+            }
         }
 
         #endregion
