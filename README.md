@@ -2,7 +2,7 @@
 
 ![](https://github.com/toor1245/MatrixDotNet/blob/master/docs/images/MatrixDotNet.png)
 
-<h3 align="center">
+<div style="text-align: center">
 
 [![NuGet](https://img.shields.io/nuget/v/MatrixDotNet.svg)](https://www.nuget.org/packages/MatrixDotNet/) 
 [![Downloads](https://img.shields.io/nuget/dt/matrixdotnet.svg)](https://www.nuget.org/packages/MatrixDotNet/)
@@ -10,10 +10,9 @@
 [![Gitter](https://badges.gitter.im/MatrixDotNet/community.svg)](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.nuget.org/packages/MatrixDotNet/)
 
-</h3>
-
-<h3 align="center">
-  <a href="#Features">Features</a>
+</div>
+<h3 style="text-align: center">
+  <a href="#features">Features</a>
   <span> · </span>
   <a href="https://toor1245.github.io/MatrixDotNet/articles/intro.html">Getting started</a>
   <span> · </span>
@@ -32,10 +31,10 @@ MatrixDotNet is a powerful .NET library for calculate matrix. You can install Ma
 ### Have many algorithms such sections as: factorization, solver, conversion matrix, statistics
 Lets consider several algorithms on each section.
 
-* <a href = "#Factorizations">Factorizations</a>
-* <a href = "#Solving a linear system">Solving a linear system</a>
-* <a href = "#Conversion matrix">Conversion matrix</a>
-* <a href = "#Statistics">Statistics</a>
+* <a href = "#factorizations">Factorizations</a>
+* <a href = "#solving-a-linear-system">Solving a linear system</a>
+* <a href = "#conversion-matrix">Conversion matrix</a>
+* <a href = "#statistics">Statistics</a>
 
 #### Factorizations
 
