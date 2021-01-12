@@ -2,7 +2,7 @@
 
 ![](https://github.com/toor1245/MatrixDotNet/blob/master/docs/images/MatrixDotNet.png)
 
-<div style="text-align: center">
+<h3 align="center">
 
 [![NuGet](https://img.shields.io/nuget/v/MatrixDotNet.svg)](https://www.nuget.org/packages/MatrixDotNet/) 
 [![Downloads](https://img.shields.io/nuget/dt/matrixdotnet.svg)](https://www.nuget.org/packages/MatrixDotNet/)
@@ -10,8 +10,8 @@
 [![Gitter](https://badges.gitter.im/MatrixDotNet/community.svg)](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://www.nuget.org/packages/MatrixDotNet/)
 
-</div>
-<h3 style="text-align: center">
+</h3>
+<h3 align="center">
   <a href="#features">Features</a>
   <span> · </span>
   <a href="https://toor1245.github.io/MatrixDotNet/articles/intro.html">Getting started</a>
