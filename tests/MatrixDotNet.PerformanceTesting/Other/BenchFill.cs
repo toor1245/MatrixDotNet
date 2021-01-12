@@ -14,7 +14,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
         public int[] arr;
 
         [IterationSetup]
-        void Setup()
+        public void Setup()
         {
             arr = new int[Size];
         }
@@ -26,7 +26,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
         }
 
         [Benchmark] 
-        public unsafe void MyFill()
+        public unsafe void AvxFill()
         {
             if (!Avx.IsSupported) 
                 return;
