@@ -37,38 +37,24 @@ h6 mark {
   padding: 0;
 }
 
-.inheritance .level0:before,
 .inheritance .level1:before,
 .inheritance .level2:before,
 .inheritance .level3:before,
 .inheritance .level4:before,
 .inheritance .level5:before {
-    content: '↳';
-    margin-right: 5px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f061";
+  margin-right: 5px;
 }
 
-.inheritance .level0 {
-    margin-left: 0em;
-}
-
-.inheritance .level1 {
-    margin-left: 1em;
-}
-
-.inheritance .level2 {
-    margin-left: 2em;
-}
-
-.inheritance .level3 {
-    margin-left: 3em;
-}
-
-.inheritance .level4 {
-    margin-left: 4em;
-}
-
+.inheritance .level0,
+.inheritance .level1,
+.inheritance .level2,
+.inheritance .level3,
+.inheritance .level4,
 .inheritance .level5 {
-    margin-left: 5em;
+    display: inline;
 }
 
 .level0.summary {
@@ -225,8 +211,11 @@ article section {
   white-space: nowrap;
 }
 .breadcrumb > li + li:before {
-  content: "⯈";
-	font-size: 75%;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f04b";
+  font-size: 5px;
+  vertical-align: middle;
 }
 #autocollapse.collapsed .navbar-header {
   float: none;
@@ -514,12 +503,16 @@ body .toc{
 .toc .nav > li.in > .expand-stub::before,
 .toc .nav > li.in.active > .expand-stub::before,
 .toc .nav > li.filtered > .expand-stub::before {
-    content: "▾";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f107";
 }
 
 .toc .nav > li > .expand-stub::before,
 .toc .nav > li.active > .expand-stub::before {
-    content: "▸";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f105";
 }
 
 .toc .nav > li.filtered > ul,
