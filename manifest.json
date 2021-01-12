@@ -861,7 +861,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/access.html",
-          "hash": "RkXn/RJTcqSgh4gdbesfEg=="
+          "hash": "duU1c4XG32juP1VwMfmJLA=="
         }
       },
       "is_incremental": false,
@@ -1083,22 +1083,19 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Xzx3XDRvscFE0bl5q4KpBQ=="
+          "hash": "JrunSqnkpXgVdFrnXn2vqQ=="
         }
       },
       "is_incremental": false,
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "BAMje6rmiEHw6SMbDpN+Mw=="
+          "hash": "mDL5QuzFBJqtqwuj4FmzoA=="
         }
       },
       "is_incremental": false,
