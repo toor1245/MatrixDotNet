@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Runtime.Intrinsics;
-using System.Runtime.Intrinsics.X86;
 using System.Text;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Performance.Simd.Handler;
 using MatrixDotNet.Math;
+#if NET5_0 || NETCOREAPP3_1
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
+#endif
 
 namespace MatrixDotNet.Vectorization
 {
