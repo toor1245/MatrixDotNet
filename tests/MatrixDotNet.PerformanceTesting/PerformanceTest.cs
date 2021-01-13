@@ -1,8 +1,10 @@
 using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Exporters.Csv;
 using BenchmarkDotNet.Running;
 using NUnit.Framework;
 using System.Linq;
+#if DEBUG
+using BenchmarkDotNet.Exporters.Csv;
+#endif
 
 namespace MatrixDotNet.PerformanceTesting
 {

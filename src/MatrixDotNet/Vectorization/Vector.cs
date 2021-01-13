@@ -4,7 +4,12 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Text;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions.Performance.Simd.Handler;
 using MatrixDotNet.Math;
+#if NET5_0 || NETCOREAPP3_1
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
+#endif
 
 namespace MatrixDotNet.Vectorization
 {
@@ -48,12 +53,107 @@ namespace MatrixDotNet.Vectorization
         /// Initialize Vector and fill vector of specify value.
         /// </summary>
         /// <param name="length">the length of array</param>
-        /// <param name="fill">fill vector of specify value</param>
-        public Vector(int length, T fill)
+        /// <param name="value">fill vector of specify value</param>
+        public unsafe Vector(int length, T value)
         {
             Length = length;
             Array = new T[Length];
-            System.Array.Fill(Array, fill);
+
+#if NET5_0 || NETCOREAPP3_1
+            if (Avx.IsSupported)
+            {
+                var vector = IntrinsicsHandler<T>.CreateVector256(value);
+                int i = 0;
+                fixed (T* ptr = Array)
+                {
+                    int size = Vector256<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
+                    }
+                }
+                for (; i < length; i++)
+                {
+                    Array[i] = value;
+                }
+            }
+            else if (Sse.IsSupported)
+            {
+                var vector = IntrinsicsHandler<T>.CreateVector128(value);
+                int i = 0;
+                fixed (T* ptr = Array)
+                {
+                    int size = Vector128<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
+                    }
+                }
+                for (; i < length; i++)
+                {
+                    Array[i] = value;
+                }
+            }
+            else
+#endif
+            {
+                System.Array.Fill(Array, value);
+            }
+        }
+
+        /// <summary>
+        /// Fill Vector with specified value.
+        /// </summary>
+        /// <param name="value">value to fill vector</param>
+        public unsafe void Fill(T value)
+        {
+#if NET5_0 || NETCOREAPP3_1
+
+            if (Avx.IsSupported)
+            {
+                var vector = IntrinsicsHandler<T>.CreateVector256(value);
+                int i = 0;
+                int length = Array.Length;
+                fixed (T* ptr = Array)
+                {
+                    int size = Vector256<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
+                    }
+                }
+                for (; i < length; i++)
+                {
+                    Array[i] = value;
+                }
+            }
+            else if (Sse.IsSupported)
+            {
+                var vector = IntrinsicsHandler<T>.CreateVector128(value);
+                int i = 0;
+                int length = Array.Length;
+                fixed (T* ptr = Array)
+                {
+                    int size = Vector128<T>.Count;
+                    int lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size)
+                    {
+                        IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
+                    }
+                }
+                for (; i < length; i++)
+                {
+                    Array[i] = value;
+                }
+            }
+            else
+#endif
+            {
+                System.Array.Fill(Array, value);
+            }
         }
 
         /// <summary>
