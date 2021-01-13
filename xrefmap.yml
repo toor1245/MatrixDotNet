@@ -2444,21 +2444,6 @@ references:
   commentId: N:MatrixDotNet.Extensions.Performance.Simd
   fullName: MatrixDotNet.Extensions.Performance.Simd
   nameWithType: MatrixDotNet.Extensions.Performance.Simd
-- uid: MatrixDotNet.Extensions.Performance.Simd.Handler
-  name: MatrixDotNet.Extensions.Performance.Simd.Handler
-  href: api/MatrixDotNet.Extensions.Performance.Simd.Handler.html
-  commentId: N:MatrixDotNet.Extensions.Performance.Simd.Handler
-  fullName: MatrixDotNet.Extensions.Performance.Simd.Handler
-  nameWithType: MatrixDotNet.Extensions.Performance.Simd.Handler
-- uid: MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler`1
-  name: IntrinsicsHandler<T>
-  href: api/MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler-1.html
-  commentId: T:MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler`1
-  name.vb: IntrinsicsHandler(Of T)
-  fullName: MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler<T>
-  fullName.vb: MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler(Of T)
-  nameWithType: IntrinsicsHandler<T>
-  nameWithType.vb: IntrinsicsHandler(Of T)
 - uid: MatrixDotNet.Extensions.Performance.Simd.Simd
   name: Simd
   href: api/MatrixDotNet.Extensions.Performance.Simd.Simd.html
@@ -5930,6 +5915,23 @@ references:
   fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Equals
   nameWithType: Vector<T>.Equals
   nameWithType.vb: Vector(Of T).Equals
+- uid: MatrixDotNet.Vectorization.Vector`1.Fill(`0)
+  name: Fill(T)
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Fill__0_
+  commentId: M:MatrixDotNet.Vectorization.Vector`1.Fill(`0)
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Fill(T)
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Fill(T)
+  nameWithType: Vector<T>.Fill(T)
+  nameWithType.vb: Vector(Of T).Fill(T)
+- uid: MatrixDotNet.Vectorization.Vector`1.Fill*
+  name: Fill
+  href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_Fill_
+  commentId: Overload:MatrixDotNet.Vectorization.Vector`1.Fill
+  isSpec: "True"
+  fullName: MatrixDotNet.Vectorization.Vector<T>.Fill
+  fullName.vb: MatrixDotNet.Vectorization.Vector(Of T).Fill
+  nameWithType: Vector<T>.Fill
+  nameWithType.vb: Vector(Of T).Fill
 - uid: MatrixDotNet.Vectorization.Vector`1.GetHashCode
   name: GetHashCode()
   href: api/MatrixDotNet.Vectorization.Vector-1.html#MatrixDotNet_Vectorization_Vector_1_GetHashCode

@@ -329,30 +329,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Handler.IntrinsicsHandler-1.html",
-          "hash": "uMDw/F5zG9pIp7slu0DU5Q=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Handler.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Handler.html",
-          "hash": "wcGKofsc3f5lIRIHWgHPwA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/MatrixDotNet.Extensions.Performance.Simd.Simd.yml",
       "output": {
         ".html": {
@@ -729,7 +705,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.Enumerator.html",
-          "hash": "7VcBp9hCbgBW/FrFA6mPhQ=="
+          "hash": "J+d7tOu9SXhENn/0HSjz3Q=="
         }
       },
       "is_incremental": false,
@@ -741,7 +717,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Matrix-1.html",
-          "hash": "XCYO2P9O7LR6G/TQnrpHCA=="
+          "hash": "XOAGsUQ2CZynSGRi6wae7w=="
         }
       },
       "is_incremental": false,
@@ -777,7 +753,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MatrixDotNet.Vectorization.Vector-1.html",
-          "hash": "u8bqcjq79sHviRRuQokyTg=="
+          "hash": "+8joIkyzQRGbh6GaNLdpWw=="
         }
       },
       "is_incremental": false,
@@ -837,7 +813,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "zV3ILwCBSOsQnMGWC6iv8w=="
+          "hash": "LRiCHlpMeGgolzfr92fEWw=="
         }
       },
       "is_incremental": false,
@@ -861,7 +837,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/guides/basic/access.html",
-          "hash": "7S1IocHigCyGYPBn01NuAQ=="
+          "hash": "63pMg5tTSON3cgQpLC+Q2w=="
         }
       },
       "is_incremental": false,
@@ -1122,7 +1098,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 67,
+          "total_file_count": 65,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
