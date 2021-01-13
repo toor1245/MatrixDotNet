@@ -7,7 +7,7 @@ using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Performance.Simd.Handler
 {
-    public static class IntrinsicsHandler<T> where T : unmanaged
+    internal static class IntrinsicsHandler<T> where T : unmanaged
     {
         #region Vector256
 
