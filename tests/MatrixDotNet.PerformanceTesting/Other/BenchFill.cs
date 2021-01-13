@@ -7,22 +7,29 @@ namespace MatrixDotNet.PerformanceTesting.Other
 {
     public class BenchFill : PerformanceTest
     {
-        const int Value = 5;
+        const float Value = 5;
 
-        [Params(2000)]
+        [Params(4048)]
         public int Size;
-        public int[] arr;
+        public float[] arr;
 
-        [IterationSetup]
+        [GlobalSetup]
         public void Setup()
         {
-            arr = new int[Size];
+            arr = new float[Size];
         }
 
         [Benchmark(Baseline = true)] 
         public void ArrayFill()
         {
-            Array.Fill(arr, Value );
+            Array.Fill(arr, Value);
+        }
+
+        [Benchmark] 
+        public void SpanFill()
+        {
+            var span = new Span<float>(arr);
+            span.Fill(Value);
         }
 
         [Benchmark] 
@@ -34,9 +41,9 @@ namespace MatrixDotNet.PerformanceTesting.Other
             var vector = Vector256.Create(Value);
             int i = 0;
             int length = arr.Length;
-            fixed (int* ptr = arr)
+            fixed (float* ptr = arr)
             {
-                int size = Vector256<int>.Count;
+                int size = Vector256<float>.Count;
                 int lastIndexBlock = length - length % size;
                 for (; i < lastIndexBlock; i += size)
                 {
