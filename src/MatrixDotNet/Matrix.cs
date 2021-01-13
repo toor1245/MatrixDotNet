@@ -1014,7 +1014,6 @@ namespace MatrixDotNet
             new Enumerator(this);
 
 
-        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             var matrix = obj as Matrix<T>;
@@ -1054,8 +1053,6 @@ namespace MatrixDotNet
             return true;
         }
 
-
-        /// <inheritdoc />
         public override int GetHashCode()
         {
             // ReSharper disable once NonReadonlyMemberInGetHashCode

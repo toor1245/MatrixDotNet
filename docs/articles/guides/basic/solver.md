@@ -1,4 +1,4 @@
-#### Solving a linear system overview
+# Solving a linear system overview
 
 ### Kramer solve
 Cramer's rule is an explicit formula for the solution of a system of linear equations with as many equations as unknowns,
