@@ -279,7 +279,6 @@ namespace MatrixDotNet.Vectorization
             }
         }
 
-        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             if (!(obj is Vector<T>))
@@ -327,7 +326,6 @@ namespace MatrixDotNet.Vectorization
             return true;
         }
 
-        /// <inheritdoc/>
         public override int GetHashCode()
         {
             unchecked
@@ -336,7 +334,6 @@ namespace MatrixDotNet.Vectorization
             }
         }
 
-        /// <inheritdoc/>
         public override string ToString()
         {
             var builder = new StringBuilder();

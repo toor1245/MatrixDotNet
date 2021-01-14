@@ -39,4 +39,4 @@ jobs:
         shell: powershell
 
       - name: Build documentation
-        run: docfx-bin/docfx.exe docs/docfx.json
+        run: docfx-bin/docfx.exe docs/docfx.json --warningAsErrors true
