@@ -4,11 +4,17 @@ using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace MatrixDotNetTests.MatrixTests
 {
     public class ConversionTests
     {
+        private readonly ITestOutputHelper _output;
+        public ConversionTests(ITestOutputHelper output)
+        {
+            _output = output;
+        }
         #region ReduceColumn
         
         [Fact]
@@ -971,6 +977,27 @@ namespace MatrixDotNetTests.MatrixTests
             Assert.Equal(expected, matrixA);
         }
 
+        #endregion
+
+        #region Transpose
+
+        [Fact]
+        public void TransposeAvx2Test()
+        {
+            // Arrange
+            var matrixA = new Matrix<float>(8, 8);
+            for (int i = 0; i < matrixA.Length; i++)
+            {
+                matrixA.GetArray()[i] = i;
+            }
+            var expected = matrixA.Transpose();
+            
+            // Act
+            var actual = matrixA.Transpose8X8Avx2();
+            
+            // Assert
+            Assert.Equal(expected, actual);
+        }
         #endregion
     }
 }
