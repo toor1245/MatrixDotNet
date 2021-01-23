@@ -1,10 +1,13 @@
 using System;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
+using System.Security.Cryptography;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using Xunit;
 using Xunit.Abstractions;
+using Aes = System.Security.Cryptography.Aes;
 
 namespace MatrixDotNetTests.MatrixTests
 {
@@ -982,7 +985,7 @@ namespace MatrixDotNetTests.MatrixTests
         #region Transpose
 
         [Fact]
-        public void TransposeAvx2Test()
+        public void TransposeFloatAvx2Test()
         {
             // Arrange
             var matrixA = new Matrix<float>(8, 8);
@@ -993,11 +996,12 @@ namespace MatrixDotNetTests.MatrixTests
             var expected = matrixA.Transpose();
             
             // Act
-            var actual = matrixA.Transpose8X8Avx2();
+            var actual = matrixA.TransposeXVectorSize();
             
             // Assert
             Assert.Equal(expected, actual);
         }
+        
         #endregion
     }
 }

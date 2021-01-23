@@ -3,7 +3,6 @@ using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
 #if NET5_0 || NETCOREAPP3_1
-using System.Numerics;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Extensions.Performance.Simd.Handler;
@@ -309,7 +308,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static Matrix<T> Transpose8X8Avx2<T>(this Matrix<T> matrix)
+        public static Matrix<T> TransposeXVectorSize<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
             var transpose = new Matrix<T>(matrix.Columns, matrix.Rows);
@@ -320,50 +319,12 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 if (Avx2.IsSupported)
                 {
-                    var ymm0 = IntrinsicsHandler<T>.Insert128Vector256(IntrinsicsHandler<T>.LoadVector256(ptrM + 0 * 8 + 0), IntrinsicsHandler<T>.LoadVector128(ptrM + 4 * 8 + 0), 0x1);
-                    var ymm1 = IntrinsicsHandler<T>.Insert128Vector256(IntrinsicsHandler<T>.LoadVector256(ptrM + 1 * 8 + 0), IntrinsicsHandler<T>.LoadVector128(ptrM + 5 * 8 + 0), 0x1);
-                    var ymm2 = IntrinsicsHandler<T>.Insert128Vector256(IntrinsicsHandler<T>.LoadVector256(ptrM + 2 * 8 + 0), IntrinsicsHandler<T>.LoadVector128(ptrM + 6 * 8 + 0), 0x1);
-                    var ymm3 = IntrinsicsHandler<T>.Insert128Vector256(IntrinsicsHandler<T>.LoadVector256(ptrM + 3 * 8 + 0), IntrinsicsHandler<T>.LoadVector128(ptrM + 7 * 8 + 0), 0x1);
-                    
-                    var ymm4 = IntrinsicsHandler<T>.Insert128Vector256(IntrinsicsHandler<T>.LoadVector256(ptrM + 0 * 8 + 4), IntrinsicsHandler<T>.LoadVector128(ptrM + 4 * 8 + 4), 0x1);
-                    var ymm5 = IntrinsicsHandler<T>.Insert128Vector256(IntrinsicsHandler<T>.LoadVector256(ptrM + 1 * 8 + 4), IntrinsicsHandler<T>.LoadVector128(ptrM + 5 * 8 + 4), 0x1);
-                    var ymm6 = IntrinsicsHandler<T>.Insert128Vector256(IntrinsicsHandler<T>.LoadVector256(ptrM + 2 * 8 + 4), IntrinsicsHandler<T>.LoadVector128(ptrM + 6 * 8 + 4), 0x1);
-                    var ymm7 = IntrinsicsHandler<T>.Insert128Vector256(IntrinsicsHandler<T>.LoadVector256(ptrM + 3 * 8 + 4), IntrinsicsHandler<T>.LoadVector128(ptrM + 7 * 8 + 4), 0x1);
-
-                    var ymm8 = IntrinsicsHandler<T>.UnpackLowVector256(ymm0, ymm1);
-                    var ymm9 = IntrinsicsHandler<T>.UnpackHighVector256(ymm0, ymm1);
-                    var ymm10 = IntrinsicsHandler<T>.UnpackLowVector256(ymm2, ymm3);
-                    var ymm11 = IntrinsicsHandler<T>.UnpackHighVector256(ymm2, ymm3);
-                    
-                    var ymm12 = IntrinsicsHandler<T>.UnpackLowVector256(ymm4, ymm5);
-                    var ymm13 = IntrinsicsHandler<T>.UnpackHighVector256(ymm4, ymm5);
-                    var ymm14 = IntrinsicsHandler<T>.UnpackLowVector256(ymm6, ymm7);
-                    var ymm15 = IntrinsicsHandler<T>.UnpackHighVector256(ymm6, ymm7);
-
-                    ymm0 = IntrinsicsHandler<T>.ShuffleVector256(ymm8, ymm10, 0x44);
-                    ymm1 = IntrinsicsHandler<T>.ShuffleVector256(ymm8, ymm10, 0xEE);
-                    ymm2 = IntrinsicsHandler<T>.ShuffleVector256(ymm9, ymm11, 0x44);
-                    ymm3 = IntrinsicsHandler<T>.ShuffleVector256(ymm9, ymm11, 0xEE);
-                    
-                    ymm4 = IntrinsicsHandler<T>.ShuffleVector256(ymm12, ymm14, 0x44);
-                    ymm5 = IntrinsicsHandler<T>.ShuffleVector256(ymm12, ymm14, 0xEE);
-                    ymm6 = IntrinsicsHandler<T>.ShuffleVector256(ymm13, ymm15, 0x44);
-                    ymm7 = IntrinsicsHandler<T>.ShuffleVector256(ymm13, ymm15, 0xEE);
-
-                    IntrinsicsHandler<T>.StoreVector256(ptrT + 0 * 8, ymm0);
-                    IntrinsicsHandler<T>.StoreVector256(ptrT + 1 * 8, ymm1);
-                    IntrinsicsHandler<T>.StoreVector256(ptrT + 2 * 8, ymm2);
-                    IntrinsicsHandler<T>.StoreVector256(ptrT + 3 * 8, ymm3);
-                    
-                    IntrinsicsHandler<T>.StoreVector256(ptrT + 4 * 8, ymm4);
-                    IntrinsicsHandler<T>.StoreVector256(ptrT + 5 * 8, ymm5);
-                    IntrinsicsHandler<T>.StoreVector256(ptrT + 6 * 8, ymm6);
-                    IntrinsicsHandler<T>.StoreVector256(ptrT + 7 * 8, ymm7);
+                    IntrinsicsHandler<T>.TransposeVector256(ptrM, ptrT);
+                    return transpose;
                 }
             }
 #endif
-            
-            return transpose;
+            return transpose.Transpose();
         }
 
         /// <summary>
