@@ -311,20 +311,23 @@ namespace MatrixDotNet.Extensions.Conversion
         public static Matrix<T> TransposeXVectorSize<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            var transpose = new Matrix<T>(matrix.Columns, matrix.Rows);
 
 #if NETCOREAPP3_1 || NET5_0
-            fixed (T* ptrM = matrix.GetArray())
-            fixed (T* ptrT = transpose.GetArray())
+            if (matrix.Rows == Vector256<T>.Count)
             {
-                if (Avx2.IsSupported)
+                var transpose = new Matrix<T>(matrix.Columns, matrix.Rows);
+                fixed (T* ptrM = matrix.GetArray())
+                fixed (T* ptrT = transpose.GetArray())
                 {
-                    IntrinsicsHandler<T>.TransposeVector256(ptrM, ptrT);
-                    return transpose;
+                    if (Avx2.IsSupported)
+                    {
+                        IntrinsicsHandler<T>.TransposeVector256(ptrM, ptrT);
+                        return transpose;
+                    }
                 }
             }
 #endif
-            return transpose.Transpose();
+            return matrix.Transpose();
         }
 
         /// <summary>
