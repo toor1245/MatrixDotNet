@@ -3,9 +3,9 @@ using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
 #if NET5_0 || NETCOREAPP3_1
-using System.Numerics;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
+using MatrixDotNet.Extensions.Performance.Simd.Handler;
 #endif
 
 
@@ -305,6 +305,29 @@ namespace MatrixDotNet.Extensions.Conversion
             }
 
             return transport;
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Matrix<T> TransposeXVectorSize<T>(this Matrix<T> matrix)
+            where T : unmanaged
+        {
+
+#if NETCOREAPP3_1 || NET5_0
+            if (matrix.Rows == Vector256<T>.Count)
+            {
+                var transpose = new Matrix<T>(matrix.Columns, matrix.Rows);
+                fixed (T* ptrM = matrix.GetArray())
+                fixed (T* ptrT = transpose.GetArray())
+                {
+                    if (Avx2.IsSupported)
+                    {
+                        IntrinsicsHandler<T>.TransposeVector256(ptrM, ptrT);
+                        return transpose;
+                    }
+                }
+            }
+#endif
+            return matrix.Transpose();
         }
 
         /// <summary>

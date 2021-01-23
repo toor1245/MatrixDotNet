@@ -972,5 +972,29 @@ namespace MatrixDotNetTests.MatrixTests
         }
 
         #endregion
+
+        #region Transpose
+
+        [Theory]
+        [InlineData(8)]
+        [InlineData(10)]
+        public void TransposeFloatAvx2Test(int n)
+        {
+            // Arrange
+            var matrixA = new Matrix<float>(n, n);
+            for (int i = 0; i < matrixA.Length; i++)
+            {
+                matrixA.GetArray()[i] = i;
+            }
+            var expected = matrixA.Transpose();
+            
+            // Act
+            var actual = matrixA.TransposeXVectorSize();
+            
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+        
+        #endregion
     }
 }
