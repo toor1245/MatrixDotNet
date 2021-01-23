@@ -32,7 +32,7 @@ jobs:
  
       - name: Build solution and generate NuGet package
         run: |  
-          dotnet build "src" -c Release --force -o src/out
+          dotnet build "src/MatrixDotNet/MatrixDotNet.csproj" -c Release --force -o src/out
         
       - name: Push generated packages to Nuget
         run: |  
