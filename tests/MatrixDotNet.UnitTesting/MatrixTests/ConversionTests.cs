@@ -1,13 +1,10 @@
 using System;
 using System.Linq;
-using System.Runtime.Intrinsics.X86;
-using System.Security.Cryptography;
 using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using Xunit;
 using Xunit.Abstractions;
-using Aes = System.Security.Cryptography.Aes;
 
 namespace MatrixDotNetTests.MatrixTests
 {
