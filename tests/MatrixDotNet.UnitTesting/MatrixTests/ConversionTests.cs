@@ -4,17 +4,11 @@ using MatrixDotNet;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace MatrixDotNetTests.MatrixTests
 {
     public class ConversionTests
     {
-        private readonly ITestOutputHelper _output;
-        public ConversionTests(ITestOutputHelper output)
-        {
-            _output = output;
-        }
         #region ReduceColumn
         
         [Fact]
