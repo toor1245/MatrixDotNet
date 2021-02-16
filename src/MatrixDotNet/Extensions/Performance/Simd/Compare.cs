@@ -14,7 +14,9 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var lengthB = b.Length;
 
             if (lengthA != lengthB)
-                throw new MatrixDotNetException("matrix A length not equal matrix B");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+            }
 
             var size = 8;
 
@@ -52,7 +54,9 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var lengthB = b.Length;
 
             if (lengthA != lengthB)
-                throw new MatrixDotNetException("matrix A length not equal matrix B");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+            }
 
             var size = 8;
 
@@ -90,7 +94,9 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var lengthB = b.Length;
 
             if (lengthA != lengthB)
-                throw new MatrixDotNetException("matrix A length not equal matrix B");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+            }
 
             var size = 4;
 
@@ -128,7 +134,9 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var lengthB = b.Length;
 
             if (lengthA != lengthB)
-                throw new MatrixDotNetException("matrix A length not equal matrix B");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+            }
 
             var size = 8;
 

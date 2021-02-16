@@ -8,12 +8,12 @@ using System.Runtime.Intrinsics.X86;
 namespace MatrixDotNet.Extensions.Performance.Conversion
 {
     /// <summary>
-    ///     Represents conversion operations for matrix with fixed buffer size.
+    /// Represents conversion operations for matrix with fixed buffer size.
     /// </summary>
     public static class Converter
     {
         /// <summary>
-        ///     Adds row for matrix with fixed buffer size.
+        /// Adds row for matrix with fixed buffer size.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <param name="data">the data which assign by index</param>
@@ -24,9 +24,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         {
             if (matrix.Columns != data.Length)
             {
-                var message =
-                    $"length {nameof(data)}:{data.Length} != {nameof(matrix.Columns)} of matrix:{matrix.Columns}";
-                throw new MatrixDotNetException(message);
+                throw new MatrixDotNetException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
             }
 
             fixed (double* arr = data)
@@ -52,7 +50,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         }
 
         /// <summary>
-        ///     Adds column for matrix with fixed buffer size.
+        /// Adds column for matrix with fixed buffer size.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="data">the data.</param>
@@ -63,9 +61,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         {
             if (matrix.Rows != data.Length)
             {
-                var message =
-                    $"length {nameof(data)}:{data.Length} != {nameof(matrix.Rows)} of matrix:{matrix.Rows}";
-                throw new MatrixDotNetException(message);
+                throw new MatrixDotNetException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
             }
 
             fixed (double* arr = data)
@@ -91,7 +87,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         }
 
         /// <summary>
-        ///     Swaps rows with happen AVX2 or Unsafe swap.
+        /// Swaps rows with happen AVX2 or Unsafe swap.
         /// </summary>
         /// <param name="matrix">the matrix with fixed buffer</param>
         /// <param name="from">the index of row.</param>
@@ -152,7 +148,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         }
 
         /// <summary>
-        ///     Swaps columns with happen AVX2 or Unsafe swap.
+        /// Swaps columns with happen AVX2 or Unsafe swap.
         /// </summary>
         /// <param name="matrix">the matrix with fixed buffer</param>
         /// <param name="from">the index of column.</param>
@@ -174,7 +170,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
 
 
         /// <summary>
-        ///     Copy matrix to by some criteria via AVX2.
+        /// Copy matrix to by some criteria via AVX2.
         /// </summary>
         /// <param name="matrix1">the matrix1</param>
         /// <param name="dimension1">row index of matrix1</param>
@@ -213,7 +209,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         }
 
         /// <summary>
-        ///     Copy matrix to by some criteria.
+        /// Copy matrix to by some criteria.
         /// </summary>
         /// <param name="matrix1">the matrix1</param>
         /// <param name="dimension1">row index of matrix1</param>

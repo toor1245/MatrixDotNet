@@ -13,7 +13,9 @@ namespace MatrixDotNet.Extensions.Decompositions
             out Matrix<double> ortTranspose)
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("matrix is not square");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
 
             orthogonal = matrix.ProcessGrammShmidtByColumns().GetNormByColumns();
             ortTranspose = orthogonal.Transpose();
@@ -49,7 +51,9 @@ namespace MatrixDotNet.Extensions.Decompositions
         public static Matrix<T> GetQuasiTriangular<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("matrix is not square");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
 
             var quasi = new Matrix<T>(matrix.Rows, matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)

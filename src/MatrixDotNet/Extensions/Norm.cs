@@ -96,7 +96,9 @@ namespace MatrixDotNet.Extensions
         public static T Traceless<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("Matrix is not square");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
 
             T sum = default;
 

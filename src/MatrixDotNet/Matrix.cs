@@ -327,7 +327,7 @@ namespace MatrixDotNet
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
-                throw new MatrixDotNetException($"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
+                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
             }
 
             int m = left.Rows;
@@ -390,7 +390,7 @@ namespace MatrixDotNet
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
-                throw new MatrixDotNetException($"matrix {nameof(left)} length: {left.Length} != matrix {nameof(right)}  length: {right.Length}");
+                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
             }
 
             int m = left.Rows;
@@ -451,8 +451,7 @@ namespace MatrixDotNet
         {
             if (left.Columns != right.Rows)
             {
-                throw new MatrixDotNetException(
-                    $"matrix {nameof(left)} columns length must be equal matrix {nameof(right)} rows length");
+                throw new MatrixDotNetException(ExceptionArgument.MatricesMultiplySize);
             }
 
             var m = left.Rows;
@@ -813,7 +812,7 @@ namespace MatrixDotNet
         {
             if (array.Length != matrix.Columns)
             {
-                throw new MatrixDotNetException("not equals");
+                throw new MatrixDotNetException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
             }
 
             T[] res = new T[array.Length];
@@ -847,7 +846,7 @@ namespace MatrixDotNet
         {
             if (matrix.Rows != array.Length)
             {
-                throw new MatrixDotNetException("not equals");
+                throw new MatrixDotNetException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
             }
 
             int m = matrix.Rows;

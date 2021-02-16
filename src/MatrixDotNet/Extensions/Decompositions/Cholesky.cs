@@ -8,10 +8,13 @@ namespace MatrixDotNet.Extensions.Decompositions
         public static void GetCholesky(this Matrix<double> matrix, out Matrix<double> lower, out Matrix<double> transpose)
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("Matrix must be square");
-
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
             if (!matrix.IsSymmetric)
-                throw new MatrixDotNetException("matrix is not symmetric");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSymmetric);
+            }
 
             int m = matrix.Rows;
             int n = matrix.Columns;
@@ -58,10 +61,13 @@ namespace MatrixDotNet.Extensions.Decompositions
         public static void GetCholesky(this Matrix<float> matrix, out Matrix<float> lower, out Matrix<float> transpose)
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("Matrix must be square");
-
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
             if (!matrix.IsSymmetric)
-                throw new MatrixDotNetException("matrix is not symmetric");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSymmetric);
+            }
 
             int m = matrix.Rows;
             int n = matrix.Columns;
@@ -107,10 +113,13 @@ namespace MatrixDotNet.Extensions.Decompositions
         public static unsafe void GetCholesky(this Matrix<decimal> matrix, out Matrix<decimal> lower, out Matrix<decimal> transpose)
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("Matrix must be square");
-
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
             if (!matrix.IsSymmetric)
-                throw new MatrixDotNetException("matrix is not symmetric");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSymmetric);
+            }
 
             int m = matrix.Rows;
             int n = matrix.Columns;

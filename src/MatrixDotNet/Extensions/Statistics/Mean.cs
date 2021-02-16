@@ -1,5 +1,6 @@
 using MatrixDotNet.Math;
 using System;
+using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
@@ -12,15 +13,16 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>mean value.</returns>
         /// <exception cref="ArgumentException">matrix is not: float, double, decimal.</exception>
-        public static T Mean<T>(this Matrix<T> matrix) where T : unmanaged
+        public static T Mean<T>(this Matrix<T> matrix)
+            where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-                throw new ArgumentException($"{matrix.GetType()} is not floating type.");
-
+            {
+                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+            }
 
             return MathGeneric<T, int, T>.Divide(matrix.Sum(), matrix.Length);
         }
-
 
         /// <summary>
         /// Gets mean value by row.
@@ -30,7 +32,8 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>mean value by row </returns>
         /// <exception cref="ArgumentException">matrix is not: float, double, decimal.</exception>
-        public static T MeanByRow<T>(this Matrix<T> matrix, int index) where T : unmanaged
+        public static T MeanByRow<T>(this Matrix<T> matrix, int index)
+            where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
                 throw new ArgumentException($"{matrix.GetType()} is not floating type.");
@@ -45,10 +48,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <param name="index">the column index.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>mean value by column.</returns>
-        public static T MeanByColumn<T>(this Matrix<T> matrix, int index) where T : unmanaged
+        public static T MeanByColumn<T>(this Matrix<T> matrix, int index)
+            where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-                throw new ArgumentException($"{matrix.GetType()} is not floating type.");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+            }
 
             return MathGeneric<T, int, T>.Divide(matrix.SumByColumn(index), matrix.Rows);
         }
@@ -59,10 +65,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>mean value by each row.</returns>
-        public static T[] MeanByRows<T>(this Matrix<T> matrix) where T : unmanaged
+        public static T[] MeanByRows<T>(this Matrix<T> matrix)
+            where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-                throw new ArgumentException($"{matrix.GetType()} is not floating type.");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+            }
 
             var rows = matrix.Rows;
             var columns = matrix.Columns;
@@ -83,10 +92,13 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>mean value by each row.</returns>
-        public static T[] MeanByColumns<T>(this Matrix<T> matrix) where T : unmanaged
+        public static T[] MeanByColumns<T>(this Matrix<T> matrix)
+            where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-                throw new ArgumentException($"{matrix.GetType()} is not floating type.");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+            }
 
             var rows = matrix.Rows;
             var columns = matrix.Columns;

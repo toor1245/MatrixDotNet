@@ -85,15 +85,12 @@ namespace MatrixDotNet.Extensions
         /// </exception>
         public static void SetDiagonal<T>(this Matrix<T> matrix, T[] array) where T : unmanaged
         {
-            int x = matrix.Rows;
-            int y = matrix.Columns;
-            int c = x & ((x - y) >> 31) | y & (~(x - y) >> 31);
+            if (!matrix.IsSquare)
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
 
-            if (array.Length != c)
-                throw new MatrixDotNetException(
-                    $"Length of matrix not equal matrix Min(Rows:{matrix.Rows},Columns:{matrix.Columns})");
-
-            for (int i = 0; i < c; i++)
+            for (int i = 0; i < matrix.Rows; i++)
             {
                 matrix[i, i] = array[i];
             }

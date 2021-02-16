@@ -21,7 +21,7 @@ namespace MatrixDotNet.Extensions.Determinants
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException("the matrix is not square", nameof(matrix));
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
             }
 
             if (matrix.Length == 4)

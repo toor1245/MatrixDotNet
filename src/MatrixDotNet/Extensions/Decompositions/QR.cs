@@ -59,8 +59,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException("matrix must be floating point type such as " +
-                                                "Matrix<double>, Matrix<decimal>, Matrix<float>");
+                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
             }
 
             if (!matrix.IsSquare)
@@ -99,13 +98,12 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException("matrix must be floating point type such as " +
-                                                "Matrix<double>, Matrix<decimal>, Matrix<float>");
+                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
             }
 
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException("matrix is not square");
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
             }
 
             int m = matrix.Rows;
@@ -139,8 +137,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException("matrix must be floating point type such as " +
-                                                "Matrix<double>, Matrix<decimal>, Matrix<float>");
+                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
             }
 
             int m = matrix.Rows;
@@ -163,8 +160,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException("matrix must be floating point type such as " +
-                                                "Matrix<double>, Matrix<decimal>, Matrix<float>");
+                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
             }
 
             int m = matrix.Rows;

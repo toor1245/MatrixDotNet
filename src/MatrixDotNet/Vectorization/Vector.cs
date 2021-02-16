@@ -275,7 +275,7 @@ namespace MatrixDotNet.Vectorization
         {
             if (a.Length != b.Length)
             {
-                throw new MatrixDotNetException("a length not equals b length");
+                throw new MatrixDotNetException(ExceptionArgument.VectorLength);
             }
         }
 

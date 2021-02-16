@@ -35,7 +35,7 @@ namespace MatrixDotNet.Extensions.Conversion
 
             if (m != matrix2.Rows)
             {
-                throw new MatrixDotNetException("Rows must be equals");
+                throw new MatrixDotNetException(ExceptionArgument.RowsOfMatricesAreNotEqual);
             }
 
             var res = new Matrix<T>(m, lenColumns);
@@ -66,7 +66,7 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="column">The index of matrix which reduce column.</param>
         /// <typeparam name="T">Unmanaged type.</typeparam>
         /// <returns>A new matrix without the chosen column.</returns>
-        public static unsafe Matrix<T> ReduceColumn<T>(this Matrix<T> matrix, uint column)
+        public static Matrix<T> ReduceColumn<T>(this Matrix<T> matrix, uint column)
             where T : unmanaged
         {
             if (column >= matrix.Columns)
@@ -101,7 +101,7 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>A new matrix without the chosen row.</returns>
         /// <exception cref="NullReferenceException">.</exception>
-        public static unsafe Matrix<T> ReduceRow<T>(this Matrix<T> matrix, uint row)
+        public static Matrix<T> ReduceRow<T>(this Matrix<T> matrix, uint row)
             where T : unmanaged
         {
             if (row >= matrix.Rows)
@@ -132,12 +132,12 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>A new matrix with new column.</returns>
         /// <exception cref="NullReferenceException"></exception>
-        public static Matrix<T> AddColumn<T>(this Matrix<T> matrix, T[] arr, int column) where T : unmanaged
+        public static Matrix<T> AddColumn<T>(this Matrix<T> matrix, T[] arr, int column)
+            where T : unmanaged
         {
             if (matrix.Rows != arr.Length)
             {
-                string message = $"length {nameof(arr)}:{arr.Length} != {nameof(matrix.Rows)} of matrix:{matrix.Rows}";
-                throw new MatrixDotNetException(message);
+                throw new MatrixDotNetException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
             }
 
             var m = matrix.Rows;
@@ -168,14 +168,12 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns></returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static unsafe Matrix<T> AddRow<T>(this Matrix<T> matrix, T[] array, int row)
+        public static Matrix<T> AddRow<T>(this Matrix<T> matrix, T[] array, int row)
             where T : unmanaged
         {
             if (matrix.Columns != array.Length)
             {
-                var message =
-                    $"length {nameof(array)}:{array.Length} != {nameof(matrix.Columns)} of matrix:{matrix.Columns}";
-                throw new MatrixDotNetException(message);
+                throw new MatrixDotNetException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
             }
 
             var newRows = matrix.Rows + 1;
@@ -203,14 +201,14 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>Identity matrix.</returns>
         /// <exception cref="MatrixDotNetException">throws exception if matrix is not square</exception>
-        public static void ToIdentityMatrix<T>(this Matrix<T> matrix) where T : unmanaged
+        public static void ToIdentityMatrix<T>(this Matrix<T> matrix)
+            where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException(
-                    $"matrix is not square!!!\nRows: {matrix.Rows}\nColumns: {matrix.Columns}");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
+
 
             for (var i = 0; i < matrix.Rows; i++)
             {
@@ -236,11 +234,9 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="dimension2">the dimension 2</param>
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <exception cref="MatrixDotNetException">throws exception if indexDimension1 equals indexDimension2 or matrix is null</exception>
-        public static unsafe void SwapRows<T>(this Matrix<T> matrix, int dimension1, int dimension2) where T : unmanaged
+        public static void SwapRows<T>(this Matrix<T> matrix, int dimension1, int dimension2)
+            where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int m = matrix.Rows;
             int n = matrix.Columns;
 
@@ -277,9 +273,6 @@ namespace MatrixDotNet.Extensions.Conversion
         public static void SwapColumns<T>(this Matrix<T> matrix, int indexDimension1, int indexDimension2)
             where T : unmanaged
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             var temp = matrix[indexDimension1, State.Column];
             matrix[indexDimension1, State.Column] = matrix[indexDimension2, State.Column];
             matrix[indexDimension2, State.Column] = temp;
@@ -347,7 +340,7 @@ namespace MatrixDotNet.Extensions.Conversion
             where T : unmanaged
         {
             if (!a.IsSquare)
-                throw new MatrixDotNetException("Matrix is not square");
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
 
             var n = a.Rows >> 1;
 

@@ -24,8 +24,9 @@ namespace MatrixDotNet.Extensions.Decompositions
         public static Matrix<T> GetLower<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException(
-                    $"matrix is not square\n Rows: {matrix.Rows}\n Columns: {matrix.Columns}");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
 
             Matrix<T> lower = new Matrix<T>(matrix.Rows, matrix.Columns);
 
@@ -50,8 +51,9 @@ namespace MatrixDotNet.Extensions.Decompositions
         public static Matrix<T> GetUpper<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException(
-                    $"matrix is not square\n Rows: {matrix.Rows}\n Columns: {matrix.Columns}");
+            {
+                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            }
 
             Matrix<T> upper = new Matrix<T>(matrix.Rows, matrix.Columns);
 
@@ -123,17 +125,15 @@ namespace MatrixDotNet.Extensions.Decompositions
         /// <returns></returns>
         public static void GetLowerUpperPermutation(this Matrix<double> matrix, out Matrix<double> lower, out Matrix<double> upper, out Matrix<double> matrixP)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int n = matrix.Rows;
 
             lower = matrix.CreateIdentityMatrix();
             upper = matrix.Clone() as Matrix<double>;
 
             if (upper is null)
+            {
                 throw new NullReferenceException();
-
+            }
 
             // load to P identity matrix.
             matrixP = lower.Clone() as Matrix<double>;
@@ -153,7 +153,9 @@ namespace MatrixDotNet.Extensions.Decompositions
                 }
 
                 if (System.Math.Abs(max) < 0.0001)
+                {
                     continue;
+                }
 
                 if (index != i)
                 {
@@ -179,9 +181,6 @@ namespace MatrixDotNet.Extensions.Decompositions
 
         public static unsafe void GetLowerUpperPermutationUnsafe(this Matrix<double> matrix, out Matrix<double> lower, out Matrix<double> upper, out Matrix<double> matrixP)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             Exchanges = 0;
 
             int n = matrix.Rows;
@@ -237,9 +236,6 @@ namespace MatrixDotNet.Extensions.Decompositions
 
         public static unsafe void GetLowerUpperPermutationUnsafe(this Matrix<float> matrix, out Matrix<float> lower, out Matrix<float> upper, out Matrix<float> matrixP)
         {
-            if (matrix is null)
-                throw new NullReferenceException();
-
             int n = matrix.Rows;
             int m = matrix.Columns;
             lower = matrix.CreateIdentityMatrix();
