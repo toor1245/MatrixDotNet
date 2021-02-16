@@ -21,7 +21,7 @@ namespace MatrixDotNet
     /// </summary>
     /// <typeparam name="T">integral type.</typeparam>
     [Serializable]
-    public sealed class Matrix<T> : ICloneable, IEnumerable<T>
+    public sealed unsafe class Matrix<T> : ICloneable, IEnumerable<T>
         where T : unmanaged
     {
         #region properties
@@ -207,7 +207,7 @@ namespace MatrixDotNet
         /// Initialize matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
-        public unsafe Matrix(T[,] matrix)
+        public Matrix(T[,] matrix)
         {
             Rows = matrix.GetLength(0);
             Columns = matrix.GetLength(1);
@@ -239,7 +239,7 @@ namespace MatrixDotNet
         /// <param name="array">array</param>
         /// <param name="row">row</param>
         /// <param name="col">col</param>
-        internal unsafe Matrix(T[] array, int row, int col)
+        internal Matrix(T[] array, int row, int col)
         {
             Rows = row;
             Columns = col;
@@ -257,7 +257,7 @@ namespace MatrixDotNet
         /// <param name="row">row</param>
         /// <param name="col">col</param>
         /// <param name="value">constant</param>
-        public unsafe Matrix(int row, int col, T value)
+        public Matrix(int row, int col, T value)
         {
             Rows = row;
             Columns = col;
@@ -323,7 +323,7 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException">
         /// Length of two matrix not equal.
         /// </exception>
-        public static unsafe Matrix<T> operator +(Matrix<T> left, Matrix<T> right)
+        public static Matrix<T> operator +(Matrix<T> left, Matrix<T> right)
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
@@ -386,7 +386,7 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException">
         /// Length of two matrix not equal.
         /// </exception>
-        public static unsafe Matrix<T> operator -(Matrix<T> left, Matrix<T> right)
+        public static Matrix<T> operator -(Matrix<T> left, Matrix<T> right)
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
             {
@@ -447,7 +447,7 @@ namespace MatrixDotNet
         /// <param name="right"></param>
         /// <returns></returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static unsafe Matrix<T> operator *(Matrix<T> left, Matrix<T> right)
+        public static Matrix<T> operator *(Matrix<T> left, Matrix<T> right)
         {
             if (left.Columns != right.Rows)
             {
@@ -597,7 +597,7 @@ namespace MatrixDotNet
         /// Negate matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
-        public static unsafe Matrix<short> Negate(Matrix<short> matrix)
+        public static Matrix<short> Negate(Matrix<short> matrix)
         {
             if (Avx2.IsSupported)
             {
@@ -660,7 +660,7 @@ namespace MatrixDotNet
         /// Negate matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
-        public static unsafe Matrix<sbyte> Negate(Matrix<sbyte> matrix)
+        public static Matrix<sbyte> Negate(Matrix<sbyte> matrix)
         {
             if (Avx2.IsSupported)
             {
@@ -724,7 +724,7 @@ namespace MatrixDotNet
         /// Negate matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
-        public static unsafe Matrix<int> Negate(Matrix<int> matrix)
+        public static Matrix<int> Negate(Matrix<int> matrix)
         {
             if (Avx2.IsSupported)
             {
@@ -843,7 +843,7 @@ namespace MatrixDotNet
         /// <param name="array">array.</param>
         /// <returns>sum of each multiply element of row.</returns>
         /// <exception cref="MatrixDotNetException"></exception>
-        public static unsafe T[] operator *(Matrix<T> matrix, T[] array)
+        public static T[] operator *(Matrix<T> matrix, T[] array)
         {
             if (matrix.Rows != array.Length)
             {
@@ -957,7 +957,7 @@ namespace MatrixDotNet
         /// Clones matrix.
         /// </summary>
         /// <returns>object.</returns>
-        public unsafe object Clone()
+        public object Clone()
         {
             var res = new Matrix<T>(Rows, Columns);
 
