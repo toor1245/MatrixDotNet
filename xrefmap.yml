@@ -750,6 +750,22 @@ references:
   fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.Transpose(Of T)(MatrixDotNet.Matrix(Of T))
   nameWithType: MatrixConverter.Transpose<T>(Matrix<T>)
   nameWithType.vb: MatrixConverter.Transpose(Of T)(Matrix(Of T))
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.TransposeXVectorSize*
+  name: TransposeXVectorSize
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_TransposeXVectorSize_
+  commentId: Overload:MatrixDotNet.Extensions.Conversion.MatrixConverter.TransposeXVectorSize
+  isSpec: "True"
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.TransposeXVectorSize
+  nameWithType: MatrixConverter.TransposeXVectorSize
+- uid: MatrixDotNet.Extensions.Conversion.MatrixConverter.TransposeXVectorSize``1(MatrixDotNet.Matrix{``0})
+  name: TransposeXVectorSize<T>(Matrix<T>)
+  href: api/MatrixDotNet.Extensions.Conversion.MatrixConverter.html#MatrixDotNet_Extensions_Conversion_MatrixConverter_TransposeXVectorSize__1_MatrixDotNet_Matrix___0__
+  commentId: M:MatrixDotNet.Extensions.Conversion.MatrixConverter.TransposeXVectorSize``1(MatrixDotNet.Matrix{``0})
+  name.vb: TransposeXVectorSize(Of T)(Matrix(Of T))
+  fullName: MatrixDotNet.Extensions.Conversion.MatrixConverter.TransposeXVectorSize<T>(MatrixDotNet.Matrix<T>)
+  fullName.vb: MatrixDotNet.Extensions.Conversion.MatrixConverter.TransposeXVectorSize(Of T)(MatrixDotNet.Matrix(Of T))
+  nameWithType: MatrixConverter.TransposeXVectorSize<T>(Matrix<T>)
+  nameWithType.vb: MatrixConverter.TransposeXVectorSize(Of T)(Matrix(Of T))
 - uid: MatrixDotNet.Extensions.Criteries
   name: MatrixDotNet.Extensions.Criteries
   href: api/MatrixDotNet.Extensions.Criteries.html
