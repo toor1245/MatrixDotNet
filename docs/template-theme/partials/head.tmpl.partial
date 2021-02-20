@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{_rel}}styles/docfx.vendor.css">
   <link rel="stylesheet" href="{{_rel}}styles/docfx.css">
   <link rel="stylesheet" href="{{_rel}}styles/main.css">
+  <link rel="stylesheet" href="{{_rel}}styles/fontawesome/css/all.min.css">
   
   <link id="hljs-stylesheet" rel="stylesheet" href="{{_rel}}styles/hljs/vs-dark.css">
   
