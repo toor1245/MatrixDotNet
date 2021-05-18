@@ -18,7 +18,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+                throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
             }
 
             return MathGeneric<T, int, T>.Divide(matrix.Sum(), matrix.Length);
@@ -36,7 +36,9 @@ namespace MatrixDotNet.Extensions.Statistics
             where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-                throw new ArgumentException($"{matrix.GetType()} is not floating type.");
+            {
+                throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
+            }
 
             return MathGeneric<T, int, T>.Divide(matrix.SumByRow(index), matrix.Columns);
         }
@@ -53,7 +55,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+                throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
             }
 
             return MathGeneric<T, int, T>.Divide(matrix.SumByColumn(index), matrix.Rows);
@@ -70,7 +72,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+                throw new NotSupportedException();
             }
 
             var rows = matrix.Rows;
@@ -97,7 +99,7 @@ namespace MatrixDotNet.Extensions.Statistics
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+                throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
             }
 
             var rows = matrix.Rows;

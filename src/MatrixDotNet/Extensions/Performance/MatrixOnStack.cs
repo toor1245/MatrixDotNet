@@ -209,7 +209,7 @@ namespace MatrixDotNet.Extensions.Performance
 
             if (m != right.Rows || n != right.Columns)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+                throw new SizeNotEqualException(ExceptionArgument.MatricesLengthAreNotEqual);
             }
 
             var matrix = new MatrixOnStack(m, n);
@@ -275,7 +275,7 @@ namespace MatrixDotNet.Extensions.Performance
         {
             if (left.Columns != right.Rows)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatricesMultiplySize);
+                throw new SizeNotEqualException(ExceptionArgument.MatricesMultiplySize);
             }
 
             return MulMatrix(ref left, ref right);

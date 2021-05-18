@@ -17,7 +17,7 @@ namespace MatrixDotNet.Extensions.Determinants
         {
             if (!matrix.IsPrime)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotPrime);
+                throw new MatrixNotPrimeException();
             }
 
             var res = matrix.SchurComplement(out var a11);
@@ -26,7 +26,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
             if (System.Math.Abs(res1) < 0.00001)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixDeterminantIsZero);
+                throw new DeterminantZeroException();
             }
 
             return res1 * res.GetLowerUpperDeterminant();
@@ -44,7 +44,7 @@ namespace MatrixDotNet.Extensions.Determinants
         {
             if (!matrix.IsPrime)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotPrime);
+                throw new MatrixNotPrimeException();
             }
 
             var res = matrix.SchurComplement(out var a11);
@@ -53,7 +53,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
             if (System.Math.Abs(res1) < 0.00001)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixDeterminantIsZero);
+                throw new DeterminantZeroException();
             }
 
             return res1 * res.GetDeterminant();
@@ -71,7 +71,7 @@ namespace MatrixDotNet.Extensions.Determinants
         {
             if (!matrix.IsPrime)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotPrime);
+                throw new MatrixNotPrimeException();
             }
 
             var res = matrix.SchurComplement(out var a11);
@@ -80,7 +80,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
             if (System.Math.Abs(res1) < 0.00001m)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixDeterminantIsZero);
+                throw new DeterminantZeroException();
             }
 
             return res1 * res.GetDeterminant();

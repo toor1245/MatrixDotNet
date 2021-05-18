@@ -21,7 +21,7 @@ namespace MatrixDotNet.Extensions.Solver
         {
             if (matrix.Rows != arr.Length)
             {
-                throw new MatrixDotNetException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
+                throw new SizeNotEqualException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
             }
 
             var det = matrix.GetDeterminant();
@@ -58,7 +58,7 @@ namespace MatrixDotNet.Extensions.Solver
         {
             if (matrix.Rows != arr.Length)
             {
-                throw new MatrixDotNetException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
+                throw new SizeNotEqualException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
             }
 
             var det = matrix.GetDeterminant();

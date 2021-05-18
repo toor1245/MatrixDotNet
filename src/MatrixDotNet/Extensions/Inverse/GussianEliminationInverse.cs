@@ -18,7 +18,7 @@ namespace MatrixDotNet.Extensions.Inverse
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             int size = matrix.Rows;
@@ -40,7 +40,7 @@ namespace MatrixDotNet.Extensions.Inverse
                         {
                             if (j == size - 1)
                             {
-                                throw new MatrixDotNetException(ExceptionArgument.MatrixIsSingular);
+                                throw new MatrixSingularException();
                             }
                         }
                         else
@@ -74,7 +74,7 @@ namespace MatrixDotNet.Extensions.Inverse
                         {
                             if (j == size - 1)
                             {
-                                throw new MatrixDotNetException(ExceptionArgument.MatrixIsSingular);
+                                throw new MatrixSingularException();
                             }
                         }
                         else
@@ -104,7 +104,7 @@ namespace MatrixDotNet.Extensions.Inverse
                 double d = a[i, i];
                 if (System.Math.Abs(d) < 0.00001)
                 {
-                    throw new MatrixDotNetException(ExceptionArgument.MatrixIsSingular);
+                    throw new MatrixSingularException();
                 }
 
                 for (int j = 0; j < size; j++)

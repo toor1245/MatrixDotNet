@@ -21,7 +21,7 @@ namespace MatrixDotNet.Extensions.Builder
         {
             if (row != col)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             var matrix = new Matrix<T>(row, col);
@@ -44,7 +44,7 @@ namespace MatrixDotNet.Extensions.Builder
         public static Matrix<T> CreateIdentityMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
 
             var result = new Matrix<T>(matrix.Rows, matrix.Columns);
 

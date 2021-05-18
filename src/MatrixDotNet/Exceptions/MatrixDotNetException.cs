@@ -5,7 +5,7 @@ namespace MatrixDotNet.Exceptions
     /// <summary>
     /// Represent exception for <see cref="Matrix{T}"/>
     /// </summary>
-    public sealed class MatrixDotNetException : Exception
+    public class MatrixDotNetException : Exception
     {
         /// <summary>
         /// Exception.
@@ -28,7 +28,7 @@ namespace MatrixDotNet.Exceptions
             _message = message;
         }
 
-        private string _message;
+        private readonly string _message;
         /// <summary>
         /// Exception.
         /// </summary>

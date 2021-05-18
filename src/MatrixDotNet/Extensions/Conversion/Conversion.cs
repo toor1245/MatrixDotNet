@@ -35,7 +35,7 @@ namespace MatrixDotNet.Extensions.Conversion
 
             if (m != matrix2.Rows)
             {
-                throw new MatrixDotNetException(ExceptionArgument.RowsOfMatricesAreNotEqual);
+                throw new SizeNotEqualException(ExceptionArgument.RowsOfMatricesAreNotEqual);
             }
 
             var res = new Matrix<T>(m, lenColumns);
@@ -137,7 +137,7 @@ namespace MatrixDotNet.Extensions.Conversion
         {
             if (matrix.Rows != arr.Length)
             {
-                throw new MatrixDotNetException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
+                throw new SizeNotEqualException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
             }
 
             var m = matrix.Rows;
@@ -173,7 +173,7 @@ namespace MatrixDotNet.Extensions.Conversion
         {
             if (matrix.Columns != array.Length)
             {
-                throw new MatrixDotNetException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
+                throw new SizeNotEqualException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
             }
 
             var newRows = matrix.Rows + 1;
@@ -206,7 +206,7 @@ namespace MatrixDotNet.Extensions.Conversion
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
 
@@ -340,7 +340,9 @@ namespace MatrixDotNet.Extensions.Conversion
             where T : unmanaged
         {
             if (!a.IsSquare)
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+            {
+                throw new MatrixNotSquareException();
+            }
 
             var n = a.Rows >> 1;
 

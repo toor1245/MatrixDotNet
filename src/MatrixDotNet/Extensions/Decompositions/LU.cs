@@ -21,7 +21,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             int n = matrix.Columns;

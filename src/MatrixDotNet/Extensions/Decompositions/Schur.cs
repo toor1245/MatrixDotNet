@@ -14,7 +14,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             orthogonal = matrix.ProcessGrammShmidtByColumns().GetNormByColumns();
@@ -52,7 +52,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             var quasi = new Matrix<T>(matrix.Rows, matrix.Columns);

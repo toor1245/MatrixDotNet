@@ -87,7 +87,7 @@ namespace MatrixDotNet.Extensions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             for (int i = 0; i < matrix.Rows; i++)

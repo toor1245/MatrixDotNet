@@ -25,7 +25,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             Matrix<T> lower = new Matrix<T>(matrix.Rows, matrix.Columns);
@@ -52,7 +52,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             Matrix<T> upper = new Matrix<T>(matrix.Rows, matrix.Columns);

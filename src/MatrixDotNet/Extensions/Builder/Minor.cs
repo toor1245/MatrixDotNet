@@ -20,7 +20,7 @@ namespace MatrixDotNet.Extensions.Builder
         public static Matrix<T> GetMinorMatrix<T>(this Matrix<T> matrix) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
 
             var minor = new Matrix<T>(matrix.Rows, matrix.Columns);
             for (int i = 0; i < matrix.Rows; i++)
@@ -115,7 +115,7 @@ namespace MatrixDotNet.Extensions.Builder
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             var minor = new Matrix<T>(row, row);

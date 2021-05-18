@@ -59,7 +59,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+                throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
             }
 
             if (!matrix.IsSquare)
@@ -98,12 +98,12 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+                throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
             }
 
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             int m = matrix.Rows;
@@ -137,7 +137,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+                throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
             }
 
             int m = matrix.Rows;
@@ -160,7 +160,7 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException(ExceptionArgument.NotSupportedType);
+                throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
             }
 
             int m = matrix.Rows;

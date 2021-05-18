@@ -97,7 +97,7 @@ namespace MatrixDotNet.Extensions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
 
             T sum = default;

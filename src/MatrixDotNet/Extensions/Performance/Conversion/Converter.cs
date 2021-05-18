@@ -24,7 +24,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         {
             if (matrix.Columns != data.Length)
             {
-                throw new MatrixDotNetException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
+                throw new SizeNotEqualException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
             }
 
             fixed (double* arr = data)
@@ -61,7 +61,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         {
             if (matrix.Rows != data.Length)
             {
-                throw new MatrixDotNetException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
+                throw new SizeNotEqualException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
             }
 
             fixed (double* arr = data)

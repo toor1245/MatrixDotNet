@@ -15,7 +15,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
             if (lengthA != lengthB)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+                throw new SizeNotEqualException();
             }
 
             var size = 8;
@@ -55,7 +55,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
             if (lengthA != lengthB)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+                throw new SizeNotEqualException();
             }
 
             var size = 8;
@@ -95,7 +95,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
             if (lengthA != lengthB)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+                throw new SizeNotEqualException();
             }
 
             var size = 4;
@@ -135,7 +135,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
 
             if (lengthA != lengthB)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
+                throw new SizeNotEqualException();
             }
 
             var size = 8;

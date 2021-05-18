@@ -9,11 +9,11 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
             if (!matrix.IsSymmetric)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSymmetric);
+                throw new MatrixNotSymmetricException();
             }
 
             int m = matrix.Rows;
@@ -62,11 +62,11 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
             if (!matrix.IsSymmetric)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSymmetric);
+                throw new MatrixNotSymmetricException();
             }
 
             int m = matrix.Rows;
@@ -114,11 +114,11 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             if (!matrix.IsSquare)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSquare);
+                throw new MatrixNotSquareException();
             }
             if (!matrix.IsSymmetric)
             {
-                throw new MatrixDotNetException(ExceptionArgument.MatrixIsNotSymmetric);
+                throw new MatrixNotSymmetricException();
             }
 
             int m = matrix.Rows;
