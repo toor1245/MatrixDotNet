@@ -5,10 +5,10 @@ namespace MatrixDotNet.Exceptions
         /// <summary>
         /// Throws when matrix is singular.
         /// </summary>
-        public MatrixSingularException() 
+        public MatrixSingularException()
             : base("Matrix is singular")
         {
-            
+
         }
     }
 }

@@ -5,19 +5,19 @@ namespace MatrixDotNet.Exceptions
         /// <summary>
         /// Throws when size of array A is not equal B.
         /// </summary>
-        public SizeNotEqualException(string message) 
+        public SizeNotEqualException(string message)
             : base(message)
         {
-            
+
         }
-        
+
         /// <summary>
         /// Throws when size of array A is not equal B.
         /// </summary>
-        public SizeNotEqualException() 
+        public SizeNotEqualException()
             : base("Size of array A is not equal B")
         {
-            
+
         }
     }
 }

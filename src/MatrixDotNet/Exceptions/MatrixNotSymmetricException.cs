@@ -5,10 +5,10 @@ namespace MatrixDotNet.Exceptions
         /// <summary>
         /// Throws when matrix is not symmetric.
         /// </summary>
-        public MatrixNotSymmetricException() 
+        public MatrixNotSymmetricException()
             : base("Matrix is not symmetric")
         {
-            
+
         }
     }
 }

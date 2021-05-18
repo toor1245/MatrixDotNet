@@ -5,10 +5,10 @@ namespace MatrixDotNet.Exceptions
         /// <summary>
         /// Throws when matrix is not prime.
         /// </summary>
-        public MatrixNotPrimeException() 
+        public MatrixNotPrimeException()
             : base("Matrix is not prime.")
         {
-            
+
         }
     }
 }

@@ -5,19 +5,19 @@ namespace MatrixDotNet.Exceptions
         /// <summary>
         /// Throws when not supported type of library.
         /// </summary>
-        public NotSupportedTypeException() 
+        public NotSupportedTypeException()
             : base("Not supported type.")
         {
-            
+
         }
-        
+
         /// <summary>
         /// Throws when not supported type of library.
         /// </summary>
-        public NotSupportedTypeException(string message) 
+        public NotSupportedTypeException(string message)
             : base(message)
         {
-            
+
         }
     }
 }

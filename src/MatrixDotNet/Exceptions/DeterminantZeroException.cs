@@ -5,10 +5,10 @@ namespace MatrixDotNet.Exceptions
         /// <summary>
         /// Throws when determinant is zero.
         /// </summary>
-        public DeterminantZeroException() 
+        public DeterminantZeroException()
             : base("Determinant is zero.")
         {
-            
+
         }
     }
 }
