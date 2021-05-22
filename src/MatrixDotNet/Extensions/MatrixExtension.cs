@@ -80,14 +80,22 @@ namespace MatrixDotNet.Extensions
         /// <param name="matrix">the matrix.</param>
         /// <param name="array">the vector which we want to set diagonal of matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
-        /// <exception cref="MatrixDotNetException">
-        /// throws exception if <c>Length</c> of matrix not equal matrix <c>Min(Rows,Columns)</c>.
+        /// <exception cref="MatrixNotSquareException">
+        /// throws exception if matrix is not square.
+        /// </exception>
+        /// <exception cref="SizeNotEqualException">
+        /// throws an exception if the length of the columns or rows of the matrix is not equal to the length of the array.
         /// </exception>
         public static void SetDiagonal<T>(this Matrix<T> matrix, T[] array) where T : unmanaged
         {
             if (!matrix.IsSquare)
             {
                 throw new MatrixNotSquareException();
+            }
+
+            if (matrix.Columns != array.Length || matrix.Rows != array.Length)
+            {
+                throw new SizeNotEqualException();
             }
 
             for (int i = 0; i < matrix.Rows; i++)
