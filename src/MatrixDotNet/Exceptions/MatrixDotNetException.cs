@@ -11,7 +11,7 @@ namespace MatrixDotNet.Exceptions
         /// Exception.
         /// </summary>
         /// <param name="message"></param>
-        public MatrixDotNetException(string message) 
+        public MatrixDotNetException(string message)
             : base(message)
         {
 
@@ -22,7 +22,7 @@ namespace MatrixDotNet.Exceptions
         /// </summary>
         /// <param name="message"></param>
         /// <param name="inner"></param>
-        public MatrixDotNetException(string message, Exception inner) 
+        public MatrixDotNetException(string message, Exception inner)
             : base(message, inner)
         {
 
