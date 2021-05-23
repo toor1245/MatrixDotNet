@@ -3,3 +3,6 @@
 
 - name: Statistics
   href: statistics/toc.yml
+
+- name: Samples
+  href: samples/toc.yml
