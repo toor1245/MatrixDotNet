@@ -29,7 +29,7 @@ namespace MatrixDotNet.Extensions.Performance
         [field: FieldOffset(7)] public bool IsSquare { get; private set; }
 
         /// <summary>
-        ///     Gets data of matrix as span.
+        /// Gets data of matrix as span.
         /// </summary>
         public Span<double> Data
         {
@@ -43,7 +43,7 @@ namespace MatrixDotNet.Extensions.Performance
         }
 
         /// <summary>
-        ///     Initialize empty matrix.
+        /// Initialize empty matrix.
         /// </summary>
         /// <param name="rows"></param>
         /// <param name="columns"></param>
@@ -53,7 +53,7 @@ namespace MatrixDotNet.Extensions.Performance
         }
 
         /// <summary>
-        ///     init implicit of matrix.
+        /// Init implicit of matrix.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <returns>init matrix as fixed buffer</returns>
@@ -63,7 +63,7 @@ namespace MatrixDotNet.Extensions.Performance
         }
 
         /// <summary>
-        ///     init implicit of matrix.
+        /// Init implicit of matrix.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <returns>init matrix as fixed buffer</returns>
@@ -73,7 +73,7 @@ namespace MatrixDotNet.Extensions.Performance
         }
 
         /// <summary>
-        ///     Initialize matrix.
+        /// Initialize matrix.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         public MatrixOnStack(double[,] matrix) : this()
@@ -117,7 +117,7 @@ namespace MatrixDotNet.Extensions.Performance
         }
 
         /// <summary>
-        ///     Init data of matrix.
+        ///  Init data of matrix.
         /// </summary>
         /// <param name="rows">the rows</param>
         /// <param name="columns">the columns</param>
@@ -196,7 +196,7 @@ namespace MatrixDotNet.Extensions.Performance
         }
 
         /// <summary>
-        ///     Subtracts two matrices via AVX(if supported) or unsafe.
+        /// Subtracts two matrices via AVX(if supported) or unsafe.
         /// </summary>
         /// <param name="left">the matrix with fixed buffer.</param>
         /// <param name="right">the matrix with fixed buffer.</param>
@@ -209,7 +209,7 @@ namespace MatrixDotNet.Extensions.Performance
 
             if (m != right.Rows || n != right.Columns)
             {
-                throw new MatrixDotNetException("Not Equal");
+                throw new SizeNotEqualException(ExceptionArgument.MatricesLengthAreNotEqual);
             }
 
             var matrix = new MatrixOnStack(m, n);
@@ -275,7 +275,7 @@ namespace MatrixDotNet.Extensions.Performance
         {
             if (left.Columns != right.Rows)
             {
-                throw new MatrixDotNetException("columns of left matrix must be equal rows of right matrix");
+                throw new SizeNotEqualException(ExceptionArgument.MatricesMultiplySize);
             }
 
             return MulMatrix(ref left, ref right);

@@ -8,7 +8,8 @@ namespace MatrixDotNet.Extensions.Statistics
     /// Represents calculations any variations operations.
     /// </summary>
     /// <typeparam name="T">unmanaged type.</typeparam>
-    public sealed class Variations<T> : SetupVariations<T> where T : unmanaged
+    public sealed class Variations<T> : SetupVariations<T>
+        where T : unmanaged
     {
         /// <summary>
         /// Gets standard deviation
@@ -44,7 +45,9 @@ namespace MatrixDotNet.Extensions.Statistics
             var n = Matrix.Columns;
 
             if (length > n)
+            {
                 throw new MatrixDotNetException("Length variations more than matrix columns.");
+            }
 
             if (length >= n) return;
 
@@ -63,7 +66,9 @@ namespace MatrixDotNet.Extensions.Statistics
         public T GetSampleMeanByTable(TableVariations table)
         {
             if (table != TableVariations.Column)
+            {
                 throw new MatrixDotNetException("TableVariations.Column not allow");
+            }
 
             return Matrix.MeanByColumn(GetIndexColumn(table));
         }

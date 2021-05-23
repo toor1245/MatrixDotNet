@@ -15,7 +15,8 @@ namespace MatrixDotNet.Extensions
         /// </summary>
         /// <param name="matrix">the matrix which to display.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
-        public static void Pretty<T>(this Matrix<T> matrix) where T : unmanaged
+        public static void Pretty<T>(this Matrix<T> matrix)
+            where T : unmanaged
         {
             if (matrix is null)
                 throw new NullReferenceException();
@@ -38,7 +39,8 @@ namespace MatrixDotNet.Extensions
         /// <param name="template">config for creates html or markdown.</param>
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>Saves matrix to html or markdown.</returns>
-        public static async Task SaveAsync<T>(this Matrix<T> matrix, Template template) where T : unmanaged
+        public static async Task SaveAsync<T>(this Matrix<T> matrix, Template template)
+            where T : unmanaged
         {
             try
             {

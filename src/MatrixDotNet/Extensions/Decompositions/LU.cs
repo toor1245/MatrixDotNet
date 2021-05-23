@@ -20,8 +20,9 @@ namespace MatrixDotNet.Extensions.Decompositions
         public static void GetLowerUpper<T>(this Matrix<T> matrix, out Matrix<T> lower, out Matrix<T> upper) where T : unmanaged
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException(
-                    $"matrix is not square\n Rows: {matrix.Rows}\n Columns: {matrix.Columns}");
+            {
+                throw new MatrixNotSquareException();
+            }
 
             int n = matrix.Columns;
 
