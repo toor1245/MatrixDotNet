@@ -3,7 +3,7 @@ using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Options;
 using Xunit;
 
-namespace MatrixDotNetTests.MatrixTests
+namespace MatrixDotNetTests.Extensions.Options
 {
     public class OptionsBinaryWriteReads
     {
