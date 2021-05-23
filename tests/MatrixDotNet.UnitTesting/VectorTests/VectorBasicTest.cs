@@ -129,7 +129,7 @@ namespace MatrixDotNetTests.VectorTests
             Vector<int> v2 = new[] { 4, 2, 4 };
 
             // Act Assert
-            Assert.Throws<MatrixDotNetException>(() => VectorExtension.GetDistancePoint(v1, v2));
+            Assert.Throws<SizeNotEqualException>(() => VectorExtension.GetDistancePoint(v1, v2));
         }
         
         #endregion

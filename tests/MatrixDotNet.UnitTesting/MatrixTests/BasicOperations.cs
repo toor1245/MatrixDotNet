@@ -194,7 +194,7 @@ namespace MatrixDotNetTests.MatrixTests
             };
             
             // Assert, Act
-            Assert.Throws<MatrixDotNetException>(() => matrixA * matrixB);
+            Assert.Throws<SizeNotEqualException>(() => matrixA * matrixB);
         }
 
         #endregion
@@ -344,8 +344,8 @@ namespace MatrixDotNetTests.MatrixTests
             int[] vector = { 1, 2, 4, 6 };
             
             // Assert, Assert
-            Assert.Throws<MatrixDotNetException>(() => vector * matrixA);
-            Assert.Throws<MatrixDotNetException>(() => matrixA * vector);
+            Assert.Throws<SizeNotEqualException>(() => vector * matrixA);
+            Assert.Throws<SizeNotEqualException>(() => matrixA * vector);
         }
         
         #endregion

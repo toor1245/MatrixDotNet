@@ -17,7 +17,9 @@ namespace MatrixDotNet.Extensions.Inverse
         public static Matrix<double> GaussianEliminationInverse(this Matrix<double> matrix)
         {
             if (!matrix.IsSquare)
-                throw new MatrixDotNetException("Matrix must be square");
+            {
+                throw new MatrixNotSquareException();
+            }
 
             int size = matrix.Rows;
             Matrix<double> a = matrix.Clone() as Matrix<double>;
@@ -38,7 +40,7 @@ namespace MatrixDotNet.Extensions.Inverse
                         {
                             if (j == size - 1)
                             {
-                                throw new MatrixDotNetException("Matrix is singular");
+                                throw new MatrixSingularException();
                             }
                         }
                         else
@@ -72,7 +74,7 @@ namespace MatrixDotNet.Extensions.Inverse
                         {
                             if (j == size - 1)
                             {
-                                throw new MatrixDotNetException("Matrix is singular");
+                                throw new MatrixSingularException();
                             }
                         }
                         else
@@ -101,7 +103,9 @@ namespace MatrixDotNet.Extensions.Inverse
             {
                 double d = a[i, i];
                 if (System.Math.Abs(d) < 0.00001)
-                    throw new MatrixDotNetException("Matrix is singular");
+                {
+                    throw new MatrixSingularException();
+                }
 
                 for (int j = 0; j < size; j++)
                 {
