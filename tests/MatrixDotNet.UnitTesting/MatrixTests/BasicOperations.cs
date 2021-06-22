@@ -92,10 +92,9 @@ namespace MatrixDotNetTests.MatrixTests
         [Theory]
         [InlineData(8)]
         [InlineData(16)]
+        [InlineData(17)]
+        [InlineData(21)]
         [InlineData(32)]
-        [InlineData(48)]
-        [InlineData(64)]
-        [InlineData(80)]
         public void MatrixMultiply_CanMultiply(int size)
         {
             // Arrange
