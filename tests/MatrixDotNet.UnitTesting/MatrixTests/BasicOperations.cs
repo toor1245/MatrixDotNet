@@ -95,7 +95,7 @@ namespace MatrixDotNetTests.MatrixTests
         [InlineData(17)]
         [InlineData(21)]
         [InlineData(32)]
-        public void MatrixMultiply_CanMultiply(int size)
+        public void MatrixMultiply_CanMultiply_CompareMatrixOnStackAndMatrix(int size)
         {
             // Arrange
             var matrixA = new Matrix<double>(size, size, 1);
