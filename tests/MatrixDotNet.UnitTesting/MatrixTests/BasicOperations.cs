@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
@@ -84,6 +85,27 @@ namespace MatrixDotNetTests.MatrixTests
             // Act
             Matrix<double> actual = matrixA * matrixA;
 
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [InlineData(8)]
+        [InlineData(16)]
+        [InlineData(32)]
+        [InlineData(48)]
+        [InlineData(64)]
+        [InlineData(80)]
+        public void MatrixMultiply_CanMultiply(int size)
+        {
+            // Arrange
+            var matrixA = new Matrix<double>(size, size, 1);
+            MatrixOnStack matrixB = new Matrix<double>(size, size, 1);
+            var expected = MatrixOnStack.MulByRef(ref matrixB, ref matrixB);
+
+            // Act
+            var actual = matrixA * matrixA;
+            
             // Assert
             Assert.Equal(expected, actual);
         }
