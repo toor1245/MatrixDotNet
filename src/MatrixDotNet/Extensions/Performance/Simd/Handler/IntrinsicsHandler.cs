@@ -24,6 +24,9 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             return !Avx.TestZ(mask, mask);
         }
 
+        /// <summary>
+        /// Determines whether a specified value can multiply through SIMD.
+        /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         internal static bool CanMultiply(int value) => Avx2.IsSupported && IsSupportedMultiplyAddVector256 && ContainsMultiplyMask(value);
 
