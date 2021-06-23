@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using MatrixDotNet;
@@ -98,55 +99,16 @@ namespace MatrixDotNetTests.MatrixTests
         public void MatrixMultiply_CanMultiply(int size)
         {
             // Arrange
-            var matrixA = new Matrix<double>(size, size, 1);
-            var matrixB = new double[size, size];
-            for (int i = 0; i < matrixB.GetLength(0); i++)
-            {
-                for (int j = 0; j < matrixB.GetLength(1); j++)
-                {
-                    matrixB[i, j] = 1;
-                }
-            }
-            
-            var expected = MulMatrixTest(matrixB, matrixB);
+            var matrix = new Matrix<double>(size, size, 1);
+            var expected = Enumerable.Repeat((double) size, size * size);
 
             // Act
-            var actual = matrixA * matrixA;
+            var actual = matrix * matrix;
             
             // Assert
             Assert.Equal(expected, actual);
         }
-        
-        private static unsafe double[,] MulMatrixTest(double[,] left, double[,] right)
-        {
-            var m = left.GetLength(0);
-            var n = right.GetLength(1);
-            var K = left.GetLength(1);
-            var len1 = left.Length;
-            var matrix = new double[m, n];
 
-            fixed (double* pointer1 = left)
-            fixed (double* pointer2 = right)
-            fixed (double* pointer3 = matrix)
-            {
-                var span1 = new Span<double>(pointer1, len1);
-
-                for (var i = 0; i < m; i++)
-                {
-                    var c = pointer3 + i * n;
-
-                    for (var k = 0; k < K; k++)
-                    {
-                        var b = pointer2 + k * n;
-                        var a = span1[i * K + k];
-                        for (var j = 0; j < n; j++) c[j] += a * b[j];
-                    }
-                }
-
-                return matrix;
-            }
-        }
-        
         [Theory]
         [InlineData(16)]
         [InlineData(32)]
