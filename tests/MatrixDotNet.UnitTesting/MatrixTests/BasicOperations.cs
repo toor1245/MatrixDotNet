@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using MatrixDotNet;
 using MatrixDotNet.Exceptions;
@@ -87,7 +89,26 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
+        [Theory]
+        [InlineData(8)]
+        [InlineData(16)]
+        [InlineData(17)]
+        [InlineData(21)]
+        [InlineData(32)]
+        public void MatrixMultiply_CanMultiply(int size)
+        {
+            // Arrange
+            var matrix = new Matrix<double>(size, size, 1);
+            var expected = Enumerable.Repeat((double) size, size * size);
+
+            // Act
+            var actual = matrix * matrix;
+            
+            // Assert
+            Assert.Equal(expected, actual);
+        }
+
         [Theory]
         [InlineData(16)]
         [InlineData(32)]
