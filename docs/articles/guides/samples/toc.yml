@@ -1,0 +1,11 @@
+- name: Intro Transpose
+  href: transpose.md
+
+- name: Intro Negate
+  href: negate.md
+
+- name: Intro Reverse
+  href: reverse.md
+
+- name: Intro Random
+  href: random.md
