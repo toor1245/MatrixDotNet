@@ -12,7 +12,7 @@ namespace MatrixDotNet.Extensions.Criteries
         {
             if (!matrix.IsSymmetric)
             {
-                throw new MatrixDotNetException("the matrix is not symmetric");
+                throw new MatrixNotSymmetricException();
             }
             List<int> forms = GetForm(matrix);
             bool isFirstNeg = forms[0] == -1;

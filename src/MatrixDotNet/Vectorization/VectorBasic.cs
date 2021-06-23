@@ -72,7 +72,7 @@ namespace MatrixDotNet.Vectorization
 
             if (len != vb.Length)
             {
-                throw new MatrixDotNetException("vectors are not equal");
+                throw new SizeNotEqualException(ExceptionArgument.VectorLength);
             }
 
             Vector<T> vc = new Vector<T>(len);
@@ -112,7 +112,7 @@ namespace MatrixDotNet.Vectorization
         {
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException("not supported type, must be floating data type");
+                throw new NotSupportedException();
             }
 
             int length = va.Length;
@@ -155,12 +155,12 @@ namespace MatrixDotNet.Vectorization
         {
             if (va.Length != vb.Length)
             {
-                throw new MatrixDotNetException("vectors are not equal");
+                throw new SizeNotEqualException(ExceptionArgument.VectorLength);
             }
 
             if (!MathGeneric.IsFloatingPoint<T>())
             {
-                throw new MatrixDotNetException("not supported type, must be floating data type");
+                throw new NotSupportedException();
             }
 
             int length = va.Length;
