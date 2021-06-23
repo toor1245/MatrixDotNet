@@ -34,11 +34,7 @@ So, as we know how to create matrix let's to try make routine operations with ma
 
 > [CreateMatrixSample.cs](https://github.com/toor1245/MatrixDotNet/blob/master/samples/Samples/Samples/MatrixSamples/SimpleOperations.cs)
 
-As you can see thanks overload operators, it's possible write less code and becomes more readable.   
-
-##### Output
-
-[!code-csharp[Run](../../../../samples/Samples/logs/SimpleOperations/Run.txt)]
+As you can see thanks overload operators, it's possible write less code and becomes more readable.
 
 > [!NOTE]
 > If you didn't find answer for your question on this page, [ask it on gitter](https://gitter.im/MatrixDotNet/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge).

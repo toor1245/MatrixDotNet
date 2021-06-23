@@ -24,3 +24,6 @@
 
 - name: Matrix on stack
   href: matrix_on_stack.md
+
+- name: Template
+  href: template.md
