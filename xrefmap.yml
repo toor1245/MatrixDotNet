@@ -13,6 +13,31 @@ references:
   commentId: N:MatrixDotNet.Exceptions
   fullName: MatrixDotNet.Exceptions
   nameWithType: MatrixDotNet.Exceptions
+- uid: MatrixDotNet.Exceptions.DeterminantZeroException
+  name: DeterminantZeroException
+  href: api/MatrixDotNet.Exceptions.DeterminantZeroException.html
+  commentId: T:MatrixDotNet.Exceptions.DeterminantZeroException
+  fullName: MatrixDotNet.Exceptions.DeterminantZeroException
+  nameWithType: DeterminantZeroException
+- uid: MatrixDotNet.Exceptions.DeterminantZeroException.#ctor
+  name: DeterminantZeroException()
+  href: api/MatrixDotNet.Exceptions.DeterminantZeroException.html#MatrixDotNet_Exceptions_DeterminantZeroException__ctor
+  commentId: M:MatrixDotNet.Exceptions.DeterminantZeroException.#ctor
+  fullName: MatrixDotNet.Exceptions.DeterminantZeroException.DeterminantZeroException()
+  nameWithType: DeterminantZeroException.DeterminantZeroException()
+- uid: MatrixDotNet.Exceptions.DeterminantZeroException.#ctor(System.Exception)
+  name: DeterminantZeroException(Exception)
+  href: api/MatrixDotNet.Exceptions.DeterminantZeroException.html#MatrixDotNet_Exceptions_DeterminantZeroException__ctor_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.DeterminantZeroException.#ctor(System.Exception)
+  fullName: MatrixDotNet.Exceptions.DeterminantZeroException.DeterminantZeroException(System.Exception)
+  nameWithType: DeterminantZeroException.DeterminantZeroException(Exception)
+- uid: MatrixDotNet.Exceptions.DeterminantZeroException.#ctor*
+  name: DeterminantZeroException
+  href: api/MatrixDotNet.Exceptions.DeterminantZeroException.html#MatrixDotNet_Exceptions_DeterminantZeroException__ctor_
+  commentId: Overload:MatrixDotNet.Exceptions.DeterminantZeroException.#ctor
+  isSpec: "True"
+  fullName: MatrixDotNet.Exceptions.DeterminantZeroException.DeterminantZeroException
+  nameWithType: DeterminantZeroException.DeterminantZeroException
 - uid: MatrixDotNet.Exceptions.MatrixDotNetException
   name: MatrixDotNetException
   href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html
@@ -25,18 +50,12 @@ references:
   commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String)
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String)
   nameWithType: MatrixDotNetException.MatrixDotNetException(String)
-- uid: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String)
-  name: MatrixDotNetException(String, String)
-  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException__ctor_System_String_System_String_
-  commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String)
-  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String)
-  nameWithType: MatrixDotNetException.MatrixDotNetException(String, String)
-- uid: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String,System.String)
-  name: MatrixDotNetException(String, String, String)
-  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException__ctor_System_String_System_String_System_String_
-  commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.String,System.String)
-  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.String, System.String)
-  nameWithType: MatrixDotNetException.MatrixDotNetException(String, String, String)
+- uid: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.Exception)
+  name: MatrixDotNetException(String, Exception)
+  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException__ctor_System_String_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.MatrixDotNetException.#ctor(System.String,System.Exception)
+  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException(System.String, System.Exception)
+  nameWithType: MatrixDotNetException.MatrixDotNetException(String, Exception)
 - uid: MatrixDotNet.Exceptions.MatrixDotNetException.#ctor*
   name: MatrixDotNetException
   href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException__ctor_
@@ -44,45 +63,168 @@ references:
   isSpec: "True"
   fullName: MatrixDotNet.Exceptions.MatrixDotNetException.MatrixDotNetException
   nameWithType: MatrixDotNetException.MatrixDotNetException
-- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
-  name: Argument1
-  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Argument1
-  commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
-  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
-  nameWithType: MatrixDotNetException.Argument1
-- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1*
-  name: Argument1
-  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Argument1_
-  commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
+- uid: MatrixDotNet.Exceptions.MatrixNotPrimeException
+  name: MatrixNotPrimeException
+  href: api/MatrixDotNet.Exceptions.MatrixNotPrimeException.html
+  commentId: T:MatrixDotNet.Exceptions.MatrixNotPrimeException
+  fullName: MatrixDotNet.Exceptions.MatrixNotPrimeException
+  nameWithType: MatrixNotPrimeException
+- uid: MatrixDotNet.Exceptions.MatrixNotPrimeException.#ctor
+  name: MatrixNotPrimeException()
+  href: api/MatrixDotNet.Exceptions.MatrixNotPrimeException.html#MatrixDotNet_Exceptions_MatrixNotPrimeException__ctor
+  commentId: M:MatrixDotNet.Exceptions.MatrixNotPrimeException.#ctor
+  fullName: MatrixDotNet.Exceptions.MatrixNotPrimeException.MatrixNotPrimeException()
+  nameWithType: MatrixNotPrimeException.MatrixNotPrimeException()
+- uid: MatrixDotNet.Exceptions.MatrixNotPrimeException.#ctor(System.Exception)
+  name: MatrixNotPrimeException(Exception)
+  href: api/MatrixDotNet.Exceptions.MatrixNotPrimeException.html#MatrixDotNet_Exceptions_MatrixNotPrimeException__ctor_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.MatrixNotPrimeException.#ctor(System.Exception)
+  fullName: MatrixDotNet.Exceptions.MatrixNotPrimeException.MatrixNotPrimeException(System.Exception)
+  nameWithType: MatrixNotPrimeException.MatrixNotPrimeException(Exception)
+- uid: MatrixDotNet.Exceptions.MatrixNotPrimeException.#ctor*
+  name: MatrixNotPrimeException
+  href: api/MatrixDotNet.Exceptions.MatrixNotPrimeException.html#MatrixDotNet_Exceptions_MatrixNotPrimeException__ctor_
+  commentId: Overload:MatrixDotNet.Exceptions.MatrixNotPrimeException.#ctor
   isSpec: "True"
-  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument1
-  nameWithType: MatrixDotNetException.Argument1
-- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
-  name: Argument2
-  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Argument2
-  commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
-  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
-  nameWithType: MatrixDotNetException.Argument2
-- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2*
-  name: Argument2
-  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Argument2_
-  commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
+  fullName: MatrixDotNet.Exceptions.MatrixNotPrimeException.MatrixNotPrimeException
+  nameWithType: MatrixNotPrimeException.MatrixNotPrimeException
+- uid: MatrixDotNet.Exceptions.MatrixNotSquareException
+  name: MatrixNotSquareException
+  href: api/MatrixDotNet.Exceptions.MatrixNotSquareException.html
+  commentId: T:MatrixDotNet.Exceptions.MatrixNotSquareException
+  fullName: MatrixDotNet.Exceptions.MatrixNotSquareException
+  nameWithType: MatrixNotSquareException
+- uid: MatrixDotNet.Exceptions.MatrixNotSquareException.#ctor
+  name: MatrixNotSquareException()
+  href: api/MatrixDotNet.Exceptions.MatrixNotSquareException.html#MatrixDotNet_Exceptions_MatrixNotSquareException__ctor
+  commentId: M:MatrixDotNet.Exceptions.MatrixNotSquareException.#ctor
+  fullName: MatrixDotNet.Exceptions.MatrixNotSquareException.MatrixNotSquareException()
+  nameWithType: MatrixNotSquareException.MatrixNotSquareException()
+- uid: MatrixDotNet.Exceptions.MatrixNotSquareException.#ctor(System.Exception)
+  name: MatrixNotSquareException(Exception)
+  href: api/MatrixDotNet.Exceptions.MatrixNotSquareException.html#MatrixDotNet_Exceptions_MatrixNotSquareException__ctor_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.MatrixNotSquareException.#ctor(System.Exception)
+  fullName: MatrixDotNet.Exceptions.MatrixNotSquareException.MatrixNotSquareException(System.Exception)
+  nameWithType: MatrixNotSquareException.MatrixNotSquareException(Exception)
+- uid: MatrixDotNet.Exceptions.MatrixNotSquareException.#ctor*
+  name: MatrixNotSquareException
+  href: api/MatrixDotNet.Exceptions.MatrixNotSquareException.html#MatrixDotNet_Exceptions_MatrixNotSquareException__ctor_
+  commentId: Overload:MatrixDotNet.Exceptions.MatrixNotSquareException.#ctor
   isSpec: "True"
-  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Argument2
-  nameWithType: MatrixDotNetException.Argument2
-- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Message
-  name: Message
-  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Message
-  commentId: P:MatrixDotNet.Exceptions.MatrixDotNetException.Message
-  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Message
-  nameWithType: MatrixDotNetException.Message
-- uid: MatrixDotNet.Exceptions.MatrixDotNetException.Message*
-  name: Message
-  href: api/MatrixDotNet.Exceptions.MatrixDotNetException.html#MatrixDotNet_Exceptions_MatrixDotNetException_Message_
-  commentId: Overload:MatrixDotNet.Exceptions.MatrixDotNetException.Message
+  fullName: MatrixDotNet.Exceptions.MatrixNotSquareException.MatrixNotSquareException
+  nameWithType: MatrixNotSquareException.MatrixNotSquareException
+- uid: MatrixDotNet.Exceptions.MatrixNotSymmetricException
+  name: MatrixNotSymmetricException
+  href: api/MatrixDotNet.Exceptions.MatrixNotSymmetricException.html
+  commentId: T:MatrixDotNet.Exceptions.MatrixNotSymmetricException
+  fullName: MatrixDotNet.Exceptions.MatrixNotSymmetricException
+  nameWithType: MatrixNotSymmetricException
+- uid: MatrixDotNet.Exceptions.MatrixNotSymmetricException.#ctor
+  name: MatrixNotSymmetricException()
+  href: api/MatrixDotNet.Exceptions.MatrixNotSymmetricException.html#MatrixDotNet_Exceptions_MatrixNotSymmetricException__ctor
+  commentId: M:MatrixDotNet.Exceptions.MatrixNotSymmetricException.#ctor
+  fullName: MatrixDotNet.Exceptions.MatrixNotSymmetricException.MatrixNotSymmetricException()
+  nameWithType: MatrixNotSymmetricException.MatrixNotSymmetricException()
+- uid: MatrixDotNet.Exceptions.MatrixNotSymmetricException.#ctor(System.Exception)
+  name: MatrixNotSymmetricException(Exception)
+  href: api/MatrixDotNet.Exceptions.MatrixNotSymmetricException.html#MatrixDotNet_Exceptions_MatrixNotSymmetricException__ctor_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.MatrixNotSymmetricException.#ctor(System.Exception)
+  fullName: MatrixDotNet.Exceptions.MatrixNotSymmetricException.MatrixNotSymmetricException(System.Exception)
+  nameWithType: MatrixNotSymmetricException.MatrixNotSymmetricException(Exception)
+- uid: MatrixDotNet.Exceptions.MatrixNotSymmetricException.#ctor*
+  name: MatrixNotSymmetricException
+  href: api/MatrixDotNet.Exceptions.MatrixNotSymmetricException.html#MatrixDotNet_Exceptions_MatrixNotSymmetricException__ctor_
+  commentId: Overload:MatrixDotNet.Exceptions.MatrixNotSymmetricException.#ctor
   isSpec: "True"
-  fullName: MatrixDotNet.Exceptions.MatrixDotNetException.Message
-  nameWithType: MatrixDotNetException.Message
+  fullName: MatrixDotNet.Exceptions.MatrixNotSymmetricException.MatrixNotSymmetricException
+  nameWithType: MatrixNotSymmetricException.MatrixNotSymmetricException
+- uid: MatrixDotNet.Exceptions.MatrixSingularException
+  name: MatrixSingularException
+  href: api/MatrixDotNet.Exceptions.MatrixSingularException.html
+  commentId: T:MatrixDotNet.Exceptions.MatrixSingularException
+  fullName: MatrixDotNet.Exceptions.MatrixSingularException
+  nameWithType: MatrixSingularException
+- uid: MatrixDotNet.Exceptions.MatrixSingularException.#ctor
+  name: MatrixSingularException()
+  href: api/MatrixDotNet.Exceptions.MatrixSingularException.html#MatrixDotNet_Exceptions_MatrixSingularException__ctor
+  commentId: M:MatrixDotNet.Exceptions.MatrixSingularException.#ctor
+  fullName: MatrixDotNet.Exceptions.MatrixSingularException.MatrixSingularException()
+  nameWithType: MatrixSingularException.MatrixSingularException()
+- uid: MatrixDotNet.Exceptions.MatrixSingularException.#ctor(System.Exception)
+  name: MatrixSingularException(Exception)
+  href: api/MatrixDotNet.Exceptions.MatrixSingularException.html#MatrixDotNet_Exceptions_MatrixSingularException__ctor_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.MatrixSingularException.#ctor(System.Exception)
+  fullName: MatrixDotNet.Exceptions.MatrixSingularException.MatrixSingularException(System.Exception)
+  nameWithType: MatrixSingularException.MatrixSingularException(Exception)
+- uid: MatrixDotNet.Exceptions.MatrixSingularException.#ctor*
+  name: MatrixSingularException
+  href: api/MatrixDotNet.Exceptions.MatrixSingularException.html#MatrixDotNet_Exceptions_MatrixSingularException__ctor_
+  commentId: Overload:MatrixDotNet.Exceptions.MatrixSingularException.#ctor
+  isSpec: "True"
+  fullName: MatrixDotNet.Exceptions.MatrixSingularException.MatrixSingularException
+  nameWithType: MatrixSingularException.MatrixSingularException
+- uid: MatrixDotNet.Exceptions.NotSupportedTypeException
+  name: NotSupportedTypeException
+  href: api/MatrixDotNet.Exceptions.NotSupportedTypeException.html
+  commentId: T:MatrixDotNet.Exceptions.NotSupportedTypeException
+  fullName: MatrixDotNet.Exceptions.NotSupportedTypeException
+  nameWithType: NotSupportedTypeException
+- uid: MatrixDotNet.Exceptions.NotSupportedTypeException.#ctor(System.String)
+  name: NotSupportedTypeException(String)
+  href: api/MatrixDotNet.Exceptions.NotSupportedTypeException.html#MatrixDotNet_Exceptions_NotSupportedTypeException__ctor_System_String_
+  commentId: M:MatrixDotNet.Exceptions.NotSupportedTypeException.#ctor(System.String)
+  fullName: MatrixDotNet.Exceptions.NotSupportedTypeException.NotSupportedTypeException(System.String)
+  nameWithType: NotSupportedTypeException.NotSupportedTypeException(String)
+- uid: MatrixDotNet.Exceptions.NotSupportedTypeException.#ctor(System.String,System.Exception)
+  name: NotSupportedTypeException(String, Exception)
+  href: api/MatrixDotNet.Exceptions.NotSupportedTypeException.html#MatrixDotNet_Exceptions_NotSupportedTypeException__ctor_System_String_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.NotSupportedTypeException.#ctor(System.String,System.Exception)
+  fullName: MatrixDotNet.Exceptions.NotSupportedTypeException.NotSupportedTypeException(System.String, System.Exception)
+  nameWithType: NotSupportedTypeException.NotSupportedTypeException(String, Exception)
+- uid: MatrixDotNet.Exceptions.NotSupportedTypeException.#ctor*
+  name: NotSupportedTypeException
+  href: api/MatrixDotNet.Exceptions.NotSupportedTypeException.html#MatrixDotNet_Exceptions_NotSupportedTypeException__ctor_
+  commentId: Overload:MatrixDotNet.Exceptions.NotSupportedTypeException.#ctor
+  isSpec: "True"
+  fullName: MatrixDotNet.Exceptions.NotSupportedTypeException.NotSupportedTypeException
+  nameWithType: NotSupportedTypeException.NotSupportedTypeException
+- uid: MatrixDotNet.Exceptions.SizeNotEqualException
+  name: SizeNotEqualException
+  href: api/MatrixDotNet.Exceptions.SizeNotEqualException.html
+  commentId: T:MatrixDotNet.Exceptions.SizeNotEqualException
+  fullName: MatrixDotNet.Exceptions.SizeNotEqualException
+  nameWithType: SizeNotEqualException
+- uid: MatrixDotNet.Exceptions.SizeNotEqualException.#ctor
+  name: SizeNotEqualException()
+  href: api/MatrixDotNet.Exceptions.SizeNotEqualException.html#MatrixDotNet_Exceptions_SizeNotEqualException__ctor
+  commentId: M:MatrixDotNet.Exceptions.SizeNotEqualException.#ctor
+  fullName: MatrixDotNet.Exceptions.SizeNotEqualException.SizeNotEqualException()
+  nameWithType: SizeNotEqualException.SizeNotEqualException()
+- uid: MatrixDotNet.Exceptions.SizeNotEqualException.#ctor(System.Exception)
+  name: SizeNotEqualException(Exception)
+  href: api/MatrixDotNet.Exceptions.SizeNotEqualException.html#MatrixDotNet_Exceptions_SizeNotEqualException__ctor_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.SizeNotEqualException.#ctor(System.Exception)
+  fullName: MatrixDotNet.Exceptions.SizeNotEqualException.SizeNotEqualException(System.Exception)
+  nameWithType: SizeNotEqualException.SizeNotEqualException(Exception)
+- uid: MatrixDotNet.Exceptions.SizeNotEqualException.#ctor(System.String)
+  name: SizeNotEqualException(String)
+  href: api/MatrixDotNet.Exceptions.SizeNotEqualException.html#MatrixDotNet_Exceptions_SizeNotEqualException__ctor_System_String_
+  commentId: M:MatrixDotNet.Exceptions.SizeNotEqualException.#ctor(System.String)
+  fullName: MatrixDotNet.Exceptions.SizeNotEqualException.SizeNotEqualException(System.String)
+  nameWithType: SizeNotEqualException.SizeNotEqualException(String)
+- uid: MatrixDotNet.Exceptions.SizeNotEqualException.#ctor(System.String,System.Exception)
+  name: SizeNotEqualException(String, Exception)
+  href: api/MatrixDotNet.Exceptions.SizeNotEqualException.html#MatrixDotNet_Exceptions_SizeNotEqualException__ctor_System_String_System_Exception_
+  commentId: M:MatrixDotNet.Exceptions.SizeNotEqualException.#ctor(System.String,System.Exception)
+  fullName: MatrixDotNet.Exceptions.SizeNotEqualException.SizeNotEqualException(System.String, System.Exception)
+  nameWithType: SizeNotEqualException.SizeNotEqualException(String, Exception)
+- uid: MatrixDotNet.Exceptions.SizeNotEqualException.#ctor*
+  name: SizeNotEqualException
+  href: api/MatrixDotNet.Exceptions.SizeNotEqualException.html#MatrixDotNet_Exceptions_SizeNotEqualException__ctor_
+  commentId: Overload:MatrixDotNet.Exceptions.SizeNotEqualException.#ctor
+  isSpec: "True"
+  fullName: MatrixDotNet.Exceptions.SizeNotEqualException.SizeNotEqualException
+  nameWithType: SizeNotEqualException.SizeNotEqualException
 - uid: MatrixDotNet.Extensions
   name: MatrixDotNet.Extensions
   href: api/MatrixDotNet.Extensions.html

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class MatrixExtension
    | MatrixDotNet ">
-    <meta name="generator" content="docfx 2.56.6.0">
+    <meta name="generator" content="docfx 2.58.0.0">
     
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
@@ -905,7 +905,7 @@
     <a href="https://github.com/toor1245/MatrixDotNet/new/master/apiSpec/new?filename=MatrixDotNet_Extensions_MatrixExtension_NormFrobenius__1_MatrixDotNet_Matrix___0__.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.MatrixExtension.NormFrobenius%60%601(MatrixDotNet.Matrix%7B%60%600%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/Norm.cs/#L111">View Source</a>
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/Norm.cs/#L113">View Source</a>
   </span>
   <a id="MatrixDotNet_Extensions_MatrixExtension_NormFrobenius_" data-uid="MatrixDotNet.Extensions.MatrixExtension.NormFrobenius*"></a>
   <h4 id="MatrixDotNet_Extensions_MatrixExtension_NormFrobenius__1_MatrixDotNet_Matrix___0__" data-uid="MatrixDotNet.Extensions.MatrixExtension.NormFrobenius``1(MatrixDotNet.Matrix{``0})">NormFrobenius&lt;T&gt;(Matrix&lt;T&gt;)</h4>
@@ -968,7 +968,7 @@
     <a href="https://github.com/toor1245/MatrixDotNet/new/master/apiSpec/new?filename=MatrixDotNet_Extensions_MatrixExtension_OpenBinaryAsync__1_MatrixDotNet_Extensions_Options_Template_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.MatrixExtension.OpenBinaryAsync%60%601(MatrixDotNet.Extensions.Options.Template)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/Output.cs/#L69">View Source</a>
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/Output.cs/#L71">View Source</a>
   </span>
   <a id="MatrixDotNet_Extensions_MatrixExtension_OpenBinaryAsync_" data-uid="MatrixDotNet.Extensions.MatrixExtension.OpenBinaryAsync*"></a>
   <h4 id="MatrixDotNet_Extensions_MatrixExtension_OpenBinaryAsync__1_MatrixDotNet_Extensions_Options_Template_" data-uid="MatrixDotNet.Extensions.MatrixExtension.OpenBinaryAsync``1(MatrixDotNet.Extensions.Options.Template)">OpenBinaryAsync&lt;T&gt;(Template)</h4>
@@ -976,7 +976,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task&lt;Matrix&lt;T&gt;&gt; OpenBinaryAsync&lt;T&gt;(Template template)
+    <pre><code class="lang-csharp hljs">public static async Task&lt;Matrix&lt;T&gt;&gt; OpenBinaryAsync&lt;T&gt;(Template template)
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1258,7 +1258,7 @@
     <a href="https://github.com/toor1245/MatrixDotNet/new/master/apiSpec/new?filename=MatrixDotNet_Extensions_MatrixExtension_SaveAndOpenAsync__1_MatrixDotNet_Matrix___0__MatrixDotNet_Extensions_Options_Template_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.MatrixExtension.SaveAndOpenAsync%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CMatrixDotNet.Extensions.Options.Template)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/Output.cs/#L58">View Source</a>
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/Output.cs/#L60">View Source</a>
   </span>
   <a id="MatrixDotNet_Extensions_MatrixExtension_SaveAndOpenAsync_" data-uid="MatrixDotNet.Extensions.MatrixExtension.SaveAndOpenAsync*"></a>
   <h4 id="MatrixDotNet_Extensions_MatrixExtension_SaveAndOpenAsync__1_MatrixDotNet_Matrix___0__MatrixDotNet_Extensions_Options_Template_" data-uid="MatrixDotNet.Extensions.MatrixExtension.SaveAndOpenAsync``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Extensions.Options.Template)">SaveAndOpenAsync&lt;T&gt;(Matrix&lt;T&gt;, Template)</h4>
@@ -1266,7 +1266,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task SaveAndOpenAsync&lt;T&gt;(this Matrix&lt;T&gt; matrix, Template template)
+    <pre><code class="lang-csharp hljs">public static async Task SaveAndOpenAsync&lt;T&gt;(this Matrix&lt;T&gt; matrix, Template template)
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1326,7 +1326,7 @@
     <a href="https://github.com/toor1245/MatrixDotNet/new/master/apiSpec/new?filename=MatrixDotNet_Extensions_MatrixExtension_SaveAsync__1_MatrixDotNet_Matrix___0__MatrixDotNet_Extensions_Options_Template_.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.MatrixExtension.SaveAsync%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2CMatrixDotNet.Extensions.Options.Template)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/Output.cs/#L41">View Source</a>
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/Output.cs/#L42">View Source</a>
   </span>
   <a id="MatrixDotNet_Extensions_MatrixExtension_SaveAsync_" data-uid="MatrixDotNet.Extensions.MatrixExtension.SaveAsync*"></a>
   <h4 id="MatrixDotNet_Extensions_MatrixExtension_SaveAsync__1_MatrixDotNet_Matrix___0__MatrixDotNet_Extensions_Options_Template_" data-uid="MatrixDotNet.Extensions.MatrixExtension.SaveAsync``1(MatrixDotNet.Matrix{``0},MatrixDotNet.Extensions.Options.Template)">SaveAsync&lt;T&gt;(Matrix&lt;T&gt;, Template)</h4>
@@ -1335,7 +1335,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task SaveAsync&lt;T&gt;(this Matrix&lt;T&gt; matrix, Template template)
+    <pre><code class="lang-csharp hljs">public static async Task SaveAsync&lt;T&gt;(this Matrix&lt;T&gt; matrix, Template template)
     where T : struct</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -1399,7 +1399,7 @@
     <a href="https://github.com/toor1245/MatrixDotNet/new/master/apiSpec/new?filename=MatrixDotNet_Extensions_MatrixExtension_SetDiagonal__1_MatrixDotNet_Matrix___0____0___.md&amp;value=---%0Auid%3A%20MatrixDotNet.Extensions.MatrixExtension.SetDiagonal%60%601(MatrixDotNet.Matrix%7B%60%600%7D%2C%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/MatrixExtension.cs/#L86">View Source</a>
+    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/src/MatrixDotNet/Extensions/MatrixExtension.cs/#L89">View Source</a>
   </span>
   <a id="MatrixDotNet_Extensions_MatrixExtension_SetDiagonal_" data-uid="MatrixDotNet.Extensions.MatrixExtension.SetDiagonal*"></a>
   <h4 id="MatrixDotNet_Extensions_MatrixExtension_SetDiagonal__1_MatrixDotNet_Matrix___0____0___" data-uid="MatrixDotNet.Extensions.MatrixExtension.SetDiagonal``1(MatrixDotNet.Matrix{``0},``0[])">SetDiagonal&lt;T&gt;(Matrix&lt;T&gt;, T[])</h4>
@@ -1461,8 +1461,13 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixDotNetException.html">MatrixDotNetException</a></td>
-        <td><p>throws exception if <code>Length</code> of matrix not equal matrix <code>Min(Rows,Columns)</code>.</p>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.MatrixNotSquareException.html">MatrixNotSquareException</a></td>
+        <td><p>throws exception if matrix is not square.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="MatrixDotNet.Exceptions.SizeNotEqualException.html">SizeNotEqualException</a></td>
+        <td><p>throws an exception if the length of the columns or rows of the matrix is not equal to the length of the array.</p>
 </td>
       </tr>
     </tbody>

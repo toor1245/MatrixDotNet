@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sample: Introduction In Reverse | MatrixDotNet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Sample: Introduction In Reverse | MatrixDotNet ">
+    <meta name="generator" content="docfx 2.58.0.0">
+    
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+  
+    <link rel="shortcut icon" href="../../../images/logo/matrix.ico">
+    
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <link rel="stylesheet" href="../../../styles/fontawesome/css/all.min.css">
+    
+    <link id="hljs-stylesheet" rel="stylesheet" href="../../../styles/hljs/vs-dark.css">
+    
+    <script type="text/javascript" src="../../../styles/theme.js"></script>
+    <script>
+      if(window.localStorage.getItem("theme") === "light") {
+        setLightTheme();
+      }
+      else setDarkTheme();
+      document.addEventListener('DOMContentLoaded', setIcons, false);
+    </script>
+  
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo/matrix.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <div class="navbar-right">
+                <div class="navbar-buttons">
+                  <a onclick="changeColorTheme();"><i id="lightbulb" class="far fa-lightbulb"></i></a>
+                </div>
+                <form class="navbar-form" role="search" id="search">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="fas fa-spinner index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sample-introduction-in-reverse">Sample: Introduction In Reverse</h1>
+
+<p>This sample demonstrates how to reverse matrix or vector.</p>
+<pre><code class="lang-c#">    using MatrixDotNet.Extensions.Conversion;
+
+    var matrix = new Matrix&lt;int&gt;(n, n);
+    var reverse = MatrixConverter.Reverse(matrix);
+</code></pre>
+<pre><code class="lang-c#">    using MatrixDotNet.Vectorization;
+
+    var vector = new Vector&lt;int&gt;(n);
+    var reverse = VectorExtension.Reverse(vector);
+</code></pre>
+<p>Let's compare BCL method 'Array.Reverse' with <code>MatrixConverter.Reverse</code> on performance.</p>
+<pre><code class="lang-c#">using System;
+using BenchmarkDotNet.Attributes;
+using MatrixDotNet.Extensions.Builder;
+using MatrixDotNet.Extensions.Conversion;
+using MatrixDotNet.Vectorization;
+
+namespace MatrixDotNet.PerformanceTesting.Matrix
+{
+    [MemoryDiagnoser]
+    public class BenchReverse : PerformanceTest
+    {
+        private Matrix&lt;int&gt; _matrix;
+        private Matrix&lt;byte&gt; _matrixByte;
+        private Matrix&lt;float&gt; _matrixFloat;
+        private Matrix&lt;double&gt; _matrixDouble;
+        
+        [GlobalSetup]
+        public void Setup()
+        {
+            _matrix = BuildMatrix.RandomInt(1024, 1024, 0, 20);
+            _matrixByte = BuildMatrix.RandomByte(1024, 1024, 0, 20);
+            _matrixFloat = BuildMatrix.RandomFloat(1024, 1024, 0, 20);
+            _matrixDouble = BuildMatrix.RandomDouble(1024, 1024, 0, 20);
+        }
+        
+        [Benchmark]
+        public void ReverseIntBcl()
+        {
+            Array.Reverse(_matrix.GetArray());
+        }
+
+        [Benchmark]
+        public void ReverseIntSimd()
+        {
+            MatrixConverter.Reverse(_matrix.GetArray());
+        }
+        
+        [Benchmark]
+        public void ReverseByteBcl()
+        {
+            Array.Reverse(_matrixByte.GetArray());
+        }
+        
+        [Benchmark]
+        public void ReverseByteSimd()
+        {
+            Vector&lt;int&gt; vector = new Vector&lt;int&gt;(4);
+            VectorExtension.Reverse(vector);
+            MatrixConverter.Reverse(_matrixByte);
+        }
+        
+        [Benchmark]
+        public void ReverseFloatBcl()
+        {
+            
+            Array.Reverse(_matrixFloat.GetArray());
+        }
+        
+        [Benchmark]
+        public void ReverseFloatSimd()
+        {
+            MatrixConverter.Reverse(_matrixFloat);
+        }
+    }
+}
+</code></pre>
+<blockquote>
+<p>[!WARINING]
+Performance depends on the data type of the Matrix.
+SIMD only supports <code>long</code>, <code>ulong</code>, <code>int</code>, <code>uint</code>, <code>float</code>, <code>double</code>, <code>byte</code> <code>sbyte</code>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align: right;">Mean</th>
+<th style="text-align: right;">Error</th>
+<th style="text-align: right;">StdDev</th>
+<th style="text-align: right;">Median</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ReverseIntBcl</td>
+<td style="text-align: right;">473.90 us</td>
+<td style="text-align: right;">34.182 us</td>
+<td style="text-align: right;">96.41 us</td>
+<td style="text-align: right;">436.48 us</td>
+</tr>
+<tr>
+<td>ReverseIntSimd</td>
+<td style="text-align: right;">169.55 us</td>
+<td style="text-align: right;">9.005 us</td>
+<td style="text-align: right;">24.80 us</td>
+<td style="text-align: right;">164.75 us</td>
+</tr>
+<tr>
+<td>ReverseByteBcl</td>
+<td style="text-align: right;">450.35 us</td>
+<td style="text-align: right;">53.236 us</td>
+<td style="text-align: right;">156.13 us</td>
+<td style="text-align: right;">374.64 us</td>
+</tr>
+<tr>
+<td>ReverseByteSimd</td>
+<td style="text-align: right;">46.14 us</td>
+<td style="text-align: right;">5.925 us</td>
+<td style="text-align: right;">17.38 us</td>
+<td style="text-align: right;">36.86 us</td>
+</tr>
+<tr>
+<td>ReverseFloatBcl</td>
+<td style="text-align: right;">510.02 us</td>
+<td style="text-align: right;">45.197 us</td>
+<td style="text-align: right;">131.12 us</td>
+<td style="text-align: right;">451.06 us</td>
+</tr>
+<tr>
+<td>ReverseFloatSimd</td>
+<td style="text-align: right;">218.27 us</td>
+<td style="text-align: right;">20.249 us</td>
+<td style="text-align: right;">57.44 us</td>
+<td style="text-align: right;">200.13 us</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you didn't find answer for your question on this page, <a href="https://gitter.im/MatrixDotNet/community?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge">ask it on gitter</a>.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/toor1245/MatrixDotNet/blob/master/docs/articles/guides/samples/reverse.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright &copy; 2020-2021 MatrixDotNet
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>
