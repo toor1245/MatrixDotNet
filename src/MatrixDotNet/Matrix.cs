@@ -102,12 +102,6 @@ namespace MatrixDotNet
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        internal bool CanMultiplyBlock(Matrix<T> right)
-        {
-            return Columns == right.Rows && Columns >= 0b1000 && ((Columns & 0b100) == 0 || Columns == 0b1000);
-        }
-
         #endregion
 
         #region indexators
@@ -467,7 +461,7 @@ namespace MatrixDotNet
                 var span1 = new Span<T>(ptrA, length);
 
 #if NET5_0 || NETCOREAPP3_1
-                if (Fma.IsSupported && IntrinsicsHandler<T>.IsSupportedMultiplyAddVector256 && left.CanMultiplyBlock(right))
+                if (IntrinsicsHandler<T>.CanMultiply(m))
                 {
                     var size = Vector256<T>.Count;
                     for (int i = 0; i < m; i++)

@@ -11,6 +11,25 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
     {
         #region Vector256
 
+        private static Vector256<int> _blockMultiplyMask = Vector256.Create(16, 32, 64, 128, 256, 512, 1024, 2048);
+
+        /// <summary>
+        /// Determines whether a sequence contains a specified value through SIMD.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static bool ContainsMultiplyMask(int value)
+        {
+            var vector = Vector256.Create(value);
+            var mask = Avx2.CompareEqual(vector, _blockMultiplyMask);
+            return !Avx.TestZ(mask, mask);
+        }
+
+        /// <summary>
+        /// Determines whether a specified value can multiply through SIMD.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        internal static bool CanMultiply(int value) => Avx2.IsSupported && IsSupportedMultiplyAddVector256 && ContainsMultiplyMask(value);
+
         /// <summary>
         /// Gets a new Vector256<T/> with all bits set to 1.
         /// </summary>
