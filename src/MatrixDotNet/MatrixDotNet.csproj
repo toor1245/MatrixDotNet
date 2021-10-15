@@ -6,7 +6,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
     <Title>MatrixDotNet</Title>
-    <Version>0.0.7.2</Version>
+    <Version>0.0.7.3</Version>
+    <PackageVersion>0.0.7.3</PackageVersion>
     
     <RepositoryType>Library</RepositoryType>
     <Copyright>MatrixDotNet</Copyright>
@@ -25,7 +26,6 @@ With all answers see documentation or ask on gitter or github issues</Descriptio
     <OS_WINDOWS Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">true</OS_WINDOWS>
     <OS_MAC Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::OSX)))' == 'true'">true</OS_MAC>
     <OS_LINUX Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))' == 'true'">true</OS_LINUX>
-    
   </PropertyGroup>
 
   <ItemGroup>
