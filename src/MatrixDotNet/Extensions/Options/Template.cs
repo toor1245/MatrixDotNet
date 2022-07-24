@@ -128,7 +128,7 @@ namespace MatrixDotNet.Extensions.Options
 
         protected static Assembly Assembly { get; } = Assembly.GetExecutingAssembly();
 
-        private static DirectoryInfo Directory => new(Folder);
+        private static DirectoryInfo Directory => new DirectoryInfo(Folder);
 
         protected static string RootPath { get; } = Directory.FullName;
 
