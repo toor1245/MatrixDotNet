@@ -13,10 +13,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var lengthA = a.Length;
             var lengthB = b.Length;
 
-            if (lengthA != lengthB)
-            {
-                throw new SizeNotEqualException();
-            }
+            if (lengthA != lengthB) throw new SizeNotEqualException();
 
             var size = 8;
 
@@ -53,10 +50,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var lengthA = a.Length;
             var lengthB = b.Length;
 
-            if (lengthA != lengthB)
-            {
-                throw new SizeNotEqualException();
-            }
+            if (lengthA != lengthB) throw new SizeNotEqualException();
 
             var size = 8;
 
@@ -93,10 +87,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var lengthA = a.Length;
             var lengthB = b.Length;
 
-            if (lengthA != lengthB)
-            {
-                throw new SizeNotEqualException();
-            }
+            if (lengthA != lengthB) throw new SizeNotEqualException();
 
             var size = 4;
 
@@ -133,10 +124,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var lengthA = a.Length;
             var lengthB = b.Length;
 
-            if (lengthA != lengthB)
-            {
-                throw new SizeNotEqualException();
-            }
+            if (lengthA != lengthB) throw new SizeNotEqualException();
 
             var size = 8;
 

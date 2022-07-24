@@ -1,22 +1,17 @@
+using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
-using System;
-
 
 namespace MatrixDotNet.Extensions.Statistics.TableSetup
 {
     /// <summary>
-    /// Represents store data such as matrix, tables.
-    /// Share operations for all statistic classes.
+    ///     Represents store data such as matrix, tables.
+    ///     Share operations for all statistic classes.
     /// </summary>
     public abstract class Setup<T> where T : unmanaged
     {
-        protected Matrix<T> Matrix { get; }
-        protected string[] ColumnNames { get; }
-        protected int[] ColumnNumber { get; }
-
         /// <summary>
-        /// Initialize 
+        ///     Initialize
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <exception cref="ArgumentException"></exception>
@@ -29,11 +24,14 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
             ColumnNumber = new int[matrix.Columns];
 
             Matrix = matrix;
-
         }
 
+        protected Matrix<T> Matrix { get; }
+        protected string[] ColumnNames { get; }
+        protected int[] ColumnNumber { get; }
+
         /// <summary>
-        /// Finds column index in matrix.
+        ///     Finds column index in matrix.
         /// </summary>
         /// <param name="nameIndex">index of column</param>
         /// <returns>index column</returns>
@@ -42,11 +40,9 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         {
             var find = nameIndex;
 
-            for (int i = 0; i < ColumnNumber.Length; i++)
-            {
+            for (var i = 0; i < ColumnNumber.Length; i++)
                 if (find == ColumnNumber[i])
                     return i;
-            }
 
             throw new MatrixDotNetException("Not Found value");
         }

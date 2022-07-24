@@ -12,7 +12,7 @@ namespace MatrixDotNetTests.Extensions.Options
         {
             var matrix = BuildMatrix.BuildRandom<int>(15, 12);
             var html = new TemplateHtml("test");
-            
+
             await html.BinarySaveAsync(matrix);
             var resultMatrix = await html.BinaryOpenAsync<int>();
 

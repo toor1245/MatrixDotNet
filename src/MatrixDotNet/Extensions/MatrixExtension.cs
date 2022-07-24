@@ -1,15 +1,15 @@
-﻿using MatrixDotNet.Exceptions;
-using System;
+﻿using System;
+using MatrixDotNet.Exceptions;
 
 namespace MatrixDotNet.Extensions
 {
     /// <summary>
-    /// Represents Matrix extension.
+    ///     Represents Matrix extension.
     /// </summary>
     public static partial class MatrixExtension
     {
         /// <summary>
-        /// Gets row array of matrix by row index.
+        ///     Gets row array of matrix by row index.
         /// </summary>
         /// <param name="matrix"></param>
         /// <param name="index"></param>
@@ -19,18 +19,15 @@ namespace MatrixDotNet.Extensions
         /// <exception cref="IndexOutOfRangeException"></exception>
         public static T[] GetRow<T>(this Matrix<T> matrix, int index) where T : unmanaged
         {
-            T[] array = new T[matrix.Columns];
+            var array = new T[matrix.Columns];
 
-            for (int j = 0; j < matrix.Columns; j++)
-            {
-                array[j] = matrix[index, j];
-            }
+            for (var j = 0; j < matrix.Columns; j++) array[j] = matrix[index, j];
 
             return array;
         }
 
         /// <summary>
-        /// Gets column array of matrix by columns index.
+        ///     Gets column array of matrix by columns index.
         /// </summary>
         /// <param name="matrix">matrix.</param>
         /// <param name="index">index.</param>
@@ -41,67 +38,52 @@ namespace MatrixDotNet.Extensions
         public static T[] GetColumn<T>(this Matrix<T> matrix, int index)
             where T : unmanaged
         {
-            T[] array = new T[matrix.Rows];
+            var array = new T[matrix.Rows];
 
-            for (int j = 0; j < matrix.Rows; j++)
-            {
-                array[j] = matrix[j, index];
-            }
+            for (var j = 0; j < matrix.Rows; j++) array[j] = matrix[j, index];
 
             return array;
         }
 
 
         /// <summary>
-        /// Gets diagonal of matrix.
+        ///     Gets diagonal of matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <returns>the diagonal of matrix.</returns>
         public static T[] GetDiagonal<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            int x = matrix.Rows;
-            int y = matrix.Columns;
-            int c = x & ((x - y) >> 31) | y & (~(x - y) >> 31);
+            var x = matrix.Rows;
+            var y = matrix.Columns;
+            var c = (x & ((x - y) >> 31)) | (y & (~(x - y) >> 31));
 
-            T[] array = new T[c];
+            var array = new T[c];
 
-            for (int i = 0; i < c; i++)
-            {
-                array[i] = matrix[i, i];
-            }
+            for (var i = 0; i < c; i++) array[i] = matrix[i, i];
 
             return array;
         }
 
         /// <summary>
-        /// Sets diagonal value.
+        ///     Sets diagonal value.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="array">the vector which we want to set diagonal of matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <exception cref="MatrixNotSquareException">
-        /// throws exception if matrix is not square.
+        ///     throws exception if matrix is not square.
         /// </exception>
         /// <exception cref="SizeNotEqualException">
-        /// throws an exception if the length of the columns or rows of the matrix is not equal to the length of the array.
+        ///     throws an exception if the length of the columns or rows of the matrix is not equal to the length of the array.
         /// </exception>
         public static void SetDiagonal<T>(this Matrix<T> matrix, T[] array) where T : unmanaged
         {
-            if (!matrix.IsSquare)
-            {
-                throw new MatrixNotSquareException();
-            }
+            if (!matrix.IsSquare) throw new MatrixNotSquareException();
 
-            if (matrix.Columns != array.Length || matrix.Rows != array.Length)
-            {
-                throw new SizeNotEqualException();
-            }
+            if (matrix.Columns != array.Length || matrix.Rows != array.Length) throw new SizeNotEqualException();
 
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                matrix[i, i] = array[i];
-            }
+            for (var i = 0; i < matrix.Rows; i++) matrix[i, i] = array[i];
         }
     }
 }

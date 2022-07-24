@@ -10,7 +10,7 @@ namespace MatrixDotNet.Extensions
         #region Strassen
 
         /// <summary>
-        /// Strassen`s multiply, use when matrix rows > 32.
+        ///     Strassen`s multiply, use when matrix rows > 32.
         /// </summary>
         /// <param name="a">the matrix a.</param>
         /// <param name="b">the matrix b.</param>
@@ -18,26 +18,23 @@ namespace MatrixDotNet.Extensions
         /// <returns>the new matrix from multiply of two matrices.</returns>
         public static Matrix<T> MultiplyStrassen<T>(Matrix<T> a, Matrix<T> b) where T : unmanaged
         {
-            if (a.Rows < 32)
-            {
-                return a * b;
-            }
+            if (a.Rows < 32) return a * b;
 
             a.SplitMatrix(out var a11, out var a12, out var a21, out var a22);
             b.SplitMatrix(out var b11, out var b12, out var b21, out var b22);
 
-            Matrix<T> p1 = MultiplyStrassen(a11 + a22, b11 + b22);
-            Matrix<T> p2 = MultiplyStrassen(a21 + a22, b11);
-            Matrix<T> p3 = MultiplyStrassen(a11, b12 - b22);
-            Matrix<T> p4 = MultiplyStrassen(a22, b21 - b11);
-            Matrix<T> p5 = MultiplyStrassen(a11 + a12, b22);
-            Matrix<T> p6 = MultiplyStrassen(a21 - a22, b11 + b12);
-            Matrix<T> p7 = MultiplyStrassen(a12 - a22, b21 + b22);
+            var p1 = MultiplyStrassen(a11 + a22, b11 + b22);
+            var p2 = MultiplyStrassen(a21 + a22, b11);
+            var p3 = MultiplyStrassen(a11, b12 - b22);
+            var p4 = MultiplyStrassen(a22, b21 - b11);
+            var p5 = MultiplyStrassen(a11 + a12, b22);
+            var p6 = MultiplyStrassen(a21 - a22, b11 + b12);
+            var p7 = MultiplyStrassen(a12 - a22, b21 + b22);
 
-            Matrix<T> c11 = p1 + p4 - p5 + p7;
-            Matrix<T> c12 = p3 + p5;
-            Matrix<T> c21 = p2 + p4;
-            Matrix<T> c22 = p1 + p3 - p2 + p6;
+            var c11 = p1 + p4 - p5 + p7;
+            var c12 = p3 + p5;
+            var c21 = p2 + p4;
+            var c22 = p1 + p3 - p2 + p6;
 
             return MatrixConverter.CollectMatrix(c11, c12, c21, c22);
         }
@@ -47,7 +44,7 @@ namespace MatrixDotNet.Extensions
         #region Degree
 
         /// <summary>
-        /// Raises a matrix to a power.
+        ///     Raises a matrix to a power.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <param name="degree">the degree</param>
@@ -68,7 +65,7 @@ namespace MatrixDotNet.Extensions
         }
 
         /// <summary>
-        /// Raises a matrix to a power.
+        ///     Raises a matrix to a power.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <param name="degree">the degree</param>
@@ -80,7 +77,7 @@ namespace MatrixDotNet.Extensions
             if (!matrix.IsSquare || !matrix.IsPrime)
                 throw new MatrixDotNetException("matrix is not square or not prime");
 
-            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
+            var result = new Matrix<T>(matrix.Rows, matrix.Columns);
 
             if (degree == 1)
                 return matrix;
@@ -90,13 +87,11 @@ namespace MatrixDotNet.Extensions
 
             MultiplyStrassen(matrix, matrix);
 
-            for (int i = 0; i < degree; i++)
-            {
-                result = MultiplyStrassen(result, matrix);
-            }
+            for (var i = 0; i < degree; i++) result = MultiplyStrassen(result, matrix);
 
             return result;
         }
+
         #endregion
     }
 }

@@ -1,6 +1,6 @@
-﻿using MatrixDotNet;
+﻿using System;
+using MatrixDotNet;
 using NUnit.Framework;
-using System;
 
 namespace MatrixDotNetTests.MatrixTests.CtorsTests
 {
@@ -17,7 +17,7 @@ namespace MatrixDotNetTests.MatrixTests.CtorsTests
         [TestCase(15, 125, 7U)]
         [TestCase(15, 15, 7.5)]
         [TestCase(15, 15, 7.5f)]
-        public void FloatTest<T>(int rows, int cols, T value) 
+        public void FloatTest<T>(int rows, int cols, T value)
             where T : unmanaged
         {
             var arr = new T[rows * cols];

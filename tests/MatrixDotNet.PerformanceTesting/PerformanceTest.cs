@@ -1,7 +1,7 @@
+using System.Linq;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
 using NUnit.Framework;
-using System.Linq;
 #if DEBUG
 using BenchmarkDotNet.Exporters.Csv;
 #endif
@@ -13,13 +13,13 @@ namespace MatrixDotNet.PerformanceTesting
         [Test]
         public void StartTest()
         {
-            if (this.GetType() == typeof(PerformanceTest))
+            if (GetType() == typeof(PerformanceTest))
                 Assert.Pass();
-            
+
 
 #if DEBUG
             Assert.Warn("Debug mode is on\n");
-            var summary = BenchmarkRunner.Run(this.GetType(),
+            var summary = BenchmarkRunner.Run(GetType(),
                 new DebugInProcessConfig()
                     .AddExporter(new CsvExporter(CsvSeparator.Comma))
                     .WithOptions(ConfigOptions.StopOnFirstError | ConfigOptions.DisableLogFile)

@@ -4,9 +4,8 @@ namespace MatrixDotNet.Extensions.Determinants
 {
     public static partial class Determinant
     {
-
         /// <summary>
-        /// Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).
+        ///     Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>determinant.</returns>
@@ -15,7 +14,7 @@ namespace MatrixDotNet.Extensions.Determinants
             matrix.GetCholesky(out var lower, out var transpose);
             double det = 1;
             double det2 = 1;
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 det *= lower[i, i];
                 det2 *= transpose[i, i];
@@ -27,7 +26,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
 
         /// <summary>
-        /// Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).
+        ///     Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>determinant.</returns>
@@ -36,7 +35,7 @@ namespace MatrixDotNet.Extensions.Determinants
             matrix.GetCholesky(out var lower, out var transpose);
             float det = 1;
             float det2 = 1;
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 det *= lower[i, i];
                 det2 *= transpose[i, i];
@@ -48,7 +47,7 @@ namespace MatrixDotNet.Extensions.Determinants
 
 
         /// <summary>
-        /// Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).
+        ///     Gets determinant with happen Cholesky algorithm which decompose matrix A = L * L(transpose).
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>determinant.</returns>
@@ -57,7 +56,7 @@ namespace MatrixDotNet.Extensions.Determinants
             matrix.GetCholesky(out var lower, out var transpose);
             decimal det = 1;
             decimal det2 = 1;
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 det *= lower[i, i];
                 det2 *= transpose[i, i];

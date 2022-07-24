@@ -5,12 +5,12 @@ using System.Numerics;
 namespace MatrixDotNet.Extensions.Statistics
 {
     /// <summary>
-    /// Represents the functional of bit operations with a matrix
+    ///     Represents the functional of bit operations with a matrix
     /// </summary>
     public static partial class MatrixExtension
     {
         /// <summary>
-        /// Gets minimum value of matrix.
+        ///     Gets minimum value of matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type</typeparam>
@@ -19,38 +19,30 @@ namespace MatrixDotNet.Extensions.Statistics
         public static T Min<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            int size = Vector<T>.Count;
+            var size = Vector<T>.Count;
             var vmin = new Vector<T>(matrix[0, 0]);
-            for (int i = 0; i < matrix.Length / size; i++)
+            for (var i = 0; i < matrix.Length / size; i++)
             {
                 var va = new Vector<T>(matrix.GetArray(), i * size);
                 var vless = Vector.LessThan(va, vmin);
                 vmin = Vector.ConditionalSelect(vless, va, vmin);
             }
 
-            T min = vmin[0];
-            Comparer<T> cmp = Comparer<T>.Default;
-            for (int j = 1; j < size; j++)
-            {
+            var min = vmin[0];
+            var cmp = Comparer<T>.Default;
+            for (var j = 1; j < size; j++)
                 if (cmp.Compare(min, vmin[j]) > 0)
-                {
                     min = vmin[j];
-                }
-            }
 
-            for (int i = 0; i < matrix.Length % size; i++)
-            {
+            for (var i = 0; i < matrix.Length % size; i++)
                 if (cmp.Compare(min, matrix._Matrix[i]) > 0)
-                {
                     min = matrix._Matrix[i];
-                }
-            }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum value of matrix by row index.
+        ///     Gets minimum value of matrix by row index.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">the index row.</param>
@@ -60,22 +52,18 @@ namespace MatrixDotNet.Extensions.Statistics
         public static T MinByRow<T>(this Matrix<T> matrix, int dimension)
             where T : unmanaged
         {
-            T min = matrix[dimension, 0];
-            Comparer<T> cmp = Comparer<T>.Default;
+            var min = matrix[dimension, 0];
+            var cmp = Comparer<T>.Default;
 
-            for (int j = 0; j < matrix.Columns; j++)
-            {
+            for (var j = 0; j < matrix.Columns; j++)
                 if (cmp.Compare(matrix[dimension, j], min) < 0)
-                {
                     min = matrix[dimension, j];
-                }
-            }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum value of matrix by column index.
+        ///     Gets minimum value of matrix by column index.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <param name="dimension">the index column.</param>
@@ -85,22 +73,18 @@ namespace MatrixDotNet.Extensions.Statistics
         public static T MinByColumn<T>(this Matrix<T> matrix, int dimension)
             where T : unmanaged
         {
-            T min = matrix[0, dimension];
-            Comparer<T> cmp = Comparer<T>.Default;
+            var min = matrix[0, dimension];
+            var cmp = Comparer<T>.Default;
 
-            for (int j = 0; j < matrix.Rows; j++)
-            {
+            for (var j = 0; j < matrix.Rows; j++)
                 if (cmp.Compare(matrix[dimension, j], min) < 0)
-                {
                     min = matrix[j, dimension];
-                }
-            }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum value by each column.
+        ///     Gets minimum value by each column.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <typeparam name="T">unmanaged type</typeparam>
@@ -108,19 +92,15 @@ namespace MatrixDotNet.Extensions.Statistics
         public static T[] MinColumns<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            T[] result = new T[matrix.Columns];
-            Comparer<T> cmp = Comparer<T>.Default;
+            var result = new T[matrix.Columns];
+            var cmp = Comparer<T>.Default;
 
-            for (int i = 0; i < matrix.Columns; i++)
+            for (var i = 0; i < matrix.Columns; i++)
             {
-                T max = matrix[0, i];
-                for (int j = 0; j < matrix.Rows; j++)
-                {
+                var max = matrix[0, i];
+                for (var j = 0; j < matrix.Rows; j++)
                     if (cmp.Compare(matrix[j, i], max) < 0)
-                    {
                         max = matrix[j, i];
-                    }
-                }
 
                 result[i] = max;
             }
@@ -129,7 +109,7 @@ namespace MatrixDotNet.Extensions.Statistics
         }
 
         /// <summary>
-        /// Gets minimum value by each row.
+        ///     Gets minimum value by each row.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -137,19 +117,15 @@ namespace MatrixDotNet.Extensions.Statistics
         /// <exception cref="NullReferenceException"></exception>
         public static T[] MinRows<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            T[] result = new T[matrix.Rows];
-            Comparer<T> cmp = Comparer<T>.Default;
+            var result = new T[matrix.Rows];
+            var cmp = Comparer<T>.Default;
 
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
-                T max = matrix[i, 0];
-                for (int j = 0; j < matrix.Columns; j++)
-                {
+                var max = matrix[i, 0];
+                for (var j = 0; j < matrix.Columns; j++)
                     if (cmp.Compare(matrix[i, j], max) < 0)
-                    {
                         max = matrix[i, j];
-                    }
-                }
 
                 result[i] = max;
             }
@@ -158,81 +134,73 @@ namespace MatrixDotNet.Extensions.Statistics
         }
 
         /// <summary>
-        /// Gets minimum of matrix with happen bitwise operations.
+        ///     Gets minimum of matrix with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Minimum of matrix.</returns>
         public static long BitMin(this Matrix<long> matrix)
         {
-            long min = matrix[0, 0];
+            var min = matrix[0, 0];
 
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    var prefetch = matrix[i, j];
-                    min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
-                }
+                var prefetch = matrix[i, j];
+                min = (min & ((min - prefetch) >> 63)) | (prefetch & (~(min - prefetch) >> 63));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum of matrix with happen bitwise operations.
+        ///     Gets minimum of matrix with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Minimum of matrix.</returns>
         public static int BitMin(this Matrix<int> matrix)
         {
-            int min = matrix[0, 0];
-            for (int i = 0; i < matrix.Rows; i++)
+            var min = matrix[0, 0];
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    var prefetch = matrix[i, j];
-                    min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
-                }
+                var prefetch = matrix[i, j];
+                min = (min & ((min - prefetch) >> 31)) | (prefetch & (~(min - prefetch) >> 31));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum of matrix with happen bitwise operations.
+        ///     Gets minimum of matrix with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Minimum of matrix.</returns>
         public static int BitMin(this Matrix<short> matrix)
         {
             int min = matrix[0, 0];
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    var prefetch = matrix[i, j];
-                    min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
-                }
+                var prefetch = matrix[i, j];
+                min = (min & ((min - prefetch) >> 15)) | (prefetch & (~(min - prefetch) >> 15));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum of matrix with happen bitwise operations.
+        ///     Gets minimum of matrix with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Minimum of matrix.</returns>
         public static int BitMin(this Matrix<byte> matrix)
         {
             int min = matrix[0, 0];
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    var prefetch = matrix[i, j];
-                    min = min & ((min - prefetch) >> 7) | prefetch & (~(min - prefetch) >> 7);
-                }
+                var prefetch = matrix[i, j];
+                min = (min & ((min - prefetch) >> 7)) | (prefetch & (~(min - prefetch) >> 7));
             }
 
             return min;
@@ -240,61 +208,62 @@ namespace MatrixDotNet.Extensions.Statistics
 
 
         /// <summary>
-        /// Gets minimum value by row index with happen bitwise operations.
+        ///     Gets minimum value by row index with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">row index.</param>
         /// <returns>minimum value by row.</returns>
         public static long BitMinByRow(this Matrix<long> matrix, int dimension)
         {
-            long min = matrix[dimension, 0];
-            for (int i = 0; i < matrix.Columns; i++)
+            var min = matrix[dimension, 0];
+            for (var i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension, i];
-                min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
+                min = (min & ((min - prefetch) >> 63)) | (prefetch & (~(min - prefetch) >> 63));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets maximum value by row index with happen bitwise operations.
+        ///     Gets maximum value by row index with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">row index.</param>
         /// <returns>maximum value by row.</returns>
         public static int BitMinByRow(this Matrix<int> matrix, int dimension)
         {
-            int min = matrix[dimension, 0];
-            for (int i = 0; i < matrix.Columns; i++)
+            var min = matrix[dimension, 0];
+            for (var i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension, i];
-                min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
+                min = (min & ((min - prefetch) >> 31)) | (prefetch & (~(min - prefetch) >> 31));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets maximum value by row index with happen bitwise operations.
+        ///     Gets maximum value by row index with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">row index.</param>
-        /// <returns>maximum value by row.</returns>>
+        /// <returns>maximum value by row.</returns>
+        /// >
         public static int BitMinByRow(this Matrix<short> matrix, int dimension)
         {
             int min = matrix[dimension, 0];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (var i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension, i];
-                min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
+                min = (min & ((min - prefetch) >> 15)) | (prefetch & (~(min - prefetch) >> 15));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets maximum value by row index with happen bitwise operations.
+        ///     Gets maximum value by row index with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">row index.</param>
@@ -302,53 +271,53 @@ namespace MatrixDotNet.Extensions.Statistics
         public static int BitMinByRow(this Matrix<byte> matrix, int dimension)
         {
             int min = matrix[dimension, 0];
-            for (int i = 0; i < matrix.Columns; i++)
+            for (var i = 0; i < matrix.Columns; i++)
             {
                 var prefetch = matrix[dimension, i];
-                min = min & ((min - prefetch) >> 7) | prefetch & (~(min - prefetch) >> 7);
+                min = (min & ((min - prefetch) >> 7)) | (prefetch & (~(min - prefetch) >> 7));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum value by column index with happen bitwise operations.
+        ///     Gets minimum value by column index with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">column index.</param>
         /// <returns>minimum value by column.</returns>
         public static long BitMinByColumn(this Matrix<long> matrix, int dimension)
         {
-            long min = matrix[0, dimension];
-            for (int i = 0; i < matrix.Rows; i++)
+            var min = matrix[0, dimension];
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
-                min = min & ((min - prefetch) >> 63) | prefetch & (~(min - prefetch) >> 63);
+                min = (min & ((min - prefetch) >> 63)) | (prefetch & (~(min - prefetch) >> 63));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum value by column index with happen bitwise operations.
+        ///     Gets minimum value by column index with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">column index.</param>
         /// <returns>minimum value by column.</returns>
         public static int BitMinByColumn(this Matrix<int> matrix, int dimension)
         {
-            int min = matrix[0, dimension];
-            for (int i = 0; i < matrix.Rows; i++)
+            var min = matrix[0, dimension];
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
-                min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
+                min = (min & ((min - prefetch) >> 31)) | (prefetch & (~(min - prefetch) >> 31));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum value by column index with happen bitwise operations.
+        ///     Gets minimum value by column index with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">column index.</param>
@@ -356,17 +325,17 @@ namespace MatrixDotNet.Extensions.Statistics
         public static int BitMinByColumn(this Matrix<short> matrix, int dimension)
         {
             int min = matrix[0, dimension];
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
-                min = min & ((min - prefetch) >> 15) | prefetch & (~(min - prefetch) >> 15);
+                min = (min & ((min - prefetch) >> 15)) | (prefetch & (~(min - prefetch) >> 15));
             }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimum value by column index with happen bitwise operations.
+        ///     Gets minimum value by column index with happen bitwise operations.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">column index.</param>
@@ -374,10 +343,10 @@ namespace MatrixDotNet.Extensions.Statistics
         public static int BitMinByColumn(this Matrix<byte> matrix, int dimension)
         {
             int min = matrix[0, dimension];
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 var prefetch = matrix[i, dimension];
-                min = min & ((min - prefetch) >> 31) | prefetch & (~(min - prefetch) >> 31);
+                min = (min & ((min - prefetch) >> 31)) | (prefetch & (~(min - prefetch) >> 31));
             }
 
             return min;

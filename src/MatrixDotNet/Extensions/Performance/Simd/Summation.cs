@@ -11,7 +11,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
     public static unsafe partial class Simd
     {
         /// <summary>
-        /// Gets sum of array
+        ///     Gets sum of array
         /// </summary>
         /// <param name="array">array</param>
         /// <typeparam name="T">unmanaged type</typeparam>
@@ -20,10 +20,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             where T : unmanaged
         {
             var length = array.Length;
-            if (length < 1)
-            {
-                return default;
-            }
+            if (length < 1) return default;
             var i = 0;
             var result = default(T);
             fixed (T* ptr = array)
@@ -34,10 +31,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 if (Avx2.IsSupported && MathGeneric.IsSupported<T>())
                 {
                     size = Vector256<T>.Count;
-                    if (length < size)
-                    {
-                        return Sum(ptr, length);
-                    }
+                    if (length < size) return Sum(ptr, length);
                     lastIndexBlock = length - length % size;
                     var sum = Vector256<T>.Zero;
 
@@ -52,26 +46,20 @@ namespace MatrixDotNet.Extensions.Performance.Simd
                 else if (Ssse3.IsSupported && MathGeneric.IsSupported<T>())
                 {
                     size = Vector128<T>.Count;
-                    if (length < size)
-                    {
-                        return Sum(ptr, length);
-                    }
+                    if (length < size) return Sum(ptr, length);
                     var vresult = Vector128<T>.Zero;
                     size = Vector128<T>.Count;
                     lastIndexBlock = length - length % size;
                     for (; i < lastIndexBlock; i += size)
-                    {
-                        vresult = IntrinsicsHandler<T>.AddVector128(vresult, IntrinsicsHandler<T>.LoadVector128(ptr + i));
-                    }
+                        vresult = IntrinsicsHandler<T>.AddVector128(vresult,
+                            IntrinsicsHandler<T>.LoadVector128(ptr + i));
 
                     result = IntrinsicsHandler<T>.SumVector128(vresult);
                 }
 #endif
-                for (; i < length; i++)
-                {
-                    result = MathUnsafe<T>.Add(result, *(ptr + i));
-                }
+                for (; i < length; i++) result = MathUnsafe<T>.Add(result, *(ptr + i));
             }
+
             return result;
         }
 
@@ -80,10 +68,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             where T : unmanaged
         {
             T sum = default;
-            for (int i = 0; i < count; i++)
-            {
-                sum = MathUnsafe<T>.Add(sum, *(array + i));
-            }
+            for (var i = 0; i < count; i++) sum = MathUnsafe<T>.Add(sum, *(array + i));
             return sum;
         }
 
@@ -93,10 +78,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
         {
             var ptr = UnsafeHandler.GetReference(array);
             T sum = default;
-            for (int i = 0; i < count; i++)
-            {
-                sum = MathUnsafe<T>.Add(sum, *(ptr + i));
-            }
+            for (var i = 0; i < count; i++) sum = MathUnsafe<T>.Add(sum, *(ptr + i));
             return sum;
         }
     }

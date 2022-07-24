@@ -17,7 +17,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Statistics
                 var minScalar = span[0];
                 if (Avx.IsSupported)
                 {
-                    var minValues = stackalloc double[] { span[0], span[0], span[0], span[0] };
+                    var minValues = stackalloc double[] {span[0], span[0], span[0], span[0]};
                     var min = Avx.LoadVector256(minValues);
                     while (i < span.Length - 4)
                     {
@@ -30,7 +30,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Statistics
                 }
                 else if (Sse2.IsSupported)
                 {
-                    var minValues = stackalloc double[2] { span[0], span[0] };
+                    var minValues = stackalloc double[2] {span[0], span[0]};
                     var min = Sse2.LoadVector128(minValues);
                     while (i < span.Length - 2)
                     {

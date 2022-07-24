@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using MatrixDotNet;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Decompositions;
@@ -11,10 +10,10 @@ namespace Samples.Samples.MatrixSamples
     {
         public static string Run()
         {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
 
             // initialize matrix with random values.
-            Matrix<double> matrix = BuildMatrix.RandomDouble(5, 5, -10, 10);
+            var matrix = BuildMatrix.RandomDouble(5, 5, -10, 10);
 
             builder.AppendLine(matrix.ToString());
 

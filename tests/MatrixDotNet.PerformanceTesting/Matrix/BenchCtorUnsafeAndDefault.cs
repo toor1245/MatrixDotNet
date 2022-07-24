@@ -4,37 +4,38 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
 {
     public class BenchCtorUnsafeAndDefault : PerformanceTest
     {
-        [Params(1000)]
-        public int N;
+        [Params(1000)] public int N;
 
         [Benchmark]
         public void UnsafeCtorTest()
         {
-            int[,] temp = {
-                {2, 3, 4, 5},
-                {2, 3, 4, 5},
-                {2, 3, 4, 5},
-                {2, 3, 4, 5},
-            };
-            for (int i = 0; i < N; i++)
+            int[,] temp =
             {
-                Matrix<int> m = new Matrix<int>(0,0);
+                { 2, 3, 4, 5 },
+                { 2, 3, 4, 5 },
+                { 2, 3, 4, 5 },
+                { 2, 3, 4, 5 }
+            };
+            for (var i = 0; i < N; i++)
+            {
+                var m = new Matrix<int>(0, 0);
                 // method not exists m.TestCtorUnsafe(temp);
             }
         }
-        
+
         [Benchmark]
         public void DefaultCtorTest()
         {
-            int[,] temp = {
-                {2, 3, 4, 5},
-                {2, 3, 4, 5},
-                {2, 3, 4, 5},
-                {2, 3, 4, 5},
-            };
-            for (int i = 0; i < N; i++)
+            int[,] temp =
             {
-                Matrix<int> m = new Matrix<int>(0,0);
+                { 2, 3, 4, 5 },
+                { 2, 3, 4, 5 },
+                { 2, 3, 4, 5 },
+                { 2, 3, 4, 5 }
+            };
+            for (var i = 0; i < N; i++)
+            {
+                var m = new Matrix<int>(0, 0);
                 // method not exists m.TestCtorDefault(temp);
             }
         }

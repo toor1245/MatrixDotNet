@@ -16,53 +16,38 @@ namespace MatrixDotNet.PerformanceTesting.Other
             arr2 = new int[15];
             arr.Add(1024);
             arr.Add(1024);
-            for (int i = 0; i < arr2.Length ; i++)
-            {
+            for (var i = 0; i < arr2.Length; i++)
                 if ((i & 0b1) == 0)
-                {
                     arr.Add(1024);
-                }
                 else
-                {
                     arr.Add(i);
-                }
-                
-            }
         }
 
         [Benchmark]
         public int CountLinq()
         {
-            int find = 1024;
+            var find = 1024;
             return arr.Count(x => x == find);
         }
 
         [Benchmark]
         public int CountEqualBitHacks()
         {
-            int count = 0;
-            int find = 1024;
-            for (int i = 0; i < arr.Count; i++)
-            {
-                count = ((((arr[i] & find) - find) >> 31) ^ i) & i;
-            }
+            var count = 0;
+            var find = 1024;
+            for (var i = 0; i < arr.Count; i++) count = ((((arr[i] & find) - find) >> 31) ^ i) & i;
             return count;
         }
-        
+
         [Benchmark]
         public int CountEqualFor()
         {
-            int count = 0;
-            int find = 1024;
-            for (int i = 0; i < arr.Count; i++)
-            {
+            var count = 0;
+            var find = 1024;
+            for (var i = 0; i < arr.Count; i++)
                 if (arr[i] == find)
-                {
                     count = i;
-                }
-            }
             return count;
         }
-        
     }
 }

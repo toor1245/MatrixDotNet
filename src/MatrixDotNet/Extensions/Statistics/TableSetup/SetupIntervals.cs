@@ -3,18 +3,13 @@ using System.Collections.Generic;
 namespace MatrixDotNet.Extensions.Statistics.TableSetup
 {
     /// <summary>
-    /// Represents store data such as matrix, tables.
-    /// Share interval operations.
+    ///     Represents store data such as matrix, tables.
+    ///     Share interval operations.
     /// </summary>
     public abstract class SetupIntervals<T> : Setup<T> where T : unmanaged
     {
         /// <summary>
-        /// Gets table intervals.
-        /// </summary>
-        protected TableIntervals[] Intervals { get; }
-
-        /// <summary>
-        /// Initialize settings for <c>Intervals</c>
+        ///     Initialize settings for <c>Intervals</c>
         /// </summary>
         /// <param name="config">configuration</param>
         protected SetupIntervals(ConfigIntervals<T> config) : base(config.Matrix)
@@ -26,11 +21,15 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
                 ColumnNames[k] = Intervals[i].ToString();
                 ColumnNumber[k] = (int) Intervals[i];
             }
-
         }
 
         /// <summary>
-        /// Gets index column in matrix.
+        ///     Gets table intervals.
+        /// </summary>
+        protected TableIntervals[] Intervals { get; }
+
+        /// <summary>
+        ///     Gets index column in matrix.
         /// </summary>
         /// <param name="tableIntervals">the table</param>
         /// <returns></returns>
@@ -41,20 +40,20 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
 
 
         /// <summary>
-        /// Checks matrix on correct intervals. 
+        ///     Checks matrix on correct intervals.
         /// </summary>
-        /// <returns><see cref="bool"/></returns>
+        /// <returns>
+        ///     <see cref="bool" />
+        /// </returns>
         protected bool IsCorrectInterval()
         {
             var first = GetIndexColumn(TableIntervals.IntervalFirst);
             var second = GetIndexColumn(TableIntervals.IntervalSecond);
 
             var comparer = Comparer<T>.Default;
-            for (int i = 0; i < Matrix.Rows; i++)
-            {
+            for (var i = 0; i < Matrix.Rows; i++)
                 if (comparer.Compare(Matrix[i, first], Matrix[i, second]) > 0)
                     return false;
-            }
             return true;
         }
     }

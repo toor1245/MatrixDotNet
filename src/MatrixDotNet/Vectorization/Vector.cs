@@ -16,17 +16,7 @@ namespace MatrixDotNet.Vectorization
     public partial class Vector<T> where T : unmanaged
     {
         /// <summary>
-        /// Gets array of <c>Vector</c>.
-        /// </summary>
-        public T[] Array { get; }
-
-        /// <summary>
-        /// Gets length of array.
-        /// </summary>
-        public int Length { get; }
-
-        /// <summary>
-        /// Creates empty array with <c>n</c> length.
+        ///     Creates empty array with <c>n</c> length.
         /// </summary>
         /// <param name="n">the length of vector</param>
         public Vector(int n)
@@ -36,7 +26,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Assign array
+        ///     Assign array
         /// </summary>
         public unsafe Vector(T[] array)
         {
@@ -50,7 +40,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Initialize Vector and fill vector of specify value.
+        ///     Initialize Vector and fill vector of specify value.
         /// </summary>
         /// <param name="length">the length of array</param>
         /// <param name="value">fill vector of specify value</param>
@@ -63,38 +53,28 @@ namespace MatrixDotNet.Vectorization
             if (Avx.IsSupported)
             {
                 var vector = IntrinsicsHandler<T>.CreateVector256(value);
-                int i = 0;
+                var i = 0;
                 fixed (T* ptr = Array)
                 {
-                    int size = Vector256<T>.Count;
-                    int lastIndexBlock = length - length % size;
-                    for (; i < lastIndexBlock; i += size)
-                    {
-                        IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
-                    }
+                    var size = Vector256<T>.Count;
+                    var lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size) IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
                 }
-                for (; i < length; i++)
-                {
-                    Array[i] = value;
-                }
+
+                for (; i < length; i++) Array[i] = value;
             }
             else if (Sse.IsSupported)
             {
                 var vector = IntrinsicsHandler<T>.CreateVector128(value);
-                int i = 0;
+                var i = 0;
                 fixed (T* ptr = Array)
                 {
-                    int size = Vector128<T>.Count;
-                    int lastIndexBlock = length - length % size;
-                    for (; i < lastIndexBlock; i += size)
-                    {
-                        IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
-                    }
+                    var size = Vector128<T>.Count;
+                    var lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size) IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
                 }
-                for (; i < length; i++)
-                {
-                    Array[i] = value;
-                }
+
+                for (; i < length; i++) Array[i] = value;
             }
             else
 #endif
@@ -104,60 +84,17 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Fill Vector with specified value.
+        ///     Gets array of <c>Vector</c>.
         /// </summary>
-        /// <param name="value">value to fill vector</param>
-        public unsafe void Fill(T value)
-        {
-#if NET5_0 || NETCOREAPP3_1
-
-            if (Avx.IsSupported)
-            {
-                var vector = IntrinsicsHandler<T>.CreateVector256(value);
-                int i = 0;
-                int length = Array.Length;
-                fixed (T* ptr = Array)
-                {
-                    int size = Vector256<T>.Count;
-                    int lastIndexBlock = length - length % size;
-                    for (; i < lastIndexBlock; i += size)
-                    {
-                        IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
-                    }
-                }
-                for (; i < length; i++)
-                {
-                    Array[i] = value;
-                }
-            }
-            else if (Sse.IsSupported)
-            {
-                var vector = IntrinsicsHandler<T>.CreateVector128(value);
-                int i = 0;
-                int length = Array.Length;
-                fixed (T* ptr = Array)
-                {
-                    int size = Vector128<T>.Count;
-                    int lastIndexBlock = length - length % size;
-                    for (; i < lastIndexBlock; i += size)
-                    {
-                        IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
-                    }
-                }
-                for (; i < length; i++)
-                {
-                    Array[i] = value;
-                }
-            }
-            else
-#endif
-            {
-                System.Array.Fill(Array, value);
-            }
-        }
+        public T[] Array { get; }
 
         /// <summary>
-        /// Gets element of vector.
+        ///     Gets length of array.
+        /// </summary>
+        public int Length { get; }
+
+        /// <summary>
+        ///     Gets element of vector.
         /// </summary>
         /// <param name="i">the index of vector</param>
         public T this[int i]
@@ -170,21 +107,61 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Gets length of vector
+        ///     Fill Vector with specified value.
+        /// </summary>
+        /// <param name="value">value to fill vector</param>
+        public unsafe void Fill(T value)
+        {
+#if NET5_0 || NETCOREAPP3_1
+
+            if (Avx.IsSupported)
+            {
+                var vector = IntrinsicsHandler<T>.CreateVector256(value);
+                var i = 0;
+                var length = Array.Length;
+                fixed (T* ptr = Array)
+                {
+                    var size = Vector256<T>.Count;
+                    var lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size) IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
+                }
+
+                for (; i < length; i++) Array[i] = value;
+            }
+            else if (Sse.IsSupported)
+            {
+                var vector = IntrinsicsHandler<T>.CreateVector128(value);
+                var i = 0;
+                var length = Array.Length;
+                fixed (T* ptr = Array)
+                {
+                    var size = Vector128<T>.Count;
+                    var lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size) IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
+                }
+
+                for (; i < length; i++) Array[i] = value;
+            }
+            else
+#endif
+            {
+                System.Array.Fill(Array, value);
+            }
+        }
+
+        /// <summary>
+        ///     Gets length of vector
         /// </summary>
         public T GetLengthVec()
         {
             T sum = default;
-            for (int i = 0; i < Length; i++)
-            {
-                sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(this[i], this[i]));
-            }
+            for (var i = 0; i < Length; i++) sum = MathUnsafe<T>.Add(sum, MathUnsafe<T>.Mul(this[i], this[i]));
 
             return MathGeneric<T>.Sqrt(sum);
         }
 
         /// <summary>
-        /// Adds two vectors.
+        ///     Adds two vectors.
         /// </summary>
         /// <param name="a">the left vector</param>
         /// <param name="b">the right vector</param>
@@ -192,18 +169,15 @@ namespace MatrixDotNet.Vectorization
         private static Vector<T> Add(T[] a, T[] b)
         {
             CheckLength(a, b);
-            Vector<T> vc = new Vector<T>(a.Length);
+            var vc = new Vector<T>(a.Length);
 
-            for (int i = 0; i < vc.Length; i++)
-            {
-                vc[i] = MathUnsafe<T>.Add(a[i], b[i]);
-            }
+            for (var i = 0; i < vc.Length; i++) vc[i] = MathUnsafe<T>.Add(a[i], b[i]);
 
             return vc;
         }
 
         /// <summary>
-        /// Represents multiplication of value on vector.
+        ///     Represents multiplication of value on vector.
         /// </summary>
         /// <param name="val">the left vector</param>
         /// <param name="b">the right vector</param>
@@ -212,16 +186,13 @@ namespace MatrixDotNet.Vectorization
         {
             var vc = new Vector<T>(b.Length);
 
-            for (int i = 0; i < vc.Length; i++)
-            {
-                vc[i] = MathUnsafe<T>.Mul(val, b[i]);
-            }
+            for (var i = 0; i < vc.Length; i++) vc[i] = MathUnsafe<T>.Mul(val, b[i]);
 
             return vc;
         }
 
         /// <summary>
-        /// Represents subtraction of two vectors.
+        ///     Represents subtraction of two vectors.
         /// </summary>
         /// <param name="a">the left vector</param>
         /// <param name="b">the right vector</param>
@@ -231,17 +202,14 @@ namespace MatrixDotNet.Vectorization
             CheckLength(a, b);
             var vc = new Vector<T>(a.Length);
 
-            for (int i = 0; i < vc.Length; i++)
-            {
-                vc[i] = MathUnsafe<T>.Sub(a[i], b[i]);
-            }
+            for (var i = 0; i < vc.Length; i++) vc[i] = MathUnsafe<T>.Sub(a[i], b[i]);
 
             return vc;
         }
 
 
         /// <summary>
-        /// Represents defines dot(scalar) product.
+        ///     Represents defines dot(scalar) product.
         /// </summary>
         /// <param name="a">the left vector</param>
         /// <param name="b">the right vector</param>
@@ -251,9 +219,9 @@ namespace MatrixDotNet.Vectorization
             CheckLength(a, b);
 
             T res = default;
-            int size = System.Numerics.Vector<T>.Count;
-            int i = 0;
-            int lastIndexBlock = a.Length - a.Length % size;
+            var size = System.Numerics.Vector<T>.Count;
+            var i = 0;
+            var lastIndexBlock = a.Length - a.Length % size;
 
             for (; i < lastIndexBlock; i += size)
             {
@@ -262,10 +230,7 @@ namespace MatrixDotNet.Vectorization
                 res = MathUnsafe<T>.Add(res, Vector.Dot(va, vb));
             }
 
-            for (; i < a.Length; i++)
-            {
-                res = MathUnsafe<T>.Add(res, MathUnsafe<T>.Mul(a[i], b[i]));
-            }
+            for (; i < a.Length; i++) res = MathUnsafe<T>.Add(res, MathUnsafe<T>.Mul(a[i], b[i]));
 
             return res;
         }
@@ -273,55 +238,36 @@ namespace MatrixDotNet.Vectorization
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void CheckLength(T[] a, T[] b)
         {
-            if (a.Length != b.Length)
-            {
-                throw new MatrixDotNetException(ExceptionArgument.VectorLength);
-            }
+            if (a.Length != b.Length) throw new MatrixDotNetException(ExceptionArgument.VectorLength);
         }
 
         public override bool Equals(object obj)
         {
-            if (!(obj is Vector<T>))
-            {
-                throw new InvalidCastException("object is not Vector<T>");
-            }
+            if (!(obj is Vector<T>)) throw new InvalidCastException("object is not Vector<T>");
 
             var vec = (Vector<T>) obj;
 
-            if (vec.Array.Length != Length)
-            {
-                return false;
-            }
+            if (vec.Array.Length != Length) return false;
 
-            if (vec.Array == Array)
-            {
-                return true;
-            }
+            if (vec.Array == Array) return true;
 
-            int i = 0;
-            int size = System.Numerics.Vector<T>.Count;
-            int lastIndexBlock = vec.Length - vec.Length % size;
+            var i = 0;
+            var size = System.Numerics.Vector<T>.Count;
+            var lastIndexBlock = vec.Length - vec.Length % size;
 
             for (; i < lastIndexBlock; i += size)
             {
                 var vectorA = new System.Numerics.Vector<T>(Array, i);
                 var vectorB = new System.Numerics.Vector<T>(vec.Array, i);
-                bool equal = Vector.EqualsAll(vectorA, vectorB);
-                if (!equal)
-                {
-                    return false;
-                }
+                var equal = Vector.EqualsAll(vectorA, vectorB);
+                if (!equal) return false;
             }
 
             var cmp = Comparer<T>.Default;
 
             for (; i < vec.Length; i++)
-            {
                 if (cmp.Compare(Array[i], vec.Array[i]) != 0)
-                {
                     return false;
-                }
-            }
 
             return true;
         }
@@ -339,10 +285,7 @@ namespace MatrixDotNet.Vectorization
             var builder = new StringBuilder();
             builder.Append("<");
 
-            for (int i = 0; i < Array.Length - 1; i++)
-            {
-                builder.Append($"{Array[i]},");
-            }
+            for (var i = 0; i < Array.Length - 1; i++) builder.Append($"{Array[i]},");
 
             builder.Append(Array[^1]);
             builder.Append(">");

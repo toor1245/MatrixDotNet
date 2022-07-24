@@ -6,7 +6,7 @@ namespace MatrixDotNet.Extensions.Complement
     public static partial class MatrixExtension
     {
         /// <summary>
-        /// Schur's complement is a square matrix obtained by splitting a square matrix into four parts.
+        ///     Schur's complement is a square matrix obtained by splitting a square matrix into four parts.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="a11">first part of matrix</param>
@@ -18,7 +18,7 @@ namespace MatrixDotNet.Extensions.Complement
         }
 
         /// <summary>
-        /// Schur's complement is a square matrix obtained by splitting a square matrix into four parts.
+        ///     Schur's complement is a square matrix obtained by splitting a square matrix into four parts.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns></returns>
@@ -29,7 +29,7 @@ namespace MatrixDotNet.Extensions.Complement
         }
 
         /// <summary>
-        /// Schur's complement is a square matrix obtained by splitting a square matrix into four parts.
+        ///     Schur's complement is a square matrix obtained by splitting a square matrix into four parts.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns></returns>

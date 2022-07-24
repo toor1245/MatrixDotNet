@@ -4,13 +4,15 @@ namespace MatrixDotNet.Extensions.Options
 {
     public sealed class TemplateHtml : Template
     {
-        public TemplateHtml(string title) : base(title) { }
+        public TemplateHtml(string title) : base(title)
+        {
+        }
 
         public override string FileExtension => ".html";
 
         public override string CreateText<T>(Matrix<T> matrix)
         {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
             Rows = matrix.Rows;
             Columns = matrix.Columns;
             builder.AppendLine(@"<!DOCTYPE html>
@@ -24,23 +26,17 @@ namespace MatrixDotNet.Extensions.Options
             builder.AppendLine("\t\t<tr>");
             builder.AppendLine("\t\t<th scope='col'>#</th>");
 
-            for (int i = 0; i < matrix.Columns; i++)
-            {
-                builder.AppendLine($"\t\t<th scope='col'>{i}</th>");
-            }
+            for (var i = 0; i < matrix.Columns; i++) builder.AppendLine($"\t\t<th scope='col'>{i}</th>");
 
             builder.AppendLine("\t\t<tr>");
             builder.AppendLine("\t</thead>");
             builder.AppendLine("\t<tbody>");
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 builder.AppendLine("\t\t<tr>");
                 builder.AppendLine($"\t\t\t<th scope='row'>{i}</th>");
 
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    builder.AppendLine($"\t\t\t<td>{matrix[i, j]}</td>");
-                }
+                for (var j = 0; j < matrix.Columns; j++) builder.AppendLine($"\t\t\t<td>{matrix[i, j]}</td>");
 
                 builder.AppendLine("\t\t</tr>");
             }
@@ -51,6 +47,5 @@ namespace MatrixDotNet.Extensions.Options
 
             return builder.ToString();
         }
-
     }
 }

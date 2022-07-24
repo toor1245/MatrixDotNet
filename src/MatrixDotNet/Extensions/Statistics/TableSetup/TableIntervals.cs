@@ -1,7 +1,7 @@
 namespace MatrixDotNet.Extensions.Statistics.TableSetup
 {
     /// <summary>
-    /// Represents columns for matrix intervals.
+    ///     Represents columns for matrix intervals.
     /// </summary>
     public enum TableIntervals
     {
@@ -9,6 +9,6 @@ namespace MatrixDotNet.Extensions.Statistics.TableSetup
         IntervalSecond,
         Xi,
         Ni,
-        Column,
+        Column
     }
 }

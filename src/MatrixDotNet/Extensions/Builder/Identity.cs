@@ -1,16 +1,15 @@
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
 
-
 namespace MatrixDotNet.Extensions.Builder
 {
     /// <summary>
-    /// Represents the functional of build matrix.
+    ///     Represents the functional of build matrix.
     /// </summary>
     public static partial class BuildMatrix
     {
         /// <summary>
-        /// Creates identity matrix.
+        ///     Creates identity matrix.
         /// </summary>
         /// <param name="row"></param>
         /// <param name="col"></param>
@@ -19,23 +18,17 @@ namespace MatrixDotNet.Extensions.Builder
         /// <exception cref="MatrixDotNetException"></exception>
         public static Matrix<T> CreateIdentityMatrix<T>(int row, int col) where T : unmanaged
         {
-            if (row != col)
-            {
-                throw new MatrixNotSquareException();
-            }
+            if (row != col) throw new MatrixNotSquareException();
 
             var matrix = new Matrix<T>(row, col);
 
-            for (int i = 0; i < row; i++)
-            {
-                matrix[i, i] = MathGeneric<T>.Increment(default);
-            }
+            for (var i = 0; i < row; i++) matrix[i, i] = MathGeneric<T>.Increment(default);
 
             return matrix;
         }
 
         /// <summary>
-        /// Creates identity matrix by this size of matrix.
+        ///     Creates identity matrix by this size of matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -48,10 +41,7 @@ namespace MatrixDotNet.Extensions.Builder
 
             var result = new Matrix<T>(matrix.Rows, matrix.Columns);
 
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                result[i, i] = MathGeneric<T>.Increment(default);
-            }
+            for (var i = 0; i < matrix.Rows; i++) result[i, i] = MathGeneric<T>.Increment(default);
 
             return result;
         }

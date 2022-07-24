@@ -7,11 +7,8 @@ namespace Samples
         [Test]
         public void StartTest()
         {
-            if (GetType() == typeof(SampleTest))
-            {
-                Assert.Pass();
-            }
-            
+            if (GetType() == typeof(SampleTest)) Assert.Pass();
+
             SampleRunner.Run(GetType());
         }
     }

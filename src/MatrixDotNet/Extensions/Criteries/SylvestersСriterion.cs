@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Decompositions;
 using MatrixDotNet.Math;
-using System.Collections.Generic;
 
 namespace MatrixDotNet.Extensions.Criteries
 {
@@ -10,28 +10,19 @@ namespace MatrixDotNet.Extensions.Criteries
         public static DefiniteType SylvestersCriterion<T>(Matrix<T> matrix)
             where T : unmanaged
         {
-            if (!matrix.IsSymmetric)
+            if (!matrix.IsSymmetric) throw new MatrixNotSymmetricException();
+            var forms = GetForm(matrix);
+            var isFirstNeg = forms[0] == -1;
+            var count = 0;
+            for (var i = 0; i < forms.Count; i++)
             {
-                throw new MatrixNotSymmetricException();
-            }
-            List<int> forms = GetForm(matrix);
-            bool isFirstNeg = forms[0] == -1;
-            int count = 0;
-            for (int i = 0; i < forms.Count; i++)
-            {
-                int element = (forms[i] - 1) >> 31;
+                var element = (forms[i] - 1) >> 31;
                 count += ~element & forms[i];
             }
 
-            if (count == forms.Count)
-            {
-                return DefiniteType.Positive;
-            }
+            if (count == forms.Count) return DefiniteType.Positive;
 
-            if (isFirstNeg && count <= 0)
-            {
-                return DefiniteType.Negative;
-            }
+            if (isFirstNeg && count <= 0) return DefiniteType.Negative;
 
             return DefiniteType.Alternating;
         }
@@ -39,15 +30,15 @@ namespace MatrixDotNet.Extensions.Criteries
         private static List<int> GetForm<T>(Matrix<T> matrix)
             where T : unmanaged
         {
-            List<int> forms = new List<int>();
+            var forms = new List<int>();
             matrix.GetLowerUpper(out var lower, out var upper);
 
-            T lowerDet = MathGeneric<T>.Increment(default);
-            T upperDet = MathGeneric<T>.Increment(default);
+            var lowerDet = MathGeneric<T>.Increment(default);
+            var upperDet = MathGeneric<T>.Increment(default);
 
             var comparer = Comparer<T>.Default;
 
-            for (int j = 0; j < matrix.Rows; j++)
+            for (var j = 0; j < matrix.Rows; j++)
             {
                 lowerDet = MathUnsafe<T>.Mul(lowerDet, lower[j, j]);
                 upperDet = MathUnsafe<T>.Mul(upperDet, upper[j, j]);
@@ -56,6 +47,7 @@ namespace MatrixDotNet.Extensions.Criteries
 
                 forms.Add(form ? 1 : -1);
             }
+
             return forms;
         }
     }

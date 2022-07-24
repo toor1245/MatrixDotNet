@@ -1,7 +1,7 @@
+using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Math;
-using System.Collections.Generic;
 
 namespace MatrixDotNet.Extensions.Decompositions
 {
@@ -12,10 +12,7 @@ namespace MatrixDotNet.Extensions.Decompositions
             out Matrix<double> upper,
             out Matrix<double> ortTranspose)
         {
-            if (!matrix.IsSquare)
-            {
-                throw new MatrixNotSquareException();
-            }
+            if (!matrix.IsSquare) throw new MatrixNotSquareException();
 
             orthogonal = matrix.ProcessGrammShmidtByColumns().GetNormByColumns();
             ortTranspose = orthogonal.Transpose();
@@ -27,39 +24,26 @@ namespace MatrixDotNet.Extensions.Decompositions
         {
             var comparer = Comparer<T>.Default;
 
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
+                if (i == j)
                 {
-                    if (i == j)
-                    {
-                        if (comparer.Compare(matrix[i, j], MathGeneric<T>.Increment(default)) != 0)
-                        {
-                            return false;
-                        }
-                    }
-                    else if (comparer.Compare(matrix[i, j], default) != 0)
-                    {
-                        return false;
-                    }
+                    if (comparer.Compare(matrix[i, j], MathGeneric<T>.Increment(default)) != 0) return false;
                 }
-            }
+                else if (comparer.Compare(matrix[i, j], default) != 0)
+                {
+                    return false;
+                }
 
             return true;
         }
 
         public static Matrix<T> GetQuasiTriangular<T>(this Matrix<T> matrix) where T : unmanaged
         {
-            if (!matrix.IsSquare)
-            {
-                throw new MatrixNotSquareException();
-            }
+            if (!matrix.IsSquare) throw new MatrixNotSquareException();
 
             var quasi = new Matrix<T>(matrix.Rows, matrix.Columns);
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                quasi[i, i] = matrix[i, i];
-            }
+            for (var i = 0; i < matrix.Rows; i++) quasi[i, i] = matrix[i, i];
 
             return quasi;
         }

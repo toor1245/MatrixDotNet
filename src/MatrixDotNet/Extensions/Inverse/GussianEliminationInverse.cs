@@ -1,14 +1,14 @@
+using System;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Conversion;
-using System;
 
 namespace MatrixDotNet.Extensions.Inverse
 {
     public static partial class MatrixExtension
     {
         /// <summary>
-        /// Inverse matrix with happen Gaussian elimination.
+        ///     Inverse matrix with happen Gaussian elimination.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Inverse matrix.</returns>
@@ -16,32 +16,23 @@ namespace MatrixDotNet.Extensions.Inverse
         /// <exception cref="NullReferenceException"></exception>
         public static Matrix<double> GaussianEliminationInverse(this Matrix<double> matrix)
         {
-            if (!matrix.IsSquare)
-            {
-                throw new MatrixNotSquareException();
-            }
+            if (!matrix.IsSquare) throw new MatrixNotSquareException();
 
-            int size = matrix.Rows;
-            Matrix<double> a = matrix.Clone() as Matrix<double>;
-            Matrix<double> b = matrix.CreateIdentityMatrix();
+            var size = matrix.Rows;
+            var a = matrix.Clone() as Matrix<double>;
+            var b = matrix.CreateIdentityMatrix();
 
             if (a is null || b is null)
                 throw new NullReferenceException();
 
             // Forward substitution
-            for (int i = 0; i < size - 1; i++)
+            for (var i = 0; i < size - 1; i++)
             {
-
                 if (System.Math.Abs(a[i, i]) < 0.00001)
-                {
-                    for (int j = i + 1; j < size; j++)
-                    {
+                    for (var j = i + 1; j < size; j++)
                         if (System.Math.Abs(a[j, i]) < 0.00001)
                         {
-                            if (j == size - 1)
-                            {
-                                throw new MatrixSingularException();
-                            }
+                            if (j == size - 1) throw new MatrixSingularException();
                         }
                         else
                         {
@@ -49,13 +40,11 @@ namespace MatrixDotNet.Extensions.Inverse
                             b.SwapRows(i, j);
                             break;
                         }
-                    }
-                }
 
-                for (int k = i + 1; k < size; k++)
+                for (var k = i + 1; k < size; k++)
                 {
-                    double div = a[k, i] / a[i, i];
-                    for (int j = 0; j < size; j++)
+                    var div = a[k, i] / a[i, i];
+                    for (var j = 0; j < size; j++)
                     {
                         a[k, j] = a[k, j] - a[i, j] * div;
                         b[k, j] = b[k, j] - b[i, j] * div;
@@ -64,18 +53,13 @@ namespace MatrixDotNet.Extensions.Inverse
             }
 
             // Back substitution
-            for (int i = size - 1; i > 0; i--)
+            for (var i = size - 1; i > 0; i--)
             {
                 if (System.Math.Abs(a[i, i]) < 0.00001)
-                {
-                    for (int j = i + 1; j < size; j++)
-                    {
+                    for (var j = i + 1; j < size; j++)
                         if (System.Math.Abs(a[j, i]) < 0.00001)
                         {
-                            if (j == size - 1)
-                            {
-                                throw new MatrixSingularException();
-                            }
+                            if (j == size - 1) throw new MatrixSingularException();
                         }
                         else
                         {
@@ -83,14 +67,12 @@ namespace MatrixDotNet.Extensions.Inverse
                             b.SwapColumns(i, j);
                             break;
                         }
-                    }
-                }
 
-                for (int k = i - 1; k >= 0; k--)
+                for (var k = i - 1; k >= 0; k--)
                 {
-                    double div = a[k, i] / a[i, i];
+                    var div = a[k, i] / a[i, i];
 
-                    for (int j = size - 1; j >= 0; j--)
+                    for (var j = size - 1; j >= 0; j--)
                     {
                         a[k, j] = a[k, j] - a[i, j] * div;
                         b[k, j] = b[k, j] - b[i, j] * div;
@@ -99,18 +81,12 @@ namespace MatrixDotNet.Extensions.Inverse
             }
 
             // Correction
-            for (int i = 0; i < size; i++)
+            for (var i = 0; i < size; i++)
             {
-                double d = a[i, i];
-                if (System.Math.Abs(d) < 0.00001)
-                {
-                    throw new MatrixSingularException();
-                }
+                var d = a[i, i];
+                if (System.Math.Abs(d) < 0.00001) throw new MatrixSingularException();
 
-                for (int j = 0; j < size; j++)
-                {
-                    b[i, j] = b[i, j] / d;
-                }
+                for (var j = 0; j < size; j++) b[i, j] = b[i, j] / d;
             }
 
             return b;

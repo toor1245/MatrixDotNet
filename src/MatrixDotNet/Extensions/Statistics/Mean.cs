@@ -1,13 +1,13 @@
-using MatrixDotNet.Math;
 using System;
 using MatrixDotNet.Exceptions;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions.Statistics
 {
     public static partial class MatrixExtension
     {
         /// <summary>
-        /// Gets mean value whole matrix.  
+        ///     Gets mean value whole matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -17,15 +17,13 @@ namespace MatrixDotNet.Extensions.Statistics
             where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-            {
                 throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
-            }
 
             return MathGeneric<T, int, T>.Divide(matrix.Sum(), matrix.Length);
         }
 
         /// <summary>
-        /// Gets mean value by row.
+        ///     Gets mean value by row.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="index">the row index.</param>
@@ -36,15 +34,13 @@ namespace MatrixDotNet.Extensions.Statistics
             where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-            {
                 throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
-            }
 
             return MathGeneric<T, int, T>.Divide(matrix.SumByRow(index), matrix.Columns);
         }
 
         /// <summary>
-        /// Gets mean value by column.
+        ///     Gets mean value by column.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="index">the column index.</param>
@@ -54,15 +50,13 @@ namespace MatrixDotNet.Extensions.Statistics
             where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-            {
                 throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
-            }
 
             return MathGeneric<T, int, T>.Divide(matrix.SumByColumn(index), matrix.Rows);
         }
 
         /// <summary>
-        /// Gets mean value by each row.
+        ///     Gets mean value by each row.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -70,26 +64,20 @@ namespace MatrixDotNet.Extensions.Statistics
         public static T[] MeanByRows<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (!MathGeneric.IsFloatingPoint<T>())
-            {
-                throw new NotSupportedException();
-            }
+            if (!MathGeneric.IsFloatingPoint<T>()) throw new NotSupportedException();
 
             var rows = matrix.Rows;
             var columns = matrix.Columns;
             var arr = new T[rows];
 
-            for (int i = 0; i < rows; i++)
-            {
-                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByRow(i), columns);
-            }
+            for (var i = 0; i < rows; i++) arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByRow(i), columns);
 
             return arr;
         }
 
 
         /// <summary>
-        /// Gets mean value by each row.
+        ///     Gets mean value by each row.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -98,18 +86,13 @@ namespace MatrixDotNet.Extensions.Statistics
             where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-            {
                 throw new NotSupportedTypeException(ExceptionArgument.NotSupportedTypeFloatType);
-            }
 
             var rows = matrix.Rows;
             var columns = matrix.Columns;
             var arr = new T[columns];
 
-            for (int i = 0; i < columns; i++)
-            {
-                arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByColumn(i), rows);
-            }
+            for (var i = 0; i < columns; i++) arr[i] = MathGeneric<T, int, T>.Divide(matrix.SumByColumn(i), rows);
 
             return arr;
         }

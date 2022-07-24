@@ -12,55 +12,48 @@ using MatrixDotNet.Extensions.Performance.Simd.Handler;
 namespace MatrixDotNet.Extensions.Conversion
 {
     /// <summary>
-    /// Represents converter which can change matrix.
+    ///     Represents converter which can change matrix.
     /// </summary>
     public static unsafe partial class MatrixConverter
     {
         /// <summary>
-        /// Joins two matrix, matrix A rows must be equals matrix B rows.
+        ///     Joins two matrix, matrix A rows must be equals matrix B rows.
         /// </summary>
         /// <param name="matrix1">The matrix A.</param>
         /// <param name="matrix2">The matrix B.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
         /// <returns>Joins two matrix</returns>
         /// <exception cref="MatrixDotNetException">
-        /// Throws if matrix1.Rows != matrix2.Rows.
+        ///     Throws if matrix1.Rows != matrix2.Rows.
         /// </exception>
         public static Matrix<T> Concat<T>(this Matrix<T> matrix1, Matrix<T> matrix2)
             where T : unmanaged
         {
-            int m = matrix1.Rows;
-            int n = matrix1.Columns;
-            int lenColumns = n + matrix2.Columns;
+            var m = matrix1.Rows;
+            var n = matrix1.Columns;
+            var lenColumns = n + matrix2.Columns;
 
-            if (m != matrix2.Rows)
-            {
-                throw new SizeNotEqualException(ExceptionArgument.RowsOfMatricesAreNotEqual);
-            }
+            if (m != matrix2.Rows) throw new SizeNotEqualException(ExceptionArgument.RowsOfMatricesAreNotEqual);
 
             var res = new Matrix<T>(m, lenColumns);
 
             for (var i = 0; i < m; i++)
-            {
-                for (int j = 0, k = 0; j < lenColumns; j++)
+            for (int j = 0, k = 0; j < lenColumns; j++)
+                if (j < n)
                 {
-                    if (j < n)
-                    {
-                        res[i, j] = matrix1[i, j];
-                    }
-                    else
-                    {
-                        res[i, k + n] = matrix2[i, k];
-                        k++;
-                    }
+                    res[i, j] = matrix1[i, j];
                 }
-            }
+                else
+                {
+                    res[i, k + n] = matrix2[i, k];
+                    k++;
+                }
 
             return res;
         }
 
         /// <summary>
-        /// Reduces column of matrix by index.
+        ///     Reduces column of matrix by index.
         /// </summary>
         /// <param name="matrix">The matrix.</param>
         /// <param name="column">The index of matrix which reduce column.</param>
@@ -69,10 +62,7 @@ namespace MatrixDotNet.Extensions.Conversion
         public static Matrix<T> ReduceColumn<T>(this Matrix<T> matrix, uint column)
             where T : unmanaged
         {
-            if (column >= matrix.Columns)
-            {
-                throw new IndexOutOfRangeException();
-            }
+            if (column >= matrix.Columns) throw new IndexOutOfRangeException();
 
             var newColumns = matrix.Columns - 1;
             var temp = new Matrix<T>(matrix.Rows, newColumns);
@@ -80,11 +70,11 @@ namespace MatrixDotNet.Extensions.Conversion
             fixed (T* ptr2 = temp.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
             {
-                int m = temp.Columns;
-                uint len = (uint) m - column;
-                for (int i = 0; i < temp.Rows; i++)
+                var m = temp.Columns;
+                var len = (uint) m - column;
+                for (var i = 0; i < temp.Rows; i++)
                 {
-                    T* src = ptr3 + i * matrix.Columns;
+                    var src = ptr3 + i * matrix.Columns;
                     Unsafe.CopyBlock(ptr2 + i * m, src, (uint) (sizeof(T) * column));
                     Unsafe.CopyBlock(ptr2 + i * m + column, src + column + 1, (uint) (sizeof(T) * len));
                 }
@@ -94,7 +84,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reduces row of matrix by index.
+        ///     Reduces row of matrix by index.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="row">index of matrix which reduce column.</param>
@@ -112,10 +102,10 @@ namespace MatrixDotNet.Extensions.Conversion
             fixed (T* ptr2 = temp.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
             {
-                int m = temp.Columns;
+                var m = temp.Columns;
                 Array.Copy(matrix._Matrix, temp._Matrix, row * m);
                 // finds difference len between whole matrix and length to index row.
-                uint diff = (uint) (sizeof(T) * temp.Length - (sizeof(T) * row * m));
+                var diff = (uint) (sizeof(T) * temp.Length - sizeof(T) * row * m);
                 Unsafe.CopyBlock(ptr2 + row * m, ptr3 + (row + 1) * m, diff);
             }
 
@@ -124,7 +114,7 @@ namespace MatrixDotNet.Extensions.Conversion
 
 
         /// <summary>
-        /// Add column of matrix by index.
+        ///     Add column of matrix by index.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="arr">the array.</param>
@@ -136,31 +126,23 @@ namespace MatrixDotNet.Extensions.Conversion
             where T : unmanaged
         {
             if (matrix.Rows != arr.Length)
-            {
                 throw new SizeNotEqualException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
-            }
 
             var m = matrix.Rows;
             var result = new Matrix<T>(m, matrix.Columns + 1);
 
-            for (int i = 0; i < column; i++)
-            {
-                result[i, State.Column] = matrix[i, State.Column];
-            }
+            for (var i = 0; i < column; i++) result[i, State.Column] = matrix[i, State.Column];
 
             result[column, State.Column] = arr;
 
-            for (int i = column + 1; i < result.Columns; i++)
-            {
-                result[i, State.Column] = matrix[i - 1, State.Column];
-            }
+            for (var i = column + 1; i < result.Columns; i++) result[i, State.Column] = matrix[i - 1, State.Column];
 
             return result;
         }
 
 
         /// <summary>
-        /// Returns new matrix with added row.
+        ///     Returns new matrix with added row.
         /// </summary>
         /// <param name="matrix">the matrix</param>
         /// <param name="array">the row for new matrix</param>
@@ -172,9 +154,7 @@ namespace MatrixDotNet.Extensions.Conversion
             where T : unmanaged
         {
             if (matrix.Columns != array.Length)
-            {
                 throw new SizeNotEqualException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
-            }
 
             var newRows = matrix.Rows + 1;
             var temp = new Matrix<T>(newRows, matrix.Columns);
@@ -182,12 +162,12 @@ namespace MatrixDotNet.Extensions.Conversion
             fixed (T* ptr2 = temp.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
             {
-                int m = temp.Columns;
-                int aLength = array.Length;
+                var m = temp.Columns;
+                var aLength = array.Length;
                 Array.Copy(matrix._Matrix, temp._Matrix, row * m);
                 Unsafe.CopyBlock(ptr2 + row * m, ptr1, (uint) (sizeof(T) * aLength));
                 // finds difference len between whole matrix and length to index row.
-                int diff = sizeof(T) * temp.Length - (sizeof(T) * row * m + sizeof(T) * aLength);
+                var diff = sizeof(T) * temp.Length - (sizeof(T) * row * m + sizeof(T) * aLength);
                 Unsafe.CopyBlock(ptr2 + (row + 1) * m, ptr3 + row * m, (uint) diff);
             }
 
@@ -195,7 +175,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Changes this matrix to identity matrix.
+        ///     Changes this matrix to identity matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -204,30 +184,19 @@ namespace MatrixDotNet.Extensions.Conversion
         public static void ToIdentityMatrix<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (!matrix.IsSquare)
-            {
-                throw new MatrixNotSquareException();
-            }
+            if (!matrix.IsSquare) throw new MatrixNotSquareException();
 
 
             for (var i = 0; i < matrix.Rows; i++)
-            {
-                for (var j = 0; j < matrix.Columns; j++)
-                {
-                    if (i == j)
-                    {
-                        matrix[i, j] = MathGeneric<T>.Increment(default);
-                    }
-                    else
-                    {
-                        matrix[i, j] = default;
-                    }
-                }
-            }
+            for (var j = 0; j < matrix.Columns; j++)
+                if (i == j)
+                    matrix[i, j] = MathGeneric<T>.Increment(default);
+                else
+                    matrix[i, j] = default;
         }
 
         /// <summary>
-        /// Swap rows of matrix.
+        ///     Swap rows of matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension1">the dimension 1</param>
@@ -237,18 +206,18 @@ namespace MatrixDotNet.Extensions.Conversion
         public static void SwapRows<T>(this Matrix<T> matrix, int dimension1, int dimension2)
             where T : unmanaged
         {
-            int m = matrix.Rows;
-            int n = matrix.Columns;
+            var m = matrix.Rows;
+            var n = matrix.Columns;
 
-            int length = matrix.Length;
+            var length = matrix.Length;
 
             fixed (T* ptr1 = matrix.GetArray())
             {
-                Span<T> span = new Span<T>(ptr1, length);
+                var span = new Span<T>(ptr1, length);
 
-                int index = dimension1 * n + m;
-                int i = dimension1 * n;
-                int j = dimension2 * n;
+                var index = dimension1 * n + m;
+                var i = dimension1 * n;
+                var j = dimension2 * n;
 
                 while (i < index)
                 {
@@ -263,7 +232,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Swap rows of matrix.
+        ///     Swap rows of matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="indexDimension1">the dimension 1</param>
@@ -280,7 +249,7 @@ namespace MatrixDotNet.Extensions.Conversion
 
 
         /// <summary>
-        /// Gets transport matrix.
+        ///     Gets transport matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -290,12 +259,8 @@ namespace MatrixDotNet.Extensions.Conversion
         {
             var transport = new Matrix<T>(matrix.Columns, matrix.Rows);
             for (var i = 0; i < transport.Rows; i++)
-            {
-                for (var j = 0; j < transport.Columns; j++)
-                {
-                    transport[i, j] = matrix[j, i];
-                }
-            }
+            for (var j = 0; j < transport.Columns; j++)
+                transport[i, j] = matrix[j, i];
 
             return transport;
         }
@@ -304,7 +269,6 @@ namespace MatrixDotNet.Extensions.Conversion
         public static Matrix<T> TransposeXVectorSize<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-
 #if NETCOREAPP3_1 || NET5_0
             if (matrix.Rows == Vector256<T>.Count)
             {
@@ -324,7 +288,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Splits matrix by 4 parts.
+        ///     Splits matrix by 4 parts.
         /// </summary>
         /// <param name="a">the matrix which want splits.</param>
         /// <param name="a11">the matrix a11.</param>
@@ -333,16 +297,13 @@ namespace MatrixDotNet.Extensions.Conversion
         /// <param name="a22">the matrix a22.</param>
         /// <typeparam name="T">unmanaged type</typeparam>
         /// <exception cref="MatrixDotNetException">
-        ///  The matrix is not square.
+        ///     The matrix is not square.
         /// </exception>
         public static void SplitMatrix<T>(this Matrix<T> a, out Matrix<T> a11, out Matrix<T> a12, out Matrix<T> a21,
             out Matrix<T> a22)
             where T : unmanaged
         {
-            if (!a.IsSquare)
-            {
-                throw new MatrixNotSquareException();
-            }
+            if (!a.IsSquare) throw new MatrixNotSquareException();
 
             var n = a.Rows >> 1;
 
@@ -361,7 +322,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Collects square matrix.
+        ///     Collects square matrix.
         /// </summary>
         /// <param name="a11">the matrix a11</param>
         /// <param name="a12">the matrix a12</param>
@@ -372,10 +333,10 @@ namespace MatrixDotNet.Extensions.Conversion
         public static Matrix<T> CollectMatrix<T>(Matrix<T> a11, Matrix<T> a12, Matrix<T> a21, Matrix<T> a22)
             where T : unmanaged
         {
-            int n = a11.Rows;
-            int sl = n << 1;
-            Matrix<T> a = new Matrix<T>(sl, sl);
-            for (int i = 0; i < n; i++)
+            var n = a11.Rows;
+            var sl = n << 1;
+            var a = new Matrix<T>(sl, sl);
+            for (var i = 0; i < n; i++)
             {
                 CopyTo(a11, i, 0, a, i, 0, n);
                 CopyTo(a12, i, 0, a, i, n, sl);
@@ -387,28 +348,25 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse array
+        ///     Reverse array
         /// </summary>
         /// <param name="array"></param>
         public static void Reverse(uint[] array)
         {
-            int len = array.Length;
-            if (len < 2)
-            {
-                return;
-            }
+            var len = array.Length;
+            if (len < 2) return;
 #if NET5_0 || NETCOREAPP3_1
-            int i = 0;
+            var i = 0;
             if (Avx2.IsSupported)
             {
-                int size = Vector256<uint>.Count;
+                var size = Vector256<uint>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (uint* ptr = &array[0])
                 {
@@ -424,15 +382,12 @@ namespace MatrixDotNet.Extensions.Conversion
                         Avx.Store(rightPtr, Avx2.Permute2x128(vb, vb, 0x67));
                     }
 
-                    if (i << 1 < len)
-                    {
-                        Array.Reverse(array, i, len - lastIndexBlock);
-                    }
+                    if (i << 1 < len) Array.Reverse(array, i, len - lastIndexBlock);
                 }
             }
             else if (Sse2.IsSupported)
             {
-                int size = Vector128<uint>.Count;
+                var size = Vector128<uint>.Count;
 
                 if (len < size << 1)
                 {
@@ -440,7 +395,7 @@ namespace MatrixDotNet.Extensions.Conversion
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (uint* ptr = array)
                 {
@@ -456,10 +411,8 @@ namespace MatrixDotNet.Extensions.Conversion
                         Sse2.Store(leftPtr, Sse2.Shuffle(vr, 0x1b));
                     }
                 }
-                if (i << 1 < len)
-                {
-                    Array.Reverse(array, i, len - lastIndexBlock);
-                }
+
+                if (i << 1 < len) Array.Reverse(array, i, len - lastIndexBlock);
             }
             else
 #endif
@@ -469,28 +422,25 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse array
+        ///     Reverse array
         /// </summary>
         /// <param name="array"></param>
         public static void Reverse(int[] array)
         {
-            int len = array.Length;
-            if (len < 2)
-            {
-                return;
-            }
+            var len = array.Length;
+            if (len < 2) return;
 #if NET5_0 || NETCOREAPP3_1
-            int i = 0;
+            var i = 0;
             if (Avx2.IsSupported)
             {
-                int size = Vector256<int>.Count;
+                var size = Vector256<int>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (int* ptr = &array[0])
                 {
@@ -506,15 +456,12 @@ namespace MatrixDotNet.Extensions.Conversion
                         Avx.Store(rightPtr, Avx2.Permute2x128(vb, vb, 0x67));
                     }
 
-                    if (i << 1 < len)
-                    {
-                        Array.Reverse(array, i, len - lastIndexBlock);
-                    }
+                    if (i << 1 < len) Array.Reverse(array, i, len - lastIndexBlock);
                 }
             }
             else if (Sse2.IsSupported)
             {
-                int size = Vector128<int>.Count;
+                var size = Vector128<int>.Count;
 
                 if (len < size << 1)
                 {
@@ -522,7 +469,7 @@ namespace MatrixDotNet.Extensions.Conversion
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (int* ptr = array)
                 {
@@ -538,10 +485,8 @@ namespace MatrixDotNet.Extensions.Conversion
                         Sse2.Store(leftPtr, Sse2.Shuffle(vr, 0x1b));
                     }
                 }
-                if (i << 1 < len)
-                {
-                    Array.Reverse(array, i, len - lastIndexBlock);
-                }
+
+                if (i << 1 < len) Array.Reverse(array, i, len - lastIndexBlock);
             }
             else
 #endif
@@ -551,7 +496,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse array
+        ///     Reverse array
         /// </summary>
         /// <param name="array"></param>
         public static void Reverse(ulong[] array)
@@ -560,7 +505,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse array
+        ///     Reverse array
         /// </summary>
         /// <param name="array"></param>
         public static void Reverse(long[] array)
@@ -569,28 +514,26 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse array
+        ///     Reverse array
         /// </summary>
         /// <param name="array"></param>
         public static void Reverse(byte[] array)
         {
-            int len = array.Length;
-            if (len < 2)
-            {
-                return;
-            }
+            var len = array.Length;
+            if (len < 2) return;
 #if NET5_0 || NETCOREAPP3_1
-            int i = 0;
+            var i = 0;
 
             if (Avx2.IsSupported)
             {
-                int size = Vector256<byte>.Count;
+                var size = Vector256<byte>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
-                int lastIndexBlock = len - len % size;
+
+                var lastIndexBlock = len - len % size;
 
                 fixed (byte* ptr = array)
                 {
@@ -609,22 +552,20 @@ namespace MatrixDotNet.Extensions.Conversion
                         Avx.Store(leftPtr, Avx2.Permute2x128(vb, vb, 0x27));
                         Avx.Store(rightPtr, Avx2.Permute2x128(va, va, 0x27));
                     }
-                    if (i < len)
-                    {
-                        Array.Reverse(array, i, len - lastIndexBlock);
-                    }
+
+                    if (i < len) Array.Reverse(array, i, len - lastIndexBlock);
                 }
             }
             else if (Ssse3.IsSupported)
             {
-                int size = Vector128<byte>.Count;
+                var size = Vector128<byte>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (byte* ptr = array)
                 {
@@ -640,10 +581,8 @@ namespace MatrixDotNet.Extensions.Conversion
                         Sse2.Store(leftPtr, Ssse3.Shuffle(vr, mask));
                     }
                 }
-                if (i << 1 < len)
-                {
-                    Array.Reverse(array, i, len - lastIndexBlock);
-                }
+
+                if (i << 1 < len) Array.Reverse(array, i, len - lastIndexBlock);
             }
             else
 #endif
@@ -653,28 +592,26 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse array
+        ///     Reverse array
         /// </summary>
         /// <param name="array"></param>
         public static void Reverse(sbyte[] array)
         {
-            int len = array.Length;
-            if (len < 2)
-            {
-                return;
-            }
+            var len = array.Length;
+            if (len < 2) return;
 #if NET5_0 || NETCOREAPP3_1
-            int i = 0;
+            var i = 0;
 
             if (Avx2.IsSupported)
             {
-                int size = Vector256<sbyte>.Count;
+                var size = Vector256<sbyte>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
-                int lastIndexBlock = len - len % size;
+
+                var lastIndexBlock = len - len % size;
 
                 fixed (sbyte* ptr = array)
                 {
@@ -693,22 +630,20 @@ namespace MatrixDotNet.Extensions.Conversion
                         Avx.Store(leftPtr, Avx2.Permute2x128(vb, vb, 0x27));
                         Avx.Store(rightPtr, Avx2.Permute2x128(va, va, 0x27));
                     }
-                    if (i < len)
-                    {
-                        Array.Reverse(array, i, len - lastIndexBlock);
-                    }
+
+                    if (i < len) Array.Reverse(array, i, len - lastIndexBlock);
                 }
             }
             else if (Ssse3.IsSupported)
             {
-                int size = Vector128<sbyte>.Count;
+                var size = Vector128<sbyte>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (sbyte* ptr = array)
                 {
@@ -724,10 +659,8 @@ namespace MatrixDotNet.Extensions.Conversion
                         Sse2.Store(leftPtr, Ssse3.Shuffle(vr, mask));
                     }
                 }
-                if (i << 1 < len)
-                {
-                    Array.Reverse(array, i, len - lastIndexBlock);
-                }
+
+                if (i << 1 < len) Array.Reverse(array, i, len - lastIndexBlock);
             }
             else
 #endif
@@ -737,29 +670,26 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse array
+        ///     Reverse array
         /// </summary>
         /// <param name="array"></param>
         public static void Reverse(float[] array)
         {
-            int len = array.Length;
-            if (len < 2)
-            {
-                return;
-            }
+            var len = array.Length;
+            if (len < 2) return;
 
 #if NET5_0 || NETCOREAPP3_1
-            int i = 0;
+            var i = 0;
             if (Avx.IsSupported)
             {
-                int size = Vector256<float>.Count;
+                var size = Vector256<float>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (float* ptr = array)
                 {
@@ -774,22 +704,20 @@ namespace MatrixDotNet.Extensions.Conversion
                         Avx.Store(leftPtr, Avx.Permute(va, 0x1b));
                         Avx.Store(rightPtr, Avx.Permute(vb, 0x1b));
                     }
-                    if (i << 1 < len)
-                    {
-                        Array.Reverse(array, i, len - lastIndexBlock);
-                    }
+
+                    if (i << 1 < len) Array.Reverse(array, i, len - lastIndexBlock);
                 }
             }
             else if (Sse.IsSupported)
             {
-                int size = Vector128<float>.Count;
+                var size = Vector128<float>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (float* ptr = array)
                 {
@@ -805,10 +733,7 @@ namespace MatrixDotNet.Extensions.Conversion
                     }
                 }
 
-                if (i << 1 < len)
-                {
-                    Array.Reverse(array, i, len - lastIndexBlock);
-                }
+                if (i << 1 < len) Array.Reverse(array, i, len - lastIndexBlock);
             }
             else
 #endif
@@ -818,29 +743,26 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse array
+        ///     Reverse array
         /// </summary>
         /// <param name="array"></param>
         public static void Reverse(double[] array)
         {
-            int len = array.Length;
-            if (len < 2)
-            {
-                return;
-            }
+            var len = array.Length;
+            if (len < 2) return;
 
 #if NET5_0 || NETCOREAPP3_1
-            int i = 0;
+            var i = 0;
             if (Avx.IsSupported)
             {
-                int size = Vector256<double>.Count;
+                var size = Vector256<double>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (double* ptr = array)
                 {
@@ -855,22 +777,20 @@ namespace MatrixDotNet.Extensions.Conversion
                         Avx.Store(leftPtr, Avx.Permute(va, 0x5));
                         Avx.Store(rightPtr, Avx.Permute(vb, 0x5));
                     }
-                    if (i << 2 < len)
-                    {
-                        Array.Reverse(array, i, len - lastIndexBlock);
-                    }
+
+                    if (i << 2 < len) Array.Reverse(array, i, len - lastIndexBlock);
                 }
             }
             else if (Sse2.IsSupported)
             {
-                int size = Vector128<double>.Count;
+                var size = Vector128<double>.Count;
                 if (len < size << 1)
                 {
                     Array.Reverse(array, 0, array.Length);
                     return;
                 }
 
-                int lastIndexBlock = len - len % size;
+                var lastIndexBlock = len - len % size;
 
                 fixed (double* ptr = array)
                 {
@@ -884,10 +804,8 @@ namespace MatrixDotNet.Extensions.Conversion
                         Sse2.Store(leftPtr, Sse2.Shuffle(vr, vr, 0x65));
                     }
                 }
-                if (i << 2 < len)
-                {
-                    Array.Reverse(array, i, len - lastIndexBlock);
-                }
+
+                if (i << 2 < len) Array.Reverse(array, i, len - lastIndexBlock);
             }
             else
 #endif
@@ -897,7 +815,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse matrix.
+        ///     Reverse matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static void Reverse(Matrix<int> matrix)
@@ -906,7 +824,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse matrix.
+        ///     Reverse matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static void Reverse(Matrix<uint> matrix)
@@ -915,7 +833,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse matrix.
+        ///     Reverse matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static void Reverse(Matrix<long> matrix)
@@ -924,7 +842,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse matrix.
+        ///     Reverse matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static void Reverse(Matrix<ulong> matrix)
@@ -933,7 +851,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse matrix.
+        ///     Reverse matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static void Reverse(Matrix<float> matrix)
@@ -942,7 +860,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse matrix.
+        ///     Reverse matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static void Reverse(Matrix<double> matrix)
@@ -951,7 +869,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse matrix.
+        ///     Reverse matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static void Reverse(Matrix<byte> matrix)
@@ -960,7 +878,7 @@ namespace MatrixDotNet.Extensions.Conversion
         }
 
         /// <summary>
-        /// Reverse matrix.
+        ///     Reverse matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static void Reverse(Matrix<sbyte> matrix)

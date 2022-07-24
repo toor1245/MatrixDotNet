@@ -479,7 +479,7 @@ namespace MatrixDotNet.Math
 
             if (typeof(T) == typeof(short))
             {
-                short negate = (short) -Unsafe.As<T, short>(ref arg);
+                var negate = (short) -Unsafe.As<T, short>(ref arg);
                 return Unsafe.As<short, T>(ref negate);
             }
 

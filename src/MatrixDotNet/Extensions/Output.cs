@@ -1,17 +1,16 @@
-﻿using MatrixDotNet.Extensions.Options;
-using MatrixDotNet.Extensions.Statistics;
-using System;
+﻿using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using MatrixDotNet.Extensions.Options;
+using MatrixDotNet.Extensions.Statistics;
 
 namespace MatrixDotNet.Extensions
 {
     public static partial class MatrixExtension
     {
-
         /// <summary>
-        /// Pretty output.
+        ///     Pretty output.
         /// </summary>
         /// <param name="matrix">the matrix which to display.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -22,7 +21,7 @@ namespace MatrixDotNet.Extensions
                 throw new NullReferenceException();
 
             {
-                StringBuilder builder = new StringBuilder();
+                var builder = new StringBuilder();
                 builder.AppendLine($"Number of rows: {matrix.Rows}");
                 builder.AppendLine($"Number of columns: {matrix.Columns}\n");
                 Console.ForegroundColor = ConsoleColor.Cyan;
@@ -33,7 +32,7 @@ namespace MatrixDotNet.Extensions
 
 
         /// <summary>
-        /// Saves matrix to html or markdown.
+        ///     Saves matrix to html or markdown.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="template">config for creates html or markdown.</param>
@@ -79,17 +78,14 @@ namespace MatrixDotNet.Extensions
 
         internal static string Output<T>(Matrix<T> matrix, StringBuilder builder) where T : unmanaged
         {
-            int a = $"{matrix.Min():G3}".Length;
-            int b = $"{matrix.Max():G3}".Length;
+            var a = $"{matrix.Min():G3}".Length;
+            var b = $"{matrix.Max():G3}".Length;
             var n = (a > b ? a : b) + 2;
             builder.AppendLine();
 
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    builder.AppendFormat($"{{0, {n}:G3}}  |", matrix[i, j]);
-                }
+                for (var j = 0; j < matrix.Columns; j++) builder.AppendFormat($"{{0, {n}:G3}}  |", matrix[i, j]);
 
                 builder.AppendLine();
             }

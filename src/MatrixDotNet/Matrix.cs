@@ -1,13 +1,13 @@
-﻿using MatrixDotNet.Exceptions;
-using MatrixDotNet.Extensions;
-using MatrixDotNet.Math;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using MatrixDotNet.Exceptions;
+using MatrixDotNet.Extensions;
+using MatrixDotNet.Math;
 #if NET5_0 || NETCOREAPP3_1
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
@@ -17,17 +17,61 @@ using MatrixDotNet.Extensions.Performance.Simd.Handler;
 namespace MatrixDotNet
 {
     /// <summary>
-    /// Represents math matrix.
+    ///     Represents math matrix.
     /// </summary>
     /// <typeparam name="T">integral type.</typeparam>
     [Serializable]
     public sealed class Matrix<T> : ICloneable, IEnumerable<T>
         where T : unmanaged
     {
+        #region enumerator
+
+        /// <summary>
+        ///     Represents implementations IEnumerator.
+        /// </summary>
+        public struct Enumerator : IEnumerator<T>
+        {
+            private int _position;
+
+            private readonly Matrix<T> _matrix;
+
+            internal Enumerator(Matrix<T> matrix)
+            {
+                _position = -1;
+
+                _matrix = matrix;
+            }
+
+            public bool MoveNext()
+            {
+                ++_position;
+
+                return _position >= 0 && _position < _matrix.Length;
+            }
+
+            public void Reset()
+            {
+                _position = -1;
+            }
+
+            public T Current => _matrix._Matrix[_position];
+
+            object IEnumerator.Current => Current;
+
+            /// <summary>
+            ///     Isn't used here
+            /// </summary>
+            public void Dispose()
+            {
+            }
+        }
+
+        #endregion
+
         #region properties
 
         /// <summary>
-        /// Gets matrix.
+        ///     Gets matrix.
         /// </summary>
         internal T[] _Matrix { get; private set; }
 
@@ -37,7 +81,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Gets length matrix.
+        ///     Gets length matrix.
         /// </summary>
         public int Length
         {
@@ -46,17 +90,17 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Gets length row of matrix.
+        ///     Gets length row of matrix.
         /// </summary>
         public int Rows { get; private set; }
 
         /// <summary>
-        /// Gets length columns of matrix.
+        ///     Gets length columns of matrix.
         /// </summary>
         public int Columns { get; private set; }
 
         /// <summary>
-        /// Checks square matrix.
+        ///     Checks square matrix.
         /// </summary>
         public bool IsSquare
         {
@@ -65,7 +109,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Checks for pairing of matrix.
+        ///     Checks for pairing of matrix.
         /// </summary>
         public bool IsPrime
         {
@@ -74,29 +118,20 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Checks for symmetric matrix.
+        ///     Checks for symmetric matrix.
         /// </summary>
         public bool IsSymmetric
         {
             get
             {
-                if (!IsSquare)
-                {
-                    throw new MatrixDotNetException("matrix is not square");
-                }
+                if (!IsSquare) throw new MatrixDotNetException("matrix is not square");
 
                 var comparer = Comparer<T>.Default;
 
-                for (int i = 0; i < Rows; i++)
-                {
-                    for (int j = 0; j < i; j++)
-                    {
-                        if (comparer.Compare(this[j, i], this[i, j]) != 0)
-                        {
-                            return false;
-                        }
-                    }
-                }
+                for (var i = 0; i < Rows; i++)
+                for (var j = 0; j < i; j++)
+                    if (comparer.Compare(this[j, i], this[i, j]) != 0)
+                        return false;
 
                 return true;
             }
@@ -107,12 +142,12 @@ namespace MatrixDotNet
         #region indexators
 
         /// <summary>
-        /// Gets element matrix.
+        ///     Gets element matrix.
         /// </summary>
         /// <param name="i">the index by rows.</param>
         /// <param name="j">the index by columns.</param>
         /// <exception cref="IndexOutOfRangeException">
-        /// Throws if index out of range
+        ///     Throws if index out of range
         /// </exception>
         public T this[int i, int j]
         {
@@ -129,7 +164,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Gets or sets array by row.
+        ///     Gets or sets array by row.
         /// </summary>
         /// <param name="i">the row</param>
         /// <exception cref="IndexOutOfRangeException"></exception>
@@ -138,15 +173,12 @@ namespace MatrixDotNet
             get => this.GetRow(i);
             set
             {
-                for (int j = 0; j < Columns; j++)
-                {
-                    this[i, j] = value[j];
-                }
+                for (var j = 0; j < Columns; j++) this[i, j] = value[j];
             }
         }
 
         /// <summary>
-        /// Gets or sets array by rows or columns.
+        ///     Gets or sets array by rows or columns.
         /// </summary>
         /// <param name="i"></param>
         /// <param name="dimension"></param>
@@ -169,10 +201,7 @@ namespace MatrixDotNet
                 }
                 else if (dimension == State.Column)
                 {
-                    for (int j = 0; j < Rows; j++)
-                    {
-                        this[j, i] = value[j];
-                    }
+                    for (var j = 0; j < Rows; j++) this[j, i] = value[j];
                 }
             }
         }
@@ -183,13 +212,9 @@ namespace MatrixDotNet
             set
             {
                 if (dimension == State.Row)
-                {
                     this[m, n] = value;
-                }
                 else
-                {
                     this[n, m] = value;
-                }
             }
         }
 
@@ -198,7 +223,7 @@ namespace MatrixDotNet
         #region .ctor
 
         /// <summary>
-        /// Initialize matrix.
+        ///     Initialize matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         public unsafe Matrix(T[,] matrix)
@@ -216,7 +241,7 @@ namespace MatrixDotNet
 
 
         /// <summary>
-        /// Creates matrix.
+        ///     Creates matrix.
         /// </summary>
         /// <param name="row">row</param>
         /// <param name="col">col</param>
@@ -228,7 +253,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Creates matrix.
+        ///     Creates matrix.
         /// </summary>
         /// <param name="array">array</param>
         /// <param name="row">row</param>
@@ -246,7 +271,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Creates matrix with init constant value.
+        ///     Creates matrix with init constant value.
         /// </summary>
         /// <param name="row">row</param>
         /// <param name="col">col</param>
@@ -262,40 +287,30 @@ namespace MatrixDotNet
             if (Avx.IsSupported)
             {
                 var vector = IntrinsicsHandler<T>.CreateVector256(value);
-                int i = 0;
-                int length = _Matrix.Length;
+                var i = 0;
+                var length = _Matrix.Length;
                 fixed (T* ptr = _Matrix)
                 {
-                    int size = Vector256<T>.Count;
-                    int lastIndexBlock = length - length % size;
-                    for (; i < lastIndexBlock; i += size)
-                    {
-                        IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
-                    }
+                    var size = Vector256<T>.Count;
+                    var lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size) IntrinsicsHandler<T>.StoreVector256(ptr + i, vector);
                 }
-                for (; i < length; i++)
-                {
-                    _Matrix[i] = value;
-                }
+
+                for (; i < length; i++) _Matrix[i] = value;
             }
             else if (Sse.IsSupported)
             {
                 var vector = IntrinsicsHandler<T>.CreateVector128(value);
-                int i = 0;
-                int length = _Matrix.Length;
+                var i = 0;
+                var length = _Matrix.Length;
                 fixed (T* ptr = _Matrix)
                 {
-                    int size = Vector128<T>.Count;
-                    int lastIndexBlock = length - length % size;
-                    for (; i < lastIndexBlock; i += size)
-                    {
-                        IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
-                    }
+                    var size = Vector128<T>.Count;
+                    var lastIndexBlock = length - length % size;
+                    for (; i < lastIndexBlock; i += size) IntrinsicsHandler<T>.StoreVector128(ptr + i, vector);
                 }
-                for (; i < length; i++)
-                {
-                    _Matrix[i] = value;
-                }
+
+                for (; i < length; i++) _Matrix[i] = value;
             }
             else
 #endif
@@ -309,41 +324,41 @@ namespace MatrixDotNet
         #region operators
 
         /// <summary>
-        /// Add operation of two matrix.
+        ///     Add operation of two matrix.
         /// </summary>
         /// <param name="left">left matrix.</param>
         /// <param name="right">right matrix.</param>
-        /// <returns><see cref="Matrix{T}"/></returns>
+        /// <returns>
+        ///     <see cref="Matrix{T}" />
+        /// </returns>
         /// <exception cref="MatrixDotNetException">
-        /// Length of two matrix not equal.
+        ///     Length of two matrix not equal.
         /// </exception>
         public static unsafe Matrix<T> operator +(Matrix<T> left, Matrix<T> right)
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
-            {
                 throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
-            }
 
-            int m = left.Rows;
-            int n = right.Columns;
-            int length = left.Length;
+            var m = left.Rows;
+            var n = right.Columns;
+            var length = left.Length;
 
-            Matrix<T> matrix = new Matrix<T>(m, n);
+            var matrix = new Matrix<T>(m, n);
 
             fixed (T* ptr1 = left.GetArray())
             fixed (T* ptr2 = right.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
             {
-                Span<T> span1 = new Span<T>(ptr1, length);
-                Span<T> span2 = new Span<T>(ptr2, length);
-                Span<T> span3 = new Span<T>(ptr3, length);
-                int i = 0;
+                var span1 = new Span<T>(ptr1, length);
+                var span2 = new Span<T>(ptr2, length);
+                var span3 = new Span<T>(ptr3, length);
+                var i = 0;
 
 #if NET5_0 || NETCOREAPP3_1
                 if (Avx2.IsSupported && typeof(T) != typeof(decimal))
                 {
-                    int size = Vector256<T>.Count;
-                    int lastIndexBlock = length - length % size;
+                    var size = Vector256<T>.Count;
+                    var lastIndexBlock = length - length % size;
                     for (; i < lastIndexBlock; i += size)
                     {
                         var va = IntrinsicsHandler<T>.LoadVector256(ptr1 + i);
@@ -353,8 +368,8 @@ namespace MatrixDotNet
                 }
                 else if (Sse2.IsSupported && typeof(T) != typeof(decimal))
                 {
-                    int size = Vector128<T>.Count;
-                    int lastIndexBlock = length - length % size;
+                    var size = Vector128<T>.Count;
+                    var lastIndexBlock = length - length % size;
                     for (; i < lastIndexBlock; i += size)
                     {
                         var va = IntrinsicsHandler<T>.LoadVector128(ptr1 + i);
@@ -363,50 +378,46 @@ namespace MatrixDotNet
                     }
                 }
 #endif
-                for (; i < length; i++)
-                {
-                    span3[i] = MathUnsafe<T>.Add(span2[i], span1[i]);
-                }
+                for (; i < length; i++) span3[i] = MathUnsafe<T>.Add(span2[i], span1[i]);
             }
+
             return matrix;
         }
 
         /// <summary>
-        /// Subtract operation of two matrix.
+        ///     Subtract operation of two matrix.
         /// </summary>
         /// <param name="left">left matrix.</param>
         /// <param name="right">right matrix.</param>
-        /// <returns><see cref="Matrix{T}"/>.</returns>
+        /// <returns><see cref="Matrix{T}" />.</returns>
         /// <exception cref="MatrixDotNetException">
-        /// Length of two matrix not equal.
+        ///     Length of two matrix not equal.
         /// </exception>
         public static unsafe Matrix<T> operator -(Matrix<T> left, Matrix<T> right)
         {
             if (left.Rows != right.Rows || left.Columns != right.Columns)
-            {
                 throw new MatrixDotNetException(ExceptionArgument.MatricesLengthAreNotEqual);
-            }
 
-            int m = left.Rows;
-            int n = right.Columns;
-            int length = left.Length;
+            var m = left.Rows;
+            var n = right.Columns;
+            var length = left.Length;
 
-            Matrix<T> matrix = new Matrix<T>(m, n);
+            var matrix = new Matrix<T>(m, n);
 
             fixed (T* ptr1 = left.GetArray())
             fixed (T* ptr2 = right.GetArray())
             fixed (T* ptr3 = matrix.GetArray())
             {
-                Span<T> span1 = new Span<T>(ptr1, length);
-                Span<T> span2 = new Span<T>(ptr2, length);
-                Span<T> span3 = new Span<T>(ptr3, length);
-                int i = 0;
+                var span1 = new Span<T>(ptr1, length);
+                var span2 = new Span<T>(ptr2, length);
+                var span3 = new Span<T>(ptr3, length);
+                var i = 0;
 
 #if NET5_0 || NETCOREAPP3_1
                 if (Avx2.IsSupported && typeof(T) != typeof(decimal))
                 {
-                    int size = Vector256<T>.Count;
-                    int lastIndexBlock = length - length % size;
+                    var size = Vector256<T>.Count;
+                    var lastIndexBlock = length - length % size;
                     for (; i < lastIndexBlock; i += size)
                     {
                         var va = IntrinsicsHandler<T>.LoadVector256(ptr1 + i);
@@ -416,8 +427,8 @@ namespace MatrixDotNet
                 }
                 else if (Sse2.IsSupported && typeof(T) != typeof(decimal))
                 {
-                    int size = Vector128<T>.Count;
-                    int lastIndexBlock = length - length % size;
+                    var size = Vector128<T>.Count;
+                    var lastIndexBlock = length - length % size;
                     for (; i < lastIndexBlock; i += size)
                     {
                         var va = IntrinsicsHandler<T>.LoadVector128(ptr1 + i);
@@ -426,16 +437,14 @@ namespace MatrixDotNet
                     }
                 }
 #endif
-                for (; i < length; i++)
-                {
-                    span3[i] = MathUnsafe<T>.Sub(span1[i], span2[i]);
-                }
+                for (; i < length; i++) span3[i] = MathUnsafe<T>.Sub(span1[i], span2[i]);
             }
+
             return matrix;
         }
 
         /// <summary>
-        /// Multiply operation of two matrix.
+        ///     Multiply operation of two matrix.
         /// </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
@@ -443,10 +452,7 @@ namespace MatrixDotNet
         /// <exception cref="MatrixDotNetException"></exception>
         public static unsafe Matrix<T> operator *(Matrix<T> left, Matrix<T> right)
         {
-            if (left.Columns != right.Rows)
-            {
-                throw new SizeNotEqualException(ExceptionArgument.MatricesMultiplySize);
-            }
+            if (left.Columns != right.Rows) throw new SizeNotEqualException(ExceptionArgument.MatricesMultiplySize);
 
             var m = left.Rows;
             var n = right.Columns;
@@ -464,14 +470,14 @@ namespace MatrixDotNet
                 if (IntrinsicsHandler<T>.CanMultiply(m))
                 {
                     var size = Vector256<T>.Count;
-                    for (int i = 0; i < m; i++)
+                    for (var i = 0; i < m; i++)
                     {
                         var c = ptrC + i * n;
-                        for (int k = 0; k < l; k++)
+                        for (var k = 0; k < l; k++)
                         {
                             var b = ptrB + k * n;
                             var va = IntrinsicsHandler<T>.CreateVector256(span1[i * l + k]);
-                            for (int j = 0; j < n; j += size << 1)
+                            for (var j = 0; j < n; j += size << 1)
                             {
                                 var vb1 = IntrinsicsHandler<T>.LoadVector256(b + j);
                                 var vb2 = IntrinsicsHandler<T>.LoadVector256(b + j + size);
@@ -490,59 +496,57 @@ namespace MatrixDotNet
                 else
 #endif
                 {
-                    for (int i = 0; i < m; i++)
+                    for (var i = 0; i < m; i++)
                     {
                         var c = ptrC + i * n;
-                        for (int k = 0; k < l; k++)
+                        for (var k = 0; k < l; k++)
                         {
                             var b = ptrB + k * n;
                             var a = span1[i * l + k];
-                            for (int j = 0; j < n; j++)
-                            {
-                                c[j] = MathUnsafe<T>.Add(c[j], MathUnsafe<T>.Mul(a, b[j]));
-                            }
+                            for (var j = 0; j < n; j++) c[j] = MathUnsafe<T>.Add(c[j], MathUnsafe<T>.Mul(a, b[j]));
                         }
                     }
                 }
             }
+
             return matrixC;
         }
 
         /// <summary>
-        /// Multiply operation matrix on digit right side.
+        ///     Multiply operation matrix on digit right side.
         /// </summary>
         /// <param name="matrix">matrix.</param>
         /// <param name="digit">digit.</param>
-        /// <returns><see cref="Matrix{T}"/></returns>
+        /// <returns>
+        ///     <see cref="Matrix{T}" />
+        /// </returns>
         public static Matrix<T> operator *(Matrix<T> matrix, T digit)
         {
             var multiplyFunc = MathGeneric<T, T, T>.GetMultiplyFunc();
-            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
+            var result = new Matrix<T>(matrix.Rows, matrix.Columns);
 
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    result[i, j] = multiplyFunc(matrix[i, j], digit);
-                }
-            }
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
+                result[i, j] = multiplyFunc(matrix[i, j], digit);
 
             return result;
         }
 
         /// <summary>
-        /// Multiply operation matrix on digit left side.
+        ///     Multiply operation matrix on digit left side.
         /// </summary>
         /// <param name="digit">digit</param>
         /// <param name="matrix">matrix</param>
-        /// <returns><see cref="Matrix{T}"/></returns>
+        /// <returns>
+        ///     <see cref="Matrix{T}" />
+        /// </returns>
         public static Matrix<T> operator *(T digit, Matrix<T> matrix)
         {
             return matrix * digit;
         }
 
         /// <summary>
-        /// Divide operation matrix on digit right side.
+        ///     Divide operation matrix on digit right side.
         /// </summary>
         /// <param name="matrix"></param>
         /// <param name="digit"></param>
@@ -551,20 +555,16 @@ namespace MatrixDotNet
         {
             var divideFunc = MathGeneric<T>.GetDivideFunc();
 
-            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    result[i, j] = divideFunc(matrix[i, j], digit);
-                }
-            }
+            var result = new Matrix<T>(matrix.Rows, matrix.Columns);
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
+                result[i, j] = divideFunc(matrix[i, j], digit);
 
             return result;
         }
 
         /// <summary>
-        /// Divide operation matrix on digit left side.
+        ///     Divide operation matrix on digit left side.
         /// </summary>
         /// <param name="digit"></param>
         /// <param name="matrix"></param>
@@ -572,22 +572,18 @@ namespace MatrixDotNet
         public static Matrix<T> operator /(T digit, Matrix<T> matrix)
         {
             var divideFunc = MathGeneric<T>.GetDivideFunc();
-            Matrix<T> result = new Matrix<T>(matrix.Rows, matrix.Columns);
+            var result = new Matrix<T>(matrix.Rows, matrix.Columns);
 
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    result[i, j] = divideFunc(digit, matrix[i, j]);
-                }
-            }
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
+                result[i, j] = divideFunc(digit, matrix[i, j]);
 
             return result;
         }
 
 #if NET5_0 || NETCOREAPP3_1
         /// <summary>
-        /// Negate matrix.
+        ///     Negate matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static unsafe Matrix<short> Negate(Matrix<short> matrix)
@@ -595,10 +591,10 @@ namespace MatrixDotNet
             if (Avx2.IsSupported)
             {
                 var negate = new Matrix<short>(matrix._Matrix, matrix.Rows, matrix.Columns);
-                int size = Vector256<short>.Count;
-                int len = matrix.Length;
-                int lastIndexBlock = len - len % size;
-                int i = 0;
+                var size = Vector256<short>.Count;
+                var len = matrix.Length;
+                var lastIndexBlock = len - len % size;
+                var i = 0;
                 var setOne = IntrinsicsHandler<short>.SetAllBits256;
                 Span<short> negateSpan = negate._Matrix;
                 Span<short> matrixSpan = matrix._Matrix;
@@ -606,9 +602,7 @@ namespace MatrixDotNet
                 fixed (short* ptr2 = matrixSpan)
                 {
                     for (; i < lastIndexBlock; i += size)
-                    {
                         Avx.Store(ptr1 + i, Avx2.Sign(Avx.LoadVector256(ptr2 + i), setOne));
-                    }
                 }
 
                 ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
@@ -617,15 +611,17 @@ namespace MatrixDotNet
                     negValue = MathUnsafe<short>.Negate(negValue);
                     negValue = ref Unsafe.Add(ref negValue, 1);
                 }
+
                 return negate;
             }
-            else if (Ssse3.IsSupported)
+
+            if (Ssse3.IsSupported)
             {
                 var negate = new Matrix<short>(matrix._Matrix, matrix.Rows, matrix.Columns);
-                int size = Vector128<short>.Count;
-                int len = matrix.Length;
-                int lastIndexBlock = len - len % size;
-                int i = 0;
+                var size = Vector128<short>.Count;
+                var len = matrix.Length;
+                var lastIndexBlock = len - len % size;
+                var i = 0;
                 var setOne = IntrinsicsHandler<short>.SetAllBits128;
                 Span<short> negateSpan = negate._Matrix;
                 Span<short> matrixSpan = matrix._Matrix;
@@ -633,9 +629,7 @@ namespace MatrixDotNet
                 fixed (short* ptr2 = matrixSpan)
                 {
                     for (; i < lastIndexBlock; i += size)
-                    {
                         Sse2.Store(ptr1 + i, Ssse3.Sign(Sse2.LoadVector128(ptr2 + i), setOne));
-                    }
                 }
 
                 ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
@@ -644,13 +638,15 @@ namespace MatrixDotNet
                     negValue = (short) -negValue;
                     negValue = ref Unsafe.Add(ref negValue, 1);
                 }
+
                 return negate;
             }
+
             return -matrix;
         }
 
         /// <summary>
-        /// Negate matrix.
+        ///     Negate matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static unsafe Matrix<sbyte> Negate(Matrix<sbyte> matrix)
@@ -658,10 +654,10 @@ namespace MatrixDotNet
             if (Avx2.IsSupported)
             {
                 var negate = new Matrix<sbyte>(matrix._Matrix, matrix.Rows, matrix.Columns);
-                int size = Vector256<sbyte>.Count;
-                int len = matrix.Length;
-                int lastIndexBlock = len - len % size;
-                int i = 0;
+                var size = Vector256<sbyte>.Count;
+                var len = matrix.Length;
+                var lastIndexBlock = len - len % size;
+                var i = 0;
                 var setOne = IntrinsicsHandler<sbyte>.SetAllBits256;
                 Span<sbyte> negateSpan = negate._Matrix;
                 Span<sbyte> matrixSpan = matrix._Matrix;
@@ -669,9 +665,7 @@ namespace MatrixDotNet
                 fixed (sbyte* ptr2 = matrixSpan)
                 {
                     for (; i < lastIndexBlock; i += size)
-                    {
                         Avx.Store(ptr1 + i, Avx2.Sign(Avx.LoadVector256(ptr2 + i), setOne));
-                    }
                 }
 
                 ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
@@ -680,15 +674,17 @@ namespace MatrixDotNet
                     negValue = (sbyte) -negValue;
                     negValue = ref Unsafe.Add(ref negValue, 1);
                 }
+
                 return negate;
             }
-            else if (Ssse3.IsSupported)
+
+            if (Ssse3.IsSupported)
             {
                 var negate = new Matrix<sbyte>(matrix._Matrix, matrix.Rows, matrix.Columns);
-                int size = Vector128<sbyte>.Count;
-                int len = matrix.Length;
-                int lastIndexBlock = len - len % size;
-                int i = 0;
+                var size = Vector128<sbyte>.Count;
+                var len = matrix.Length;
+                var lastIndexBlock = len - len % size;
+                var i = 0;
                 var setOne = IntrinsicsHandler<sbyte>.SetAllBits128;
                 Span<sbyte> negateSpan = negate._Matrix;
                 Span<sbyte> matrixSpan = matrix._Matrix;
@@ -696,9 +692,7 @@ namespace MatrixDotNet
                 fixed (sbyte* ptr2 = matrixSpan)
                 {
                     for (; i < lastIndexBlock; i += size)
-                    {
                         Sse2.Store(ptr1 + i, Ssse3.Sign(Sse2.LoadVector128(ptr2 + i), setOne));
-                    }
                 }
 
                 ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
@@ -710,11 +704,12 @@ namespace MatrixDotNet
 
                 return negate;
             }
+
             return -matrix;
         }
 
         /// <summary>
-        /// Negate matrix.
+        ///     Negate matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         public static unsafe Matrix<int> Negate(Matrix<int> matrix)
@@ -722,19 +717,17 @@ namespace MatrixDotNet
             if (Avx2.IsSupported)
             {
                 var negate = new Matrix<int>(matrix._Matrix, matrix.Rows, matrix.Columns);
-                int size = Vector256<int>.Count;
-                int len = matrix.Length;
-                int lastIndexBlock = len - len % size;
-                int i = 0;
+                var size = Vector256<int>.Count;
+                var len = matrix.Length;
+                var lastIndexBlock = len - len % size;
+                var i = 0;
                 var setOne = IntrinsicsHandler<int>.SetAllBits256;
                 Span<int> negateSpan = negate._Matrix;
                 fixed (int* ptr1 = negateSpan)
                 fixed (int* ptr2 = matrix._Matrix)
                 {
                     for (; i < lastIndexBlock; i += size)
-                    {
                         Avx.Store(ptr1 + i, Avx2.Sign(Avx.LoadVector256(ptr2 + i), setOne));
-                    }
                 }
 
                 ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
@@ -746,22 +739,21 @@ namespace MatrixDotNet
 
                 return negate;
             }
-            else if (Ssse3.IsSupported)
+
+            if (Ssse3.IsSupported)
             {
                 var negate = new Matrix<int>(matrix._Matrix, matrix.Rows, matrix.Columns);
-                int size = Vector128<int>.Count;
-                int len = matrix.Length;
-                int lastIndexBlock = len - len % size;
-                int i = 0;
+                var size = Vector128<int>.Count;
+                var len = matrix.Length;
+                var lastIndexBlock = len - len % size;
+                var i = 0;
                 var setOne = IntrinsicsHandler<int>.SetAllBits128;
                 Span<int> negateSpan = negate._Matrix;
                 fixed (int* ptr1 = negateSpan)
                 fixed (int* ptr2 = matrix._Matrix)
                 {
                     for (; i < lastIndexBlock; i += size)
-                    {
                         Sse2.Store(ptr1 + i, Ssse3.Sign(Sse2.LoadVector128(ptr2 + i), setOne));
-                    }
                 }
 
                 ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), i);
@@ -770,14 +762,16 @@ namespace MatrixDotNet
                     negValue = -negValue;
                     negValue = ref Unsafe.Add(ref negValue, 1);
                 }
+
                 return negate;
             }
+
             return -matrix;
         }
 #endif
 
         /// <summary>
-        /// Returns negate matrix.
+        ///     Returns negate matrix.
         /// </summary>
         /// <param name="matrix">matrix</param>
         /// <returns>Negate matrix</returns>
@@ -785,8 +779,8 @@ namespace MatrixDotNet
         {
             var negate = new Matrix<T>(matrix._Matrix, matrix.Rows, matrix.Columns);
             Span<T> negateSpan = negate._Matrix;
-            ref T negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), 0);
-            for (int i = 0; i < matrix.Length; i++)
+            ref var negValue = ref Unsafe.Add(ref MemoryMarshal.GetReference(negateSpan), 0);
+            for (var i = 0; i < matrix.Length; i++)
             {
                 negValue = MathUnsafe<T>.Negate(negValue);
                 negValue = ref Unsafe.Add(ref negValue, 1);
@@ -796,7 +790,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Returns vector sum of each multiply element of row.
+        ///     Returns vector sum of each multiply element of row.
         /// </summary>
         /// <param name="matrix">matrix.</param>
         /// <param name="array">array.</param>
@@ -805,19 +799,15 @@ namespace MatrixDotNet
         public static T[] operator *(T[] array, Matrix<T> matrix)
         {
             if (array.Length != matrix.Columns)
-            {
                 throw new SizeNotEqualException(ExceptionArgument.ColumnOfMatrixIsNotEqualSizeOfVector);
-            }
 
-            T[] res = new T[array.Length];
+            var res = new T[array.Length];
 
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
             {
                 T sum = default;
-                for (int j = 0; j < matrix.Columns; j++)
-                {
+                for (var j = 0; j < matrix.Columns; j++)
                     sum = MathGeneric<T, T, T>.Add(sum, MathGeneric<T, T, T>.Multiply(matrix[j, i], array[j]));
-                }
 
                 if (i == array.Length)
                     break;
@@ -830,7 +820,7 @@ namespace MatrixDotNet
 
 
         /// <summary>
-        /// Returns vector sum of each multiply element of row.
+        ///     Returns vector sum of each multiply element of row.
         /// </summary>
         /// <param name="matrix">matrix.</param>
         /// <param name="array">array.</param>
@@ -839,33 +829,28 @@ namespace MatrixDotNet
         public static unsafe T[] operator *(Matrix<T> matrix, T[] array)
         {
             if (matrix.Rows != array.Length)
-            {
                 throw new SizeNotEqualException(ExceptionArgument.RowSizeOfMatrixIsNotEqualSizeOfVector);
-            }
 
-            int m = matrix.Rows;
-            int n = 1;
-            int K = matrix.Columns;
+            var m = matrix.Rows;
+            var n = 1;
+            var K = matrix.Columns;
 
-            T[] result = new T[m];
+            var result = new T[m];
             fixed (T* ptr1 = matrix._Matrix)
             fixed (T* ptr2 = array)
             fixed (T* ptr3 = result)
             {
-                Span<T> span1 = new Span<T>(ptr1, matrix.Length);
+                var span1 = new Span<T>(ptr1, matrix.Length);
 
-                for (int i = 0; i < m; i++)
+                for (var i = 0; i < m; i++)
                 {
-                    T* c = ptr3 + i * n;
+                    var c = ptr3 + i * n;
 
-                    for (int k = 0; k < K; k++)
+                    for (var k = 0; k < K; k++)
                     {
-                        T* b = ptr2 + k * n;
-                        T a = span1[i * K + k];
-                        for (int j = 0; j < n; j++)
-                        {
-                            c[j] = MathUnsafe<T>.Add(c[j], MathUnsafe<T>.Mul(a, b[j]));
-                        }
+                        var b = ptr2 + k * n;
+                        var a = span1[i * K + k];
+                        for (var j = 0; j < n; j++) c[j] = MathUnsafe<T>.Add(c[j], MathUnsafe<T>.Mul(a, b[j]));
                     }
                 }
 
@@ -874,7 +859,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Returns vector sum of each multiply element of row.
+        ///     Returns vector sum of each multiply element of row.
         /// </summary>
         /// <param name="matrix">matrix.</param>
         /// <param name="vector">vector.</param>
@@ -886,7 +871,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Returns vector sum of each multiply element of row.
+        ///     Returns vector sum of each multiply element of row.
         /// </summary>
         /// <param name="matrix">matrix.</param>
         /// <param name="vector">vector.</param>
@@ -898,26 +883,25 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Compares all values left matrix with right matrix.
-        /// Returns true if left matrix full equals right matrix.
+        ///     Compares all values left matrix with right matrix.
+        ///     Returns true if left matrix full equals right matrix.
         /// </summary>
         /// <param name="left">matrix A</param>
         /// <param name="right">matrix B</param>
-        /// <returns><see cref="Boolean"/></returns>
+        /// <returns>
+        ///     <see cref="Boolean" />
+        /// </returns>
         /// <exception cref="NullReferenceException">Throws if left or right matrix are null.</exception>
         public static bool operator ==(Matrix<T> left, Matrix<T> right)
         {
-            if (left is null || right is null)
-            {
-                throw new NullReferenceException();
-            }
+            if (left is null || right is null) throw new NullReferenceException();
 
             return left.Equals(right);
         }
 
         /// <summary>
-        /// Compares all values left matrix with right matrix.
-        /// Returns true if minimum one element of left matrix not equals right matrix.
+        ///     Compares all values left matrix with right matrix.
+        ///     Returns true if minimum one element of left matrix not equals right matrix.
         /// </summary>
         /// <param name="left"></param>
         /// <param name="right"></param>
@@ -932,12 +916,14 @@ namespace MatrixDotNet
         #region methods
 
         /// <summary>
-        /// <inheritdoc cref="object.ToString"/>
+        ///     <inheritdoc cref="object.ToString" />
         /// </summary>
-        /// <returns><see cref="string"/></returns>
+        /// <returns>
+        ///     <see cref="string" />
+        /// </returns>
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
             return MatrixExtension.Output(this, builder);
         }
 
@@ -947,7 +933,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Clones matrix.
+        ///     Clones matrix.
         /// </summary>
         /// <returns>object.</returns>
         public unsafe object Clone()
@@ -964,7 +950,7 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Implicit assign matrix.
+        ///     Implicit assign matrix.
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
@@ -974,74 +960,61 @@ namespace MatrixDotNet
         }
 
         /// <summary>
-        /// Implicit assign matrix.
+        ///     Implicit assign matrix.
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
         public static unsafe implicit operator Matrix<T>(T[][] matrix)
         {
             var columns = matrix[0].Length;
-            for (int i = 1; i < matrix.Length; i++)
+            for (var i = 1; i < matrix.Length; i++)
             {
                 var prefetch = matrix[i].Length;
-                columns = prefetch & ((columns - prefetch) >> 31) | columns & (~(columns - prefetch) >> 31);
+                columns = (prefetch & ((columns - prefetch) >> 31)) | (columns & (~(columns - prefetch) >> 31));
             }
 
             var result = new Matrix<T>(matrix.Length, columns);
 
             fixed (T* dstPtr = result._Matrix)
             {
-                for (int i = 0; i < matrix.Length; i++)
-                {
+                for (var i = 0; i < matrix.Length; i++)
                     fixed (T* srcPrt = matrix[i])
                     {
                         Unsafe.CopyBlock(dstPtr + i * result.Columns, srcPrt, (uint) (sizeof(T) * matrix[i].Length));
                     }
-                }
             }
 
             return result;
         }
 
-        public IEnumerator<T> GetEnumerator() =>
-            new Enumerator(this);
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new Enumerator(this);
+        }
 
 
         public override bool Equals(object obj)
         {
             var matrix = obj as Matrix<T>;
 
-            if (matrix is null || Rows != matrix.Rows || Columns != matrix.Columns)
+            if (matrix is null || Rows != matrix.Rows || Columns != matrix.Columns) return false;
+
+            if (matrix._Matrix == _Matrix) return true;
+
+            var i = 0;
+
+            for (; i < matrix.Length - System.Numerics.Vector<T>.Count; i += System.Numerics.Vector<T>.Count)
             {
-                return false;
-            }
+                var vectorA = new System.Numerics.Vector<T>(GetArray(), i);
+                var vectorB = new System.Numerics.Vector<T>(matrix.GetArray(), i);
+                var vector = Vector.EqualsAll(vectorA, vectorB);
 
-            if (matrix._Matrix == _Matrix)
-            {
-                return true;
-            }
-
-            int i = 0;
-
-            for (; i < matrix.Length - Vector<T>.Count; i += Vector<T>.Count)
-            {
-                var vectorA = new Vector<T>(GetArray(), i);
-                var vectorB = new Vector<T>(matrix.GetArray(), i);
-                bool vector = Vector.EqualsAll(vectorA, vectorB);
-
-                if (!vector)
-                {
-                    return false;
-                }
+                if (!vector) return false;
             }
 
             for (; i < matrix._Matrix.Length; i++)
-            {
                 if (!_Matrix[i].Equals(matrix._Matrix[i]))
-                {
                     return false;
-                }
-            }
 
             return true;
         }
@@ -1050,50 +1023,6 @@ namespace MatrixDotNet
         {
             // ReSharper disable once NonReadonlyMemberInGetHashCode
             return _Matrix.GetHashCode();
-        }
-
-        #endregion
-
-        #region enumerator
-
-        /// <summary>
-        /// Represents implementations IEnumerator.
-        /// </summary>
-        public struct Enumerator : IEnumerator<T>
-        {
-            private int _position;
-
-            private readonly Matrix<T> _matrix;
-
-            internal Enumerator(Matrix<T> matrix)
-            {
-                _position = -1;
-
-                _matrix = matrix;
-            }
-
-            public bool MoveNext()
-            {
-                ++_position;
-
-                return (_position >= 0 && _position < _matrix.Length);
-            }
-
-            public void Reset()
-            {
-                _position = -1;
-            }
-
-            public T Current => _matrix._Matrix[_position];
-
-            object IEnumerator.Current => Current;
-
-            /// <summary>
-            /// Isn't used here
-            /// </summary>
-            public void Dispose()
-            {
-            }
         }
 
         #endregion

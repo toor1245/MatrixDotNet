@@ -7,7 +7,7 @@ namespace MatrixDotNet.Vectorization
     public static partial class VectorExtension
     {
         /// <summary>
-        /// Gets minimal element of vector.
+        ///     Gets minimal element of vector.
         /// </summary>
         /// <param name="vector">vector</param>
         /// <typeparam name="T">unmanaged type</typeparam>
@@ -15,21 +15,17 @@ namespace MatrixDotNet.Vectorization
         {
             var comparer = Comparer<T>.Default;
 
-            T min = vector[0];
+            var min = vector[0];
 
-            for (int i = 1; i < vector.Length; i++)
-            {
+            for (var i = 1; i < vector.Length; i++)
                 if (comparer.Compare(min, vector[i]) > 0)
-                {
                     min = vector[i];
-                }
-            }
 
             return min;
         }
 
         /// <summary>
-        /// Gets minimal element of vector.
+        ///     Gets minimal element of vector.
         /// </summary>
         /// <param name="vector">vector</param>
         /// <typeparam name="T">unmanaged type</typeparam>
@@ -37,20 +33,16 @@ namespace MatrixDotNet.Vectorization
         {
             var comparer = Comparer<T>.Default;
 
-            T max = vector[0];
-            for (int i = 1; i < vector.Length; i++)
-            {
+            var max = vector[0];
+            for (var i = 1; i < vector.Length; i++)
                 if (comparer.Compare(max, vector[i]) < 0)
-                {
                     max = vector[i];
-                }
-            }
 
             return max;
         }
 
         /// <summary>
-        /// Sorts vector.
+        ///     Sorts vector.
         /// </summary>
         /// <param name="vector">vector</param>
         /// <typeparam name="T">unmanaged type</typeparam>
@@ -60,7 +52,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Reverse vector.
+        ///     Reverse vector.
         /// </summary>
         /// <param name="vector">vector</param>
         public static void Reverse(Vector<int> vector)
@@ -69,7 +61,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Reverse vector.
+        ///     Reverse vector.
         /// </summary>
         /// <param name="vector">vector</param>
         public static void Reverse(Vector<uint> vector)
@@ -78,7 +70,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Reverse vector.
+        ///     Reverse vector.
         /// </summary>
         /// <param name="vector">vector</param>
         public static void Reverse(Vector<long> vector)
@@ -87,7 +79,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Reverse vector.
+        ///     Reverse vector.
         /// </summary>
         /// <param name="vector">vector</param>
         public static void Reverse(Vector<ulong> vector)
@@ -96,7 +88,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Reverse vector.
+        ///     Reverse vector.
         /// </summary>
         /// <param name="vector">vector</param>
         public static void Reverse(Vector<double> vector)
@@ -105,7 +97,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Reverse vector.
+        ///     Reverse vector.
         /// </summary>
         /// <param name="vector">vector</param>
         public static void Reverse(Vector<float> vector)
@@ -114,7 +106,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Reverse vector.
+        ///     Reverse vector.
         /// </summary>
         /// <param name="vector">vector</param>
         public static void Reverse(Vector<byte> vector)
@@ -123,7 +115,7 @@ namespace MatrixDotNet.Vectorization
         }
 
         /// <summary>
-        /// Reverse vector.
+        ///     Reverse vector.
         /// </summary>
         /// <param name="vector">vector</param>
         public static void Reverse(Vector<sbyte> vector)

@@ -7,7 +7,7 @@ namespace MatrixDotNet.Extensions.Inverse
     public static partial class MatrixExtension
     {
         /// <summary>
-        /// Gets inverse matrix.
+        ///     Gets inverse matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Inverse matrix.</returns>
@@ -19,7 +19,7 @@ namespace MatrixDotNet.Extensions.Inverse
         }
 
         /// <summary>
-        /// Gets inverse matrix.
+        ///     Gets inverse matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Inverse matrix.</returns>
@@ -31,7 +31,7 @@ namespace MatrixDotNet.Extensions.Inverse
         }
 
         /// <summary>
-        /// Gets inverse matrix.
+        ///     Gets inverse matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <returns>Inverse matrix.</returns>

@@ -6,10 +6,7 @@ namespace MatrixDotNet.Vectorization
     {
         public static bool operator ==(Vector<T> a, Vector<T> b)
         {
-            if (a is null || b is null)
-            {
-                throw new NullReferenceException();
-            }
+            if (a is null || b is null) throw new NullReferenceException();
 
             return a.Equals(b);
         }

@@ -1,16 +1,13 @@
 ﻿using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Builder;
-using MatrixDotNet.Extensions.Conversion;
 using MatrixDotNet.Math;
-using System;
 
 namespace MatrixDotNet.Extensions.Determinants
 {
     public static partial class Determinant
     {
-
         /// <summary>
-        /// Gets determinant of matrix.
+        ///     Gets determinant of matrix.
         /// </summary>
         /// <param name="matrix">matrix.</param>
         /// <typeparam name="T">unmanaged type</typeparam>
@@ -19,22 +16,17 @@ namespace MatrixDotNet.Extensions.Determinants
         public static T GetDeterminant<T>(this Matrix<T> matrix)
             where T : unmanaged
         {
-            if (!matrix.IsSquare)
-            {
-                throw new MatrixNotSquareException();
-            }
+            if (!matrix.IsSquare) throw new MatrixNotSquareException();
 
             if (matrix.Length == 4)
-            {
                 return MathUnsafe<T>.Sub(
                     MathUnsafe<T>.Mul(matrix[0, 0], matrix[1, 1]),
                     MathUnsafe<T>.Mul(matrix[0, 1], matrix[1, 0]));
-            }
 
             T result = default;
             var sign = MathGeneric<T>.Increment(default);
 
-            for (int i = 0; i < matrix.Columns; i++)
+            for (var i = 0; i < matrix.Columns; i++)
             {
                 var minor = matrix.GetMinor(i);
                 var calc = MathUnsafe<T>.Mul(MathUnsafe<T>.Mul(sign, matrix[0, i]), GetDeterminant(minor));
@@ -46,7 +38,7 @@ namespace MatrixDotNet.Extensions.Determinants
         }
 
         /// <summary>
-        /// Gets determinant of corner Minor`s matrix
+        ///     Gets determinant of corner Minor`s matrix
         /// </summary>
         /// <param name="matrix">matrix</param>
         /// <param name="row">index</param>

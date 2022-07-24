@@ -7,26 +7,26 @@ namespace Samples.Samples.MatrixSamples
     {
         public static string Run()
         {
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
 
             // init matrix
-            int[,] a = new int[3, 3]
+            var a = new int[3, 3]
             {
-                {10, -7, 0},
-                {-3, 6, 2},
-                {5, -1, 5}
+                { 10, -7, 0 },
+                { -3, 6, 2 },
+                { 5, -1, 5 }
             };
 
-            int[,] b = new int[3, 4]
+            var b = new int[3, 4]
             {
-                {11, -2, 1, 6},
-                {-8, 4, 2, 3},
-                {4, -4, 5, 8},
+                { 11, -2, 1, 6 },
+                { -8, 4, 2, 3 },
+                { 4, -4, 5, 8 }
             };
 
-            int[] vector = {2, 7, 5, 4};
+            int[] vector = { 2, 7, 5, 4 };
 
-            int k = 3;
+            var k = 3;
 
             Matrix<int> matrixA = a;
             builder.AppendLine("matrix A:\n" + matrixA);
@@ -35,21 +35,21 @@ namespace Samples.Samples.MatrixSamples
             builder.AppendLine("matrix B:\n" + matrixB);
 
             // Multiply.
-            Matrix<int> matrixC = matrixA * matrixB;
+            var matrixC = matrixA * matrixB;
             builder.AppendLine("matrix C:\n" + matrixC);
-            Matrix<int> matrixD = matrixC * k;
+            var matrixD = matrixC * k;
             builder.AppendLine("matrix D:\n" + matrixD);
 
             // Sum.
-            Matrix<int> matrixE = matrixB + k * matrixB;
+            var matrixE = matrixB + k * matrixB;
             builder.AppendLine("matrix E:\n" + matrixE);
 
             // Subtract.
-            Matrix<int> matrixF = 2 * matrixA - matrixA;
+            var matrixF = 2 * matrixA - matrixA;
             builder.AppendLine("matrix F:\n" + matrixF);
 
             // Divide.
-            Matrix<int> matrixG = matrixA / 2;
+            var matrixG = matrixA / 2;
             builder.AppendLine("matrix G:\n" + matrixG);
 
             return builder.ToString();

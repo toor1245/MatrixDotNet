@@ -1,8 +1,8 @@
-using MatrixDotNet.Exceptions;
-using MatrixDotNet.Math;
 using System;
 using System.Collections.Generic;
+using MatrixDotNet.Exceptions;
 using MatrixDotNet.Extensions.Performance.Simd;
+using MatrixDotNet.Math;
 
 namespace MatrixDotNet.Extensions
 {
@@ -11,7 +11,7 @@ namespace MatrixDotNet.Extensions
         #region Sum
 
         /// <summary>
-        /// Summation matrix. 
+        ///     Summation matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -24,7 +24,7 @@ namespace MatrixDotNet.Extensions
         }
 
         /// <summary>
-        /// Gets sum by row of matrix.
+        ///     Gets sum by row of matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">row index.</param>
@@ -38,7 +38,7 @@ namespace MatrixDotNet.Extensions
         }
 
         /// <summary>
-        /// Gets sum by column of matrix.
+        ///     Gets sum by column of matrix.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <param name="dimension">column index.</param>
@@ -50,16 +50,13 @@ namespace MatrixDotNet.Extensions
         {
             T sum = default;
 
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                sum = MathUnsafe<T>.Add(sum, matrix[i, dimension]);
-            }
+            for (var i = 0; i < matrix.Rows; i++) sum = MathUnsafe<T>.Add(sum, matrix[i, dimension]);
 
             return sum;
         }
 
         /// <summary>
-        /// Gets array of sum rows.
+        ///     Gets array of sum rows.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -70,16 +67,13 @@ namespace MatrixDotNet.Extensions
         {
             var array = new T[matrix.Rows];
 
-            for (var i = 0; i < matrix.Rows; i++)
-            {
-                array[i] = Simd.Sum(matrix[i]);
-            }
+            for (var i = 0; i < matrix.Rows; i++) array[i] = Simd.Sum(matrix[i]);
 
             return array;
         }
 
         /// <summary>
-        /// Gets array of sum columns.
+        ///     Gets array of sum columns.
         /// </summary>
         /// <param name="matrix">the matrix.</param>
         /// <typeparam name="T">unmanaged type.</typeparam>
@@ -90,14 +84,11 @@ namespace MatrixDotNet.Extensions
         {
             var array = new T[matrix.Columns];
 
-            for (int i = 0; i < matrix.Columns; i++)
+            for (var i = 0; i < matrix.Columns; i++)
             {
                 T sum = default;
 
-                for (int j = 0; j < matrix.Rows; j++)
-                {
-                    sum = MathUnsafe<T>.Add(sum, matrix[j, i]);
-                }
+                for (var j = 0; j < matrix.Rows; j++) sum = MathUnsafe<T>.Add(sum, matrix[j, i]);
 
                 array[i] = sum;
             }
@@ -107,7 +98,7 @@ namespace MatrixDotNet.Extensions
 
 
         /// <summary>
-        /// Gets sum by diagonal.
+        ///     Gets sum by diagonal.
         /// </summary>
         /// <param name="matrix"></param>
         /// <typeparam name="T"></typeparam>
@@ -118,10 +109,7 @@ namespace MatrixDotNet.Extensions
         {
             T sum = default;
 
-            for (int i = 0; i < matrix.Rows; i++)
-            {
-                sum = MathUnsafe<T>.Add(sum, matrix[i, i]);
-            }
+            for (var i = 0; i < matrix.Rows; i++) sum = MathUnsafe<T>.Add(sum, matrix[i, i]);
 
             return sum;
         }
@@ -134,9 +122,7 @@ namespace MatrixDotNet.Extensions
             where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-            {
                 throw new MatrixDotNetException($"{typeof(T)} is not supported type must be floating type");
-            }
 
             T sum = default;
             T cs = default;
@@ -144,39 +130,30 @@ namespace MatrixDotNet.Extensions
 
             var comparer = Comparer<T>.Default;
 
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    T t = MathUnsafe<T>.Add(sum, matrix[i, j]);
-                    T error;
+                var t = MathUnsafe<T>.Add(sum, matrix[i, j]);
+                T error;
 
-                    if (comparer.Compare(MathGeneric<T>.Abs(sum), matrix[i, j]) >= 0)
-                    {
-                        error = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(sum, t), matrix[i, j]);
-                    }
-                    else
-                    {
-                        error = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(matrix[i, j], t), sum);
-                    }
+                if (comparer.Compare(MathGeneric<T>.Abs(sum), matrix[i, j]) >= 0)
+                    error = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(sum, t), matrix[i, j]);
+                else
+                    error = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(matrix[i, j], t), sum);
 
-                    sum = t;
-                    t = MathUnsafe<T>.Add(cs, cs);
-                    T error2;
+                sum = t;
+                t = MathUnsafe<T>.Add(cs, cs);
+                T error2;
 
-                    if (comparer.Compare(MathGeneric<T>.Abs(cs), error) >= 0)
-                    {
-                        error2 = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(error, t), cs);
-                    }
-                    else
-                    {
-                        error2 = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(cs, t), error);
-                    }
+                if (comparer.Compare(MathGeneric<T>.Abs(cs), error) >= 0)
+                    error2 = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(error, t), cs);
+                else
+                    error2 = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(cs, t), error);
 
-                    cs = t;
-                    ccs = MathUnsafe<T>.Add(ccs, error2);
-                }
+                cs = t;
+                ccs = MathUnsafe<T>.Add(ccs, error2);
             }
+
             return MathUnsafe<T>.Add(MathUnsafe<T>.Add(sum, cs), ccs);
         }
 
@@ -184,9 +161,7 @@ namespace MatrixDotNet.Extensions
             where T : unmanaged
         {
             if (!MathGeneric.IsFloatingPoint<T>())
-            {
                 throw new MatrixDotNetException($"{typeof(T)} is not supported type must be floating type");
-            }
 
             return state == State.Row ? GetKleinSumByRows(matrix, dimension) : GetKleinSumByColumns(matrix, dimension);
         }
@@ -200,36 +175,29 @@ namespace MatrixDotNet.Extensions
             T cs = default;
             T ccs = default;
 
-            for (int j = 0; j < matrix.Columns; j++)
+            for (var j = 0; j < matrix.Columns; j++)
             {
-                T t = MathUnsafe<T>.Add(sum, matrix[dimension, j]);
+                var t = MathUnsafe<T>.Add(sum, matrix[dimension, j]);
                 T error;
 
                 if (comparer.Compare(MathGeneric<T>.Abs(sum), matrix[dimension, j]) >= 0)
-                {
                     error = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(sum, t), matrix[dimension, j]);
-                }
                 else
-                {
                     error = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(matrix[dimension, j], t), sum);
-                }
 
                 sum = t;
                 t = MathUnsafe<T>.Add(cs, cs);
                 T error2;
 
                 if (comparer.Compare(MathGeneric<T>.Abs(cs), error) >= 0)
-                {
                     error2 = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(error, t), cs);
-                }
                 else
-                {
                     error2 = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(cs, t), error);
-                }
 
                 cs = t;
                 ccs = MathUnsafe<T>.Add(ccs, error2);
             }
+
             return MathUnsafe<T>.Add(MathUnsafe<T>.Add(sum, cs), ccs);
         }
 
@@ -242,39 +210,31 @@ namespace MatrixDotNet.Extensions
 
             var comparer = Comparer<T>.Default;
 
-            for (int j = 0; j < matrix.Rows; j++)
+            for (var j = 0; j < matrix.Rows; j++)
             {
-                T t = MathUnsafe<T>.Add(sum, matrix[j, dimension]);
+                var t = MathUnsafe<T>.Add(sum, matrix[j, dimension]);
                 T error;
 
                 if (comparer.Compare(MathGeneric<T>.Abs(sum), matrix[j, dimension]) >= 0)
-                {
                     error = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(sum, t), matrix[j, dimension]);
-                }
                 else
-                {
                     error = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(matrix[j, dimension], t), sum);
-                }
 
                 sum = t;
                 t = MathUnsafe<T>.Add(cs, cs);
                 T error2;
 
                 if (comparer.Compare(MathGeneric<T>.Abs(cs), error) >= 0)
-                {
                     error2 = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(error, t), cs);
-                }
                 else
-                {
                     error2 = MathUnsafe<T>.Add(MathUnsafe<T>.Sub(cs, t), error);
-                }
 
                 cs = t;
                 ccs = MathUnsafe<T>.Add(ccs, error2);
             }
+
             return MathUnsafe<T>.Add(MathUnsafe<T>.Add(sum, cs), ccs);
         }
-
 
         #endregion
 
@@ -285,15 +245,13 @@ namespace MatrixDotNet.Extensions
         {
             T sum = default;
             T error = default;
-            for (int i = 0; i < matrix.Rows; i++)
+            for (var i = 0; i < matrix.Rows; i++)
+            for (var j = 0; j < matrix.Columns; j++)
             {
-                for (int j = 0; j < matrix.Columns; j++)
-                {
-                    T y = MathUnsafe<T>.Sub(matrix[i, j], error);
-                    T t = MathUnsafe<T>.Add(sum, y);
-                    error = MathUnsafe<T>.Sub(MathUnsafe<T>.Sub(t, sum), matrix[i, j]);
-                    sum = t;
-                }
+                var y = MathUnsafe<T>.Sub(matrix[i, j], error);
+                var t = MathUnsafe<T>.Add(sum, y);
+                error = MathUnsafe<T>.Sub(MathUnsafe<T>.Sub(t, sum), matrix[i, j]);
+                sum = t;
             }
 
             return sum;
@@ -305,25 +263,21 @@ namespace MatrixDotNet.Extensions
             T sum = default;
             T error = default;
             if (state == State.Row)
-            {
-                for (int i = 0; i < matrix.Columns; i++)
+                for (var i = 0; i < matrix.Columns; i++)
                 {
-                    T y = MathUnsafe<T>.Sub(matrix[dimension, i], error);
-                    T t = MathUnsafe<T>.Add(sum, y);
+                    var y = MathUnsafe<T>.Sub(matrix[dimension, i], error);
+                    var t = MathUnsafe<T>.Add(sum, y);
                     error = MathUnsafe<T>.Sub(MathUnsafe<T>.Sub(t, sum), matrix[dimension, i]);
                     sum = t;
                 }
-            }
             else
-            {
-                for (int i = 0; i < matrix.Rows; i++)
+                for (var i = 0; i < matrix.Rows; i++)
                 {
-                    T y = MathUnsafe<T>.Sub(matrix[i, dimension], error);
-                    T t = MathUnsafe<T>.Add(sum, y);
+                    var y = MathUnsafe<T>.Sub(matrix[i, dimension], error);
+                    var t = MathUnsafe<T>.Add(sum, y);
                     error = MathUnsafe<T>.Sub(MathUnsafe<T>.Sub(t, sum), matrix[i, dimension]);
                     sum = t;
                 }
-            }
 
             return sum;
         }

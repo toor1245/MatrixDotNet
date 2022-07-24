@@ -1,5 +1,4 @@
 using System;
-using MatrixDotNet;
 using MatrixDotNet.Extensions;
 using MatrixDotNet.Extensions.Builder;
 using MatrixDotNet.Extensions.Decompositions;
@@ -11,7 +10,7 @@ namespace Samples.Samples.MatrixSamples
         public static void Run()
         {
             // initialize matrix with random values.
-            Matrix<double> matrix = BuildMatrix.RandomDouble(3, 3, -10, 10);
+            var matrix = BuildMatrix.RandomDouble(3, 3, -10, 10);
 
             // display matrix.
             matrix.Pretty();

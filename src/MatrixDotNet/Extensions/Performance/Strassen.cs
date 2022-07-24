@@ -4,15 +4,12 @@ using MatrixDotNet.Extensions.Conversion;
 
 namespace MatrixDotNet.Extensions.Performance
 {
-    public static partial class Optimization
+    public static class Optimization
     {
         public static async ValueTask<Matrix<T>> MultiplyStrassenAsync<T>(Matrix<T> a, Matrix<T> b)
             where T : unmanaged
         {
-            if (a.Rows > 5000)
-            {
-                throw new MatrixDotNetException("Matrix is much big size your CPU will be on 100%");
-            }
+            if (a.Rows > 5000) throw new MatrixDotNetException("Matrix is much big size your CPU will be on 100%");
 
             return await MultiplyStrassenParallel(a, b);
         }
@@ -20,10 +17,7 @@ namespace MatrixDotNet.Extensions.Performance
         private static ValueTask<Matrix<T>> MultiplyStrassenParallel<T>(Matrix<T> a, Matrix<T> b)
             where T : unmanaged
         {
-            if (a.Rows <= 64)
-            {
-                return new ValueTask<Matrix<T>>(a * b);
-            }
+            if (a.Rows <= 64) return new ValueTask<Matrix<T>>(a * b);
 
             a.SplitMatrix(out var a11, out var a12, out var a21, out var a22);
             b.SplitMatrix(out var b11, out var b12, out var b21, out var b22);
@@ -49,10 +43,7 @@ namespace MatrixDotNet.Extensions.Performance
         public static Matrix<T> MultiplyStrassen<T>(Matrix<T> a, Matrix<T> b)
             where T : unmanaged
         {
-            if (a.Rows <= 64)
-            {
-                return a * b;
-            }
+            if (a.Rows <= 64) return a * b;
 
             a.SplitMatrix(out var a11, out var a12, out var a21, out var a22);
             b.SplitMatrix(out var b11, out var b12, out var b21, out var b22);

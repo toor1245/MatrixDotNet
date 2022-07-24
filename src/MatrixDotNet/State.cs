@@ -1,7 +1,7 @@
 namespace MatrixDotNet
 {
     /// <summary>
-    /// State column or row
+    ///     State column or row
     /// </summary>
     public enum State
     {

@@ -1,7 +1,7 @@
 namespace MatrixDotNet.Extensions.Criteries
 {
     /// <summary>
-    /// Represents quadratic form.
+    ///     Represents quadratic form.
     /// </summary>
     public enum DefiniteType
     {
