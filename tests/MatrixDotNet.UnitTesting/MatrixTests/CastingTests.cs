@@ -10,7 +10,7 @@ namespace MatrixDotNetTests.MatrixTests
         [Test]
         public void FromJaggedArray_HappyPath()
         {
-            Matrix<int> expected = new Matrix<int>(new [,]
+            Matrix<int> expected = new Matrix<int>(new[,]
             {
                 { 15, 67, 97 },
                 { 98, 1, 7 },
@@ -31,7 +31,7 @@ namespace MatrixDotNetTests.MatrixTests
         [Test]
         public void FromJaggedArray_DifferentLength()
         {
-            Matrix<int> expected = new Matrix<int>(new [,]
+            Matrix<int> expected = new Matrix<int>(new[,]
             {
                 { 15, 67, 0 },
                 { 98, 0, 0 },
@@ -68,7 +68,7 @@ namespace MatrixDotNetTests.MatrixTests
         [Test]
         public void FromJaggedArray_EmptyArray()
         {
-            int[][] array = {};
+            int[][] array = { };
 
             Assert.Catch<Exception>(() =>
             {

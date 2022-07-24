@@ -18,7 +18,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
             _matrix1 = BuildMatrix.RandomByte(Size, Size, 0, 100);
             _matrix2 = BuildMatrix.RandomByte(Size, Size, 0, 100);
         }
-        
+
         [Benchmark]
         public async ValueTask<Matrix<byte>> StrassenParallel()
         {
@@ -30,7 +30,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
         {
             return Optimization.MultiplyStrassen(_matrix1, _matrix2);
         }
-        
+
         [Benchmark]
         public Matrix<byte> Default()
         {

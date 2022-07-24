@@ -16,7 +16,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
             arr2 = new int[15];
             arr.Add(1024);
             arr.Add(1024);
-            for (int i = 0; i < arr2.Length ; i++)
+            for (int i = 0; i < arr2.Length; i++)
             {
                 if ((i & 0b1) == 0)
                 {
@@ -26,7 +26,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
                 {
                     arr.Add(i);
                 }
-                
+
             }
         }
 
@@ -48,7 +48,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
             }
             return count;
         }
-        
+
         [Benchmark]
         public int CountEqualFor()
         {
@@ -63,6 +63,6 @@ namespace MatrixDotNet.PerformanceTesting.Other
             }
             return count;
         }
-        
+
     }
 }

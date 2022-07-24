@@ -11,7 +11,7 @@ namespace Samples
             {
                 Assert.Pass();
             }
-            
+
             SampleRunner.Run(GetType());
         }
     }

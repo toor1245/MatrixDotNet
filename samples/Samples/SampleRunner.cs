@@ -36,7 +36,7 @@ namespace Samples
 
             foreach (var mi in methods)
             {
-                var call = (string) mi.Invoke(t, new object[] { });
+                var call = (string)mi.Invoke(t, new object[] { });
                 using var sw =
                     new StreamWriter(Path.GetRelativePath(@".", Path.Combine(LogsFolder, t.Name, mi.Name + ".txt")), false);
                 sw.WriteLine(call);

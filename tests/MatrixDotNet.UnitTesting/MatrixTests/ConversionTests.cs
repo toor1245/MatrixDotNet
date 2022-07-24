@@ -10,7 +10,7 @@ namespace MatrixDotNetTests.MatrixTests
     public class ConversionTests
     {
         #region ReduceColumn
-        
+
         [Fact]
         public void ReduceColumnTest_ReduceFirstColumn_AssertMustBeEqual()
         {
@@ -21,21 +21,21 @@ namespace MatrixDotNetTests.MatrixTests
                 {2, 9, 2, 8, 1},
                 {3, 4, 7, 3, 1}
             };
-            
-            Matrix<int> expected =  new[,]
+
+            Matrix<int> expected = new[,]
             {
                 { 3, 4, 5, 6},
                 { 9, 2, 8, 1},
                 { 4, 7, 3, 1}
             };
-            
+
             // Act 
             var actual = matrix.ReduceColumn(0);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void ReduceColumnTest_ReduceLastColumn_AssertMustBeEqual()
         {
@@ -46,21 +46,21 @@ namespace MatrixDotNetTests.MatrixTests
                 {2, 9, 2, 8, 1},
                 {3, 4, 7, 3, 1}
             };
-            
-            Matrix<int> expected =  new[,]
+
+            Matrix<int> expected = new[,]
             {
                 {2, 3, 4, 5,},
                 {2, 9, 2, 8},
                 {3, 4, 7, 3}
             };
-            
+
             // Act 
             var actual = matrix.ReduceColumn(4);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void ReduceColumnTest_ReduceTwoColumnWhereColumnsLessThanRows_AssertMustBeEqual()
         {
@@ -72,22 +72,22 @@ namespace MatrixDotNetTests.MatrixTests
                 { 3, 4, 7 },
                 { 3, 4, 7 }
             };
-            
-            Matrix<int> expected =  new[,]
+
+            Matrix<int> expected = new[,]
             {
                 { 2,  4 },
                 { 2,  2 },
                 { 3,  7 },
                 { 3,  7 }
             };
-            
+
             // Act 
             var actual = matrix.ReduceColumn(1);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void ReduceColumnTest_ReduceTwoColumnWhereColumnsMoreThanRows_AssertMustBeEqual()
         {
@@ -98,35 +98,35 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2,9 },
                 { 3, 4, 7,10 }
             };
-            
-            Matrix<int> expected =  new[,]
+
+            Matrix<int> expected = new[,]
             {
                 { 2, 4, 8 },
                 { 2, 2, 9 },
                 { 3, 7, 10 }
             };
-            
+
             // Act 
             var actual = matrix.ReduceColumn(1);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void ReduceColumnTest_ThrowsNullReferenceException_AssertMustThrowsNullReferenceException()
         {
             // Arrange
             Matrix<int> matrix = null;
-            
+
             // Assert Act 
             Assert.Throws<NullReferenceException>(() => matrix.ReduceColumn(0));
         }
-        
+
         #endregion
-        
+
         #region ReduceRow
-        
+
         [Fact]
         public void ReduceRowTest_ReduceFirstRow_AssertMustBeEqual()
         {
@@ -137,20 +137,20 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2, 8, 1 },
                 { 3, 4, 7, 3, 1 }
             };
-            
+
             Matrix<int> expected = new[,]
             {
                 {2, 9, 2, 8, 1},
                 {3, 4, 7, 3, 1}
             };
-            
+
             // Act 
             var actual = matrix.ReduceRow(0);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void ReduceRowTest_ReduceLastRow_AssertMustBeEqual()
         {
@@ -161,20 +161,20 @@ namespace MatrixDotNetTests.MatrixTests
                 {2, 9, 2, 8, 1},
                 {3, 4, 7, 3, 1}
             };
-            
-            Matrix<int> expected =  new[,]
+
+            Matrix<int> expected = new[,]
             {
                 {2, 3, 4, 5, 6},
                 {2, 9, 2, 8, 1},
             };
-            
+
             // Act 
             var actual = matrix.ReduceRow(2);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void ReduceRowTest_ReduceTwoColumnWhereRowsMoreThanColumns_AssertMustBeEqual()
         {
@@ -186,21 +186,21 @@ namespace MatrixDotNetTests.MatrixTests
                 { 3, 4, 7 },
                 { 3, 4, 7 }
             };
-            
-            Matrix<int> expected =  new[,]
+
+            Matrix<int> expected = new[,]
             {
                 { 1, 3, 4 },
                 { 3, 4, 7 },
                 { 3, 4, 7 }
             };
-            
+
             // Act 
             var actual = matrix.ReduceRow(1);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void ReduceRowTest_ReduceTwoRowWhereRowsLessThanRows_AssertMustBeEqual()
         {
@@ -211,30 +211,30 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2,9 },
                 { 3, 4, 7,10 }
             };
-            
-            Matrix<int> expected =  new[,]
+
+            Matrix<int> expected = new[,]
             {
                 { 2, 3, 4,8 },
                 { 3, 4, 7,10 }
             };
-            
+
             // Act 
             var actual = matrix.ReduceRow(1);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void ReduceRowTest_ThrowsNullReferenceException_AssertMustThrowsNullReferenceException()
         {
             // Arrange
             Matrix<int> matrix = null;
-            
+
             // Assert Act 
             Assert.Throws<NullReferenceException>(() => matrix.ReduceRow(0));
         }
-        
+
         #endregion
 
         #region AddColumn
@@ -249,23 +249,23 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2, 8, 1},
                 { 3, 4, 7, 3, 1}
             };
-            
-            int[] arr = {1, 2, 3};
-            
-            Matrix<int> expected =  new[,]
+
+            int[] arr = { 1, 2, 3 };
+
+            Matrix<int> expected = new[,]
             {
                 { 1, 2, 3, 4, 5, 6},
                 { 2, 2, 9, 2, 8, 1},
                 { 3, 3, 4, 7, 3, 1}
             };
-            
+
             // Act 
-            var actual = matrix.AddColumn(arr,0);
-            
+            var actual = matrix.AddColumn(arr, 0);
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void AddColumnTest_AddLastColumn_AssertMustBeEqual()
         {
@@ -276,23 +276,23 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2, 8, 1},
                 { 3, 4, 7, 3, 1}
             };
-            
-            int[] arr = {1, 2, 3};
-            
-            Matrix<int> expected =  new[,]
+
+            int[] arr = { 1, 2, 3 };
+
+            Matrix<int> expected = new[,]
             {
                 { 2, 3, 4, 5, 6, 1},
                 { 2, 9, 2, 8, 1, 2},
                 { 3, 4, 7, 3, 1, 3}
             };
-            
+
             // Act 
-            var actual = matrix.AddColumn(arr,5);
-            
+            var actual = matrix.AddColumn(arr, 5);
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void AddColumnTest_AddIndexThreeColumn_AssertMustBeEqual()
         {
@@ -303,37 +303,37 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2},
                 { 3, 4, 7}
             };
-            
-            int[] arr = {1, 2, 3};
-            
-            Matrix<int> expected =  new[,]
+
+            int[] arr = { 1, 2, 3 };
+
+            Matrix<int> expected = new[,]
             {
                 { 2, 3, 1, 4},
                 { 2, 9, 2, 2},
                 { 3, 4, 3, 7}
             };
-            
+
             // Act 
-            var actual = matrix.AddColumn(arr,2);
-            
+            var actual = matrix.AddColumn(arr, 2);
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void AddColumnTest_ThrowsNullReferenceException_AssertMustThrowsNullReferenceException()
         {
             // Arrange
             Matrix<int> matrix = null;
-            
+
             // Assert Act 
-            Assert.Throws<NullReferenceException>(() => matrix.AddColumn(new int[]{1,2,3},0));
+            Assert.Throws<NullReferenceException>(() => matrix.AddColumn(new int[] { 1, 2, 3 }, 0));
         }
 
         #endregion
 
         #region AddRow
-        
+
         [Fact]
         public void AddRowTest_AddFirstIndexRow_AssertMustBeEqual()
         {
@@ -344,24 +344,24 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2, 8, 1},
                 { 3, 4, 7, 3, 1}
             };
-            
-            int[] arr = {1, 2, 3, 4, 5};
-            
-            Matrix<int> expected =  new[,]
+
+            int[] arr = { 1, 2, 3, 4, 5 };
+
+            Matrix<int> expected = new[,]
             {
                 { 1, 2, 3, 4, 5},
                 { 2, 3, 4, 5, 6},
                 { 2, 9, 2, 8, 1},
                 { 3, 4, 7, 3, 1}
             };
-            
+
             // Act 
-            var actual = matrix.AddRow(arr,0);
-            
+            var actual = matrix.AddRow(arr, 0);
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void AddRowTest_AddLastIndexOfRow_AssertMustBeEqual()
         {
@@ -372,26 +372,26 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2, 8, 1},
                 { 3, 4, 7, 3, 1}
             };
-            
-            int[] arr = {1, 2, 3, 4 ,5};
-            
-            Matrix<int> expected =  new[,]
+
+            int[] arr = { 1, 2, 3, 4, 5 };
+
+            Matrix<int> expected = new[,]
             {
-                
+
                 { 2, 3, 4, 5, 6},
                 { 2, 9, 2, 8, 1},
                 { 3, 4, 7, 3, 1},
                 { 1, 2, 3, 4 ,5}
             };
-            
+
             // Act 
-            var actual = matrix.AddRow(arr,3);
-            
+            var actual = matrix.AddRow(arr, 3);
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
-        
+
+
         [Fact]
         public void AddRowTest_AddIndexTwoRow_AssertMustBeEqual()
         {
@@ -402,38 +402,38 @@ namespace MatrixDotNetTests.MatrixTests
                 { 2, 9, 2, 8, 1},
                 { 3, 4, 7, 3, 1}
             };
-            
-            int[] arr = { 1, 2, 3, 4 ,5};
-            
-            Matrix<int> expected =  new[,]
+
+            int[] arr = { 1, 2, 3, 4, 5 };
+
+            Matrix<int> expected = new[,]
             {
-                
+
                 { 2, 3, 4, 5, 6},
                 { 2, 9, 2, 8, 1},
                 { 1, 2, 3, 4 ,5},
                 { 3, 4, 7, 3, 1},
             };
-            
+
             // Act 
-            var actual = matrix.AddRow(arr,2);
-            
+            var actual = matrix.AddRow(arr, 2);
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void AddRowTest_ThrowsNullReferenceException_AssertMustThrowsNullReferenceException()
         {
             // Arrange
             Matrix<int> matrix = null;
-            
+
             // Assert Act 
-            Assert.Throws<NullReferenceException>(() => matrix.AddRow(new int[]{1,2,3},0));
+            Assert.Throws<NullReferenceException>(() => matrix.AddRow(new int[] { 1, 2, 3 }, 0));
         }
         #endregion
 
         #region Negate
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -463,7 +463,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -493,7 +493,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -523,7 +523,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -553,16 +553,16 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         #endregion
 
         #region Reverse
-        
-        [Fact] 
+
+        [Fact]
         public void ReverseTest_AssertMustBeEqual()
         {
             // Arrange
-            Matrix<int> matrixA = new [,]
+            Matrix<int> matrixA = new[,]
             {
                 { 1,  2,  3,  4,  5,  6  },
                 { 7,  8,  9,  10, 11, 12 },
@@ -571,7 +571,7 @@ namespace MatrixDotNetTests.MatrixTests
                 { 25, 26, 27, 28, 29, 30 },
                 { 31, 32, 33, 34, 35, 36 }
             };
-            Matrix<int> expected = new [,]
+            Matrix<int> expected = new[,]
             {
                 { 36, 35, 34, 33, 32, 31 },
                 { 30, 29, 28, 27, 26, 25 },
@@ -587,7 +587,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, matrixA);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -610,12 +610,12 @@ namespace MatrixDotNetTests.MatrixTests
             Matrix<int> expected = new Matrix<int>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
-            
+
             for (int i = 0; i < arr1.Length; i++)
             {
                 arr1[i] = i;
             }
-            
+
             for (int i = 0; i < arr2.Length; i++)
             {
                 arr2[i] = arr2.Length - i - 1;
@@ -627,7 +627,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, matrixA);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -650,12 +650,12 @@ namespace MatrixDotNetTests.MatrixTests
             Matrix<float> expected = new Matrix<float>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
-            
+
             for (int i = 0; i < arr1.Length; i++)
             {
                 arr1[i] = i;
             }
-            
+
             for (int i = 0; i < arr2.Length; i++)
             {
                 arr2[i] = arr2.Length - i - 1;
@@ -667,8 +667,8 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, matrixA);
         }
-        
-        
+
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -691,12 +691,12 @@ namespace MatrixDotNetTests.MatrixTests
             Matrix<double> expected = new Matrix<double>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
-            
+
             for (int i = 0; i < arr1.Length; i++)
             {
                 arr1[i] = i;
             }
-            
+
             for (int i = 0; i < arr2.Length; i++)
             {
                 arr2[i] = arr2.Length - i - 1;
@@ -708,7 +708,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, matrixA);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -731,15 +731,15 @@ namespace MatrixDotNetTests.MatrixTests
             Matrix<byte> expected = new Matrix<byte>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
-            
+
             for (byte i = 0; i < arr1.Length; i++)
             {
                 arr1[i] = i;
             }
-            
+
             for (byte i = 0; i < arr2.Length; i++)
             {
-                arr2[i] = (byte) (arr2.Length - i - 1);
+                arr2[i] = (byte)(arr2.Length - i - 1);
             }
 
             // Act
@@ -748,7 +748,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, matrixA);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -768,16 +768,16 @@ namespace MatrixDotNetTests.MatrixTests
         {
             // Arrange
             Matrix<byte> actual = BuildMatrix.RandomByte(m, n);
-            Matrix<byte> matrixB = (Matrix<byte>) actual.Clone();
+            Matrix<byte> matrixB = (Matrix<byte>)actual.Clone();
             var expected = matrixB.GetArray().Reverse();
-            
+
             // Act
             MatrixConverter.Reverse(actual.GetArray());
 
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -802,12 +802,12 @@ namespace MatrixDotNetTests.MatrixTests
             Matrix<long> expected = new Matrix<long>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
-            
+
             for (int i = 0; i < arr1.Length; i++)
             {
                 arr1[i] = i;
             }
-            
+
             for (int i = 0; i < arr2.Length; i++)
             {
                 arr2[i] = arr2.Length - i - 1;
@@ -819,7 +819,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, matrixA);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -842,15 +842,15 @@ namespace MatrixDotNetTests.MatrixTests
             Matrix<sbyte> expected = new Matrix<sbyte>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
-            
+
             for (byte i = 0; i < arr1.Length; i++)
             {
-                arr1[i] = (sbyte) i;
+                arr1[i] = (sbyte)i;
             }
-            
+
             for (byte i = 0; i < arr2.Length; i++)
             {
-                arr2[i] = (sbyte) (arr2.Length - i - 1);
+                arr2[i] = (sbyte)(arr2.Length - i - 1);
             }
 
             // Act
@@ -859,7 +859,7 @@ namespace MatrixDotNetTests.MatrixTests
             // Assert
             Assert.Equal(expected, matrixA);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -879,16 +879,16 @@ namespace MatrixDotNetTests.MatrixTests
         {
             // Arrange
             Matrix<sbyte> actual = BuildMatrix.RandomSByte(m, n);
-            Matrix<sbyte> matrixB = (Matrix<sbyte>) actual.Clone();
+            Matrix<sbyte> matrixB = (Matrix<sbyte>)actual.Clone();
             var expected = matrixB.GetArray().Reverse();
-            
+
             // Act
             MatrixConverter.Reverse(actual.GetArray());
 
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -911,24 +911,24 @@ namespace MatrixDotNetTests.MatrixTests
             Matrix<uint> expected = new Matrix<uint>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
-            
+
             for (uint i = 0; i < arr1.Length; i++)
             {
                 arr1[i] = i;
             }
-            
+
             for (uint i = 0; i < arr2.Length; i++)
             {
-                arr2[i] = (uint) (arr2.Length - i - 1);
+                arr2[i] = (uint)(arr2.Length - i - 1);
             }
-            
+
             // Act
             MatrixConverter.Reverse(matrixA.GetArray());
 
             // Assert
             Assert.Equal(expected, matrixA);
         }
-        
+
         [Theory]
         [InlineData(1, 1)]
         [InlineData(2, 1)]
@@ -953,15 +953,15 @@ namespace MatrixDotNetTests.MatrixTests
             Matrix<ulong> expected = new Matrix<ulong>(m, n);
             var arr1 = matrixA.GetArray();
             var arr2 = expected.GetArray();
-            
+
             for (uint i = 0; i < arr1.Length; i++)
             {
                 arr1[i] = i;
             }
-            
+
             for (uint i = 0; i < arr2.Length; i++)
             {
-                arr2[i] = (ulong) (arr2.Length - i - 1);
+                arr2[i] = (ulong)(arr2.Length - i - 1);
             }
 
             // Act
@@ -987,14 +987,14 @@ namespace MatrixDotNetTests.MatrixTests
                 matrixA.GetArray()[i] = i;
             }
             var expected = matrixA.Transpose();
-            
+
             // Act
             var actual = matrixA.TransposeXVectorSize();
-            
+
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         #endregion
     }
 }

@@ -13,13 +13,13 @@ namespace MatrixDotNet.PerformanceTesting.Other
         public double[] C = new double[N];
         public double[] D = new double[N];
         public double[] E = new double[N];
-        
+
         [IterationSetup]
         public void Setup()
         {
             for (int i = 0; i < A.Length; i++)
             {
-                if ((i & 0b1) == 0 )
+                if ((i & 0b1) == 0)
                 {
                     A[i] = i;
                 }
@@ -38,7 +38,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
         [Benchmark]
         public void WithoutVMaskMov()
         {
-            
+
             for (int i = 0; i < A.Length; i++)
             {
                 if (A[i] > 0)
@@ -51,7 +51,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
                 }
             }
         }
-        
+
         [Benchmark]
         public unsafe void VMaskMov()
         {
@@ -69,21 +69,21 @@ namespace MatrixDotNet.PerformanceTesting.Other
                 while (i < source.Length - 4)
                 {
                     var ymm1 = Avx.LoadVector256(ptrA + i);
-                    var ymm2 = Avx.Compare(ymm8,ymm1, FloatComparisonMode.OrderedGreaterThanSignaling);
-                    var ymm4 = Avx.MaskLoad(ptrC + i,ymm2);
-                    ymm2 = Avx.Xor(ymm9,ymm2);
-                    var ymm5 = Avx.MaskLoad(ptrD + i,ymm2);
-                    ymm4 = Avx.Or(ymm4,ymm5);
+                    var ymm2 = Avx.Compare(ymm8, ymm1, FloatComparisonMode.OrderedGreaterThanSignaling);
+                    var ymm4 = Avx.MaskLoad(ptrC + i, ymm2);
+                    ymm2 = Avx.Xor(ymm9, ymm2);
+                    var ymm5 = Avx.MaskLoad(ptrD + i, ymm2);
+                    ymm4 = Avx.Or(ymm4, ymm5);
                     ymm4 = Avx.Multiply(ymm4, Avx.LoadVector256(ptrE + i));
-                    Avx.Store(ptrB + i,ymm4);
+                    Avx.Store(ptrB + i, ymm4);
                     i += 4;
                 }
-                
-                var spanB = new Span<double>(ptrB,B.Length);
-                var spanC = new Span<double>(ptrC,C.Length);
-                var spanD = new Span<double>(ptrD,D.Length);
-                var spanE = new Span<double>(ptrE,E.Length);
-                
+
+                var spanB = new Span<double>(ptrB, B.Length);
+                var spanC = new Span<double>(ptrC, C.Length);
+                var spanD = new Span<double>(ptrD, D.Length);
+                var spanE = new Span<double>(ptrE, E.Length);
+
                 while (i < source.Length)
                 {
                     if (source[i] > 0)

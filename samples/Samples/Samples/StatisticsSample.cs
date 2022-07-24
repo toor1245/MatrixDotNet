@@ -19,7 +19,7 @@ namespace Samples.Samples
             };
 
             // choose column which will be mark.
-            TableIntervals[] table = {TableIntervals.Xi, TableIntervals.Ni};
+            TableIntervals[] table = { TableIntervals.Xi, TableIntervals.Ni };
 
             // sets configuration for intervals
             var configIntervals = new ConfigIntervals<double>(matrix, table);

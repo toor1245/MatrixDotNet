@@ -12,7 +12,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
         private Matrix<byte> _matrixByte;
         private Matrix<float> _matrixFloat;
         private Matrix<double> _matrixDouble;
-        
+
         [GlobalSetup]
         public void Setup()
         {
@@ -21,7 +21,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
             _matrixFloat = BuildMatrix.RandomFloat(1024, 1024, 0, 20);
             _matrixDouble = BuildMatrix.RandomDouble(1024, 1024, 0, 20);
         }
-        
+
         [Benchmark]
         public void ReverseIntBcl()
         {
@@ -33,37 +33,37 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
         {
             MatrixConverter.Reverse(_matrix.GetArray());
         }
-        
+
         [Benchmark]
         public void ReverseByteBcl()
         {
             Array.Reverse(_matrixByte.GetArray());
         }
-        
+
         [Benchmark]
         public void ReverseByteSimd()
         {
             MatrixConverter.Reverse(_matrixByte);
         }
-        
+
         [Benchmark]
         public void ReverseFloatBcl()
         {
             Array.Reverse(_matrixFloat.GetArray());
         }
-        
+
         [Benchmark]
         public void ReverseFloatSimd()
         {
             MatrixConverter.Reverse(_matrixFloat);
         }
-        
+
         [Benchmark]
         public void ReverseDoubleBcl()
         {
             Array.Reverse(_matrixDouble.GetArray());
         }
-        
+
         [Benchmark]
         public void ReverseDoubleSimd()
         {

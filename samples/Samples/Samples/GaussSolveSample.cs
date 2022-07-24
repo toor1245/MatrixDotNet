@@ -16,7 +16,7 @@ namespace Samples.Samples
                 {5, 9, 15}
             };
 
-            double[] right = {1, 23, 5};
+            double[] right = { 1, 23, 5 };
 
             double[] res = matrix.GaussSolve(right);
             for (var i = 0; i < res.Length; i++)
