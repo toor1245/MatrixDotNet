@@ -11,7 +11,7 @@ namespace Samples
         public static void Parse(string src, string path, Type type)
         {
             _source = File.ReadAllText(src);
-            string[] stringSeparators = {"\r\n"};
+            string[] stringSeparators = { "\r\n" };
 
             _source = _source.Replace("string", "void");
 

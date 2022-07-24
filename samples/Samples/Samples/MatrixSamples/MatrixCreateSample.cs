@@ -8,7 +8,7 @@ namespace Samples.Samples.MatrixSamples
         public static string Run()
         {
             StringBuilder builder = new StringBuilder();
-            
+
             int[,] a = new int[3, 3]
             {
                 {10, -7, 0},
@@ -39,7 +39,7 @@ namespace Samples.Samples.MatrixSamples
 
             Matrix<int> matrixF = new Matrix<int>(row: 3, col: 5, value: 5);
             builder.AppendLine("Matrix F:\n" + matrixF);
-            
+
             return builder.ToString();
         }
     }

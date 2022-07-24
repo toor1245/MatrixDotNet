@@ -8,7 +8,7 @@ namespace MatrixDotNet.PerformanceTesting.MathExtension
     public class BenchPow : PerformanceTest
     {
         private Matrix<int> _matrix;
-        
+
         [Params(512)]
         public int Size;
 
@@ -20,7 +20,7 @@ namespace MatrixDotNet.PerformanceTesting.MathExtension
         {
             _matrix = BuildMatrix.RandomInt(Size, Size);
         }
-        
+
         [Benchmark(Baseline = true)]
         public Matrix<int> Pow()
         {

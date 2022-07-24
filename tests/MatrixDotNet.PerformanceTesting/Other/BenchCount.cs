@@ -15,7 +15,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
         {
             arr = new List<int>();
             arr2 = new int[10001];
-            for (int i = 0; i < arr2.Length ; i++)
+            for (int i = 0; i < arr2.Length; i++)
             {
                 arr.Add(i);
                 arr2[i] = i;
@@ -39,7 +39,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
             }
             return count;
         }
-        
+
         [Benchmark]
         public int CountForeachBitHacks()
         {
@@ -53,7 +53,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
 
             return count;
         }
-        
+
         [Benchmark]
         public int CountBitHacksShift()
         {

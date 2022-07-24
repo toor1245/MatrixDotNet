@@ -24,7 +24,7 @@ namespace Samples.Samples.MatrixSamples
                 {4, -4, 5, 8},
             };
 
-            int[] vector = {2, 7, 5, 4};
+            int[] vector = { 2, 7, 5, 4 };
 
             int k = 3;
 

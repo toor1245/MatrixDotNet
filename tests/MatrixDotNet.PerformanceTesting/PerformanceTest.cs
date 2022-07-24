@@ -15,7 +15,7 @@ namespace MatrixDotNet.PerformanceTesting
         {
             if (this.GetType() == typeof(PerformanceTest))
                 Assert.Pass();
-            
+
 
 #if DEBUG
             Assert.Warn("Debug mode is on\n");

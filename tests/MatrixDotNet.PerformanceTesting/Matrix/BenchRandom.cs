@@ -13,7 +13,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
         {
             return BuildMatrix.RandomInt(N, N);
         }
-        
+
         [Benchmark]
         public Matrix<int> RandomGeneric()
         {

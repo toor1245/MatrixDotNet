@@ -15,17 +15,17 @@ namespace MatrixDotNetTests.MatrixTests.CriteriesTests
                 { 3, 2,  0 },
                 { 2, -2, 1 },
                 { 0, 1, -1 }
-                
+
             };
             var expected = DefiniteType.Alternating;
-            
+
             // Act 
             var actual = Criterion.SylvestersCriterion(matrix);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void SylvesterCriterionTest_AssertMustBe_PositiveQuadraticForm()
         {
@@ -34,17 +34,17 @@ namespace MatrixDotNetTests.MatrixTests.CriteriesTests
             {
                 {  1,  -1  },
                 { -1,  1.5 }
-                
+
             };
             var expected = DefiniteType.Positive;
-            
+
             // Act 
             var actual = Criterion.SylvestersCriterion(matrix);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void SylvesterCriterionTest_AssertMustBe_NegativeQuadraticForm()
         {
@@ -53,15 +53,15 @@ namespace MatrixDotNetTests.MatrixTests.CriteriesTests
             {
                 {  0,  2  },
                 {  2,  -1 }
-                
+
             };
             var expected = DefiniteType.Negative;
-            
+
             // Act 
             var actual = Criterion.SylvestersCriterion(matrix);
-            
+
             // Assert
-            Assert.Equal(expected,actual);
+            Assert.Equal(expected, actual);
         }
     }
 }
