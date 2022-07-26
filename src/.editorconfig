@@ -18,7 +18,7 @@ tab_width=2
 
 # Standard properties
 end_of_line=native
-insert_final_newline=false
+insert_final_newline=true
 
 # Microsoft .NET properties
 csharp_indent_braces=false
