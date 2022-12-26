@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
 
@@ -54,6 +55,33 @@ namespace MatrixDotNet.Extensions.Builder
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// Checks that all values along the diagonal of a matrix are equal to one.
+        /// </summary>
+        /// <param name="matrix">the matrix.</param>
+        /// <typeparam name="T">unmanaged type.</typeparam>
+        /// <returns>Checks matrix on identity.</returns>
+        /// <exception cref="MatrixNotSquareException">throws exception if matrix is not square.</exception>
+        public static bool IsIdentity<T>(this Matrix<T> matrix)
+            where T : unmanaged
+        {
+            if (!matrix.IsSquare)
+            {
+                throw new MatrixNotSquareException();
+            }
+
+            var comparer = Comparer<T>.Default;
+            for (int i = 0; i < matrix.Rows; i++)
+            {
+                if (comparer.Compare(matrix[i, i], MathGeneric<T>.Increment(default)) != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }
