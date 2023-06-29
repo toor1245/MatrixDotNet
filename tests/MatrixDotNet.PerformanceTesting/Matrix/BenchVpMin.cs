@@ -8,9 +8,9 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
     public class BenchVpMinBench : PerformanceTest
     {
         const int N = 1023;
-        public Matrix<double> MatrixAvxX64 = new Matrix<double>(N,N);
-        public Matrix<float> MatrixAvxX32 = new Matrix<float>(N,N);
-        public Matrix<int> MatrixAvxIntX32 = new Matrix<int>(N,N);
+        public Matrix<double> MatrixAvxX64 = new Matrix<double>(N, N);
+        public Matrix<float> MatrixAvxX32 = new Matrix<float>(N, N);
+        public Matrix<int> MatrixAvxIntX32 = new Matrix<int>(N, N);
 
         [GlobalSetup]
         public void Setup()
@@ -32,19 +32,19 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
         {
             return Simd.Min(MatrixAvxX32);
         }
-        
+
         [Benchmark]
         public double MinDoubleAvx()
         {
             return Simd.Min(MatrixAvxX64);
         }
-        
+
         [Benchmark]
         public double MinIntAvx()
         {
             return Simd.Min(MatrixAvxIntX32);
         }
-        
+
         [Benchmark]
         public double MinIntBit()
         {

@@ -22,7 +22,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
             _matrix3 = MathNet.Numerics.LinearAlgebra.Matrix<float>.Build.Dense(Size, Size);
             _matrix4 = MathNet.Numerics.LinearAlgebra.Matrix<float>.Build.Dense(Size, Size);
         }
-        
+
         [Benchmark]
         public async ValueTask<Matrix<float>> StrassenParallel()
         {
@@ -34,7 +34,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix.MathOperations
         {
             return Optimization.MultiplyStrassen(_matrix1, _matrix2);
         }
-        
+
         [Benchmark]
         public Matrix<float> Default()
         {

@@ -21,7 +21,7 @@
   <a href="https://toor1245.github.io/MatrixDotNet/api/index.html">API Reference</a>
 </h3> 
 
-MatrixDotNet is a powerful .NET library for calculate matrix. You can install MatrixDotNet via [NuGet package](https://www.nuget.org/packages/MatrixDotNet/).
+> MatrixDotNet is a powerful .NET library for matrix calculation. You can install MatrixDotNet via [NuGet package](https://www.nuget.org/packages/MatrixDotNet/).
 
 ## Features
 * Have many algorithms such sections as: factorizations, solving a linear system, conversion matrix, statistics
@@ -29,7 +29,7 @@ MatrixDotNet is a powerful .NET library for calculate matrix. You can install Ma
 * You can write your matrix to markdown or html and open them with happen .dat file
 
 ### Have many algorithms such sections as: factorization, solver, conversion matrix, statistics
-Lets consider several algorithms on each section.
+Let's consider several algorithms on each section.
 
 * <a href = "#factorizations">Factorizations</a>
 * <a href = "#solving-a-linear-system">Solving a linear system</a>
@@ -39,8 +39,8 @@ Lets consider several algorithms on each section.
 #### Factorizations
 
 In many applications, it is useful to decompose a matrix using other representations.
-All decompositions available in namespace `MatrixDotNet.Extensions.Decomposition`.
-So lets consider decompositions which supported by MatrixDotNet.
+All decompositions are available in namespace `MatrixDotNet.Extensions.Decomposition`.
+So let's consider the decompositions supported by MatrixDotNet.
 
 ##### LUP decomposition
 
@@ -55,9 +55,9 @@ for example lets take matrix size `3 x 3`
 
 ![example](https://wikimedia.org/api/rest_v1/media/math/render/svg/d536704df4f1374607bef1519ce452a28ea4a03a)
 
-Without a proper ordering or permutations in the matrix, the factorization may fail to materialize. For example, it is easy to verify (by expanding the matrix multiplication) that a<sub>11</sub> = l<sub>11</sub> * u<sub>11</sub>
-If a<sub>11</sub> = 0, then at least one of  l<sub>11</sub> and u<sub>11</sub>  has to be zero, which implies that either `L` or `U` is singular.  This is impossible if A is nonsingular (invertible). This is a procedural problem. It can be removed by simply reordering the rows of `A` so that the first element of the permuted matrix is nonzero.
-The same problem in subsequent factorization steps can be removed the same way.
+Without proper ordering or permutations in the matrix, the factorization mays fail to materialize. For example, it is easy to verify (by expanding the matrix multiplication) that a<sub>11</sub> = l<sub>11</sub> * u<sub>11</sub>
+If a<sub>11</sub> = 0, then at least one of  l<sub>11</sub> and u<sub>11</sub>  has to be zero, which implies that either `L` or `U` is singular. This is impossible if A is nonsingular (invertible). This procedural problem can be removed by simply reordering the rows of `A` so that the first element of the permuted matrix is nonzero.
+The same problem is applied for subsequent factorization steps and can be solved in the same way.
 
 Lets see LU factorization in `MatrixDotNet`
 
@@ -589,4 +589,4 @@ As you can see BitMin() method works faster(x1.725) than DefaultMin(). Because w
 See more information about Bitwise operations in [article](https://toor1245.github.io/MatrixDotNet/articles/intro.html).
 
 
-> See more information [site](https://toor1245.github.io/MatrixDotNet/) 
+> See more information [here](https://toor1245.github.io/MatrixDotNet/) 

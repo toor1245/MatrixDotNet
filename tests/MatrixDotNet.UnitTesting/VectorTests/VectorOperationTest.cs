@@ -7,13 +7,13 @@ namespace MatrixDotNetTests.VectorTests
     public class VectorOperationTest
     {
         #region DotProduct
-        
+
         [Fact]
         public void DotProductTest_MulTwoVector_AssertMustBeEqual()
         {
             // Arrange
-            Vector<int> v1 = new[] {1, 2, 21};
-            Vector<int> v2 = new[] {-3, 1, 53};
+            Vector<int> v1 = new[] { 1, 2, 21 };
+            Vector<int> v2 = new[] { -3, 1, 53 };
             const int expected = 1112;
 
             // Act
@@ -37,11 +37,11 @@ namespace MatrixDotNetTests.VectorTests
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         #endregion
 
         #region Mul Vector on constant
-        
+
         [Fact]
         public void MulTest_MulVectorOnConstant_AssertMustBeEqual()
         {
@@ -58,11 +58,11 @@ namespace MatrixDotNetTests.VectorTests
             Assert.Equal(expected, actual1);
             Assert.Equal(expected, actual2);
         }
-        
+
         #endregion
 
         #region Subtract
-        
+
         [Theory]
         [InlineData(2, 1, 1)]
         [InlineData(1, 2, -1)]
@@ -79,11 +79,11 @@ namespace MatrixDotNetTests.VectorTests
             // Assert
             Assert.Equal(expected, actual1);
         }
-        
+
         #endregion
 
         #region Addition
-        
+
         [Theory]
         [InlineData(2, 1, 3)]
         [InlineData(1, 4, 5)]
@@ -100,11 +100,11 @@ namespace MatrixDotNetTests.VectorTests
             // Assert
             Assert.Equal(expected, actual1);
         }
-        
+
         #endregion
 
         #region TensorProduct
-        
+
         [Fact]
         public void TensorProductTest_AssertMustBeEqual()
         {
@@ -119,14 +119,14 @@ namespace MatrixDotNetTests.VectorTests
                 { 24, 28, 32, 36, 40 },
                 { 30, 35, 40, 45, 50 }
             };
-            
+
             // Act
-            var actual = VectorExtension.TensorProduct(v1,v2);
-            
+            var actual = VectorExtension.TensorProduct(v1, v2);
+
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         #endregion
 
         #region Sum
@@ -139,17 +139,17 @@ namespace MatrixDotNetTests.VectorTests
             {
                 1, 5, 8, 4, 5, 10
             };
-            
+
             byte expected = 33;
 
             // Act
             var actual = matrixA.Sum();
-            
+
 
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         [Fact]
         public void SumSimdTest_AssertMustBeEqual()
         {
@@ -160,11 +160,11 @@ namespace MatrixDotNetTests.VectorTests
 
             // Act
             var actual = matrixA.Sum();
-            
+
             // Assert
             Assert.Equal(expected, actual);
         }
-        
+
         #endregion
     }
 }

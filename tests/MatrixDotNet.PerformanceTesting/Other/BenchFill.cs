@@ -19,23 +19,23 @@ namespace MatrixDotNet.PerformanceTesting.Other
             arr = new float[Size];
         }
 
-        [Benchmark(Baseline = true)] 
+        [Benchmark(Baseline = true)]
         public void ArrayFill()
         {
             Array.Fill(arr, Value);
         }
 
-        [Benchmark] 
+        [Benchmark]
         public void SpanFill()
         {
             var span = new Span<float>(arr);
             span.Fill(Value);
         }
 
-        [Benchmark] 
+        [Benchmark]
         public unsafe void AvxFill()
         {
-            if (!Avx.IsSupported) 
+            if (!Avx.IsSupported)
                 return;
 
             var vector = Vector256.Create(Value);
@@ -47,7 +47,7 @@ namespace MatrixDotNet.PerformanceTesting.Other
                 int lastIndexBlock = length - length % size;
                 for (; i < lastIndexBlock; i += size)
                 {
-                    Avx.Store(ptr+i, vector);
+                    Avx.Store(ptr + i, vector);
                 }
             }
             for (; i < length; i++)

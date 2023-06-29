@@ -20,25 +20,25 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
             _matrixSByte = BuildMatrix.RandomSByte(Size, Size, 0, 20);
             _matrix3 = MathNet.Numerics.LinearAlgebra.Matrix<float>.Build.Dense(Size, Size);
         }
-        
+
         [Benchmark]
         public Matrix<int> Negate()
         {
             return -_matrixInt;
         }
-        
+
         [Benchmark]
         public Matrix<sbyte> NegateSByteSimd()
         {
             return Matrix<sbyte>.Negate(_matrixSByte);
         }
-        
+
         [Benchmark]
         public Matrix<short> NegateShortSimd()
         {
             return Matrix<short>.Negate(_matrixShort);
         }
-        
+
         [Benchmark]
         public Matrix<int> NegateIntSimd()
         {

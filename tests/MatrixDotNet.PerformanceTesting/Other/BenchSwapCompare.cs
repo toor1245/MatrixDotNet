@@ -13,13 +13,13 @@ namespace MatrixDotNet.PerformanceTesting.Other
         {
             _matrix1 = BuildMatrix.RandomInt(1024, 1024, 1, 123);
         }
-        
-        
+
+
         [Benchmark]
         public void SwapRows()
         {
-            MatrixConverter.SwapRows(_matrix1,0,124);
+            MatrixConverter.SwapRows(_matrix1, 0, 124);
         }
-        
+
     }
 }

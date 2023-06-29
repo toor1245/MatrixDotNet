@@ -18,11 +18,11 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
             };
             for (int i = 0; i < N; i++)
             {
-                Matrix<int> m = new Matrix<int>(0,0);
+                Matrix<int> m = new Matrix<int>(0, 0);
                 // method not exists m.TestCtorUnsafe(temp);
             }
         }
-        
+
         [Benchmark]
         public void DefaultCtorTest()
         {
@@ -34,7 +34,7 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
             };
             for (int i = 0; i < N; i++)
             {
-                Matrix<int> m = new Matrix<int>(0,0);
+                Matrix<int> m = new Matrix<int>(0, 0);
                 // method not exists m.TestCtorDefault(temp);
             }
         }

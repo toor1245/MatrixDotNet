@@ -16,17 +16,17 @@ namespace MatrixDotNet.PerformanceTesting.Matrix
             _matrix1 = BuildMatrix.RandomInt(1024, 1024, 1, 123);
             _matrix2 = _matrix1.Clone() as Matrix<int>;
         }
-        
+
         [Benchmark]
         public bool EqualsUnsafe()
         {
-            return Equals(_matrix1,_matrix2);
+            return Equals(_matrix1, _matrix2);
         }
-        
+
         [Benchmark]
         public bool EqualsAvx()
         {
-            return Simd.Equals(_matrix1,_matrix2);
+            return Simd.Equals(_matrix1, _matrix2);
         }
     }
 }
