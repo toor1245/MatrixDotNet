@@ -1,6 +1,6 @@
 # MatrixDotNet
 
-![](https://github.com/toor1245/MatrixDotNet/blob/master/docs/images/MatrixDotNet.png)
+![](https://github.com/toor1245/MatrixDotNet/blob/main/docs/images/MatrixDotNet.png)
 
 <h3 align="center">
 
