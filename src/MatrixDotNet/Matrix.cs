@@ -8,7 +8,7 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using MatrixDotNet.Extensions.Performance.Simd.Handler;
@@ -300,7 +300,7 @@ namespace MatrixDotNet
                 Span<T> span3 = new Span<T>(ptr3, length);
                 int i = 0;
 
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
                 if (Avx2.IsSupported && typeof(T) != typeof(decimal))
                 {
                     int size = Vector256<T>.Count;
@@ -363,7 +363,7 @@ namespace MatrixDotNet
                 Span<T> span3 = new Span<T>(ptr3, length);
                 int i = 0;
 
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
                 if (Avx2.IsSupported && typeof(T) != typeof(decimal))
                 {
                     int size = Vector256<T>.Count;
@@ -422,7 +422,7 @@ namespace MatrixDotNet
             {
                 var span1 = new Span<T>(ptrA, length);
 
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
                 if (Fma.IsSupported && IntrinsicsHandler<T>.IsSupportedMultiplyAddVector256 && left.HasMultiplyBlock(right))
                 {
                     var size = Vector256<T>.Count;
@@ -547,7 +547,7 @@ namespace MatrixDotNet
             return result;
         }
 
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
         /// <summary>
         /// Negate matrix.
         /// </summary>
