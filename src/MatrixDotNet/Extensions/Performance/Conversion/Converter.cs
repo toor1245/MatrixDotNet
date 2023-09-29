@@ -1,6 +1,6 @@
 using System;
 using MatrixDotNet.Exceptions;
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
@@ -186,7 +186,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         public static unsafe void CopyToAvx(ref MatrixOnStack matrix1, int dimension1, int start,
             ref MatrixOnStack matrix2, int dimension2, int destinationIndex, int length)
         {
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             if (Avx2.IsSupported)
             {
                 var i = start;

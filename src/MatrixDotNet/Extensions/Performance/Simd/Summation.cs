@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using MatrixDotNet.Extensions.Performance.Simd.Handler;
 using MatrixDotNet.Math;
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
@@ -28,7 +28,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd
             var result = default(T);
             fixed (T* ptr = array)
             {
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
                 int size;
                 int lastIndexBlock;
                 if (Avx2.IsSupported && MathGeneric.IsSupported<T>())

@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using MatrixDotNet.Exceptions;
 using MatrixDotNet.Math;
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
 using System.Numerics;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
@@ -379,7 +379,7 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 return;
             }
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             int i = 0;
             if (Avx2.IsSupported)
             {
@@ -461,7 +461,7 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 return;
             }
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             int i = 0;
             if (Avx2.IsSupported)
             {
@@ -561,7 +561,7 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 return;
             }
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             int i = 0;
 
             if (Avx2.IsSupported)
@@ -645,7 +645,7 @@ namespace MatrixDotNet.Extensions.Conversion
             {
                 return;
             }
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             int i = 0;
 
             if (Avx2.IsSupported)
@@ -730,7 +730,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 return;
             }
 
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             int i = 0;
             if (Avx.IsSupported)
             {
@@ -811,7 +811,7 @@ namespace MatrixDotNet.Extensions.Conversion
                 return;
             }
 
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             int i = 0;
             if (Avx.IsSupported)
             {
