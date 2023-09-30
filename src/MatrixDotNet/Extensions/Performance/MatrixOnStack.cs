@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using MatrixDotNet.Exceptions;
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
@@ -150,7 +150,7 @@ namespace MatrixDotNet.Extensions.Performance
 
             var matrix = new MatrixOnStack(m, n);
 
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             if (Avx2.IsSupported)
             {
                 var length = left.Length;
@@ -214,7 +214,7 @@ namespace MatrixDotNet.Extensions.Performance
 
             var matrix = new MatrixOnStack(m, n);
 
-#if NET5_0 || NETCOREAPP3_1
+#if NETCOREAPP3_1_OR_GREATER
             if (Avx2.IsSupported)
             {
                 var length = left.Length;
