@@ -1,4 +1,4 @@
-#if NETCOREAPP3_1 || NET5_0
+#if NETCOREAPP3_1_OR_GREATER
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
@@ -19,7 +19,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-#if NET5_0
+#if NET5_0_OR_GREATER
                 return Vector256<T>.AllBitsSet;
 #elif NETCOREAPP3_1
                 return Vector256.Create(0xFFFFFFFF).As<uint, T>();
@@ -576,7 +576,7 @@ namespace MatrixDotNet.Extensions.Performance.Simd.Handler
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get
             {
-#if NET5_0
+#if NET5_0_OR_GREATER
                 return Vector128<T>.AllBitsSet;
 #elif NETCOREAPP3_1
                 return Vector128.Create(0xFFFFFFFF).As<uint, T>();

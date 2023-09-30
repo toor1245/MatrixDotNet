@@ -98,7 +98,7 @@ namespace MatrixDotNet.Extensions.Performance.Conversion
         /// <param name="to">the index of row.</param>
         public static unsafe void SwapRows(ref MatrixOnStack matrix, int from, int to)
         {
-#if NETCOREAPP3_1 || NET5_0
+#if NETCOREAPP3_1_OR_GREATER
             if (Avx.IsSupported)
             {
                 var i = 0;
